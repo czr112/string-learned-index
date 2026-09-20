@@ -29,6 +29,36 @@ import hashlib, json, os, subprocess, sys, time
 CXX = ["g++", "-std=c++17", "-O3", "-march=x86-64-v2", "-static"]
 CC = ["gcc", "-std=c99", "-O3", "-march=x86-64-v2"]
 
+# ITEM B: the sanitizer compiler line, used ONLY for the targets in SAN_TARGETS below.
+# Two deliberate differences from CXX, and both matter:
+#   * -static is DROPPED. The sanitizer runtime is a separate library that is not
+#     compatible with a fully static link: the link fails, or the runtime never
+#     initialises. This is the reason the sanitizer builds need their own line.
+#   * -O1 -g instead of -O3. ASan's own instrumentation and allocator dominate the
+#     runtime anyway, and -g is what makes a report name a source line. The goal of
+#     these builds is COVERAGE, not speed -- their timings are meaningless and are
+#     never reported as performance.
+# The compiler itself is overridable, because a host can have a g++ with no
+# sanitizer runtime at all (this machine's MinGW toolchain ships no libasan and no
+# libubsan, so a sanitizer build there fails at link time):
+#     set E25_SAN_CXX=clang++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer
+CXX_SAN = os.environ.get("E25_SAN_CXX", "").split() or [
+    "g++", "-std=c++17", "-O1", "-g", "-march=x86-64-v2",
+    "-fsanitize=address,undefined", "-fno-omit-frame-pointer",
+]
+
+# ITEM B: the targets built with CXX_SAN instead of CXX. Every one is a NEW target
+# name over an EXISTING source (see SRC below), so no shipped target's flags, build
+# record or executable is touched -- the same pattern already used for diag_long,
+# which is bench_long.cpp under a second name. run_sanitizers.py runs exactly this set.
+SAN_TARGETS = {
+    "san_check_e31",
+    "san_check_e9_multiblock",
+    "san_check_e11_locate",
+    "san_check_freeze",
+    "san_bench_long_hyst",
+}
+
 # Per-target flags.
 EXTRA = {
     "check_e11_locate": ["-DE12_COUNT"],   # this gate reads candidate_blocks
@@ -47,6 +77,14 @@ EXTRA = {
     # which needs the counters. A gate is not a timing build, so the counters cost
     # nothing that is measured. Source has an #error if this flag is missing.
     "check_e31": ["-DE25_DIAG"],
+    # The scan-contract gate injects a deliberately NON-monotone group mapping through
+    # the E25_DIAG-only hook on Region (Region::sar_rotate_groups), and asserts that the
+    # injection really makes the scan misbehave -- with the hook off it also asserts that
+    # a second index built the same way is identical to the first. The hook is not a
+    # Config switch, so no switches.hpp table changes and the frozen configuration is
+    # untouched. Source has an #error if this flag is missing. A gate is not a timing
+    # build, so the counters cost nothing that is measured.
+    "check_scan_contract": ["-DE25_DIAG"],
     # The hysteresis counters are read by bench_long_hyst's own non-vacuous gate,
     # so the diagnostic build of the SAME source is a second target (as diag_long is
     # for bench_long). The clean timing build stays counter-free.
@@ -61,19 +99,35 @@ EXTRA = {
     # #error if either is missing, so a wrong build is a hard stop rather than a report
     # full of zeros that looks like "the overflow container is free".
     "diag_ov_cost": ["-DE30_TIME", "-DE25_DIAG"],
+    # ITEM B: the sanitizer targets take the SAME flags as the shipped target built
+    # from the same source, for the same reasons -- check_e31 asserts that the reclaim
+    # branch ran (its source carries an #error without the counters) and
+    # check_e11_locate reads candidate_blocks. A sanitizer build is not a timing
+    # build either, so the counters cost nothing that is measured anywhere.
+    "san_check_e11_locate": ["-DE12_COUNT"],
+    "san_check_e31": ["-DE25_DIAG"],
 }
 LIBS = {"bench_e25": ["build/art.o"], "bench_e26": ["build/art.o"],
         "bench_long_art": ["build/art.o"], "bench_long_hyst": ["build/art.o"],
-        "diag_hyst": ["build/art.o"]}
+        "diag_hyst": ["build/art.o"], "san_bench_long_hyst": ["build/art.o"]}
 C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "bench_e26": ["third_party/vendor/libart/src/art.c"],
              "bench_long_art": ["third_party/vendor/libart/src/art.c"],
              "bench_long_hyst": ["third_party/vendor/libart/src/art.c"],
-             "diag_hyst": ["third_party/vendor/libart/src/art.c"]}
+             "diag_hyst": ["third_party/vendor/libart/src/art.c"],
+             "san_bench_long_hyst": ["third_party/vendor/libart/src/art.c"]}
 # diag_long is the SAME source as bench_long, built with the counters in. One source,
 # two targets, so the two builds cannot drift apart.
 SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
-       "diag_hyst": "bench_long_hyst.cpp"}
+       "diag_hyst": "bench_long_hyst.cpp",
+       # ITEM B: the sanitizer targets are new NAMES over these same sources. One
+       # source, two targets -- as diag_long is for bench_long -- so the sanitizer
+       # build and the shipped build of the same program cannot drift apart.
+       "san_check_e31": "check_e31.cpp",
+       "san_check_e9_multiblock": "check_e9_multiblock.cpp",
+       "san_check_e11_locate": "check_e11_locate.cpp",
+       "san_check_freeze": "check_freeze.cpp",
+       "san_bench_long_hyst": "bench_long_hyst.cpp"}
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -108,7 +162,13 @@ def build(target):
     objs = compile_c(target)
     link = [os.path.join(DIR, p) for p in LIBS.get(target, [])]
 
-    cmd = CXX + EXTRA.get(target, []) + [src] + link + ["-o", tmp]
+    # ITEM B: a sanitizer target takes CXX_SAN instead of CXX (no -static; see the
+    # constant at the top). This is the ONLY change to this function. Everything
+    # else on this line and around it is unchanged: the unique temporary output, the
+    # atomic rename on success, the source hashes, the executable hash, and the
+    # removal of the stale artifact after a failed compile.
+    cxx = CXX_SAN if target in SAN_TARGETS else CXX
+    cmd = cxx + EXTRA.get(target, []) + [src] + link + ["-o", tmp]
     rec = {"target": target, "build_id": f"{time.time_ns()}", "command": " ".join(cmd), "sources": {}}
     rec["sources"][os.path.basename(src)] = sha256(src)
     for f in sorted(os.listdir(DIR)):

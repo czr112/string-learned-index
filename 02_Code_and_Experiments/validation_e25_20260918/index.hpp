@@ -958,8 +958,18 @@ class Region {
 
     std::uint32_t canonical_group(std::string_view s) const {
         E18_INC(group_calls);
+
         Fingerprint dummy;
-        return model_.predict<false>(s, groups_, config_.canonical, dummy).group;
+        const std::uint32_t group = model_.predict<false>(s, groups_, config_.canonical, dummy).group;
+
+#ifdef E25_DIAG
+        // check_scan_contract's negative control. See the flag's own comment for what
+        // this is for; with the flag false -- every other gate, every timed build --
+        // this is the same function it was.
+        if (sar_rotate_groups && groups_ > 1) return (group + 1) % groups_;
+#endif
+
+        return group;
     }
 
     // --- E11 boundary directory ---
@@ -2531,6 +2541,22 @@ public:
         if (!prefix_matches(key)) return UINT32_MAX;   // no valid group
         return canonical_group(key.substr(prefix_.size()));
     }
+
+    // check_scan_contract's negative control, and the only thing in the tree that can
+    // make key -> group non-monotone on purpose. Rotating every group id by one is
+    // deterministic, in range, and a bijection, so the index stays internally
+    // coherent: what stops matching key order is the group-ASCENDING traversal the
+    // scan and its start cursor rely on. With the flag set, the scan must therefore
+    // return records out of key order, or omit records, or both -- which is the whole
+    // point, because it shows the scan's correctness rests on the mapping's
+    // monotonicity and not on M1 alone.
+    //
+    // DIAGNOSTIC ONLY, and deliberately NOT a Config switch: the four switches.hpp
+    // tables (baseline_config, pin_frozen_switches, switches, the Field table) are
+    // untouched, so no frozen or shipped configuration can see this. Compiled out
+    // unless -DE25_DIAG, like every other hook in this block; a timed build does not
+    // even carry the branch.
+    static inline bool sar_rotate_groups = false;
 #endif
 
 #ifdef E30_TIME

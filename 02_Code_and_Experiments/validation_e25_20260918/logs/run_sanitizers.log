@@ -1,0 +1,80 @@
+==============================================================================
+ITEM B: ASan/UBSan memory-safety coverage -- 2026-09-20 22:56:46
+These runs are for MEMORY-SAFETY COVERAGE ONLY. Their timings are
+meaningless: the targets are -O1 and instrumented. Never report them
+as performance, and never mix them with a timing sweep's numbers.
+==============================================================================
+compiler line: g++ -std=c++17 -O1 -g -march=x86-64-v2 -fsanitize=address,undefined -fno-omit-frame-pointer
+
+positive controls -- a detector that never fires proves nothing:
+CONTROL asan: fired (AddressSanitizer, rc=1)
+CONTROL ubsan: fired (runtime error:, rc=1)
+
+BUILD san_bench_long_hyst    ok
+BUILD san_check_e11_locate   ok
+BUILD san_check_e31          ok
+BUILD san_check_e9_multiblock ok
+BUILD san_check_freeze       ok
+
+RUN   san_check_e31          mixed 131072 same          rc=0   sanitizer=no (17s)
+  mixed same frac=0.5 ok
+  mixed same frac=1 ok
+  mixed same frac=2 ok
+RUN   san_check_e31          mixed 131072 grow          rc=0   sanitizer=no (15s)
+  mixed grow frac=0.5 ok
+  mixed grow frac=1 ok
+  mixed grow frac=2 ok
+RUN   san_check_e9_multiblock self-contained pool, 2 trials rc=0   sanitizer=no (1s)
+  {"status":"passed","operations":12000,"scan_checks":1830,"later_subblock_scans":60,"struct_validations":130,"groups_struct_checked":18590,"multiblock_group_observations":100,"singleblock_group_observations":186,"max_subblocks":5,"wide_subblocks_probed":142,"wide_subblock_simd_scalar_checks":3316,"subblock_wipe_refill_cases":5,"capped_groups":147,"uncapped_groups":139,"capped_groups_with_second_block_demand":9,"compactions":79,"seed":20260915}
+  trial region=64 ops=6000 multiblock_groups=1731 singleblock_groups=8769 max_subblocks=4 compactions=42
+  trial region=32 ops=6000 multiblock_groups=1915 singleblock_groups=7575 max_subblocks=5 compactions=37
+RUN   san_check_e11_locate   self-contained pool, 3 trials rc=0   sanitizer=no (1s)
+  trial region=64 block=2048 capped=yes groups=4
+  trial region=32 block=2048 capped=yes groups=2
+  trial region=64 block=1024 capped=no groups=23
+RUN   san_check_freeze       mixed 131072               rc=0   sanitizer=no (10s)
+  CHOSEN  [write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1]
+  SHIPPED [write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1]
+  mixed freeze confirmation done, 851968 element comparisons
+  DISCARDED 9201 byte(s) this sanitizer run appended to results/main/long_hyst_same.jsonl -- rows from an -O1 instrumented build are not measurements and are not kept
+RUN   san_bench_long_hyst    mixed 131072 reps=1 same   rc=0   sanitizer=no (48s)
+  mixed rep0 E31H done
+  mixed rep0 E31P done
+  mixed rep0 ART done
+
+==============================================================================
+ITEM B -- THE BOUNDED CLAIM
+==============================================================================
+CLAIM: 在指定配置与测试覆盖下，ASan/UBSan 未报告问题。
+       Under the listed configuration and test coverage, ASan/UBSan
+       reported no problem. That does NOT prove every path is safe, and
+       it does NOT replace the scan-contract acceptance (ITEM A).
+
+RESULT: PASS -- 6 run(s) completed and none reported a sanitizer problem. The claim is bounded by the coverage below.
+
+COVERED -- runs that completed with NO sanitizer report:
+  san_check_e31          mixed 131072 same         
+                         E31's in-place sub-block repack, the insert that follows it, deletes of the first and last live records, emptied middle sub-blocks, and the boundary directory re-checked against its own sub-blocks on BOTH arms
+  san_check_e31          mixed 131072 grow         
+                         the same repack and placement paths run with a growing key length, so suffixes that change size move through them
+  san_check_e9_multiblock self-contained pool, 2 trials
+                         structural invariants: rebuild, the sub-block sweep, the boundary directory, and empty middle sub-blocks
+  san_check_e11_locate   self-contained pool, 3 trials
+                         locate against the boundary directory across multi-block groups, including groups whose overflow holds records below every primary key
+  san_check_freeze       mixed 131072              
+                         rebuild paths: three whole indexes built from one plan at the shipped defaults, including the exact-capacity sub-block cases the allocator produces
+  san_bench_long_hyst    mixed 131072 reps=1 same  
+                         one overflow-heavy workload: overflow growth, overflow deletion and saved positions going stale under long churn, at ONE repetition on the smallest dataset -- coverage, not a timing run
+
+NOT COVERED -- this run says NOTHING about:
+  * LeakSanitizer, and leaks in general: leak detection is switched off (ASAN_OPTIONS=detect_leaks=0), so this run says nothing about leaks.
+  * the tranco dataset (262144 keys) and every dataset/mode/repetition combination the timing sweeps use; only the runs listed above were executed.
+  * code reached only under -DE25_DIAG in the programs that were NOT built with it here (only san_check_e31 carries the counters).
+  * the split path as a claim of its own: whatever the listed programs execute is covered, but no run here asserts on a split in its own right.
+  * any toolchain or platform other than the one this driver probes; the positive controls prove the detector is live ON THIS MACHINE only.
+  * memory errors that neither ASan nor UBSan can see.
+  * the scan-contract acceptance (ITEM A): no sanitizer result says anything about scan order, and the two must not be run together into one conclusion.
+
+records: results/main/sanitizer_runs.jsonl
+log:     logs/run_sanitizers.log
+==============================================================================

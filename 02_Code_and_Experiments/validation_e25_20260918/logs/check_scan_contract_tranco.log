@@ -1,0 +1,11 @@
+check_scan_contract frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1]
+{"phase":"monotone","kind":"tranco","sampling":"full","keys_walked":262144,"adjacent_pairs":262016,"violations":0,"placement_hits":262144,"regions":128,"regions_single_group":0,"region0_prefix_len":0}
+{"phase":"scan","checkpoint":"initial","live":262144,"starts":10386,"counts":"1,2,16","scans":31159,"short_scans":5,"records_compared":459443}
+{"phase":"scan","checkpoint":"erased","live":262014,"starts":48,"counts":"1,2,16","scans":145,"short_scans":0,"records_compared":262926}
+{"phase":"scan","checkpoint":"overflow","live":262590,"starts":48,"counts":"1,2,16","scans":145,"short_scans":0,"records_compared":263502}
+{"phase":"ops","groups_touched":24,"deep_groups":510,"groups_emptied":3,"groups_overflowed":3,"erases":130,"inserts":576,"overflow_before":1730,"overflow_after":2306}
+{"phase":"negative_control","hook":"rotate_groups","full_ascending_ok":0,"full_multiset_ok":0,"drain_ascending_ok":0,"drain_multiset_ok":0,"start_probes":48,"start_probe_count":4096,"start_mismatches":14,"erase_missed":130,"region0_prefix_len":0,"failed":"full_ascending,full_multiset,drain_ascending,drain_multiset,start_mismatches"}
+negative control fired on the full scan: full_ascending,full_multiset,drain_ascending,drain_multiset,start_mismatches
+{"phase":"hook_off_identity","structure_identical":1,"scan_identical":1,"regions":128,"subblocks":24186,"subblock_keys_compared":260284,"boundary_entries_compared":3708,"probes_compared":48}
+{"gate":"check_scan_contract","kind":"tranco","run_tag":"","keys":262144,"regions":128,"result":"pass","monotone_pairs":262016,"monotone_violations":0,"placement_hits":262144,"start_keys":10386,"total_scans":31449,"total_records_compared":985871,"total_short_scans":5,"subblock_keys_compared":260284,"boundary_entries_compared":3708}
+tranco scan contract gate done
