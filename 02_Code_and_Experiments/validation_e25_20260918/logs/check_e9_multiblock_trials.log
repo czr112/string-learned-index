@@ -1,0 +1,2 @@
+trial region=64 ops=6000 multiblock_groups=1731 singleblock_groups=8769 max_subblocks=4 compactions=42
+trial region=32 ops=6000 multiblock_groups=1915 singleblock_groups=7575 max_subblocks=5 compactions=37

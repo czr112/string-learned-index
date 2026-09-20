@@ -1,0 +1,1 @@
+{"kind":"skew","fences":64,"distinct_u":1,"equal_share":0.984375,"max_equal_run":64,"queries":4096,"A_avg_int_cmps":13,"A_avg_str_cmps":6.01465,"B_avg_int_cmps":6.01465,"B_avg_str_cmps":6.01465,"baseline_avg_str_cmps":6}

@@ -1,0 +1,66 @@
+sweep start 2026-09-16 23:54:38
+--- process P1, clean build ---
+bench_e19 mixed 1024 tag=warmup-P1 rc=0 wall=0.2s
+  stdout: OK mixed off=0.463512 on=0.47059 ratio=1.01634 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 mixed 131072 tag=P1 rc=0 wall=2.5s
+  stdout: OK mixed off=70.4843 on=65.1202 ratio=0.933104 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 skew 131072 tag=P1 rc=0 wall=3.2s
+  stdout: OK skew off=84.0444 on=76.6833 ratio=0.927025 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 tranco 262144 tag=P1 rc=0 wall=2.8s
+  stdout: OK tranco off=108.56 on=100.4 ratio=0.920833 pred 0->0 peakMB 0->0 allocs 0->0
+--- process P2, clean build ---
+bench_e19 mixed 1024 tag=warmup-P2 rc=0 wall=0.2s
+  stdout: OK mixed off=0.49245 on=0.459051 ratio=0.93966 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 mixed 131072 tag=P2 rc=0 wall=2.9s
+  stdout: OK mixed off=73.442 on=67.6408 ratio=0.92101 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 skew 131072 tag=P2 rc=0 wall=2.9s
+  stdout: OK skew off=78.6857 on=73.2206 ratio=0.883961 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 tranco 262144 tag=P2 rc=0 wall=2.6s
+  stdout: OK tranco off=103.312 on=90.4219 ratio=0.879375 pred 0->0 peakMB 0->0 allocs 0->0
+--- process P3, clean build ---
+bench_e19 mixed 1024 tag=warmup-P3 rc=0 wall=0.1s
+  stdout: OK mixed off=0.506684 on=0.439856 ratio=0.900524 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 mixed 131072 tag=P3 rc=0 wall=2.8s
+  stdout: OK mixed off=73.689 on=65.0425 ratio=0.908982 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 skew 131072 tag=P3 rc=0 wall=3.1s
+  stdout: OK skew off=86.8156 on=75.1319 ratio=0.894415 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 tranco 262144 tag=P3 rc=0 wall=2.8s
+  stdout: OK tranco off=106.646 on=102.237 ratio=0.964637 pred 0->0 peakMB 0->0 allocs 0->0
+--- process P4, clean build ---
+bench_e19 mixed 1024 tag=warmup-P4 rc=0 wall=0.2s
+  stdout: OK mixed off=0.461115 on=0.423016 ratio=0.897056 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 mixed 131072 tag=P4 rc=0 wall=2.7s
+  stdout: OK mixed off=71.2859 on=66.3277 ratio=0.917745 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 skew 131072 tag=P4 rc=0 wall=4.0s
+  stdout: OK skew off=83.114 on=75.2509 ratio=0.914497 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 tranco 262144 tag=P4 rc=0 wall=2.8s
+  stdout: OK tranco off=106.372 on=103.671 ratio=0.964736 pred 0->0 peakMB 0->0 allocs 0->0
+--- process P5, clean build ---
+bench_e19 mixed 1024 tag=warmup-P5 rc=0 wall=0.2s
+  stdout: OK mixed off=0.480073 on=0.407422 ratio=0.876008 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 mixed 131072 tag=P5 rc=0 wall=2.7s
+  stdout: OK mixed off=71.4077 on=66.6094 ratio=0.93556 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 skew 131072 tag=P5 rc=0 wall=3.1s
+  stdout: OK skew off=83.3408 on=76.6345 ratio=0.91762 pred 0->0 peakMB 0->0 allocs 0->0
+bench_e19 tranco 262144 tag=P5 rc=0 wall=2.9s
+  stdout: OK tranco off=105.039 on=104.692 ratio=1.01039 pred 0->0 peakMB 0->0 allocs 0->0
+--- diagnostic build, 3 passes per dataset ---
+bench_e19_diag mixed 131072 tag=DIAG rc=0 wall=2.9s
+  stdout: OK mixed off=75.3618 on=69.6728 ratio=0.920534 pred 262144->131072 peakMB 24.5368->24.545 allocs 135581->135645
+bench_e19_diag skew 131072 tag=DIAG rc=0 wall=3.4s
+  stdout: OK skew off=85.9836 on=77.6499 ratio=0.90256 pred 262144->131072 peakMB 24.3428->24.3509 allocs 145290->145354
+bench_e19_diag tranco 262144 tag=DIAG rc=0 wall=3.0s
+  stdout: OK tranco off=105.712 on=99.7244 ratio=0.947427 pred 524288->262144 peakMB 26.4273->26.4362 allocs 76149->76277
+bench_e19_diag mixed 131072 tag=DIAG rc=0 wall=2.7s
+  stdout: OK mixed off=67.4512 on=61.0991 ratio=0.907463 pred 262144->131072 peakMB 24.5368->24.545 allocs 135581->135645
+bench_e19_diag skew 131072 tag=DIAG rc=0 wall=3.3s
+  stdout: OK skew off=87.368 on=78.2626 ratio=0.898274 pred 262144->131072 peakMB 24.3428->24.3509 allocs 145290->145354
+bench_e19_diag tranco 262144 tag=DIAG rc=0 wall=3.0s
+  stdout: OK tranco off=109.856 on=99.687 ratio=0.997726 pred 524288->262144 peakMB 26.4273->26.4362 allocs 76149->76277
+bench_e19_diag mixed 131072 tag=DIAG rc=0 wall=3.7s
+  stdout: OK mixed off=73.2857 on=71.5928 ratio=0.976901 pred 262144->131072 peakMB 24.5368->24.545 allocs 135581->135645
+bench_e19_diag skew 131072 tag=DIAG rc=0 wall=3.2s
+  stdout: OK skew off=85.3876 on=75.9179 ratio=0.920877 pred 262144->131072 peakMB 24.3428->24.3509 allocs 145290->145354
+bench_e19_diag tranco 262144 tag=DIAG rc=0 wall=2.9s
+  stdout: OK tranco off=108.511 on=102.685 ratio=0.959632 pred 524288->262144 peakMB 26.4273->26.4362 allocs 76149->76277
+sweep end 2026-09-16 23:55:50

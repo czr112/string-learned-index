@@ -1,0 +1,57 @@
+{
+  "validation_date": "2026-09-06",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "flags": "-std=c++17 -O3 -DNDEBUG -march=native",
+  "cpuinfo": {
+    "model name": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "cache size": "266240 KB",
+    "flags": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 arat avx512vbmi umip waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid cldemote movdiri movdir64b fsrm serialize tsxldtrk avx512_fp16 arch_capabilities"
+  },
+  "cache": [
+    {
+      "shared_cpu_list": "0-1",
+      "type": "Data",
+      "size": "48K",
+      "level": "1",
+      "coherency_line_size": "64"
+    },
+    {
+      "shared_cpu_list": "0-1",
+      "type": "Instruction",
+      "size": "32K",
+      "level": "1",
+      "coherency_line_size": "64"
+    },
+    {
+      "shared_cpu_list": "0-1",
+      "type": "Unified",
+      "size": "2048K",
+      "level": "2",
+      "coherency_line_size": "64"
+    },
+    {
+      "shared_cpu_list": "0-8",
+      "type": "Unified",
+      "size": "266240K",
+      "level": "3",
+      "coherency_line_size": "64"
+    }
+  ],
+  "limitations": [
+    "shared virtualized host",
+    "no perf executable",
+    "LeakSanitizer exit scan blocked by process visibility; ASan/UBSan run with detect_leaks=0"
+  ]
+}

@@ -1,0 +1,1 @@
+MinGW g++ 15.2.0: -fsanitize=undefined link fails (no -lubsan); -fsanitize=address link fails (no -lasan). Both sanitizers unavailable on this toolchain as of 2026-09-13. Differential correctness relies on check.cpp (passed 3x); allocator alignment probed separately (5000 aligned news OK).

@@ -1,0 +1,9 @@
+arms frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,scan_reserve_result=1] E31[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,scan_reserve_result=1]
+{"kind":"mixed","mode":"grow","frac":0.25,"live":131072,"frozen_overflow":19668,"e31_overflow":1204,"frozen_memory":26000777,"e31_memory":23980519,"records_compared":131072,"dir_groups_checked":446,"subblock_reclaims":5228,"subblock_reclaim_helped":4409}
+mixed grow frac=0.25 ok
+{"kind":"mixed","mode":"grow","frac":0.5,"live":131072,"frozen_overflow":43860,"e31_overflow":3387,"frozen_memory":30319351,"e31_memory":24398621,"records_compared":262144,"dir_groups_checked":446,"subblock_reclaims":15207,"subblock_reclaim_helped":12190}
+mixed grow frac=0.5 ok
+{"kind":"mixed","mode":"grow","frac":1,"live":131072,"frozen_overflow":103375,"e31_overflow":40253,"frozen_memory":40447801,"e31_memory":30370803,"records_compared":393216,"dir_groups_checked":446,"subblock_reclaims":66071,"subblock_reclaim_helped":25805}
+mixed grow frac=1 ok
+{"kind":"mixed","mode":"grow","frac":2,"live":131072,"frozen_overflow":129703,"e31_overflow":41251,"frozen_memory":44297093,"e31_memory":30521076,"records_compared":524288,"dir_groups_checked":446,"subblock_reclaims":143495,"subblock_reclaim_helped":61962}
+mixed grow frac=2 ok

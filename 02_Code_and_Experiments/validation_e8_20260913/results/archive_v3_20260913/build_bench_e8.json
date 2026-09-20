@@ -1,0 +1,15 @@
+{
+ "target": "bench_e8",
+ "build_id": "1789299860845140600",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e8_20260913\\bench_e8.cpp -o D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e8_20260913\\build\\bench_e8.44244.1789299860845136400.tmp.exe",
+ "sources": {
+  "bench_e8.cpp": "db8723fd4c22a1ba204e300d5c1e6b5dfbdb0d51e6abc0ebbbc5f855cec48fed",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "cc9548233d04983eab3e23acf95c812df00a83564506c51410d0af8d2d21afe7",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "794b9f8630e004566868e370fbf2d738474e33e4c2084f19187d3f11ab06ddcf",
+ "status": "OK"
+}

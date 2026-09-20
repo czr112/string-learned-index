@@ -1,0 +1,11 @@
+loaded 16384 keys kind=mixed
+built s=8 b=512 build_ms=8.2746 bytes=5479819 overflow=10525
+built s=8 b=1024 build_ms=6.5563 bytes=5052496 overflow=9580
+built s=8 b=2048 build_ms=6.8228 bytes=7375953 overflow=9208
+built s=16 b=512 build_ms=8.0289 bytes=7768856 overflow=11227
+built s=16 b=1024 build_ms=6.4661 bytes=5014800 overflow=9545
+built s=16 b=2048 build_ms=7.0247 bytes=4844998 overflow=8567
+built s=32 b=1024 build_ms=7.8914 bytes=6780217 overflow=10067
+built s=32 b=2048 build_ms=6.9991 bytes=4758825 overflow=8580
+seed 0 done
+COMPLETE mixed

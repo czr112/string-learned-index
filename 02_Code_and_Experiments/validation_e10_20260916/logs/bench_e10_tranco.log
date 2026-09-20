@@ -1,0 +1,5 @@
+cohorts by D source: primary=51382 overflow=13875 miss=65815
+  D_demand_single  subblocks=1  simd_batches=2.20589  ov_entered=0.343491  ov_probes=10.9477
+  M_multiblock  subblocks=1.68665  simd_batches=3.90616  ov_entered=0.0239487  ov_probes=0.0533676
+  S_multiblock_strict  subblocks=1.78739  simd_batches=3.94073  ov_entered=0.182091  ov_probes=1.50128
+COMPLETE tranco

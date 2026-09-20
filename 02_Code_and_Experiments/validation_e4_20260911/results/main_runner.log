@@ -1,0 +1,8 @@
+START skew 131072
+DONE skew seconds 36.9 winner cross_hybrid {"ART_libart": 509.02, "cross_hybrid": 564.53, "cross_joint": 625.72, "default": 806.88, "sorted_array": 722.88, "sorted_leaves": 558.59, "uniform_4": 636.01, "warm_hybrid": 557.36, "warm_joint": 593.54}
+START mixed 262144
+Traceback (most recent call last):
+  File "/workspace/scratch/dba454d1cdc9/validation_e4_20260911/run.py", line 20, in <module>
+    if not path.read_bytes().endswith(b'\n') or len(rows)!=count or any(None in r or any(v is None for v in r.values()) for r in rows):raise RuntimeError(f'incomplete CSV {path}')
+                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: incomplete CSV /workspace/scratch/dba454d1cdc9/validation_e4_20260911/results/main/mixed_262144/candidates.csv

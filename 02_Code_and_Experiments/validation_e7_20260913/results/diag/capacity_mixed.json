@@ -1,0 +1,1 @@
+{"kind":"mixed","block":1024,"slots":16,"keys":131072,"groups":21251,"overflow_keys":78861,"overflow_share":0.601662,"groups_with_overflow":4971,"empty_groups":14278,"overflow_entries_gini":0.935805,"overflow_top10pct_share":0.884176,"overflow_top25pct_share":1,"primary_entries_gini":0.773698}

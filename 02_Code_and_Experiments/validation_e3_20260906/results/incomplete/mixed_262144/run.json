@@ -1,0 +1,26 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "0",
+    "/workspace/scratch/dba454d1cdc9/validation_e3_20260906/bench",
+    "mixed",
+    "262144",
+    "/workspace/scratch/dba454d1cdc9/validation_e3_20260906/results/main/mixed_262144",
+    "/workspace/scratch/dba454d1cdc9/research_cache/tranco_XN6XN.csv",
+    "262144",
+    "5",
+    "3"
+  ],
+  "queries": 262144,
+  "rounds_per_seed": 5,
+  "query_seeds": 3,
+  "suite": "main",
+  "source_sha256": {
+    "index.hpp": "56a8413f859f8cece698ab788fe79040181b783e35f04b7c9de377f828acfc4d",
+    "selected.hpp": "3eb42c20ff343d19d672136b9dd7324bd95016a02068e8f69f713bf73d28ed82",
+    "data.hpp": "c27ce35bbf05459508532330e948c75d4483ef3acb7a4183b8c215d180d2fe2a",
+    "bench.cpp": "4d4e301e3f666838b2085d9ebc999d53e399212455e43e894b82cc8e7765e773",
+    "PROTOCOL.md": "10cc1b9957d1ec53ab80324657b637849eb455b208d5551965c8c6b9292b0d9b"
+  }
+}

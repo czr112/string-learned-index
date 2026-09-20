@@ -1,0 +1,66 @@
+sweep start 2026-09-16 22:29:22
+--- process P1, target order ['bench_e16'] ---
+bench_e16 mixed 1024 tag=warmup-P1 rc=0 wall=0.2s
+  stdout: OK mixed probe=0.293948ms light=0.105286ms ratio=0.358179 flow=0.673558->0.48507 peak=0MB->0MB
+bench_e16 mixed 131072 tag=P1 rc=0 wall=2.8s
+  stdout: OK mixed probe=29.8664ms light=26.608ms ratio=0.890901 flow=75.2907->72.0673 peak=0MB->0MB
+bench_e16 skew 131072 tag=P1 rc=0 wall=3.6s
+  stdout: OK skew probe=39.5786ms light=29.4136ms ratio=0.74317 flow=96.3225->86.0757 peak=0MB->0MB
+bench_e16 tranco 262144 tag=P1 rc=0 wall=3.1s
+  stdout: OK tranco probe=65.181ms light=18.9369ms ratio=0.290528 flow=151.944->105.533 peak=0MB->0MB
+--- process P2, target order ['bench_e16'] ---
+bench_e16 mixed 1024 tag=warmup-P2 rc=0 wall=0.1s
+  stdout: OK mixed probe=0.277341ms light=0.104512ms ratio=0.376836 flow=0.655057->0.481139 peak=0MB->0MB
+bench_e16 mixed 131072 tag=P2 rc=0 wall=3.0s
+  stdout: OK mixed probe=35.8266ms light=25.985ms ratio=0.725298 flow=84.167->74.3805 peak=0MB->0MB
+bench_e16 skew 131072 tag=P2 rc=0 wall=3.7s
+  stdout: OK skew probe=51.6425ms light=28.7481ms ratio=0.556675 flow=108.812->85.9659 peak=0MB->0MB
+bench_e16 tranco 262144 tag=P2 rc=0 wall=3.1s
+  stdout: OK tranco probe=61.4098ms light=21.9789ms ratio=0.357905 flow=152.8->113.397 peak=0MB->0MB
+--- process P3, target order ['bench_e16'] ---
+bench_e16 mixed 1024 tag=warmup-P3 rc=0 wall=0.1s
+  stdout: OK mixed probe=0.34137ms light=0.10119ms ratio=0.296423 flow=0.713921->0.471655 peak=0MB->0MB
+bench_e16 mixed 131072 tag=P3 rc=0 wall=3.0s
+  stdout: OK mixed probe=36.6589ms light=26.1515ms ratio=0.713375 flow=82.9286->72.273 peak=0MB->0MB
+bench_e16 skew 131072 tag=P3 rc=0 wall=3.5s
+  stdout: OK skew probe=40.8371ms light=29.1721ms ratio=0.714352 flow=94.5452->82.9398 peak=0MB->0MB
+bench_e16 tranco 262144 tag=P3 rc=0 wall=2.7s
+  stdout: OK tranco probe=57.1191ms light=20.5792ms ratio=0.360287 flow=139.855->103.09 peak=0MB->0MB
+--- process P4, target order ['bench_e16'] ---
+bench_e16 mixed 1024 tag=warmup-P4 rc=0 wall=0.2s
+  stdout: OK mixed probe=0.239133ms light=0.106043ms ratio=0.443448 flow=0.577803->0.441693 peak=0MB->0MB
+bench_e16 mixed 131072 tag=P4 rc=0 wall=2.9s
+  stdout: OK mixed probe=33.1204ms light=25.5054ms ratio=0.770081 flow=78.7795->71.0747 peak=0MB->0MB
+bench_e16 skew 131072 tag=P4 rc=0 wall=3.6s
+  stdout: OK skew probe=39.7258ms light=27.4539ms ratio=0.691084 flow=93.8771->81.6778 peak=0MB->0MB
+bench_e16 tranco 262144 tag=P4 rc=0 wall=3.2s
+  stdout: OK tranco probe=63.8654ms light=23.3544ms ratio=0.365682 flow=157.211->116.734 peak=0MB->0MB
+--- process P5, target order ['bench_e16'] ---
+bench_e16 mixed 1024 tag=warmup-P5 rc=0 wall=0.1s
+  stdout: OK mixed probe=0.269255ms light=0.106366ms ratio=0.395038 flow=0.661337->0.496531 peak=0MB->0MB
+bench_e16 mixed 131072 tag=P5 rc=0 wall=3.2s
+  stdout: OK mixed probe=35.9737ms light=25.8849ms ratio=0.71955 flow=82.0709->72.0849 peak=0MB->0MB
+bench_e16 skew 131072 tag=P5 rc=0 wall=3.5s
+  stdout: OK skew probe=38.1676ms light=27.6652ms ratio=0.724834 flow=92.1932->81.6348 peak=0MB->0MB
+bench_e16 tranco 262144 tag=P5 rc=0 wall=2.9s
+  stdout: OK tranco probe=63.309ms light=22.5517ms ratio=0.356217 flow=153.747->112.992 peak=0MB->0MB
+--- footprint diagnostic, bench_e16_mem ---
+bench_e16_mem mixed 131072 tag=MEM rc=0 wall=3.1s
+  stdout: OK mixed probe=38.6484ms light=26.1283ms ratio=0.676052 flow=83.971->71.3312 peak=38.3427MB->2.24043MB
+bench_e16_mem skew 131072 tag=MEM rc=0 wall=3.5s
+  stdout: OK skew probe=40.7289ms light=27.9701ms ratio=0.686739 flow=96.203->83.4331 peak=44.0434MB->2.12742MB
+bench_e16_mem tranco 262144 tag=MEM rc=0 wall=3.2s
+  stdout: OK tranco probe=64.4992ms light=22.8226ms ratio=0.353843 flow=161.375->119.461 peak=38.2751MB->2.31107MB
+bench_e16_mem mixed 131072 tag=MEM rc=0 wall=3.1s
+  stdout: OK mixed probe=40.9028ms light=31.3187ms ratio=0.765686 flow=89.3634->79.6772 peak=38.3427MB->2.24043MB
+bench_e16_mem skew 131072 tag=MEM rc=0 wall=4.0s
+  stdout: OK skew probe=38.0395ms light=25.0409ms ratio=0.658287 flow=95.0263->82.0545 peak=44.0434MB->2.12742MB
+bench_e16_mem tranco 262144 tag=MEM rc=0 wall=3.1s
+  stdout: OK tranco probe=60.8253ms light=21.3467ms ratio=0.350951 flow=150.658->110.998 peak=38.2751MB->2.31107MB
+bench_e16_mem mixed 131072 tag=MEM rc=0 wall=3.0s
+  stdout: OK mixed probe=41.2039ms light=23.4585ms ratio=0.569328 flow=88.634->70.826 peak=38.3427MB->2.24043MB
+bench_e16_mem skew 131072 tag=MEM rc=0 wall=3.4s
+  stdout: OK skew probe=42.1032ms light=29.5401ms ratio=0.701612 flow=99.7655->87.2092 peak=44.0434MB->2.12742MB
+bench_e16_mem tranco 262144 tag=MEM rc=0 wall=2.9s
+  stdout: OK tranco probe=60.8166ms light=21.43ms ratio=0.352371 flow=152.118->113.013 peak=38.2751MB->2.31107MB
+sweep end 2026-09-16 22:30:40

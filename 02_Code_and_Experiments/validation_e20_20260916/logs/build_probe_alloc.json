@@ -1,0 +1,27 @@
+{
+ "target": "probe_alloc",
+ "build_id": "1789577718656202654",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -Wl,--wrap=malloc -Wl,--wrap=calloc -Wl,--wrap=realloc -Wl,--wrap=aligned_alloc -Wl,--wrap=posix_memalign -Wl,--wrap=free /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e20_20260916/probe_alloc.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e20_20260916/build/probe_alloc.389.1789577718656196400.tmp.exe",
+ "sources": {
+  "probe_alloc.cpp": "e198bf2e4ae40bb92e5c5af488e4606c3950be9e57b715d67751ff2b0c657737",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "ef5fa5b495fda7e9bc0bc1238102d61bc1eeac86d6903c0f6a30c7201343b7f0",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "extra_flags": [
+  "-Wl,--wrap=malloc",
+  "-Wl,--wrap=calloc",
+  "-Wl,--wrap=realloc",
+  "-Wl,--wrap=aligned_alloc",
+  "-Wl,--wrap=posix_memalign",
+  "-Wl,--wrap=free"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "6e0f251898794e538b2455e4859ef3db0c03244132accbf8e2284651ca8594fa",
+ "status": "OK"
+}

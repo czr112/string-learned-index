@@ -1,0 +1,15 @@
+{
+ "target": "check_router",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e6_20260913\\check_router.cpp -o D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e6_20260913\\build\\check_router.exe",
+ "sources": {
+  "check_router.cpp": "eab6ab8dcfdfb95ce2162a74c6d36ecf57d228f0ba1bb501386be07468f658d0",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "3a60489aa37ce19a31c70701ec80558a0b01a4c81a1501626536de2de1d6bc66",
+  "route_aux.hpp": "2734b4b55d2d4f6dbce5f3a73b68823eb36d917b4d415a7685f299597e4c1208",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "f2f02fb2d3e80163932bd93c14a4033511fd0ae23e416f7d5bad07fb891370cd",
+ "status": "OK"
+}

@@ -1,0 +1,32 @@
+repack cost sweep 2026-09-20 13:49:51
+P1 mixed   same  mixed same frac=2 probes 227097 ns/rec 8.36207 bad 0
+P1 skew    same  skew same frac=2 probes 253066 ns/rec 6.82402 bad 0
+P1 tranco  same  tranco same frac=2 probes 212913 ns/rec 11.098 bad 0
+P2 mixed   same  mixed same frac=2 probes 227097 ns/rec 8.93869 bad 0
+P2 skew    same  skew same frac=2 probes 253066 ns/rec 6.70013 bad 0
+P2 tranco  same  tranco same frac=2 probes 212913 ns/rec 10.8454 bad 0
+P3 mixed   same  mixed same frac=2 probes 227097 ns/rec 8.89363 bad 0
+P3 skew    same  skew same frac=2 probes 253066 ns/rec 6.49752 bad 0
+P3 tranco  same  tranco same frac=2 probes 212913 ns/rec 11.067 bad 0
+P4 mixed   same  mixed same frac=2 probes 227097 ns/rec 9.01791 bad 0
+P4 skew    same  skew same frac=2 probes 253066 ns/rec 7.1498 bad 0
+P4 tranco  same  tranco same frac=2 probes 212913 ns/rec 11.4459 bad 0
+P5 mixed   same  mixed same frac=2 probes 227097 ns/rec 8.9586 bad 0
+P5 skew    same  skew same frac=2 probes 253066 ns/rec 6.60434 bad 0
+P5 tranco  same  tranco same frac=2 probes 212913 ns/rec 10.692 bad 0
+P1 mixed   grow  mixed grow frac=2 probes 233078 ns/rec 9.78833 bad 0
+P1 skew    grow  skew grow frac=2 probes 256405 ns/rec 7.32756 bad 0
+P1 tranco  grow  tranco grow frac=2 probes 322150 ns/rec 11.2944 bad 0
+P2 mixed   grow  mixed grow frac=2 probes 233078 ns/rec 9.74077 bad 0
+P2 skew    grow  skew grow frac=2 probes 256405 ns/rec 6.36164 bad 0
+P2 tranco  grow  tranco grow frac=2 probes 322150 ns/rec 11.4386 bad 0
+P3 mixed   grow  mixed grow frac=2 probes 233078 ns/rec 9.63761 bad 0
+P3 skew    grow  skew grow frac=2 probes 256405 ns/rec 7.10423 bad 0
+P3 tranco  grow  tranco grow frac=2 probes 322150 ns/rec 10.5602 bad 0
+P4 mixed   grow  mixed grow frac=2 probes 233078 ns/rec 9.5529 bad 0
+P4 skew    grow  skew grow frac=2 probes 256405 ns/rec 7.59027 bad 0
+P4 tranco  grow  tranco grow frac=2 probes 322150 ns/rec 10.4047 bad 0
+P5 mixed   grow  mixed grow frac=2 probes 233078 ns/rec 9.31883 bad 0
+P5 skew    grow  skew grow frac=2 probes 256405 ns/rec 6.55273 bad 0
+P5 tranco  grow  tranco grow frac=2 probes 322150 ns/rec 11.2828 bad 0
+sweep end 2026-09-20 13:51:09

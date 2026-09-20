@@ -1,0 +1,1 @@
+{"status":"passed","operations":32000,"policy_agreement_checks":9202,"scan_checks":4652,"source_oracle_checks":5,"overflow_hit_lookups":1770,"mean_strcmp_delta_binary_minus_linear":4.3791,"seed":20260913}

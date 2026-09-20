@@ -1,0 +1,15 @@
+{
+ "target": "check_e8_hetero",
+ "build_id": "1789491796010103971",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e10_20260916/check_e8_hetero.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e10_20260916/build/check_e8_hetero.396.1789491796010096938.tmp.exe",
+ "sources": {
+  "check_e8_hetero.cpp": "fc2e13b641ee00f5655dae1a72f94edfc0c2b72e85234eff7a62080660826326",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "5652a8952c587f063556afb1dd31150c4d21327c0714439422aaa7b5551977ac",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "d3ad03cee42fb7dafd404cb4d6f1f5338e24c4686baafea0e579e43b11f011c2",
+ "status": "OK"
+}

@@ -1,0 +1,22 @@
+{
+ "target": "check_e19_reuse",
+ "build_id": "1789654636017002852",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE18_COUNT /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e21_20260917/check_e19_reuse.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e21_20260917/build/check_e19_reuse.439.1789654636016995884.tmp.exe",
+ "sources": {
+  "check_e19_reuse.cpp": "8f9e36bf6781ee0fa230947550604be45e4917e7bf0c38c9ffb8804830222c2b",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "4e70ac6851ac5c660449c8224fcf2a39376e10fa0f8506823c17c20f67392b8b",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "extra_flags": [
+  "-DE18_COUNT"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "b43b5bdff64ac4ba7cde270d4bb15117ff68f614877ea61d4b26427fc07ad7d4",
+ "status": "OK"
+}

@@ -1,0 +1,1 @@
+{"status":"passed","operations":51000,"scans":7777,"simd_scalar_find_pairs":5409,"model_checks":5460,"group_stats_checks":44035,"fingerprint_checks":8716,"rebuilds":328,"splits":98,"selection_checks":100,"selector_max_additive_gap_toy_units":14.5,"seed":20260913}

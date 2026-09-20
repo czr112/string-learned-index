@@ -1,0 +1,5 @@
+fences=64 distinct_u=18 equal_share=0.71875 max_equal_run=21 build_ms=52.887 router_meta_bytes A=512 B=1040 router_build_ms=0.023
+seed 0 done
+seed 1 done
+seed 2 done
+COMPLETE mixed

@@ -1,0 +1,66 @@
+sweep start 2026-09-17 20:38:05
+--- process P1, clean build, three variants ---
+bench_e20 mixed 1024 tag=warmup-P1 rc=0 wall=0.2s
+  stdout: OK mixed V1_R1=0.626098 V2_R2=0.524876 V3_ART=0.231216 R2/R1=0.718687 ART/R2=0.390795 pred 0->0
+bench_e20 mixed 131072 tag=P1 rc=0 wall=4.1s
+  stdout: OK mixed V1_R1=93.3001 V2_R2=91.9925 V3_ART=56.5901 R2/R1=0.978957 ART/R2=0.644593 pred 0->0
+bench_e20 skew 131072 tag=P1 rc=0 wall=4.5s
+  stdout: OK skew V1_R1=117.647 V2_R2=103.288 V3_ART=82.5342 R2/R1=0.872777 ART/R2=0.819645 pred 0->0
+bench_e20 tranco 262144 tag=P1 rc=0 wall=3.7s
+  stdout: OK tranco V1_R1=138.363 V2_R2=130.71 V3_ART=36.4565 R2/R1=0.921123 ART/R2=0.268233 pred 0->0
+--- process P2, clean build, three variants ---
+bench_e20 mixed 1024 tag=warmup-P2 rc=0 wall=0.2s
+  stdout: OK mixed V1_R1=0.525429 V2_R2=0.465191 V3_ART=0.17255 R2/R1=0.919987 ART/R2=0.39553 pred 0->0
+bench_e20 mixed 131072 tag=P2 rc=0 wall=3.9s
+  stdout: OK mixed V1_R1=96.7457 V2_R2=101.69 V3_ART=55.5258 R2/R1=1.05111 ART/R2=0.546029 pred 0->0
+bench_e20 skew 131072 tag=P2 rc=0 wall=4.5s
+  stdout: OK skew V1_R1=113.458 V2_R2=99.8646 V3_ART=85.4843 R2/R1=0.947413 ART/R2=0.902498 pred 0->0
+bench_e20 tranco 262144 tag=P2 rc=0 wall=3.8s
+  stdout: OK tranco V1_R1=146.246 V2_R2=127.05 V3_ART=37.735 R2/R1=0.920666 ART/R2=0.31248 pred 0->0
+--- process P3, clean build, three variants ---
+bench_e20 mixed 1024 tag=warmup-P3 rc=0 wall=0.2s
+  stdout: OK mixed V1_R1=0.930327 V2_R2=0.832186 V3_ART=0.304779 R2/R1=0.934511 ART/R2=0.366239 pred 0->0
+bench_e20 mixed 131072 tag=P3 rc=0 wall=3.4s
+  stdout: OK mixed V1_R1=81.6255 V2_R2=83.3788 V3_ART=52.9449 R2/R1=1.12354 ART/R2=0.641692 pred 0->0
+bench_e20 skew 131072 tag=P3 rc=0 wall=4.1s
+  stdout: OK skew V1_R1=97.5237 V2_R2=91.5982 V3_ART=72.7295 R2/R1=0.909183 ART/R2=0.790868 pred 0->0
+bench_e20 tranco 262144 tag=P3 rc=0 wall=3.3s
+  stdout: OK tranco V1_R1=119.938 V2_R2=125.048 V3_ART=32.6349 R2/R1=0.96863 ART/R2=0.279302 pred 0->0
+--- process P4, clean build, three variants ---
+bench_e20 mixed 1024 tag=warmup-P4 rc=0 wall=0.2s
+  stdout: OK mixed V1_R1=0.485572 V2_R2=0.489216 V3_ART=0.171059 R2/R1=0.950823 ART/R2=0.377139 pred 0->0
+bench_e20 mixed 131072 tag=P4 rc=0 wall=3.6s
+  stdout: OK mixed V1_R1=86.1338 V2_R2=98.02 V3_ART=47.2137 R2/R1=0.955424 ART/R2=0.479895 pred 0->0
+bench_e20 skew 131072 tag=P4 rc=0 wall=4.1s
+  stdout: OK skew V1_R1=95.4433 V2_R2=99.111 V3_ART=69.2297 R2/R1=0.952753 ART/R2=0.760195 pred 0->0
+bench_e20 tranco 262144 tag=P4 rc=0 wall=6.9s
+  stdout: OK tranco V1_R1=143.428 V2_R2=135.763 V3_ART=40.548 R2/R1=0.979058 ART/R2=0.301867 pred 0->0
+--- process P5, clean build, three variants ---
+bench_e20 mixed 1024 tag=warmup-P5 rc=0 wall=0.2s
+  stdout: OK mixed V1_R1=0.436744 V2_R2=0.466901 V3_ART=0.15625 R2/R1=0.955938 ART/R2=0.342064 pred 0->0
+bench_e20 mixed 131072 tag=P5 rc=0 wall=3.3s
+  stdout: OK mixed V1_R1=77.9076 V2_R2=69.3222 V3_ART=48.2516 R2/R1=0.861204 ART/R2=0.696048 pred 0->0
+bench_e20 skew 131072 tag=P5 rc=0 wall=4.1s
+  stdout: OK skew V1_R1=95.4808 V2_R2=89.5177 V3_ART=75.7712 R2/R1=0.941255 ART/R2=0.805426 pred 0->0
+bench_e20 tranco 262144 tag=P5 rc=0 wall=3.5s
+  stdout: OK tranco V1_R1=131.639 V2_R2=121.448 V3_ART=34.3797 R2/R1=0.922581 ART/R2=0.270521 pred 0->0
+--- diagnostic build, 3 passes per dataset ---
+bench_e20_diag mixed 131072 tag=DIAG rc=0 wall=3.9s
+  stdout: OK mixed V1_R1=98.6606 V2_R2=91.1313 V3_ART=58.061 R2/R1=0.912715 ART/R2=0.662639 pred 262144->131072
+bench_e20_diag skew 131072 tag=DIAG rc=0 wall=4.0s
+  stdout: OK skew V1_R1=91.8794 V2_R2=88.2429 V3_ART=70.37 R2/R1=0.930987 ART/R2=0.818859 pred 262144->131072
+bench_e20_diag tranco 262144 tag=DIAG rc=0 wall=3.7s
+  stdout: OK tranco V1_R1=113.48 V2_R2=129.819 V3_ART=35.8801 R2/R1=1.04164 ART/R2=0.311968 pred 524288->262144
+bench_e20_diag mixed 131072 tag=DIAG rc=0 wall=3.7s
+  stdout: OK mixed V1_R1=84.2304 V2_R2=91.0338 V3_ART=47.5243 R2/R1=1.09383 ART/R2=0.50674 pred 262144->131072
+bench_e20_diag skew 131072 tag=DIAG rc=0 wall=6.7s
+  stdout: OK skew V1_R1=103.888 V2_R2=97.7714 V3_ART=79.215 R2/R1=0.918047 ART/R2=0.790994 pred 262144->131072
+bench_e20_diag tranco 262144 tag=DIAG rc=0 wall=3.7s
+  stdout: OK tranco V1_R1=131.354 V2_R2=118.19 V3_ART=32.7815 R2/R1=0.899784 ART/R2=0.277361 pred 524288->262144
+bench_e20_diag mixed 131072 tag=DIAG rc=0 wall=3.7s
+  stdout: OK mixed V1_R1=77.2094 V2_R2=82.7218 V3_ART=45.4215 R2/R1=0.964815 ART/R2=0.621144 pred 262144->131072
+bench_e20_diag skew 131072 tag=DIAG rc=0 wall=4.2s
+  stdout: OK skew V1_R1=91.0139 V2_R2=95.1023 V3_ART=68.1711 R2/R1=1.02347 ART/R2=0.728252 pred 262144->131072
+bench_e20_diag tranco 262144 tag=DIAG rc=0 wall=3.8s
+  stdout: OK tranco V1_R1=136.019 V2_R2=117.742 V3_ART=38.0064 R2/R1=0.924955 ART/R2=0.322794 pred 524288->262144
+sweep end 2026-09-17 20:39:44

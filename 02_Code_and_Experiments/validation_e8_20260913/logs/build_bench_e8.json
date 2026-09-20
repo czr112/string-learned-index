@@ -1,0 +1,15 @@
+{
+ "target": "bench_e8",
+ "build_id": "1789391337877002972",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e8_20260913/bench_e8.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e8_20260913/build/bench_e8.315.1789391337876999672.tmp.exe",
+ "sources": {
+  "bench_e8.cpp": "27291b0ab948b380bddde10e25c874cc60862ad80e971843cc5fafaed3599b2a",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "cc9548233d04983eab3e23acf95c812df00a83564506c51410d0af8d2d21afe7",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e8_20260913/bench_e8.cpp: In function ‘int main(int, char**)’:\n/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e8_20260913/bench_e8.cpp:262:19: warning: ignoring return value of ‘int nice(int)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]\n  262 |         (void)nice(-5);\n      |               ~~~~^~~~\n",
+ "exe_sha256": "6f6772af8a4ac89702f25b2bd740260d2c16356807591e0aecfa77ab6881a002",
+ "status": "OK"
+}

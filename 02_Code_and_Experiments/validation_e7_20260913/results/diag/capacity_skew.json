@@ -1,0 +1,1 @@
+{"kind":"skew","block":1024,"slots":16,"keys":131072,"groups":20163,"overflow_keys":123171,"overflow_share":0.93972,"groups_with_overflow":894,"empty_groups":19178,"overflow_entries_gini":0.979265,"overflow_top10pct_share":1,"overflow_top25pct_share":1,"primary_entries_gini":0.962891}

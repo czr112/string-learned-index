@@ -1,0 +1,14 @@
+{
+ "target": "check_ov",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e7_20260913\\check_ov.cpp -o D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e7_20260913\\build\\check_ov.exe",
+ "sources": {
+  "check_ov.cpp": "53730c421ec3934a82db5b8ef476ceac0d3bd322ae98218f942ca73230c9a38d",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "c10e1d940e4c5eadd59e33247f99d98490a55550636728c8e3d0d7bf24206c19",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "1e82af9083ff3245b422ad7d2547532bfd65b8509bf42bda771b0a6bfed66951",
+ "status": "OK"
+}

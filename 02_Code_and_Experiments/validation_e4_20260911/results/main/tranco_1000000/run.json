@@ -1,0 +1,28 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "0",
+    "/workspace/scratch/dba454d1cdc9/validation_e4_20260911/build/bench",
+    "tranco",
+    "1000000",
+    "/workspace/scratch/dba454d1cdc9/validation_e4_20260911/results/main/tranco_1000000",
+    "/workspace/scratch/dba454d1cdc9/research_cache/tranco_XN6XN.csv",
+    "262144",
+    "5",
+    "3"
+  ],
+  "date_utc": "2026-09-11",
+  "source_sha256": {
+    "validation_e4_20260911/bench.cpp": "5e5800309a33c039204e838b40ff1e4828dacb3c0834fe22650edbdb006cd3df",
+    "validation_e4_20260911/selector.hpp": "f02334f10ccb0390a445170f20cac33270228f15a14231c380e875947b3080e4",
+    "validation_e4_20260911/native.hpp": "8a5897df1cbe597fd6a848e985484225be60116427cfb0a75173e5ee4b52e9bd",
+    "validation_e4_20260911/PROTOCOL.md": "18033ad71c47a5b7c51922f2b0f0d80a9eabbc7a698a5277c7594f5065fbbf5e",
+    "validation_e4_20260911/sources.json": "ef8354b9c3bcd92765e013e36ad708b0d7803bd8c4659527c427c5758d948214",
+    "validation_e3_20260906/index.hpp": "56a8413f859f8cece698ab788fe79040181b783e35f04b7c9de377f828acfc4d",
+    "validation_e3_20260906/selected.hpp": "3eb42c20ff343d19d672136b9dd7324bd95016a02068e8f69f713bf73d28ed82",
+    "validation_e3_20260906/data.hpp": "c27ce35bbf05459508532330e948c75d4483ef3acb7a4183b8c215d180d2fe2a"
+  },
+  "binary_sha256": "391299708cd5f91ce1fe7ca63258054546c7e747d8a72098aeb61659c664dbfb",
+  "protocol_sha256": "18033ad71c47a5b7c51922f2b0f0d80a9eabbc7a698a5277c7594f5065fbbf5e"
+}

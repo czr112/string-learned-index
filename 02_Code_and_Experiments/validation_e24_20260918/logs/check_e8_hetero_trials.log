@@ -1,0 +1,2 @@
+trial region=16 ops=6000 hetero_at_start=19 uniform_now=47
+trial region=64 ops=6000 hetero_at_start=5 uniform_now=10

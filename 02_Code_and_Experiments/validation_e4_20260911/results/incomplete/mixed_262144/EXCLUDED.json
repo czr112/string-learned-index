@@ -1,0 +1,5 @@
+{
+  "reason": "candidates.csv contains 1152 instead of required 1280 records; candidate 0 records absent; entire attempt excluded before analyzing performance",
+  "cause": "undetermined",
+  "rerun": "same source and parameters, only failed dataset repeated"
+}

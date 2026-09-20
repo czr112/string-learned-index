@@ -1,0 +1,43 @@
+E31 ART sweep mode=same 2026-09-20 15:45:47
+--- process P1 ---
+bench_long_art mixed same reps=5 tag=P1 rc=0 wall=36s
+bench_long_art skew same reps=5 tag=P1 rc=0 wall=53s
+bench_long_art tranco same reps=5 tag=P1 rc=0 wall=62s
+--- process P2 ---
+bench_long_art mixed same reps=5 tag=P2 rc=0 wall=37s
+bench_long_art skew same reps=5 tag=P2 rc=0 wall=55s
+bench_long_art tranco same reps=5 tag=P2 rc=0 wall=60s
+--- process P3 ---
+bench_long_art mixed same reps=5 tag=P3 rc=0 wall=34s
+bench_long_art skew same reps=5 tag=P3 rc=0 wall=50s
+bench_long_art tranco same reps=5 tag=P3 rc=0 wall=63s
+--- process P4 ---
+bench_long_art mixed same reps=5 tag=P4 rc=0 wall=36s
+bench_long_art skew same reps=5 tag=P4 rc=0 wall=51s
+bench_long_art tranco same reps=5 tag=P4 rc=0 wall=60s
+--- process P5 ---
+bench_long_art mixed same reps=5 tag=P5 rc=0 wall=34s
+bench_long_art skew same reps=5 tag=P5 rc=0 wall=49s
+bench_long_art tranco same reps=5 tag=P5 rc=0 wall=61s
+E31 ART sweep mode=grow 2026-09-20 15:58:09
+--- process P1 ---
+bench_long_art mixed grow reps=5 tag=P1 rc=0 wall=28s
+bench_long_art skew grow reps=5 tag=P1 rc=0 wall=37s
+bench_long_art tranco grow reps=5 tag=P1 rc=0 wall=59s
+--- process P2 ---
+bench_long_art mixed grow reps=5 tag=P2 rc=0 wall=28s
+bench_long_art skew grow reps=5 tag=P2 rc=0 wall=38s
+bench_long_art tranco grow reps=5 tag=P2 rc=0 wall=59s
+--- process P3 ---
+bench_long_art mixed grow reps=5 tag=P3 rc=0 wall=27s
+bench_long_art skew grow reps=5 tag=P3 rc=0 wall=38s
+bench_long_art tranco grow reps=5 tag=P3 rc=0 wall=61s
+--- process P4 ---
+bench_long_art mixed grow reps=5 tag=P4 rc=0 wall=27s
+bench_long_art skew grow reps=5 tag=P4 rc=0 wall=38s
+bench_long_art tranco grow reps=5 tag=P4 rc=0 wall=60s
+--- process P5 ---
+bench_long_art mixed grow reps=5 tag=P5 rc=0 wall=30s
+bench_long_art skew grow reps=5 tag=P5 rc=0 wall=41s
+bench_long_art tranco grow reps=5 tag=P5 rc=0 wall=60s
+sweep end 2026-09-20 16:08:39

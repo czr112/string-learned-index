@@ -1,0 +1,9 @@
+arms frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,scan_reserve_result=1] E31[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,scan_reserve_result=1]
+{"kind":"skew","mode":"same","frac":0.25,"live":131072,"frozen_overflow":31724,"e31_overflow":26124,"frozen_memory":26515447,"e31_memory":25991890,"records_compared":131072}
+skew same frac=0.25 ok
+{"kind":"skew","mode":"same","frac":0.5,"live":131072,"frozen_overflow":62963,"e31_overflow":50966,"frozen_memory":30847627,"e31_memory":29417882,"records_compared":262144}
+skew same frac=0.5 ok
+{"kind":"skew","mode":"same","frac":1,"live":131072,"frozen_overflow":125996,"e31_overflow":97672,"frozen_memory":41866533,"e31_memory":37401849,"records_compared":393216}
+skew same frac=1 ok
+{"kind":"skew","mode":"same","frac":2,"live":131072,"frozen_overflow":127070,"e31_overflow":98022,"frozen_memory":42018894,"e31_memory":37453116,"records_compared":524288}
+skew same frac=2 ok

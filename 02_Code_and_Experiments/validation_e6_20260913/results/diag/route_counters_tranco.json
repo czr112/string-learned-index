@@ -1,0 +1,1 @@
+{"kind":"tranco","fences":128,"distinct_u":128,"equal_share":0,"max_equal_run":1,"queries":4096,"A_avg_int_cmps":12.9873,"A_avg_str_cmps":0.00219727,"B_avg_int_cmps":7.00635,"B_avg_str_cmps":0.00219727,"baseline_avg_str_cmps":7}

@@ -1,0 +1,22 @@
+{
+ "target": "diag_e13",
+ "build_id": "1789532950319946856",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE12_COUNT -DE7_COUNT_BYTES /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e13_20260916/diag_e13.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e13_20260916/build/diag_e13.308.1789532950319941030.tmp.exe",
+ "sources": {
+  "diag_e13.cpp": "7e4da98332619f76de4c1eb707192382c2356b11ee50c0ac261516c2366951d2",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "ea2f2f794b63177f5cdeee5b357342c11b6ac397389527fdb4b5f8e1dcb8b495",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "extra_flags": [
+  "-DE12_COUNT",
+  "-DE7_COUNT_BYTES"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "89ef45f8b6b08b5d0fd58e8855c8b85dc14bfd06b6d8c433ef5832c630b70a22",
+ "status": "OK"
+}

@@ -1,0 +1,1692 @@
+{
+  "cases": [
+    {
+      "dataset": "skew",
+      "n": "131072",
+      "block": "1024",
+      "region_keys": "256",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "262144",
+      "suite": "diagnostic",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/diagnostic/skew_131072_b1024_end_r256.csv",
+      "sha256": "9d247b8f728173d197720737a625cc14847d58c9871b8f2e0ec2bc8aba5a132e",
+      "modes": {
+        "interval_early_pf": {
+          "median_ns": 511.651237488,
+          "min_ns": 477.097644806,
+          "max_ns": 578.611438751,
+          "repetitions": 7,
+          "index_mib": 38.33769416809082,
+          "overflow_pct": 69.28329467773438,
+          "model_bytes": 3.33715820312,
+          "overflow_checks": 25.7490234375
+        },
+        "sorted_array": {
+          "median_ns": 582.187843323,
+          "min_ns": 529.005310059,
+          "max_ns": 935.643527985,
+          "repetitions": 7,
+          "index_mib": 32.64303779602051,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "residual_pf": {
+          "median_ns": 535.603557587,
+          "min_ns": 484.871177673,
+          "max_ns": 895.370765686,
+          "repetitions": 7,
+          "index_mib": 38.38820934295654,
+          "overflow_pct": 69.40994262695312,
+          "model_bytes": 2.73168945312,
+          "overflow_checks": 25.8156738281
+        },
+        "residual": {
+          "median_ns": 516.706066132,
+          "min_ns": 477.646652222,
+          "max_ns": 675.622909546,
+          "repetitions": 7,
+          "index_mib": 38.38820934295654,
+          "overflow_pct": 69.40994262695312,
+          "model_bytes": 2.73168945312,
+          "overflow_checks": 25.8156738281
+        },
+        "full_pf": {
+          "median_ns": 589.30165863,
+          "min_ns": 533.294174194,
+          "max_ns": 803.484771729,
+          "repetitions": 7,
+          "index_mib": 38.33769416809082,
+          "overflow_pct": 69.28329467773438,
+          "model_bytes": 11.1733398438,
+          "overflow_checks": 25.7490234375
+        },
+        "full": {
+          "median_ns": 641.981075287,
+          "min_ns": 530.465263367,
+          "max_ns": 703.14994812,
+          "repetitions": 7,
+          "index_mib": 38.33769416809082,
+          "overflow_pct": 69.28329467773438,
+          "model_bytes": 11.1733398438,
+          "overflow_checks": 25.7490234375
+        },
+        "interval": {
+          "median_ns": 509.335918427,
+          "min_ns": 477.4439888,
+          "max_ns": 609.87538147,
+          "repetitions": 7,
+          "index_mib": 38.33769416809082,
+          "overflow_pct": 69.28329467773438,
+          "model_bytes": 3.33715820312,
+          "overflow_checks": 25.7490234375
+        },
+        "interval_late_pf": {
+          "median_ns": 582.134899139,
+          "min_ns": 479.415935516,
+          "max_ns": 693.890216827,
+          "repetitions": 7,
+          "index_mib": 38.33769416809082,
+          "overflow_pct": 69.28329467773438,
+          "model_bytes": 3.33715820312,
+          "overflow_checks": 25.7490234375
+        },
+        "interval_direct": {
+          "median_ns": 750.412956238,
+          "min_ns": 695.262737274,
+          "max_ns": 815.517475128,
+          "repetitions": 7,
+          "index_mib": 38.33769416809082,
+          "overflow_pct": 69.28329467773438,
+          "model_bytes": 3.33715820312,
+          "overflow_checks": 25.7490234375
+        }
+      },
+      "interval_reduction_vs_full_pct": 20.66184845101554,
+      "early_pf_reduction_vs_interval_pct": -0.4545760424967682,
+      "interval_reduction_vs_residual_pct": 1.4263714301192665,
+      "early_pf_winning_repeats": 5
+    },
+    {
+      "dataset": "tranco",
+      "n": "1000000",
+      "block": "512",
+      "region_keys": "512",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "1000000",
+      "suite": "diagnostic",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/diagnostic/tranco_1000000_b512_end_r512.csv",
+      "sha256": "89dfce41b461048f3e9c54fdcbf5ae17c7bc64f8372230851e2378d4bdac3d37",
+      "modes": {
+        "full_pf": {
+          "median_ns": 946.46931,
+          "min_ns": 828.354435,
+          "max_ns": 1104.066789,
+          "repetitions": 7,
+          "index_mib": 122.30720043182373,
+          "overflow_pct": 59.4518,
+          "model_bytes": 9.87109375,
+          "overflow_checks": 21.4079589844
+        },
+        "sorted_array": {
+          "median_ns": 649.7366,
+          "min_ns": 605.998474,
+          "max_ns": 890.681008,
+          "repetitions": 7,
+          "index_mib": 54.942996978759766,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "full": {
+          "median_ns": 908.148335,
+          "min_ns": 846.64019,
+          "max_ns": 1673.477047,
+          "repetitions": 7,
+          "index_mib": 122.30720043182373,
+          "overflow_pct": 59.4518,
+          "model_bytes": 9.87109375,
+          "overflow_checks": 21.4079589844
+        },
+        "interval_late_pf": {
+          "median_ns": 887.602228,
+          "min_ns": 760.107038,
+          "max_ns": 1597.81548,
+          "repetitions": 7,
+          "index_mib": 122.30720043182373,
+          "overflow_pct": 59.4518,
+          "model_bytes": 2.73486328125,
+          "overflow_checks": 21.4079589844
+        },
+        "residual_pf": {
+          "median_ns": 850.593589,
+          "min_ns": 805.556336,
+          "max_ns": 1641.855044,
+          "repetitions": 7,
+          "index_mib": 122.64663219451904,
+          "overflow_pct": 59.89790000000001,
+          "model_bytes": 2.42456054688,
+          "overflow_checks": 22.6047363281
+        },
+        "interval_early_pf": {
+          "median_ns": 898.064437,
+          "min_ns": 774.854335,
+          "max_ns": 1583.096677,
+          "repetitions": 7,
+          "index_mib": 122.30720043182373,
+          "overflow_pct": 59.4518,
+          "model_bytes": 2.73486328125,
+          "overflow_checks": 21.4079589844
+        },
+        "interval": {
+          "median_ns": 850.116717,
+          "min_ns": 812.984174,
+          "max_ns": 1836.458954,
+          "repetitions": 7,
+          "index_mib": 122.30720043182373,
+          "overflow_pct": 59.4518,
+          "model_bytes": 2.73486328125,
+          "overflow_checks": 21.4079589844
+        },
+        "interval_direct": {
+          "median_ns": 1017.408137,
+          "min_ns": 929.53205,
+          "max_ns": 1200.167546,
+          "repetitions": 7,
+          "index_mib": 122.30720043182373,
+          "overflow_pct": 59.4518,
+          "model_bytes": 2.73486328125,
+          "overflow_checks": 21.4079589844
+        },
+        "residual": {
+          "median_ns": 928.755954,
+          "min_ns": 777.01525,
+          "max_ns": 1157.793573,
+          "repetitions": 7,
+          "index_mib": 122.64663219451904,
+          "overflow_pct": 59.89790000000001,
+          "model_bytes": 2.42456054688,
+          "overflow_checks": 22.6047363281
+        }
+      },
+      "interval_reduction_vs_full_pct": 6.3901034405354,
+      "early_pf_reduction_vs_interval_pct": -5.640133765302724,
+      "interval_reduction_vs_residual_pct": 8.467158316596912,
+      "early_pf_winning_repeats": 2
+    },
+    {
+      "dataset": "long",
+      "n": "1048576",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "1048576",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/long_1048576_b1024_end.csv",
+      "sha256": "e5b0fbd9693f923a259aa54e8bfbdba2ab74c149ac56eb21c3e7c9e0a8e5611d",
+      "modes": {
+        "interval_late_pf": {
+          "median_ns": 841.17069912,
+          "min_ns": 740.578683853,
+          "max_ns": 1603.42499256,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 3.58935546875,
+          "overflow_checks": 3.330078125
+        },
+        "interval_early_pf": {
+          "median_ns": 807.886362076,
+          "min_ns": 719.194936752,
+          "max_ns": 1058.04472256,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 3.58935546875,
+          "overflow_checks": 3.330078125
+        },
+        "full": {
+          "median_ns": 872.58804512,
+          "min_ns": 758.086105347,
+          "max_ns": 1130.12747002,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 12.3452148438,
+          "overflow_checks": 3.330078125
+        },
+        "sorted_array": {
+          "median_ns": 1237.18731022,
+          "min_ns": 1194.26524353,
+          "max_ns": 1445.78616142,
+          "repetitions": 7,
+          "index_mib": 221.0,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "residual": {
+          "median_ns": 777.907044411,
+          "min_ns": 708.916359901,
+          "max_ns": 828.400253296,
+          "repetitions": 7,
+          "index_mib": 343.0721778869629,
+          "overflow_pct": 46.540164947509766,
+          "model_bytes": 3.41235351562,
+          "overflow_checks": 3.50659179688
+        },
+        "interval_direct": {
+          "median_ns": 862.639215469,
+          "min_ns": 781.466288567,
+          "max_ns": 1081.50287437,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 3.58935546875,
+          "overflow_checks": 3.330078125
+        },
+        "full_pf": {
+          "median_ns": 791.622296333,
+          "min_ns": 734.51775074,
+          "max_ns": 988.427767754,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 12.3452148438,
+          "overflow_checks": 3.330078125
+        },
+        "interval": {
+          "median_ns": 825.588553429,
+          "min_ns": 706.652306557,
+          "max_ns": 857.754221916,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 3.58935546875,
+          "overflow_checks": 3.330078125
+        },
+        "residual_pf": {
+          "median_ns": 842.367695808,
+          "min_ns": 724.098555565,
+          "max_ns": 947.370007515,
+          "repetitions": 7,
+          "index_mib": 343.0721778869629,
+          "overflow_pct": 46.540164947509766,
+          "model_bytes": 3.41235351562,
+          "overflow_checks": 3.50659179688
+        }
+      },
+      "interval_reduction_vs_full_pct": 5.386217695033457,
+      "early_pf_reduction_vs_interval_pct": 2.1441905025785135,
+      "interval_reduction_vs_residual_pct": -6.129461014728621,
+      "early_pf_winning_repeats": 4
+    },
+    {
+      "dataset": "long",
+      "n": "262144",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "524288",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/long_262144_b1024_end.csv",
+      "sha256": "819870d097b1945e8a70bf42be2ead6cb2509add400e0f8008de7accd5a09783",
+      "modes": {
+        "sorted_array": {
+          "median_ns": 712.052503586,
+          "min_ns": 655.282205582,
+          "max_ns": 740.837049484,
+          "repetitions": 7,
+          "index_mib": 55.25,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "full": {
+          "median_ns": 531.794399261,
+          "min_ns": 479.111768723,
+          "max_ns": 870.487760544,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 2.56567382812
+        },
+        "interval": {
+          "median_ns": 493.288564682,
+          "min_ns": 456.976882935,
+          "max_ns": 658.347537994,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        },
+        "interval_late_pf": {
+          "median_ns": 483.860868454,
+          "min_ns": 431.981916428,
+          "max_ns": 953.3939991,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        },
+        "residual_pf": {
+          "median_ns": 494.672901154,
+          "min_ns": 420.712329865,
+          "max_ns": 746.906147003,
+          "repetitions": 7,
+          "index_mib": 84.94052791595459,
+          "overflow_pct": 44.196319580078125,
+          "model_bytes": 3.10888671875,
+          "overflow_checks": 2.69458007812
+        },
+        "full_pf": {
+          "median_ns": 521.57418251,
+          "min_ns": 450.205888748,
+          "max_ns": 530.496366501,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 2.56567382812
+        },
+        "residual": {
+          "median_ns": 471.854593277,
+          "min_ns": 467.210798264,
+          "max_ns": 619.755601883,
+          "repetitions": 7,
+          "index_mib": 84.94052791595459,
+          "overflow_pct": 44.196319580078125,
+          "model_bytes": 3.10888671875,
+          "overflow_checks": 2.69458007812
+        },
+        "interval_direct": {
+          "median_ns": 517.519737244,
+          "min_ns": 462.517192841,
+          "max_ns": 586.636396408,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        },
+        "interval_early_pf": {
+          "median_ns": 492.349319458,
+          "min_ns": 398.586931229,
+          "max_ns": 901.087778091,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        }
+      },
+      "interval_reduction_vs_full_pct": 7.240737140614684,
+      "early_pf_reduction_vs_interval_pct": 0.19040482412266968,
+      "interval_reduction_vs_residual_pct": -4.542495020794957,
+      "early_pf_winning_repeats": 4
+    },
+    {
+      "dataset": "long",
+      "n": "262144",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "local",
+      "miss_percent": "10",
+      "queries": "524288",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/long_262144_b1024_local.csv",
+      "sha256": "bcfff3dadeb995ad68f4b71babfdd6a745f6eedab0f5588eb9ce9d2ec3af45d3",
+      "modes": {
+        "interval_direct": {
+          "median_ns": 483.98658371,
+          "min_ns": 385.468126297,
+          "max_ns": 804.449993134,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        },
+        "interval_early_pf": {
+          "median_ns": 374.095624924,
+          "min_ns": 335.001163483,
+          "max_ns": 493.995107651,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        },
+        "full_pf": {
+          "median_ns": 466.24618721,
+          "min_ns": 392.098031998,
+          "max_ns": 564.014434814,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 2.56567382812
+        },
+        "residual": {
+          "median_ns": 348.220476151,
+          "min_ns": 339.102050781,
+          "max_ns": 539.186565399,
+          "repetitions": 7,
+          "index_mib": 84.94052791595459,
+          "overflow_pct": 44.196319580078125,
+          "model_bytes": 3.10888671875,
+          "overflow_checks": 2.69458007812
+        },
+        "residual_pf": {
+          "median_ns": 378.985635757,
+          "min_ns": 331.938524246,
+          "max_ns": 484.111124039,
+          "repetitions": 7,
+          "index_mib": 84.94052791595459,
+          "overflow_pct": 44.196319580078125,
+          "model_bytes": 3.10888671875,
+          "overflow_checks": 2.69458007812
+        },
+        "interval": {
+          "median_ns": 391.3162117,
+          "min_ns": 338.032684326,
+          "max_ns": 448.464120865,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        },
+        "full": {
+          "median_ns": 492.516639709,
+          "min_ns": 424.497659683,
+          "max_ns": 575.454015732,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 2.56567382812
+        },
+        "interval_late_pf": {
+          "median_ns": 393.282665253,
+          "min_ns": 375.929172516,
+          "max_ns": 489.644079208,
+          "repetitions": 7,
+          "index_mib": 84.50901985168457,
+          "overflow_pct": 43.238067626953125,
+          "model_bytes": 3.5693359375,
+          "overflow_checks": 2.56567382812
+        }
+      },
+      "interval_reduction_vs_full_pct": 20.54761602954036,
+      "early_pf_reduction_vs_interval_pct": 4.400683197148513,
+      "interval_reduction_vs_residual_pct": -12.37599121836599,
+      "early_pf_winning_repeats": 3
+    },
+    {
+      "dataset": "long",
+      "n": "262144",
+      "block": "2048",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "524288",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/long_262144_b2048_end.csv",
+      "sha256": "16fb6141e03c5f8456b67d93ce65d2f748791c241cfc1fff210cebe95f00c51f",
+      "modes": {
+        "sorted_array": {
+          "median_ns": 726.535961151,
+          "min_ns": 657.376607895,
+          "max_ns": 959.943622589,
+          "repetitions": 7,
+          "index_mib": 55.25,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "full": {
+          "median_ns": 533.447542191,
+          "min_ns": 491.847675323,
+          "max_ns": 658.233577728,
+          "repetitions": 7,
+          "index_mib": 69.65395069122314,
+          "overflow_pct": 35.83030700683594,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 3.76708984375
+        },
+        "interval": {
+          "median_ns": 512.06502533,
+          "min_ns": 429.772377014,
+          "max_ns": 575.633945465,
+          "repetitions": 7,
+          "index_mib": 69.65395069122314,
+          "overflow_pct": 35.83030700683594,
+          "model_bytes": 3.30053710938,
+          "overflow_checks": 3.76708984375
+        },
+        "interval_late_pf": {
+          "median_ns": 524.120738983,
+          "min_ns": 416.981002808,
+          "max_ns": 565.510189056,
+          "repetitions": 7,
+          "index_mib": 69.65395069122314,
+          "overflow_pct": 35.83030700683594,
+          "model_bytes": 3.30053710938,
+          "overflow_checks": 3.76708984375
+        },
+        "residual_pf": {
+          "median_ns": 511.764554977,
+          "min_ns": 480.449523926,
+          "max_ns": 775.768352509,
+          "repetitions": 7,
+          "index_mib": 69.81877613067627,
+          "overflow_pct": 36.12518310546875,
+          "model_bytes": 3.08764648438,
+          "overflow_checks": 3.91528320312
+        },
+        "full_pf": {
+          "median_ns": 570.389047623,
+          "min_ns": 479.497152328,
+          "max_ns": 594.007045746,
+          "repetitions": 7,
+          "index_mib": 69.65395069122314,
+          "overflow_pct": 35.83030700683594,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 3.76708984375
+        },
+        "residual": {
+          "median_ns": 551.38130188,
+          "min_ns": 463.934679031,
+          "max_ns": 911.712516785,
+          "repetitions": 7,
+          "index_mib": 69.81877613067627,
+          "overflow_pct": 36.12518310546875,
+          "model_bytes": 3.08764648438,
+          "overflow_checks": 3.91528320312
+        },
+        "interval_direct": {
+          "median_ns": 588.341449738,
+          "min_ns": 530.560432434,
+          "max_ns": 604.602409363,
+          "repetitions": 7,
+          "index_mib": 69.65395069122314,
+          "overflow_pct": 35.83030700683594,
+          "model_bytes": 3.30053710938,
+          "overflow_checks": 3.76708984375
+        },
+        "interval_early_pf": {
+          "median_ns": 536.676761627,
+          "min_ns": 439.101371765,
+          "max_ns": 669.503772736,
+          "repetitions": 7,
+          "index_mib": 69.65395069122314,
+          "overflow_pct": 35.83030700683594,
+          "model_bytes": 3.30053710938,
+          "overflow_checks": 3.76708984375
+        }
+      },
+      "interval_reduction_vs_full_pct": 4.0083635540200895,
+      "early_pf_reduction_vs_interval_pct": -4.806369324118354,
+      "interval_reduction_vs_residual_pct": 7.130505952223354,
+      "early_pf_winning_repeats": 3
+    },
+    {
+      "dataset": "long",
+      "n": "262144",
+      "block": "512",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "524288",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/long_262144_b512_end.csv",
+      "sha256": "67f2cb94fb19463219b340494291e171ebde1e6ffd5aac127026fbaa93ad91c3",
+      "modes": {
+        "sorted_array": {
+          "median_ns": 782.813838959,
+          "min_ns": 727.232303619,
+          "max_ns": 859.286779404,
+          "repetitions": 7,
+          "index_mib": 55.25,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "full": {
+          "median_ns": 644.340492249,
+          "min_ns": 476.233528137,
+          "max_ns": 859.791786194,
+          "repetitions": 7,
+          "index_mib": 146.11983966827393,
+          "overflow_pct": 63.97705078125,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 1.70483398438
+        },
+        "interval": {
+          "median_ns": 742.921800613,
+          "min_ns": 562.337413788,
+          "max_ns": 1060.35352325,
+          "repetitions": 7,
+          "index_mib": 146.11983966827393,
+          "overflow_pct": 63.97705078125,
+          "model_bytes": 4.17602539062,
+          "overflow_checks": 1.70483398438
+        },
+        "interval_late_pf": {
+          "median_ns": 617.830545425,
+          "min_ns": 449.270290375,
+          "max_ns": 886.518720627,
+          "repetitions": 7,
+          "index_mib": 146.11983966827393,
+          "overflow_pct": 63.97705078125,
+          "model_bytes": 4.17602539062,
+          "overflow_checks": 1.70483398438
+        },
+        "residual_pf": {
+          "median_ns": 603.978275299,
+          "min_ns": 520.100818634,
+          "max_ns": 1322.50484848,
+          "repetitions": 7,
+          "index_mib": 146.1610689163208,
+          "overflow_pct": 64.03007507324219,
+          "model_bytes": 3.99609375,
+          "overflow_checks": 1.73291015625
+        },
+        "full_pf": {
+          "median_ns": 737.473209381,
+          "min_ns": 625.562526703,
+          "max_ns": 1205.99427986,
+          "repetitions": 7,
+          "index_mib": 146.11983966827393,
+          "overflow_pct": 63.97705078125,
+          "model_bytes": 12.5002441406,
+          "overflow_checks": 1.70483398438
+        },
+        "residual": {
+          "median_ns": 646.931791306,
+          "min_ns": 472.200323105,
+          "max_ns": 1665.18915558,
+          "repetitions": 7,
+          "index_mib": 146.1610689163208,
+          "overflow_pct": 64.03007507324219,
+          "model_bytes": 3.99609375,
+          "overflow_checks": 1.73291015625
+        },
+        "interval_direct": {
+          "median_ns": 740.901758194,
+          "min_ns": 572.481658936,
+          "max_ns": 839.307767868,
+          "repetitions": 7,
+          "index_mib": 146.11983966827393,
+          "overflow_pct": 63.97705078125,
+          "model_bytes": 4.17602539062,
+          "overflow_checks": 1.70483398438
+        },
+        "interval_early_pf": {
+          "median_ns": 610.530908585,
+          "min_ns": 535.38502121,
+          "max_ns": 933.036800385,
+          "repetitions": 7,
+          "index_mib": 146.11983966827393,
+          "overflow_pct": 63.97705078125,
+          "model_bytes": 4.17602539062,
+          "overflow_checks": 1.70483398438
+        }
+      },
+      "interval_reduction_vs_full_pct": -15.299567472457397,
+      "early_pf_reduction_vs_interval_pct": 17.820299783740566,
+      "interval_reduction_vs_residual_pct": -14.837732601333297,
+      "early_pf_winning_repeats": 5
+    },
+    {
+      "dataset": "long",
+      "n": "32768",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "200000",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/long_32768_b1024_end.csv",
+      "sha256": "40852d95d89781825e4eeb24502c0fff1b16a1369fd9067ea6d048cf1a2d22b6",
+      "modes": {
+        "interval_late_pf": {
+          "median_ns": 218.78232,
+          "min_ns": 180.104665,
+          "max_ns": 1013.80218,
+          "repetitions": 7,
+          "index_mib": 10.017237663269043,
+          "overflow_pct": 33.6090087890625,
+          "model_bytes": 3.75659179688,
+          "overflow_checks": 1.30517578125
+        },
+        "sorted_array": {
+          "median_ns": 435.32259,
+          "min_ns": 364.648255,
+          "max_ns": 801.29044,
+          "repetitions": 7,
+          "index_mib": 6.90625,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "residual_pf": {
+          "median_ns": 248.584495,
+          "min_ns": 183.42194,
+          "max_ns": 710.468715,
+          "repetitions": 7,
+          "index_mib": 10.149064064025879,
+          "overflow_pct": 35.7208251953125,
+          "model_bytes": 3.32348632812,
+          "overflow_checks": 1.64086914062
+        },
+        "residual": {
+          "median_ns": 239.446015,
+          "min_ns": 204.961355,
+          "max_ns": 648.25608,
+          "repetitions": 7,
+          "index_mib": 10.149064064025879,
+          "overflow_pct": 35.7208251953125,
+          "model_bytes": 3.32348632812,
+          "overflow_checks": 1.64086914062
+        },
+        "interval": {
+          "median_ns": 222.19596,
+          "min_ns": 184.36901,
+          "max_ns": 757.32505,
+          "repetitions": 7,
+          "index_mib": 10.017237663269043,
+          "overflow_pct": 33.6090087890625,
+          "model_bytes": 3.75659179688,
+          "overflow_checks": 1.30517578125
+        },
+        "interval_early_pf": {
+          "median_ns": 277.80201,
+          "min_ns": 180.52206,
+          "max_ns": 454.175985,
+          "repetitions": 7,
+          "index_mib": 10.017237663269043,
+          "overflow_pct": 33.6090087890625,
+          "model_bytes": 3.75659179688,
+          "overflow_checks": 1.30517578125
+        },
+        "interval_direct": {
+          "median_ns": 262.56001,
+          "min_ns": 215.173915,
+          "max_ns": 537.55166,
+          "repetitions": 7,
+          "index_mib": 10.017237663269043,
+          "overflow_pct": 33.6090087890625,
+          "model_bytes": 3.75659179688,
+          "overflow_checks": 1.30517578125
+        },
+        "full_pf": {
+          "median_ns": 252.61466,
+          "min_ns": 208.49327,
+          "max_ns": 575.19169,
+          "repetitions": 7,
+          "index_mib": 10.017237663269043,
+          "overflow_pct": 33.6090087890625,
+          "model_bytes": 12.6625976562,
+          "overflow_checks": 1.30517578125
+        },
+        "full": {
+          "median_ns": 403.905645,
+          "min_ns": 209.523275,
+          "max_ns": 2766.095435,
+          "repetitions": 7,
+          "index_mib": 10.017237663269043,
+          "overflow_pct": 33.6090087890625,
+          "model_bytes": 12.6625976562,
+          "overflow_checks": 1.30517578125
+        }
+      },
+      "interval_reduction_vs_full_pct": 44.9881518739358,
+      "early_pf_reduction_vs_interval_pct": -25.025680034866514,
+      "interval_reduction_vs_residual_pct": 7.204152050724244,
+      "early_pf_winning_repeats": 4
+    },
+    {
+      "dataset": "short",
+      "n": "262144",
+      "block": "512",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "524288",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/short_262144_b512_end.csv",
+      "sha256": "f3ee2f122c3479205e235976e81f7f697c0c67f6889231860c3b5b6d1ff19256",
+      "modes": {
+        "sorted_array": {
+          "median_ns": 681.410541534,
+          "min_ns": 577.54271698,
+          "max_ns": 909.781425476,
+          "repetitions": 7,
+          "index_mib": 26.25,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "full": {
+          "median_ns": 425.569061279,
+          "min_ns": 357.029985428,
+          "max_ns": 706.832689285,
+          "repetitions": 7,
+          "index_mib": 39.901588439941406,
+          "overflow_pct": 39.8712158203125,
+          "model_bytes": 12.4831542969,
+          "overflow_checks": 2.5888671875
+        },
+        "interval": {
+          "median_ns": 381.259681702,
+          "min_ns": 326.075902939,
+          "max_ns": 808.590421677,
+          "repetitions": 7,
+          "index_mib": 39.901588439941406,
+          "overflow_pct": 39.8712158203125,
+          "model_bytes": 3.53491210938,
+          "overflow_checks": 2.5888671875
+        },
+        "interval_late_pf": {
+          "median_ns": 362.148441315,
+          "min_ns": 314.179656982,
+          "max_ns": 417.034490585,
+          "repetitions": 7,
+          "index_mib": 39.901588439941406,
+          "overflow_pct": 39.8712158203125,
+          "model_bytes": 3.53491210938,
+          "overflow_checks": 2.5888671875
+        },
+        "residual_pf": {
+          "median_ns": 410.524074554,
+          "min_ns": 314.229217529,
+          "max_ns": 740.45939064,
+          "repetitions": 7,
+          "index_mib": 40.0520715713501,
+          "overflow_pct": 40.64140319824219,
+          "model_bytes": 3.10791015625,
+          "overflow_checks": 2.67529296875
+        },
+        "full_pf": {
+          "median_ns": 380.644575119,
+          "min_ns": 338.647994995,
+          "max_ns": 492.234949112,
+          "repetitions": 7,
+          "index_mib": 39.901588439941406,
+          "overflow_pct": 39.8712158203125,
+          "model_bytes": 12.4831542969,
+          "overflow_checks": 2.5888671875
+        },
+        "residual": {
+          "median_ns": 364.0122509,
+          "min_ns": 326.86762619,
+          "max_ns": 994.405920029,
+          "repetitions": 7,
+          "index_mib": 40.0520715713501,
+          "overflow_pct": 40.64140319824219,
+          "model_bytes": 3.10791015625,
+          "overflow_checks": 2.67529296875
+        },
+        "interval_direct": {
+          "median_ns": 406.518997192,
+          "min_ns": 391.080217361,
+          "max_ns": 935.940052032,
+          "repetitions": 7,
+          "index_mib": 39.901588439941406,
+          "overflow_pct": 39.8712158203125,
+          "model_bytes": 3.53491210938,
+          "overflow_checks": 2.5888671875
+        },
+        "interval_early_pf": {
+          "median_ns": 335.255832672,
+          "min_ns": 307.31045723,
+          "max_ns": 392.02268219,
+          "repetitions": 7,
+          "index_mib": 39.901588439941406,
+          "overflow_pct": 39.8712158203125,
+          "model_bytes": 3.53491210938,
+          "overflow_checks": 2.5888671875
+        }
+      },
+      "interval_reduction_vs_full_pct": 10.411795313276084,
+      "early_pf_reduction_vs_interval_pct": 12.066276933514708,
+      "interval_reduction_vs_residual_pct": -4.738145696843077,
+      "early_pf_winning_repeats": 6
+    },
+    {
+      "dataset": "skew",
+      "n": "131072",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "262144",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/skew_131072_b1024_end.csv",
+      "sha256": "128685b1e92d847819c872e37bed8a7aeb2c9b84abf536b1434458a6afb268cd",
+      "modes": {
+        "interval_early_pf": {
+          "median_ns": 750.45085144,
+          "min_ns": 665.654846191,
+          "max_ns": 1407.96332932,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938,
+          "model_bytes": 14.8552246094,
+          "overflow_checks": 144.616455078
+        },
+        "sorted_array": {
+          "median_ns": 586.133415222,
+          "min_ns": 546.366519928,
+          "max_ns": 820.014461517,
+          "repetitions": 7,
+          "index_mib": 32.64303779602051,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "residual_pf": {
+          "median_ns": 794.027992249,
+          "min_ns": 677.974925995,
+          "max_ns": 972.689537048,
+          "repetitions": 7,
+          "index_mib": 38.611083030700684,
+          "overflow_pct": 94.07501220703125,
+          "model_bytes": 14.5913085938,
+          "overflow_checks": 149.652587891
+        },
+        "residual": {
+          "median_ns": 870.201393127,
+          "min_ns": 716.242256165,
+          "max_ns": 1291.93037033,
+          "repetitions": 7,
+          "index_mib": 38.611083030700684,
+          "overflow_pct": 94.07501220703125,
+          "model_bytes": 14.5913085938,
+          "overflow_checks": 149.652587891
+        },
+        "full_pf": {
+          "median_ns": 839.277488708,
+          "min_ns": 753.67735672,
+          "max_ns": 2001.8408699,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938,
+          "model_bytes": 19.8627929688,
+          "overflow_checks": 144.616455078
+        },
+        "full": {
+          "median_ns": 759.666828156,
+          "min_ns": 697.094650269,
+          "max_ns": 817.21194458,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938,
+          "model_bytes": 19.8627929688,
+          "overflow_checks": 144.616455078
+        },
+        "interval": {
+          "median_ns": 794.394519806,
+          "min_ns": 662.268672943,
+          "max_ns": 1581.0184288,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938,
+          "model_bytes": 14.8552246094,
+          "overflow_checks": 144.616455078
+        },
+        "interval_late_pf": {
+          "median_ns": 798.397857666,
+          "min_ns": 709.416824341,
+          "max_ns": 894.68126297,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938,
+          "model_bytes": 14.8552246094,
+          "overflow_checks": 144.616455078
+        },
+        "interval_direct": {
+          "median_ns": 1373.21759415,
+          "min_ns": 1310.93042755,
+          "max_ns": 3086.91753769,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938,
+          "model_bytes": 14.8552246094,
+          "overflow_checks": 144.616455078
+        }
+      },
+      "interval_reduction_vs_full_pct": -4.571437156772706,
+      "early_pf_reduction_vs_interval_pct": 5.531718468643454,
+      "interval_reduction_vs_residual_pct": 8.711417140875167,
+      "early_pf_winning_repeats": 4
+    },
+    {
+      "dataset": "tranco",
+      "n": "1000000",
+      "block": "512",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "1000000",
+      "suite": "main",
+      "complete": true,
+      "planned_repetitions": 7,
+      "excluded_from_conclusions": false,
+      "raw_csv": "results/main/tranco_1000000_b512_end.csv",
+      "sha256": "8fc678ae4301f73ae375c0587473f41baac7c5ea13ec4a74336dab52369bf4d2",
+      "modes": {
+        "full_pf": {
+          "median_ns": 810.038389,
+          "min_ns": 717.987762,
+          "max_ns": 846.167555,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 10.4555664062,
+          "overflow_checks": 28.0964355469
+        },
+        "sorted_array": {
+          "median_ns": 693.957099,
+          "min_ns": 636.40609,
+          "max_ns": 793.731291,
+          "repetitions": 7,
+          "index_mib": 54.942996978759766,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "full": {
+          "median_ns": 799.871095,
+          "min_ns": 757.013085,
+          "max_ns": 1040.150139,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 10.4555664062,
+          "overflow_checks": 28.0964355469
+        },
+        "interval_late_pf": {
+          "median_ns": 727.973417,
+          "min_ns": 674.829226,
+          "max_ns": 870.252061,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 3.29638671875,
+          "overflow_checks": 28.0964355469
+        },
+        "residual_pf": {
+          "median_ns": 776.296651,
+          "min_ns": 673.799124,
+          "max_ns": 1100.141765,
+          "repetitions": 7,
+          "index_mib": 98.96176433563232,
+          "overflow_pct": 58.8813,
+          "model_bytes": 2.97534179688,
+          "overflow_checks": 29.365234375
+        },
+        "interval_early_pf": {
+          "median_ns": 747.181103,
+          "min_ns": 704.886229,
+          "max_ns": 982.763223,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 3.29638671875,
+          "overflow_checks": 28.0964355469
+        },
+        "interval": {
+          "median_ns": 757.908616,
+          "min_ns": 700.646504,
+          "max_ns": 993.64189,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 3.29638671875,
+          "overflow_checks": 28.0964355469
+        },
+        "interval_direct": {
+          "median_ns": 953.364187,
+          "min_ns": 865.978607,
+          "max_ns": 1084.482958,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 3.29638671875,
+          "overflow_checks": 28.0964355469
+        },
+        "residual": {
+          "median_ns": 762.696784,
+          "min_ns": 707.422118,
+          "max_ns": 825.538768,
+          "repetitions": 7,
+          "index_mib": 98.96176433563232,
+          "overflow_pct": 58.8813,
+          "model_bytes": 2.97534179688,
+          "overflow_checks": 29.365234375
+        }
+      },
+      "interval_reduction_vs_full_pct": 5.246155194544178,
+      "early_pf_reduction_vs_interval_pct": 1.415409822970004,
+      "interval_reduction_vs_residual_pct": 0.6277944394741164,
+      "early_pf_winning_repeats": 4
+    },
+    {
+      "dataset": "long",
+      "n": "131072",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "262144",
+      "suite": "pilot",
+      "complete": true,
+      "planned_repetitions": 5,
+      "excluded_from_conclusions": true,
+      "raw_csv": "results/pilot/long_131072_b1024_end.csv",
+      "sha256": "87274655192d7b1cbb7b883ee9c36e25d3d1c220d51061782706aad6ee740332",
+      "modes": {
+        "interval_early_pf": {
+          "median_ns": 387.94071579,
+          "min_ns": 374.542991638,
+          "max_ns": 468.211860657,
+          "repetitions": 5,
+          "index_mib": 42.00455284118652,
+          "overflow_pct": 42.050933837890625,
+          "model_bytes": 3.46020507812,
+          "overflow_checks": 2.59448242188
+        },
+        "sorted_array": {
+          "median_ns": 591.63734436,
+          "min_ns": 535.222026825,
+          "max_ns": 774.554935455,
+          "repetitions": 5,
+          "index_mib": 27.625,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "residual_pf": {
+          "median_ns": 441.667137146,
+          "min_ns": 380.090026855,
+          "max_ns": 527.872344971,
+          "repetitions": 5,
+          "index_mib": 42.0980863571167,
+          "overflow_pct": 42.440032958984375,
+          "model_bytes": 3.21362304688,
+          "overflow_checks": 2.73046875
+        },
+        "residual": {
+          "median_ns": 403.233036041,
+          "min_ns": 336.509803772,
+          "max_ns": 429.280792236,
+          "repetitions": 5,
+          "index_mib": 42.0980863571167,
+          "overflow_pct": 42.440032958984375,
+          "model_bytes": 3.21362304688,
+          "overflow_checks": 2.73046875
+        },
+        "full_pf": {
+          "median_ns": 453.297355652,
+          "min_ns": 363.207386017,
+          "max_ns": 512.066875458,
+          "repetitions": 5,
+          "index_mib": 42.00455284118652,
+          "overflow_pct": 42.050933837890625,
+          "model_bytes": 12.4235839844,
+          "overflow_checks": 2.59448242188
+        },
+        "full": {
+          "median_ns": 407.92035675,
+          "min_ns": 358.94436264,
+          "max_ns": 546.283432007,
+          "repetitions": 5,
+          "index_mib": 42.00455284118652,
+          "overflow_pct": 42.050933837890625,
+          "model_bytes": 12.4235839844,
+          "overflow_checks": 2.59448242188
+        },
+        "interval": {
+          "median_ns": 456.425830841,
+          "min_ns": 388.124355316,
+          "max_ns": 496.025707245,
+          "repetitions": 5,
+          "index_mib": 42.00455284118652,
+          "overflow_pct": 42.050933837890625,
+          "model_bytes": 3.46020507812,
+          "overflow_checks": 2.59448242188
+        },
+        "interval_late_pf": {
+          "median_ns": 367.852947235,
+          "min_ns": 351.692932129,
+          "max_ns": 639.613075256,
+          "repetitions": 5,
+          "index_mib": 42.00455284118652,
+          "overflow_pct": 42.050933837890625,
+          "model_bytes": 3.46020507812,
+          "overflow_checks": 2.59448242188
+        },
+        "interval_direct": {
+          "median_ns": 509.510501862,
+          "min_ns": 420.646347046,
+          "max_ns": 554.976924896,
+          "repetitions": 5,
+          "index_mib": 42.00455284118652,
+          "overflow_pct": 42.050933837890625,
+          "model_bytes": 3.46020507812,
+          "overflow_checks": 2.59448242188
+        }
+      },
+      "interval_reduction_vs_full_pct": -11.890917746163687,
+      "early_pf_reduction_vs_interval_pct": 15.004653642150545,
+      "interval_reduction_vs_residual_pct": -13.191576593588294,
+      "early_pf_winning_repeats": 5
+    },
+    {
+      "dataset": "short",
+      "n": "32768",
+      "block": "512",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "200000",
+      "suite": "pilot",
+      "complete": false,
+      "planned_repetitions": 5,
+      "excluded_from_conclusions": true,
+      "raw_csv": "results/pilot/short_32768_b512_end.csv",
+      "sha256": "7951e95861f2a903ac63823466bfdedca4b12d82cbca51cb34e7e5f8869691c3",
+      "modes": {
+        "interval_late_pf": {
+          "median_ns": 151.78045,
+          "min_ns": 145.239955,
+          "max_ns": 183.81817,
+          "repetitions": 3,
+          "index_mib": 4.687359809875488,
+          "overflow_pct": 27.899169921875,
+          "model_bytes": 3.72705078125,
+          "overflow_checks": 1.38671875
+        },
+        "sorted_array": {
+          "median_ns": 321.744595,
+          "min_ns": 271.907965,
+          "max_ns": 353.221075,
+          "repetitions": 3,
+          "index_mib": 3.28125,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0,
+          "overflow_checks": 0.0
+        },
+        "residual_pf": {
+          "median_ns": 166.404055,
+          "min_ns": 162.652105,
+          "max_ns": 169.25102,
+          "repetitions": 3,
+          "index_mib": 4.76558780670166,
+          "overflow_pct": 30.426025390625,
+          "model_bytes": 3.14208984375,
+          "overflow_checks": 1.763671875
+        },
+        "residual": {
+          "median_ns": 139.967785,
+          "min_ns": 131.962615,
+          "max_ns": 171.989835,
+          "repetitions": 3,
+          "index_mib": 4.76558780670166,
+          "overflow_pct": 30.426025390625,
+          "model_bytes": 3.14208984375,
+          "overflow_checks": 1.763671875
+        },
+        "interval": {
+          "median_ns": 160.80727,
+          "min_ns": 152.239575,
+          "max_ns": 224.6898,
+          "repetitions": 3,
+          "index_mib": 4.687359809875488,
+          "overflow_pct": 27.899169921875,
+          "model_bytes": 3.72705078125,
+          "overflow_checks": 1.38671875
+        },
+        "interval_early_pf": {
+          "median_ns": 227.549155,
+          "min_ns": 150.76209,
+          "max_ns": 295.2041,
+          "repetitions": 3,
+          "index_mib": 4.687359809875488,
+          "overflow_pct": 27.899169921875,
+          "model_bytes": 3.72705078125,
+          "overflow_checks": 1.38671875
+        },
+        "interval_direct": {
+          "median_ns": 167.794355,
+          "min_ns": 163.61405,
+          "max_ns": 177.55749,
+          "repetitions": 3,
+          "index_mib": 4.687359809875488,
+          "overflow_pct": 27.899169921875,
+          "model_bytes": 3.72705078125,
+          "overflow_checks": 1.38671875
+        },
+        "full_pf": {
+          "median_ns": 152.31674,
+          "min_ns": 147.088405,
+          "max_ns": 181.933405,
+          "repetitions": 3,
+          "index_mib": 4.687359809875488,
+          "overflow_pct": 27.899169921875,
+          "model_bytes": 12.6655273438,
+          "overflow_checks": 1.38671875
+        },
+        "full": {
+          "median_ns": 179.400995,
+          "min_ns": 176.044025,
+          "max_ns": 198.02857,
+          "repetitions": 3,
+          "index_mib": 4.687359809875488,
+          "overflow_pct": 27.899169921875,
+          "model_bytes": 12.6655273438,
+          "overflow_checks": 1.38671875
+        }
+      },
+      "interval_reduction_vs_full_pct": 10.364337722876071,
+      "early_pf_reduction_vs_interval_pct": -41.50427092008964,
+      "interval_reduction_vs_residual_pct": -14.888772441458586,
+      "early_pf_winning_repeats": 1
+    }
+  ],
+  "overflow_probes": [
+    {
+      "dataset": "skew",
+      "n": "131072",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "262144",
+      "raw_csv": "overflow_probe/results/skew_131072_b1024_r2048.csv",
+      "sha256": "b37fcab5982fb60fedde2918f272e0e761be1e6876b210a3816532a65923d4f3",
+      "modes": {
+        "sorted_array": {
+          "median_ns": 582.923034668,
+          "min_ns": 557.829792023,
+          "max_ns": 734.239120483,
+          "repetitions": 7,
+          "index_mib": 32.64303779602051,
+          "overflow_pct": 0.0
+        },
+        "overflow_linear": {
+          "median_ns": 783.882637024,
+          "min_ns": 688.549438477,
+          "max_ns": 886.938270569,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938
+        },
+        "overflow_binary32": {
+          "median_ns": 794.211807251,
+          "min_ns": 656.689296722,
+          "max_ns": 847.089744568,
+          "repetitions": 7,
+          "index_mib": 38.69297122955322,
+          "overflow_pct": 93.97201538085938
+        }
+      },
+      "binary_winning_repeats": 5,
+      "binary_reduction_vs_linear_pct": -1.3176934580684918
+    },
+    {
+      "dataset": "tranco",
+      "n": "1000000",
+      "block": "512",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "1000000",
+      "raw_csv": "overflow_probe/results/tranco_1000000_b512_r2048.csv",
+      "sha256": "0fd765dfea9654bceaa6e2a0aee93938103c7d024ce3ee7c1b77bd77bea2ec90",
+      "modes": {
+        "overflow_binary32": {
+          "median_ns": 806.339836,
+          "min_ns": 756.069336,
+          "max_ns": 1080.259448,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924
+        },
+        "sorted_array": {
+          "median_ns": 686.192883,
+          "min_ns": 619.019421,
+          "max_ns": 1319.014516,
+          "repetitions": 7,
+          "index_mib": 54.942996978759766,
+          "overflow_pct": 0.0
+        },
+        "overflow_linear": {
+          "median_ns": 806.917361,
+          "min_ns": 766.021441,
+          "max_ns": 877.373535,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924
+        }
+      },
+      "binary_winning_repeats": 3,
+      "binary_reduction_vs_linear_pct": 0.07157176532728293
+    }
+  ],
+  "updates": {
+    "erase": {
+      "count": 1200,
+      "median_ns": 301.0,
+      "p99_ns": 1067,
+      "p999_ns": 1746,
+      "max_ns": 76161
+    },
+    "find": {
+      "count": 4800,
+      "median_ns": 146.0,
+      "p99_ns": 339,
+      "p999_ns": 524,
+      "max_ns": 1085
+    },
+    "insert": {
+      "count": 3600,
+      "median_ns": 278.0,
+      "p99_ns": 2190,
+      "p999_ns": 132727,
+      "max_ns": 197339
+    },
+    "rebuild_event": {
+      "count": 13,
+      "median_ns": 130600,
+      "p99_ns": 181459,
+      "p999_ns": 181459,
+      "max_ns": 197339
+    },
+    "scan10": {
+      "count": 1200,
+      "median_ns": 611.0,
+      "p99_ns": 1376,
+      "p999_ns": 3293,
+      "max_ns": 25033
+    },
+    "update": {
+      "count": 1200,
+      "median_ns": 218.0,
+      "p99_ns": 865,
+      "p999_ns": 990,
+      "max_ns": 1088
+    }
+  },
+  "correctness": {
+    "status": "passed",
+    "random_operations": 63000,
+    "scan_checks": 9065,
+    "model_checks": 5145,
+    "fingerprint_checks": 9936,
+    "rebuilds": 1106,
+    "splits": 84,
+    "seed": 20260906
+  },
+  "overflow_probe_correctness": {
+    "status": "passed",
+    "random_operations": 63000,
+    "scan_checks": 9065,
+    "model_checks": 5145,
+    "fingerprint_checks": 9936,
+    "rebuilds": 1106,
+    "splits": 84,
+    "seed": 20260906
+  },
+  "timed_lookup_count_main_and_diagnostic": 399171136,
+  "audit_notes": [
+    "Pilot short_32768_b512_end.csv retains 3 complete rounds, while 5 were requested. Its stdout summary does not match the retained CSV. Cause was not established; retain the raw file, exclude all pilot cases from conclusions, and do not invent missing rows. Main and diagnostic files have all 7 requested rounds.",
+    "In main, diagnostic and overflow experiments, hit-query bytes alias the sorted-array records. The independent-query probe gives each query its own copy; prefer that probe for cross-structure comparisons, and do not splice times from different processes."
+  ],
+  "query_copy_probes": [
+    {
+      "dataset": "long",
+      "n": "1048576",
+      "block": "1024",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "1048576",
+      "raw_csv": "query_copy_probe/results/long_1048576_b1024_r2048.csv",
+      "sha256": "a1ee7fcaa4b43d6f9b2d0db1409ca7e481e97670893c2edffb5632c0c0d9bc14",
+      "modes": {
+        "interval_early_pf": {
+          "median_ns": 990.533823013,
+          "min_ns": 649.206644058,
+          "max_ns": 2038.05353165,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 3.58935546875
+        },
+        "full": {
+          "median_ns": 788.478093147,
+          "min_ns": 641.301204681,
+          "max_ns": 1120.14087009,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 12.3452148438
+        },
+        "interval": {
+          "median_ns": 811.486757278,
+          "min_ns": 650.406774521,
+          "max_ns": 1056.66104221,
+          "repetitions": 7,
+          "index_mib": 343.4730339050293,
+          "overflow_pct": 46.67387008666992,
+          "model_bytes": 3.58935546875
+        },
+        "sorted_array": {
+          "median_ns": 1911.53883362,
+          "min_ns": 1480.14654732,
+          "max_ns": 2695.32363796,
+          "repetitions": 7,
+          "index_mib": 221.0,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0
+        }
+      },
+      "early_pf_winning_repeats": 2,
+      "interval_reduction_vs_full_pct": -2.918110766929116,
+      "early_pf_reduction_vs_interval_pct": -22.064077340656073
+    },
+    {
+      "dataset": "tranco",
+      "n": "1000000",
+      "block": "512",
+      "region_keys": "2048",
+      "scope": "end",
+      "miss_percent": "10",
+      "queries": "1000000",
+      "raw_csv": "query_copy_probe/results/tranco_1000000_b512_r2048.csv",
+      "sha256": "d4816a99ed3061017d0e981998e79f70d0a0098abff0501875e1642d1c58a355",
+      "modes": {
+        "interval": {
+          "median_ns": 548.507247,
+          "min_ns": 511.374004,
+          "max_ns": 714.940225,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 3.29638671875
+        },
+        "full": {
+          "median_ns": 581.114261,
+          "min_ns": 532.554797,
+          "max_ns": 905.275703,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 10.4555664062
+        },
+        "interval_early_pf": {
+          "median_ns": 547.762767,
+          "min_ns": 520.125849,
+          "max_ns": 774.279459,
+          "repetitions": 7,
+          "index_mib": 98.17866897583008,
+          "overflow_pct": 57.924,
+          "model_bytes": 3.29638671875
+        },
+        "sorted_array": {
+          "median_ns": 664.058225,
+          "min_ns": 640.299435,
+          "max_ns": 812.076538,
+          "repetitions": 7,
+          "index_mib": 54.942996978759766,
+          "overflow_pct": 0.0,
+          "model_bytes": 0.0
+        }
+      },
+      "early_pf_winning_repeats": 2,
+      "interval_reduction_vs_full_pct": 5.611119221870209,
+      "early_pf_reduction_vs_interval_pct": 0.13572837990232234
+    }
+  ]
+}

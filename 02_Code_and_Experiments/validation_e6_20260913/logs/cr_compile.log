@@ -1,0 +1,4 @@
+check_router.cpp: In function 'int main()':
+check_router.cpp:79:23: error: inconsistent deduction for 'auto': 'const long long unsigned int' and then 'const double'
+   79 |                 const auto rb0=ra.rebuilds,rbB=rb.rebuilds,n0=ra.rebuild_ns,b0=rb.rebuild_ns;
+      |                       ^~~~

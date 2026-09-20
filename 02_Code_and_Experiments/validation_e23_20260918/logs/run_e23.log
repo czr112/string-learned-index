@@ -1,0 +1,15 @@
+sweep start 2026-09-18 00:47:34
+bench_e23 mixed 16384 tag=warmup-P0 rc=0 wall=4s
+--- process P1 ---
+bench_e23 mixed 131072 tag=P1 rc=0 wall=9s
+bench_e23 skew 131072 tag=P1 rc=0 wall=14s
+bench_e23 tranco 262144 tag=P1 rc=0 wall=14s
+--- process P2 ---
+bench_e23 mixed 131072 tag=P2 rc=0 wall=9s
+bench_e23 skew 131072 tag=P2 rc=0 wall=13s
+bench_e23 tranco 262144 tag=P2 rc=0 wall=13s
+--- process P3 ---
+bench_e23 mixed 131072 tag=P3 rc=0 wall=9s
+bench_e23 skew 131072 tag=P3 rc=0 wall=10s
+bench_e23 tranco 262144 tag=P3 rc=0 wall=13s
+sweep end 2026-09-18 00:49:23

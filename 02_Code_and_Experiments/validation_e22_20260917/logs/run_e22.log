@@ -1,0 +1,19 @@
+sweep start 2026-09-17 23:50:14
+bench_e22 mixed 16384 tag=warmup-P0 rc=0 wall=3s
+--- process P1, clean build ---
+bench_e22 mixed 131072 tag=P1 rc=0 wall=8s
+bench_e22 skew 131072 tag=P1 rc=0 wall=11s
+bench_e22 tranco 262144 tag=P1 rc=0 wall=9s
+--- process P2, clean build ---
+bench_e22 mixed 131072 tag=P2 rc=0 wall=6s
+bench_e22 skew 131072 tag=P2 rc=0 wall=13s
+bench_e22 tranco 262144 tag=P2 rc=0 wall=8s
+--- process P3, clean build ---
+bench_e22 mixed 131072 tag=P3 rc=0 wall=8s
+bench_e22 skew 131072 tag=P3 rc=0 wall=10s
+bench_e22 tranco 262144 tag=P3 rc=0 wall=10s
+--- diagnostic build, ART space over time ---
+bench_e22_mem mixed 131072 tag=MEM rc=0 wall=8s
+bench_e22_mem skew 131072 tag=MEM rc=0 wall=11s
+bench_e22_mem tranco 262144 tag=MEM rc=0 wall=9s
+sweep end 2026-09-17 23:52:08

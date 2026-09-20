@@ -1,0 +1,66 @@
+sweep start 2026-09-16 23:25:30
+--- process P1, clean build ---
+bench_e18 mixed 1024 tag=warmup-P1 rc=0 wall=0.2s
+  stdout: OK mixed flow=0.626995 stats=0.117332 plan=0.009065 build=0.500552 props=0.187134/0.0144579/0.798335
+bench_e18 mixed 131072 tag=P1 rc=0 wall=0.9s
+  stdout: OK mixed flow=70.5477 stats=23.4943 plan=1.0721 build=43.5602 props=0.33972/0.0132539/0.647025
+bench_e18 skew 131072 tag=P1 rc=0 wall=0.9s
+  stdout: OK skew flow=79.5286 stats=25.5457 plan=1.01318 build=49.758 props=0.324683/0.0126406/0.664162
+bench_e18 tranco 262144 tag=P1 rc=0 wall=1.2s
+  stdout: OK tranco flow=114.604 stats=22.7562 plan=1.80007 build=91.4292 props=0.192547/0.0157069/0.791314
+--- process P2, clean build ---
+bench_e18 mixed 1024 tag=warmup-P2 rc=0 wall=0.3s
+  stdout: OK mixed flow=0.620398 stats=0.133673 plan=0.009853 build=0.483864 props=0.206808/0.0159649/0.779925
+bench_e18 mixed 131072 tag=P2 rc=0 wall=0.8s
+  stdout: OK mixed flow=68.5609 stats=22.5965 plan=0.936868 build=44.3903 props=0.321333/0.0134512/0.664505
+bench_e18 skew 131072 tag=P2 rc=0 wall=0.9s
+  stdout: OK skew flow=82.3137 stats=28.5165 plan=1.03688 build=52.7603 props=0.327253/0.0122099/0.661001
+bench_e18 tranco 262144 tag=P2 rc=0 wall=1.3s
+  stdout: OK tranco flow=113.394 stats=22.0553 plan=1.91058 build=89.0782 props=0.193108/0.0167858/0.790142
+--- process P3, clean build ---
+bench_e18 mixed 1024 tag=warmup-P3 rc=0 wall=0.1s
+  stdout: OK mixed flow=0.609546 stats=0.148736 plan=0.008161 build=0.452607 props=0.203787/0.0138031/0.78235
+bench_e18 mixed 131072 tag=P3 rc=0 wall=0.9s
+  stdout: OK mixed flow=77.3248 stats=22.2719 plan=0.992481 build=54.1181 props=0.319453/0.0129221/0.667624
+bench_e18 skew 131072 tag=P3 rc=0 wall=0.9s
+  stdout: OK skew flow=85.474 stats=30.1139 plan=0.996796 build=54.2354 props=0.346828/0.0114018/0.641929
+bench_e18 tranco 262144 tag=P3 rc=0 wall=1.2s
+  stdout: OK tranco flow=113.069 stats=22.1523 plan=1.80758 build=89.0494 props=0.195819/0.015649/0.787569
+--- process P4, clean build ---
+bench_e18 mixed 1024 tag=warmup-P4 rc=0 wall=0.2s
+  stdout: OK mixed flow=0.77742 stats=0.191537 plan=0.01203 build=0.534816 props=0.210959/0.014723/0.774562
+bench_e18 mixed 131072 tag=P4 rc=0 wall=1.8s
+  stdout: OK mixed flow=79.1517 stats=24.5387 plan=1.00686 build=44.6809 props=0.321827/0.0127206/0.665515
+bench_e18 skew 131072 tag=P4 rc=0 wall=0.9s
+  stdout: OK skew flow=83.1911 stats=30.7027 plan=1.04652 build=51.4942 props=0.330445/0.0119498/0.658154
+bench_e18 tranco 262144 tag=P4 rc=0 wall=1.1s
+  stdout: OK tranco flow=115.183 stats=22.3658 plan=1.9548 build=91.0001 props=0.194176/0.0162811/0.790047
+--- process P5, clean build ---
+bench_e18 mixed 1024 tag=warmup-P5 rc=0 wall=0.2s
+  stdout: OK mixed flow=0.629978 stats=0.133806 plan=0.009972 build=0.486154 props=0.209846/0.0147749/0.775901
+bench_e18 mixed 131072 tag=P5 rc=0 wall=0.8s
+  stdout: OK mixed flow=75.0312 stats=23.6905 plan=0.917758 build=53.2514 props=0.326844/0.0122317/0.66233
+bench_e18 skew 131072 tag=P5 rc=0 wall=0.9s
+  stdout: OK skew flow=81.6794 stats=30.6104 plan=0.977734 build=51.5554 props=0.347945/0.0120154/0.640039
+bench_e18 tranco 262144 tag=P5 rc=0 wall=1.3s
+  stdout: OK tranco flow=108.408 stats=21.0921 plan=1.83527 build=85.4803 props=0.194562/0.0169293/0.788507
+--- diagnostic build, 3 passes per dataset ---
+bench_e18_diag mixed 131072 tag=DIAG rc=0 wall=1.0s
+  stdout: OK mixed flow=73.161 stats=23.9383 plan=0.956384 build=46.8169 props=0.334599/0.0140488/0.652426
+bench_e18_diag skew 131072 tag=DIAG rc=0 wall=1.0s
+  stdout: OK skew flow=79.3495 stats=26.259 plan=1.04502 build=54.0795 props=0.305765/0.0122032/0.681535
+bench_e18_diag tranco 262144 tag=DIAG rc=0 wall=1.1s
+  stdout: OK tranco flow=95.9051 stats=20.3583 plan=1.53602 build=74.6863 props=0.189607/0.016095/0.794297
+bench_e18_diag mixed 131072 tag=DIAG rc=0 wall=0.9s
+  stdout: OK mixed flow=68.2147 stats=22.9543 plan=0.967551 build=45.0993 props=0.328233/0.0131535/0.661137
+bench_e18_diag skew 131072 tag=DIAG rc=0 wall=1.1s
+  stdout: OK skew flow=86.2525 stats=28.6312 plan=1.14503 build=56.5886 props=0.32769/0.0128064/0.66109
+bench_e18_diag tranco 262144 tag=DIAG rc=0 wall=1.2s
+  stdout: OK tranco flow=97.7107 stats=19.0574 plan=1.525 build=77.1281 props=0.19504/0.0177239/0.789352
+bench_e18_diag mixed 131072 tag=DIAG rc=0 wall=0.9s
+  stdout: OK mixed flow=69.5858 stats=23.9109 plan=1.02473 build=47.2696 props=0.315343/0.0132736/0.672843
+bench_e18_diag skew 131072 tag=DIAG rc=0 wall=1.0s
+  stdout: OK skew flow=87.0591 stats=27.9478 plan=1.07592 build=57.7934 props=0.323304/0.0124687/0.66384
+bench_e18_diag tranco 262144 tag=DIAG rc=0 wall=1.4s
+  stdout: OK tranco flow=111.858 stats=21.7657 plan=1.83575 build=88.841 props=0.189356/0.0164114/0.794232
+sweep end 2026-09-16 23:25:56

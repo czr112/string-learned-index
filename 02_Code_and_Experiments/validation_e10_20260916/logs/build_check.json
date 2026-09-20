@@ -1,0 +1,15 @@
+{
+ "target": "check",
+ "build_id": "1789491785921353566",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e10_20260916/check.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e10_20260916/build/check.396.1789491785921350397.tmp.exe",
+ "sources": {
+  "check.cpp": "b510c4cfe7d5aa2b80aa43ed325d0aa7625e7f2b2e6bbd82283a5394d6db73c2",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "5652a8952c587f063556afb1dd31150c4d21327c0714439422aaa7b5551977ac",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "a1248d8c561df6698e87488e079ba5a2f7e18f93e1fbb46b7cd3345e8ea63443",
+ "status": "OK"
+}

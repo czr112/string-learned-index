@@ -1,0 +1,394 @@
+{
+  "lits_commit": "6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc",
+  "libart_commit": "301046804af165269e37da6725f5a4aec9ecc881",
+  "files": [
+    {
+      "path": "vendor/lits/LITS/Makefile",
+      "sha256": "3c4a67d9e81321017e4c6340c114fc3c8000f333c0bba09b69df9e9d7eb01ba1",
+      "bytes": 234,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/Makefile"
+    },
+    {
+      "path": "vendor/lits/LITS/README.md",
+      "sha256": "7931ce428ca2818a5cd13dfd93f9fcff35a6bcc7c50adff923a6dcc95fa4a850",
+      "bytes": 390,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/README.md"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreaded.hpp",
+      "sha256": "d08a5f1fc07e702214ebf50a916ed73a5d006af5f7eef7da92203bc27fc3d9cf",
+      "bytes": 47505,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreaded.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedChildPointer.hpp",
+      "sha256": "90ea9064ac9abfabc23eb0c7619aa53681d63b63d7d378fdb8fe1e6dda84096e",
+      "bytes": 9604,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedChildPointer.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedChildPointerInterface.hpp",
+      "sha256": "5af1d85f15e4716cf664e008059ef4bf03414a21615a964643760e574ab4baba",
+      "bytes": 7692,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedChildPointerInterface.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedDeletionInformation.hpp",
+      "sha256": "7bc342ba9200ce3a716d00e588a4357fb76245af6e6161d010d9e352bcf7961e",
+      "bytes": 4399,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedDeletionInformation.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedInsertStackEntry.hpp",
+      "sha256": "9c97496ed68b83cbf9ef0d1549ba1248b4947f32cd307c77f3578d9b04d706ac",
+      "bytes": 759,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedInsertStackEntry.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedInterface.hpp",
+      "sha256": "3ffb38072a02a188cf0ee7dc9b12155e6a2be5aa038d389e74f8f12540c22f20",
+      "bytes": 13194,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedInterface.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedIterator.hpp",
+      "sha256": "a890d24b84e297f292bf5dbe9ac6a3362b746e8be7883d09cae1bf11300e2a5d",
+      "bytes": 4774,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedIterator.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedNode.hpp",
+      "sha256": "99e54e6068d029a0845c784b74fc3e5cb7fd2d72e53ded98f99fa7eff3a2bef0",
+      "bytes": 53489,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedNode.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedNodeBase.hpp",
+      "sha256": "be5d94e5be34296ba1d04590116a10628a5170c4d5f4a7223968106712ee0c00",
+      "bytes": 2956,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedNodeBase.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedNodeBaseInterface.hpp",
+      "sha256": "080b64b117c86290eff65eb9f430da99ff45599d98172f5abae77718d5b6dd39",
+      "bytes": 4729,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedNodeBaseInterface.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/HOTSingleThreadedNodeInterface.hpp",
+      "sha256": "694861b2c629b1f366478bc9945fd0c82f163d8aa71dd5712a277d2525becc08",
+      "bytes": 24187,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/HOTSingleThreadedNodeInterface.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/MemoryPool.hpp",
+      "sha256": "3372b82134a06741a3a3a939c682f47a5dfca5e4ed0f6558df0faf48bb2ea93b",
+      "bytes": 3324,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/MemoryPool.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/Algorithms.hpp",
+      "sha256": "c6eedce438dcca23044cd258371ca020df4e08c3f0ae3838bcec03d4c2ee346b",
+      "bytes": 3882,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/Algorithms.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/BiNode.hpp",
+      "sha256": "cdef87aac580e3dee6a00ddc10bb0718baa3199bcda218ad86c7951056a1c4fd",
+      "bytes": 1031,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/BiNode.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/BiNodeInformation.hpp",
+      "sha256": "cca39b68bf197a1a57dfd87fec8cc60149b090d666a89f5bda5f2a039918d1ec",
+      "bytes": 1229,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/BiNodeInformation.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/BiNodeInterface.hpp",
+      "sha256": "99dc56c47a41a270c60e6b8310ebd94fc139392fdbe46000981fb60fa654657e",
+      "bytes": 807,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/BiNodeInterface.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/BitMask32.hpp",
+      "sha256": "1a7e16a2960d48327475bb45b5990db5f04fa2d4e0c8288608d848a26600cb65",
+      "bytes": 6375,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/BitMask32.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/CStringComparator.hpp",
+      "sha256": "80c91cf510e159c66436bd568238d3a09c7f03dd114522f48899e9772524baee",
+      "bytes": 453,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/CStringComparator.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/ContentEquals.hpp",
+      "sha256": "737fa3939e05ea1894fe2284c1ab76f539401e568223218078ad4d80d5dd9ef7",
+      "bytes": 732,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/ContentEquals.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/DiscriminativeBit.hpp",
+      "sha256": "5a2ef04db6e191f46a954ad055754fbbb2a3584b894e38ac96986d4ce92cc46b",
+      "bytes": 2905,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/DiscriminativeBit.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/EntriesRange.hpp",
+      "sha256": "bf597fb00d75246e7b5b1611860a4506b89634d1e10dbd2f6346cbcaf0e4c3a5",
+      "bytes": 620,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/EntriesRange.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/IdentityKeyExtractor.hpp",
+      "sha256": "4c4cc5ec380f0153ba7b495da5d9cff15139a94f3c81f0bf98a8e48bd7ee46f0",
+      "bytes": 489,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/IdentityKeyExtractor.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/InsertInformation.hpp",
+      "sha256": "25c66464bf4dcd6e05c239adcf215490974b2315f1c10933ceda1941e8e0a42d",
+      "bytes": 1665,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/InsertInformation.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/KeyComparator.hpp",
+      "sha256": "0656e5cb12e51039ba43670970567dc463b5e135b9779a5b6af18343e1732f3e",
+      "bytes": 554,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/KeyComparator.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/KeyUtilities.hpp",
+      "sha256": "a23809c4f948d1aa2dc7033b08cd4c8b1dfa809723f7a84bf1be7fb2fdbf7f23",
+      "bytes": 3159,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/KeyUtilities.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/MultiMaskPartialKeyMapping.hpp",
+      "sha256": "44cfb8e729be3ba98ef3afb4dc8650c24741a69df1133c290fa4e72dc15a4b6d",
+      "bytes": 34246,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/MultiMaskPartialKeyMapping.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/MultiMaskPartialKeyMappingInterface.hpp",
+      "sha256": "67ee8d7a9908b2009af96fc14761fa5794f0dfd641621fe7252b034f09529926",
+      "bytes": 12190,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/MultiMaskPartialKeyMappingInterface.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/NodeAllocationInformation.hpp",
+      "sha256": "71158cdc3c815e3e0655076b7771cbb91a2ca5b096e449020186d2dcc3fef515",
+      "bytes": 514,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/NodeAllocationInformation.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/NodeAllocationInformations.hpp",
+      "sha256": "d9796c3c67179926a57f240bec18aad7be68cb1f6f60394086097f685e14b1bc",
+      "bytes": 2493,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/NodeAllocationInformations.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/NodeMergeInformation.hpp",
+      "sha256": "671b1c171df6cbed293ffdd40277c0fbff146e6daf28834432f7414945ce9ae3",
+      "bytes": 5406,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/NodeMergeInformation.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/NodeParametersMapping.hpp",
+      "sha256": "e9086b152b8bbab84d9cc9a43a1bbb4e603e006e2f86462971011c673a5817a1",
+      "bytes": 3482,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/NodeParametersMapping.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/NodeType.hpp",
+      "sha256": "8c120796170c6b30c91eee82fe2391e8d0d70435f57d20650b357c4ee516e48c",
+      "bytes": 2895,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/NodeType.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/OptionalValue.hpp",
+      "sha256": "5ad75d39f619de83d28d4b2273bf42afe8e0ccf8fae02cb66a477f8498391847",
+      "bytes": 1426,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/OptionalValue.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/PartialKeyConversionInformation.hpp",
+      "sha256": "cc78b8de2291626158cf6f6a7a1e2913a194d014368f17a9047a71337b58f083",
+      "bytes": 512,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/PartialKeyConversionInformation.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/PartialKeyMappingBase.hpp",
+      "sha256": "0b14cc8108f8e1c6ac40541ef50a9e5d3006adcd8598e61152b80a4273119dc3",
+      "bytes": 1409,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/PartialKeyMappingBase.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/PartialKeyMappingHelpers.hpp",
+      "sha256": "83c0f30b8a46f344044b9a0881c23a95109ea4f197511767ec8d599d32849c56",
+      "bytes": 1474,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/PartialKeyMappingHelpers.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/SIMDHelper.hpp",
+      "sha256": "cee051e9de4205358ec2c945e62c97bdba44f9631e2b8f5de4fdcd9b25555437",
+      "bytes": 10836,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/SIMDHelper.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/SearchResultForInsert.hpp",
+      "sha256": "cb5fa74c3ad8d0c4652f5e74c1b460c486d72b2aa6938d02051f507d9d462d8b",
+      "bytes": 803,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/SearchResultForInsert.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/SingleMaskPartialKeyMapping.hpp",
+      "sha256": "1dd8faaf2d698dd94f9271e81f30254cdab444c141c7323711222948d0be0920",
+      "bytes": 12616,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/SingleMaskPartialKeyMapping.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/SingleMaskPartialKeyMappingInterface.hpp",
+      "sha256": "c01a8292ca306ee804ae0443dc5a0a88952384da42c242c7e8c47e93e0a9f824",
+      "bytes": 9141,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/SingleMaskPartialKeyMappingInterface.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/SparsePartialKeys.hpp",
+      "sha256": "baa8444800a59e89fc16f185e224eebf1715cd44b594d93c8da85351e087bab5",
+      "bytes": 20032,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/SparsePartialKeys.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/TidConverters.hpp",
+      "sha256": "b65fcca31f03c3b7c0913211c2f222f534f30857aa015a58e73b9617ebb01eab",
+      "bytes": 2102,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/TidConverters.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/hot_src/include/TwoEntriesNode.hpp",
+      "sha256": "94b2cb2599e5bd7f745f4411fbc07c21de32ec8ccbb918436bf93f254f044fc2",
+      "bytes": 1023,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/hot_src/include/TwoEntriesNode.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits.hpp",
+      "sha256": "e9e3fd6895d78db2ab207061b9298fc635c48164fbf14e5c02dbc8e6ff6d046f",
+      "bytes": 8278,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_base.hpp",
+      "sha256": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+      "bytes": 1245,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_base.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_cnode.hpp",
+      "sha256": "2b63e99dce6c2ea19f8bef1914182fcb8b841756104fc5c3128b98e4bbfda185",
+      "bytes": 13234,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_cnode.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_entry.hpp",
+      "sha256": "505ef4a85589fd7fa11b40ee8bf15f41c7b2b60879f791ae738df811b86efdb9",
+      "bytes": 970,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_entry.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_gpkl.hpp",
+      "sha256": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+      "bytes": 9114,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_gpkl.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_hot.hpp",
+      "sha256": "2e396067fb5ff34b746a3a26e456223c6bf2280e579922e661e0ad601c1653fa",
+      "bytes": 4432,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_hot.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_iter.hpp",
+      "sha256": "25c3649387e5562af02f32df5199d2739baaa713097b0533c60d9654b857d63b",
+      "bytes": 16378,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_iter.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_kv.hpp",
+      "sha256": "4b6a93822e6fb45cf4c2efeb2c5973a0b1b276af3f929f889b8f6cf7800c8316",
+      "bytes": 7472,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_kv.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_model.hpp",
+      "sha256": "d5ac9b88f796c476259ac89bd9d52a81199e51a0567dc0e304e9af733529fd73",
+      "bytes": 6120,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_model.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_node.hpp",
+      "sha256": "5ffa790d5f763e2d795fd92d445ef940ca3f7951efd0811c46da3723b1620a9a",
+      "bytes": 20058,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_node.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_pmss.hpp",
+      "sha256": "cf7e3708b0651608a259b1e7669568dda4b003f271023d590787c5c85ee892b5",
+      "bytes": 27913,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_pmss.hpp"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_utils.hpp",
+      "sha256": "6250c976cd4e622e6a2eab387728b00d6ff592172ec484788a8d88fd2c5d8995",
+      "bytes": 1606,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/LITS/lits/lits_utils.hpp"
+    },
+    {
+      "path": "vendor/lits/README.md",
+      "sha256": "4a32b56e71893a199138956e5911e375d3f191f2c62727a35f0b537d37bf1f16",
+      "bytes": 1408,
+      "source": "https://raw.githubusercontent.com/schencoding/lits/6f4793dff0dcf66daada49e2f4ae1b1838bfa9cc/README.md"
+    },
+    {
+      "path": "vendor/libart/src/art.c",
+      "sha256": "b65f20fdc160a6e4c0b1b390086f682d381e3638d8690594158ad75cda33396e",
+      "bytes": 29668,
+      "source": "https://raw.githubusercontent.com/armon/libart/301046804af165269e37da6725f5a4aec9ecc881/src/art.c"
+    },
+    {
+      "path": "vendor/libart/src/art.h",
+      "sha256": "4443de6fd42581982167f7826f63bd956d21a958f204575e52512e007deab5af",
+      "bytes": 4994,
+      "source": "https://raw.githubusercontent.com/armon/libart/301046804af165269e37da6725f5a4aec9ecc881/src/art.h"
+    },
+    {
+      "path": "vendor/libart/LICENSE",
+      "sha256": "642c3e41db4ebb7774e5e8d5f34cbdb8e1ba6c13ca26ace875fb307994f21f9a",
+      "bytes": 1492,
+      "source": "https://raw.githubusercontent.com/armon/libart/301046804af165269e37da6725f5a4aec9ecc881/LICENSE"
+    },
+    {
+      "path": "vendor/libart/README.md",
+      "sha256": "efe93fd3502c3a2be186fc3023d29d9f4d0a6ed1b810e6dfea43815396daf04a",
+      "bytes": 1600,
+      "source": "https://raw.githubusercontent.com/armon/libart/301046804af165269e37da6725f5a4aec9ecc881/README.md"
+    }
+  ],
+  "download_date": "2026-09-11",
+  "modifications": [
+    {
+      "path": "vendor/lits/LITS/lits/lits_pmss.hpp",
+      "description": "Clamp upper interpolation indices at last table row/column; preserve zero interpolation weights.",
+      "script": "apply_lits_patch.py",
+      "patched_sha256": "f842360c0287d43638d2e9b0fe93754e02d70c836b4e9d23c00661a68524c4a8"
+    },
+    {
+      "path": "vendor/lits/LITS/lits/lits_model.hpp",
+      "description": "At gcpl=0, use initial context 0 in getCdf and getPos, matching HPT training; avoid key[-1].",
+      "script": "apply_lits_patch.py",
+      "patched_sha256": "b5a1c28251da7e74fd011e6b14a40927481c65ed24c837cc4892f26740af4c18"
+    }
+  ],
+  "lits_formal_benchmark_status": "excluded: sanitizer gate still fails after two local boundary fixes"
+}

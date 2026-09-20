@@ -1,0 +1,2 @@
+START mixed 262144
+DONE mixed seconds 39.0 winner warm_joint {"ART_libart": 376.47, "cross_hybrid": 588.92, "cross_joint": 591.98, "default": 696.66, "sorted_array": 828.06, "sorted_leaves": 693.68, "uniform_4": 601.45, "uniform_5": 629.44, "warm_hybrid": 541.63, "warm_joint": 537.21}

@@ -1,0 +1,1 @@
+{"kind":"tranco","block":1024,"slots":16,"keys":262144,"groups":21888,"overflow_keys":146551,"overflow_share":0.559048,"groups_with_overflow":5007,"empty_groups":12017,"overflow_entries_gini":0.897628,"overflow_top10pct_share":0.82559,"overflow_top25pct_share":1,"primary_entries_gini":0.657483}

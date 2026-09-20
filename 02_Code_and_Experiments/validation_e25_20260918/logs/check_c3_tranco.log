@@ -1,0 +1,9 @@
+arms frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,scan_reserve_result=1] C3[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,scan_reserve_result=1]
+{"kind":"tranco","mode":"same","frac":0.25,"live":262144,"frozen_overflow":23547,"c3_overflow":10046,"frozen_compactions":5920,"c3_compactions":13338,"frozen_memory":27451115,"c3_memory":26309405,"records_compared":262144}
+tranco same frac=0.25 ok
+{"kind":"tranco","mode":"same","frac":0.5,"live":262144,"frozen_overflow":45165,"c3_overflow":18017,"frozen_compactions":11012,"c3_compactions":25671,"frozen_memory":29314669,"c3_memory":27022248,"records_compared":524288}
+tranco same frac=0.5 ok
+{"kind":"tranco","mode":"same","frac":1,"live":262144,"frozen_overflow":85595,"c3_overflow":33579,"frozen_compactions":22829,"c3_compactions":49650,"frozen_memory":32817089,"c3_memory":28440633,"records_compared":786432}
+tranco same frac=1 ok
+{"kind":"tranco","mode":"same","frac":2,"live":262144,"frozen_overflow":127318,"c3_overflow":40029,"frozen_compactions":35975,"c3_compactions":83933,"frozen_memory":36550180,"c3_memory":28899603,"records_compared":1048576}
+tranco same frac=2 ok

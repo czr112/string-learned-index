@@ -1,0 +1,5 @@
+sweep start 2026-09-18 12:32:44
+diag_e24 mixed 131072 rc=0 wall=2s
+diag_e24 skew 131072 rc=0 wall=3s
+diag_e24 tranco 262144 rc=0 wall=3s
+sweep end 2026-09-18 12:32:51

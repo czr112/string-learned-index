@@ -1,0 +1,54 @@
+sweep start 2026-09-17 22:10:32
+--- process P1, clean build ---
+bench_e21 mixed 1024 tag=warmup-P1 rc=0 wall=4.5s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 mixed 131072 tag=P1 rc=0 wall=10.0s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 skew 131072 tag=P1 rc=0 wall=13.1s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE skew
+bench_e21 tranco 262144 tag=P1 rc=0 wall=9.5s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE tranco
+--- process P2, clean build ---
+bench_e21 mixed 1024 tag=warmup-P2 rc=0 wall=5.1s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 mixed 131072 tag=P2 rc=0 wall=11.0s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 skew 131072 tag=P2 rc=0 wall=16.9s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE skew
+bench_e21 tranco 262144 tag=P2 rc=0 wall=9.2s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE tranco
+--- process P3, clean build ---
+bench_e21 mixed 1024 tag=warmup-P3 rc=0 wall=4.8s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 mixed 131072 tag=P3 rc=0 wall=10.6s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 skew 131072 tag=P3 rc=0 wall=13.9s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE skew
+bench_e21 tranco 262144 tag=P3 rc=0 wall=8.6s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE tranco
+--- process P4, clean build ---
+bench_e21 mixed 1024 tag=warmup-P4 rc=0 wall=4.6s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 mixed 131072 tag=P4 rc=0 wall=10.4s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 skew 131072 tag=P4 rc=0 wall=16.1s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE skew
+bench_e21 tranco 262144 tag=P4 rc=0 wall=8.5s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE tranco
+--- process P5, clean build ---
+bench_e21 mixed 1024 tag=warmup-P5 rc=0 wall=4.6s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 mixed 131072 tag=P5 rc=0 wall=10.0s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21 skew 131072 tag=P5 rc=0 wall=16.5s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE skew
+bench_e21 tranco 262144 tag=P5 rc=0 wall=8.7s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE tranco
+--- diagnostic build, ART footprint ---
+bench_e21_mem mixed 131072 tag=MEM rc=0 wall=10.3s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE mixed
+bench_e21_mem skew 131072 tag=MEM rc=0 wall=15.1s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE skew
+bench_e21_mem tranco 262144 tag=MEM rc=0 wall=8.8s
+  stderr: seed 0 done (hits=65536 misses=65536) | seed 1 done (hits=65536 misses=65536) | seed 2 done (hits=65536 misses=65536) | COMPLETE tranco
+sweep end 2026-09-17 22:14:23

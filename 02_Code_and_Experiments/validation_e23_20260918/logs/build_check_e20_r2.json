@@ -1,0 +1,24 @@
+{
+ "target": "check_e20_r2",
+ "build_id": "1789664585722425976",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE18_COUNT /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e23_20260918/check_e20_r2.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e23_20260918/build/check_e20_r2.923.1789664585722421881.tmp.exe",
+ "sources": {
+  "check_e20_r2.cpp": "7b72a6d9fff49a466fdb7f4519f674a198a325772ff0d194554536aacb508b36",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "4e70ac6851ac5c660449c8224fcf2a39376e10fa0f8506823c17c20f67392b8b",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "1432b68142e3fa3a401c93f7c6dbae3c5b1924d9a39308d8f58a2a691cddd6f4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "extra_flags": [
+  "-DE18_COUNT"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "3eee4fde2ccd1ecd60bbcde9e1e2db8c0dd51c919da590084949ca5fe43d768f",
+ "status": "OK"
+}

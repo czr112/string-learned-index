@@ -1,0 +1,23 @@
+{
+ "target": "bench_e18_diag",
+ "build_id": "1789572320523277348",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE14_PHASE -DE18_PREPASS -DE18_COUNT /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e18_20260916/bench_e18.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e18_20260916/build/bench_e18_diag.375.1789572320523268474.tmp.exe",
+ "sources": {
+  "bench_e18.cpp": "78d50fdfeeaa1cde483696dfa2d90ed41ed00070f23c0011b56cdb8e34c24703",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "c6906fdb5cafd4464fff2f8f5dfdd971babb319b3fddc9f61eb69d6e8d2de8a6",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "extra_flags": [
+  "-DE14_PHASE",
+  "-DE18_PREPASS",
+  "-DE18_COUNT"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "05307c04f939c089a3c0d3d0bcd38c85de925d1af9b956b1a4f2af391c0eefb3",
+ "status": "OK"
+}

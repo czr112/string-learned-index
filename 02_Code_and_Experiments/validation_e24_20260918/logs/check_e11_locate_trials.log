@@ -1,0 +1,3 @@
+trial region=64 block=2048 capped=yes groups=4
+trial region=32 block=2048 capped=yes groups=2
+trial region=64 block=1024 capped=no groups=23

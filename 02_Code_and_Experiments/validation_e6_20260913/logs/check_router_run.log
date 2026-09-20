@@ -1,0 +1,7 @@
+trial region=1 fences=503 distinct_u=279 max_equal_run=200 equal_share=40.0616
+trial done: regions=1115 RouterA_aux_bytes=16096 RouterB_aux_bytes=17856 fences_bytes~26238
+trial region=7 fences=72 distinct_u=45 max_equal_run=28 equal_share=5.625
+trial done: regions=151 RouterA_aux_bytes=2304 RouterB_aux_bytes=2432 fences_bytes~7043
+trial region=64 fences=8 distinct_u=6 max_equal_run=3 equal_share=0.625
+trial done: regions=16 RouterA_aux_bytes=128 RouterB_aux_bytes=272 fences_bytes~342
+{"status":"passed","locate_checks":42024,"dynamic_meta_rebuilds":2146,"dynamic_meta_rebuild_ns":6.997e+06,"seed":20260913}

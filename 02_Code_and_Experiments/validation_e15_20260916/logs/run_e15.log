@@ -1,0 +1,127 @@
+sweep start 2026-09-16 21:21:47
+--- process P1, target order ['bench_e15', 'bench_e15_phase'] ---
+bench_e15 mixed 1024 tag=warmup-P1 rc=0 wall=0.2s
+  stdout: OK mixed s_old=0.916985ms s_new=0.348432ms ratio=0.379976
+  stderr: plan: regions=1 probe=0.907586ms
+bench_e15_phase mixed 1024 tag=warmup-P1 rc=0 wall=0.2s
+  stdout: OK mixed s_old=0.823701ms s_new=0.42159ms ratio=0.511824
+  stderr: plan: regions=1 probe=0.453303ms
+bench_e15 mixed 131072 tag=P1 rc=0 wall=2.0s
+  stdout: OK mixed s_old=97.4537ms s_new=43.7003ms ratio=0.448421
+  stderr: plan: regions=64 probe=50.2389ms
+bench_e15_phase mixed 131072 tag=P1 rc=0 wall=2.1s
+  stdout: OK mixed s_old=97.3592ms s_new=45.687ms ratio=0.469262
+  stderr: plan: regions=64 probe=48.4733ms
+bench_e15 skew 131072 tag=P1 rc=0 wall=2.2s
+  stdout: OK skew s_old=114.426ms s_new=49.9053ms ratio=0.436135
+  stderr: plan: regions=64 probe=50.7872ms
+bench_e15_phase skew 131072 tag=P1 rc=0 wall=2.2s
+  stdout: OK skew s_old=116.003ms s_new=49.8142ms ratio=0.429422
+  stderr: plan: regions=64 probe=53.1264ms
+bench_e15 tranco 262144 tag=P1 rc=0 wall=2.6s
+  stdout: OK tranco s_old=173.29ms s_new=61.2832ms ratio=0.353645
+  stderr: plan: regions=128 probe=57.8036ms
+bench_e15_phase tranco 262144 tag=P1 rc=0 wall=2.9s
+  stdout: OK tranco s_old=182.121ms s_new=88.5754ms ratio=0.486355
+  stderr: plan: regions=128 probe=83.1427ms
+--- process P2, target order ['bench_e15_phase', 'bench_e15'] ---
+bench_e15_phase mixed 1024 tag=warmup-P2 rc=0 wall=0.2s
+  stdout: OK mixed s_old=1.03303ms s_new=0.349763ms ratio=0.338578
+  stderr: plan: regions=1 probe=0.59718ms
+bench_e15 mixed 1024 tag=warmup-P2 rc=0 wall=0.3s
+  stdout: OK mixed s_old=0.97825ms s_new=0.347037ms ratio=0.354753
+  stderr: plan: regions=1 probe=0.702083ms
+bench_e15_phase mixed 131072 tag=P2 rc=0 wall=2.1s
+  stdout: OK mixed s_old=96.6244ms s_new=44.0281ms ratio=0.455662
+  stderr: plan: regions=64 probe=47.4453ms
+bench_e15 mixed 131072 tag=P2 rc=0 wall=2.0s
+  stdout: OK mixed s_old=95.3695ms s_new=43.6925ms ratio=0.458139
+  stderr: plan: regions=64 probe=47.3539ms
+bench_e15_phase skew 131072 tag=P2 rc=0 wall=2.3s
+  stdout: OK skew s_old=126.847ms s_new=51.8619ms ratio=0.408855
+  stderr: plan: regions=64 probe=56.5527ms
+bench_e15 skew 131072 tag=P2 rc=0 wall=2.2s
+  stdout: OK skew s_old=100.976ms s_new=37.1136ms ratio=0.36755
+  stderr: plan: regions=64 probe=54.5762ms
+bench_e15_phase tranco 262144 tag=P2 rc=0 wall=2.6s
+  stdout: OK tranco s_old=142.152ms s_new=86.8155ms ratio=0.610725
+  stderr: plan: regions=128 probe=90.0606ms
+bench_e15 tranco 262144 tag=P2 rc=0 wall=2.9s
+  stdout: OK tranco s_old=160.863ms s_new=88.8489ms ratio=0.552328
+  stderr: plan: regions=128 probe=80.9316ms
+--- process P3, target order ['bench_e15', 'bench_e15_phase'] ---
+bench_e15 mixed 1024 tag=warmup-P3 rc=0 wall=0.3s
+  stdout: OK mixed s_old=0.9757ms s_new=0.380406ms ratio=0.38988
+  stderr: plan: regions=1 probe=0.61943ms
+bench_e15_phase mixed 1024 tag=warmup-P3 rc=0 wall=0.9s
+  stdout: OK mixed s_old=0.953173ms s_new=0.369994ms ratio=0.388171
+  stderr: plan: regions=1 probe=0.637026ms
+bench_e15 mixed 131072 tag=P3 rc=0 wall=2.1s
+  stdout: OK mixed s_old=98.5582ms s_new=44.35ms ratio=0.449988
+  stderr: plan: regions=64 probe=51.1523ms
+bench_e15_phase mixed 131072 tag=P3 rc=0 wall=1.9s
+  stdout: OK mixed s_old=92.2124ms s_new=41.4011ms ratio=0.448975
+  stderr: plan: regions=64 probe=47.1705ms
+bench_e15 skew 131072 tag=P3 rc=0 wall=2.2s
+  stdout: OK skew s_old=120.561ms s_new=51.9642ms ratio=0.431022
+  stderr: plan: regions=64 probe=58.3974ms
+bench_e15_phase skew 131072 tag=P3 rc=0 wall=2.3s
+  stdout: OK skew s_old=113.614ms s_new=47.4127ms ratio=0.417314
+  stderr: plan: regions=64 probe=55.9116ms
+bench_e15 tranco 262144 tag=P3 rc=0 wall=2.7s
+  stdout: OK tranco s_old=170.033ms s_new=84.8812ms ratio=0.499205
+  stderr: plan: regions=128 probe=73.5244ms
+bench_e15_phase tranco 262144 tag=P3 rc=0 wall=2.8s
+  stdout: OK tranco s_old=171.388ms s_new=89.7024ms ratio=0.523387
+  stderr: plan: regions=128 probe=74.0502ms
+--- process P4, target order ['bench_e15_phase', 'bench_e15'] ---
+bench_e15_phase mixed 1024 tag=warmup-P4 rc=0 wall=0.2s
+  stdout: OK mixed s_old=1.0771ms s_new=0.357225ms ratio=0.331654
+  stderr: plan: regions=1 probe=0.604446ms
+bench_e15 mixed 1024 tag=warmup-P4 rc=0 wall=0.2s
+  stdout: OK mixed s_old=1.0549ms s_new=0.444535ms ratio=0.421401
+  stderr: plan: regions=1 probe=0.617553ms
+bench_e15_phase mixed 131072 tag=P4 rc=0 wall=1.9s
+  stdout: OK mixed s_old=90.9451ms s_new=39.2581ms ratio=0.431668
+  stderr: plan: regions=64 probe=47.9318ms
+bench_e15 mixed 131072 tag=P4 rc=0 wall=2.2s
+  stdout: OK mixed s_old=96.0859ms s_new=43.3256ms ratio=0.450905
+  stderr: plan: regions=64 probe=47.3662ms
+bench_e15_phase skew 131072 tag=P4 rc=0 wall=2.4s
+  stdout: OK skew s_old=119.795ms s_new=56.2883ms ratio=0.469872
+  stderr: plan: regions=64 probe=64.9654ms
+bench_e15 skew 131072 tag=P4 rc=0 wall=2.4s
+  stdout: OK skew s_old=120.278ms s_new=51.6172ms ratio=0.429148
+  stderr: plan: regions=64 probe=55.1724ms
+bench_e15_phase tranco 262144 tag=P4 rc=0 wall=2.9s
+  stdout: OK tranco s_old=186.108ms s_new=90.585ms ratio=0.486734
+  stderr: plan: regions=128 probe=81.9157ms
+bench_e15 tranco 262144 tag=P4 rc=0 wall=2.8s
+  stdout: OK tranco s_old=167.591ms s_new=88.703ms ratio=0.529282
+  stderr: plan: regions=128 probe=80.7913ms
+--- process P5, target order ['bench_e15', 'bench_e15_phase'] ---
+bench_e15 mixed 1024 tag=warmup-P5 rc=0 wall=0.3s
+  stdout: OK mixed s_old=1.00578ms s_new=0.349024ms ratio=0.347019
+  stderr: plan: regions=1 probe=0.673862ms
+bench_e15_phase mixed 1024 tag=warmup-P5 rc=0 wall=0.2s
+  stdout: OK mixed s_old=1.00479ms s_new=0.36549ms ratio=0.363746
+  stderr: plan: regions=1 probe=0.540976ms
+bench_e15 mixed 131072 tag=P5 rc=0 wall=2.1s
+  stdout: OK mixed s_old=96.2947ms s_new=44.8104ms ratio=0.465347
+  stderr: plan: regions=64 probe=46.6207ms
+bench_e15_phase mixed 131072 tag=P5 rc=0 wall=2.8s
+  stdout: OK mixed s_old=99.7965ms s_new=45.4245ms ratio=0.455171
+  stderr: plan: regions=64 probe=46.5198ms
+bench_e15 skew 131072 tag=P5 rc=0 wall=2.4s
+  stdout: OK skew s_old=123.339ms s_new=53.3973ms ratio=0.432933
+  stderr: plan: regions=64 probe=62.8072ms
+bench_e15_phase skew 131072 tag=P5 rc=0 wall=2.4s
+  stdout: OK skew s_old=119.522ms s_new=53.909ms ratio=0.451039
+  stderr: plan: regions=64 probe=54.3603ms
+bench_e15 tranco 262144 tag=P5 rc=0 wall=2.6s
+  stdout: OK tranco s_old=165.695ms s_new=67.0155ms ratio=0.404451
+  stderr: plan: regions=128 probe=75.2895ms
+bench_e15_phase tranco 262144 tag=P5 rc=0 wall=2.6s
+  stdout: OK tranco s_old=164.63ms s_new=80.803ms ratio=0.490816
+  stderr: plan: regions=128 probe=71.6524ms
+sweep end 2026-09-16 21:23:02

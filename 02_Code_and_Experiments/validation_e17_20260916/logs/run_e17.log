@@ -1,0 +1,47 @@
+sweep start 2026-09-16 22:40:51
+--- process P1 ---
+bench_e17 mixed 1024 tag=warmup-P1 rc=0 wall=0.1s
+  stdout: OK mixed B=1.1491 A=0.48992 C=0.368157 A/B=0.405656 C/A=0.735223 C/B=0.298248
+bench_e17 mixed 131072 tag=P1 rc=0 wall=4.0s
+  stdout: OK mixed B=137.759 A=78.5951 C=64.3923 A/B=0.576272 C/A=0.806525 C/B=0.478981
+bench_e17 skew 131072 tag=P1 rc=0 wall=5.8s
+  stdout: OK skew B=159.729 A=95.4515 C=85.0591 A/B=0.569353 C/A=0.874544 C/B=0.497924
+bench_e17 tranco 262144 tag=P1 rc=0 wall=4.4s
+  stdout: OK tranco B=241.38 A=158.454 C=109.282 A/B=0.636691 C/A=0.704778 C/B=0.452738
+--- process P2 ---
+bench_e17 mixed 1024 tag=warmup-P2 rc=0 wall=0.1s
+  stdout: OK mixed B=1.61402 A=0.79364 C=0.478037 A/B=0.417052 C/A=0.717222 C/B=0.326733
+bench_e17 mixed 131072 tag=P2 rc=0 wall=4.3s
+  stdout: OK mixed B=138.401 A=82.3662 C=69.9555 A/B=0.578494 C/A=0.862688 C/B=0.527554
+bench_e17 skew 131072 tag=P2 rc=0 wall=4.5s
+  stdout: OK skew B=148.299 A=84.7403 C=77.713 A/B=0.558771 C/A=0.903654 C/B=0.508859
+bench_e17 tranco 262144 tag=P2 rc=0 wall=4.4s
+  stdout: OK tranco B=252.926 A=158.352 C=111.268 A/B=0.620409 C/A=0.720014 C/B=0.422008
+--- process P3 ---
+bench_e17 mixed 1024 tag=warmup-P3 rc=0 wall=0.1s
+  stdout: OK mixed B=1.43944 A=0.692935 C=0.454834 A/B=0.431725 C/A=0.781538 C/B=0.326843
+bench_e17 mixed 131072 tag=P3 rc=0 wall=4.3s
+  stdout: OK mixed B=141.6 A=79.2144 C=70.1406 A/B=0.555371 C/A=0.871365 C/B=0.495844
+bench_e17 skew 131072 tag=P3 rc=0 wall=4.8s
+  stdout: OK skew B=152.782 A=93.511 C=81.4323 A/B=0.613246 C/A=0.90007 C/B=0.534686
+bench_e17 tranco 262144 tag=P3 rc=0 wall=5.4s
+  stdout: OK tranco B=243.886 A=153.721 C=109.336 A/B=0.630298 C/A=0.71271 C/B=0.440808
+--- process P4 ---
+bench_e17 mixed 1024 tag=warmup-P4 rc=0 wall=0.2s
+  stdout: OK mixed B=1.94957 A=1.08768 C=0.695824 A/B=0.555533 C/A=0.651391 C/B=0.361869
+bench_e17 mixed 131072 tag=P4 rc=0 wall=4.1s
+  stdout: OK mixed B=131.558 A=77.19 C=69.241 A/B=0.585664 C/A=0.933044 C/B=0.52388
+bench_e17 skew 131072 tag=P4 rc=0 wall=4.7s
+  stdout: OK skew B=154.968 A=91.6426 C=80.8544 A/B=0.591806 C/A=0.845195 C/B=0.526099
+bench_e17 tranco 262144 tag=P4 rc=0 wall=4.4s
+  stdout: OK tranco B=242.576 A=154.728 C=107.895 A/B=0.654005 C/A=0.652536 C/B=0.455708
+--- process P5 ---
+bench_e17 mixed 1024 tag=warmup-P5 rc=0 wall=0.2s
+  stdout: OK mixed B=1.42599 A=0.716086 C=0.567692 A/B=0.502168 C/A=0.695777 C/B=0.416949
+bench_e17 mixed 131072 tag=P5 rc=0 wall=4.0s
+  stdout: OK mixed B=133.261 A=77.6713 C=62.8323 A/B=0.542559 C/A=0.80661 C/B=0.443651
+bench_e17 skew 131072 tag=P5 rc=0 wall=4.7s
+  stdout: OK skew B=152.839 A=95.0088 C=78.4252 A/B=0.576974 C/A=0.849707 C/B=0.536233
+bench_e17 tranco 262144 tag=P5 rc=0 wall=4.4s
+  stdout: OK tranco B=250.298 A=146.948 C=109.046 A/B=0.627335 C/A=0.74452 C/B=0.456204
+sweep end 2026-09-16 22:42:00

@@ -1,0 +1,1 @@
+{"status":"passed","keys":8192,"operations":5888,"comparison_batches":100,"records_compared":806656,"variants":3,"final_size":8704,"final_overflow":2060,"compactions":0,"branch_notlocated_fallback":1,"branch_prefix_rebuild":1,"branch_threshold_split":9,"seed":2026091803}

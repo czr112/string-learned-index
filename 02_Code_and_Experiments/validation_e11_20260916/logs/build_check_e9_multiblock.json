@@ -1,0 +1,16 @@
+{
+ "target": "check_e9_multiblock",
+ "build_id": "1789493996318574958",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e11_20260916/check_e9_multiblock.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e11_20260916/build/check_e9_multiblock.419.1789493996318568070.tmp.exe",
+ "sources": {
+  "check_e9_multiblock.cpp": "021e49e0ca1bbacd4262572973e9a7ace23b1e0189a9fa38c1a1ef95e740068b",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "379513c5ce7d087e34b173f0ba0d09ef5a52e2741ed11848648b3e176e474e1d",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "fddf3f65c918decad92990e9e6df8010773ec6a7ea0009c99f54748f28abbf9f",
+ "status": "OK"
+}

@@ -1,0 +1,17 @@
+scan sweep 2026-09-19 22:39:17
+P1 mixed   mixed replace25 n=1024 rep4 done
+P1 skew    skew replace25 n=1024 rep4 done
+P1 tranco  tranco replace25 n=1024 rep4 done
+P2 mixed   mixed replace25 n=1024 rep4 done
+P2 skew    skew replace25 n=1024 rep4 done
+P2 tranco  tranco replace25 n=1024 rep4 done
+P3 mixed   mixed replace25 n=1024 rep4 done
+P3 skew    skew replace25 n=1024 rep4 done
+P3 tranco  tranco replace25 n=1024 rep4 done
+P4 mixed   mixed replace25 n=1024 rep4 done
+P4 skew    skew replace25 n=1024 rep4 done
+P4 tranco  tranco replace25 n=1024 rep4 done
+P5 mixed   mixed replace25 n=1024 rep4 done
+P5 skew    skew replace25 n=1024 rep4 done
+P5 tranco  tranco replace25 n=1024 rep4 done
+sweep end 2026-09-19 22:43:39

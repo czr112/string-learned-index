@@ -1,0 +1,63 @@
+=================================================================
+==5==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50400003facf at pc 0x56269e392077 bp 0x7ffcd212bf60 sp 0x7ffcd212bf50
+READ of size 1 at 0x50400003facf thread T0
+    #0 0x56269e392076 in lits::HPT::getCdf(char*, int) const validation_e4_20260911/vendor/lits/LITS/lits/lits_model.hpp:204
+    #1 0x56269e392076 in lits::InnerNode* lits::_try_rebulk_as_model_node<lits::KVS2>(lits::KVS2 const&, int, int, int, lits::HPT const*, lits::PMSS const*) validation_e4_20260911/vendor/lits/LITS/lits/lits_node.hpp:365
+    #2 0x56269e394660 in lits::Item lits::pmss_bulk<lits::KVS2>(lits::KVS2 const&, int, int, int, lits::HPT const*, lits::PMSS const*) validation_e4_20260911/vendor/lits/LITS/lits/lits_node.hpp:489
+    #3 0x56269e395f2c in lits::LITS::_bulkload(char* const*, unsigned long const*, int, lits::HPT*) validation_e4_20260911/vendor/lits/LITS/lits/lits.hpp:118
+    #4 0x56269e3975c8 in lits::LITS::bulkload(char const**, unsigned long const*, int, lits::HPT*) validation_e4_20260911/vendor/lits/LITS/lits/lits.hpp:39
+    #5 0x56269e3975c8 in e4::NativeLits::NativeLits(std::vector<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long>, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long> > > const&) validation_e4_20260911/native.hpp:18
+    #6 0x56269e40a557 in void check<e4::NativeLits>(char const*) validation_e4_20260911/check_native.cpp:9
+    #7 0x56269dc35c61 in main validation_e4_20260911/check_native.cpp:22
+    #8 0x7f7a0a0891c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 274eec488d230825a136fa9c4d85370fed7a0a5e)
+    #9 0x7f7a0a08928a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 274eec488d230825a136fa9c4d85370fed7a0a5e)
+    #10 0x56269dc2ff04 in _start (/workspace/scratch/dba454d1cdc9/validation_e4_20260911/build/check_native_san_patched+0xdf1f04) (BuildId: 43061d6ad4c19aa7b8a02ab3521426e042976cd8)
+
+0x50400003facf is located 1 bytes before 40-byte region [0x50400003fad0,0x50400003faf8)
+allocated by thread T0 here:
+    #0 0x7f7a0ad1c548 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:95
+    #1 0x7f7a0ab0870e in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (/lib/x86_64-linux-gnu/libstdc++.so.6+0x16870e) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #2 0x7f7a0ab0a04f in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_append(char const*, unsigned long) (/lib/x86_64-linux-gnu/libstdc++.so.6+0x16a04f) (BuildId: 753c6c8608b61d4e67be8f0c890e03e0aa046b8b)
+    #3 0x56269e404d73 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(char const*, unsigned long) /usr/include/c++/13/bits/basic_string.h:1459
+    #4 0x56269e404d73 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/include/c++/13/bits/basic_string.h:1425
+    #5 0x56269e404d73 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/include/c++/13/bits/basic_string.h:3639
+    #6 0x56269e404d73 in validation::make_data(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) validation_e4_20260911/../validation_e3_20260906/data.hpp:18
+    #7 0x56269e409fc4 in void check<e4::NativeLits>(char const*) validation_e4_20260911/check_native.cpp:6
+    #8 0x56269dc35c61 in main validation_e4_20260911/check_native.cpp:22
+    #9 0x7f7a0a0891c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 274eec488d230825a136fa9c4d85370fed7a0a5e)
+    #10 0x7f7a0a08928a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 274eec488d230825a136fa9c4d85370fed7a0a5e)
+    #11 0x56269dc2ff04 in _start (/workspace/scratch/dba454d1cdc9/validation_e4_20260911/build/check_native_san_patched+0xdf1f04) (BuildId: 43061d6ad4c19aa7b8a02ab3521426e042976cd8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow validation_e4_20260911/vendor/lits/LITS/lits/lits_model.hpp:204 in lits::HPT::getCdf(char*, int) const
+Shadow bytes around the buggy address:
+  0x50400003f800: fa fa fd fd fd fd fd fd fa fa fd fd fd fd fd fa
+  0x50400003f880: fa fa 00 00 00 00 00 fa fa fa fd fd fd fd fd fd
+  0x50400003f900: fa fa fd fd fd fd fd fa fa fa 00 00 00 00 00 fa
+  0x50400003f980: fa fa fd fd fd fd fd fd fa fa fd fd fd fd fd fa
+  0x50400003fa00: fa fa 00 00 00 00 00 fa fa fa fd fd fd fd fd fd
+=>0x50400003fa80: fa fa fd fd fd fd fd fa fa[fa]00 00 00 00 00 fa
+  0x50400003fb00: fa fa fd fd fd fd fd fd fa fa fd fd fd fd fd fa
+  0x50400003fb80: fa fa 00 00 00 00 00 fa fa fa fd fd fd fd fd fd
+  0x50400003fc00: fa fa fd fd fd fd fd fa fa fa 00 00 00 00 00 fa
+  0x50400003fc80: fa fa fd fd fd fd fd fd fa fa fd fd fd fd fd fa
+  0x50400003fd00: fa fa fd fd fd fd fd fa fa fa 00 00 00 00 00 fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==5==ABORTING

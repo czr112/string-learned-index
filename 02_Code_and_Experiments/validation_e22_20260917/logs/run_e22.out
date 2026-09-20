@@ -1,0 +1,11 @@
+bench_e22 mixed 16384 tag=warmup-P0 rc=0 wall=3s
+bench_e22 mixed 131072 tag=P1 rc=0 wall=8s
+bench_e22 skew 131072 tag=P1 rc=0 wall=10s
+bench_e22 tranco 262144 tag=P1 rc=0 wall=8s
+bench_e22 mixed 131072 tag=P2 rc=0 wall=8s
+bench_e22 skew 131072 tag=P2 rc=0 wall=14s
+bench_e22 tranco 262144 tag=P2 rc=0 wall=8s
+bench_e22 mixed 131072 tag=P3 rc=0 wall=8s
+bench_e22 skew 131072 tag=P3 rc=0 wall=10s
+bench_e22 tranco 262144 tag=P3 rc=0 wall=10s
+SWEEP COMPLETE

@@ -1,0 +1,15 @@
+{
+ "target": "check_e8_hetero",
+ "build_id": "1789299665130887700",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e8_20260913\\check_e8_hetero.cpp -o D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e8_20260913\\build\\check_e8_hetero.63628.1789299665130883600.tmp.exe",
+ "sources": {
+  "check_e8_hetero.cpp": "fc2e13b641ee00f5655dae1a72f94edfc0c2b72e85234eff7a62080660826326",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "cc9548233d04983eab3e23acf95c812df00a83564506c51410d0af8d2d21afe7",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "2c6b69eac48b64eb3c22de4c59959c927579000226ee4af0d239152150060ecf",
+ "status": "OK"
+}

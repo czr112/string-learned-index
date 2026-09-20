@@ -1,0 +1,25 @@
+# Compiled artifacts and machine output -- a mirror of the working tree must never
+# carry these; they are what made the full tree 439 MB.
+build/
+*.exe
+*.obj
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.pdb
+*.bin
+__pycache__/
+*.pyc
+
+# Third-party bulk data (fetched and checksum-verified by the round's own script).
+**/data/*.csv
+**/third_party/build/
+
+# Material that is not this project's work, or is a stale snapshot.
+03_Source_Materials/
+05_Historical_Versions/
+**/*.docx
+**/*.pptx
+**/*.zip

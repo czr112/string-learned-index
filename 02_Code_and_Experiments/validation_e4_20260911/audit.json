@@ -1,0 +1,14 @@
+{
+  "main_datasets": 3,
+  "main_timing_rows": 420,
+  "main_exact_query_checks": 22020096,
+  "selector_sanitizer": "PASS",
+  "ART_sanitizer": "PASS",
+  "LITS_sanitizer": "FAIL: excluded from formal timing",
+  "incomplete_attempts_excluded": [
+    "results/incomplete/mixed_262144"
+  ],
+  "vendor_files_verified": 62,
+  "recorded_vendor_modifications": 2,
+  "prior_dependencies_byte_equal": true
+}

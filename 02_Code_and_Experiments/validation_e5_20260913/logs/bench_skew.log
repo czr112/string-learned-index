@@ -1,0 +1,13 @@
+loaded 131072 keys kind=skew
+built s=8 b=512 build_ms=50.732 bytes=42585947 overflow=124796
+built s=8 b=1024 build_ms=48.755 bytes=42891342 overflow=123214
+built s=8 b=2048 build_ms=49.007 bytes=64629809 overflow=123013
+built s=16 b=512 build_ms=51.154 bytes=57513572 overflow=125997
+built s=16 b=1024 build_ms=44.027 bytes=40576113 overflow=123171
+built s=16 b=2048 build_ms=45.072 bytes=42221438 overflow=121886
+built s=32 b=1024 build_ms=49.228 bytes=52041237 overflow=124172
+built s=32 b=2048 build_ms=49.205 bytes=39573192 overflow=121506
+seed 0 done
+seed 1 done
+seed 2 done
+COMPLETE skew

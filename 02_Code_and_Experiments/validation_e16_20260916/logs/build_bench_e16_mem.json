@@ -1,0 +1,27 @@
+{
+ "target": "bench_e16_mem",
+ "build_id": "1789568659995636396",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -Wl,--wrap=malloc -Wl,--wrap=calloc -Wl,--wrap=realloc -Wl,--wrap=aligned_alloc -Wl,--wrap=posix_memalign -Wl,--wrap=free -DE16_MEM /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e16_20260916/bench_e16.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e16_20260916/build/bench_e16_mem.405.1789568659995620285.tmp.exe",
+ "sources": {
+  "bench_e16.cpp": "936e7df54d2ba5d2bb5de45bdf0ccaaae62370eab02dbfd7111d564f28dfd285",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "89f59342242d4148c4a528861a7026a16526e96d216c4246051d949e3da833c4",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "extra_flags": [
+  "-Wl,--wrap=malloc",
+  "-Wl,--wrap=calloc",
+  "-Wl,--wrap=realloc",
+  "-Wl,--wrap=aligned_alloc",
+  "-Wl,--wrap=posix_memalign",
+  "-Wl,--wrap=free",
+  "-DE16_MEM"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "7163abfb98aa6c9c3a0b3fe8cd7289fb69f0a508653715120d0fb4877ca2c0e4",
+ "status": "OK"
+}

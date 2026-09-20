@@ -1,0 +1,13 @@
+loaded 262144 keys kind=tranco
+built s=8 b=512 build_ms=51.306 bytes=38359592 overflow=159607
+built s=8 b=1024 build_ms=57.428 bytes=60772904 overflow=159607
+built s=8 b=2048 build_ms=57.966 bytes=105599528 overflow=159607
+built s=16 b=512 build_ms=47.168 bytes=26418658 overflow=148322
+built s=16 b=1024 build_ms=48.166 bytes=37149999 overflow=146551
+built s=16 b=2048 build_ms=52.929 bytes=59563311 overflow=146551
+built s=32 b=1024 build_ms=47.974 bytes=24765350 overflow=132391
+built s=32 b=2048 build_ms=55.269 bytes=36007277 overflow=131892
+seed 0 done
+seed 1 done
+seed 2 done
+COMPLETE tranco

@@ -1,0 +1,23 @@
+timing sweep
+timing sweep start 2026-09-19 20:40:35
+bench_e25 mixed 131072 reps=5 tag=P1 rc=0 wall=8s
+bench_e25 skew 131072 reps=5 tag=P1 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P1 rc=0 wall=14s
+bench_e25 mixed 131072 reps=5 tag=P2 rc=0 wall=8s
+bench_e25 skew 131072 reps=5 tag=P2 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P2 rc=0 wall=13s
+bench_e25 mixed 131072 reps=5 tag=P3 rc=0 wall=9s
+bench_e25 skew 131072 reps=5 tag=P3 rc=0 wall=10s
+bench_e25 tranco 262144 reps=5 tag=P3 rc=0 wall=13s
+bench_e25 mixed 131072 reps=5 tag=P4 rc=0 wall=10s
+bench_e25 skew 131072 reps=5 tag=P4 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P4 rc=0 wall=13s
+bench_e25 mixed 131072 reps=5 tag=P5 rc=0 wall=7s
+bench_e25 skew 131072 reps=5 tag=P5 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P5 rc=0 wall=17s
+timing sweep end 2026-09-19 20:43:22
+binaries:
+  bench_e25 build_id=1789821624245459639 exe=576c387bfa4809bf4e4ab336
+  diag_e25_calls build_id=1789753520872303606 exe=fa39808f7a5a136949205635
+  check_e25_write build_id=1789753360276969620 exe=ae2356195252ebe83fc15320
+records: time=3600 calls=93

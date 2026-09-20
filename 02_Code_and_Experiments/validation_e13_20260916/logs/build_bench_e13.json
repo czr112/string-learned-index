@@ -1,0 +1,25 @@
+{
+ "target": "bench_e13",
+ "build_id": "1789532774757669596",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -Wl,--wrap=calloc -Wl,--wrap=free /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e13_20260916/bench_e13.cpp /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e13_20260916/build/art.o -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e13_20260916/build/bench_e13.306.1789532774163763493.tmp.exe",
+ "sources": {
+  "bench_e13.cpp": "1e3de4751ffeae1aed8bb2935b2a1a4289c0529f79b3fdbe2273eb11e0d797a1",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "ea2f2f794b63177f5cdeee5b357342c11b6ac397389527fdb4b5f8e1dcb8b495",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "third_party/vendor/libart/src/art.c": "b65f20fdc160a6e4c0b1b390086f682d381e3638d8690594158ad75cda33396e"
+ },
+ "extra_flags": [
+  "-Wl,--wrap=calloc",
+  "-Wl,--wrap=free"
+ ],
+ "c_objects": [
+  "build/art.o"
+ ],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "f36f978f7cc95170bc50e25f091ac2f375f055e55ed6ecebdc9908e8f603b7ae",
+ "status": "OK"
+}

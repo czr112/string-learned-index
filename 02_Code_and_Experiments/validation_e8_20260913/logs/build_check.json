@@ -1,0 +1,15 @@
+{
+ "target": "check",
+ "build_id": "1789299492303592600",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e8_20260913\\check.cpp -o D:\\字符串学习型索引_工作区\\02_代码与实验\\validation_e8_20260913\\build\\check.62480.1789299492303588800.tmp.exe",
+ "sources": {
+  "check.cpp": "b510c4cfe7d5aa2b80aa43ed325d0aa7625e7f2b2e6bbd82283a5394d6db73c2",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "index.hpp": "cc9548233d04983eab3e23acf95c812df00a83564506c51410d0af8d2d21afe7",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "db0ef7ad5f8c9bbc1e60a6ce2a96c6e40ba98b25418fd77bc62db1f66fbbd813",
+ "status": "OK"
+}

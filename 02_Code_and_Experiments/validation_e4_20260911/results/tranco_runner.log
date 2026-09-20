@@ -1,0 +1,2 @@
+START tranco 1000000
+DONE tranco seconds 44.8 winner uniform_3 {"ART_libart": 365.71, "cross_hybrid": 647.7, "cross_joint": 649.54, "default": 756.32, "sorted_array": 729.95, "sorted_leaves": 686.2, "uniform_3": 650.05, "warm_hybrid": 632.01, "warm_joint": 642.25}

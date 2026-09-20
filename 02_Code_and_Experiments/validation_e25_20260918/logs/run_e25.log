@@ -1,0 +1,22 @@
+timing sweep start 2026-09-19 20:40:35
+--- process P1 ---
+bench_e25 mixed 131072 reps=5 tag=P1 rc=0 wall=8s
+bench_e25 skew 131072 reps=5 tag=P1 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P1 rc=0 wall=14s
+--- process P2 ---
+bench_e25 mixed 131072 reps=5 tag=P2 rc=0 wall=8s
+bench_e25 skew 131072 reps=5 tag=P2 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P2 rc=0 wall=13s
+--- process P3 ---
+bench_e25 mixed 131072 reps=5 tag=P3 rc=0 wall=9s
+bench_e25 skew 131072 reps=5 tag=P3 rc=0 wall=10s
+bench_e25 tranco 262144 reps=5 tag=P3 rc=0 wall=13s
+--- process P4 ---
+bench_e25 mixed 131072 reps=5 tag=P4 rc=0 wall=10s
+bench_e25 skew 131072 reps=5 tag=P4 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P4 rc=0 wall=13s
+--- process P5 ---
+bench_e25 mixed 131072 reps=5 tag=P5 rc=0 wall=7s
+bench_e25 skew 131072 reps=5 tag=P5 rc=0 wall=11s
+bench_e25 tranco 262144 reps=5 tag=P5 rc=0 wall=17s
+timing sweep end 2026-09-19 20:43:22

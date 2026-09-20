@@ -1,0 +1,5 @@
+cohorts by D source: primary=17557 overflow=47700 miss=65815
+  D_demand_single  subblocks=1  simd_batches=2.8234  ov_entered=0.839516  ov_probes=7.79288
+  M_multiblock  subblocks=5.03808  simd_batches=14.5061  ov_entered=0.210526  ov_probes=0.564117
+  S_multiblock_strict  subblocks=5.59333  simd_batches=15.3487  ov_entered=0.302788  ov_probes=1.57228
+COMPLETE skew

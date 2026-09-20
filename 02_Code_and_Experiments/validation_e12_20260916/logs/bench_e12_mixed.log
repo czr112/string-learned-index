@@ -1,0 +1,4 @@
+seed 0 done  sorted_array=131072  ART_libart=131072  D_demand_single=131072  S_multiblock_strict=131072  sorted_leaf_prefix_compressed=131072
+seed 1 done  sorted_array=262144  ART_libart=262144  D_demand_single=262144  S_multiblock_strict=262144  sorted_leaf_prefix_compressed=262144
+seed 2 done  sorted_array=393216  ART_libart=393216  D_demand_single=393216  S_multiblock_strict=393216  sorted_leaf_prefix_compressed=393216
+COMPLETE mixed

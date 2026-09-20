@@ -1,0 +1,16 @@
+{
+ "target": "bench_e10",
+ "build_id": "1789492103935238195",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE7_COUNT_BYTES /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e10_20260916/bench_e10.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e10_20260916/build/bench_e10.298.1789492103935233343.tmp.exe",
+ "sources": {
+  "bench_e10.cpp": "ad9f8ec7d46e359a4c40b3555bdeabd9e730ccd09de383eec0209ebbcb30094f",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "5652a8952c587f063556afb1dd31150c4d21327c0714439422aaa7b5551977ac",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac"
+ },
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "01a3c54db4afaa844f97b6f0ed67408bb5d3f20b840d2a1644dd045436b69673",
+ "status": "OK"
+}

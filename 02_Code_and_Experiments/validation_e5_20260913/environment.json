@@ -1,0 +1,16 @@
+{
+  "os": "Windows 11 (10.0.26200 x64)",
+  "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+  "cores": 24,
+  "ram_gb": 15.7,
+  "compiler": "g++ (x86_64-win32-seh-rev0, Built by MinGW-Builds project) 15.2.0",
+  "compile_flags": "-std=c++17 -O3 -march=x86-64-v2 -static",
+  "flag_note": "two changes during E5. (1) -march=native -> x86-64-v2: all intrinsics used (SSE4.2 CRC32, SSE2 tag filter) are in v2; keeps CPU-portability. (2) -static added after root-causing intermittent SIGSEGV: Git Bash PATH made the runtime load Git's incompatible libstdc++-6.dll instead of the MinGW-Builds one matching g++ 15.2.0; static linking removes the DLL search. See LOG.md E5-1b and its correction.",
+  "pinning": "PowerShell Start-Process ProcessorAffinity=0x1 (single core), replacing Linux taskset -c 0",
+  "sanitizers_note": "MinGW ASan/UBSan availability probed separately; result recorded in results/checks/",
+  "environment_differences": [
+    "original rounds ran on Linux x86-64, g++ 13.3.0, taskset; absolute ns/op NOT comparable across rounds",
+    "hybrid P/E-core CPU; affinity pinned to logical processor 0"
+  ],
+  "date": "2026-09-13"
+}
