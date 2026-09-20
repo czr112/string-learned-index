@@ -1,0 +1,43 @@
+O1 sweep mode=same 2026-09-21 00:00:42
+--- process P1 ---
+bench_long_o1 mixed same reps=3 tag=P1 rc=0 wall=11s
+bench_long_o1 skew same reps=3 tag=P1 rc=0 wall=15s
+bench_long_o1 tranco same reps=3 tag=P1 rc=0 wall=22s
+--- process P2 ---
+bench_long_o1 mixed same reps=3 tag=P2 rc=0 wall=10s
+bench_long_o1 skew same reps=3 tag=P2 rc=0 wall=15s
+bench_long_o1 tranco same reps=3 tag=P2 rc=0 wall=22s
+--- process P3 ---
+bench_long_o1 mixed same reps=3 tag=P3 rc=0 wall=11s
+bench_long_o1 skew same reps=3 tag=P3 rc=0 wall=15s
+bench_long_o1 tranco same reps=3 tag=P3 rc=0 wall=22s
+--- process P4 ---
+bench_long_o1 mixed same reps=3 tag=P4 rc=0 wall=11s
+bench_long_o1 skew same reps=3 tag=P4 rc=0 wall=15s
+bench_long_o1 tranco same reps=3 tag=P4 rc=0 wall=22s
+--- process P5 ---
+bench_long_o1 mixed same reps=3 tag=P5 rc=0 wall=11s
+bench_long_o1 skew same reps=3 tag=P5 rc=0 wall=14s
+bench_long_o1 tranco same reps=3 tag=P5 rc=0 wall=22s
+O1 sweep mode=grow 2026-09-21 00:04:39
+--- process P1 ---
+bench_long_o1 mixed grow reps=3 tag=P1 rc=0 wall=9s
+bench_long_o1 skew grow reps=3 tag=P1 rc=0 wall=12s
+bench_long_o1 tranco grow reps=3 tag=P1 rc=0 wall=21s
+--- process P2 ---
+bench_long_o1 mixed grow reps=3 tag=P2 rc=0 wall=10s
+bench_long_o1 skew grow reps=3 tag=P2 rc=0 wall=11s
+bench_long_o1 tranco grow reps=3 tag=P2 rc=0 wall=21s
+--- process P3 ---
+bench_long_o1 mixed grow reps=3 tag=P3 rc=0 wall=10s
+bench_long_o1 skew grow reps=3 tag=P3 rc=0 wall=12s
+bench_long_o1 tranco grow reps=3 tag=P3 rc=0 wall=20s
+--- process P4 ---
+bench_long_o1 mixed grow reps=3 tag=P4 rc=0 wall=10s
+bench_long_o1 skew grow reps=3 tag=P4 rc=0 wall=12s
+bench_long_o1 tranco grow reps=3 tag=P4 rc=0 wall=21s
+--- process P5 ---
+bench_long_o1 mixed grow reps=3 tag=P5 rc=0 wall=9s
+bench_long_o1 skew grow reps=3 tag=P5 rc=0 wall=12s
+bench_long_o1 tranco grow reps=3 tag=P5 rc=0 wall=21s
+sweep end 2026-09-21 00:08:09

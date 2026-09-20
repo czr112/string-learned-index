@@ -1,0 +1,22 @@
+scan O1 sweep 2026-09-21 00:18:43
+--- process P1 ---
+bench_scan_s3 mixed reps=5 tag=P1 rc=0 wall=16s
+bench_scan_s3 skew reps=5 tag=P1 rc=0 wall=17s
+bench_scan_s3 tranco reps=5 tag=P1 rc=0 wall=18s
+--- process P2 ---
+bench_scan_s3 mixed reps=5 tag=P2 rc=0 wall=16s
+bench_scan_s3 skew reps=5 tag=P2 rc=0 wall=18s
+bench_scan_s3 tranco reps=5 tag=P2 rc=0 wall=18s
+--- process P3 ---
+bench_scan_s3 mixed reps=5 tag=P3 rc=0 wall=16s
+bench_scan_s3 skew reps=5 tag=P3 rc=0 wall=17s
+bench_scan_s3 tranco reps=5 tag=P3 rc=0 wall=18s
+--- process P4 ---
+bench_scan_s3 mixed reps=5 tag=P4 rc=0 wall=16s
+bench_scan_s3 skew reps=5 tag=P4 rc=0 wall=18s
+bench_scan_s3 tranco reps=5 tag=P4 rc=0 wall=18s
+--- process P5 ---
+bench_scan_s3 mixed reps=5 tag=P5 rc=0 wall=16s
+bench_scan_s3 skew reps=5 tag=P5 rc=0 wall=18s
+bench_scan_s3 tranco reps=5 tag=P5 rc=0 wall=16s
+sweep end 2026-09-21 00:23:00

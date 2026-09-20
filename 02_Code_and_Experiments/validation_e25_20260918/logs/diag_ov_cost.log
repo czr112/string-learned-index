@@ -44,3 +44,49 @@ tranco grow rep0 frac=0.25 ov_share_of_maintenance 0.119792 (insert 0.212109, er
 tranco grow rep0 frac=0.5 ov_share_of_maintenance 0.115325 (insert 0.20524, erase 0.00176755) containers 1699 max 659
 tranco grow rep0 frac=1 ov_share_of_maintenance 0.119395 (insert 0.208861, erase 0.00159559) containers 2865 max 659
 tranco grow rep0 frac=2 ov_share_of_maintenance 0.196229 (insert 0.268917, erase 0.109902) containers 5142 max 687
+diag_ov_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+mixed same rep0 frac=0.25 ov_share_of_maintenance 0.157646 (insert 0.281698, erase 3.2759e-05) containers 1322 max 97
+  note: all 16821 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+mixed same rep0 frac=0.5 ov_share_of_maintenance 0.323777 (insert 0.506799, erase 8.96639e-05) containers 3919 max 1365
+  note: all 40005 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+mixed same rep0 frac=1 ov_share_of_maintenance 0.329767 (insert 0.510521, erase 0.000752279) containers 6318 max 1365
+  note: all 100174 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+mixed same rep0 frac=2 ov_share_of_maintenance 0.378758 (insert 0.467545, erase 0.280896) containers 6784 max 1365
+  note: all 230373 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+diag_ov_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+skew same rep0 frac=0.25 ov_share_of_maintenance 0.207046 (insert 0.349722, erase 0.000987274) containers 453 max 824
+  note: all 32437 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+skew same rep0 frac=0.5 ov_share_of_maintenance 0.210255 (insert 0.356987, erase 0.00114979) containers 586 max 824
+  note: all 64850 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+skew same rep0 frac=1 ov_share_of_maintenance 0.263579 (insert 0.432959, erase 0.00133909) containers 935 max 824
+  note: all 129795 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+skew same rep0 frac=2 ov_share_of_maintenance 0.374821 (insert 0.358426, erase 0.388473) containers 961 max 824
+  note: all 260811 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+diag_ov_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+tranco same rep0 frac=0.25 ov_share_of_maintenance 0.0819683 (insert 0.144293, erase 0.00206607) containers 901 max 641
+tranco same rep0 frac=0.5 ov_share_of_maintenance 0.0799462 (insert 0.143409, erase 0.00173125) containers 1227 max 641
+tranco same rep0 frac=1 ov_share_of_maintenance 0.0671258 (insert 0.120558, erase 0.0015613) containers 1838 max 641
+tranco same rep0 frac=2 ov_share_of_maintenance 0.119288 (insert 0.134016, erase 0.104624) containers 3273 max 686
+diag_ov_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+mixed grow rep0 frac=0.25 ov_share_of_maintenance 0.164509 (insert 0.302982, erase 6.00141e-05) containers 1424 max 97
+  note: all 19546 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+mixed grow rep0 frac=0.5 ov_share_of_maintenance 0.250964 (insert 0.428199, erase 9.82822e-05) containers 4058 max 1365
+  note: all 43791 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+mixed grow rep0 frac=1 ov_share_of_maintenance 0.228357 (insert 0.394398, erase 0.00171327) containers 6458 max 1366
+  note: all 104259 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+mixed grow rep0 frac=2 ov_share_of_maintenance 0.351819 (insert 0.407621, erase 0.298307) containers 6799 max 1366
+  note: all 234858 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+diag_ov_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+skew grow rep0 frac=0.25 ov_share_of_maintenance 0.21472 (insert 0.358145, erase 0.000884097) containers 454 max 824
+  note: all 32493 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+skew grow rep0 frac=0.5 ov_share_of_maintenance 0.22073 (insert 0.367446, erase 0.00102026) containers 589 max 824
+  note: all 64941 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+skew grow rep0 frac=1 ov_share_of_maintenance 0.26614 (insert 0.437727, erase 0.00129284) containers 941 max 824
+  note: all 129964 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+skew grow rep0 frac=2 ov_share_of_maintenance 0.374376 (insert 0.364904, erase 0.381571) containers 965 max 824
+  note: all 260988 overflow inserts appended -- the insert-side movement is genuinely zero (the ring delivers fresh keys in increasing order), so read the erase side for movement.
+diag_ov_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+tranco grow rep0 frac=0.25 ov_share_of_maintenance 0.121167 (insert 0.215846, erase 0.00216409) containers 1114 max 659
+tranco grow rep0 frac=0.5 ov_share_of_maintenance 0.115103 (insert 0.201208, erase 0.00178391) containers 1699 max 659
+tranco grow rep0 frac=1 ov_share_of_maintenance 0.116673 (insert 0.206226, erase 0.00163317) containers 2865 max 659
+tranco grow rep0 frac=2 ov_share_of_maintenance 0.18576 (insert 0.251191, erase 0.112791) containers 5142 max 687

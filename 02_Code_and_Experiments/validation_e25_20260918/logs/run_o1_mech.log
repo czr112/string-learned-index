@@ -1,0 +1,6 @@
+diag_o1 mixed same reps=1 tag=MECH rc=0 wall=4s
+diag_o1 skew same reps=1 tag=MECH rc=0 wall=7s
+diag_o1 tranco same reps=1 tag=MECH rc=0 wall=8s
+diag_o1 mixed grow reps=1 tag=MECH rc=0 wall=4s
+diag_o1 skew grow reps=1 tag=MECH rc=0 wall=5s
+diag_o1 tranco grow reps=1 tag=MECH rc=0 wall=7s

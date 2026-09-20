@@ -1,0 +1,12 @@
+check_overflow_store frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0] O1[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=1]
+{"phase":"checkpoint","kind":"skew","name":"initial","live":131072,"arm_a_overflow":913,"arm_b_overflow":913,"records_compared":131072}
+{"phase":"batch","name":"overflow_insert","steps":10530,"arm_a_overflow":11438,"arm_b_overflow":11438,"arm_a_record_shifts":527025,"arm_b_record_shifts":527025,"arm_b_handle_moves":527025}
+{"phase":"checkpoint","kind":"skew","name":"overflow_insert","live":141602,"arm_a_overflow":11438,"arm_b_overflow":11438,"records_compared":272674}
+{"phase":"victims","kind":"skew","overflow_resident":10525}
+{"phase":"batch","name":"overflow_erase","steps":512,"arm_a_overflow_released":44230,"arm_a_logical_shifts":63399,"arm_b_logical_shifts":63399,"arm_b_handle_moves":63399,"arm_b_record_moves":0}
+{"phase":"checkpoint","kind":"skew","name":"overflow_erase","live":141090,"arm_a_overflow":10926,"arm_b_overflow":10926,"records_compared":413764}
+{"phase":"batch","name":"reinsert","steps":376,"arm_a_overflow":11302,"arm_b_overflow":11302}
+{"phase":"checkpoint","kind":"skew","name":"reinsert","live":141466,"arm_a_overflow":11302,"arm_b_overflow":11302,"records_compared":555230}
+{"phase":"find","kind":"skew","present_probes":141466,"absent_probes":4161,"compared":145627}
+{"gate":"check_overflow_store","kind":"skew","run_tag":"","keys":131072,"regions":64,"result":"pass","records_compared":555230,"finds_compared":145627,"scans":778,"scan_records":146368,"arm_a_overflow":11302,"arm_b_overflow":11302,"arm_a_memory":24784945,"arm_b_memory":24619985,"handle_moves_total":590604,"record_moves_total":0,"store_high_water":557,"store_live_water":557}
+skew overflow-store gate done

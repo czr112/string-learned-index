@@ -1,0 +1,12 @@
+check_overflow_store frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0] O1[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=1]
+{"phase":"checkpoint","kind":"mixed","name":"initial","live":131072,"arm_a_overflow":390,"arm_b_overflow":390,"records_compared":131072}
+{"phase":"batch","name":"overflow_insert","steps":9793,"arm_a_overflow":10183,"arm_b_overflow":10183,"arm_a_record_shifts":477560,"arm_b_record_shifts":477560,"arm_b_handle_moves":477560}
+{"phase":"checkpoint","kind":"mixed","name":"overflow_insert","live":140865,"arm_a_overflow":10183,"arm_b_overflow":10183,"records_compared":271937}
+{"phase":"victims","kind":"mixed","overflow_resident":9793}
+{"phase":"batch","name":"overflow_erase","steps":512,"arm_a_overflow_released":51341,"arm_a_logical_shifts":51400,"arm_b_logical_shifts":51400,"arm_b_handle_moves":51400,"arm_b_record_moves":0}
+{"phase":"checkpoint","kind":"mixed","name":"overflow_erase","live":140353,"arm_a_overflow":9671,"arm_b_overflow":9671,"records_compared":412290}
+{"phase":"batch","name":"reinsert","steps":384,"arm_a_overflow":10055,"arm_b_overflow":10055}
+{"phase":"checkpoint","kind":"mixed","name":"reinsert","live":140737,"arm_a_overflow":10055,"arm_b_overflow":10055,"records_compared":553027}
+{"phase":"find","kind":"mixed","present_probes":140737,"absent_probes":4140,"compared":144877}
+{"gate":"check_overflow_store","kind":"mixed","run_tag":"","keys":131072,"regions":64,"result":"pass","records_compared":553027,"finds_compared":144877,"scans":778,"scan_records":145639,"arm_a_overflow":10055,"arm_b_overflow":10055,"arm_a_memory":25467239,"arm_b_memory":25419535,"handle_moves_total":528988,"record_moves_total":0,"store_high_water":240,"store_live_water":240}
+mixed overflow-store gate done

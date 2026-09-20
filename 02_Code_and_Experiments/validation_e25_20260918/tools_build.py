@@ -85,10 +85,21 @@ EXTRA = {
     # untouched. Source has an #error if this flag is missing. A gate is not a timing
     # build, so the counters cost nothing that is measured.
     "check_scan_contract": ["-DE25_DIAG"],
+    # The O1 gate asserts that the stable-store arm actually used the new
+    # representation (its record-shift counter stays 0 while its handle counter rises)
+    # and that the erases really reached the overflow container. Both are read from the
+    # E25 counters, so this target is built WITH them -- as check_e31 is. Source has an
+    # #error if the flag is missing, so a wrong build is a hard stop rather than a report
+    # full of zeros that looks like the container was never touched. A gate is not a
+    # timing build, so the counters cost nothing that is measured.
+    "check_overflow_store": ["-DE25_DIAG"],
     # The hysteresis counters are read by bench_long_hyst's own non-vacuous gate,
     # so the diagnostic build of the SAME source is a second target (as diag_long is
     # for bench_long). The clean timing build stays counter-free.
     "diag_hyst": ["-DE25_DIAG"],
+    # The O1 arm asserts on its own movement counters, so the diagnostic build of the
+    # same source is a second target, as diag_hyst is for bench_long_hyst.
+    "diag_o1": ["-DE25_DIAG"],
     "bench_w_t": ["-DE30_TIME"],           # same source as bench_w, clock ON
     # Needs BOTH: e30_probe is declared inside the E25_DIAG member block because it
     # calls diag_group(), so -DE30_TIME alone leaves it uncompiled.
@@ -109,17 +120,20 @@ EXTRA = {
 }
 LIBS = {"bench_e25": ["build/art.o"], "bench_e26": ["build/art.o"],
         "bench_long_art": ["build/art.o"], "bench_long_hyst": ["build/art.o"],
-        "diag_hyst": ["build/art.o"], "san_bench_long_hyst": ["build/art.o"]}
+        "diag_hyst": ["build/art.o"], "san_bench_long_hyst": ["build/art.o"],
+        "bench_long_o1": ["build/art.o"], "diag_o1": ["build/art.o"]}
 C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "bench_e26": ["third_party/vendor/libart/src/art.c"],
              "bench_long_art": ["third_party/vendor/libart/src/art.c"],
              "bench_long_hyst": ["third_party/vendor/libart/src/art.c"],
              "diag_hyst": ["third_party/vendor/libart/src/art.c"],
-             "san_bench_long_hyst": ["third_party/vendor/libart/src/art.c"]}
+             "san_bench_long_hyst": ["third_party/vendor/libart/src/art.c"],
+             "bench_long_o1": ["third_party/vendor/libart/src/art.c"],
+             "diag_o1": ["third_party/vendor/libart/src/art.c"]}
 # diag_long is the SAME source as bench_long, built with the counters in. One source,
 # two targets, so the two builds cannot drift apart.
 SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
-       "diag_hyst": "bench_long_hyst.cpp",
+       "diag_hyst": "bench_long_hyst.cpp", "diag_o1": "bench_long_o1.cpp",
        # ITEM B: the sanitizer targets are new NAMES over these same sources. One
        # source, two targets -- as diag_long is for bench_long -- so the sanitizer
        # build and the shipped build of the same program cannot drift apart.

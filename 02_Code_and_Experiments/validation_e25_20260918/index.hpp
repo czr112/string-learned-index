@@ -6,6 +6,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <deque>
 #include <limits>
 #include <memory>
 #include <new>
@@ -287,6 +288,24 @@ struct Counts {
     std::uint64_t ov_shifted_bytes_insert = 0;
     std::uint64_t ov_shifted_records_erase = 0;
     std::uint64_t ov_shifted_bytes_erase = 0;
+    // ---- O1 (overflow_stable_store): RECORD moves vs HANDLE moves, and the space --
+    // The E32 counters above measure the LOGICAL shift distance and are incremented at
+    // the call site in put_overflow and erase_at, so both arms report the same distance
+    // on the same workload and the byte figures are what changed. These two measure
+    // what the container PHYSICALLY moved, and they are incremented inside the
+    // container, at the line that does the moving: on the stable arm the order array
+    // carries the shift in 4-byte handles and no stored record is relocated. The pair
+    // is what the acceptance table needs to show that the 48 bytes per erase went
+    // away rather than somewhere else -- and it is counted, not reasoned about.
+    std::uint64_t overflow_record_moves_stable = 0;      // ON arm: stored records relocated
+    std::uint64_t overflow_record_move_bytes_stable = 0;
+    std::uint64_t overflow_handle_moves = 0;             // ON arm: handles shifted in order
+    std::uint64_t overflow_handle_move_bytes = 0;
+    // Space: the store's high-water mark and the largest live count seen, so what the
+    // holes the free list keeps for reuse cost is visible. A store that reuses holes
+    // holds live <= high_water; the gap at the peak is the worst case it produced.
+    std::uint64_t ov_store_high_water = 0;
+    std::uint64_t ov_store_live_water = 0;
     std::uint64_t scan_start_locates = 0;    // E27 S2: locate(start) evaluations in scan()
     void reset() { *this = Counts{}; }
 };
@@ -302,10 +321,17 @@ inline Counts& counts() { static Counts c; return c; }
 #define E25_CMP(a, b) \
     (++::validation::e25::counts().cmp_calls, \
      compare_bytes((a), (b), ::validation::e25::counts().cmp_bytes))
+// A running maximum, for the O1 store's high-water marks. Separate from E25_ADD
+// because the quantity is a peak and not a sum. Compiled out with the rest, so the
+// timing build does not evaluate its argument either.
+#define E25_MAX(f, n) \
+    (::validation::e25::counts().f = \
+     ::validation::e25::counts().f > (n) ? ::validation::e25::counts().f : (n))
 #else
 #define E25_INC(f) ((void)0)
 #define E25_ADD(f, n) ((void)0)
 #define E25_CMP(a, b) compare((a), (b))
+#define E25_MAX(f, n) ((void)0)
 #endif
 
 #ifdef E14_PHASE
@@ -610,6 +636,24 @@ struct Config {
     // (scan_start_locates), so the saving is measured rather than argued: the S0
     // arm counts R+1 per scan, the S2 arm exactly 1.
     bool scan_cache_start = false;
+
+    // O1 (2026-09-20, the overflow container's erase cost): stable record storage
+    // plus an ordered handle array. E32 measured the ordered overflow vector at
+    // 12.2 / 37.3 / 37.6 per cent of maintenance time on the three datasets,
+    // concentrated in ERASE: at the 200 per cent checkpoint on the domain set the
+    // container moved 3,099,948 records / 148,797,504 bytes through erases while the
+    // largest single live container held 1,365 records. Each of those erases shifted
+    // every later record by sizeof(OverflowRecord) == 48 bytes. Insert was cheap by
+    // comparison: insertions almost always append.
+    //
+    // ON, a stored record never moves. The erase shifts 4-byte handles in order and
+    // destroys the record where it sits; a free list reuses the hole. OFF is the
+    // vector, byte for byte.
+    //
+    // NOT assumed to be faster. It still moves handles, and it adds one indirection
+    // on every read, so the point query, the scan and the insert paths may all get
+    // SLOWER. That is what the measurement is for.
+    bool overflow_stable_store = false;
 };
 
 #if defined(E7_COUNT_BYTES) || defined(E24_DIAG) || defined(E25_DIAG)
@@ -843,7 +887,196 @@ class Region {
         std::uint64_t value;
         std::uint8_t tag;
     };
-    using Overflow = std::vector<OverflowRecord>;
+
+    // O1: ONE container interface, TWO representations. The switch decides which is
+    // live at construction; no call site tests it.
+    //
+    // OFF is the ordered vector this project has shipped since E7: sorted by suffix,
+    // where a middle insert or erase shifts every later record by
+    // sizeof(OverflowRecord) == 48 bytes. The OFF arm forwards to exactly that vector,
+    // so the frozen build behaves and reports space as it did before O1.
+    //
+    // ON is the stable store. Records live in a deque, which never moves an existing
+    // element when it grows, and they are never moved again. order holds sorted
+    // 4-byte handles into the store, so an erase shifts handles instead of records,
+    // and free_slots reuses the holes the erases leave so the store does not grow
+    // with the number of records ever inserted.
+    //
+    // NOT assumed to be faster: it still moves handles, and every read now pays one
+    // indirection through the handle array, so the point query, the scan and the
+    // insert paths can all get slower. That is what the measurement is for.
+    class OverflowList {
+    public:
+        // The two slow paths that walk the container -- Region::update and
+        // Region::erase, reachable only when write_fast_locate is off -- iterate it,
+        // and the erase does erase(it) and end() - it. Both arms expose this iterator
+        // so those loops are written once, and its arithmetic means one thing in
+        // either arm: a position in the container's own order.
+        struct iterator {
+            OverflowList* owner = nullptr;
+            std::size_t pos = 0;
+
+            OverflowRecord& operator*() const { return (*owner)[pos]; }
+            OverflowRecord* operator->() const { return &(*owner)[pos]; }
+            iterator& operator++() { ++pos; return *this; }
+
+            std::ptrdiff_t operator-(const iterator& o) const {
+                return static_cast<std::ptrdiff_t>(pos) - static_cast<std::ptrdiff_t>(o.pos);
+            }
+
+            bool operator==(const iterator& o) const { return pos == o.pos; }
+            bool operator!=(const iterator& o) const { return pos != o.pos; }
+        };
+
+        struct const_iterator {
+            const OverflowList* owner = nullptr;
+            std::size_t pos = 0;
+
+            const OverflowRecord& operator*() const { return (*owner)[pos]; }
+            const OverflowRecord* operator->() const { return &(*owner)[pos]; }
+            const_iterator& operator++() { ++pos; return *this; }
+
+            bool operator==(const const_iterator& o) const { return pos == o.pos; }
+            bool operator!=(const const_iterator& o) const { return pos != o.pos; }
+        };
+
+        // Read once, here, at construction; no operation tests it afterwards.
+        explicit OverflowList(bool stable) : stable_(stable) {}
+
+        std::size_t size() const { return stable_ ? order_.size() : vec_.size(); }
+        bool empty() const { return stable_ ? order_.empty() : vec_.empty(); }
+
+        const OverflowRecord& operator[](std::size_t i) const {
+            return stable_ ? store_[order_[i]] : vec_[i];
+        }
+
+        // Non-const: the ON arm returns a reference into the deque. A deque keeps
+        // references to existing elements valid when it grows, and nothing is ever
+        // removed from the store, so this reference stays valid -- which is what lets
+        // store_at write a value in place without going through the handle array.
+        OverflowRecord& operator[](std::size_t i) {
+            return stable_ ? store_[order_[i]] : vec_[i];
+        }
+
+        iterator begin() { return iterator{this, 0}; }
+        iterator end() { return iterator{this, size()}; }
+        const_iterator begin() const { return const_iterator{this, 0}; }
+        const_iterator end() const { return const_iterator{this, size()}; }
+
+        // The position a record with suffix s belongs at: the first position whose
+        // stored suffix is not less than s. The OFF arm is the exact std::lower_bound
+        // call put_overflow always made, with the same comparator, so its ordering and
+        // its comparison counts are unchanged.
+        std::size_t lower_bound_pos(std::string_view s) const {
+            if (!stable_) {
+                const auto it = std::lower_bound(vec_.begin(), vec_.end(), s,
+                    [](const OverflowRecord& a, std::string_view b) { return E25_CMP(a.suffix, b) < 0; });
+                return static_cast<std::size_t>(it - vec_.begin());
+            }
+            std::size_t lo = 0, hi = order_.size();
+            while (lo < hi) {
+                const std::size_t mid = lo + (hi - lo) / 2;
+                if (E25_CMP(store_[order_[mid]].suffix, s) < 0) lo = mid + 1;
+                else hi = mid;
+            }
+            return lo;
+        }
+
+        // Insert rec before position pos.
+        void insert_at(std::size_t pos, OverflowRecord rec) {
+            if (!stable_) {
+                vec_.insert(vec_.begin() + static_cast<std::ptrdiff_t>(pos), std::move(rec));
+                return;
+            }
+            std::uint32_t slot = 0;
+            if (!free_slots_.empty()) {
+                slot = free_slots_.back();
+                free_slots_.pop_back();
+                store_[slot] = std::move(rec);
+            } else {
+                store_.push_back(std::move(rec));
+                slot = static_cast<std::uint32_t>(store_.size() - 1);
+            }
+            const std::size_t shifted = order_.size() - pos;
+            order_.insert(order_.begin() + static_cast<std::ptrdiff_t>(pos), slot);
+            // The mechanism check. overflow_handle_moves counts the handles the order
+            // array just shifted and overflow_handle_move_bytes what that cost. The
+            // record pair is written at this line, the only place that touches the
+            // store, and it is 0 because an insertion either appends to the deque or
+            // writes into a hole: neither displaces a stored record. The E32 counters
+            // (ov_shifted_records_*) keep reporting the LOGICAL shift distance in both
+            // arms, so the two representations are compared on the same workload.
+            E25_ADD(overflow_handle_moves, shifted);
+            E25_ADD(overflow_handle_move_bytes, shifted * sizeof(std::uint32_t));
+            E25_ADD(overflow_record_moves_stable, 0);
+            E25_ADD(overflow_record_move_bytes_stable, 0);
+            // Space. Both quantities are monotone in an insert, so a running max is
+            // the peak: the store's slots -- holes included -- and the live count.
+            E25_MAX(ov_store_high_water, store_.size());
+            E25_MAX(ov_store_live_water, order_.size());
+        }
+
+        // Erase the record at position pos.
+        void erase_at(std::size_t pos) {
+            if (!stable_) {
+                vec_.erase(vec_.begin() + static_cast<std::ptrdiff_t>(pos));
+                return;
+            }
+            const std::uint32_t slot = order_[pos];
+            const std::size_t shifted = order_.size() - 1 - pos;
+            order_.erase(order_.begin() + static_cast<std::ptrdiff_t>(pos));
+            // Destroy the payload where it sits -- the caller has already counted the
+            // free -- and hand the slot to the free list. The record did not move;
+            // the handles after pos did, and that is the whole point of the store.
+            store_[slot] = OverflowRecord{};
+            free_slots_.push_back(slot);
+            E25_ADD(overflow_handle_moves, shifted);
+            E25_ADD(overflow_handle_move_bytes, shifted * sizeof(std::uint32_t));
+            E25_ADD(overflow_record_moves_stable, 0);
+            E25_ADD(overflow_record_move_bytes_stable, 0);
+        }
+
+        void erase(iterator it) { erase_at(it.pos); }
+
+        // The container's own slot arrays, without the object or the payloads. The OFF
+        // arm is the vector capacity in record units, which is what e24_report's
+        // ov_container_cap has always meant. The ON arm reports the store's slots --
+        // holes included, because that is the space the holes occupy -- plus both
+        // handle vectors.
+        std::size_t container_slot_bytes() const {
+            if (!stable_) return vec_.capacity() * sizeof(OverflowRecord);
+            return store_.size() * sizeof(OverflowRecord) +
+                   order_.capacity() * sizeof(std::uint32_t) +
+                   free_slots_.capacity() * sizeof(std::uint32_t);
+        }
+
+        // What this container owns, in the terms the E9 decomposition already uses: the
+        // container object, its slot arrays, and each LIVE record's suffix buffer. The
+        // OFF branch is the expression memory_breakdown used inline before O1, so the
+        // frozen build's space numbers do not move. The ON branch counts the deque by
+        // its slot count and does not model the deque's own chunk map, so the ON figure
+        // is a lower bound on the real footprint -- never an overstatement.
+        std::size_t allocated_bytes() const {
+            if (!stable_) {
+                std::size_t total = sizeof(std::vector<OverflowRecord>) +
+                                    vec_.capacity() * sizeof(OverflowRecord);
+                for (const auto& e : vec_) total += e.suffix.capacity() + 1;
+                return total;
+            }
+            std::size_t total = sizeof(OverflowList) + container_slot_bytes();
+            for (std::uint32_t s : order_) total += store_[s].suffix.capacity() + 1;
+            return total;
+        }
+
+    private:
+        bool stable_ = false;
+        std::vector<OverflowRecord> vec_;        // OFF arm: the ordered vector
+        std::deque<OverflowRecord> store_;       // ON arm: records never move once stored
+        std::vector<std::uint32_t> order_;       // ON arm: sorted handles into store_
+        std::vector<std::uint32_t> free_slots_;  // ON arm: the holes an erase left behind
+    };
+
+    using Overflow = OverflowList;
 
     Config config_;
 
@@ -1221,22 +1454,29 @@ class Region {
         auto* o = overflow(g);
         if (!o) {
             E18_INC(overflow_containers);
-            overflow_owners_.push_back(std::make_unique<Overflow>());
+            // The representation is fixed for the container's whole life, from here.
+            overflow_owners_.push_back(std::make_unique<Overflow>(config_.overflow_stable_store));
             o = overflow_owners_.back().get();
             header(g, 0).overflow_pointer = reinterpret_cast<std::uintptr_t>(o);
         }
 #ifdef E30_TIME
         const auto ov_t0 = E30_T0();
 #endif
-        auto it = std::lower_bound(o->begin(), o->end(), s,
-            [](const OverflowRecord& a, std::string_view b) { return E25_CMP(a.suffix, b) < 0; });
-        // E31 item 3: what vector::insert is about to push up, in records AND in bytes,
-        // read while the distance is still valid. Two integer ops, and only in the
-        // counter build -- this is not on the flag-free timing path.
-        E25_ADD(ov_shifted_records_insert, o->end() - it);
-        E25_ADD(ov_shifted_bytes_insert, (o->end() - it) * sizeof(OverflowRecord));
+        // The search belongs to the container, so put_overflow does not care which
+        // representation is live: lower_bound_pos returns the position in the
+        // container's own order, and the OFF arm is the same std::lower_bound call
+        // this line used to make.
+        const std::size_t pos = o->lower_bound_pos(s);
+        // E31 item 3: the distance the insertion has to push up, in records AND in
+        // bytes, read while the distance is still valid. In the OFF arm those records
+        // are the ones vector::insert relocates. In the ON arm the same distance is
+        // the number of 4-byte handles the order array shifts and the records do not
+        // move at all -- which is why both arms report the same logical distance and
+        // different byte figures. Two integer ops, and only in the counter build.
+        E25_ADD(ov_shifted_records_insert, o->size() - pos);
+        E25_ADD(ov_shifted_bytes_insert, (o->size() - pos) * sizeof(OverflowRecord));
         E25_INC(string_allocs);
-        o->insert(it, {std::string(s), value, tag});
+        o->insert_at(pos, OverflowRecord{std::string(s), value, tag});
         ++overflow_count_;
 #ifdef E30_TIME
         E30_ADD(ov_insert_ns, ov_t0);
@@ -1613,10 +1853,11 @@ public:
         m.model = model_.allocated_bytes();
         m.prefix = prefix_.capacity() + 1;
         m.overflow = overflow_owners_.capacity() * sizeof(void*);
-        for (const auto& o : overflow_owners_) {
-            m.overflow += sizeof(Overflow) + o->capacity() * sizeof(OverflowRecord);
-            for (const auto& e : *o) m.overflow += e.suffix.capacity() + 1;
-        }
+        // O1: the container reports its own space in the terms this decomposition
+        // uses, so the two representations are counted alike and this function does
+        // not have to know which one is live. The OFF figure is exactly the
+        // expression that used to be inline here, so the frozen build numbers hold.
+        for (const auto& o : overflow_owners_) m.overflow += o->allocated_bytes();
         m.tables = off_.capacity() * sizeof(std::size_t) +
                    sg_.capacity() * sizeof(std::uint16_t) +
                    bb_.capacity() * sizeof(std::uint32_t);
@@ -1933,7 +2174,7 @@ public:
 #ifdef E30_TIME
             const auto ov_t0 = E30_T0();
 #endif
-            o->erase(o->begin() + static_cast<std::ptrdiff_t>(loc.index));
+            o->erase_at(loc.index);
 #ifdef E30_TIME
             E30_ADD(ov_erase_ns, ov_t0);
             E30_INC(ov_erase_calls);
@@ -2533,6 +2774,16 @@ public:
             if (const auto* o = overflow(g))
                 if (!o->empty()) out.push_back(o->size());
     }
+
+    // E33/O1: the live overflow records' SUFFIX LENGTHS, so "what actually moves" is a
+    // measurement rather than a guess. std::string keeps up to 15 bytes inline (SSO), so a
+    // record's 48-byte object CONTAINS its characters when the suffix is at most 15 bytes,
+    // and only points at them when it is longer. Read-only, called with the clock stopped.
+    void diag_overflow_suffix_lengths(std::vector<std::size_t>& out) const {
+        for (std::uint32_t g = 0; g < groups_; ++g)
+            if (const auto* o = overflow(g))
+                for (const auto& r : *o) out.push_back(r.suffix.size());
+    }
     // The element size the movement byte counters are counted in, so a reader can turn
     // "shifted bytes" back into "shifted records" without guessing. sizeof() on the
     // private record type can only be named where the type is visible, which is here.
@@ -2651,7 +2902,10 @@ public:
             }
 
             if (const auto* o = overflow(g)) {
-                rep.ov_container_cap = o->capacity() * sizeof(OverflowRecord);
+                // O1: the container reports its own slot bytes, so this accounting
+                // does not have to know which representation is live. The OFF value
+                // is the expression that used to be here.
+                rep.ov_container_cap = o->container_slot_bytes();
                 rep.ov_rec_size = sizeof(OverflowRecord);
                 Result tmp;
                 for (const auto& e : *o) {
@@ -3061,6 +3315,10 @@ public:
     // the element size the movement counters are expressed in. Diagnostic only.
     void diag_overflow_sizes(std::vector<std::size_t>& out) const {
         for (const auto& x : nodes_) x.region->diag_overflow_sizes(out);
+    }
+
+    void diag_overflow_suffix_lengths(std::vector<std::size_t>& out) const {
+        for (const auto& x : nodes_) x.region->diag_overflow_suffix_lengths(out);
     }
     std::size_t diag_overflow_record_bytes() const { return Region::diag_overflow_record_bytes(); }
 

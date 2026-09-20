@@ -304,6 +304,26 @@ int main(int argc, char** argv) {
                 // Container sizes and all counters are read AFTER the clock stops.
                 std::vector<std::size_t> sizes;
                 s->diag_overflow_sizes(sizes);
+
+                // E33/O1: the same walk, but lengths instead of counts. sso_char_bytes is
+                // the character data that rides INSIDE the 48-byte record (SSO) and therefore
+                // moves with it on every erase; heap_char_bytes stays put. The first number
+                // is the ceiling on what moving handles instead of records can save.
+                std::vector<std::size_t> lens;
+                s->diag_overflow_suffix_lengths(lens);
+                std::uint64_t len_sum = 0, len_max = 0, sso = 0;
+                std::uint64_t sso_char_bytes = 0, heap_char_bytes = 0;
+                for (std::size_t v : lens) {
+                    len_sum += v;
+                    if (v > len_max) len_max = v;
+                    if (v <= 15) {
+                        ++sso;
+                        sso_char_bytes += v;
+                    } else {
+                        heap_char_bytes += v;
+                    }
+                }
+                const std::uint64_t heap_strings = std::uint64_t(lens.size()) - sso;
                 std::uint64_t sz_sum = 0, sz_max = 0, ge[3] = {0, 0, 0};
                 for (std::size_t v : sizes) {
                     sz_sum += v;
@@ -352,6 +372,12 @@ int main(int argc, char** argv) {
                     << ",\"ov_shifted_records_erase\":" << C.ov_shifted_records_erase
                     << ",\"ov_shifted_bytes_erase\":" << C.ov_shifted_bytes_erase
                     << ",\"ov_rec_bytes\":" << s->diag_overflow_record_bytes()
+                    << ",\"ov_suffix_len_mean\":" << (lens.empty() ? 0.0 : double(len_sum) / double(lens.size()))
+                    << ",\"ov_suffix_len_max\":" << len_max
+                    << ",\"ov_suffix_sso_inline\":" << sso
+                    << ",\"ov_suffix_heap\":" << heap_strings
+                    << ",\"ov_sso_char_bytes\":" << sso_char_bytes
+                    << ",\"ov_heap_char_bytes\":" << heap_char_bytes
                     << ",\"ov_bytes_shifted_per_insert\":" << (T.ov_insert_calls ? double(C.ov_shifted_bytes_insert) / double(T.ov_insert_calls) : 0.0)
                     << ",\"ov_bytes_shifted_per_erase\":" << (T.ov_erase_calls ? double(C.ov_shifted_bytes_erase) / double(T.ov_erase_calls) : 0.0)
                     << ",\"e30_erase_ms\":" << double(T.erase_ns) / 1e6
