@@ -1,8 +1,9 @@
 // E27 gate: reserving the result string must not change a single returned record.
 //
 // The change is a pure materialisation change -- same records, same order, same
-// values, same ownership. So this gate builds two indexes from the same plan, puts
-// the same operation sequence through both, and compares the FULL scan output
+// values, same ownership. So this gate builds three indexes from the same plan (S0,
+// S1, S2), puts the same operation sequence through all of them, and compares the
+// FULL scan output
 // element by element at every protocol length, including the starts that fall
 // between two keys and the scans that return fewer than n records.
 //
@@ -99,9 +100,13 @@ int main(int argc, char** argv) {
         c.compact_needs_garbage = true;
         Config c0 = c;                                  // two allocations per record
         Config c1 = c; c1.scan_reserve_result = true;   // one allocation per record
+        Config c2 = c1;                                 // S2 = S1 plus a cached scan start
+        c2.scan_cache_start = true;
         e25sw::require_only_switches_differ(c0, c1, {"scan_reserve_result"});
+        e25sw::require_only_switches_differ(c1, c2, {"scan_cache_start"});
         std::cerr << "E27 arms S0[" << e25sw::switches(c0) << "] S1["
-                  << e25sw::switches(c1) << "]" << std::endl;
+                  << e25sw::switches(c1) << "] S2[" << e25sw::switches(c2)
+                  << "]" << std::endl;
 
         Pipeline plan;
         {
@@ -145,36 +150,50 @@ int main(int argc, char** argv) {
             }
             auto a = std::make_unique<Index>(c0);
             auto b = std::make_unique<Index>(c1);
+            auto d = std::make_unique<Index>(c2);
             a->bulk_load_with_plan(keys, sg_of(plan.s_alloc), bb_of(plan.s_alloc), plan.s_caps);
             b->bulk_load_with_plan(keys, sg_of(plan.s_alloc), bb_of(plan.s_alloc), plan.s_caps);
+            d->bulk_load_with_plan(keys, sg_of(plan.s_alloc), bb_of(plan.s_alloc), plan.s_caps);
             for (const auto& o : ops) {
-                if (o.kind == 1) { a->insert(o.key, o.value); b->insert(o.key, o.value); }
-                else { a->erase(o.key); b->erase(o.key); }
+                if (o.kind == 1) {
+                    a->insert(o.key, o.value);
+                    b->insert(o.key, o.value);
+                    d->insert(o.key, o.value);
+                } else {
+                    a->erase(o.key);
+                    b->erase(o.key);
+                    d->erase(o.key);
+                }
             }
 
             for (std::size_t ni = 0; ni < 3; ++ni) {
                 const std::size_t n = NS[ni];
                 for (const auto& k : starts) {
                     ++scans_run;
-                    const auto ga = a->scan(k, n);
-                    const auto gb = b->scan(k, n);
-                    if (ga.size() != gb.size())
-                        throw std::runtime_error(std::string(name) + ": returned length differs");
-                    if (ga.size() < n) ++short_scans;
-                    for (std::size_t i = 0; i < ga.size(); ++i) {
-                        ++compared;
-                        if (ga[i].first != gb[i].first || ga[i].second != gb[i].second)
-                            throw std::runtime_error(std::string(name) + ": returned record differs");
+                    const std::vector<Pair> g[3] = {a->scan(k, n), b->scan(k, n), d->scan(k, n)};
+                    if (g[0].size() < n) ++short_scans;
+                    // Each arm against the first, element by element -- so the new S2
+                    // index is checked against both of the others, not just one.
+                    for (std::size_t x = 1; x < 3; ++x) {
+                        if (g[x].size() != g[0].size())
+                            throw std::runtime_error(std::string(name) + ": returned length differs");
+                        for (std::size_t i = 0; i < g[0].size(); ++i) {
+                            ++compared;
+                            if (g[x][i].first != g[0][i].first || g[x][i].second != g[0][i].second)
+                                throw std::runtime_error(std::string(name) + ": returned record differs");
+                        }
                     }
-                    // And against the reference, so both are checked independently of
-                    // each other -- agreeing on a wrong answer is not a pass.
-                    std::size_t idx = 0;
-                    for (auto it = ref.lower_bound(k); it != ref.end() && idx < ga.size(); ++it, ++idx) {
-                        if (it->first != ga[idx].first || it->second != ga[idx].second)
-                            throw std::runtime_error(std::string(name) + ": disagrees with reference");
+                    // And every arm against the reference, so agreeing on a wrong answer
+                    // is not a pass.
+                    for (std::size_t x = 0; x < 3; ++x) {
+                        std::size_t idx = 0;
+                        for (auto it = ref.lower_bound(k); it != ref.end() && idx < g[x].size(); ++it, ++idx) {
+                            if (it->first != g[x][idx].first || it->second != g[x][idx].second)
+                                throw std::runtime_error(std::string(name) + ": disagrees with reference");
+                        }
+                        if (idx != g[x].size())
+                            throw std::runtime_error(std::string(name) + ": reference length differs");
                     }
-                    if (idx != ga.size())
-                        throw std::runtime_error(std::string(name) + ": reference length differs");
                 }
             }
             std::cout << "{\"case\":\"" << name << "\",\"keys\":" << N

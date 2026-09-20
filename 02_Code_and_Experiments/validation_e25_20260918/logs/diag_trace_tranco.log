@@ -1,0 +1,6 @@
+diag_trace switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+{"kind":"tranco","keys":262144,"regions":128,"live":262144}
+{"key":"0-24.jp","key_len":7,"region":0,"region_prefix":"","region_prefix_len":0,"suffix":"0-24.jp","suffix_len":7,"group":13,"groups_in_region":171,"subblocks":1,"entries_in_group":2,"found":1}
+{"key":"fwc.gov.au","key_len":10,"region":42,"region_prefix":"","region_prefix_len":0,"suffix":"fwc.gov.au","suffix_len":10,"group":90,"groups_in_region":171,"subblocks":3,"entries_in_group":43,"found":1}
+{"key":"photojin.baby","key_len":13,"region":85,"region_prefix":"p","region_prefix_len":1,"suffix":"hotojin.baby","suffix_len":12,"group":59,"groups_in_region":171,"subblocks":9,"entries_in_group":130,"found":1}
+{"i1_checked":512,"i1_result":"pass"}

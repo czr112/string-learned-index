@@ -1,0 +1,6 @@
+diag_trace switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1
+{"kind":"mixed","keys":131072,"regions":64,"live":131072}
+{"key":"0/user/00008019981d298e00000000000069c3","key_len":39,"region":0,"region_prefix":"0/user/0","region_prefix_len":8,"suffix":"0008019981d298e00000000000069c3","suffix_len":31,"group":2,"groups_in_region":171,"subblocks":1,"entries_in_group":7,"found":1}
+{"key":"0/user/fffecd7b17c52be6000000000001e615","key_len":39,"region":21,"region_prefix":"","region_prefix_len":0,"suffix":"0/user/fffecd7b17c52be6000000000001e615","suffix_len":39,"group":32,"groups_in_region":459,"subblocks":43,"entries_in_group":683,"found":1}
+{"key":"1/https://example.test/catalog/fffdca18eb6442950000000000017a46wcxxlaavurkscvofqreelqvxjmysokvekwuzahjbvkvcrnloviaeanfprvxormmjkbsofnteruocoinskqukfdvepzwtaot","key_len":158,"region":42,"region_prefix":"","region_prefix_len":0,"suffix":"1/https://example.test/catalog/fffdca18eb6442950000000000017a46wcxxlaavurkscvofqreelqvxjmysokvekwuzahjbvkvcrnloviaeanfprvxormmjkbsofnteruocoinskqukfdvepzwtaot","suffix_len":158,"group":135,"groups_in_region":613,"subblocks":307,"entries_in_group":1228,"found":1}
+{"i1_checked":512,"i1_result":"pass"}

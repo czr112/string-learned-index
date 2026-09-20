@@ -1,0 +1,22 @@
+E31 ART sweep mode=same 2026-09-20 19:09:17
+--- process P1 ---
+bench_long_hyst mixed same reps=3 tag=P1 rc=0 wall=18s
+bench_long_hyst skew same reps=3 tag=P1 rc=0 wall=26s
+bench_long_hyst tranco same reps=3 tag=P1 rc=0 wall=37s
+--- process P2 ---
+bench_long_hyst mixed same reps=3 tag=P2 rc=0 wall=17s
+bench_long_hyst skew same reps=3 tag=P2 rc=0 wall=27s
+bench_long_hyst tranco same reps=3 tag=P2 rc=0 wall=41s
+--- process P3 ---
+bench_long_hyst mixed same reps=3 tag=P3 rc=0 wall=26s
+bench_long_hyst skew same reps=3 tag=P3 rc=0 wall=28s
+bench_long_hyst tranco same reps=3 tag=P3 rc=0 wall=40s
+--- process P4 ---
+bench_long_hyst mixed same reps=3 tag=P4 rc=0 wall=25s
+bench_long_hyst skew same reps=3 tag=P4 rc=0 wall=27s
+bench_long_hyst tranco same reps=3 tag=P4 rc=0 wall=38s
+--- process P5 ---
+bench_long_hyst mixed same reps=3 tag=P5 rc=0 wall=18s
+bench_long_hyst skew same reps=3 tag=P5 rc=0 wall=28s
+bench_long_hyst tranco same reps=3 tag=P5 rc=0 wall=38s
+sweep end 2026-09-20 19:16:32

@@ -1,0 +1,9 @@
+arms frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,scan_cache_start=0,scan_reserve_result=1] E31[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_hysteresis=0,scan_cache_start=0,scan_reserve_result=1]
+{"kind":"mixed","mode":"same","frac":0.25,"live":131072,"frozen_overflow":16743,"e31_overflow":709,"frozen_memory":25535984,"e31_memory":23926773,"records_compared":131072,"dir_groups_checked":446,"subblock_reclaims":3604,"subblock_reclaim_helped":3280}
+mixed same frac=0.25 ok
+{"kind":"mixed","mode":"same","frac":0.5,"live":131072,"frozen_overflow":39829,"e31_overflow":2797,"frozen_memory":29537738,"e31_memory":24321928,"records_compared":262144,"dir_groups_checked":446,"subblock_reclaims":12602,"subblock_reclaim_helped":10174}
+mixed same frac=0.5 ok
+{"kind":"mixed","mode":"same","frac":1,"live":131072,"frozen_overflow":98564,"e31_overflow":38568,"frozen_memory":39097998,"e31_memory":29862836,"records_compared":393216,"dir_groups_checked":446,"subblock_reclaims":62642,"subblock_reclaim_helped":24053}
+mixed same frac=1 ok
+{"kind":"mixed","mode":"same","frac":2,"live":131072,"frozen_overflow":128533,"e31_overflow":39878,"frozen_memory":43126385,"e31_memory":30038048,"records_compared":524288,"dir_groups_checked":446,"subblock_reclaims":127780,"subblock_reclaim_helped":49292}
+mixed same frac=2 ok

@@ -47,19 +47,33 @@ EXTRA = {
     # which needs the counters. A gate is not a timing build, so the counters cost
     # nothing that is measured. Source has an #error if this flag is missing.
     "check_e31": ["-DE25_DIAG"],
+    # The hysteresis counters are read by bench_long_hyst's own non-vacuous gate,
+    # so the diagnostic build of the SAME source is a second target (as diag_long is
+    # for bench_long). The clean timing build stays counter-free.
+    "diag_hyst": ["-DE25_DIAG"],
     "bench_w_t": ["-DE30_TIME"],           # same source as bench_w, clock ON
     # Needs BOTH: e30_probe is declared inside the E25_DIAG member block because it
     # calls diag_group(), so -DE30_TIME alone leaves it uncompiled.
     "bench_repack": ["-DE30_TIME", "-DE25_DIAG"],
+    # E31 item 3, and it needs both for the same reason plus one more: the overflow
+    # clocks are E30_T0/E30_ADD (so -DE30_TIME), and the movement counters and the
+    # container-size accessor are declared under -DE25_DIAG. The source carries an
+    # #error if either is missing, so a wrong build is a hard stop rather than a report
+    # full of zeros that looks like "the overflow container is free".
+    "diag_ov_cost": ["-DE30_TIME", "-DE25_DIAG"],
 }
 LIBS = {"bench_e25": ["build/art.o"], "bench_e26": ["build/art.o"],
-        "bench_long_art": ["build/art.o"]}
+        "bench_long_art": ["build/art.o"], "bench_long_hyst": ["build/art.o"],
+        "diag_hyst": ["build/art.o"]}
 C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "bench_e26": ["third_party/vendor/libart/src/art.c"],
-             "bench_long_art": ["third_party/vendor/libart/src/art.c"]}
+             "bench_long_art": ["third_party/vendor/libart/src/art.c"],
+             "bench_long_hyst": ["third_party/vendor/libart/src/art.c"],
+             "diag_hyst": ["third_party/vendor/libart/src/art.c"]}
 # diag_long is the SAME source as bench_long, built with the counters in. One source,
 # two targets, so the two builds cannot drift apart.
-SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp"}
+SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
+       "diag_hyst": "bench_long_hyst.cpp"}
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 

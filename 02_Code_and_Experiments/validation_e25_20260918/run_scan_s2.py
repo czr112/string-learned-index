@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+"""E27 S2 sweep: four scan arms in one process, five independent processes.
+
+The S2 arm is S1 plus Config::scan_cache_start, the checklist's section 7.1 item:
+Index::scan used to evaluate locate(start) once per loop iteration and once more in the
+body, so a scan spanning R regions paid R+1 outer searches for the answer it already
+had. S2 caches the first evaluation.
+
+This writes results/main/e27s2_scan_time.jsonl and leaves results/main/e27_scan_time.jsonl
+alone: that file holds the E27 records, produced by a different binary, and a paired file
+cannot hold two binaries. It is also why this program is a derived copy rather than a
+patched bench_scan.cpp.
+
+Processes run serially: these are CPU- and memory-sensitive timings and running them
+concurrently would make them contend for the same core.
+
+Usage:  python3 run_scan_s2.py [--processes 5] [--reps 5]
+"""
+import argparse
+import os
+import subprocess
+import sys
+import time
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+DATASETS = [
+    ("mixed", "131072", ""),
+    ("skew", "131072", ""),
+    ("tranco", "262144", "../validation_e5_20260913/data/tranco_XN6XN.csv"),
+]
+
+TARGET = "bench_scan_s2"
+OUTPUT = os.path.join(HERE, "results", "main", "e27s2_scan_time.jsonl")
+LOG = os.path.join(HERE, "logs", "run_scan_s2.log")
+
+
+def invoke(kind, n, reps, csv, tag, log):
+    args = [sys.executable, "tools_build.py", "run", TARGET, kind, n, str(reps), csv, tag]
+
+    started = time.time()
+    result = subprocess.run(args, cwd=HERE, capture_output=True, text=True)
+    elapsed = time.time() - started
+
+    line = "%s %s reps=%d tag=%s rc=%d wall=%.0fs" % (TARGET, kind, reps, tag, result.returncode, elapsed)
+
+    print(line, flush=True)
+    log.write(line + "\n")
+
+    if result.returncode != 0:
+        log.write("  stderr: " + result.stderr.strip()[-1500:] + "\n")
+        log.flush()
+        raise SystemExit("FAILED: " + line)
+
+    log.flush()
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--processes", type=int, default=5)
+    parser.add_argument("--reps", type=int, default=5)
+    opts = parser.parse_args()
+
+    # The benchmark appends, because several processes share the file. Removing it here is
+    # what keeps a re-run from mixing two sweeps.
+    if os.path.exists(OUTPUT):
+        os.remove(OUTPUT)
+
+    with open(LOG, "w", encoding="utf-8") as log:
+        log.write("scan S2 sweep %s\n" % time.strftime("%Y-%m-%d %H:%M:%S"))
+
+        for p in range(1, opts.processes + 1):
+            log.write("--- process P%d ---\n" % p)
+
+            for kind, n, csv in DATASETS:
+                invoke(kind, n, opts.reps, csv, "P%d" % p, log)
+
+        log.write("sweep end %s\n" % time.strftime("%Y-%m-%d %H:%M:%S"))
+
+    print("SCAN SWEEP COMPLETE")
+
+
+if __name__ == "__main__":
+    main()

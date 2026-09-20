@@ -101,6 +101,19 @@ struct Timers {
     std::uint64_t replay_ns = 0;    // put_primary replay + directory rebuild
     std::uint64_t erase_ns = 0, erase_calls = 0;
     std::uint64_t insert_ns = 0, insert_calls = 0;
+    // E31 item 3 -- the checklist's section 5 PRECONDITION. The ORDERED OVERFLOW
+    // VECTOR's own time: put_overflow's lower_bound + element shift + std::string
+    // construction, and erase_at's vector erase + destruction. Without it the share the
+    // O1/O2/O3 choice depends on is an assumption, and the audit found it has never been
+    // isolated (E25-E31 carry no timing for the container itself).
+    //
+    // These NEST inside erase_ns (and inside insert_slow's insert_ns for the placements
+    // that come from it), so a ratio against either is a SHARE, never an additive term.
+    // Note that insert_ns is 0 in the frozen arm -- V2 routes a new key through
+    // place_with_ctx, which starts no clock -- which is exactly why the diagnostic times
+    // the segment itself instead of dividing by insert_ns.
+    std::uint64_t ov_insert_ns = 0, ov_insert_calls = 0;
+    std::uint64_t ov_erase_ns = 0, ov_erase_calls = 0;
     void reset() { *this = Timers{}; }
 };
 inline Timers& timers() { static Timers t; return t; }
@@ -247,6 +260,8 @@ struct Counts {
     std::uint64_t notlocated_fallback = 0; // V2 upsert: no context, took the old path
     std::uint64_t subblock_reclaims = 0;        // E31: in-place sub-block passes run
     std::uint64_t subblock_reclaim_helped = 0;  // ... of which made the retry fit
+    std::uint64_t reclaim_skipped_unchanged = 0;  // E31H: skipped, garbage not grown
+    std::uint64_t reclaim_skipped_gap = 0;        // E31H: skipped, min operation gap unmet
     std::uint64_t prefix_rebuilds = 0;     // Index::insert prefix-mismatch rebuild
     std::uint64_t threshold_splits = 0;    // Index::insert region split at 2*region_keys
 
@@ -259,6 +274,20 @@ struct Counts {
     std::uint64_t scan_blocks_skipped = 0;   // empty/exhausted sub-blocks stepped over
     std::uint64_t scan_merge_cmps = 0;       // primary-vs-overflow ordering compares
     std::uint64_t scan_result_allocs = 0;    // std::string constructions for results
+    // ---- E31 item 3: the overflow vector's MOVEMENT, as bytes ------------------
+    // "The ordered overflow vector's movement is a large share of the time" is the claim
+    // the checklist wants before O1/O2/O3 is chosen, so the movement is recorded as a
+    // number rather than an adjective. The element count is read at the one point where
+    // the distance is still valid (before the container is touched), and the byte figure
+    // is that count times the record's OWN size: a shift copies each OverflowRecord's 48
+    // bytes and NOT the suffix buffer it points at, so a figure that counted the payload
+    // would overstate what the container actually moves. The element size is reported as
+    // ov_rec_bytes, so the byte counts can be read back as record counts.
+    std::uint64_t ov_shifted_records_insert = 0;
+    std::uint64_t ov_shifted_bytes_insert = 0;
+    std::uint64_t ov_shifted_records_erase = 0;
+    std::uint64_t ov_shifted_bytes_erase = 0;
+    std::uint64_t scan_start_locates = 0;    // E27 S2: locate(start) evaluations in scan()
     void reset() { *this = Counts{}; }
 };
 inline Counts& counts() { static Counts c; return c; }
@@ -556,6 +585,31 @@ struct Config {
     // The sub-block BOUNDARY does not change, so order invariant M1 is untouched and
     // the E25 Located context stays valid.
     bool subblock_reclaim = false;
+
+    // E31H (checklist item 4.3): hysteresis and a minimum operation interval on the
+    // reclaim trigger. E31's own measurement (2026-09-20) fired it 127,780 times (mixed
+    // same) to 255,882 (skew grow) at the 200% checkpoint and enabled the triggering
+    // placement in only 20.4%-67.2% of them, so most of the rest re-ran the pass on a
+    // sub-block the previous attempt had already left unchanged. With this ON a group's
+    // reclaim is skipped unless at least kMinReclaimGap placements have happened since its
+    // last attempt AND its garbage has grown since then. Default OFF: the frozen
+    // combination and every existing gate keep the E31 behaviour byte for byte.
+    bool reclaim_hysteresis = false;
+
+    // E31P (checklist 4.3, the other half of the same rule): skip a repeated reclaim
+    // only when the group's garbage has not grown since its last attempt -- the
+    // checklist's "do not retry while the state has not materially changed" -- with no
+    // minimum interval. The interval half is reclaim_hysteresis; measuring them apart
+    // is the point, because the interval is what turned out to bind.
+    bool reclaim_skip_repeat = false;
+
+    // E27 S2 (checklist 7.1 / 9 row 4): Index::scan re-evaluated locate(start)
+    // on every loop iteration AND once more in the body, so a scan spanning R
+    // regions paid R+1 outer searches for the one answer it already had. Caching
+    // the first evaluation makes it exactly one. The evaluations are counted
+    // (scan_start_locates), so the saving is measured rather than argued: the S0
+    // arm counts R+1 per scan, the S2 arm exactly 1.
+    bool scan_cache_start = false;
 };
 
 #if defined(E7_COUNT_BYTES) || defined(E24_DIAG) || defined(E25_DIAG)
@@ -803,6 +857,23 @@ class Region {
     std::vector<std::uint16_t> sg_;   // slots per sub-block (<= MAX_SLOTS)
     std::vector<std::uint32_t> bb_;   // bytes per sub-block (64-aligned)
     std::vector<std::size_t> off_;    // group start offsets, size groups_+1
+    // E31H: per-group reclaim hysteresis state, sized like the other per-group tables and
+    // allocated only when the switch is on, so a build with it off pays nothing. Remembering
+    // per group the operation counter and the garbage at its last attempt is the checklist's
+    // "record the layout version and the reason the last attempt failed" -- a repeat is
+    // allowed only once the group's state has materially moved.
+    std::vector<std::uint64_t> reclaim_last_op_;     // placements_since_ at the last attempt
+    std::vector<std::size_t> reclaim_last_garbage_;  // garbage bytes at the last attempt
+    std::uint64_t placements_since_ = 0;             // successful placements, the interval scale
+    static constexpr std::uint64_t kNoReclaimAttempt = ~std::uint64_t(0);
+    // 64 successful placements. E30 measured the reclaim pass at 6.1-11.4 ns/record against
+    // 163 ns for the whole-group compaction it displaces, and E31 measured the trigger firing
+    // 127,780-255,882 times at the 200% checkpoint while enabling only 20.4%-67.2% of the
+    // placements that raised it. Bounding a group's repeat attempts to one per 64 writes is
+    // small next to a group's own live count (up to MAX_SLOTS records), so a group whose
+    // layout did change is retried long before it could matter, while one whose layout did
+    // not is not retried at all.
+    static constexpr std::uint64_t kMinReclaimGap = 64;
 
     std::string prefix_;
     Model model_;
@@ -1144,11 +1215,23 @@ class Region {
             o = overflow_owners_.back().get();
             header(g, 0).overflow_pointer = reinterpret_cast<std::uintptr_t>(o);
         }
+#ifdef E30_TIME
+        const auto ov_t0 = E30_T0();
+#endif
         auto it = std::lower_bound(o->begin(), o->end(), s,
             [](const OverflowRecord& a, std::string_view b) { return E25_CMP(a.suffix, b) < 0; });
+        // E31 item 3: what vector::insert is about to push up, in records AND in bytes,
+        // read while the distance is still valid. Two integer ops, and only in the
+        // counter build -- this is not on the flag-free timing path.
+        E25_ADD(ov_shifted_records_insert, o->end() - it);
+        E25_ADD(ov_shifted_bytes_insert, (o->end() - it) * sizeof(OverflowRecord));
         E25_INC(string_allocs);
         o->insert(it, {std::string(s), value, tag});
         ++overflow_count_;
+#ifdef E30_TIME
+        E30_ADD(ov_insert_ns, ov_t0);
+        E30_INC(ov_insert_calls);
+#endif
     }
 
     void compact(std::uint32_t g) {
@@ -1275,6 +1358,11 @@ public:
             throw std::invalid_argument("capacity table size");
         sg_ = std::move(sg_in);
         bb_ = std::move(bb_in);
+        // E31H: hysteresis state, allocated only when the switch asks for it.
+        if (reclaim_gated()) {
+            reclaim_last_op_.assign(groups_, kNoReclaimAttempt);
+            reclaim_last_garbage_.assign(groups_, 0);
+        }
         E14_ADD(layout, e14_layout_t0);   // segment A: group estimate + capacity table
 
         // E9 pass 1: each group's real demand (entries and suffix bytes) decides
@@ -1440,6 +1528,14 @@ public:
     std::size_t prefix_length() const { return prefix_.size(); }
     const std::string& prefix() const { return prefix_; }
     std::uint32_t groups() const { return groups_; }
+    // E33/SA0: read-only exposure of the group mapping, next to the other read-only
+    // accessors (slot_table / block_table / boundary_dir / subblock_keys) that exist so a
+    // diagnostic can CHECK the mapping instead of reading the code and hoping. The
+    // structure review asks for one trace from a real key to its group and for I1
+    // (the query group equals the placement group) to be verified, and both need this
+    // callable from outside without making the placement path itself public.
+    std::uint32_t group_of(std::string_view suffix) const { return canonical_group(suffix); }
+
     std::size_t slots() const { return sg_.empty() ? 0 : sg_[0]; }
 
     std::size_t block_bytes_total() const { return off_.back(); }
@@ -1521,6 +1617,9 @@ public:
             m.directory += d.capacity() * sizeof(Boundary);
             for (const auto& b : d) m.directory += b.key.capacity() + 1;
         }
+        // E31H: the hysteresis tables are real memory when they are allocated.
+        m.tables += reclaim_last_op_.capacity() * sizeof(std::uint64_t) +
+                    reclaim_last_garbage_.capacity() * sizeof(std::size_t);
         m.self = sizeof(*this);
         return m;
     }
@@ -1814,9 +1913,21 @@ public:
         if (loc.where == Where::Overflow) {
             auto* o = overflow(loc.group);
             E25_ADD(erase_shifts, o->size() - 1 - loc.index);
+            // E31 item 3: the same movement figure for the erase. The clock below covers
+            // the vector::erase AND the destruction of the erased record -- a real free()
+            // here, where a primary erase leaves its bytes in the block as garbage.
+            E25_ADD(ov_shifted_records_erase, o->size() - 1 - loc.index);
+            E25_ADD(ov_shifted_bytes_erase, (o->size() - 1 - loc.index) * sizeof(OverflowRecord));
             E25_ADD(erase_released_overflow, (*o)[loc.index].suffix.size());
             E25_INC(string_frees);   // the OverflowRecord, and with it its string, is destroyed
+#ifdef E30_TIME
+            const auto ov_t0 = E30_T0();
+#endif
             o->erase(o->begin() + static_cast<std::ptrdiff_t>(loc.index));
+#ifdef E30_TIME
+            E30_ADD(ov_erase_ns, ov_t0);
+            E30_INC(ov_erase_calls);
+#endif
             --size_;
             --overflow_count_;
             return true;
@@ -2045,6 +2156,39 @@ public:
         return group_garbage_bytes(g) >= len && repack_budget_fits(g, len);
     }
 
+    // E31H (checklist item 4.3): may the reclaim run for this group now? Off by default, in
+    // which case this is a constant true and the E31 path is untouched.
+    //
+    // The checklist's rule is to set a minimum operation interval and not to retry while the
+    // state has not materially changed. The two recorded quantities are the group's garbage at
+    // its last attempt (the "layout version": a repack only helps again once new garbage has
+    // accumulated) and the placement counter at that attempt (the interval). A first attempt
+    // on a group is always allowed; a repeat needs BOTH a moved interval and grown garbage.
+    // Each skip is counted separately, so the effect is countable rather than asserted.
+    bool reclaim_gated() const {
+        return config_.reclaim_hysteresis || config_.reclaim_skip_repeat;
+    }
+
+    bool reclaim_allowed(std::uint32_t g) {
+        if (!reclaim_gated()) return true;
+        const std::size_t garbage = group_garbage_bytes(g);
+        const std::uint64_t last = reclaim_last_op_[g];
+        if (last != kNoReclaimAttempt) {
+            if (config_.reclaim_hysteresis &&
+                placements_since_ - last < kMinReclaimGap) {
+                E25_INC(reclaim_skipped_gap);
+                return false;
+            }
+            if (garbage <= reclaim_last_garbage_[g]) {
+                E25_INC(reclaim_skipped_unchanged);
+                return false;
+            }
+        }
+        reclaim_last_op_[g] = placements_since_;
+        reclaim_last_garbage_[g] = garbage;
+        return true;
+    }
+
     // E25 V2: place using the group id and tag the locate already produced, instead
     // of asking the model and the fingerprint again. Duplicate detection is NOT
     // skipped -- the caller only reaches here after the locate said Absent.
@@ -2052,9 +2196,13 @@ public:
     // Compaction may run here and move slots, but it does not change the group or
     // the tag, so those stay valid; put_primary recomputes the physical position.
     bool place_with_ctx(std::string_view key, std::uint64_t value, const Located& loc) {
+        if (reclaim_gated()) {
+            ++placements_since_;   // E31H/E31P: the interval and the state scale
+        }
         const auto s = key.substr(prefix_.size());
         if (!put_primary(loc.group, s, value, loc.tag)) {
-            if (config_.subblock_reclaim) {
+            // E31H: the same reclaim, gated by the hysteresis when that switch is on.
+            if (config_.subblock_reclaim && reclaim_allowed(loc.group)) {
                 E25_INC(subblock_reclaims);
                 repack_subblock(loc.group, first_candidate(loc.group, s));
                 if (put_primary(loc.group, s, value, loc.tag)) {
@@ -2106,6 +2254,9 @@ public:
     // The placement half of insert, with the group id and tag computed the
     // original way. Kept separate so V1's control flow is visibly unchanged.
     bool insert_slow(std::string_view key, std::uint64_t value) {
+        if (reclaim_gated()) {
+            ++placements_since_;   // E31H/E31P: the interval and the state scale
+        }
         const auto e30_t0 = E30_T0();
         E30_INC(insert_calls);
         struct E30Scope { std::uint64_t t0; ~E30Scope() { E30_ADD(insert_ns, t0); } } e30_scope{e30_t0};
@@ -2117,7 +2268,8 @@ public:
             // E31: reclaim the rank-selected sub-block in place, then retry. Cheap
             // (6-11 ns/record) and the boundary does not change, so nothing a caller
             // holds is invalidated.
-            if (config_.subblock_reclaim) {
+            // E31H: the same reclaim, gated by the hysteresis when that switch is on.
+            if (config_.subblock_reclaim && reclaim_allowed(g)) {
                 E25_INC(subblock_reclaims);
                 repack_subblock(g, first_candidate(g, s));
                 if (put_primary(g, s, value, tag)) {
@@ -2361,6 +2513,20 @@ public:
     // group id is the thing the capacity plan was built for, so a replacement that
     // changes it is a different placement question from one that does not.
     std::size_t diag_prefix_size() const { return prefix_.size(); }
+    // E31 item 3: the live overflow containers' record counts, so the size distribution
+    // at a checkpoint is a measurement rather than an inference from the record total.
+    // Empty containers are skipped: a group that never overflowed would otherwise pull
+    // the mean toward zero and make a few large containers look harmless. Read-only, and
+    // called with the clock stopped.
+    void diag_overflow_sizes(std::vector<std::size_t>& out) const {
+        for (std::uint32_t g = 0; g < groups_; ++g)
+            if (const auto* o = overflow(g))
+                if (!o->empty()) out.push_back(o->size());
+    }
+    // The element size the movement byte counters are counted in, so a reader can turn
+    // "shifted bytes" back into "shifted records" without guessing. sizeof() on the
+    // private record type can only be named where the type is visible, which is here.
+    static constexpr std::size_t diag_overflow_record_bytes() { return sizeof(OverflowRecord); }
     std::uint32_t diag_group(std::string_view key) const {
         if (!prefix_matches(key)) return UINT32_MAX;   // no valid group
         return canonical_group(key.substr(prefix_.size()));
@@ -2865,6 +3031,13 @@ public:
     }
 #endif
 
+    // E31 item 3: every live overflow container's record count, over all regions, plus
+    // the element size the movement counters are expressed in. Diagnostic only.
+    void diag_overflow_sizes(std::vector<std::size_t>& out) const {
+        for (const auto& x : nodes_) x.region->diag_overflow_sizes(out);
+    }
+    std::size_t diag_overflow_record_bytes() const { return Region::diag_overflow_record_bytes(); }
+
     Region::TrialPlace diag_trial(std::string_view key) const {
         const std::size_t r = locate(key);
         const Region& reg = *nodes_[r].region;
@@ -2999,11 +3172,28 @@ public:
     std::vector<Pair> scan(std::string_view start, std::size_t count) const {
         std::vector<Pair> out;
         out.reserve(std::min(count, size_));
-        // NOTE: locate(start) is re-evaluated on every iteration of this loop, and
-        // once more in the body. Across R regions that is R+1 outer searches instead
-        // of one. Counted here rather than assumed.
-        for (std::size_t i = locate(start); i < nodes_.size() && out.size() < count; ++i) {
+        // E27 S2 (checklist 7.1): locate(start) was re-evaluated on every iteration of
+        // this loop and once more in the body -- across R regions that is R+1 outer
+        // searches for one answer. The switch caches the first evaluation and uses it
+        // for both the loop bound and the "is this the starting region" test, so the
+        // scan pays one. scan_start_locates is incremented on EVERY evaluation in BOTH
+        // arms, so the claim is measured: S0 counts R+1 per scan, S2 exactly 1.
+        if (config_.scan_cache_start) {
+            const std::size_t first = locate(start);
+            E25_INC(scan_start_locates);
+            for (std::size_t i = first; i < nodes_.size() && out.size() < count; ++i) {
+                E25_INC(scan_regions);
+                nodes_[i].region->scan(i == first ? start : std::string_view{}, count, out);
+            }
+            return out;
+        }
+        // Pre-E27 path. The two locate(start) expressions are exactly as they were;
+        // only the no-op counter statement is new.
+        std::size_t i = locate(start);
+        E25_INC(scan_start_locates);
+        for (; i < nodes_.size() && out.size() < count; ++i) {
             E25_INC(scan_regions);
+            E25_INC(scan_start_locates);
             nodes_[i].region->scan(i == locate(start) ? start : std::string_view{}, count, out);
         }
         return out;

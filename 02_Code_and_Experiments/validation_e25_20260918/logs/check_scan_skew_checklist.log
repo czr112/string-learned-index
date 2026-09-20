@@ -1,0 +1,5 @@
+E27 arms S0[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,scan_cache_start=0,scan_reserve_result=0] S1[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,scan_cache_start=0,scan_reserve_result=1] S2[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,scan_cache_start=1,scan_reserve_result=1]
+{"case":"initial","keys":131072,"live":131072,"scans":12294,"short_scans":30,"records_compared":9543108}
+{"case":"insert25","keys":131072,"live":163840,"scans":24588,"short_scans":58,"records_compared":19089892}
+{"case":"replace25","keys":131072,"live":131072,"scans":36882,"short_scans":88,"records_compared":28633000}
+skew scan gate done

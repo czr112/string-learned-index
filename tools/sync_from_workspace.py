@@ -101,6 +101,32 @@ def walk():
             yield rel, full, size, ok, why
 
 
+# Names at the mirror root that belong to the REPOSITORY rather than to the mirrored
+# content, and must survive a rebuild: the git directory, the two policy files, and the
+# tooling directory that holds this script.
+KEEP_AT_ROOT = {".git", ".gitignore", ".gitattributes", "tools"}
+
+
+def clear_mirror(dst):
+    """Empty the mirror's content, keeping the repository's own identity files.
+
+    Deleting the whole directory fails on Windows: .git/objects are read-only, and a
+    failed rmtree leaves the previous mirror in place -- which silently publishes the
+    OLD content while the log says the new content was written. Selective removal
+    avoids that failure mode entirely.
+    """
+    for name in sorted(os.listdir(dst)):
+        if name in KEEP_AT_ROOT:
+            continue
+
+        path = os.path.join(dst, name)
+
+        if os.path.isdir(path):
+            shutil.rmtree(path)
+        else:
+            os.remove(path)
+
+
 def main():
     ap = argparse.ArgumentParser()
     g = ap.add_mutually_exclusive_group(required=True)
@@ -144,8 +170,7 @@ def main():
             print("  %8.2f MB  %s" % (size / 1048576.0, rel))
         return
 
-    if os.path.isdir(DST):
-        shutil.rmtree(DST)
+    clear_mirror(DST) if os.path.isdir(DST) else os.makedirs(DST)
     for rel, full, _, _ in kept:
         out = os.path.join(DST, rel.replace("/", os.sep))
         os.makedirs(os.path.dirname(out), exist_ok=True)

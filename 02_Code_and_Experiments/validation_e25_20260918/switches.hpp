@@ -41,6 +41,9 @@ inline validation::Config baseline_config(std::uint32_t ov_threshold) {
     c.compact_needs_garbage = false;  // E26 C2
     c.scan_reserve_result = false;    // E27 S1
     c.subblock_reclaim = false;       // E31 (default off; the baseline is pre-E31)
+    c.reclaim_hysteresis = false;     // E31H (default off; E31 without hysteresis)
+    c.reclaim_skip_repeat = false;    // E31P (default off; the state check alone)
+    c.scan_cache_start = false;       // E27 S2 (default off; the pre-E27 scan candidate)
     return c;
 }
 
@@ -58,6 +61,9 @@ inline void pin_frozen_switches(validation::Config& c) {
     c.compact_needs_garbage = true;
     c.scan_reserve_result = true;
     c.subblock_reclaim = false;   // NOT part of the frozen set; E31 is a candidate
+    c.reclaim_hysteresis = false;   // NOT part of the frozen set either
+    c.reclaim_skip_repeat = false;   // NOT part of the frozen set either
+    c.scan_cache_start = false;   // NOT part of the frozen set; E27 S2 is a candidate
 }
 
 // The effective switch values, for the gate's own output. A reader should never have
@@ -69,6 +75,9 @@ inline std::string switches(const validation::Config& c) {
            ",compact_needs_garbage=" + (c.compact_needs_garbage ? "1" : "0") +
            ",compact_repack_budget=" + (c.compact_repack_budget ? "1" : "0") +
            ",subblock_reclaim=" + (c.subblock_reclaim ? "1" : "0") +
+           ",reclaim_hysteresis=" + (c.reclaim_hysteresis ? "1" : "0") +
+           ",reclaim_skip_repeat=" + (c.reclaim_skip_repeat ? "1" : "0") +
+           ",scan_cache_start=" + (c.scan_cache_start ? "1" : "0") +
            ",scan_reserve_result=" + (c.scan_reserve_result ? "1" : "0");
 }
 
@@ -92,6 +101,9 @@ inline void require_only_switches_differ(const validation::Config& a,
         {"compact_needs_garbage", a.compact_needs_garbage, b.compact_needs_garbage},
         {"compact_repack_budget", a.compact_repack_budget, b.compact_repack_budget},
         {"subblock_reclaim", a.subblock_reclaim, b.subblock_reclaim},
+        {"reclaim_hysteresis", a.reclaim_hysteresis, b.reclaim_hysteresis},
+        {"reclaim_skip_repeat", a.reclaim_skip_repeat, b.reclaim_skip_repeat},
+        {"scan_cache_start", a.scan_cache_start, b.scan_cache_start},
         {"scan_reserve_result", a.scan_reserve_result, b.scan_reserve_result},
     };
     for (const auto& f : fields) {
