@@ -1,0 +1,28 @@
+{
+ "target": "diag_prefix",
+ "build_id": "1789950312189099109",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE25_DIAG /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/bench_prefix.cpp /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/art.o -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/diag_prefix.452.1789950311705527932.tmp.exe",
+ "sources": {
+  "bench_prefix.cpp": "ee04cb9c085d76996f113ccc1b5eb2d6db1ed67e8b6fd2ccc8ce453eb668b78a",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "58c678774dac720502ba2b2d645f982b5b9d3ab4790742efc58ac8bfbd03a3b1",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "switches.hpp": "40a4c2563a8161a5ebf5347a9400352f0806b25c346b18c7b138c9dc7a8afc19",
+  "third_party/vendor/libart/src/art.c": "b65f20fdc160a6e4c0b1b390086f682d381e3638d8690594158ad75cda33396e"
+ },
+ "extra_flags": [
+  "-DE25_DIAG"
+ ],
+ "c_objects": [
+  "build/art.o"
+ ],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "afde48438aa1d8ea22744c907c5b1a45c653f56007bbf9a4b9823f3418195977",
+ "status": "OK"
+}

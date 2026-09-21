@@ -1,0 +1,7 @@
+compose pass 2026-09-21 08:45:09
+diag_compose mixed same rc=0 wall=5s
+diag_compose skew same rc=0 wall=8s
+diag_compose tranco same rc=0 wall=9s
+diag_compose mixed grow rc=0 wall=4s
+diag_compose skew grow rc=0 wall=6s
+diag_compose tranco grow rc=0 wall=10s

@@ -306,10 +306,51 @@ struct Counts {
     // holds live <= high_water; the gap at the peak is the worst case it produced.
     std::uint64_t ov_store_high_water = 0;
     std::uint64_t ov_store_live_water = 0;
+    // ---- E35 (prefix decidability): would an inline comparison prefix pay? ----
+    // Every comparison in the binary overflow search reads the record: on the stable arm
+    // that is store_[order_[mid]], two indirections. An entry that carried the suffix's
+    // first W bytes could answer most of them from the entry alone -- but only if the
+    // windows actually differ, which is a property of the DATA and is therefore counted
+    // here rather than assumed. E6 already found that shared prefixes can defeat a filter.
+    //
+    // The window is measured on the STORED SUFFIX, the string being compared, not on the
+    // original key: the container holds suffixes, so a full-key prefix distribution would
+    // be describing a different string.
+    std::uint64_t ov_queries_bin = 0;        // queries that took the binary path
+    std::uint64_t ov_queries_linear = 0;     // queries that took the linear path
+    std::uint64_t ov_bin_cmps = 0;           // comparisons inside the binary loop
+    std::uint64_t ov_bin_decided4 = 0;       // both sides >= 4 B and the first 4 differ
+    std::uint64_t ov_bin_decided8 = 0;       // both sides >= 8 B and the first 8 differ
+    std::uint64_t ov_bin_short4 = 0;         // one side < 4 B: no window fixes these
+    std::uint64_t ov_bin_lcp_bytes = 0;      // summed longest-common-prefix length
+    // The LINEAR path, which is the one that actually runs in the measured workload: the
+    // containers average about ten records, under the frozen Hybrid cutoff, so the binary
+    // search is the minority path. The linear scan reads every record for its tag before it
+    // compares anything, so the question there is different: what would a prefix add ON TOP
+    // OF the tag? ov_linear_reject8 counts exactly that -- candidates that survived the tag
+    // filter but that an 8-byte prefix would still have settled as "not equal".
+    std::uint64_t ov_linear_recs = 0;         // records examined by the linear scan
+    std::uint64_t ov_linear_tag_reject = 0;   // rejected by the tag, never compared
+    std::uint64_t ov_linear_tag_pass = 0;     // survived the tag, reached the compare
+    std::uint64_t ov_linear_reject8 = 0;      // of those, an 8-byte prefix settles them
+    std::uint64_t ov_linear_lcp_bytes = 0;    // summed LCP over the tag survivors
     std::uint64_t scan_start_locates = 0;    // E27 S2: locate(start) evaluations in scan()
     void reset() { *this = Counts{}; }
 };
 inline Counts& counts() { static Counts c; return c; }
+
+#ifdef E25_DIAG
+// Longest common prefix length, for the E35 prefix-decidability counters. Only defined in
+// the diagnostic build: in the timing build the statistic must vanish entirely, and an
+// extra byte loop inside the comparison is exactly the cost that must not be charged to
+// one arm and not the other.
+inline std::size_t ov_lcp(std::string_view a, std::string_view b) {
+    const std::size_t n = a.size() < b.size() ? a.size() : b.size();
+    std::size_t i = 0;
+    while (i < n && a[i] == b[i]) ++i;
+    return i;
+}
+#endif
 }  // namespace e25
 }  // namespace validation
 #define E25_INC(f) (++::validation::e25::counts().f)
@@ -2304,12 +2345,31 @@ public:
                 (mode.ov == OvSearch::Hybrid && o->size() >= mode.ov_thr);
 
             if (use_bin) {
+                E25_INC(ov_queries_bin);
                 std::size_t lo = 0, hi = o->size();
                 while (lo < hi) {
                     const auto mid = lo + (hi - lo) / 2;
                     ++result.overflow_checks;
                     ++result.str_cmps;
                     E12_TICK(result.str_cmps_overflow);
+#ifdef E25_DIAG
+                    // E35: what a W-byte inline prefix would have decided, measured on the
+                    // record actually being compared. Read-only; compiled out entirely in
+                    // the timing build.
+                    {
+                        const std::string& a = (*o)[mid].suffix;
+                        const std::size_t lcp = ::validation::e25::ov_lcp(a, s);
+                        const std::size_t shorter = a.size() < s.size() ? a.size() : s.size();
+                        E25_INC(ov_bin_cmps);
+                        E25_ADD(ov_bin_lcp_bytes, lcp);
+                        if (shorter < 4) {
+                            E25_INC(ov_bin_short4);
+                        } else if (lcp < 4) {
+                            E25_INC(ov_bin_decided4);
+                        }
+                        if (shorter >= 8 && lcp < 8) E25_INC(ov_bin_decided8);
+                    }
+#endif
                     if (E25_CMP((*o)[mid].suffix, s) < 0) lo = mid + 1;
                     else hi = mid;
                 }
@@ -2324,12 +2384,35 @@ public:
                     }
                 }
             } else {
+                E25_INC(ov_queries_linear);
                 for (std::size_t oi = 0; oi < o->size(); ++oi) {
                     const auto& e = (*o)[oi];
                     ++result.overflow_checks;
+#ifdef E25_DIAG
+                    E25_INC(ov_linear_recs);
+#endif
                     if constexpr (Hash) {
-                        if (e.tag != tag) continue;
+                        if (e.tag != tag) {
+#ifdef E25_DIAG
+                            E25_INC(ov_linear_tag_reject);
+#endif
+                            continue;
+                        }
                     }
+#ifdef E25_DIAG
+                    // The candidate survived the tag filter and is about to be compared.
+                    // What a prefix would add ON TOP OF the tag is exactly this: of the
+                    // survivors, how many an 8-byte window settles as "not equal" without
+                    // the read the tag already forced.
+                    {
+                        E25_INC(ov_linear_tag_pass);
+                        const std::size_t lcp = ::validation::e25::ov_lcp(e.suffix, s);
+                        E25_ADD(ov_linear_lcp_bytes, lcp);
+                        const std::size_t shorter =
+                            e.suffix.size() < s.size() ? e.suffix.size() : s.size();
+                        if (shorter >= 8 && lcp < 8) E25_INC(ov_linear_reject8);
+                    }
+#endif
                     ++result.str_cmps;
                     E12_TICK(result.str_cmps_overflow);
                     if (E25_CMP(e.suffix, s) == 0) {

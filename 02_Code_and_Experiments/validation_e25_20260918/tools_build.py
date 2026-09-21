@@ -9,7 +9,16 @@ build:  compile to a UNIQUE temporary output; only on success atomically rename 
         the compile command, the executable hash and a build id. A failed compile
         leaves no runnable artifact behind.
 run:    python tools_build.py run <target> [args...]  — refuses to run unless the
-        build record exists and the executable hash matches it.
+        build record exists and the executable hash matches it. ALSO refuses when any
+        source recorded in the build has changed since: without that check, editing a
+        source and forgetting to rebuild silently runs the OLD binary, which is exactly
+        what happened once in E34 (the only symptom was a missing JSON field).
+run_current:   same as `run`. The explicit name exists so new experiments can say which
+        guarantee they are relying on.
+run_recorded:  python tools_build.py run_recorded <target> [args...] — runs the binary
+        the record describes WITHOUT re-verifying the sources, printing the drift and
+        stating that the results do not describe the current source. For deliberately
+        re-running a historical arm.
 
 E25 additions:
   * V0/V1/V2 are ONE binary, three Config settings -- not three builds. The default
@@ -100,6 +109,10 @@ EXTRA = {
     # The O1 arm asserts on its own movement counters, so the diagnostic build of the
     # same source is a second target, as diag_hyst is for bench_long_hyst.
     "diag_o1": ["-DE25_DIAG"],
+    # The E35 prefix diagnostic: same source, diagnostic counters in.
+    "diag_prefix": ["-DE25_DIAG"],
+    # The E36 composition diagnostic needs the shift counters, so it is diagnostic-only.
+    "diag_compose": ["-DE25_DIAG"],
     "bench_w_t": ["-DE30_TIME"],           # same source as bench_w, clock ON
     # Needs BOTH: e30_probe is declared inside the E25_DIAG member block because it
     # calls diag_group(), so -DE30_TIME alone leaves it uncompiled.
@@ -121,7 +134,9 @@ EXTRA = {
 LIBS = {"bench_e25": ["build/art.o"], "bench_e26": ["build/art.o"],
         "bench_long_art": ["build/art.o"], "bench_long_hyst": ["build/art.o"],
         "diag_hyst": ["build/art.o"], "san_bench_long_hyst": ["build/art.o"],
-        "bench_long_o1": ["build/art.o"], "diag_o1": ["build/art.o"]}
+        "bench_long_o1": ["build/art.o"], "diag_o1": ["build/art.o"],
+        "bench_prefix": ["build/art.o"], "diag_prefix": ["build/art.o"],
+        "diag_compose": ["build/art.o"]}
 C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "bench_e26": ["third_party/vendor/libart/src/art.c"],
              "bench_long_art": ["third_party/vendor/libart/src/art.c"],
@@ -129,11 +144,16 @@ C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "diag_hyst": ["third_party/vendor/libart/src/art.c"],
              "san_bench_long_hyst": ["third_party/vendor/libart/src/art.c"],
              "bench_long_o1": ["third_party/vendor/libart/src/art.c"],
-             "diag_o1": ["third_party/vendor/libart/src/art.c"]}
+             "diag_o1": ["third_party/vendor/libart/src/art.c"],
+             "bench_prefix": ["third_party/vendor/libart/src/art.c"],
+             "diag_prefix": ["third_party/vendor/libart/src/art.c"],
+             "diag_compose": ["third_party/vendor/libart/src/art.c"]}
 # diag_long is the SAME source as bench_long, built with the counters in. One source,
 # two targets, so the two builds cannot drift apart.
 SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        "diag_hyst": "bench_long_hyst.cpp", "diag_o1": "bench_long_o1.cpp",
+       "bench_prefix": "bench_prefix.cpp", "diag_prefix": "bench_prefix.cpp",
+       "diag_compose": "diag_compose.cpp",
        # ITEM B: the sanitizer targets are new NAMES over these same sources. One
        # source, two targets -- as diag_long is for bench_long -- so the sanitizer
        # build and the shipped build of the same program cannot drift apart.
@@ -227,25 +247,103 @@ def build(target):
     print(f"OK {target} build_id={rec['build_id']} exe={rec['exe_sha256'][:16]}…")
 
 
-def run(target, args):
+def load_record(target):
+    """The build record, or a refusal. Shared by every run entry."""
     built = os.path.join(DIR, "build", f"{target}.built.json")
     if not os.path.exists(built):
         print(f"RUN REFUSED: no successful build record for {target} (run tools_build.py first)", file=sys.stderr)
         sys.exit(2)
+
     rec = json.load(open(built, encoding="utf-8"))
     exe = os.path.join(DIR, "build", target + ".exe")
+
     if rec.get("status") != "OK" or not os.path.exists(exe) or sha256(exe) != rec.get("exe_sha256"):
         print(f"RUN REFUSED: executable hash does not match build record for {target} "
               f"(stale or tampered binary)", file=sys.stderr)
         sys.exit(2)
+
+    return rec, exe
+
+
+def source_drift(rec):
+    """Every source in the record whose current content differs.
+
+    Returns a list of (name, status) where status is 'changed' or 'missing'. An empty
+    list means the binary in build/ was produced from the sources now on disk.
+    """
+    drifted = []
+
+    for name, recorded in (rec.get("sources") or {}).items():
+        full = os.path.join(DIR, name.replace("/", os.sep))
+
+        if not os.path.exists(full):
+            full = os.path.join(DIR, os.path.basename(name))
+
+        if not os.path.exists(full):
+            drifted.append((name, "missing"))
+        elif sha256(full) != recorded:
+            drifted.append((name, "changed"))
+
+    return drifted
+
+
+def report_drift(target, rec, drifted, pad):
+    """One block, used by the strict refusal and the recorded-run banner."""
+    print("%sbuild_id %s was made from %d source(s); %d differ from the ones on disk now:"
+          % (pad, rec.get("build_id"), len(rec.get("sources") or {}), len(drifted)), file=sys.stderr)
+
+    for name, status in drifted[:20]:
+        print("%s  %-10s %s" % (pad, status, name), file=sys.stderr)
+
+    if len(drifted) > 20:
+        print("%s  ... and %d more" % (pad, len(drifted) - 20), file=sys.stderr)
+
+
+def run_current(target, args):
+    """The default entry: the binary must match BOTH its executable hash and its sources."""
+    rec, exe = load_record(target)
+    drifted = source_drift(rec)
+
+    if drifted:
+        print(f"RUN REFUSED: {target} was built from sources that have since changed "
+              f"(refusing to run a binary that does not match the tree)", file=sys.stderr)
+        report_drift(target, rec, drifted, "  ")
+        print("  Rebuild the target (python3 tools_build.py %s), or use run_recorded to "
+              "re-run the recorded binary deliberately." % target, file=sys.stderr)
+        sys.exit(2)
+
+    sys.exit(subprocess.run([exe] + args, cwd=DIR).returncode)
+
+
+def run_recorded(target, args):
+    """Run the recorded binary even if the sources moved on, and say so."""
+    rec, exe = load_record(target)
+    drifted = source_drift(rec)
+
+    print("RUN RECORDED: %s, build_id %s" % (target, rec.get("build_id")), file=sys.stderr)
+
+    if drifted:
+        print("  WARNING: the sources have changed since this binary was built, so these "
+              "results DESCRIBE THE RECORDED BUILD, NOT THE CURRENT SOURCE.", file=sys.stderr)
+        report_drift(target, rec, drifted, "  ")
+    else:
+        print("  (sources are unchanged: this binary does match the current tree)", file=sys.stderr)
+
     sys.exit(subprocess.run([exe] + args, cwd=DIR).returncode)
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(__doc__); sys.exit(2)
-    if sys.argv[1] == "run":
-        run(sys.argv[2], sys.argv[3:])
+    if sys.argv[1] == "run_current":
+        run_current(sys.argv[2], sys.argv[3:])
+    elif sys.argv[1] == "run_recorded":
+        run_recorded(sys.argv[2], sys.argv[3:])
+    elif sys.argv[1] == "run":
+        # `run` is the strict entry. Fail-closed by default: the E34 accident (edit a
+        # source, forget to rebuild, silently run the old binary) must not be reachable
+        # by omission. Historical re-runs go through run_recorded, which says what it is.
+        run_current(sys.argv[2], sys.argv[3:])
     else:
         for t in sys.argv[1:]:
             build(t)

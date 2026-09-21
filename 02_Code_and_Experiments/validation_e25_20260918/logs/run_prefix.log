@@ -1,0 +1,34 @@
+prefix sweep 2026-09-21 08:28:26
+--- phase clean mode same ---
+bench_prefix mixed same reps=3 tag=P1 rc=0 wall=12s
+bench_prefix skew same reps=3 tag=P1 rc=0 wall=16s
+bench_prefix tranco same reps=3 tag=P1 rc=0 wall=24s
+bench_prefix mixed same reps=3 tag=P2 rc=0 wall=12s
+bench_prefix skew same reps=3 tag=P2 rc=0 wall=17s
+bench_prefix tranco same reps=3 tag=P2 rc=0 wall=24s
+bench_prefix mixed same reps=3 tag=P3 rc=0 wall=12s
+bench_prefix skew same reps=3 tag=P3 rc=0 wall=16s
+bench_prefix tranco same reps=3 tag=P3 rc=0 wall=24s
+bench_prefix mixed same reps=3 tag=P4 rc=0 wall=12s
+bench_prefix skew same reps=3 tag=P4 rc=0 wall=16s
+bench_prefix tranco same reps=3 tag=P4 rc=0 wall=24s
+bench_prefix mixed same reps=3 tag=P5 rc=0 wall=12s
+bench_prefix skew same reps=3 tag=P5 rc=0 wall=16s
+bench_prefix tranco same reps=3 tag=P5 rc=0 wall=24s
+--- phase clean mode grow ---
+bench_prefix mixed grow reps=3 tag=P1 rc=0 wall=11s
+bench_prefix skew grow reps=3 tag=P1 rc=0 wall=13s
+bench_prefix tranco grow reps=3 tag=P1 rc=0 wall=22s
+bench_prefix mixed grow reps=3 tag=P2 rc=0 wall=11s
+bench_prefix skew grow reps=3 tag=P2 rc=0 wall=13s
+bench_prefix tranco grow reps=3 tag=P2 rc=0 wall=22s
+bench_prefix mixed grow reps=3 tag=P3 rc=0 wall=11s
+bench_prefix skew grow reps=3 tag=P3 rc=0 wall=13s
+bench_prefix tranco grow reps=3 tag=P3 rc=0 wall=22s
+bench_prefix mixed grow reps=3 tag=P4 rc=0 wall=10s
+bench_prefix skew grow reps=3 tag=P4 rc=0 wall=13s
+bench_prefix tranco grow reps=3 tag=P4 rc=0 wall=22s
+bench_prefix mixed grow reps=3 tag=P5 rc=0 wall=10s
+bench_prefix skew grow reps=3 tag=P5 rc=0 wall=13s
+bench_prefix tranco grow reps=3 tag=P5 rc=0 wall=22s
+sweep end 2026-09-21 08:36:35
