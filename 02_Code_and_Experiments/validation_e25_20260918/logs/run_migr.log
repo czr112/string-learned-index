@@ -1,0 +1,42 @@
+migration sweep 2026-09-21 18:55:00
+--- phase clean mode same ---
+bench_migrate mixed same reps=4 tag=P1 rc=0 wall=41s
+bench_migrate skew same reps=4 tag=P1 rc=0 wall=55s
+bench_migrate tranco same reps=4 tag=P1 rc=0 wall=36s
+bench_migrate mixed same reps=4 tag=P2 rc=0 wall=29s
+bench_migrate skew same reps=4 tag=P2 rc=0 wall=32s
+bench_migrate tranco same reps=4 tag=P2 rc=0 wall=37s
+bench_migrate mixed same reps=4 tag=P3 rc=0 wall=19s
+bench_migrate skew same reps=4 tag=P3 rc=0 wall=44s
+bench_migrate tranco same reps=4 tag=P3 rc=0 wall=39s
+bench_migrate mixed same reps=4 tag=P4 rc=0 wall=30s
+bench_migrate skew same reps=4 tag=P4 rc=0 wall=44s
+bench_migrate tranco same reps=4 tag=P4 rc=0 wall=51s
+bench_migrate mixed same reps=4 tag=P5 rc=0 wall=30s
+bench_migrate skew same reps=4 tag=P5 rc=0 wall=45s
+bench_migrate tranco same reps=4 tag=P5 rc=0 wall=49s
+--- phase clean mode grow ---
+bench_migrate mixed grow reps=4 tag=P1 rc=0 wall=26s
+bench_migrate skew grow reps=4 tag=P1 rc=0 wall=26s
+bench_migrate tranco grow reps=4 tag=P1 rc=0 wall=38s
+bench_migrate mixed grow reps=4 tag=P2 rc=0 wall=25s
+bench_migrate skew grow reps=4 tag=P2 rc=0 wall=34s
+bench_migrate tranco grow reps=4 tag=P2 rc=0 wall=45s
+bench_migrate mixed grow reps=4 tag=P3 rc=0 wall=27s
+bench_migrate skew grow reps=4 tag=P3 rc=0 wall=33s
+bench_migrate tranco grow reps=4 tag=P3 rc=0 wall=48s
+bench_migrate mixed grow reps=4 tag=P4 rc=0 wall=21s
+bench_migrate skew grow reps=4 tag=P4 rc=0 wall=34s
+bench_migrate tranco grow reps=4 tag=P4 rc=0 wall=46s
+bench_migrate mixed grow reps=4 tag=P5 rc=0 wall=23s
+bench_migrate skew grow reps=4 tag=P5 rc=0 wall=27s
+bench_migrate tranco grow reps=4 tag=P5 rc=0 wall=36s
+--- phase mech mode same ---
+diag_migrate_b mixed same reps=1 tag=MECH rc=0 wall=9s
+diag_migrate_b skew same reps=1 tag=MECH rc=0 wall=17s
+diag_migrate_b tranco same reps=1 tag=MECH rc=0 wall=11s
+--- phase mech mode grow ---
+diag_migrate_b mixed grow reps=1 tag=MECH rc=0 wall=8s
+diag_migrate_b skew grow reps=1 tag=MECH rc=0 wall=8s
+diag_migrate_b tranco grow reps=1 tag=MECH rc=0 wall=15s
+sweep end 2026-09-21 19:13:56

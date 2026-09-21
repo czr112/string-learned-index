@@ -1,0 +1,22 @@
+scan migration sweep 2026-09-21 19:13:57
+--- process P1 ---
+bench_scan_s5 mixed reps=5 tag=P1 rc=0 wall=26s
+bench_scan_s5 skew reps=5 tag=P1 rc=0 wall=24s
+bench_scan_s5 tranco reps=5 tag=P1 rc=0 wall=35s
+--- process P2 ---
+bench_scan_s5 mixed reps=5 tag=P2 rc=0 wall=31s
+bench_scan_s5 skew reps=5 tag=P2 rc=0 wall=35s
+bench_scan_s5 tranco reps=5 tag=P2 rc=0 wall=28s
+--- process P3 ---
+bench_scan_s5 mixed reps=5 tag=P3 rc=0 wall=33s
+bench_scan_s5 skew reps=5 tag=P3 rc=0 wall=35s
+bench_scan_s5 tranco reps=5 tag=P3 rc=0 wall=25s
+--- process P4 ---
+bench_scan_s5 mixed reps=5 tag=P4 rc=0 wall=32s
+bench_scan_s5 skew reps=5 tag=P4 rc=0 wall=25s
+bench_scan_s5 tranco reps=5 tag=P4 rc=0 wall=23s
+--- process P5 ---
+bench_scan_s5 mixed reps=5 tag=P5 rc=0 wall=33s
+bench_scan_s5 skew reps=5 tag=P5 rc=0 wall=35s
+bench_scan_s5 tranco reps=5 tag=P5 rc=0 wall=34s
+sweep end 2026-09-21 19:21:30

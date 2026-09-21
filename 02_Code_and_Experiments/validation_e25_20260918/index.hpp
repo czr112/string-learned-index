@@ -261,6 +261,15 @@ struct Counts {
     std::uint64_t notlocated_fallback = 0; // V2 upsert: no context, took the old path
     std::uint64_t subblock_reclaims = 0;        // E31: in-place sub-block passes run
     std::uint64_t subblock_reclaim_helped = 0;  // ... of which made the retry fit
+    // E37: what the drain actually moved. `helped` is the narrower question -- whether the
+    // retry that triggered the drain then succeeded.
+    std::uint64_t migrate_calls = 0;
+    std::uint64_t migrated_records = 0;
+    std::uint64_t migrated_bytes = 0;
+    std::uint64_t migrate_helped = 0;
+    // E37: records the drain took out of the container and could not place, so they went
+    // straight back. Equal to migrated_records means the drain did nothing but repack.
+    std::uint64_t migrate_rejected = 0;
     std::uint64_t reclaim_skipped_unchanged = 0;  // E31H: skipped, garbage not grown
     std::uint64_t reclaim_skipped_gap = 0;        // E31H: skipped, min operation gap unmet
     std::uint64_t prefix_rebuilds = 0;     // Index::insert prefix-mismatch rebuild
@@ -708,6 +717,9 @@ struct Config {
     // reject a candidate without reading the record. Requires the stable store (there is
     // no order array otherwise); the arm setup asserts the pair is used together.
     bool overflow_inline_tag = false;
+    // E37: on a placement that would otherwise go to overflow, first try to bring records the
+    // other way -- out of this group's overflow container and back into the primary area.
+    bool overflow_migrate = false;
 };
 
 #if defined(E7_COUNT_BYTES) || defined(E24_DIAG) || defined(E25_DIAG)
@@ -1127,6 +1139,49 @@ class Region {
 
         void erase(iterator it) { erase_at(it.pos); }
 
+        // E37: remove a set of positions in ONE compaction pass. `pos` must be sorted and
+        // distinct. Erasing them one at a time makes every erase walk the tail that is left,
+        // and the feasibility scan measured that at 11x to 165x the entry moves of this
+        // single pass on the same set -- so the difference is not a constant factor to be
+        // optimised away later, it is the order of the cost.
+        void erase_positions(const std::vector<std::size_t>& pos) {
+            if (pos.empty()) return;
+
+            std::size_t k = 0, w = 0;
+
+            if (!stable_) {
+                for (std::size_t i = 0; i < vec_.size(); ++i) {
+                    if (k < pos.size() && pos[k] == i) {
+                        vec_[i] = OverflowRecord{};   // destroy the payload here, not later
+                        ++k;
+                        continue;
+                    }
+
+                    if (w != i) vec_[w] = std::move(vec_[i]);
+
+                    ++w;
+                }
+
+                vec_.resize(w);
+                return;
+            }
+
+            for (std::size_t i = 0; i < order_.size(); ++i) {
+                if (k < pos.size() && pos[k] == i) {
+                    store_[order_[i].handle] = OverflowRecord{};
+                    free_slots_.push_back(order_[i].handle);
+                    ++k;
+                    continue;
+                }
+
+                if (w != i) order_[w] = order_[i];
+
+                ++w;
+            }
+
+            order_.resize(w);
+        }
+
 #ifdef E25_DIAG
         // E36: the tag copy in every order entry against the tag in the record it names.
         // Returns the number of mismatches and reports how many pairings it compared.
@@ -1524,6 +1579,101 @@ class Region {
             e.offset = static_cast<std::uint32_t>(top);
         }
         h.bottom = static_cast<std::uint16_t>(top);
+    }
+
+    // E37: how many records one drain call may move. A CAP ON RECORDS, not a bound on the
+    // call's cost -- see the report's caliber note.
+    static constexpr std::size_t kMigrateBudget = 64;
+
+    // E37: move up to `budget` records out of this group's overflow container and back into
+    // the primary area it came from.
+    //
+    // Returns the number moved. A record is taken only when the block that would hold it
+    // has a free slot and enough bytes AFTER that block's own garbage is recovered, and the
+    // block is repacked before the first record lands in it, because bytes are what binds.
+    //
+    // Removal is one compaction pass over the container. Candidates are copied out first:
+    // the container is about to forget them.
+    std::size_t drain_overflow_bounded(std::uint32_t g, std::size_t budget) {
+        auto* o = overflow(g);
+
+        if (!o || o->empty() || budget == 0) return 0;
+
+        const std::size_t n = o->size();
+        const std::size_t nb = subblocks(g);
+        std::vector<std::size_t> pos;
+        std::vector<std::size_t> blk_of;
+        std::vector<OverflowRecord> moved;
+        std::vector<char> reclaimed(nb, 0);
+
+        // The reservation. Without it, 64 candidates each see the room the previous 63 are
+        // about to consume, the later inserts fail their own room test, and the records go
+        // straight back to overflow -- which is what the repair program caught: 1,239 moved
+        // and a net change of 21.
+        std::vector<std::uint32_t> vcount(nb);
+        std::vector<std::size_t> vfree(nb);
+
+        for (std::size_t i = 0; i < nb; ++i) {
+            vcount[i] = header(g, i).count;
+            vfree[i] = diag_free_after_reclaim(g, i);
+        }
+
+        for (std::size_t j = 0; j < n && pos.size() < budget; ++j) {
+            const std::string_view sfx = (*o)[j].suffix;
+
+            // Judged against the VIRTUAL state, so a record only fits if the ones already
+            // accepted in this call have left room for it.
+            const auto room_virtual = [&](std::size_t i) {
+                return vcount[i] < slots_of(g) && sfx.size() <= vfree[i];
+            };
+
+            const std::size_t blk = diag_target_with(g, sfx, room_virtual);
+
+            if (blk == SIZE_MAX) continue;
+
+            // Repack before the first record lands here, so the block's real bytes match the
+            // virtual view that accepted it. A sub-block with fewer than two entries is left
+            // alone by repack_subblock, and for those the virtual view is already the real
+            // one.
+            if (!reclaimed[blk]) {
+                repack_subblock(g, blk);
+                reclaimed[blk] = 1;
+            }
+
+            ++vcount[blk];
+            vfree[blk] -= sfx.size();
+            pos.push_back(j);
+            blk_of.push_back(blk);
+        }
+
+        if (pos.empty()) return 0;
+
+        moved.reserve(pos.size());
+
+        for (const std::size_t p : pos) moved.push_back((*o)[p]);
+
+        for (std::size_t k = 0; k < moved.size(); ++k) {
+            E25_ADD(migrated_bytes, moved[k].suffix.size());
+            E25_ADD(erase_released_overflow, moved[k].suffix.size());
+            E25_INC(string_frees);
+            E25_INC(migrated_records);
+        }
+
+        o->erase_positions(pos);
+        overflow_count_ -= pos.size();
+
+        for (std::size_t k = 0; k < moved.size(); ++k) {
+            if (!insert_into(g, blk_of[k], moved[k].suffix, moved[k].value, moved[k].tag)) {
+                // The reservation should have made this unreachable; it is counted rather
+                // than assumed away, because a drain whose inserts all fail moves nothing and
+                // still pays for the repack. The record goes back rather than being dropped
+                // -- a lost record would be a silent correctness bug.
+                E25_INC(migrate_rejected);
+                put_overflow(g, moved[k].suffix, moved[k].value, moved[k].tag);
+            }
+        }
+
+        return pos.size();
     }
 
     bool put_primary(std::uint32_t g, std::string_view s, std::uint64_t value, std::uint8_t tag) {
@@ -1936,6 +2086,191 @@ public:
         std::size_t entries, bytes, free_bytes, garbage_bytes;
     };
 
+    // E37: what the current layout would accept back, if the overflow records were offered
+    // to it. Read-only; no mechanism lives here.
+    struct MigrationScan {
+        std::uint64_t containers = 0;          // containers holding at least one record
+        std::uint64_t overflow_records = 0;    // records sitting in those containers
+        std::uint64_t no_target = 0;           // the group has no non-empty sub-block at all
+        std::uint64_t fail_slots = 0;          // the target sub-block has no free slot
+        std::uint64_t fail_bytes = 0;          // slot free, but not enough free suffix bytes
+        std::uint64_t migratable = 0;          // passes the range, the slot AND the byte test
+        std::uint64_t migratable_bytes = 0;    // total suffix bytes of the migratable records
+        // The same three tests against the byte watermark the block WOULD have once its own
+        // garbage is recovered. Reclaim frees bytes and never slots, so only the byte test
+        // differs -- and the two failure counters below say which one binds afterwards.
+        std::uint64_t fail_slots_after = 0;
+        std::uint64_t fail_bytes_after = 0;
+        std::uint64_t migratable_after = 0;
+        std::uint64_t migratable_after_bytes = 0;
+        // The dry run that CONSUMES what it places. This is the opportunity under a stated
+        // policy; migratable_after above is the same records judged independently, so the
+        // gap between the two is what mutual exclusion costs.
+        std::uint64_t greedy_migratable = 0;
+        std::uint64_t greedy_bytes = 0;
+        // Removal cost, counted both ways, because the answer is a design decision:
+        //   one_by_one  erasing them from the front, each erase walking the tail that is
+        //               left -- the shape the reviewer warned about
+        //   compaction  a single pass over the container, moving each survivor at most once
+        std::uint64_t shift_one_by_one = 0;
+        std::uint64_t shift_compaction = 0;
+    };
+
+    bool diag_room(std::uint32_t g, std::size_t i, std::string_view s) const {
+        const auto& h = header(g, i);
+        if (h.count >= slots_of(g)) return false;
+        return s.size() <= h.bottom - start_of(g);
+    }
+
+    // The bytes a sub-block would have free once its own garbage is recovered: its whole
+    // byte region minus the suffixes that are live in it. That is the watermark
+    // repack_subblock produces for a block it processes. Reclaim frees BYTES and never
+    // SLOTS -- packing suffixes does not change count -- so the two tests are separate here
+    // for the same reason insert_into separates them.
+    std::size_t diag_free_after_reclaim(std::uint32_t g, std::size_t i) const {
+        const auto& h = header(g, i);
+        std::size_t live = 0;
+        const auto* es = entries(g, i);
+        for (std::size_t j = 0; j < h.count; ++j) live += es[j].length;
+        return std::size_t(bb_[g]) - start_of(g) - live;
+    }
+
+    // put_primary's decision order, written ONCE. The three passes below differ only in the
+    // room predicate they hand in, so none of them can drift away from put_primary or from
+    // each other -- which is exactly the failure mode the two earlier copies invited.
+    template <class RoomFn>
+    std::size_t diag_target_with(std::uint32_t g, std::string_view s, RoomFn room) const {
+        const std::size_t nb = subblocks(g);
+        std::size_t prev = SIZE_MAX;
+
+        for (std::size_t i = 0; i < nb; ++i) {
+            const auto& h = header(g, i);
+            if (h.count == 0) continue;
+
+            const auto* es = entries(g, i);
+
+            if (compare(suffix(g, i, es[h.count - 1]), s) < 0) { prev = i; continue; }
+
+            if (prev != SIZE_MAX && compare(s, suffix(g, i, es[0])) < 0) {
+                if (room(prev)) return prev;
+                return room(i) ? i : SIZE_MAX;
+            }
+
+            return room(i) ? i : SIZE_MAX;
+        }
+
+        for (std::size_t j = prev == SIZE_MAX ? 0 : prev; j < nb; ++j)
+            if (room(j)) return j;
+
+        return SIZE_MAX;
+    }
+
+    void diag_migration_scan(MigrationScan& out) const {
+        for (std::uint32_t g = 0; g < groups_; ++g) {
+            const auto* o = overflow(g);
+
+            if (!o || o->empty()) continue;
+
+            const std::size_t n = o->size();
+            const std::size_t nb = subblocks(g);
+            ++out.containers;
+            out.overflow_records += n;
+
+            // The greedy pass's virtual view of the target blocks: what they would hold once
+            // reclaimed, then decremented as the dry run accepts.
+            std::vector<std::uint32_t> vcount(nb);
+            std::vector<std::size_t> vfree(nb);
+            std::vector<char> greedy_take(n, 0);
+            std::size_t greedy_first = SIZE_MAX, greedy_removed = 0;
+
+            for (std::size_t i = 0; i < nb; ++i) {
+                vcount[i] = header(g, i).count;
+                vfree[i] = diag_free_after_reclaim(g, i);
+            }
+
+            for (std::size_t j = 0; j < n; ++j) {
+                const std::string_view s = (*o)[j].suffix;
+
+                bool any_block = false;
+
+                for (std::size_t i = 0; i < nb; ++i)
+                    if (header(g, i).count > 0) { any_block = true; break; }
+
+                // ---- NOW -------------------------------------------------------------
+                const auto room_now = [&](std::size_t i) { return diag_room(g, i, s); };
+
+                if (diag_target_with(g, s, room_now) != SIZE_MAX) {
+                    ++out.migratable;
+                    out.migratable_bytes += s.size();
+                } else if (!any_block) {
+                    ++out.no_target;
+                } else {
+                    const std::size_t fc = first_candidate(g, s);
+
+                    if (header(g, fc).count >= slots_of(g)) ++out.fail_slots;
+                    else ++out.fail_bytes;
+                }
+
+                // ---- AFTER (per record, against the SAME recovered state: an upper bound)
+                const auto room_after = [&](std::size_t i) {
+                    return header(g, i).count < slots_of(g) &&
+                           s.size() <= diag_free_after_reclaim(g, i);
+                };
+
+                if (diag_target_with(g, s, room_after) != SIZE_MAX) {
+                    ++out.migratable_after;
+                    out.migratable_after_bytes += s.size();
+                } else if (any_block) {
+                    const std::size_t fc = first_candidate(g, s);
+
+                    if (header(g, fc).count >= slots_of(g)) ++out.fail_slots_after;
+                    else ++out.fail_bytes_after;
+                } else {
+                    // Under the post-reclaim watermark an EMPTY block offers its whole byte
+                    // region, so failing here means the suffix is longer than the region --
+                    // a byte failure, not a "nowhere to put it". The variants therefore do
+                    // not share the no_target counter.
+                    ++out.fail_bytes_after;
+                }
+
+                // ---- GREEDY ----------------------------------------------------------
+                const auto room_greedy = [&](std::size_t i) {
+                    return vcount[i] < slots_of(g) && s.size() <= vfree[i];
+                };
+
+                const std::size_t gi = diag_target_with(g, s, room_greedy);
+
+                if (gi != SIZE_MAX) {
+                    ++vcount[gi];
+                    vfree[gi] -= s.size();
+                    ++out.greedy_migratable;
+                    out.greedy_bytes += s.size();
+                    greedy_take[j] = 1;
+                    ++greedy_removed;
+
+                    if (j < greedy_first) greedy_first = j;
+                }
+            }
+
+            // Removal cost, on the set a mechanism would actually take. Ascending
+            // one-at-a-time makes every erase walk whatever tail is left; a single
+            // compaction pass moves each survivor at most once. The two differ by orders of
+            // magnitude, and which applies is a design decision, so both are counted.
+            if (greedy_removed) {
+                std::size_t m = n;
+
+                for (std::size_t j = 0; j < n; ++j) {
+                    if (!greedy_take[j]) continue;
+
+                    out.shift_one_by_one += m - 1 - j;
+                    --m;
+                }
+
+                out.shift_compaction += (n - 1 - greedy_first) - (greedy_removed - 1);
+            }
+        }
+    }
+
     SubBlockStats subblock_stats(std::uint32_t g, std::size_t i) const {
         const auto& h = header(g, i);
         const auto* es = entries(g, i);
@@ -1945,6 +2280,20 @@ public:
         s.free_bytes = h.bottom - start_of(g);
         s.garbage_bytes = bb_[g] - h.bottom - s.bytes;
         return s;
+    }
+
+    // E37: drain every group once, with the same budget per group. This is the entry the
+    // "repair an already-degraded snapshot" experiment uses -- the insert path only drains
+    // when a placement is about to fail, so a snapshot that is already full would otherwise
+    // never be visited. Public because Index drives it; the placement internals it uses stay
+    // private.
+    std::size_t drain_all_bounded() {
+        std::size_t total = 0;
+
+        for (std::uint32_t g = 0; g < groups_; ++g)
+            total += drain_overflow_bounded(g, kMigrateBudget);
+
+        return total;
     }
 
     struct MemBreakdown {
@@ -2660,8 +3009,24 @@ public:
             if (put_primary(loc.group, s, value, loc.tag)) {
                 E25_INC(compact_helped);
             } else {
-                E25_INC(compact_no_help);
-                put_overflow(loc.group, s, value, loc.tag);
+                // E37: before this key goes into overflow, try to bring records the other
+                // way. The drain opens room only by moving records INTO the primary area, so
+                // the retry rides on what it opened.
+                bool placed = false;
+
+                if (config_.overflow_migrate) {
+                    E25_INC(migrate_calls);
+                    const std::size_t moved = drain_overflow_bounded(loc.group, kMigrateBudget);
+
+                    if (moved) placed = put_primary(loc.group, s, value, loc.tag);
+
+                    if (placed) E25_INC(migrate_helped);
+                }
+
+                if (!placed) {
+                    E25_INC(compact_no_help);
+                    put_overflow(loc.group, s, value, loc.tag);
+                }
             }
         }
         ++size_;
@@ -2727,8 +3092,21 @@ public:
             if (put_primary(g, s, value, tag)) {
                 E25_INC(compact_helped);
             } else {
-                E25_INC(compact_no_help);
-                put_overflow(g, s, value, tag);
+                bool placed = false;
+
+                if (config_.overflow_migrate) {
+                    E25_INC(migrate_calls);
+                    const std::size_t moved = drain_overflow_bounded(g, kMigrateBudget);
+
+                    if (moved) placed = put_primary(g, s, value, tag);
+
+                    if (placed) E25_INC(migrate_helped);
+                }
+
+                if (!placed) {
+                    E25_INC(compact_no_help);
+                    put_overflow(g, s, value, tag);
+                }
             }
         }
         ++size_;
@@ -3534,6 +3912,24 @@ public:
         return bad;
     }
 #endif
+
+#ifdef E25_DIAG
+    // E37: sum the migration scan over every region.
+    void diag_migration_scan(Region::MigrationScan& out) const {
+        for (const auto& x : nodes_) x.region->diag_migration_scan(out);
+    }
+#endif
+
+    // E37: drain every region once. Used by the repair experiment, where the workload has
+    // already run to a degraded state and the question is whether the layout can be
+    // recovered at an acceptable cost.
+    std::size_t drain_all_bounded() {
+        std::size_t total = 0;
+
+        for (const auto& x : nodes_) total += x.region->drain_all_bounded();
+
+        return total;
+    }
     std::size_t diag_overflow_record_bytes() const { return Region::diag_overflow_record_bytes(); }
 
     Region::TrialPlace diag_trial(std::string_view key) const {

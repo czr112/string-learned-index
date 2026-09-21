@@ -1,0 +1,7 @@
+migration feasibility pass 2026-09-21 17:53:35
+diag_migrate mixed same rc=0 wall=5s
+diag_migrate skew same rc=0 wall=9s
+diag_migrate tranco same rc=0 wall=11s
+diag_migrate mixed grow rc=0 wall=6s
+diag_migrate skew grow rc=0 wall=8s
+diag_migrate tranco grow rc=0 wall=10s
