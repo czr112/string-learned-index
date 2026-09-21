@@ -200,9 +200,15 @@ def main():
 
     # ---- 2. the binary path -------------------------------------------------
     w("\n" + "#" * 118 + "\n## 2. 二分路径上，4／8 字节前缀能决定多少比较\n" + "#" * 118 + "\n")
-    w("  判据：两侧都 >= W 字节且前 W 字节不同。`短串` 单列——一侧不足 W 字节时任何窗口都定不了。\n")
-    w("  %-7s %-6s %-6s %-5s %10s %10s %10s %10s %12s %10s\n"
-      % ("data", "mode", "frac", "arm", "cmps", "decided4", "decided8", "短串", "平均LCP", "决定率"))
+    w("  分母与口径（这三行必须与数字一起读）：\n")
+    w("    * 分母是**二分层内的定序比较**（`< 0`）。循环之后那**一次相等确认**不计入——\n")
+    w("      任何设计都要为命中读一次记录取值，它不是可省的部分。\n")
+    w("    * `决定率4` 与 `决定率8` **各自除以 `cmps`**。**两者不是包含关系，不得相加**：\n")
+    w("      `lcp < 4` 且 `4 <= min(两侧长度) < 8` 时 4 字节能定而 8 字节的判定条件不成立；\n")
+    w("      反过来 `4 <= lcp < 8` 时 8 字节能定而 4 字节不能。相加会重复计入两者都成立的格子。\n")
+    w("    * `短串` 单列：一侧不足 W 字节时任何窗口都定不了，它不属于任何一种可决定。\n")
+    w("  %-7s %-6s %-6s %-5s %10s %10s %10s %10s %10s %12s %10s\n"
+      % ("data", "mode", "frac", "arm", "cmps", "decided4", "decided8", "短串", "平均LCP", "决定率4", "决定率8"))
 
     for kind in KINDS:
         for mode in MODES:
@@ -215,11 +221,11 @@ def main():
 
                     n = ov["ov_bin_cmps"]
                     lcp = ov["ov_lcp_bytes"] / float(n)
-                    dec = (ov["ov_decided4"] + ov["ov_decided8"]) / float(n)
 
-                    w("  %-7s %-6s %-6.2f %-5s %10d %10d %10d %10d %12.1f %9.1f%%\n"
+                    w("  %-7s %-6s %-6.2f %-5s %10d %10d %10d %10d %10.1f %11.2f%% %9.2f%%\n"
                       % (kind, mode, frac, arm, n, ov["ov_decided4"], ov["ov_decided8"],
-                         ov["ov_short4"], lcp, 100.0 * dec))
+                         ov["ov_short4"], lcp,
+                         100.0 * ov["ov_decided4"] / n, 100.0 * ov["ov_decided8"] / n))
 
     # ---- 3. the linear path -------------------------------------------------
     w("\n" + "#" * 118 + "\n## 3. 线性路径上，前缀在「标签之上」还能省多少读\n" + "#" * 118 + "\n")
@@ -246,8 +252,11 @@ def main():
 
     # ---- 4. the verdict inputs, in one place --------------------------------
     w("\n" + "#" * 118 + "\n## 4. 判据汇总（只看 200% 检查点，溢出队列，O 臂）\n" + "#" * 118 + "\n")
-    w("  %-7s %-6s %12s %12s %14s %16s\n"
-      % ("data", "mode", "二分占比", "前缀可拒/读过", "二分决定率", "平均LCP(二分)"))
+    w("  `可避免读占比` 是**探测次数的估算比例，不是端到端性能上限**：它只说这些读可以省，\n")
+    w("  不说省下来值多少时间——不同探测的成本不同、缓存效果也不同。分子 = 8 字节窗口能定的\n")
+    w("  二分比较数 + 线性路径上 tag 幸存者里前缀能拒的数；分母 = 二分比较数 + 线性读过记录数。\n")
+    w("  %-7s %-6s %12s %12s %14s %14s %16s\n"
+      % ("data", "mode", "二分占比", "前缀可拒/读过", "二分决定率8", "可避免读占比", "平均LCP(二分)"))
 
     for kind in KINDS:
         for mode in MODES:
@@ -260,15 +269,23 @@ def main():
             bin_share = (100.0 * ov["ov_bin_q"] / tot) if tot else 0.0
             marg = (100.0 * ov["ov_lin_reject8"] / ov["ov_lin_recs"]) if ov["ov_lin_recs"] else 0.0
 
+            queries = float(ov["keys"] * ov["runs"])
+            bin_per_q = ov["ov_bin_cmps"] / queries
+            lin_per_q = ov["ov_lin_recs"] / queries
+
             if ov["ov_bin_cmps"]:
-                dec = 100.0 * (ov["ov_decided4"] + ov["ov_decided8"]) / ov["ov_bin_cmps"]
+                d8 = ov["ov_decided8"] / float(ov["ov_bin_cmps"])
                 lcp = ov["ov_lcp_bytes"] / float(ov["ov_bin_cmps"])
             else:
-                dec = float("nan")
+                d8 = 0.0
                 lcp = float("nan")
 
-            w("  %-7s %-6s %11.1f%% %11.2f%% %13.1f%% %16.1f\n"
-              % (kind, mode, bin_share, marg, dec, lcp))
+            avoided = d8 * bin_per_q + ov["ov_lin_reject8"] / queries
+            denom = bin_per_q + lin_per_q
+            share = (100.0 * avoided / denom) if denom else 0.0
+
+            w("  %-7s %-6s %11.1f%% %11.2f%% %13.2f%% %13.2f%% %16.1f\n"
+              % (kind, mode, bin_share, marg, 100.0 * d8, share, lcp))
 
     timing_section(w)
 

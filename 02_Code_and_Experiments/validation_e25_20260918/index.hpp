@@ -334,6 +334,15 @@ struct Counts {
     std::uint64_t ov_linear_tag_pass = 0;     // survived the tag, reached the compare
     std::uint64_t ov_linear_reject8 = 0;      // of those, an 8-byte prefix settles them
     std::uint64_t ov_linear_lcp_bytes = 0;    // summed LCP over the tag survivors
+    // ---- E36 (inline tag): the three questions the reviewer asked of this prototype ----
+    //   1. how many order entries does one linear overflow query look at   -> ov_tag_entries
+    //   2. how many are rejected BEFORE any store access                  -> ov_tag_reject_pre
+    //   3. how many store accesses does that save                          -> ov_linear_recs,
+    //      which counts store reads in every arm, so T against O is the answer directly.
+    // ov_tag_entries equals ov_linear_recs in B and O, where the tag can only be read by
+    // reading the record; the two separate exactly in T.
+    std::uint64_t ov_tag_entries = 0;         // order entries examined by the linear scan
+    std::uint64_t ov_tag_reject_pre = 0;      // rejected by the ENTRY's tag, store untouched
     std::uint64_t scan_start_locates = 0;    // E27 S2: locate(start) evaluations in scan()
     void reset() { *this = Counts{}; }
 };
@@ -695,6 +704,10 @@ struct Config {
     // on every read, so the point query, the scan and the insert paths may all get
     // SLOWER. That is what the measurement is for.
     bool overflow_stable_store = false;
+    // E36: keep a COPY of each record's tag in its order entry, so the linear scan can
+    // reject a candidate without reading the record. Requires the stable store (there is
+    // no order array otherwise); the arm setup asserts the pair is used together.
+    bool overflow_inline_tag = false;
 };
 
 #if defined(E7_COUNT_BYTES) || defined(E24_DIAG) || defined(E25_DIAG)
@@ -929,6 +942,16 @@ class Region {
         std::uint8_t tag;
     };
 
+    // E36: the ordered entry. In the plain stable store this is a bare 4-byte handle; in
+    // the inline-tag arm it also carries a copy of the record's tag, so the linear scan can
+    // reject a candidate from the ENTRY alone and never touch the store. The size is
+    // reported by sizeof rather than assumed -- with uint32_t + uint8_t it is 8, not 5,
+    // and that padding is part of what this round measures.
+    struct OrderedEntry {
+        std::uint32_t handle;
+        std::uint8_t tag;
+    };
+
     // O1: ONE container interface, TWO representations. The switch decides which is
     // live at construction; no call site tests it.
     //
@@ -981,22 +1004,35 @@ class Region {
             bool operator!=(const const_iterator& o) const { return pos != o.pos; }
         };
 
-        // Read once, here, at construction; no operation tests it afterwards.
-        explicit OverflowList(bool stable) : stable_(stable) {}
+        // Read once, here, at construction; no operation tests them afterwards.
+        explicit OverflowList(bool stable, bool inline_tag) : stable_(stable), tag_inline_(inline_tag) {}
 
         std::size_t size() const { return stable_ ? order_.size() : vec_.size(); }
         bool empty() const { return stable_ ? order_.empty() : vec_.empty(); }
 
         const OverflowRecord& operator[](std::size_t i) const {
-            return stable_ ? store_[order_[i]] : vec_[i];
+            return stable_ ? store_[order_[i].handle] : vec_[i];
         }
+
+        // E36: the tag copy that lives WITH the order entry. Reading it touches the order
+        // array and nothing else -- which is the entire point, because the linear scan can
+        // then reject a candidate without paying the store access. In the arms without the
+        // inline copy this reads the record, which is exactly what they already did.
+        bool tags_are_inline() const { return tag_inline_; }
+
+        std::uint8_t entry_tag(std::size_t i) const {
+            return tag_inline_ ? order_[i].tag : (*this)[i].tag;
+        }
+
+        // Named so the call site says what it costs: this one DOES reach the store.
+        const OverflowRecord& record_at(std::size_t i) const { return (*this)[i]; }
 
         // Non-const: the ON arm returns a reference into the deque. A deque keeps
         // references to existing elements valid when it grows, and nothing is ever
         // removed from the store, so this reference stays valid -- which is what lets
         // store_at write a value in place without going through the handle array.
         OverflowRecord& operator[](std::size_t i) {
-            return stable_ ? store_[order_[i]] : vec_[i];
+            return stable_ ? store_[order_[i].handle] : vec_[i];
         }
 
         iterator begin() { return iterator{this, 0}; }
@@ -1014,10 +1050,13 @@ class Region {
                     [](const OverflowRecord& a, std::string_view b) { return E25_CMP(a.suffix, b) < 0; });
                 return static_cast<std::size_t>(it - vec_.begin());
             }
+            // Ordered by the FULL suffix. The inline tag is never consulted here: a tag
+            // does not order anything, and using it would break the ordering the binary
+            // search depends on.
             std::size_t lo = 0, hi = order_.size();
             while (lo < hi) {
                 const std::size_t mid = lo + (hi - lo) / 2;
-                if (E25_CMP(store_[order_[mid]].suffix, s) < 0) lo = mid + 1;
+                if (E25_CMP(store_[order_[mid].handle].suffix, s) < 0) lo = mid + 1;
                 else hi = mid;
             }
             return lo;
@@ -1029,6 +1068,10 @@ class Region {
                 vec_.insert(vec_.begin() + static_cast<std::ptrdiff_t>(pos), std::move(rec));
                 return;
             }
+            // The tag is read BEFORE the move, because the entry and the record must carry
+            // the same one. This is the only place that writes the store, so it is the only
+            // place that can put a stale tag in the order array -- and it does not.
+            const std::uint8_t rec_tag = rec.tag;
             std::uint32_t slot = 0;
             if (!free_slots_.empty()) {
                 slot = free_slots_.back();
@@ -1039,7 +1082,9 @@ class Region {
                 slot = static_cast<std::uint32_t>(store_.size() - 1);
             }
             const std::size_t shifted = order_.size() - pos;
-            order_.insert(order_.begin() + static_cast<std::ptrdiff_t>(pos), slot);
+            // Handle and tag move as ONE entry, in one array, so they cannot come apart.
+            order_.insert(order_.begin() + static_cast<std::ptrdiff_t>(pos),
+                          OrderedEntry{slot, rec_tag});
             // The mechanism check. overflow_handle_moves counts the handles the order
             // array just shifted and overflow_handle_move_bytes what that cost. The
             // record pair is written at this line, the only place that touches the
@@ -1048,7 +1093,7 @@ class Region {
             // (ov_shifted_records_*) keep reporting the LOGICAL shift distance in both
             // arms, so the two representations are compared on the same workload.
             E25_ADD(overflow_handle_moves, shifted);
-            E25_ADD(overflow_handle_move_bytes, shifted * sizeof(std::uint32_t));
+            E25_ADD(overflow_handle_move_bytes, shifted * sizeof(OrderedEntry));
             E25_ADD(overflow_record_moves_stable, 0);
             E25_ADD(overflow_record_move_bytes_stable, 0);
             // Space. Both quantities are monotone in an insert, so a running max is
@@ -1063,8 +1108,11 @@ class Region {
                 vec_.erase(vec_.begin() + static_cast<std::ptrdiff_t>(pos));
                 return;
             }
-            const std::uint32_t slot = order_[pos];
+            const std::uint32_t slot = order_[pos].handle;
             const std::size_t shifted = order_.size() - 1 - pos;
+            // The entry carries its tag out with it, so an erased position leaves no tag
+            // behind; the slot it names is handed to the free list and its next occupant
+            // writes a fresh tag at insert_at above.
             order_.erase(order_.begin() + static_cast<std::ptrdiff_t>(pos));
             // Destroy the payload where it sits -- the caller has already counted the
             // free -- and hand the slot to the free list. The record did not move;
@@ -1072,12 +1120,27 @@ class Region {
             store_[slot] = OverflowRecord{};
             free_slots_.push_back(slot);
             E25_ADD(overflow_handle_moves, shifted);
-            E25_ADD(overflow_handle_move_bytes, shifted * sizeof(std::uint32_t));
+            E25_ADD(overflow_handle_move_bytes, shifted * sizeof(OrderedEntry));
             E25_ADD(overflow_record_moves_stable, 0);
             E25_ADD(overflow_record_move_bytes_stable, 0);
         }
 
         void erase(iterator it) { erase_at(it.pos); }
+
+#ifdef E25_DIAG
+        // E36: the tag copy in every order entry against the tag in the record it names.
+        // Returns the number of mismatches and reports how many pairings it compared.
+        // Called with the clock stopped; it is a structural check, not a measurement.
+        std::size_t diag_tag_pairing(std::size_t& checked) const {
+            if (!stable_) return 0;
+            std::size_t bad = 0;
+            for (std::size_t i = 0; i < order_.size(); ++i) {
+                ++checked;
+                if (order_[i].tag != store_[order_[i].handle].tag) ++bad;
+            }
+            return bad;
+        }
+#endif
 
         // The container's own slot arrays, without the object or the payloads. The OFF
         // arm is the vector capacity in record units, which is what e24_report's
@@ -1087,7 +1150,7 @@ class Region {
         std::size_t container_slot_bytes() const {
             if (!stable_) return vec_.capacity() * sizeof(OverflowRecord);
             return store_.size() * sizeof(OverflowRecord) +
-                   order_.capacity() * sizeof(std::uint32_t) +
+                   order_.capacity() * sizeof(OrderedEntry) +
                    free_slots_.capacity() * sizeof(std::uint32_t);
         }
 
@@ -1105,15 +1168,16 @@ class Region {
                 return total;
             }
             std::size_t total = sizeof(OverflowList) + container_slot_bytes();
-            for (std::uint32_t s : order_) total += store_[s].suffix.capacity() + 1;
+            for (const OrderedEntry& e : order_) total += store_[e.handle].suffix.capacity() + 1;
             return total;
         }
 
     private:
         bool stable_ = false;
+        bool tag_inline_ = false;                // E36: the order entry carries a tag copy
         std::vector<OverflowRecord> vec_;        // OFF arm: the ordered vector
         std::deque<OverflowRecord> store_;       // ON arm: records never move once stored
-        std::vector<std::uint32_t> order_;       // ON arm: sorted handles into store_
+        std::vector<OrderedEntry> order_;        // ON arm: sorted entries into store_
         std::vector<std::uint32_t> free_slots_;  // ON arm: the holes an erase left behind
     };
 
@@ -1496,7 +1560,7 @@ class Region {
         if (!o) {
             E18_INC(overflow_containers);
             // The representation is fixed for the container's whole life, from here.
-            overflow_owners_.push_back(std::make_unique<Overflow>(config_.overflow_stable_store));
+            overflow_owners_.push_back(std::make_unique<Overflow>(config_.overflow_stable_store, config_.overflow_inline_tag));
             o = overflow_owners_.back().get();
             header(g, 0).overflow_pointer = reinterpret_cast<std::uintptr_t>(o);
         }
@@ -2385,10 +2449,51 @@ public:
                 }
             } else {
                 E25_INC(ov_queries_linear);
+                // E36: the inline-tag arm gets its OWN loop. Putting a per-record test into
+                // the loop below would change the code B and O were measured with, and the
+                // whole point of this arm is to compare against exactly that code.
+                // `if constexpr (Hash)` because without fingerprints there is no tag to
+                // compare, and the arm would then have nothing to reject on.
+                bool tagged = false;
+                if constexpr (Hash) tagged = o->tags_are_inline();
+
+                if (tagged) {
+                    for (std::size_t oi = 0; oi < o->size(); ++oi) {
+                        ++result.overflow_checks;
+#ifdef E25_DIAG
+                        E25_INC(ov_tag_entries);
+#endif
+                        // The tag comes from the entry, and the entries are contiguous in the
+                        // order array, so a mismatch is settled without touching the store.
+                        // THAT is the access this arm is trying to remove.
+                        if (o->entry_tag(oi) != tag) {
+#ifdef E25_DIAG
+                            E25_INC(ov_tag_reject_pre);
+#endif
+                            continue;
+                        }
+                        // A match proves nothing: 8 bits collide, so the record is fetched
+                        // and the full key compared, exactly as in the other arms.
+                        const auto& e = o->record_at(oi);
+#ifdef E25_DIAG
+                        E25_INC(ov_linear_recs);
+#endif
+                        ++result.str_cmps;
+                        E12_TICK(result.str_cmps_overflow);
+                        if (E25_CMP(e.suffix, s) == 0) {
+                            result.found = true;
+                            result.value = e.value;
+                            result.source = 2;
+                            if (loc) { loc->where = Where::Overflow; loc->index = oi; }
+                            break;
+                        }
+                    }
+                } else {
                 for (std::size_t oi = 0; oi < o->size(); ++oi) {
                     const auto& e = (*o)[oi];
                     ++result.overflow_checks;
 #ifdef E25_DIAG
+                    E25_INC(ov_tag_entries);
                     E25_INC(ov_linear_recs);
 #endif
                     if constexpr (Hash) {
@@ -2422,6 +2527,7 @@ public:
                         if (loc) { loc->where = Where::Overflow; loc->index = oi; }
                         break;
                     }
+                }
                 }
             }
         }
@@ -2858,6 +2964,12 @@ public:
                 if (!o->empty()) out.push_back(o->size());
     }
 
+    // E36: how big an order entry really is. Published here because the movement and space
+    // claims must cite sizeof rather than an intended 5 bytes -- if the struct pads to 8,
+    // the logical movement is 1/6 of a 48-byte record and TWICE O1's 4-byte handle, and
+    // that trade is exactly what the round measures.
+    static std::size_t ordered_entry_bytes() { return sizeof(OrderedEntry); }
+
     // E33/O1: the live overflow records' SUFFIX LENGTHS, so "what actually moves" is a
     // measurement rather than a guess. std::string keeps up to 15 bytes inline (SSO), so a
     // record's 48-byte object CONTAINS its characters when the suffix is at most 15 bytes,
@@ -2867,6 +2979,17 @@ public:
             if (const auto* o = overflow(g))
                 for (const auto& r : *o) out.push_back(r.suffix.size());
     }
+
+#ifdef E25_DIAG
+    // E36: sum the inline-tag pairing check over this region's containers. Only a group
+    // that has a container contributes, since the other arms have no order array at all.
+    std::size_t diag_tag_pairing(std::size_t& checked) const {
+        std::size_t bad = 0;
+        for (std::uint32_t g = 0; g < groups_; ++g)
+            if (const auto* o = overflow(g)) bad += o->diag_tag_pairing(checked);
+        return bad;
+    }
+#endif
     // The element size the movement byte counters are counted in, so a reader can turn
     // "shifted bytes" back into "shifted records" without guessing. sizeof() on the
     // private record type can only be named where the type is visible, which is here.
@@ -3403,6 +3526,14 @@ public:
     void diag_overflow_suffix_lengths(std::vector<std::size_t>& out) const {
         for (const auto& x : nodes_) x.region->diag_overflow_suffix_lengths(out);
     }
+
+#ifdef E25_DIAG
+    std::size_t diag_tag_pairing(std::size_t& checked) const {
+        std::size_t bad = 0;
+        for (const auto& x : nodes_) bad += x.region->diag_tag_pairing(checked);
+        return bad;
+    }
+#endif
     std::size_t diag_overflow_record_bytes() const { return Region::diag_overflow_record_bytes(); }
 
     Region::TrialPlace diag_trial(std::string_view key) const {

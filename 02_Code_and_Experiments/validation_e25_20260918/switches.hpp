@@ -45,6 +45,7 @@ inline validation::Config baseline_config(std::uint32_t ov_threshold) {
     c.reclaim_skip_repeat = false;    // E31P (default off; the state check alone)
     c.scan_cache_start = false;       // E27 S2 (default off; the pre-E27 scan candidate)
     c.overflow_stable_store = false;  // O1 (default off; the ordered overflow vector)
+    c.overflow_inline_tag = false;    // E36 (default off; needs the stable store on)
     return c;
 }
 
@@ -66,6 +67,7 @@ inline void pin_frozen_switches(validation::Config& c) {
     c.reclaim_skip_repeat = false;   // NOT part of the frozen set either
     c.scan_cache_start = false;   // NOT part of the frozen set; E27 S2 is a candidate
     c.overflow_stable_store = false;   // NOT part of the frozen set; O1 is a candidate
+    c.overflow_inline_tag = false;     // NOT part of the frozen set; E36 is a candidate
 }
 
 // The effective switch values, for the gate's own output. A reader should never have
@@ -81,7 +83,8 @@ inline std::string switches(const validation::Config& c) {
            ",reclaim_skip_repeat=" + (c.reclaim_skip_repeat ? "1" : "0") +
            ",scan_cache_start=" + (c.scan_cache_start ? "1" : "0") +
            ",scan_reserve_result=" + (c.scan_reserve_result ? "1" : "0") +
-           ",overflow_stable_store=" + (c.overflow_stable_store ? "1" : "0");
+           ",overflow_stable_store=" + (c.overflow_stable_store ? "1" : "0") +
+           ",overflow_inline_tag=" + (c.overflow_inline_tag ? "1" : "0");
 }
 
 // Fail unless the two configurations differ in EXACTLY the named switches, and agree
@@ -109,6 +112,7 @@ inline void require_only_switches_differ(const validation::Config& a,
         {"scan_cache_start", a.scan_cache_start, b.scan_cache_start},
         {"scan_reserve_result", a.scan_reserve_result, b.scan_reserve_result},
         {"overflow_stable_store", a.overflow_stable_store, b.overflow_stable_store},
+        {"overflow_inline_tag", a.overflow_inline_tag, b.overflow_inline_tag},
     };
     for (const auto& f : fields) {
         bool expected = false;

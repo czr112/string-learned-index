@@ -113,6 +113,9 @@ EXTRA = {
     "diag_prefix": ["-DE25_DIAG"],
     # The E36 composition diagnostic needs the shift counters, so it is diagnostic-only.
     "diag_compose": ["-DE25_DIAG"],
+    # E36: the gate reads the tag counters for its non-vacuity assertions, and the
+    # benchmark has a diagnostic target for the same counters.
+    "check_tag_store": ["-DE25_DIAG"], "diag_tag": ["-DE25_DIAG"],
     "bench_w_t": ["-DE30_TIME"],           # same source as bench_w, clock ON
     # Needs BOTH: e30_probe is declared inside the E25_DIAG member block because it
     # calls diag_group(), so -DE30_TIME alone leaves it uncompiled.
@@ -136,7 +139,8 @@ LIBS = {"bench_e25": ["build/art.o"], "bench_e26": ["build/art.o"],
         "diag_hyst": ["build/art.o"], "san_bench_long_hyst": ["build/art.o"],
         "bench_long_o1": ["build/art.o"], "diag_o1": ["build/art.o"],
         "bench_prefix": ["build/art.o"], "diag_prefix": ["build/art.o"],
-        "diag_compose": ["build/art.o"]}
+        "diag_compose": ["build/art.o"],
+        "bench_tag": ["build/art.o"], "diag_tag": ["build/art.o"]}
 C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "bench_e26": ["third_party/vendor/libart/src/art.c"],
              "bench_long_art": ["third_party/vendor/libart/src/art.c"],
@@ -147,13 +151,15 @@ C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "diag_o1": ["third_party/vendor/libart/src/art.c"],
              "bench_prefix": ["third_party/vendor/libart/src/art.c"],
              "diag_prefix": ["third_party/vendor/libart/src/art.c"],
-             "diag_compose": ["third_party/vendor/libart/src/art.c"]}
+             "diag_compose": ["third_party/vendor/libart/src/art.c"],
+             "bench_tag": ["third_party/vendor/libart/src/art.c"],
+             "diag_tag": ["third_party/vendor/libart/src/art.c"]}
 # diag_long is the SAME source as bench_long, built with the counters in. One source,
 # two targets, so the two builds cannot drift apart.
 SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        "diag_hyst": "bench_long_hyst.cpp", "diag_o1": "bench_long_o1.cpp",
        "bench_prefix": "bench_prefix.cpp", "diag_prefix": "bench_prefix.cpp",
-       "diag_compose": "diag_compose.cpp",
+       "diag_compose": "diag_compose.cpp", "diag_tag": "bench_tag.cpp",
        # ITEM B: the sanitizer targets are new NAMES over these same sources. One
        # source, two targets -- as diag_long is for bench_long -- so the sanitizer
        # build and the shipped build of the same program cannot drift apart.

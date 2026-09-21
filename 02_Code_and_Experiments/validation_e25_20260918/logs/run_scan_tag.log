@@ -1,0 +1,22 @@
+scan tag sweep 2026-09-21 14:11:18
+--- process P1 ---
+bench_scan_s4 mixed reps=5 tag=P1 rc=0 wall=33s
+bench_scan_s4 skew reps=5 tag=P1 rc=0 wall=36s
+bench_scan_s4 tranco reps=5 tag=P1 rc=0 wall=35s
+--- process P2 ---
+bench_scan_s4 mixed reps=5 tag=P2 rc=0 wall=27s
+bench_scan_s4 skew reps=5 tag=P2 rc=0 wall=36s
+bench_scan_s4 tranco reps=5 tag=P2 rc=0 wall=24s
+--- process P3 ---
+bench_scan_s4 mixed reps=5 tag=P3 rc=0 wall=33s
+bench_scan_s4 skew reps=5 tag=P3 rc=0 wall=24s
+bench_scan_s4 tranco reps=5 tag=P3 rc=0 wall=32s
+--- process P4 ---
+bench_scan_s4 mixed reps=5 tag=P4 rc=0 wall=22s
+bench_scan_s4 skew reps=5 tag=P4 rc=0 wall=27s
+bench_scan_s4 tranco reps=5 tag=P4 rc=0 wall=34s
+--- process P5 ---
+bench_scan_s4 mixed reps=5 tag=P5 rc=0 wall=29s
+bench_scan_s4 skew reps=5 tag=P5 rc=0 wall=32s
+bench_scan_s4 tranco reps=5 tag=P5 rc=0 wall=34s
+sweep end 2026-09-21 14:18:57
