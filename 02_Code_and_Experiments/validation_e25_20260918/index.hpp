@@ -814,7 +814,16 @@ enum class ModelKind { Context16, Position16, Unigram };
 //
 // The task book's section 4 requires the two to be kept apart, and requires an unsupported
 // combination to be REFUSED rather than silently mapped to some other group function.
-enum class ModelBackend { Context16, LitsHpt, BlockLinearRank, EqualDepthDir };
+enum class ModelBackend { Context16, LitsHpt, BlockLinearRank, EqualDepthDir,
+                          EqualDepthDirTrunc };
+
+// EqualDepthDirTrunc is the SAME directory as EqualDepthDir with section 2's truncated
+// separators (model/equal_depth_dir.hpp). The mapping function has the same shape, so every
+// wiring point asks this question instead of comparing against one enumerator; the two backends
+// differ only in the bytes the directory stores, and the model identity mixes that flag in.
+inline bool is_depth_dir_backend(ModelBackend b) {
+    return b == ModelBackend::EqualDepthDir || b == ModelBackend::EqualDepthDirTrunc;
+}
 
 // The three backends answer the same question -- "which logical group does this key belong
 // to" -- with different machinery, and the index refuses combinations it does not implement
@@ -825,6 +834,9 @@ enum class ModelBackend { Context16, LitsHpt, BlockLinearRank, EqualDepthDir };
 //                   ported from the teammate model and fixed at 7 encoded bytes / 8 segments
 //   EqualDepthDir   a per-region separator directory at equal key RANKS
 //                   (model/equal_depth_dir.hpp): balances the group load by construction
+//   EqualDepthDirTrunc  the same directory with the truncated separators of
+//                   TRUNCDIR_ENTRY_DESIGN.md section 2: shortest prefix that still beats the
+//                   left neighbour, so stored keys route exactly as in EqualDepthDir
 
 struct Config {
     std::uint32_t block_bytes = 1024;
@@ -1395,6 +1407,8 @@ struct DepthDirStats {
     std::uint64_t keys_boundary = 0;
     std::uint64_t thresholds_total = 0;
     std::uint64_t regions_with_duplicate_thresholds = 0;
+    std::uint64_t threshold_bytes_total = 0;   // arena bytes stored, truncated or not
+    std::uint64_t regions_truncated = 0;       // fitted regions whose separators were truncated
     std::uint64_t fits = 0;
 };
 
@@ -2182,7 +2196,7 @@ class Region {
                                           const blockrank::RegionModel& block_rank,
                                           const equivdir::RegionModel& depth_dir) {
         std::uint64_t h = model_identity(m, groups, canonical);
-        if (backend == ModelBackend::EqualDepthDir) {
+        if (is_depth_dir_backend(backend)) {
             const std::uint64_t dtag = depth_dir.identity();
             auto mix = [&h](const void* p, std::size_t n) {
                 const auto* b = static_cast<const unsigned char*>(p);
@@ -3209,17 +3223,22 @@ class Region {
     // group 0. Combination refusals mirror the other backends.
     void calibrate_depth_dir(const std::vector<Pair>& sorted) {
         if (config_.model_kind != ModelKind::Context16) {
-            throw std::invalid_argument("EqualDepthDir supports ModelKind::Context16 only");
+            throw std::invalid_argument("the depth directory supports ModelKind::Context16 only");
         }
         if (config_.canonical != Route::Full) {
-            throw std::invalid_argument("EqualDepthDir supports Route::Full only");
+            throw std::invalid_argument("the depth directory supports Route::Full only");
         }
 
         std::vector<std::string_view> keys;
         keys.reserve(sorted.size());
         for (const auto& kv : sorted) keys.push_back(kv.first);
 
-        depth_dir_ = equivdir::RegionModel::fit(keys.data(), keys.size(), prefix_.size(), groups_);
+        // The truncated form is the same directory built from the same keys: one flag, fixed by
+        // the backend the configuration names, so there is no per-region or per-run degree of
+        // freedom here (the design's section 3 argues why the rule is not a parameter).
+        const bool truncate = config_.model_backend == ModelBackend::EqualDepthDirTrunc;
+        depth_dir_ = equivdir::RegionModel::fit(keys.data(), keys.size(), prefix_.size(), groups_,
+                                                truncate);
         use_depth_dir_ = true;
         ++depth_dir_stats_.fits;
 
@@ -3227,6 +3246,8 @@ class Region {
             ++depth_dir_stats_.regions_fitted;
             depth_dir_stats_.keys_fitted += sorted.size();
             depth_dir_stats_.thresholds_total += depth_dir_.threshold_count();
+            depth_dir_stats_.threshold_bytes_total += depth_dir_.separator_bytes();
+            if (depth_dir_.truncated()) ++depth_dir_stats_.regions_truncated;
 
             // A duplicate threshold means the depth band boundary fell inside a run of equal
             // suffixes: that group can hold no key, and no map of the suffix alone can fix it.
@@ -3323,7 +3344,7 @@ public:
             calibrate_lits(sorted, lits_shared_);
         } else if (config_.model_backend == ModelBackend::BlockLinearRank) {
             calibrate_block_rank(sorted);
-        } else if (config_.model_backend == ModelBackend::EqualDepthDir) {
+        } else if (is_depth_dir_backend(config_.model_backend)) {
             calibrate_depth_dir(sorted);
         }
         // Candidate M3 (default OFF): the mapping is known here, so a LITS-mapped region can
@@ -3530,6 +3551,11 @@ public:
     bool uses_depth_dir() const { return use_depth_dir_; }
     equivdir::Status depth_dir_status() const { return depth_dir_.status(); }
     std::size_t depth_dir_thresholds() const { return depth_dir_.threshold_count(); }
+    // TRUNCDIR: which stored form this region's directory uses, and how many arena bytes
+    // that form cost. Read-only, like the neighbours above: a gate must be able to assert
+    // that the LIVE regions are the truncated form instead of inferring it from the config.
+    bool depth_dir_truncated() const { return depth_dir_.truncated(); }
+    std::size_t depth_dir_separator_bytes() const { return depth_dir_.separator_bytes(); }
     static const DepthDirStats& depth_dir_stats() { return depth_dir_stats_; }
     static void reset_depth_dir_stats() { depth_dir_stats_ = DepthDirStats{}; }
     // Candidate M3: whether the Context16 reference table is still resident.
@@ -4063,12 +4089,13 @@ public:
             use_block_rank = true;
         }
 
-        if (cfg.model_backend == ModelBackend::EqualDepthDir) {
+        if (is_depth_dir_backend(cfg.model_backend)) {
             std::vector<std::string_view> depth_keys;
             depth_keys.reserve(n);
             for (const Pair* it = first; it != last; ++it) depth_keys.push_back(it->first);
-            depth_dir = equivdir::RegionModel::fit(depth_keys.data(), depth_keys.size(),
-                                                   prefix.size(), groups);
+            depth_dir = equivdir::RegionModel::fit(
+                depth_keys.data(), depth_keys.size(), prefix.size(), groups,
+                cfg.model_backend == ModelBackend::EqualDepthDirTrunc);
             use_depth_dir = true;
         }
 

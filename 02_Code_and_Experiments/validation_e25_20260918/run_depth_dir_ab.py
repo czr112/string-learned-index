@@ -15,8 +15,12 @@ It also checks the things that make the comparison valid at all: every arm answe
 (mismatches 0), the arms agree on the checksums and on the probe hashes, and the two arms really
 do differ in the backend.
 
-Usage:  python3 run_depth_dir_ab.py --run [--procs 5] [--reps 4] [--stem depth_ab]
-        python3 run_depth_dir_ab.py --analyze [--stem depth_ab]
+The ARM PAIR is a run parameter (TRUNCDIR design section 6): the main comparison is C16 vs
+DDirT and the mechanism comparison DDir vs DDirT, and both use this analyzer unchanged. The
+default pair is the untruncated one, so a run without --arms reproduces the previous round.
+
+Usage:  python3 run_depth_dir_ab.py --run [--procs 5] [--reps 4] [--stem depth_ab] [--arms C16,DDir]
+        python3 run_depth_dir_ab.py --analyze [--stem depth_ab] [--arms C16,DDir]
 """
 
 import argparse
@@ -31,11 +35,26 @@ MAIN = os.path.join(HERE, "results", "main")
 TR = "../validation_e5_20260913/data/tranco_XN6XN.csv"
 
 CORPORA = [("mixed", 131072, ""), ("skew", 131072, ""), ("tranco", 262144, TR)]
-ARMS = ["C16", "DDir"]
+# The bench knows these names; the pair given here is handed to it verbatim (argv[7]).
+KNOWN_ARMS = ("C16", "DDir", "DDirT")
+DEFAULT_ARMS = "C16,DDir"
 METRICS = ["static_ns", "post_ns", "build_ns", "maint_ns"]
 
 
-def run(procs, reps, stem):
+def parse_arms(spec):
+    names = [s.strip() for s in spec.split(",")]
+    if len(names) != 2:
+        raise SystemExit("REFUSED: --arms must name exactly two arms: %s" % spec)
+    for n in names:
+        if n not in KNOWN_ARMS:
+            raise SystemExit("REFUSED: unknown arm %s (known: %s)" %
+                             (n, ", ".join(KNOWN_ARMS)))
+    if names[0] == names[1]:
+        raise SystemExit("REFUSED: --arms names the same arm twice: %s" % spec)
+    return names
+
+
+def run(procs, reps, stem, arms_spec):
     for kind, n, csv in CORPORA:
         path = os.path.join(MAIN, "%s_%s.jsonl" % (stem, kind))
         if os.path.exists(path):
@@ -45,7 +64,7 @@ def run(procs, reps, stem):
         for p in range(procs):
             tag = "p%d" % p
             cmd = ["python3", "tools_build.py", "run", "bench_depth_dir", kind, str(n),
-                   str(reps), csv, tag, "%s_%s" % (stem, kind)]
+                   str(reps), csv, tag, "%s_%s" % (stem, kind), arms_spec]
             print("### " + " ".join(cmd), flush=True)
             rc = subprocess.run(cmd, cwd=HERE).returncode
             if rc != 0:
@@ -54,7 +73,9 @@ def run(procs, reps, stem):
     return 0
 
 
-def analyze(stem):
+def analyze(stem, arms_spec):
+    arm_names = parse_arms(arms_spec)
+    ref_name, cand_name = arm_names[0], arm_names[1]
     problems = []
     summary = []
     for kind, n, _csv in CORPORA:
@@ -74,10 +95,10 @@ def analyze(stem):
             by_key.setdefault((r["run_tag"], r["rep"]), {})[r["arm"]] = r
         incomplete = 0
         for key, arms in by_key.items():
-            if set(arms) != set(ARMS):
+            if set(arms) != set(arm_names):
                 incomplete += 1
                 continue
-            a, b = arms["C16"], arms["DDir"]
+            a, b = arms[ref_name], arms[cand_name]
             for field in ("static_checksum", "post_checksum", "static_probe_hash", "post_probe_hash"):
                 if a[field] != b[field]:
                     problems.append("%s %s differs on %s" % (kind, key, field))
@@ -87,15 +108,16 @@ def analyze(stem):
 
         per_proc = {}
         for (tag, rep), arms in sorted(by_key.items()):
-            if set(arms) != set(ARMS):
+            if set(arms) != set(arm_names):
                 continue
-            a, b = arms["C16"], arms["DDir"]
+            a, b = arms[ref_name], arms[cand_name]
             row = per_proc.setdefault(tag, {m: [] for m in METRICS})
             for m in METRICS:
                 if a[m] > 0:
                     row[m].append(b[m] / a[m])
 
-        entry = {"kind": kind, "pairs": len([k for k, v in by_key.items() if set(v) == set(ARMS)]),
+        entry = {"kind": kind, "arms": arm_names,
+                 "pairs": len([k for k, v in by_key.items() if set(v) == set(arm_names)]),
                  "incomplete": incomplete}
         for m in METRICS:
             medians = {tag: statistics.median(v[m]) for tag, v in per_proc.items() if v[m]}
@@ -106,14 +128,17 @@ def analyze(stem):
                 "median_of_process_medians": statistics.median(vals),
                 "per_process": {k: round(v, 4) for k, v in sorted(medians.items())},
                 "noise_floor": (max(vals) / min(vals)) if min(vals) > 0 else None,
-                "faster_than_C16_processes": sum(1 for v in vals if v < 1.0),
+                "candidate_faster_processes": sum(1 for v in vals if v < 1.0),
                 "processes": len(vals),
             }
         # memory: model bytes per arm (median over records)
-        for arm in ARMS:
+        for arm in arm_names:
             mb = [r["model_bytes"] for r in recs if r["arm"] == arm]
             if mb:
                 entry["model_bytes_%s" % arm] = statistics.median(mb)
+            db = [r.get("dir_threshold_bytes", 0) for r in recs if r["arm"] == arm]
+            if db and any(db):
+                entry["dir_separator_bytes_%s" % arm] = statistics.median(db)
         summary.append(entry)
 
     print(json.dumps({"summary": summary, "problems": problems}, indent=1))
@@ -127,10 +152,13 @@ def main():
     ap.add_argument("--procs", type=int, default=5)
     ap.add_argument("--reps", type=int, default=4)
     ap.add_argument("--stem", default="depth_ab")
+    ap.add_argument("--arms", default=DEFAULT_ARMS,
+                    help="reference,candidate arm names, e.g. C16,DDirT or DDir,DDirT")
     a = ap.parse_args()
+    parse_arms(a.arms)   # refuse an unusable pair before running or analyzing anything
     if a.run:
-        return run(a.procs, a.reps, a.stem)
-    return analyze(a.stem)
+        return run(a.procs, a.reps, a.stem, a.arms)
+    return analyze(a.stem, a.arms)
 
 
 if __name__ == "__main__":

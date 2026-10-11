@@ -107,6 +107,7 @@ SAN_TARGETS = {
     # over the encode / fit / map path, so it runs under the sanitizer like its siblings.
     "san_check_block_rank",
     "san_check_depth_dir",
+    "san_check_depth_dir_trunc",
 }
 
 # Per-target flags.
@@ -151,6 +152,9 @@ EXTRA = {
     # which are written through E12_TICK -- a no-op in a shipped build.
     "check_depth_dir": ["-DE12_COUNT"],
     "san_check_depth_dir": ["-DE12_COUNT"],
+    # TRUNCDIR gate: same entry counters over the TRUNCATED directory, so the same macro rule.
+    "check_depth_dir_trunc": ["-DE12_COUNT"],
+    "san_check_depth_dir_trunc": ["-DE12_COUNT"],
     "check_scan_contract": ["-DE25_DIAG"],
     # The O1 gate asserts that the stable-store arm actually used the new
     # representation (its record-shift counter stays 0 while its handle counter rises)
@@ -467,6 +471,9 @@ SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        # EqualDepthDir: one source, two targets (gate + sanitizer twin).
        "check_depth_dir": "check_depth_dir.cpp",
        "san_check_depth_dir": "check_depth_dir.cpp",
+       # TRUNCDIR: one source, two targets -- the gate and its sanitizer twin.
+       "check_depth_dir_trunc": "check_depth_dir_trunc.cpp",
+       "san_check_depth_dir_trunc": "check_depth_dir_trunc.cpp",
        # EqualDepthDir A/B: two arms, position rotated, paired within a repetition.
        "bench_depth_dir": "bench_depth_dir.cpp",
        # Phase D entry diagnosis: one source, two builds (see EXTRA).

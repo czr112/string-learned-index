@@ -1,0 +1,63 @@
+NATIVE (MinGW) REPLICATION RUN -- EqualDepthDirTrunc / TRUNCDIR, 2026-10-11
+=======================================================================
+
+Environment: Windows, MinGW-Builds g++ 15.2.0 (D:\STM32\mingw64\bin\g++.exe),
+`-std=c++17 -O2 -march=x86-64-v2`, run from 02_Code_and_Experiments/validation_e25_20260918.
+
+WHY NATIVE. WSL/bash execution is denied to this agent (sandbox ACCESS_DENIED) and the escalated
+re-run was rejected by the automatic approval reviewer twice (a review-infrastructure failure,
+not a determination about the action). The block-rank round recorded the same fallback in
+results/block_rank_20261011_native/native_run.txt. A second agent then ran the same round through
+WSL (logs/truncdir_*.log); those figures are the protocol ones. The figures below are an
+INDEPENDENT replication on a different compiler and are not comparable with the WSL record.
+
+Commands
+  g++ -std=c++17 -O2 -march=x86-64-v2 -DE12_COUNT check_depth_dir_trunc.cpp \
+      -o scratch_blockaudit/truncdir_gate_native.exe
+  ./truncdir_gate_native.exe mixed  131072 x
+  ./truncdir_gate_native.exe skew   131072 x
+  ./truncdir_gate_native.exe tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv
+
+  g++ -std=c++17 -O2 -march=x86-64-v2 bench_depth_dir.cpp \
+      -o scratch_blockaudit/truncdir_bench_native.exe
+  python run_truncdir_ab_native.py --exe scratch_blockaudit/truncdir_bench_native.exe \
+      --arms C16,DDirT --stem trunc_c16 --procs 5 --reps 4
+  python run_depth_dir_ab.py --analyze --stem trunc_c16 --arms C16,DDirT
+
+Gate (checks=1731, failures=0 on every corpus; routing differences 0; bracket violations 0;
+negative controls fired: 3 runs, cut 3, swap 3, search disagreements 48):
+
+  corpus   thresholds  full bytes  truncated bytes  shrink    routing equal/differ  fallbacks
+  mixed      21,187     2,121,557      225,478       89.37%      131,072 / 0            0
+  skew       20,099     1,799,334      332,242       81.54%      131,072 / 0            0
+  tranco     10,880       132,069       56,529       57.20%      131,072 / 0            0
+
+  entry readings (same gate): mixed primary probes 1,467,679 -> 131,213, overflow 2,547 -> 0;
+  skew 2,173,636 -> 131,072, overflow 5,033 -> 0; tranco 327,879 -> 131,072, overflow 0 -> 0.
+  Per-region truncated arena: mixed P50 2,054 / P95 8,267 / max 43,002 B; skew 5,114 / 7,793 /
+  8,173 B; tranco 867 / 1,033 / 1,272 B.
+
+A/B, main pair C16 vs DDirT (ratios are candidate/reference; <1 = truncated directory faster;
+20 pairs per corpus, 0 incomplete, analyzer problems = []):
+  mixed  static 0.988 (3/5, noise floor 1.355 -> unresolved)  post 0.947 (4/5, NF 1.306 ->
+         unresolved)  build 0.727 (5/5)  maint 0.491 (5/5)
+  skew   static 0.876 (5/5, NF 1.198 -> resolvable win)       post 0.729 (5/5)  build 0.712 (5/5)
+         maint 0.439 (5/5)
+  tranco static 1.316 (0/5, NF 1.259 -> resolvable regression) post 1.237 (0/5, NF 1.316 ->
+         unresolved)  build 0.900 (5/5)  maint 0.652 (5/5)
+  post-update residency (memory_breakdown().model, median over records):
+         mixed 1,056,768 -> 1,367,250 B; skew 1,056,768 -> 1,469,662 B;
+         tranco 2,113,536 -> 2,314,509 B (tranco is 2 extra regions per rep).
+  NOTE the directory byte counters inside each record accumulate across the arms inside one
+  process in this build (no per-rep reset in the exe built at 20:38); the per-index figures are
+  the rep-0 ones (mixed 225,478 B of separators, i.e. 310,482 B above the reference table in
+  memory_breakdown). The timing and model-bytes fields are per-record and unaffected.
+
+Regression (same native toolchain, this round's header changes):
+  check_depth_dir (the UNtruncated directory gate): 131,626 checks, 0 failures on mixed, skew
+  and tranco; check_block_rank mixed: 228 checks, 0 failures.
+  In the recorded (WSL) toolchain the other agent rebuilt and ran the five inherited targets
+  (check_g1_contract, check_compact_routing, check_sround, check_hole_reuse and bench_lits2x2):
+  logs/truncdir_inherited_20261011.log, rc=0.
+
+Files: ab_main_*.jsonl (raw records), ab_main_analysis.json (analyzer output), gate_mixed.log.

@@ -1,0 +1,37 @@
+### build bench_depth_dir
+OK bench_depth_dir build_id=1791723286021725241 exe=dad4a0791ad942c5…
+### run truncdir_ab arms=C16,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p0 truncdir_ab_mixed C16,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p1 truncdir_ab_mixed C16,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p2 truncdir_ab_mixed C16,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p3 truncdir_ab_mixed C16,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p4 truncdir_ab_mixed C16,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p0 truncdir_ab_skew C16,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p1 truncdir_ab_skew C16,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p2 truncdir_ab_skew C16,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p3 truncdir_ab_skew C16,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p4 truncdir_ab_skew C16,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p0 truncdir_ab_tranco C16,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p1 truncdir_ab_tranco C16,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p2 truncdir_ab_tranco C16,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p3 truncdir_ab_tranco C16,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p4 truncdir_ab_tranco C16,DDirT
+### analyze truncdir_ab
+### run truncdir_mech arms=DDir,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p0 truncdir_mech_mixed DDir,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p1 truncdir_mech_mixed DDir,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p2 truncdir_mech_mixed DDir,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p3 truncdir_mech_mixed DDir,DDirT
+### python3 tools_build.py run bench_depth_dir mixed 131072 4  p4 truncdir_mech_mixed DDir,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p0 truncdir_mech_skew DDir,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p1 truncdir_mech_skew DDir,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p2 truncdir_mech_skew DDir,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p3 truncdir_mech_skew DDir,DDirT
+### python3 tools_build.py run bench_depth_dir skew 131072 4  p4 truncdir_mech_skew DDir,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p0 truncdir_mech_tranco DDir,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p1 truncdir_mech_tranco DDir,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p2 truncdir_mech_tranco DDir,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p3 truncdir_mech_tranco DDir,DDirT
+### python3 tools_build.py run bench_depth_dir tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv p4 truncdir_mech_tranco DDir,DDirT
+### analyze truncdir_mech
+truncdir A/B done

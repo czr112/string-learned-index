@@ -9,10 +9,12 @@
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
 - **新模型接入结果**：[BlockLinearRank 入口](07_Eval_Integration/RESULTS_BLOCK_RANK_ENTRY_20261011.md)。
 - **等深目录结构候选**：[正确性与 A/B 结果](07_Eval_Integration/RESULTS_DEPTH_DIR_20261011.md)。
+- **截断分隔符等深目录**：[正确性、规模与配对 A/B](07_Eval_Integration/RESULTS_DEPTH_DIR_TRUNC_20261011.md)。
 - **源码与实验入口**：`02_Code_and_Experiments/validation_e25_20260918/`。
 
 默认后端仍为 Context16。BlockLinearRank 正确性通过但结构入口回归；EqualDepthDir 在 skew 上有收益，
-mixed 主目标未通过，两者均未设为默认。不继续开展针对 LITS 适配的优化。
+mixed 主目标未通过；其截断形态（EqualDepthDirTrunc）证实了截断机制
+（mixed/skew 更快、目录内存降到 1/9–1/2），但对 C16 的主目标仍未通过。以上候选均未设为默认。不继续开展针对 LITS 适配的优化。
 历史实验的测量结果继续绑定其当时源码，不视为当前版本重新测量。
 
 获取评测依赖（WSL/Linux）与恢复大体积原始证据：

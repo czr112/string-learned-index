@@ -1,0 +1,33 @@
+### check_g1_contract mixed 131072 
+arms shipped[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,primary_hole_reuse=0,lits_skip_reference_table=0,offset_directory=1,write_simd=1,write_locate=0,model_backend=Context16]
+{"case":"A_value_update_layout","keys":131072,"updates":4096,"regions":64,"groups_total":21251,"layout_unchanged":true}
+{"case":"B_scan_zero_and_over","keys":131072,"starts":14,"zero_scans":14,"oversized_scans":14}
+{"case":"C_absent_key_group","mode":"interval","keys":131072,"probed":1024,"placed_and_observed":1024,"skipped_after_rebuild":0,"same_length_probes":512,"stretched_probes":512,"unprobeable":0,"placed_into_overflow":1019,"placed_into_primary":5}
+{"case":"C_absent_key_group","mode":"full","keys":131072,"probed":1024,"placed_and_observed":1024,"skipped_after_rebuild":0,"same_length_probes":512,"stretched_probes":512,"unprobeable":0,"placed_into_overflow":1018,"placed_into_primary":6}
+{"case":"D_prepare_failure_atomic","keys":131072,"ops_before_injection":4203,"injection_fired":true,"index_unchanged":true,"records":131071}
+{"case":"D_commit_failure_measured","keys":131072,"ops_before_injection":4203,"injection_fired":true,"records_before":131071,"size_after":131071,"reference_size":131071,"still_found":131047,"records_lost":24,"plan_commit":1,"injection_reachable_in_shipped":false,"note":"the commit-point injection interrupts the replay loop, which no real operation can do once the plan is on"}
+mixed G1 contract gate done, 1410962 element comparisons; C: probed 2048, observed 2048, skipped 0, into overflow 2037, into primary 11; D: prepare injections 1, commit injections 1
+rc=0
+### check_compact_routing mixed 131072 
+{"kind":"mixed","keys":131072,"regions":64,"routing_regions":64,"routing_bytes":512,"checks":928119,"failures":0}
+928119/928119 checks passed
+rc=0
+### check_sround mixed 131072 
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":63,"adv_cmps_s":270,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":66,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":198,"adv_cmps_s":264,"adv_cmps_w":195,"adv_cmps_ws":261,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":2229,"adv_cmps_s":141,"adv_cmps_w":2223,"adv_cmps_ws":207,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":3243,"adv_cmps_s":99,"adv_cmps_w":3240,"adv_cmps_ws":189,"subblock_reclaims":248726,"reclaim_widened":4034}
+mixed Context16 same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 3243/99/3240/189)
+rc=0
+### check_hole_reuse mixed 131072  ctx16
+  H placed 2635 of 23654 attempts (259468 B); repacks 17874 -> 16641, moved bytes 31557440 -> 30532963
+{"kind":"mixed","backend":"ctx16","keys":131072,"final_size":131072,"regions":64,"h_attempts":23654,"h_placed":2635,"h_absent":21019,"h_skipped_lt2":6,"h_skipped_wide":0,"h_bytes":259468,"w_reclaims":17874,"h_reclaims":16641,"w_moved_bytes":31557440,"h_moved_bytes":30532963,"checks":2283,"failures":0}
+2283/2283 checks passed
+rc=0
+inherited sweep rc=0

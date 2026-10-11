@@ -1,0 +1,201 @@
+Failed to find real location of D:\Miniconda3\python.exe
+{
+ "summary": [
+  {
+   "kind": "mixed",
+   "arms": [
+    "C16",
+    "DDirT"
+   ],
+   "pairs": 20,
+   "incomplete": 0,
+   "static_ns": {
+    "median_of_process_medians": 0.9882960956645976,
+    "per_process": {
+     "p0": 0.9883,
+     "p1": 1.0926,
+     "p2": 1.0801,
+     "p3": 0.8064,
+     "p4": 0.8712
+    },
+    "noise_floor": 1.35495706457594,
+    "candidate_faster_processes": 3,
+    "processes": 5
+   },
+   "post_ns": {
+    "median_of_process_medians": 0.9469952978974485,
+    "per_process": {
+     "p0": 1.0005,
+     "p1": 0.947,
+     "p2": 0.9828,
+     "p3": 0.9175,
+     "p4": 0.7662
+    },
+    "noise_floor": 1.305702717816758,
+    "candidate_faster_processes": 4,
+    "processes": 5
+   },
+   "build_ns": {
+    "median_of_process_medians": 0.72673378433575,
+    "per_process": {
+     "p0": 0.7733,
+     "p1": 0.7399,
+     "p2": 0.7267,
+     "p3": 0.7097,
+     "p4": 0.7124
+    },
+    "noise_floor": 1.0896059021735383,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "maint_ns": {
+    "median_of_process_medians": 0.49130167974705335,
+    "per_process": {
+     "p0": 0.5449,
+     "p1": 0.4913,
+     "p2": 0.4797,
+     "p3": 0.6706,
+     "p4": 0.4566
+    },
+    "noise_floor": 1.4686059640567708,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "model_bytes_C16": 1056768.0,
+   "dir_separator_bytes_C16": 450956.0,
+   "model_bytes_DDirT": 1367250.0,
+   "dir_separator_bytes_DDirT": 563695.0
+  },
+  {
+   "kind": "skew",
+   "arms": [
+    "C16",
+    "DDirT"
+   ],
+   "pairs": 20,
+   "incomplete": 0,
+   "static_ns": {
+    "median_of_process_medians": 0.8760685028870938,
+    "per_process": {
+     "p0": 0.862,
+     "p1": 0.8789,
+     "p2": 0.8761,
+     "p3": 0.9949,
+     "p4": 0.8307
+    },
+    "noise_floor": 1.1976300856630246,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "post_ns": {
+    "median_of_process_medians": 0.7288215480194207,
+    "per_process": {
+     "p0": 0.7328,
+     "p1": 0.6874,
+     "p2": 0.7088,
+     "p3": 0.7288,
+     "p4": 0.7488
+    },
+    "noise_floor": 1.0893086156668668,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "build_ns": {
+    "median_of_process_medians": 0.7122096982532624,
+    "per_process": {
+     "p0": 0.7122,
+     "p1": 0.7374,
+     "p2": 0.7011,
+     "p3": 0.7139,
+     "p4": 0.6923
+    },
+    "noise_floor": 1.0651439787639054,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "maint_ns": {
+    "median_of_process_medians": 0.4388866881037732,
+    "per_process": {
+     "p0": 0.4327,
+     "p1": 0.4037,
+     "p2": 0.4418,
+     "p3": 0.4418,
+     "p4": 0.4389
+    },
+    "noise_floor": 1.0943503610801801,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "model_bytes_C16": 1056768.0,
+   "dir_separator_bytes_C16": 664484.0,
+   "model_bytes_DDirT": 1469662.0,
+   "dir_separator_bytes_DDirT": 830605.0
+  },
+  {
+   "kind": "tranco",
+   "arms": [
+    "C16",
+    "DDirT"
+   ],
+   "pairs": 20,
+   "incomplete": 0,
+   "static_ns": {
+    "median_of_process_medians": 1.3155105345664755,
+    "per_process": {
+     "p0": 1.3155,
+     "p1": 1.2903,
+     "p2": 1.2809,
+     "p3": 1.586,
+     "p4": 1.6124
+    },
+    "noise_floor": 1.2588418062620015,
+    "candidate_faster_processes": 0,
+    "processes": 5
+   },
+   "post_ns": {
+    "median_of_process_medians": 1.2372447493452414,
+    "per_process": {
+     "p0": 1.4281,
+     "p1": 1.2372,
+     "p2": 1.2624,
+     "p3": 1.2026,
+     "p4": 1.0849
+    },
+    "noise_floor": 1.316360398179073,
+    "candidate_faster_processes": 0,
+    "processes": 5
+   },
+   "build_ns": {
+    "median_of_process_medians": 0.899504554415034,
+    "per_process": {
+     "p0": 0.8995,
+     "p1": 0.8546,
+     "p2": 0.8713,
+     "p3": 0.9316,
+     "p4": 0.9883
+    },
+    "noise_floor": 1.1563415958375318,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "maint_ns": {
+    "median_of_process_medians": 0.6524002230398531,
+    "per_process": {
+     "p0": 0.6445,
+     "p1": 0.6603,
+     "p2": 0.6524,
+     "p3": 0.6673,
+     "p4": 0.6414
+    },
+    "noise_floor": 1.0403777748864937,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "model_bytes_C16": 2113536.0,
+   "dir_separator_bytes_C16": 226842.0,
+   "model_bytes_DDirT": 2314509.0,
+   "dir_separator_bytes_DDirT": 283552.5
+  }
+ ],
+ "problems": []
+}

@@ -1,0 +1,11 @@
+FAIL: the stats sum the stored bytes
+FAIL: the stored bytes of the duplicate region are accounted for
+FAIL: duplicate separators satisfy the section-3 invariants
+FAIL: mixed: the independent threshold count matches the live counter
+{"kind":"mixed","n":131072,"regions":64,"regions_fitted":64,"regions_shorter":64,"thresholds":21187,"full_bytes":2121557,"trunc_bytes":225478,"fallbacks":0,"shortened":21187,"routing_equal":131072,"routing_differ":0,"band_mismatch":0,"stored_probes":152259,"bracket_violations":0,"ref_probes":1467679,"dir_probes":131213,"trunc_probes":131213,"ref_cmps":170119,"dir_cmps":132762,"trunc_cmps":132762,"ref_overflow":2547,"dir_overflow":0,"trunc_overflow":0}
+[truncdir] mixed n=131072 regions=64 fitted=64 slices=64
+  thresholds=21187 separator bytes: full=2121557 truncated=225478 (1896079 bytes, 89.3721% smaller)
+  fallbacks=0 shortened=21187 regions_truncated=64 per-region truncated bytes P50=2054 P95=8267 max=43002
+  per-separator truncated bytes P50=4 P95=20 max=143
+  routing equal=131072 differ=0 band_mismatch(duplicate runs)=0 stored_probes=152259 bracket_violations=0
+checks=1730 failures=4

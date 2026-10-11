@@ -22,8 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 UPSTREAM = ROOT.parent / "02_Code_and_Experiments/validation_e25_20260918"
 CORPORA = ("mixed", "skew", "tranco")
 BACKENDS = ("context16", "lits")
-PIN_INDEX = "8688225e23bae7aa0d54daafc4c19ceab61f7d250fb66431c2be832b2a983f82"
-PIN_SWITCHES = "12a497a283cd25b0e6d67d74bfdfbc9815037cbaf192fa6ef244b00ca54278ee"
+PIN_INDEX = "61592294a0b0a58ee9064c28fd7583941934eaa33d7c37e644dc0b649f765016"
+PIN_SWITCHES = "9f8a55cc2f6ec52d0eec1e69793e9c9c27c67e5a26da264bd2a3221d9e030620"
 MANIFESTS = ("our_index", "our_index_lits", "our_index_routing", "our_index_lits_routing")
 
 

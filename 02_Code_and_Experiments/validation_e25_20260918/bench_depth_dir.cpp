@@ -52,10 +52,39 @@ struct Arm {
     ModelBackend backend;
 };
 
-const Arm ARMS[2] = {
+// The arm pair is a RUN PARAMETER (TRUNCDIR design section 6): the round's main comparison is
+// C16 vs DDirT and its mechanism comparison is DDir vs DDirT, and both use THIS device -- the
+// only difference between the two runs is the pair of names on the command line. The default
+// stays the untruncated pair, so a call without the argument reproduces the previous round's
+// device exactly.
+const Arm ARM_TABLE[] = {
     {"C16", ModelBackend::Context16},
     {"DDir", ModelBackend::EqualDepthDir},
+    {"DDirT", ModelBackend::EqualDepthDirTrunc},
 };
+
+// "A,B", exactly two known and DIFFERENT arms, in the order they are to be paired (ref first).
+std::vector<Arm> parse_arms(const std::string& spec) {
+    std::vector<Arm> out;
+    std::size_t start = 0;
+    while (true) {
+        const std::size_t comma = spec.find(',', start);
+        const std::string name = spec.substr(
+            start, comma == std::string::npos ? std::string::npos : comma - start);
+        bool known = false;
+        for (const auto& a : ARM_TABLE) {
+            if (name == a.name) { out.push_back(a); known = true; }
+        }
+        if (!known) throw std::invalid_argument("unknown arm name: " + name);
+        if (comma == std::string::npos) break;
+        start = comma + 1;
+    }
+    if (out.size() != 2)
+        throw std::invalid_argument("arm spec must name exactly two arms: " + spec);
+    if (out[0].backend == out[1].backend)
+        throw std::invalid_argument("arm spec names the same backend twice: " + spec);
+    return out;
+}
 
 constexpr int kArms = 2;
 
@@ -147,7 +176,8 @@ Phase run_phase(const Index& index, const std::vector<Probe>& probes, const Mode
 int main(int argc, char** argv) {
     try {
         if (argc < 4)
-            throw std::invalid_argument("bench_depth_dir KIND N REPS [TRANCOCSV] [RUNTAG] [OUT]");
+            throw std::invalid_argument(
+                "bench_depth_dir KIND N REPS [TRANCOCSV] [RUNTAG] [OUT] [ARMS]");
 
         const std::string kind = argv[1];
         const std::size_t nkeys = std::stoull(argv[2]);
@@ -155,6 +185,8 @@ int main(int argc, char** argv) {
         const std::string trcsv = argc > 4 ? argv[4] : "";
         const std::string run_tag = argc > 5 ? argv[5] : "";
         const std::string out_stem = argc > 6 ? argv[6] : "depth_ab";
+        const std::string arm_spec = argc > 7 ? argv[7] : "C16,DDir";
+        const std::vector<Arm> arms = parse_arms(arm_spec);
 
         const auto keys = make_data(kind, nkeys, trcsv);
         const std::size_t N = keys.size();
@@ -177,7 +209,7 @@ int main(int argc, char** argv) {
         for (int a = 0; a < kArms; ++a) {
             cfg[a] = e25sw::baseline_config(thr);
             e25sw::pin_frozen_switches(cfg[a]);
-            cfg[a].model_backend = ARMS[a].backend;
+            cfg[a].model_backend = arms[a].backend;
         }
         // The arms differ in the backend and NOTHING else -- the backend is excluded from this
         // check on purpose, since it is the variable under test.
@@ -213,6 +245,11 @@ int main(int argc, char** argv) {
 
             for (int oi = 0; oi < kArms; ++oi) {
                 const int arm = order[oi];
+
+                // The directory counters are PROCESS-WIDE statics; reset them before this
+                // arm's build so the two reported fields describe THIS arm's fits. Without
+                // this a second arm in the same process reports the SUM of both arms.
+                Region::reset_depth_dir_stats();
 
                 std::deque<std::string> live;
                 std::unordered_set<std::string> live_set;
@@ -276,8 +313,8 @@ int main(int argc, char** argv) {
                 const auto rd = Region::depth_dir_stats();
 
                 out << "{\"kind\":\"" << kind << "\",\"run_tag\":\"" << run_tag
-                    << "\",\"arm\":\"" << ARMS[arm].name
-                    << "\",\"backend\":\"" << e25sw::backend_name(ARMS[arm].backend)
+                    << "\",\"arm\":\"" << arms[arm].name
+                    << "\",\"backend\":\"" << e25sw::backend_name(arms[arm].backend)
                     << "\",\"rep\":" << r << ",\"position\":" << oi
                     << ",\"n\":" << N << ",\"thr\":" << thr << ",\"replay\":" << kReplay
                     << ",\"build_ns\":" << build_ns
@@ -303,6 +340,8 @@ int main(int argc, char** argv) {
                     << ",\"model_bytes\":" << m.model
                     << ",\"regions\":" << s->region_count()
                     << ",\"dir_thresholds\":" << rd.thresholds_total
+                    << ",\"dir_threshold_bytes\":" << rd.threshold_bytes_total
+                    << ",\"dir_regions_truncated\":" << rd.regions_truncated
                     << "}" << std::endl;
             }
         }

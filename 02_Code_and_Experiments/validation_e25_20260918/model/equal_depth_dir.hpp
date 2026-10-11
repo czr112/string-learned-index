@@ -13,9 +13,12 @@
 // thresholds cost 0.6-5.0 KB per region once separators are truncated. The 63-bit COORDINATE
 // form of the same idea was measured too and DOES NOT WORK (skew: 64/64 regions with duplicate
 // thresholds, max load 1431 against Context16's 824) -- so this file stores separators, not
-// coordinates. The truncation is NOT in this first version: the search below compares full
-// suffixes, which makes exactness independent of any compression argument. Memory is therefore
-// the untruncated figure, and it is measured rather than assumed.
+// coordinates. The TRUNCATED form is this version's single variable (design:
+// TRUNCDIR_ENTRY_DESIGN.md): fit(..., truncate_separators = true) stores for each threshold the
+// SHORTEST prefix of its suffix that still compares greater than the key immediately to its
+// left, which leaves the routing answer of every stored key identical (lemma A of the design)
+// while dropping the bytes the binary search never had to read. The default (false) is the
+// untruncated directory, byte for byte.
 //
 // CORRECTNESS ARGUMENT (what the index relies on; the gate checks each):
 //   1. Compare is the index's own unsigned-byte order on the SUFFIX (region prefix stripped),
@@ -79,10 +82,12 @@ inline std::size_t common_prefix(std::string_view a, std::string_view b) {
 class RegionModel {
 public:
     static RegionModel fit(const std::string_view* keys, std::size_t n,
-                           std::size_t prefix_len, std::uint32_t groups) {
+                           std::size_t prefix_len, std::uint32_t groups,
+                           bool truncate_separators = false) {
         RegionModel m;
         m.groups_ = groups;
         m.keys_ = n;
+        m.truncate_ = truncate_separators;
         if (n == 0) { m.status_ = Status::NoKeys; return m; }
         if (n == 1) { m.status_ = Status::TooFewKeys; return m; }
         if (groups <= 1) { m.status_ = Status::SingleGroup; return m; }
@@ -91,23 +96,40 @@ public:
         // suffix comparison blind to bytes that decide their order.
         m.prefix_len_ = std::min(prefix_len, common_prefix(keys[0], keys[n - 1]));
 
+        // Section 2 of the design, verbatim and with no free parameter: the stored threshold
+        // t_j is the shortest prefix of s_j that is still > the key at rank-1; when s_j is
+        // itself a prefix of that left key (a run of duplicate suffixes at the band boundary)
+        // no shorter prefix can win, so s_j is kept as-is; such cases are reported by the
+        // gate's own re-derivation rather than hidden here.
         const std::size_t sep_count = static_cast<std::size_t>(groups) - 1;
+        std::vector<std::string_view> stored;
+        stored.reserve(sep_count);
+        for (std::size_t j = 1; j < groups; ++j) {
+            const std::size_t rank = std::min(n - 1, (j * n) / groups);
+            const std::string_view suffix = keys[rank].substr(m.prefix_len_);
+            std::string_view t = suffix;
+            if (m.truncate_ && rank > 0) {
+                const std::string_view left = keys[rank - 1].substr(m.prefix_len_);
+                const std::size_t c = common_prefix(left, suffix);
+                if (c < suffix.size()) t = suffix.substr(0, c + 1);
+            }
+            stored.push_back(t);
+        }
+
         m.offset_.assign(sep_count + 1, 0);
         std::size_t total = 0;
-        for (std::size_t j = 1; j < groups; ++j) {
-            const std::size_t rank = std::min(n - 1, (j * n) / groups);
-            const std::string_view suffix = keys[rank].substr(m.prefix_len_);
-            total += suffix.size();
-            m.offset_[j] = static_cast<std::uint32_t>(total);
+        for (std::size_t j = 0; j < sep_count; ++j) {
+            total += stored[j].size();
+            if (total > static_cast<std::size_t>(0xffffffffu))
+                throw std::length_error("equal-depth directory: separator arena exceeds 4 GiB");
+            m.offset_[j + 1] = static_cast<std::uint32_t>(total);
         }
-        if (total > static_cast<std::size_t>(0xffffffffu))
-            throw std::length_error("equal-depth directory: separator arena exceeds 4 GiB");
 
         m.arena_.resize(total);
-        for (std::size_t j = 1; j < groups; ++j) {
-            const std::size_t rank = std::min(n - 1, (j * n) / groups);
-            const std::string_view suffix = keys[rank].substr(m.prefix_len_);
-            std::memcpy(m.arena_.data() + m.offset_[j - 1], suffix.data(), suffix.size());
+        for (std::size_t j = 0; j < sep_count; ++j) {
+            const std::string_view t = stored[j];
+            if (!t.empty())
+                std::memcpy(m.arena_.data() + m.offset_[j], t.data(), t.size());
         }
         m.status_ = Status::Ok;
         return m;
@@ -151,6 +173,15 @@ public:
 
     Status status() const { return status_; }
     bool fitted() const { return status_ == Status::Ok; }
+    // Whether this directory stores the truncated separators of section 2.
+    bool truncated() const { return truncate_; }
+    // Stored threshold idx (0 .. threshold_count()-1), i.e. j = idx + 1 of the design.
+    std::string_view separator(std::size_t idx) const {
+        if (idx + 1 >= offset_.size()) return std::string_view();
+        return std::string_view(arena_.data() + offset_[idx], offset_[idx + 1] - offset_[idx]);
+    }
+    // Arena bytes actually stored (the truncated figure the round reports).
+    std::size_t separator_bytes() const { return arena_.size(); }
     std::uint32_t groups() const { return groups_; }
     std::size_t keys() const { return keys_; }
     std::size_t prefix_len() const { return prefix_len_; }
@@ -173,10 +204,12 @@ public:
             }
         };
         const std::uint64_t st = static_cast<std::uint64_t>(status_);
+        const std::uint64_t tr = truncate_ ? 1u : 0u;
         const std::uint64_t n = keys_;
         const std::uint64_t g = groups_;
         const std::uint64_t p = prefix_len_;
         mix(&st, sizeof(st));
+        mix(&tr, sizeof(tr));
         mix(&n, sizeof(n));
         mix(&g, sizeof(g));
         mix(&p, sizeof(p));
@@ -192,6 +225,7 @@ private:
     std::size_t keys_ = 0;
     std::uint32_t groups_ = 0;
     Status status_ = Status::NoKeys;
+    bool truncate_ = false;
 };
 
 }  // namespace equivdir

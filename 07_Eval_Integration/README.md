@@ -7,6 +7,8 @@
 - [完整外部模型对照](RESULTS_BLOCKLEARN_MATRIX4_20261011.md) 与
   [模型级接入结果](RESULTS_BLOCK_RANK_ENTRY_20261011.md)。
 - [等深目录结果](RESULTS_DEPTH_DIR_20261011.md)：场景收益与主目标未通过的结论。
+- [截断分隔符等深目录](RESULTS_DEPTH_DIR_TRUNC_20261011.md)：截断机制成立（mixed/skew 更快、
+  arena −57%…−89%），但对 C16 的主目标仍未通过的结论。
 
 本目录报告与逐轮记录已纳入主仓库；评测器及 HOT 以固定版本 submodule 引用。
 首次克隆请先按根目录 README 获取依赖。以下身份和阶段表保留的是 10 月 8 日接入轮历史记录，

@@ -1,0 +1,197 @@
+{
+ "summary": [
+  {
+   "kind": "mixed",
+   "arms": [
+    "C16",
+    "DDirT"
+   ],
+   "pairs": 20,
+   "incomplete": 0,
+   "static_ns": {
+    "median_of_process_medians": 1.0371860716105745,
+    "per_process": {
+     "p0": 1.0372,
+     "p1": 0.9795,
+     "p2": 1.0344,
+     "p3": 1.0591,
+     "p4": 1.1943
+    },
+    "noise_floor": 1.2193524931049924,
+    "candidate_faster_processes": 1,
+    "processes": 5
+   },
+   "post_ns": {
+    "median_of_process_medians": 0.9881247444131498,
+    "per_process": {
+     "p0": 0.8433,
+     "p1": 0.9881,
+     "p2": 0.8279,
+     "p3": 1.0409,
+     "p4": 1.2074
+    },
+    "noise_floor": 1.4584290968427727,
+    "candidate_faster_processes": 3,
+    "processes": 5
+   },
+   "build_ns": {
+    "median_of_process_medians": 0.9249699008054495,
+    "per_process": {
+     "p0": 0.877,
+     "p1": 0.925,
+     "p2": 0.7067,
+     "p3": 0.9431,
+     "p4": 1.0575
+    },
+    "noise_floor": 1.4963600157867116,
+    "candidate_faster_processes": 4,
+    "processes": 5
+   },
+   "maint_ns": {
+    "median_of_process_medians": 0.49077113604563183,
+    "per_process": {
+     "p0": 0.4787,
+     "p1": 0.4913,
+     "p2": 0.4908,
+     "p3": 0.5413,
+     "p4": 0.4892
+    },
+    "noise_floor": 1.130690582973801,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "model_bytes_C16": 1056768.0,
+   "model_bytes_DDirT": 1367250.0,
+   "dir_separator_bytes_DDirT": 225478.0
+  },
+  {
+   "kind": "skew",
+   "arms": [
+    "C16",
+    "DDirT"
+   ],
+   "pairs": 20,
+   "incomplete": 0,
+   "static_ns": {
+    "median_of_process_medians": 0.8297020685025849,
+    "per_process": {
+     "p0": 0.8117,
+     "p1": 0.8505,
+     "p2": 0.8527,
+     "p3": 0.8297,
+     "p4": 0.7704
+    },
+    "noise_floor": 1.1068048431688366,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "post_ns": {
+    "median_of_process_medians": 0.6968262170684283,
+    "per_process": {
+     "p0": 0.6702,
+     "p1": 0.6988,
+     "p2": 0.6968,
+     "p3": 0.753,
+     "p4": 0.6816
+    },
+    "noise_floor": 1.123533115047234,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "build_ns": {
+    "median_of_process_medians": 0.8736140033273279,
+    "per_process": {
+     "p0": 0.8088,
+     "p1": 0.8736,
+     "p2": 0.9645,
+     "p3": 0.932,
+     "p4": 0.8304
+    },
+    "noise_floor": 1.1925598969974014,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "maint_ns": {
+    "median_of_process_medians": 0.40851406568069193,
+    "per_process": {
+     "p0": 0.4385,
+     "p1": 0.3905,
+     "p2": 0.4085,
+     "p3": 0.3909,
+     "p4": 0.4154
+    },
+    "noise_floor": 1.122787418068615,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "model_bytes_C16": 1056768.0,
+   "model_bytes_DDirT": 1469662.0,
+   "dir_separator_bytes_DDirT": 332242.0
+  },
+  {
+   "kind": "tranco",
+   "arms": [
+    "C16",
+    "DDirT"
+   ],
+   "pairs": 20,
+   "incomplete": 0,
+   "static_ns": {
+    "median_of_process_medians": 1.2397258027406262,
+    "per_process": {
+     "p0": 1.2397,
+     "p1": 1.1803,
+     "p2": 1.1499,
+     "p3": 1.3316,
+     "p4": 1.3402
+    },
+    "noise_floor": 1.165521183680229,
+    "candidate_faster_processes": 0,
+    "processes": 5
+   },
+   "post_ns": {
+    "median_of_process_medians": 1.168994680256824,
+    "per_process": {
+     "p0": 1.1331,
+     "p1": 1.2216,
+     "p2": 1.169,
+     "p3": 1.0321,
+     "p4": 1.184
+    },
+    "noise_floor": 1.1835965538219595,
+    "candidate_faster_processes": 0,
+    "processes": 5
+   },
+   "build_ns": {
+    "median_of_process_medians": 0.917658452625435,
+    "per_process": {
+     "p0": 0.919,
+     "p1": 0.9206,
+     "p2": 0.8327,
+     "p3": 0.9144,
+     "p4": 0.9177
+    },
+    "noise_floor": 1.1055705139402097,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "maint_ns": {
+    "median_of_process_medians": 0.7080335375879672,
+    "per_process": {
+     "p0": 0.7397,
+     "p1": 0.708,
+     "p2": 0.6986,
+     "p3": 0.7201,
+     "p4": 0.6882
+    },
+    "noise_floor": 1.0748041784694748,
+    "candidate_faster_processes": 5,
+    "processes": 5
+   },
+   "model_bytes_C16": 2113536.0,
+   "model_bytes_DDirT": 2314509.0,
+   "dir_separator_bytes_DDirT": 113421.0
+  }
+ ],
+ "problems": []
+}

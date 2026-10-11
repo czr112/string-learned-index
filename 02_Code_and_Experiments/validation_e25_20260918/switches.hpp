@@ -112,6 +112,7 @@ inline const char* backend_name(validation::ModelBackend b) {
         case validation::ModelBackend::LitsHpt: return "LitsHpt";
         case validation::ModelBackend::BlockLinearRank: return "BlockLinearRank";
         case validation::ModelBackend::EqualDepthDir: return "EqualDepthDir";
+        case validation::ModelBackend::EqualDepthDirTrunc: return "EqualDepthDirTrunc";
     }
     return "?";
 }
