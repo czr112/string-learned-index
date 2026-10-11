@@ -49,7 +49,7 @@ const bool sep_le_q =
    要求零失配、零逆序。
 3. **区域级**：键含空串、内嵌 NUL、`7f/80/ff`、共享前缀、重复段与 4096 字节键；
    每个键的放置组 = 独立计数；组号范围；非降序；对全域探针的区间不变量（括号性质）。
-4. **完整 Index**：`region_keys=64` 多区域；空键、NUL、`7f/80/ff`、共享前缀族；全部键
+4. **完整 Index**：`region_keys=64` 多区域；空键、NUL、`7f/80/ff`、共享前缀族；两个 4096 字节长键（其一以 `0xff` 结尾，均超出子块容量，走溢出放置、scan 物化与擦除）；全部键
    以两种 route 找回原值、缺席探针落空；**从零与任意起点（含非存储键）的 scan 与独立参考
    逐行一致**；插入 200 / 擦除 100 / 值更新 50 / 删后重插 50 之后再验；**输入向量释放后**再验
    （目录与 demand preset 不得指向调用方内存）。
@@ -79,6 +79,8 @@ const bool sep_le_q =
 | `check_depth_dir_trunc` | 1,733 / 0 | 1,733 / 0 | 1,733 / 0 |
 
 （“检查数 / 失败数”；日志 `logs/order_fix_gate_20261011.log`，全部 rc=0。）
+Index fixture 加入两个 4096 字节长键后，本门与 sanitizer 孪生在三语料上重跑同样全绿：
+`logs/order_fix_longkeys_20261011.log`。
 
 ### 4.2 ASan/UBSan（九格，全部 rc=0，无诊断）
 
@@ -102,12 +104,13 @@ w_moved_bytes 31,557,440 → 30,532,963）全部 rc=0、0 失败；`bench_lits2x
 | 文件 | sha256 |
 | --- | --- |
 | `validation_e25_20260918/model/equal_depth_dir.hpp` | `8d490657cc266e1f1b8dbc5db8d577ec1d6c5485da560588d70becac4ae69905`（原 `6755f3ca…`） |
-| `validation_e25_20260918/check_depth_dir_order.cpp`（新门） | `bfb6214f7d7e8e6710697f2467ad627ccfd1eca53df403937865ddfa0a63bd8c` |
+| `validation_e25_20260918/check_depth_dir_order.cpp`（新门） | `5d19f1bb59c6367a32d2efbcd002b8bb66661e2e5838be1105f7b9a765e19b7b` |
 | `validation_e25_20260918/check_depth_dir.cpp` | `00407259d37f529d7962c503ddbface56cb44c0bf9ede51a7fe2712e8af29eb0` |
 | `validation_e25_20260918/check_depth_dir_trunc.cpp` | `f78f0942fc6cbd71bd991cec2ab684858410f92561df3ba89bced704cf8e4185` |
 | `validation_e25_20260918/tools_build.py` | `d2fb0bbb1a5c4ae4d71333ea2e60a8f9e8ecc92a028a2e586278142d0c6dd001` |
 | `validation_e25_20260918/run_order_fix_gate.sh` | `55f5c107858fd9ef7098698693789fb591d5618ab3fa2d19b2e495ea20cd1345` |
 | `validation_e25_20260918/run_order_fix_inherited.sh` | `d145e98a3c897c3bc9e044d752b6926eb13e8de081843f0088c7789702934d83` |
+| `validation_e25_20260918/run_order_fix_longkeys.sh` | `1b28461938024e6e48bb4bab7fb7ccd9ace7205a9de3fbadd33c969b8d0b71ae` |
 
 四个适配 manifest（`our_index`、`our_index_lits`、`our_index_routing`、`our_index_lits_routing`）
 的 `index_hpp_note` 已追加本轮段落并列出上表哈希；`index.hpp` 与 `switches.hpp` 本轮**未变**，
@@ -124,6 +127,7 @@ w_moved_bytes 31,557,440 → 30,532,963）全部 rc=0、0 失败；`bench_lits2x
 cd 02_Code_and_Experiments/validation_e25_20260918
 bash run_order_fix_gate.sh        # 三门 × 三语料 + 九个 sanitizer 格
 bash run_order_fix_inherited.sh   # 重建并重跑受影响的契约/扫描/路由/空洞门
+bash run_order_fix_longkeys.sh    # 长键加入 Index fixture 后的三门重跑（含 sanitizer）
 # 敏感性：把有符号比较临时放回后重跑新门，必须报失败（脚本在 finally 中还原并校验哈希）
 python3 _order_gate_sensitivity.py
 ```

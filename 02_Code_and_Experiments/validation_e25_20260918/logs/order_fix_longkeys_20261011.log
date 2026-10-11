@@ -1,0 +1,25 @@
+### build check_depth_dir_order
+OK check_depth_dir_order build_id=1791729632556145010 exe=ad7f843aee2f91cf…
+rc=0
+### run check_depth_dir_order mixed 131072 
+checks=132 failures=0
+rc=0
+### run check_depth_dir_order skew 131072 
+checks=132 failures=0
+rc=0
+### run check_depth_dir_order tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv
+checks=132 failures=0
+rc=0
+### build san_check_depth_dir_order
+OK san_check_depth_dir_order build_id=1791729651901530019 exe=cd984cf43d62e53b…
+rc=0
+### run san_check_depth_dir_order mixed 8192 
+checks=132 failures=0
+rc=0
+### run san_check_depth_dir_order skew 2048 
+checks=132 failures=0
+rc=0
+### run san_check_depth_dir_order tranco 4096 ../validation_e5_20260913/data/tranco_XN6XN.csv
+checks=132 failures=0
+rc=0
+order-fix long-key sweep done

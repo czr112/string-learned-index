@@ -341,6 +341,11 @@ std::vector<Pair> byte_domain_keys() {
     out.emplace_back(std::string(1, '\0'), v++);
     out.emplace_back(std::string("\0\0", 2), v++);
     for (unsigned b = 0x70; b <= 0x90; ++b) add(std::string("pfx") + byte_str(b));
+    // Long keys, including one that ends on a high byte: they do not fit a sub-block, so they
+    // exercise the oversized placement, the scan materialisation and the erase path with the
+    // directory mapping.
+    add(std::string(4095, 'L') + "M");
+    add(std::string(4095, 'L') + byte_str(0xff));
     return out;
 }
 
