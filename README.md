@@ -9,6 +9,7 @@
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
 - **下一阶段行动计划**：[字节序修复、读路径诊断与 M4](docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md)；
   目录候选的前置缺陷见 [字节序核查](07_Eval_Integration/AUDIT_DEPTH_DIR_ORDER_20261011.md)。
+- **读路径入口诊断（P1）**：[目录额外工作来源与收口判定](07_Eval_Integration/RESULTS_DEPTH_DIR_READ_PATH_ENTRY_20261011.md)。
 - **新模型接入结果**：[BlockLinearRank 入口](07_Eval_Integration/RESULTS_BLOCK_RANK_ENTRY_20261011.md)。
 - **等深目录结构候选**：[正确性与 A/B 结果](07_Eval_Integration/RESULTS_DEPTH_DIR_20261011.md)。
 - **截断分隔符等深目录**：[正确性、规模与配对 A/B](07_Eval_Integration/RESULTS_DEPTH_DIR_TRUNC_20261011.md)。

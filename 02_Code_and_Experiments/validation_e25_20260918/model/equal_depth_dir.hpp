@@ -82,6 +82,21 @@ inline std::size_t common_prefix(std::string_view a, std::string_view b) {
     return i;
 }
 
+#ifdef E25_DIAG
+// P1 (2026-10-11) read-path diagnosis: the traced shadow of predict_group(). Diagnostic
+// builds only, so the shipped search keeps exactly one implementation; the diagnosis
+// asserts per query that the trace reproduces the production group and the walked-byte
+// count, so a drifting shadow fails the run instead of being reported.
+struct SearchTrace {
+    std::uint32_t probes = 0;           // binary-search iterations
+    std::uint64_t compared = 0;         // bytes examined (same definition as `walked`)
+    std::uint32_t end_first_diff = 0;   // iterations decided at the first differing byte
+    std::uint32_t end_sep_le_q = 0;     // overlap equal, separator <= query
+    std::uint32_t end_sep_gt_q = 0;     // overlap equal, separator > query
+    std::uint32_t sep_prefix_of_q = 0;  // separator is a strict prefix of the query
+};
+#endif
+
 class RegionModel {
 public:
     static RegionModel fit(const std::string_view* keys, std::size_t n,
@@ -183,6 +198,45 @@ public:
         std::uint32_t consumed = 0;
         return predict_group(full_key, consumed);
     }
+
+#ifdef E25_DIAG
+    std::uint32_t predict_group_traced(std::string_view full_key, std::uint32_t& consumed,
+                                       SearchTrace& tr) const {
+        if (status_ != Status::Ok) { consumed = 0; return 0; }
+        const std::string_view q = full_key.size() > prefix_len_
+            ? full_key.substr(prefix_len_) : std::string_view();
+        const std::size_t sep_count = offset_.size() - 1;
+        std::uint64_t walked = 0;
+        std::size_t lo = 0, hi = sep_count;
+        while (lo < hi) {
+            ++tr.probes;
+            const std::size_t mid = lo + (hi - lo) / 2;
+            const std::string_view sep(
+                arena_.data() + offset_[mid], offset_[mid + 1] - offset_[mid]);
+            const std::size_t n = std::min(q.size(), sep.size());
+            std::size_t i = 0;
+            while (i < n && q[i] == sep[i]) ++i;
+            walked += i + 1;
+            bool sep_le_q = false;
+            if (i == n) {
+                sep_le_q = sep.size() <= q.size();
+                if (sep_le_q) ++tr.end_sep_le_q; else ++tr.end_sep_gt_q;
+                if (sep.size() < q.size()) ++tr.sep_prefix_of_q;
+            } else {
+                sep_le_q = static_cast<unsigned char>(sep[i]) <
+                           static_cast<unsigned char>(q[i]);
+                ++tr.end_first_diff;
+            }
+            if (sep_le_q) lo = mid + 1;
+            else hi = mid;
+        }
+        tr.compared = walked;
+        consumed = static_cast<std::uint32_t>(
+            std::min<std::uint64_t>(walked, 0xffffffffull));
+        const std::uint64_t g = lo;
+        return static_cast<std::uint32_t>(std::min<std::uint64_t>(groups_ - 1, g));
+    }
+#endif
 
     Status status() const { return status_; }
     bool fitted() const { return status_ == Status::Ok; }

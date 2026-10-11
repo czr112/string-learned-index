@@ -14,7 +14,7 @@
 
 以 [下一阶段详细计划](../docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md) 为当前顺序：
 **P0 修复目录字节序并补独立门 → P1 一次完整读路径诊断 → 有依据才做一个读原型，否则恢复 M4 有序段归并 → 配置收口及必要外部复测。**
-本次完成核查与计划；**P0 已执行收口（2026-10-11 晚）**：目录搜索改为显式无符号字节比较，新门 `check_depth_dir_order`（含 sanitizer 孪生）与两个既有目录门的反例检查全部通过，见 [RESULTS_DEPTH_DIR_ORDER_FIX_20261011.md](RESULTS_DEPTH_DIR_ORDER_FIX_20261011.md)。下一步为 P1 读路径入口诊断（不接计时）。
+本次完成核查与计划；**P0 已执行收口（2026-10-11 晚）**：目录搜索改为显式无符号字节比较，新门 `check_depth_dir_order`（含 sanitizer 孪生）与两个既有目录门的反例检查全部通过，见 [RESULTS_DEPTH_DIR_ORDER_FIX_20261011.md](RESULTS_DEPTH_DIR_ORDER_FIX_20261011.md)。**P1 已执行收口（2026-10-11 深夜）**：`diag_depth_dir_read_path` 三语料计数（断言与对账 0 违例）表明额外工作来自目录搜索自身（每查询 ~8 步、+17.8~+101.1 逻辑字节），指纹总量两臂相等、外层导航相同，不存在单一可部署改动；判定为收口目录读路径、恢复 M4。见 [RESULTS_DEPTH_DIR_READ_PATH_ENTRY_20261011.md](RESULTS_DEPTH_DIR_READ_PATH_ENTRY_20261011.md)。下一步：M4 有序段归并入口（计划 §6）。
 
 [最小反例](AUDIT_DEPTH_DIR_ORDER_20261011.md) 已在 WSL/MinGW 复现：两种目录的搜索用 signed char
 比较不同字节，四键四组即可出现逆序，256 个单字节查询各有 128 个组号与独立参考不符。

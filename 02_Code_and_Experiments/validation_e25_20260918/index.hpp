@@ -312,6 +312,16 @@ struct Counts {
     std::uint64_t existence_searches = 0;  // Region::find_impl entries
     std::uint64_t cmp_calls = 0;           // full-key compares in the write paths
     std::uint64_t cmp_bytes = 0;
+    // P1 read-path entry diagnosis (2026-10-11): site-split compare work, outer-navigation
+    // work and the fingerprint's fused-vs-tail split. The totals above stay the totals, so
+    // `primary + overflow == cmp_calls/cmp_bytes` on the read path is checked, not assumed.
+    std::uint64_t locate_cmp_calls = 0;    // Index::locate boundary probes (outer routing)
+    std::uint64_t locate_cmp_bytes = 0;    // ... logical bytes walked by those probes
+    std::uint64_t fp_fused_bytes = 0;      // bytes the MODEL fed to the hash during prediction
+    std::uint64_t cmp_calls_primary = 0;   // exact compares against primary entries
+    std::uint64_t cmp_bytes_primary = 0;
+    std::uint64_t cmp_calls_overflow = 0;  // exact compares against overflow records
+    std::uint64_t cmp_bytes_overflow = 0;
     std::uint64_t place_attempts = 0;      // insert_into calls
     std::uint64_t place_fail_slots = 0;    // ... refused: no free slot
     std::uint64_t place_fail_bytes = 0;    // ... refused: not enough suffix bytes
@@ -1147,6 +1157,31 @@ inline int compare_bytes(std::string_view a, std::string_view b, std::uint64_t& 
 }
 #endif
 
+#ifdef E25_DIAG
+// P1 (2026-10-11): site-split compare counting for the read path. Diagnostic builds
+// only; in every other build both macros are plain compare().
+inline int compare_bytes_site(std::string_view a, std::string_view b,
+                              std::uint64_t& total, std::uint64_t& site) {
+    const std::uint64_t before = total;
+    const int c = compare_bytes(a, b, total);
+    site += total - before;
+    return c;
+}
+#define E25_CMP_P(a, b)                                                        \
+    (++::validation::e25::counts().cmp_calls,                                  \
+     ++::validation::e25::counts().cmp_calls_primary,                          \
+     compare_bytes_site((a), (b), ::validation::e25::counts().cmp_bytes,       \
+                        ::validation::e25::counts().cmp_bytes_primary))
+#define E25_CMP_O(a, b)                                                        \
+    (++::validation::e25::counts().cmp_calls,                                  \
+     ++::validation::e25::counts().cmp_calls_overflow,                         \
+     compare_bytes_site((a), (b), ::validation::e25::counts().cmp_bytes,       \
+                        ::validation::e25::counts().cmp_bytes_overflow))
+#else
+#define E25_CMP_P(a, b) compare((a), (b))
+#define E25_CMP_O(a, b) compare((a), (b))
+#endif
+
 // ---------------------------------------------------------------------------
 // Conditional model: integer interval arithmetic over quantized probabilities.
 // Q = 2^47 position scale, MASS = 2^16 probability mass, 16 context rows.
@@ -1262,7 +1297,10 @@ public:
             const auto ch = static_cast<unsigned char>(s[p]);
             step(cumulative[row(p, previous)], ch + 1U, lo, hi);
             previous = ch + 1U;
-            if constexpr (Hash) fp.byte(ch);
+            if constexpr (Hash) {
+                fp.byte(ch);
+                E25_ADD(fp_fused_bytes, 1);
+            }
 
             const bool stop =
                 (lo == hi) ||
@@ -3545,6 +3583,18 @@ public:
     std::uint32_t placement_group(std::string_view full_key) const {
         return canonical_group(full_key);
     }
+#ifdef E25_DIAG
+    // P1 read-path diagnosis: run THIS region's directory search under a trace for the same
+    // full key the find path receives. False when the region is not on the directory backend
+    // or its model did not fit, in which case the production path would not search a
+    // directory either.
+    bool diag_depth_dir_trace(std::string_view full_key, equivdir::SearchTrace& tr,
+                              std::uint32_t& group, std::uint32_t& consumed) const {
+        if (!use_depth_dir_ || !depth_dir_.fitted()) return false;
+        group = depth_dir_.predict_group_traced(full_key, consumed, tr);
+        return true;
+    }
+#endif
     blockrank::Status block_rank_status() const { return block_rank_.status(); }
     static const BlockRankStats& block_rank_stats() { return block_rank_stats_; }
     static void reset_block_rank_stats() { block_rank_stats_ = BlockRankStats{}; }
@@ -4312,7 +4362,7 @@ public:
             if (es[i].length == s.size()) {
                 ++result.str_cmps;
                 E12_TICK(result.str_cmps_primary);
-                if (E25_CMP(suffix(g, blk, es[i]), s) == 0) {
+                if (E25_CMP_P(suffix(g, blk, es[i]), s) == 0) {
                     result.found = true;
                     result.value = es[i].value;
                     result.source = 1;
@@ -4415,13 +4465,13 @@ public:
                         if (shorter >= 8 && lcp < 8) E25_INC(ov_bin_decided8);
                     }
 #endif
-                    if (E25_CMP((*o)[mid].suffix, s) < 0) lo = mid + 1;
+                    if (E25_CMP_O((*o)[mid].suffix, s) < 0) lo = mid + 1;
                     else hi = mid;
                 }
                 if (lo < o->size()) {
                     ++result.str_cmps;
                     E12_TICK(result.str_cmps_overflow);
-                    if (E25_CMP((*o)[lo].suffix, s) == 0) {
+                    if (E25_CMP_O((*o)[lo].suffix, s) == 0) {
                         result.found = true;
                         result.value = (*o)[lo].value;
                         result.source = 2;
@@ -4461,7 +4511,7 @@ public:
 #endif
                         ++result.str_cmps;
                         E12_TICK(result.str_cmps_overflow);
-                        if (E25_CMP(e.suffix, s) == 0) {
+                        if (E25_CMP_O(e.suffix, s) == 0) {
                             result.found = true;
                             result.value = e.value;
                             result.source = 2;
@@ -4501,7 +4551,7 @@ public:
 #endif
                     ++result.str_cmps;
                     E12_TICK(result.str_cmps_overflow);
-                    if (E25_CMP(e.suffix, s) == 0) {
+                    if (E25_CMP_O(e.suffix, s) == 0) {
                         result.found = true;
                         result.value = e.value;
                         result.source = 2;
@@ -6189,8 +6239,20 @@ public:
     // the same key. "The two implement the same predicate" is an argument; comparing their
     // answers on every key is evidence, and only the second one belongs in a verdict.
     std::size_t locate_scanned(std::string_view key) const {
+#ifdef E25_DIAG
+        // P1 read-path diagnosis: the same comparator, counting the boundary probes and the
+        // logical bytes they walk. Compiled out of every other build.
+        auto it = std::upper_bound(nodes_.begin(), nodes_.end(), key,
+            [](std::string_view k, const Node& n) {
+                E25_INC(locate_cmp_calls);
+                const int c =
+                    compare_bytes(k, n.fence, ::validation::e25::counts().locate_cmp_bytes);
+                return c < 0;
+            });
+#else
         auto it = std::upper_bound(nodes_.begin(), nodes_.end(), key,
             [](std::string_view k, const Node& n) { return compare(k, n.fence) < 0; });
+#endif
         return it == nodes_.begin() ? 0 : static_cast<std::size_t>(it - nodes_.begin() - 1);
     }
 

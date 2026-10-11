@@ -159,6 +159,9 @@ EXTRA = {
     # TRUNCDIR gate: same entry counters over the TRUNCATED directory, so the same macro rule.
     "check_depth_dir_trunc": ["-DE12_COUNT"],
     "san_check_depth_dir_trunc": ["-DE12_COUNT"],
+    # P1 read-path entry diagnosis (2026-10-11): read-side counters only, no timing; the
+    # device asserts its own mode and reconciliation, so it takes both diagnostic macros.
+    "diag_depth_dir_read_path": ["-DE25_DIAG", "-DE12_COUNT"],
     "check_scan_contract": ["-DE25_DIAG"],
     # The O1 gate asserts that the stable-store arm actually used the new
     # representation (its record-shift counter stays 0 while its handle counter rises)
@@ -478,6 +481,9 @@ SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        # TRUNCDIR: one source, two targets -- the gate and its sanitizer twin.
        "check_depth_dir_trunc": "check_depth_dir_trunc.cpp",
        "san_check_depth_dir_trunc": "check_depth_dir_trunc.cpp",
+       # P1 read-path entry diagnosis: one source, no sanitizer twin yet (counts-only; the
+       # device fails closed on its own assertions).
+       "diag_depth_dir_read_path": "diag_depth_dir_read_path.cpp",
        # Byte-order gate: one source, two targets -- the gate and its sanitizer twin. It needs
        # no diagnostic counters: every count it uses comes from its own reference.
        "check_depth_dir_order": "check_depth_dir_order.cpp",

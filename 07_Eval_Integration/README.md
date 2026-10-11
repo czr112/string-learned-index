@@ -4,6 +4,7 @@
 
 - [下一阶段详细计划](../docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md)：目录字节序修复、有限读路径诊断及 M4；
   前置发现见 [最小反例核查](AUDIT_DEPTH_DIR_ORDER_20261011.md)。
+- [读路径入口诊断（P1）](RESULTS_DEPTH_DIR_READ_PATH_ENTRY_20261011.md)：目录额外工作来源；目录读路径收口、转 M4。
 - [简版性能对比与已做优化](BASELINE_COMPARISON_SIMPLE.md)：接入新模型前的外部 ART/HOT 对照。
 - [结构优化状态](STRUCTURE_OPTIMIZATION_STATE.md)：当前已完成项、关闭项与默认配置。
 - [完整外部模型对照](RESULTS_BLOCKLEARN_MATRIX4_20261011.md) 与
