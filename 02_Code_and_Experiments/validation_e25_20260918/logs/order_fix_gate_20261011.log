@@ -1,0 +1,127 @@
+### build check_depth_dir_order
+OK check_depth_dir_order build_id=1791729121860126032 exe=d23917981b977011…
+rc=0
+### build check_depth_dir
+OK check_depth_dir build_id=1791729135719903927 exe=5e0c153aa57f67c4…
+rc=0
+### build check_depth_dir_trunc
+OK check_depth_dir_trunc build_id=1791729149011840414 exe=7e670ac3a40fc4a6…
+rc=0
+### run check_depth_dir_order mixed 131072 
+checks=132 failures=0
+rc=0
+### run check_depth_dir_order skew 131072 
+checks=132 failures=0
+rc=0
+### run check_depth_dir_order tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv
+checks=132 failures=0
+rc=0
+### run check_depth_dir mixed 131072 
+{"kind":"mixed","n":131072,"regions":64,"dir_regions_fitted":128,"dir_regions_boundary":0,"dir_thresholds":42374,"dir_regions_with_duplicate_thresholds":0,"checksum_ref":14004954854973824228,"checksum_dir":13303754530436116272,"ref_probes":1467679,"dir_probes":131213,"ref_cmps":170119,"dir_cmps":132762,"ref_steps":1015530,"dir_steps":10002720,"ref_overflow":2547,"dir_overflow":0,"ctx_group_max":1366,"ctx_group_avg":6.1678,"ctx_group_empty":14278,"dir_group_max":12,"dir_group_avg":6.1678,"dir_group_empty":0,"probe_ratio_median":0.55217,"probe_ratio_p90":0.818545,"probe_ratio_worse_regions":0,"probe_ratio_regions":64}
+checks=131628 failures=0
+rc=0
+### run check_depth_dir skew 131072 
+{"kind":"skew","n":131072,"regions":64,"dir_regions_fitted":128,"dir_regions_boundary":0,"dir_thresholds":40198,"dir_regions_with_duplicate_thresholds":0,"checksum_ref":7136238917750603242,"checksum_dir":6340422586324145103,"ref_probes":2173636,"dir_probes":131072,"ref_cmps":205280,"dir_cmps":132648,"ref_steps":1945940,"dir_steps":16661289,"ref_overflow":5033,"dir_overflow":0,"ctx_group_max":824,"ctx_group_avg":6.50062,"ctx_group_empty":19178,"dir_group_max":12,"dir_group_avg":6.50062,"dir_group_empty":0,"probe_ratio_median":0.0617053,"probe_ratio_p90":0.0914694,"probe_ratio_worse_regions":0,"probe_ratio_regions":64}
+checks=131628 failures=0
+rc=0
+### run check_depth_dir tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv
+{"kind":"tranco","n":131072,"regions":64,"dir_regions_fitted":128,"dir_regions_boundary":0,"dir_thresholds":21760,"dir_regions_with_duplicate_thresholds":0,"checksum_ref":16697048725911744996,"checksum_dir":13632103513851881708,"ref_probes":327879,"dir_probes":131072,"ref_cmps":132475,"dir_cmps":131343,"ref_steps":419796,"dir_steps":2814644,"ref_overflow":0,"dir_overflow":0,"ctx_group_max":546,"ctx_group_avg":11.9766,"ctx_group_empty":5993,"dir_group_max":12,"dir_group_avg":11.9766,"dir_group_empty":0,"probe_ratio_median":0.414156,"probe_ratio_p90":0.522049,"probe_ratio_worse_regions":0,"probe_ratio_regions":64}
+checks=131628 failures=0
+rc=0
+### run check_depth_dir_trunc mixed 131072 
+{"kind":"mixed","n":131072,"regions":64,"regions_fitted":64,"regions_shorter":64,"thresholds":21187,"full_bytes":2121557,"trunc_bytes":225478,"fallbacks":0,"shortened":21187,"routing_equal":131072,"routing_differ":0,"band_mismatch":0,"stored_probes":152259,"bracket_violations":0,"inv_prefix":0,"inv_order":0,"inv_construction":0,"inv_tail":0,"bracket_equal_before":0,"bracket_equal_after":0,"ref_probes":1467679,"dir_probes":131213,"trunc_probes":131213,"ref_cmps":170119,"dir_cmps":132762,"trunc_cmps":132762,"ref_overflow":2547,"dir_overflow":0,"trunc_overflow":0}
+[truncdir] mixed n=131072 regions=64 fitted=64 slices=64
+  thresholds=21187 separator bytes: full=2121557 truncated=225478 (1896079 bytes, 89.3721% smaller)
+  fallbacks=0 shortened=21187 regions_truncated=64 per-region truncated bytes P50=2054 P95=8267 max=43002
+  per-separator truncated bytes P50=4 P95=20 max=143
+  routing equal=131072 differ=0 band_mismatch(duplicate runs)=0 stored_probes=152259 bracket_violations=0
+  invariant violations prefix/order/construction/tail=0/0/0/0 duplicate-run exceptions before/after g=0/0
+[truncdir] negative controls: runs=3 cut_construction_violations=3 swap_order_violations=3 swap_search_disagreements=48
+checks=1733 failures=0
+rc=0
+### run check_depth_dir_trunc skew 131072 
+{"kind":"skew","n":131072,"regions":64,"regions_fitted":64,"regions_shorter":64,"thresholds":20099,"full_bytes":1799334,"trunc_bytes":332242,"fallbacks":0,"shortened":20099,"routing_equal":131072,"routing_differ":0,"band_mismatch":0,"stored_probes":151171,"bracket_violations":0,"inv_prefix":0,"inv_order":0,"inv_construction":0,"inv_tail":0,"bracket_equal_before":0,"bracket_equal_after":0,"ref_probes":2173636,"dir_probes":131072,"trunc_probes":131072,"ref_cmps":205280,"dir_cmps":132648,"trunc_cmps":132648,"ref_overflow":5033,"dir_overflow":0,"trunc_overflow":0}
+[truncdir] skew n=131072 regions=64 fitted=64 slices=64
+  thresholds=20099 separator bytes: full=1799334 truncated=332242 (1467092 bytes, 81.5353% smaller)
+  fallbacks=0 shortened=20099 regions_truncated=64 per-region truncated bytes P50=5114 P95=7793 max=8173
+  per-separator truncated bytes P50=17 P95=18 max=19
+  routing equal=131072 differ=0 band_mismatch(duplicate runs)=0 stored_probes=151171 bracket_violations=0
+  invariant violations prefix/order/construction/tail=0/0/0/0 duplicate-run exceptions before/after g=0/0
+[truncdir] negative controls: runs=3 cut_construction_violations=3 swap_order_violations=3 swap_search_disagreements=48
+checks=1733 failures=0
+rc=0
+### run check_depth_dir_trunc tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv
+{"kind":"tranco","n":131072,"regions":64,"regions_fitted":64,"regions_shorter":64,"thresholds":10880,"full_bytes":132069,"trunc_bytes":56529,"fallbacks":0,"shortened":10754,"routing_equal":131072,"routing_differ":0,"band_mismatch":0,"stored_probes":142720,"bracket_violations":0,"inv_prefix":0,"inv_order":0,"inv_construction":0,"inv_tail":0,"bracket_equal_before":0,"bracket_equal_after":0,"ref_probes":327879,"dir_probes":131072,"trunc_probes":131072,"ref_cmps":132475,"dir_cmps":131343,"trunc_cmps":131343,"ref_overflow":0,"dir_overflow":0,"trunc_overflow":0}
+[truncdir] tranco n=131072 regions=64 fitted=64 slices=64
+  thresholds=10880 separator bytes: full=132069 truncated=56529 (75540 bytes, 57.1974% smaller)
+  fallbacks=0 shortened=10754 regions_truncated=64 per-region truncated bytes P50=867 P95=1033 max=1272
+  per-separator truncated bytes P50=5 P95=10 max=25
+  routing equal=131072 differ=0 band_mismatch(duplicate runs)=0 stored_probes=142720 bracket_violations=0
+  invariant violations prefix/order/construction/tail=0/0/0/0 duplicate-run exceptions before/after g=0/0
+[truncdir] negative controls: runs=3 cut_construction_violations=3 swap_order_violations=3 swap_search_disagreements=48
+checks=1733 failures=0
+rc=0
+### build san_check_depth_dir_order
+OK san_check_depth_dir_order build_id=1791729176122970273 exe=3f4ea16797613b8f…
+rc=0
+### build san_check_depth_dir
+OK san_check_depth_dir build_id=1791729199180977372 exe=ed0e0a2a4ea0f7c0…
+rc=0
+### build san_check_depth_dir_trunc
+OK san_check_depth_dir_trunc build_id=1791729219980755549 exe=db9bf1940909af88…
+rc=0
+### run san_check_depth_dir_order mixed 8192 
+checks=132 failures=0
+rc=0
+### run san_check_depth_dir_order skew 2048 
+checks=132 failures=0
+rc=0
+### run san_check_depth_dir_order tranco 4096 ../validation_e5_20260913/data/tranco_XN6XN.csv
+checks=132 failures=0
+rc=0
+### run san_check_depth_dir mixed 8192 
+{"kind":"mixed","n":8192,"regions":4,"dir_regions_fitted":8,"dir_regions_boundary":0,"dir_thresholds":3464,"dir_regions_with_duplicate_thresholds":0,"checksum_ref":13835528219701289225,"checksum_dir":15489257897782699702,"ref_probes":545560,"dir_probes":8333,"ref_cmps":19382,"dir_cmps":8275,"ref_steps":132265,"dir_steps":2406546,"ref_overflow":392,"dir_overflow":0,"ctx_group_max":1366,"ctx_group_avg":4.71889,"ctx_group_empty":1523,"dir_group_max":12,"dir_group_avg":4.71889,"dir_group_empty":0,"probe_ratio_median":0.00889505,"probe_ratio_p90":0.259833,"probe_ratio_worse_regions":0,"probe_ratio_regions":4}
+checks=8628 failures=0
+rc=0
+### run san_check_depth_dir skew 2048 
+{"kind":"skew","n":2048,"regions":1,"dir_regions_fitted":2,"dir_regions_boundary":0,"dir_thresholds":984,"dir_regions_with_duplicate_thresholds":0,"checksum_ref":10763304861343971158,"checksum_dir":7612040707374256993,"ref_probes":8797,"dir_probes":2048,"ref_cmps":2202,"dir_cmps":2068,"ref_steps":101364,"dir_steps":954101,"ref_overflow":62,"dir_overflow":0,"ctx_group_max":94,"ctx_group_avg":4.15416,"ctx_group_empty":419,"dir_group_max":5,"dir_group_avg":4.15416,"dir_group_empty":0,"probe_ratio_median":0.232807,"probe_ratio_p90":0.232807,"probe_ratio_worse_regions":0,"probe_ratio_regions":1}
+checks=2478 failures=0
+rc=0
+### run san_check_depth_dir tranco 4096 ../validation_e5_20260913/data/tranco_XN6XN.csv
+{"kind":"tranco","n":4096,"regions":2,"dir_regions_fitted":4,"dir_regions_boundary":0,"dir_thresholds":680,"dir_regions_with_duplicate_thresholds":0,"checksum_ref":15129873770769852105,"checksum_dir":16721371575210764725,"ref_probes":6334,"dir_probes":4096,"ref_cmps":4118,"dir_cmps":4103,"ref_steps":10455,"dir_steps":62603,"ref_overflow":0,"dir_overflow":0,"ctx_group_max":75,"ctx_group_avg":11.9766,"ctx_group_empty":131,"dir_group_max":12,"dir_group_avg":11.9766,"dir_group_empty":0,"probe_ratio_median":0.619855,"probe_ratio_p90":0.619855,"probe_ratio_worse_regions":0,"probe_ratio_regions":2}
+checks=4528 failures=0
+rc=0
+### run san_check_depth_dir_trunc mixed 8192 
+{"kind":"mixed","n":8192,"regions":4,"regions_fitted":4,"regions_shorter":4,"thresholds":1732,"full_bytes":218777,"trunc_bytes":77748,"fallbacks":0,"shortened":1732,"routing_equal":8192,"routing_differ":0,"band_mismatch":0,"stored_probes":9924,"bracket_violations":0,"inv_prefix":0,"inv_order":0,"inv_construction":0,"inv_tail":0,"bracket_equal_before":0,"bracket_equal_after":0,"ref_probes":545560,"dir_probes":8333,"trunc_probes":8333,"ref_cmps":19382,"dir_cmps":8275,"trunc_cmps":8275,"ref_overflow":392,"dir_overflow":0,"trunc_overflow":0}
+[truncdir] mixed n=8192 regions=4 fitted=4 slices=4
+  thresholds=1732 separator bytes: full=218777 truncated=77748 (141029 bytes, 64.4624% smaller)
+  fallbacks=0 shortened=1732 regions_truncated=4 per-region truncated bytes P50=11983 P95=25060 max=40166
+  per-separator truncated bytes P50=34 P95=130 max=142
+  routing equal=8192 differ=0 band_mismatch(duplicate runs)=0 stored_probes=9924 bracket_violations=0
+  invariant violations prefix/order/construction/tail=0/0/0/0 duplicate-run exceptions before/after g=0/0
+[truncdir] negative controls: runs=3 cut_construction_violations=3 swap_order_violations=3 swap_search_disagreements=48
+checks=773 failures=0
+rc=0
+### run san_check_depth_dir_trunc skew 2048 
+{"kind":"skew","n":2048,"regions":1,"regions_fitted":1,"regions_shorter":1,"thresholds":492,"full_bytes":62484,"trunc_bytes":30781,"fallbacks":0,"shortened":492,"routing_equal":2048,"routing_differ":0,"band_mismatch":0,"stored_probes":2540,"bracket_violations":0,"inv_prefix":0,"inv_order":0,"inv_construction":0,"inv_tail":0,"bracket_equal_before":0,"bracket_equal_after":0,"ref_probes":8797,"dir_probes":2048,"trunc_probes":2048,"ref_cmps":2202,"dir_cmps":2068,"trunc_cmps":2068,"ref_overflow":62,"dir_overflow":0,"trunc_overflow":0}
+[truncdir] skew n=2048 regions=1 fitted=1 slices=1
+  thresholds=492 separator bytes: full=62484 truncated=30781 (31703 bytes, 50.7378% smaller)
+  fallbacks=0 shortened=492 regions_truncated=1 per-region truncated bytes P50=30781 P95=30781 max=30781
+  per-separator truncated bytes P50=62 P95=106 max=112
+  routing equal=2048 differ=0 band_mismatch(duplicate runs)=0 stored_probes=2540 bracket_violations=0
+  invariant violations prefix/order/construction/tail=0/0/0/0 duplicate-run exceptions before/after g=0/0
+[truncdir] negative controls: runs=3 cut_construction_violations=3 swap_order_violations=3 swap_search_disagreements=40
+checks=725 failures=0
+rc=0
+### run san_check_depth_dir_trunc tranco 4096 ../validation_e5_20260913/data/tranco_XN6XN.csv
+{"kind":"tranco","n":4096,"regions":2,"regions_fitted":2,"regions_shorter":2,"thresholds":340,"full_bytes":3953,"trunc_bytes":1458,"fallbacks":0,"shortened":339,"routing_equal":4096,"routing_differ":0,"band_mismatch":0,"stored_probes":4444,"bracket_violations":0,"inv_prefix":0,"inv_order":0,"inv_construction":0,"inv_tail":0,"bracket_equal_before":0,"bracket_equal_after":0,"ref_probes":6334,"dir_probes":4096,"trunc_probes":4096,"ref_cmps":4118,"dir_cmps":4103,"trunc_cmps":4103,"ref_overflow":0,"dir_overflow":0,"trunc_overflow":0}
+[truncdir] tranco n=4096 regions=2 fitted=2 slices=2
+  thresholds=340 separator bytes: full=3953 truncated=1458 (2495 bytes, 63.1166% smaller)
+  fallbacks=0 shortened=339 regions_truncated=2 per-region truncated bytes P50=719 P95=719 max=739
+  per-separator truncated bytes P50=4 P95=9 max=13
+  routing equal=4096 differ=0 band_mismatch(duplicate runs)=0 stored_probes=4444 bracket_violations=0
+  invariant violations prefix/order/construction/tail=0/0/0/0 duplicate-run exceptions before/after g=0/0
+[truncdir] negative controls: runs=3 cut_construction_violations=3 swap_order_violations=3 swap_search_disagreements=48
+checks=741 failures=0
+rc=0
+order-fix gate sweep done

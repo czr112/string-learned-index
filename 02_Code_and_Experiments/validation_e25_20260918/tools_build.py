@@ -108,6 +108,10 @@ SAN_TARGETS = {
     "san_check_block_rank",
     "san_check_depth_dir",
     "san_check_depth_dir_trunc",
+    # Byte-order gate (2026-10-11): it fits directories over NUL / 0x7f / 0x80 / 0xff keys
+    # and drives a full index through scans and churn, so it runs under the sanitizer like
+    # its siblings.
+    "san_check_depth_dir_order",
 }
 
 # Per-target flags.
@@ -474,6 +478,10 @@ SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        # TRUNCDIR: one source, two targets -- the gate and its sanitizer twin.
        "check_depth_dir_trunc": "check_depth_dir_trunc.cpp",
        "san_check_depth_dir_trunc": "check_depth_dir_trunc.cpp",
+       # Byte-order gate: one source, two targets -- the gate and its sanitizer twin. It needs
+       # no diagnostic counters: every count it uses comes from its own reference.
+       "check_depth_dir_order": "check_depth_dir_order.cpp",
+       "san_check_depth_dir_order": "check_depth_dir_order.cpp",
        # EqualDepthDir A/B: two arms, position rotated, paired within a repetition.
        "bench_depth_dir": "bench_depth_dir.cpp",
        # Phase D entry diagnosis: one source, two builds (see EXTRA).

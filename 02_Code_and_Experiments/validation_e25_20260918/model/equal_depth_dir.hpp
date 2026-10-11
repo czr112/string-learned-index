@@ -23,6 +23,9 @@
 // CORRECTNESS ARGUMENT (what the index relies on; the gate checks each):
 //   1. Compare is the index's own unsigned-byte order on the SUFFIX (region prefix stripped),
 //      which agrees with full-key order because every key the region accepts shares the prefix.
+//      The SEARCH must obey the same order, byte by byte: it compares through
+//      `static_cast<unsigned char>` on purpose, because a plain char comparison would be
+//      signed on x86 and would order every byte >= 0x80 below every byte < 0x80.
 //   2. group(q) = #{ j : sep_j <= q } is a count of a fixed, sorted list -- hence non-decreasing
 //      in q, and equal q give equal answers. Placement and lookup call the same function of the
 //      same coordinate, so a stored key cannot be routed to a different group by the query path.
@@ -155,7 +158,17 @@ public:
             std::size_t i = 0;
             while (i < n && q[i] == sep[i]) ++i;
             walked += i + 1;
-            const bool sep_le_q = (i == n) ? (sep.size() <= q.size()) : (sep[i] < q[i]);
+            // UNSIGNED bytes, and explicitly so. A plain `sep[i] < q[i]` compares char,
+            // which is signed on x86: every byte >= 0x80 would sort below every byte <
+            // 0x80, so the count is wrong for stored keys and for probes alike (128/256
+            // mismatches and one group inversion on the four-key fixture in
+            // check_depth_dir_order). compare() below uses memcmp, which is unsigned by
+            // the standard, which is why the fit and the duplicate-threshold check never
+            // showed this.
+            const bool sep_le_q =
+                (i == n) ? (sep.size() <= q.size())
+                         : (static_cast<unsigned char>(sep[i]) <
+                            static_cast<unsigned char>(q[i]));
             if (sep_le_q) lo = mid + 1;
             else hi = mid;
         }

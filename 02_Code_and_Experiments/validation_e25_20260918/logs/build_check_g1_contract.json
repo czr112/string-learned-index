@@ -1,7 +1,7 @@
 {
  "target": "check_g1_contract",
- "build_id": "1791723016503694975",
- "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE25_DIAG /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_g1_contract.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/check_g1_contract.874.1791723016503688541.tmp.exe",
+ "build_id": "1791729347428579108",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE25_DIAG /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_g1_contract.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/check_g1_contract.420.1791729347428573412.tmp.exe",
  "sources": {
   "check_g1_contract.cpp": "7d86cfa15131f2f7ea23e05b85e939de4f4a2cbcd6ce3c58f8301368dc11000b",
   "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
@@ -14,7 +14,7 @@
   "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
   "switches.hpp": "9f8a55cc2f6ec52d0eec1e69793e9c9c27c67e5a26da264bd2a3221d9e030620",
   "model/block_linear_rank.hpp": "17d8714d175da10fb349bf1fe8dc00f35510cafaf142ba1d9a595c1e0e2aa5f8",
-  "model/equal_depth_dir.hpp": "6755f3caef472a878805c330059cf184a007704e9bb4a165d40076b1a27cbe9b",
+  "model/equal_depth_dir.hpp": "8d490657cc266e1f1b8dbc5db8d577ec1d6c5485da560588d70becac4ae69905",
   "model/lits_hpt_adapter.hpp": "51c52d687fef5684ac9a88a37f91be8ea17cf7dc491bcdaa12a8754cc30168b2",
   "results/block_rank_20261011_native/identity/block_linear_rank.hpp": "17d8714d175da10fb349bf1fe8dc00f35510cafaf142ba1d9a595c1e0e2aa5f8",
   "results/block_rank_20261011_native/identity/index.hpp": "46fdf520d82804e595727c267c428c5fbbb9d8c0da02e09ffe4ffc9f413a6957",
@@ -32,6 +32,6 @@
  "c_objects": [],
  "returncode": 0,
  "stderr_tail": "",
- "exe_sha256": "ad849262ff1f78fd2d09ae8f68e011e1bc24caf3f06e0e05bb7cc2d250215580",
+ "exe_sha256": "17faf1f2ed6ee1ec179abcfd4388cfaac9bb6f261f218650292e535ce653a1d2",
  "status": "OK"
 }
