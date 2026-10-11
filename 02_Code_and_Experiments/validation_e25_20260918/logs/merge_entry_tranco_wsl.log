@@ -1,0 +1,4 @@
+### command: g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE25_DIAG -I. diag_merge_entry.cpp -o build/_wsl_merge/merge_entry.bin
+### run: ./build/_wsl_merge/merge_entry.bin tranco 262144 ../validation_e5_20260913/data/tranco_XN6XN.csv merge_entry_tranco_wslcheck
+checkpoint frac=1: rows=4352 seg_rows=0 (0%) C_old=2116 C_cand=2186 (reduction -3.30813%) probes ok/fail(eq)=0/70(0) -> ENTRY FAIL
+checkpoint frac=2: rows=4352 seg_rows=0 (0%) C_old=2112 C_cand=2182 (reduction -3.31439%) probes ok/fail(eq)=0/70(0) -> ENTRY FAIL

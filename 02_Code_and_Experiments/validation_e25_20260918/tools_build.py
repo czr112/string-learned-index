@@ -162,6 +162,9 @@ EXTRA = {
     # P1 read-path entry diagnosis (2026-10-11): read-side counters only, no timing; the
     # device asserts its own mode and reconciliation, so it takes both diagnostic macros.
     "diag_depth_dir_read_path": ["-DE25_DIAG", "-DE12_COUNT"],
+    # M4 entry diagnosis (2026-10-11): the merge shadow and the scan counters are
+    # diagnostic-only; counts, no timing.
+    "diag_merge_entry": ["-DE25_DIAG"],
     "check_scan_contract": ["-DE25_DIAG"],
     # The O1 gate asserts that the stable-store arm actually used the new
     # representation (its record-shift counter stays 0 while its handle counter rises)
@@ -484,6 +487,9 @@ SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        # P1 read-path entry diagnosis: one source, no sanitizer twin yet (counts-only; the
        # device fails closed on its own assertions).
        "diag_depth_dir_read_path": "diag_depth_dir_read_path.cpp",
+       # M4 entry diagnosis: one source, no sanitizer twin (counts-only device; it fails
+       # closed on its own assertions).
+       "diag_merge_entry": "diag_merge_entry.cpp",
        # Byte-order gate: one source, two targets -- the gate and its sanitizer twin. It needs
        # no diagnostic counters: every count it uses comes from its own reference.
        "check_depth_dir_order": "check_depth_dir_order.cpp",

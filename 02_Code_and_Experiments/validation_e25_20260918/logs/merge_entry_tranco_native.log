@@ -1,0 +1,3 @@
+Failed to find real location of D:\Miniconda3\python.exe
+checkpoint frac=1: rows=4352 seg_rows=0 (0%) C_old=2116 C_cand=2186 (reduction -3.30813%) probes ok/fail(eq)=0/70(0) -> ENTRY FAIL
+checkpoint frac=2: rows=4352 seg_rows=0 (0%) C_old=2112 C_cand=2182 (reduction -3.31439%) probes ok/fail(eq)=0/70(0) -> ENTRY FAIL

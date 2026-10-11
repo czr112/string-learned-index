@@ -814,6 +814,37 @@ struct Result {
     std::uint32_t candidate_blocks = 0;    // primary blocks entered for tag/record checks
 };
 
+#ifdef E25_DIAG
+// M4 entry diagnosis (2026-10-11): the shadow counts of the ordered-segment merge candidate.
+// All counters are per call; nothing here is resident, and nothing is compiled into a build
+// that does not define E25_DIAG.
+struct MergeShadowCounts {
+    std::uint64_t outputs = 0;            // rows the candidate emitted
+    std::uint64_t merge_cmps = 0;         // per-row cross-side compares it still pays
+    std::uint64_t probes = 0;             // boundary proofs executed (success + failure)
+    std::uint64_t probe_ok = 0, probe_fail = 0;
+    std::uint64_t probe_fail_equal = 0;   // failures that were a boundary TIE (c == 0)
+    std::uint64_t seg_rows = 0;           // rows emitted through a proven segment
+    std::uint64_t seg_rows_max = 0;
+    std::uint64_t probe_bytes = 0;        // logical bytes of every proof (compare_bytes)
+    std::uint64_t probe_fail_bytes = 0;   // ... of the failed ones
+    std::uint64_t side_switches = 0;      // primary/overflow alternations in the rows
+    std::uint64_t skip_short = 0;         // arrivals with r < 4
+    std::uint64_t skip_no_ov = 0;         // arrivals with r >= 4 and no opposite side
+    std::vector<std::uint32_t> seg_lens;  // successful segment lengths, for the distribution
+    void add(const MergeShadowCounts& o) {
+        outputs += o.outputs; merge_cmps += o.merge_cmps; probes += o.probes;
+        probe_ok += o.probe_ok; probe_fail += o.probe_fail;
+        probe_fail_equal += o.probe_fail_equal; seg_rows += o.seg_rows;
+        if (o.seg_rows_max > seg_rows_max) seg_rows_max = o.seg_rows_max;
+        probe_bytes += o.probe_bytes; probe_fail_bytes += o.probe_fail_bytes;
+        side_switches += o.side_switches; skip_short += o.skip_short;
+        skip_no_ov += o.skip_no_ov;
+        seg_lens.insert(seg_lens.end(), o.seg_lens.begin(), o.seg_lens.end());
+    }
+};
+#endif
+
 // E5-1: slots is an explicit layout parameter (default 16 reproduces the E3 behavior).
 enum class ModelKind { Context16, Position16, Unigram };
 
@@ -5740,6 +5771,138 @@ public:
         }
     }
 
+#ifdef E25_DIAG
+    // M4 entry diagnosis (2026-10-11): an independent SHADOW cursor that walks this region
+    // through the FROZEN candidate policy and counts, per call:
+    //
+    //   on arriving at a non-empty primary sub-block, let r be the records from the current
+    //   slot to the block end clipped by the remaining return budget. Only when r >= 4 and
+    //   the overflow side still has records, compare the segment's LAST key with the
+    //   overflow's CURRENT first key. Strictly less lets the whole segment be emitted row by
+    //   row with no per-row cross-side compare; anything else falls back to the original
+    //   row-by-row merge for the rest of THIS sub-block, which is probed exactly once. A
+    //   side that is already exhausted never probes and never counts as a saving.
+    //
+    // The proof reads the same descriptor bytes an implementable candidate would use -- no
+    // answer key is consulted. The caller checks that the shadow's rows equal the real
+    // scan's rows AND the ordered reference, and that merge_cmps + seg_rows equals the real
+    // scan's measured cross-side compare count, so a drifting shadow fails the run.
+    void diag_scan_merge_shadow(std::string_view start, std::size_t limit,
+                                std::vector<Pair>& out, MergeShadowCounts& m) const {
+        if (!size_ || out.size() >= limit) return;
+
+        bool matches = prefix_matches(start);
+        if (!matches && compare(start, prefix_) > 0) return;
+        const auto s = matches ? start.substr(prefix_.size()) : std::string_view{};
+        const auto first = matches ? canonical_group(start) : 0;
+
+        int last_side = 0;   // 0 none, 1 primary, 2 overflow
+
+        for (std::uint32_t g = first; g < groups_ && out.size() < limit; ++g) {
+            const auto* o = overflow(g);
+            const std::size_t nb = subblocks(g);
+            std::size_t blk = 0, a = 0, b = 0;
+            std::size_t probed_blk = static_cast<std::size_t>(-1);
+
+            if (g == first && matches) {
+                // Same landing as the production start advance: the S2 ordered search lands
+                // on this exact position (that equivalence is gated in check_scan_contract),
+                // and a landing error would show up as a row mismatch below.
+                while (blk < nb) {
+                    while (a < header(g, blk).count &&
+                           compare(suffix(g, blk, entries(g, blk)[a]), s) < 0)
+                        ++a;
+                    if (a < header(g, blk).count) break;
+                    ++blk;
+                    a = 0;
+                }
+                if (o)
+                    while (b < o->size() && compare((*o)[b].suffix, s) < 0) ++b;
+            }
+
+            while (out.size() < limit) {
+                while (blk < nb && a >= header(g, blk).count) {
+                    ++blk;
+                    a = 0;
+                }
+
+                const bool have_a = blk < nb;
+                const bool have_b = o && b < o->size();
+                if (!have_a && !have_b) break;
+
+                if (have_a && blk != probed_blk) {
+                    probed_blk = blk;
+                    const std::size_t remain = limit - out.size();
+                    const std::size_t left = header(g, blk).count - a;
+                    const std::size_t r = std::min(left, remain);
+                    if (r < 4) {
+                        m.skip_short += 1;
+                    } else if (!have_b) {
+                        m.skip_no_ov += 1;
+                    } else {
+                        m.probes += 1;
+                        std::uint64_t bytes = 0;
+                        const int c = compare_bytes(
+                            suffix(g, blk, entries(g, blk)[a + r - 1]), (*o)[b].suffix, bytes);
+                        m.probe_bytes += bytes;
+                        if (c < 0) {
+                            m.probe_ok += 1;
+                            m.seg_rows += r;
+                            if (r > m.seg_rows_max) m.seg_rows_max = r;
+                            m.seg_lens.push_back(static_cast<std::uint32_t>(r));
+                            for (std::size_t t = 0; t < r; ++t) {
+                                const auto suf = suffix(g, blk, entries(g, blk)[a]);
+                                std::string full;
+                                full.reserve(prefix_.size() + suf.size());
+                                full.append(prefix_);
+                                full.append(suf);
+                                out.emplace_back(std::move(full), entries(g, blk)[a].value);
+                                ++a;
+                            }
+                            m.outputs += r;
+                            if (last_side != 1) {
+                                if (last_side != 0) m.side_switches += 1;
+                                last_side = 1;
+                            }
+                            continue;
+                        }
+                        m.probe_fail += 1;
+                        if (c == 0) m.probe_fail_equal += 1;
+                        m.probe_fail_bytes += bytes;
+                    }
+                }
+
+                bool take_a = have_a;
+                if (have_a && have_b) {
+                    m.merge_cmps += 1;
+                    take_a = compare(suffix(g, blk, entries(g, blk)[a]), (*o)[b].suffix) < 0;
+                }
+                if (take_a) {
+                    const auto suf = suffix(g, blk, entries(g, blk)[a]);
+                    std::string full;
+                    full.reserve(prefix_.size() + suf.size());
+                    full.append(prefix_);
+                    full.append(suf);
+                    out.emplace_back(std::move(full), entries(g, blk)[a].value);
+                    if (last_side != 1) {
+                        if (last_side != 0) m.side_switches += 1;
+                        last_side = 1;
+                    }
+                    ++a;
+                } else {
+                    out.emplace_back(prefix_ + (*o)[b].suffix, (*o)[b].value);
+                    if (last_side != 2) {
+                        if (last_side != 0) m.side_switches += 1;
+                        last_side = 2;
+                    }
+                    ++b;
+                }
+                m.outputs += 1;
+            }
+        }
+    }
+#endif
+
 #ifdef E25_SCAN_CONSUME
     // ---------------------------------------------------------------------------
     // Scan-entry round, stage B2: the traversal WITHOUT result materialisation.
@@ -6709,6 +6872,21 @@ public:
         }
         return out;
     }
+
+#ifdef E25_DIAG
+    // M4 entry diagnosis: the shadow mirror of scan(), same region loop and budget as the
+    // shipped cached-start path the entry device runs.
+    MergeShadowCounts diag_scan_merge_shadow(std::string_view start, std::size_t count,
+                                             std::vector<Pair>& out) const {
+        MergeShadowCounts m;
+        const std::size_t first = locate(start);
+        for (std::size_t i = first; i < nodes_.size() && out.size() < count; ++i) {
+            nodes_[i].region->diag_scan_merge_shadow(i == first ? start : std::string_view{},
+                                                     count, out, m);
+        }
+        return m;
+    }
+#endif
 
 #ifdef E25_SCAN_CONSUME
     // The consume-mode mirror of scan(), region for region. The full limit is passed down
