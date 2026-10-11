@@ -1,0 +1,1 @@
+{"gate":"check_tag_store","kind":"mixed","keys":131072,"queries_compared":1433600,"absent_queries":40960,"scans_compared":5120,"records_compared":245760,"tag_pairings_checked":106070,"overflow_B":9248,"overflow_O":9248,"overflow_T":9248,"sizeof_OrderedEntry":8,"result":"pass"}

@@ -1,0 +1,24 @@
+### san_check_combo mixed 8192 ctx16
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":8192,"subblock_reclaims":18896,"reclaim_widened":382}
+mixed Context16 same frac=2 ok
+{"kind":"mixed","backend":"Context16","mode":"same","keys":8192,"checks":49714,"failures":0,"subblock_reclaims":18964,"reclaim_widened":382}
+49714/49714 checks passed; subblock_reclaims=18964 reclaim_widened=382
+rc=0
+### san_check_combo mixed 8192 lits
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":8192,"subblock_reclaims":14732,"reclaim_widened":212}
+mixed LitsHpt same frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","keys":8192,"checks":49714,"failures":0,"subblock_reclaims":14804,"reclaim_widened":212}
+49714/49714 checks passed; subblock_reclaims=14804 reclaim_widened=212
+rc=0

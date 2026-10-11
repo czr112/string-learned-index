@@ -1,0 +1,125 @@
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 48, "n": 14154, "workload": "insert"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 64, "n": 23414, "workload": "insert"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 96, "n": 53434, "workload": "insert"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 128, "n": 61216, "workload": "insert"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 32, "n": 56, "workload": "permuted"}
+{"hole_bucket": 32, "kind": "skew", "len_bucket": 32, "n": 1305, "workload": "permuted"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 32, "n": 1464, "workload": "permuted"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 32, "n": 2060, "workload": "permuted"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 32, "n": 1658, "workload": "permuted"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 32, "n": 1252, "workload": "permuted"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 32, "n": 2140, "workload": "permuted"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 32, "n": 24, "workload": "permuted"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 48, "n": 1157, "workload": "permuted"}
+{"hole_bucket": 32, "kind": "skew", "len_bucket": 48, "n": 844, "workload": "permuted"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 48, "n": 11645, "workload": "permuted"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 48, "n": 13783, "workload": "permuted"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 48, "n": 13080, "workload": "permuted"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 48, "n": 10760, "workload": "permuted"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 48, "n": 10520, "workload": "permuted"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 48, "n": 59738, "workload": "permuted"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 64, "n": 2279, "workload": "permuted"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 64, "n": 18877, "workload": "permuted"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 64, "n": 11503, "workload": "permuted"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 64, "n": 20280, "workload": "permuted"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 64, "n": 19266, "workload": "permuted"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 64, "n": 13396, "workload": "permuted"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 64, "n": 69518, "workload": "permuted"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 64, "n": 24906, "workload": "permuted"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 96, "n": 2002, "workload": "permuted"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 96, "n": 6118, "workload": "permuted"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 96, "n": 28115, "workload": "permuted"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 96, "n": 42816, "workload": "permuted"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 96, "n": 46280, "workload": "permuted"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 96, "n": 36024, "workload": "permuted"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 96, "n": 48878, "workload": "permuted"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 96, "n": 153942, "workload": "permuted"}
+{"hole_bucket": 8192, "kind": "skew", "len_bucket": 96, "n": 764, "workload": "permuted"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 128, "n": 1122, "workload": "permuted"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 128, "n": 23693, "workload": "permuted"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 128, "n": 25357, "workload": "permuted"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 128, "n": 43736, "workload": "permuted"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 128, "n": 41784, "workload": "permuted"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 128, "n": 30976, "workload": "permuted"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 128, "n": 94276, "workload": "permuted"}
+{"hole_bucket": 8192, "kind": "skew", "len_bucket": 128, "n": 69775, "workload": "permuted"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 192, "n": 34, "workload": "permuted"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 192, "n": 3208, "workload": "permuted"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 192, "n": 3866, "workload": "permuted"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 192, "n": 6574, "workload": "permuted"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 192, "n": 7156, "workload": "permuted"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 192, "n": 5538, "workload": "permuted"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 192, "n": 11500, "workload": "permuted"}
+{"hole_bucket": 8192, "kind": "skew", "len_bucket": 192, "n": 25340, "workload": "permuted"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 32, "n": 472, "workload": "replace"}
+{"hole_bucket": 32, "kind": "skew", "len_bucket": 32, "n": 1825, "workload": "replace"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 32, "n": 1080, "workload": "replace"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 32, "n": 500, "workload": "replace"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 32, "n": 946, "workload": "replace"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 32, "n": 2824, "workload": "replace"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 32, "n": 10782, "workload": "replace"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 32, "n": 2032, "workload": "replace"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 48, "n": 6722, "workload": "replace"}
+{"hole_bucket": 32, "kind": "skew", "len_bucket": 48, "n": 1381, "workload": "replace"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 48, "n": 7430, "workload": "replace"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 48, "n": 5261, "workload": "replace"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 48, "n": 3682, "workload": "replace"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 48, "n": 8462, "workload": "replace"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 48, "n": 33037, "workload": "replace"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 48, "n": 329886, "workload": "replace"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 64, "n": 2567, "workload": "replace"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 64, "n": 14524, "workload": "replace"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 64, "n": 6733, "workload": "replace"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 64, "n": 4050, "workload": "replace"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 64, "n": 9318, "workload": "replace"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 64, "n": 18038, "workload": "replace"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 64, "n": 169646, "workload": "replace"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 64, "n": 4512, "workload": "replace"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 96, "n": 1770, "workload": "replace"}
+{"hole_bucket": 64, "kind": "skew", "len_bucket": 96, "n": 2385, "workload": "replace"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 96, "n": 10164, "workload": "replace"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 96, "n": 10009, "workload": "replace"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 96, "n": 15570, "workload": "replace"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 96, "n": 31362, "workload": "replace"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 96, "n": 59014, "workload": "replace"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 96, "n": 43432, "workload": "replace"}
+{"hole_bucket": 8192, "kind": "skew", "len_bucket": 96, "n": 22, "workload": "replace"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 128, "n": 1859, "workload": "replace"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 128, "n": 7288, "workload": "replace"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 128, "n": 5675, "workload": "replace"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 128, "n": 10694, "workload": "replace"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 128, "n": 23014, "workload": "replace"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 128, "n": 43236, "workload": "replace"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 128, "n": 67600, "workload": "replace"}
+{"hole_bucket": 8192, "kind": "skew", "len_bucket": 128, "n": 11496, "workload": "replace"}
+{"hole_bucket": 0, "kind": "skew", "len_bucket": 192, "n": 444, "workload": "replace"}
+{"hole_bucket": 128, "kind": "skew", "len_bucket": 192, "n": 764, "workload": "replace"}
+{"hole_bucket": 256, "kind": "skew", "len_bucket": 192, "n": 764, "workload": "replace"}
+{"hole_bucket": 512, "kind": "skew", "len_bucket": 192, "n": 1620, "workload": "replace"}
+{"hole_bucket": 1024, "kind": "skew", "len_bucket": 192, "n": 3240, "workload": "replace"}
+{"hole_bucket": 2048, "kind": "skew", "len_bucket": 192, "n": 6330, "workload": "replace"}
+{"hole_bucket": 4096, "kind": "skew", "len_bucket": 192, "n": 12840, "workload": "replace"}
+{"hole_bucket": 8192, "kind": "skew", "len_bucket": 192, "n": 4708, "workload": "replace"}
+{"kind": "skew", "n": 152218, "nholes": 0, "record": "structure", "slots_free": true, "workload": "insert"}
+{"kind": "skew", "n": 6650, "nholes": 0, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 548756, "nholes": 1, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 49656, "nholes": 2, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 42581, "nholes": 3, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 45304, "nholes": 4, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 48696, "nholes": 5, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 52552, "nholes": 6, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 55244, "nholes": 7, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 55594, "nholes": 8, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 51892, "nholes": 9, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 43964, "nholes": 10, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 31848, "nholes": 11, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 20122, "nholes": 12, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 11004, "nholes": 13, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 4532, "nholes": 14, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 1548, "nholes": 15, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 346, "nholes": 16, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 76, "nholes": 17, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 20, "nholes": 18, "record": "structure", "slots_free": true, "workload": "permuted"}
+{"kind": "skew", "n": 13834, "nholes": 0, "record": "structure", "slots_free": true, "workload": "replace"}
+{"kind": "skew", "n": 1007135, "nholes": 1, "record": "structure", "slots_free": true, "workload": "replace"}
+{"kind": "skew", "n": 41, "nholes": 2, "record": "structure", "slots_free": true, "workload": "replace"}

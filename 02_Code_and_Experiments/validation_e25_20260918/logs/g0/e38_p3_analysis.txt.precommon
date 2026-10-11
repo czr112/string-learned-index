@@ -1,0 +1,163 @@
+E38/P3  LITS/M0/ART  run_id=p3b
+ratios within one repetition; per-process medians; direction counted over processes
+============================================================================================================
+
+### FULL BUILD  (build_ms; <1 means the first arm is faster)
+
+  mixed / same
+    LITS/M0                    2.410  (0/5 below)  range 2.234-2.580  noise 1.155
+      absolute: M0 37.0 ms, LITS 89.8 ms
+    LITS/ART                   2.459  (0/5 below)  range 2.172-2.564  noise 1.181
+    M0/ART                     1.063  (1/5 below)  range 0.883-1.127  noise 1.277
+  mixed / grow
+    LITS/M0                    2.447  (0/5 below)  range 2.377-2.697  noise 1.135
+      absolute: M0 34.6 ms, LITS 87.4 ms
+    LITS/ART                   2.335  (0/5 below)  range 2.217-2.638  noise 1.190
+    M0/ART                     0.970  (4/5 below)  range 0.874-1.037  noise 1.186
+  skew / same
+    LITS/M0                    2.555  (0/5 below)  range 2.418-2.812  noise 1.163
+      absolute: M0 42.8 ms, LITS 111.8 ms
+    LITS/ART                   1.886  (0/5 below)  range 1.831-1.963  noise 1.072
+    M0/ART                     0.747  (5/5 below)  range 0.670-0.837  noise 1.250
+  skew / grow
+    LITS/M0                    2.687  (0/5 below)  range 2.423-2.770  noise 1.143
+      absolute: M0 41.4 ms, LITS 112.6 ms
+    LITS/ART                   1.813  (0/5 below)  range 1.764-1.927  noise 1.092
+    M0/ART                     0.684  (5/5 below)  range 0.652-0.795  noise 1.220
+  tranco / same
+    LITS/M0                    1.099  (0/5 below)  range 1.005-1.149  noise 1.143
+      absolute: M0 78.4 ms, LITS 86.2 ms
+    LITS/ART                   2.632  (0/5 below)  range 2.499-2.758  noise 1.104
+    M0/ART                     2.499  (0/5 below)  range 2.236-2.611  noise 1.167
+  tranco / grow
+    LITS/M0                    1.144  (2/5 below)  range 0.963-1.263  noise 1.312
+      absolute: M0 77.3 ms, LITS 87.1 ms
+    LITS/ART                   2.739  (0/5 below)  range 2.430-2.792  noise 1.149
+    M0/ART                     2.381  (0/5 below)  range 2.113-2.841  noise 1.344
+
+### POINT QUERY  (query_ms; mixed queries, all sources)
+
+  mixed / same
+    LITS/M0 (200%)             1.135  (1/5 below)  range 0.980-1.214  noise 1.238
+    LITS/ART (200%)            2.082  (0/5 below)  range 1.840-2.467  noise 1.341
+    M0/ART (200%)              2.042  (0/5 below)  range 1.742-2.164  noise 1.242
+  mixed / grow
+    LITS/M0 (200%)             1.087  (1/5 below)  range 0.994-1.270  noise 1.278
+    LITS/ART (200%)            1.854  (0/5 below)  range 1.643-2.186  noise 1.330
+    M0/ART (200%)              1.656  (0/5 below)  range 1.610-1.721  noise 1.069
+  skew / same
+    LITS/M0 (200%)             0.867  (5/5 below)  range 0.634-0.992  noise 1.565
+    LITS/ART (200%)            1.270  (0/5 below)  range 1.115-1.923  noise 1.725
+    M0/ART (200%)              1.668  (0/5 below)  range 1.344-1.829  noise 1.360
+  skew / grow
+    LITS/M0 (200%)             0.939  (4/5 below)  range 0.839-1.040  noise 1.240
+    LITS/ART (200%)            1.653  (0/5 below)  range 1.539-1.934  noise 1.256
+    M0/ART (200%)              1.801  (0/5 below)  range 1.522-2.565  noise 1.685
+  tranco / same
+    LITS/M0 (200%)             0.770  (5/5 below)  range 0.731-0.915  noise 1.251
+    LITS/ART (200%)            1.608  (0/5 below)  range 1.548-1.636  noise 1.057
+    M0/ART (200%)              1.985  (0/5 below)  range 1.758-2.163  noise 1.231
+  tranco / grow
+    LITS/M0 (200%)             0.843  (5/5 below)  range 0.720-0.955  noise 1.327
+    LITS/ART (200%)            2.130  (0/5 below)  range 1.744-2.251  noise 1.290
+    M0/ART (200%)              2.562  (0/5 below)  range 1.739-2.958  noise 1.701
+
+### PURE-HIT AND PURE-MISS  (ns_per_query; INDEPENDENT loads, not a decomposition)
+
+  mixed / same
+    main: LITS/M0              0.784  (4/5 below)  range 0.642-1.004  noise 1.564
+    main: LITS/ART                --
+    main: M0/ART                  --
+    miss: LITS/M0              0.837  (4/5 below)  range 0.781-1.077  noise 1.378
+    miss: LITS/ART                --
+    miss: M0/ART                  --
+  mixed / grow
+    main: LITS/M0              0.751  (5/5 below)  range 0.735-0.864  noise 1.174
+    main: LITS/ART                --
+    main: M0/ART                  --
+    miss: LITS/M0              0.964  (4/5 below)  range 0.852-1.104  noise 1.295
+    miss: LITS/ART                --
+    miss: M0/ART                  --
+  skew / same
+    main: LITS/M0              0.780  (5/5 below)  range 0.270-0.872  noise 3.227
+    main: LITS/ART                --
+    main: M0/ART                  --
+    miss: LITS/M0              0.935  (4/5 below)  range 0.896-1.105  noise 1.233
+    miss: LITS/ART                --
+    miss: M0/ART                  --
+  skew / grow
+    main: LITS/M0              0.780  (5/5 below)  range 0.674-0.793  noise 1.177
+    main: LITS/ART                --
+    main: M0/ART                  --
+    miss: LITS/M0              0.936  (3/5 below)  range 0.779-1.134  noise 1.456
+    miss: LITS/ART                --
+    miss: M0/ART                  --
+  tranco / same
+    main: LITS/M0              0.941  (3/5 below)  range 0.713-1.202  noise 1.686
+    main: LITS/ART                --
+    main: M0/ART                  --
+    miss: LITS/M0              0.835  (4/5 below)  range 0.789-1.209  noise 1.533
+    miss: LITS/ART                --
+    miss: M0/ART                  --
+  tranco / grow
+    main: LITS/M0              0.873  (5/5 below)  range 0.771-0.921  noise 1.196
+    main: LITS/ART                --
+    main: M0/ART                  --
+    miss: LITS/M0              0.825  (5/5 below)  range 0.770-0.952  noise 1.236
+    miss: LITS/ART                --
+    miss: M0/ART                  --
+
+### RESIDENT SPACE  (memory; <1 means the first arm is smaller)
+
+  mixed / same
+    LITS/M0 (200%)             0.982  (5/5 below)  range 0.982-0.982  noise 1.000
+    LITS/ART (200%)               --
+    M0/ART (200%)                 --
+  mixed / grow
+    LITS/M0 (200%)             0.990  (5/5 below)  range 0.990-0.990  noise 1.000
+    LITS/ART (200%)               --
+    M0/ART (200%)                 --
+  skew / same
+    LITS/M0 (200%)             1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    LITS/ART (200%)               --
+    M0/ART (200%)                 --
+  skew / grow
+    LITS/M0 (200%)             0.998  (5/5 below)  range 0.998-0.998  noise 1.000
+    LITS/ART (200%)               --
+    M0/ART (200%)                 --
+  tranco / same
+    LITS/M0 (200%)             0.893  (5/5 below)  range 0.893-0.893  noise 1.000
+    LITS/ART (200%)               --
+    M0/ART (200%)                 --
+  tranco / grow
+    LITS/M0 (200%)             0.875  (5/5 below)  range 0.875-0.875  noise 1.000
+    LITS/ART (200%)               --
+    M0/ART (200%)                 --
+
+### LITS COVERAGE OF THE TIMED STATE  (200% checkpoint, the LITS arm)
+
+  These are the calibers a timed result has to be read against. The record's own
+  lits_* fields are walked over the LIVE regions, not accumulated over every region ever
+  constructed -- the two differ by a factor of about two on this workload.
+
+  mixed / same: regions 61/64 = 95.3%   records 124929/131072 = 95.3%
+      fallback reasons: admission=3, degenerate=0, boundary=0, unsupported=0
+  mixed / grow: regions 61/64 = 95.3%   records 124928/131072 = 95.3%
+      fallback reasons: admission=3, degenerate=0, boundary=0, unsupported=0
+  skew / same: regions 64/64 = 100.0%   records 131072/131072 = 100.0%
+      fallback reasons: admission=0, degenerate=0, boundary=0, unsupported=0
+  skew / grow: regions 64/64 = 100.0%   records 131072/131072 = 100.0%
+      fallback reasons: admission=0, degenerate=0, boundary=0, unsupported=0
+  tranco / same: regions 128/128 = 100.0%   records 262144/262144 = 100.0%
+      fallback reasons: admission=0, degenerate=0, boundary=0, unsupported=0
+  tranco / grow: regions 128/128 = 100.0%   records 262144/262144 = 100.0%
+      fallback reasons: admission=0, degenerate=0, boundary=0, unsupported=0
+
+### FALLBACK QUERY SHARE  (200% checkpoint, the LITS arm; per queue)
+
+  mixed / same:  main 14/484 (2.9%)  overflow 0/2048 (0.0%)  miss 0/2048 (0.0%)
+  mixed / grow:  main 8/239 (3.3%)  overflow 0/2048 (0.0%)  miss 0/2048 (0.0%)
+  skew / same:  main 0/262 (0.0%)  overflow 0/2048 (0.0%)  miss 0/2048 (0.0%)
+  skew / grow:  main 0/175 (0.0%)  overflow 0/2048 (0.0%)  miss 0/2048 (0.0%)
+  tranco / same:  main 0/2048 (0.0%)  overflow 0/2048 (0.0%)  miss 0/2048 (0.0%)
+  tranco / grow:  main 0/2048 (0.0%)  overflow 0/2048 (0.0%)  miss 0/2048 (0.0%)

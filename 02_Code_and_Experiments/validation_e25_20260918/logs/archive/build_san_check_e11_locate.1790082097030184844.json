@@ -1,0 +1,29 @@
+{
+ "target": "san_check_e11_locate",
+ "build_id": "1790082097030184844",
+ "command": "g++ -std=c++17 -O1 -g -march=x86-64-v2 -fsanitize=address,undefined -fno-omit-frame-pointer -DE12_COUNT /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_e11_locate.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/san_check_e11_locate.803.1790082097030179260.tmp.exe",
+ "sources": {
+  "check_e11_locate.cpp": "eb2b92afbc2f025173015059aa11333f9612e9ba971f0768d8973b70baa0e725",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "587172d2a6c970b93b7b09da4c229bad285cf86afb29ca0a32cc142124759018",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "switches.hpp": "794ad74da3930bbbc3ddd0f1575c01ca6c91ec84c750fe6b3ce4a07647fd73ca",
+  "model/lits_hpt_adapter.hpp": "97195dd7d185ef9323b89ec826cf7f5014751a4d8116679ce898894920d1f7c7",
+  "vendor/lits_model_safe/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+  "vendor/lits_model_safe/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+  "vendor/lits_model_safe/lits_model.hpp": "b5a1c28251da7e74fd011e6b14a40927481c65ed24c837cc4892f26740af4c18"
+ },
+ "extra_flags": [
+  "-DE12_COUNT"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "08300fc710c2a1cf540d869af3cb3188fa6b21077bb0b70bc1693eb34f601bcb",
+ "status": "OK"
+}

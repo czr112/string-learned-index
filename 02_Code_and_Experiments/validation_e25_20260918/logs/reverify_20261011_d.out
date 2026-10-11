@@ -1,0 +1,61 @@
+### builds
+build rc=0
+### check_combo mixed 131072 ctx16 same
+rc=0
+### check_sround mixed 131072 ctx16 same
+rc=0
+### check_combo mixed 131072 lits same
+rc=0
+### check_sround mixed 131072 lits same
+rc=0
+### check_combo skew 131072 ctx16 same
+rc=0
+### check_sround skew 131072 ctx16 same
+rc=0
+### check_combo skew 131072 lits same
+rc=0
+### check_sround skew 131072 lits same
+rc=0
+### check_combo tranco 131072 ctx16 same
+rc=0
+### check_sround tranco 131072 ctx16 same
+rc=0
+### check_combo tranco 131072 lits same
+rc=0
+### check_sround tranco 131072 lits same
+rc=0
+### check_combo mixed 131072 ctx16 grow
+rc=0
+### check_sround mixed 131072 ctx16 grow
+rc=0
+### check_combo mixed 131072 lits grow
+rc=0
+### check_sround mixed 131072 lits grow
+rc=0
+### check_combo skew 131072 ctx16 grow
+rc=0
+### check_sround skew 131072 ctx16 grow
+rc=0
+### check_combo skew 131072 lits grow
+rc=0
+### check_sround skew 131072 lits grow
+rc=0
+### check_combo tranco 131072 ctx16 grow
+rc=0
+### check_sround tranco 131072 ctx16 grow
+rc=0
+### check_combo tranco 131072 lits grow
+rc=0
+### check_sround tranco 131072 lits grow
+rc=0
+### san_check_combo mixed 8192 ctx16
+rc=0
+### san_check_sround mixed 8192 ctx16
+rc=0
+### san_check_combo mixed 8192 lits
+rc=0
+### san_check_sround mixed 8192 lits
+rc=0
+### check_scan_entry (counter hand-check)
+rc=0
+REVERIFY_DONE

@@ -1,0 +1,314 @@
+{
+  "mixed/context16": [
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 38509542,
+      "load2_ns": 35067518,
+      "prep_ns": 120750,
+      "index_bytes": 39322736,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 37285010,
+      "load2_ns": 33863098,
+      "prep_ns": 127526,
+      "index_bytes": 39322736,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 33125223,
+      "load2_ns": 35523836,
+      "prep_ns": 126492,
+      "index_bytes": 39322736,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 32751845,
+      "load2_ns": 32577280,
+      "prep_ns": 117814,
+      "index_bytes": 39322736,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 34694805,
+      "load2_ns": 34688703,
+      "prep_ns": 130042,
+      "index_bytes": 39322736,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    }
+  ],
+  "mixed/lits": [
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 81756321,
+      "load2_ns": 83467475,
+      "prep_ns": 147357,
+      "index_bytes": 36760625,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 88595271,
+      "load2_ns": 73112131,
+      "prep_ns": 106650,
+      "index_bytes": 36760625,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 84736827,
+      "load2_ns": 75695640,
+      "prep_ns": 127107,
+      "index_bytes": 36760625,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 81047533,
+      "load2_ns": 72742917,
+      "prep_ns": 139143,
+      "index_bytes": 36760625,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 82016886,
+      "load2_ns": 81111320,
+      "prep_ns": 131132,
+      "index_bytes": 36760625,
+      "descriptor_bytes": 511560,
+      "regions": 64
+    }
+  ],
+  "skew/context16": [
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 43124640,
+      "load2_ns": 36719632,
+      "prep_ns": 342579,
+      "index_bytes": 40588521,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 43298446,
+      "load2_ns": 41303145,
+      "prep_ns": 213964,
+      "index_bytes": 40588521,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 38981617,
+      "load2_ns": 40227083,
+      "prep_ns": 221194,
+      "index_bytes": 40588521,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 39832402,
+      "load2_ns": 37588780,
+      "prep_ns": 206023,
+      "index_bytes": 40588521,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 32840027,
+      "load2_ns": 38241283,
+      "prep_ns": 185546,
+      "index_bytes": 40588521,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    }
+  ],
+  "skew/lits": [
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 136369070,
+      "load2_ns": 120228959,
+      "prep_ns": 164352,
+      "index_bytes": 40244288,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 111504526,
+      "load2_ns": 91737881,
+      "prep_ns": 151527,
+      "index_bytes": 40244288,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 93297290,
+      "load2_ns": 83876884,
+      "prep_ns": 150977,
+      "index_bytes": 40244288,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 108168763,
+      "load2_ns": 110599755,
+      "prep_ns": 159781,
+      "index_bytes": 40244288,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 117973970,
+      "load2_ns": 96678192,
+      "prep_ns": 319706,
+      "index_bytes": 40244288,
+      "descriptor_bytes": 485448,
+      "regions": 64
+    }
+  ],
+  "tranco/context16": [
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 65658202,
+      "load2_ns": 75001626,
+      "prep_ns": 225944,
+      "index_bytes": 38588589,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 64465766,
+      "load2_ns": 64411486,
+      "prep_ns": 297903,
+      "index_bytes": 38588589,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 65117613,
+      "load2_ns": 68127412,
+      "prep_ns": 183072,
+      "index_bytes": 38588589,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 69736669,
+      "load2_ns": 68243065,
+      "prep_ns": 418443,
+      "index_bytes": 38588589,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "context16",
+      "load1_ns": 73329939,
+      "load2_ns": 70725562,
+      "prep_ns": 295208,
+      "index_bytes": 38588589,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    }
+  ],
+  "tranco/lits": [
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 75275070,
+      "load2_ns": 76922057,
+      "prep_ns": 184956,
+      "index_bytes": 34906031,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 73363735,
+      "load2_ns": 103820854,
+      "prep_ns": 176292,
+      "index_bytes": 34906031,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 88312803,
+      "load2_ns": 81710249,
+      "prep_ns": 136603,
+      "index_bytes": 34906031,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 92711535,
+      "load2_ns": 87769234,
+      "prep_ns": 284362,
+      "index_bytes": 34906031,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    },
+    {
+      "phase": "build",
+      "backend": "lits",
+      "load1_ns": 82799838,
+      "load2_ns": 61694825,
+      "prep_ns": 181646,
+      "index_bytes": 34906031,
+      "descriptor_bytes": 528384,
+      "regions": 128
+    }
+  ]
+}

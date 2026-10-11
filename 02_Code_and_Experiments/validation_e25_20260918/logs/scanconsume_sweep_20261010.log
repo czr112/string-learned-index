@@ -1,0 +1,3 @@
+### bench_scanconsume ctx16_grow_tranco P1
+FAILED: MODE must be grow or same
+rc=1

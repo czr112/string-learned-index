@@ -1,0 +1,38 @@
+target: check_low_activity (timing build, -O3)
+--- mixed 131072 ---
+  E31 repack passes: 46822 (helped 37783) | low-activity passes: 1
+  branch fired 1 times during the replacement
+{"kind":"mixed","keys":131072,"final_size":131072,"regions":64,"low_activity_passes":1,"checks":1032,"failures":0}
+1032/1032 checks passed
+rc=0
+--- skew 131072 ---
+  E31 repack passes: 71308 (helped 54660) | low-activity passes: 0
+  NOT EXERCISED: the low-activity branch never ran on this workload, so this run says nothing about it
+{"kind":"skew","keys":131072,"final_size":131072,"regions":64,"low_activity_passes":0,"checks":1032,"failures":0}
+1032/1032 checks passed, but the new path was NOT EXERCISED on this corpus
+rc=3
+--- tranco 262144 ---
+  E31 repack passes: 14 (helped 0) | low-activity passes: 0
+  NOT EXERCISED: the low-activity branch never ran on this workload, so this run says nothing about it
+{"kind":"tranco","keys":262144,"final_size":262144,"regions":128,"low_activity_passes":0,"checks":1032,"failures":0}
+1032/1032 checks passed, but the new path was NOT EXERCISED on this corpus
+rc=3
+target: san_check_low_activity (ASan+UBSan, -O1 -g)
+--- san mixed 20000 ---
+  E31 repack passes: 25697 (helped 20676) | low-activity passes: 9
+  branch fired 9 times during the replacement
+{"kind":"mixed","keys":20000,"final_size":20000,"regions":10,"low_activity_passes":9,"checks":1032,"failures":0}
+1032/1032 checks passed
+rc=0
+--- san skew 20000 ---
+  E31 repack passes: 37486 (helped 29624) | low-activity passes: 0
+  NOT EXERCISED: the low-activity branch never ran on this workload, so this run says nothing about it
+{"kind":"skew","keys":20000,"final_size":20000,"regions":10,"low_activity_passes":0,"checks":1032,"failures":0}
+1032/1032 checks passed, but the new path was NOT EXERCISED on this corpus
+rc=3
+--- san tranco 20000 ---
+  E31 repack passes: 10 (helped 0) | low-activity passes: 0
+  NOT EXERCISED: the low-activity branch never ran on this workload, so this run says nothing about it
+{"kind":"tranco","keys":20000,"final_size":20000,"regions":10,"low_activity_passes":0,"checks":1032,"failures":0}
+1032/1032 checks passed, but the new path was NOT EXERCISED on this corpus
+rc=3

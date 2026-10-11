@@ -1,0 +1,152 @@
+{
+  "target": "mixed/context16",
+  "cells": [
+    {
+      "corpus": "mixed",
+      "backend": "context16",
+      "gates": {
+        "heads": false,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "pass": false
+      },
+      "queries_gt4": 3133,
+      "reduction": 0.437539458381791,
+      "resident_ratio": 0.029485944213037466,
+      "head_hist": [
+        3717,
+        2197,
+        724,
+        229,
+        507,
+        710,
+        1916
+      ]
+    },
+    {
+      "corpus": "mixed",
+      "backend": "lits",
+      "gates": {
+        "heads": false,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "pass": false
+      },
+      "queries_gt4": 3822,
+      "reduction": 0.4554974788984726,
+      "resident_ratio": 0.029752160089769965,
+      "head_hist": [
+        5085,
+        857,
+        143,
+        93,
+        476,
+        716,
+        2630
+      ]
+    },
+    {
+      "corpus": "skew",
+      "backend": "context16",
+      "gates": {
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "pass": true
+      },
+      "queries_gt4": 8114,
+      "reduction": 0.457216682677974,
+      "resident_ratio": 0.029441526090590982,
+      "head_hist": [
+        567,
+        522,
+        427,
+        370,
+        1377,
+        2420,
+        4317
+      ]
+    },
+    {
+      "corpus": "skew",
+      "backend": "lits",
+      "gates": {
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "pass": true
+      },
+      "queries_gt4": 7866,
+      "reduction": 0.47346757026803943,
+      "resident_ratio": 0.029492185325778405,
+      "head_hist": [
+        753,
+        535,
+        405,
+        441,
+        1621,
+        2259,
+        3986
+      ]
+    },
+    {
+      "corpus": "tranco",
+      "backend": "context16",
+      "gates": {
+        "heads": false,
+        "lines": false,
+        "space": true,
+        "diff": true,
+        "pass": false
+      },
+      "queries_gt4": 1718,
+      "reduction": 0.23874244920373422,
+      "resident_ratio": 0.030268844502192086,
+      "head_hist": [
+        4112,
+        2242,
+        1197,
+        731,
+        1200,
+        436,
+        82
+      ]
+    },
+    {
+      "corpus": "tranco",
+      "backend": "lits",
+      "gates": {
+        "heads": false,
+        "lines": false,
+        "space": true,
+        "diff": true,
+        "pass": false
+      },
+      "queries_gt4": 1301,
+      "reduction": 0.20697555002567447,
+      "resident_ratio": 0.030425916942547836,
+      "head_hist": [
+        5993,
+        1516,
+        706,
+        484,
+        799,
+        362,
+        140
+      ]
+    }
+  ],
+  "target_pass": false,
+  "target_conditions": {
+    "heads": false,
+    "lines": true,
+    "space": true,
+    "diff": true,
+    "pass": false
+  },
+  "entry_all_diff_clean": true
+}

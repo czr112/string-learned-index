@@ -1,0 +1,32 @@
+{
+ "target": "diag_combo",
+ "build_id": "1791631093768721407",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE25_DIAG /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/bench_combo.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/diag_combo.453.1791631093768715489.tmp.exe",
+ "sources": {
+  "bench_combo.cpp": "48123fb4748e50ab00c2007eb26990ee77a4c29483f58e88dafc7357dc6438f1",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "5513378fbe54394b9a9dbec9625ba0af710ddc40d212781bd5e1996515c333f0",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "switches.hpp": "e75c7fad79a1944af4b1ecc48761b8d8180568aa473d7f0a0f0872ef16d0880f",
+  "model/lits_hpt_adapter.hpp": "97195dd7d185ef9323b89ec826cf7f5014751a4d8116679ce898894920d1f7c7",
+  "third_party/vendor/tlx/tlx/container/btree.hpp": "566bc3f8ba7199f6e926b1225f0b67358a5d4d9deec9f5af0293293188fc1629",
+  "third_party/vendor/tlx/tlx/container/btree_map.hpp": "4c640eaa8bf01f64179c31bfdf36dafe0b870c5e94d4776ab2612582355b74a2",
+  "third_party/vendor/tlx/tlx/die/core.hpp": "5c4e954c19dfb3a581ee187a6a23a12b89a53d40e5f1830753833e5ca303fc68",
+  "vendor/lits_model_safe/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+  "vendor/lits_model_safe/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+  "vendor/lits_model_safe/lits_model.hpp": "b5a1c28251da7e74fd011e6b14a40927481c65ed24c837cc4892f26740af4c18"
+ },
+ "extra_flags": [
+  "-DE25_DIAG"
+ ],
+ "c_objects": [],
+ "returncode": 1,
+ "stderr_tail": "In file included from /usr/include/c++/13/algorithm:61,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/index.hpp:3,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/selected.hpp:2,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/data.hpp:2,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/bench_combo.cpp:42:\n/usr/include/c++/13/bits/stl_algo.h: In instantiation of ‘bool std::binary_search(_FIter, _FIter, const _Tp&, _Compare) [with _FIter = __gnu_cxx::__normal_iterator<pair<__cxx11::basic_string<char>, long unsigned int>*, vector<pair<__cxx11::basic_string<char>, long unsigned int> > >; _Tp = __cxx11::basic_string<char>; _Compare = main(int, char**)::<lambda(string)>::<lambda(const string&)>::<lambda(const validation::Pair&, const string&)>]’:\n/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/bench_combo.cpp:713:50:   required from here\n/usr/include/c++/13/bits/stl_algo.h:2285:43: error: no match for call to ‘(main(int, char**)::<lambda(std::string)>::<lambda(const std::string&)>::<lambda(const validation::Pair&, const std::string&)>) (const std::__cxx11::basic_string<char>&, std::pair<std::__cxx11::basic_string<char>, long unsigned int>&)’\n 2285 |       return __i != __last && !bool(__comp(__val, *__i));\n      |                                     ~~~~~~^~~~~~~~~~~~~\n/usr/include/c++/13/bits/stl_algo.h:2285:43: note: candidate: ‘bool (*)(const validation::Pair&, const std::string&)’ {aka ‘bool (*)(const std::pair<std::__cxx11::basic_string<char>, long unsigned int>&, const std::__cxx11::basic_string<char>&)’} (conversion)\n/usr/include/c++/13/bits/stl_algo.h:2285:43: note:   candidate expects 3 arguments, 3 provided\n/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/bench_combo.cpp:714:51: note: candidate: ‘main(int, char**)::<lambda(std::string)>::<lambda(const std::string&)>::<lambda(const validation::Pair&, const std::string&)>’\n  714 |                                                   [](const Pair& x, const std::string& y) {\n      |                                                   ^\n/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/bench_combo.cpp:714:51: note:   no known conversion for argument 1 from ‘const std::__cxx11::basic_string<char>’ to ‘const validation::Pair&’ {aka ‘const std::pair<std::__cxx11::basic_string<char>, long unsigned int>&’}\n",
+ "status": "COMPILE_FAILED",
+ "exe_sha256": null
+}

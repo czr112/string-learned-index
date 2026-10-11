@@ -1,0 +1,8 @@
+{
+  "schema": "static-uniform-point/v1",
+  "seed": 42,
+  "operations": 10000,
+  "miss_ratio": "0.1",
+  "repeats": 15,
+  "latency_samples": 1000
+}

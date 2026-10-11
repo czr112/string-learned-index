@@ -1,0 +1,479 @@
+G5 external baseline   S0 / WIDE / ART / BTREE   run_id=i10bt
+ratios within one repetition; per-process medians; direction counted over processes
+BTREE = tlx::btree_map<std::string, std::uint64_t> (BSL-1.0, pinned by hash)
+============================================================================================================
+
+### cum_ms  -- maintenance + operations, cumulative
+
+  mixed / same
+    at  25%  WIDE/S0                  0.796  (5/5 below)  range 0.760-0.844  noise 1.111
+               S0/BTREE                 0.990  (3/5 below)  range 0.974-1.093  noise 1.122
+               WIDE/BTREE               0.806  (5/5 below)  range 0.781-0.848  noise 1.085
+               S0/ART                   3.235  (0/5 below)  range 3.135-3.293  noise 1.050
+               WIDE/ART                 2.538  (0/5 below)  range 2.421-2.659  noise 1.099
+               BTREE/ART                3.136  (0/5 below)  range 2.992-3.252  noise 1.087
+    at  50%  WIDE/S0                  0.406  (5/5 below)  range 0.396-0.434  noise 1.094
+               S0/BTREE                 2.042  (0/5 below)  range 1.959-2.136  noise 1.090
+               WIDE/BTREE               0.841  (5/5 below)  range 0.800-0.868  noise 1.085
+               S0/ART                   6.141  (0/5 below)  range 5.944-6.561  noise 1.104
+               WIDE/ART                 2.546  (0/5 below)  range 2.355-2.633  noise 1.118
+               BTREE/ART                3.042  (0/5 below)  range 2.863-3.099  noise 1.082
+    at 100%  WIDE/S0                  0.353  (5/5 below)  range 0.326-0.363  noise 1.113
+               S0/BTREE                 3.333  (0/5 below)  range 3.134-3.350  noise 1.069
+               WIDE/BTREE               1.159  (0/5 below)  range 1.125-1.183  noise 1.051
+               S0/ART                   4.413  (0/5 below)  range 4.224-4.660  noise 1.103
+               WIDE/ART                 1.556  (0/5 below)  range 1.519-1.570  noise 1.034
+               BTREE/ART                1.328  (0/5 below)  range 1.300-1.376  noise 1.058
+    at 200%  WIDE/S0                  0.449  (5/5 below)  range 0.422-0.455  noise 1.079
+               S0/BTREE                 2.655  (0/5 below)  range 2.581-2.685  noise 1.041
+               WIDE/BTREE               1.180  (0/5 below)  range 1.115-1.207  noise 1.082
+               S0/ART                   3.488  (0/5 below)  range 3.352-3.670  noise 1.095
+               WIDE/ART                 1.552  (0/5 below)  range 1.512-1.570  noise 1.038
+               BTREE/ART                1.339  (0/5 below)  range 1.264-1.355  noise 1.072
+             absolute S0     at 200%: 336.243
+             absolute WIDE   at 200%: 150.104
+             absolute ART    at 200%: 96.5704
+             absolute BTREE  at 200%: 127.423
+  mixed / grow
+    at  25%  WIDE/S0                  0.952  (5/5 below)  range 0.928-0.971  noise 1.046
+               S0/BTREE                 0.907  (5/5 below)  range 0.882-0.973  noise 1.103
+               WIDE/BTREE               0.900  (5/5 below)  range 0.853-0.944  noise 1.107
+               S0/ART                   3.132  (0/5 below)  range 3.031-3.325  noise 1.097
+               WIDE/ART                 2.967  (0/5 below)  range 2.929-3.153  noise 1.076
+               BTREE/ART                3.358  (0/5 below)  range 3.236-3.718  noise 1.149
+    at  50%  WIDE/S0                  0.982  (3/5 below)  range 0.969-1.051  noise 1.084
+               S0/BTREE                 0.866  (5/5 below)  range 0.837-0.899  noise 1.075
+               WIDE/BTREE               0.833  (5/5 below)  range 0.826-0.926  noise 1.120
+               S0/ART                   2.789  (0/5 below)  range 2.686-2.833  noise 1.055
+               WIDE/ART                 2.734  (0/5 below)  range 2.578-3.015  noise 1.169
+               BTREE/ART                3.212  (0/5 below)  range 3.127-3.280  noise 1.049
+    at 100%  WIDE/S0                  0.745  (5/5 below)  range 0.712-0.777  noise 1.092
+               S0/BTREE                 1.409  (0/5 below)  range 1.353-1.450  noise 1.072
+               WIDE/BTREE               1.053  (0/5 below)  range 1.011-1.090  noise 1.078
+               S0/ART                   2.244  (0/5 below)  range 2.170-2.301  noise 1.061
+               WIDE/ART                 1.673  (0/5 below)  range 1.633-1.740  noise 1.066
+               BTREE/ART                1.590  (0/5 below)  range 1.562-1.660  noise 1.063
+    at 200%  WIDE/S0                  0.720  (5/5 below)  range 0.699-0.736  noise 1.053
+               S0/BTREE                 1.492  (0/5 below)  range 1.406-1.535  noise 1.092
+               WIDE/BTREE               1.066  (0/5 below)  range 1.054-1.078  noise 1.023
+               S0/ART                   2.385  (0/5 below)  range 2.348-2.405  noise 1.024
+               WIDE/ART                 1.684  (0/5 below)  range 1.639-1.710  noise 1.044
+               BTREE/ART                1.534  (0/5 below)  range 1.524-1.612  noise 1.058
+             absolute S0     at 200%: 226.109
+             absolute WIDE   at 200%: 160.47
+             absolute ART    at 200%: 95.4736
+             absolute BTREE  at 200%: 148.658
+  skew / same
+    at  25%  WIDE/S0                  0.100  (5/5 below)  range 0.093-0.108  noise 1.163
+               S0/BTREE                16.423  (0/5 below)  range 15.107-16.978  noise 1.124
+               WIDE/BTREE               1.581  (0/5 below)  range 1.464-1.736  noise 1.186
+               S0/ART                   9.075  (0/5 below)  range 8.796-9.582  noise 1.089
+               WIDE/ART                 0.928  (5/5 below)  range 0.893-0.998  noise 1.117
+               BTREE/ART                0.586  (5/5 below)  range 0.564-0.591  noise 1.050
+    at  50%  WIDE/S0                  0.148  (5/5 below)  range 0.139-0.163  noise 1.176
+               S0/BTREE                10.981  (0/5 below)  range 10.576-11.757  noise 1.112
+               WIDE/BTREE               1.600  (0/5 below)  range 1.547-1.705  noise 1.103
+               S0/ART                   6.847  (0/5 below)  range 6.471-7.003  noise 1.082
+               WIDE/ART                 1.027  (1/5 below)  range 0.974-1.064  noise 1.092
+               BTREE/ART                0.636  (5/5 below)  range 0.609-0.645  noise 1.058
+    at 100%  WIDE/S0                  0.186  (5/5 below)  range 0.184-0.199  noise 1.081
+               S0/BTREE                 8.632  (0/5 below)  range 8.450-8.895  noise 1.053
+               WIDE/BTREE               1.638  (0/5 below)  range 1.574-1.725  noise 1.096
+               S0/ART                   6.014  (0/5 below)  range 5.949-6.254  noise 1.051
+               WIDE/ART                 1.187  (0/5 below)  range 1.142-1.265  noise 1.108
+               BTREE/ART                0.726  (5/5 below)  range 0.694-0.740  noise 1.067
+    at 200%  WIDE/S0                  0.291  (5/5 below)  range 0.284-0.311  noise 1.094
+               S0/BTREE                 5.637  (0/5 below)  range 5.510-5.931  noise 1.076
+               WIDE/BTREE               1.685  (0/5 below)  range 1.563-1.730  noise 1.107
+               S0/ART                   3.972  (0/5 below)  range 3.723-4.110  noise 1.104
+               WIDE/ART                 1.152  (0/5 below)  range 1.132-1.193  noise 1.054
+               BTREE/ART                0.694  (5/5 below)  range 0.665-0.722  noise 1.085
+             absolute S0     at 200%: 833.041
+             absolute WIDE   at 200%: 247.813
+             absolute ART    at 200%: 215.462
+             absolute BTREE  at 200%: 146.83
+  skew / grow
+    at  25%  WIDE/S0                  0.243  (5/5 below)  range 0.235-0.257  noise 1.090
+               S0/BTREE                 5.392  (0/5 below)  range 4.454-5.802  noise 1.303
+               WIDE/BTREE               1.344  (0/5 below)  range 1.242-1.447  noise 1.165
+               S0/ART                   4.086  (0/5 below)  range 3.852-4.362  noise 1.132
+               WIDE/ART                 0.996  (4/5 below)  range 0.953-1.019  noise 1.069
+               BTREE/ART                0.762  (5/5 below)  range 0.730-0.818  noise 1.120
+    at  50%  WIDE/S0                  0.334  (5/5 below)  range 0.326-0.370  noise 1.136
+               S0/BTREE                 3.590  (0/5 below)  range 3.291-3.812  noise 1.158
+               WIDE/BTREE               1.212  (0/5 below)  range 1.181-1.265  noise 1.072
+               S0/ART                   3.283  (0/5 below)  range 3.007-3.390  noise 1.128
+               WIDE/ART                 1.075  (0/5 below)  range 1.030-1.094  noise 1.063
+               BTREE/ART                0.894  (5/5 below)  range 0.858-0.955  noise 1.113
+    at 100%  WIDE/S0                  0.444  (5/5 below)  range 0.433-0.486  noise 1.122
+               S0/BTREE                 2.245  (0/5 below)  range 1.975-2.454  noise 1.243
+               WIDE/BTREE               0.998  (3/5 below)  range 0.877-1.074  noise 1.225
+               S0/ART                   2.883  (0/5 below)  range 2.675-2.961  noise 1.107
+               WIDE/ART                 1.239  (0/5 below)  range 1.215-1.278  noise 1.052
+               BTREE/ART                1.209  (0/5 below)  range 1.157-1.401  noise 1.212
+    at 200%  WIDE/S0                  0.539  (5/5 below)  range 0.530-0.575  noise 1.085
+               S0/BTREE                 2.018  (0/5 below)  range 1.857-2.132  noise 1.148
+               WIDE/BTREE               1.073  (0/5 below)  range 1.011-1.162  noise 1.149
+               S0/ART                   2.319  (0/5 below)  range 2.227-2.389  noise 1.073
+               WIDE/ART                 1.242  (0/5 below)  range 1.204-1.308  noise 1.087
+               BTREE/ART                1.169  (0/5 below)  range 1.127-1.214  noise 1.077
+             absolute S0     at 200%: 454.008
+             absolute WIDE   at 200%: 246.58
+             absolute ART    at 200%: 197.13
+             absolute BTREE  at 200%: 232.485
+  tranco / same
+    at  25%  WIDE/S0                  0.324  (5/5 below)  range 0.310-0.347  noise 1.120
+               S0/BTREE                 3.341  (0/5 below)  range 3.125-3.495  noise 1.118
+               WIDE/BTREE               1.097  (0/5 below)  range 1.052-1.181  noise 1.122
+               S0/ART                  10.089  (0/5 below)  range 9.265-10.233  noise 1.104
+               WIDE/ART                 3.244  (0/5 below)  range 3.146-3.484  noise 1.108
+               BTREE/ART                2.949  (0/5 below)  range 2.866-3.013  noise 1.052
+    at  50%  WIDE/S0                  0.351  (5/5 below)  range 0.332-0.370  noise 1.113
+               S0/BTREE                 3.173  (0/5 below)  range 3.103-3.201  noise 1.032
+               WIDE/BTREE               1.113  (0/5 below)  range 1.092-1.162  noise 1.064
+               S0/ART                   9.232  (0/5 below)  range 8.955-9.370  noise 1.046
+               WIDE/ART                 3.231  (0/5 below)  range 3.125-3.473  noise 1.111
+               BTREE/ART                2.887  (0/5 below)  range 2.814-2.901  noise 1.031
+    at 100%  WIDE/S0                  0.322  (5/5 below)  range 0.298-0.360  noise 1.207
+               S0/BTREE                 3.531  (0/5 below)  range 3.326-3.729  noise 1.121
+               WIDE/BTREE               1.116  (0/5 below)  range 1.076-1.213  noise 1.127
+               S0/ART                  10.034  (0/5 below)  range 9.450-10.096  noise 1.068
+               WIDE/ART                 3.164  (0/5 below)  range 3.064-3.412  noise 1.114
+               BTREE/ART                2.846  (0/5 below)  range 2.753-2.871  noise 1.043
+    at 200%  WIDE/S0                  0.396  (5/5 below)  range 0.359-0.441  noise 1.228
+               S0/BTREE                 2.991  (0/5 below)  range 2.720-3.069  noise 1.128
+               WIDE/BTREE               1.179  (0/5 below)  range 1.098-1.217  noise 1.109
+               S0/ART                   8.058  (0/5 below)  range 7.695-8.231  noise 1.070
+               WIDE/ART                 3.217  (0/5 below)  range 2.988-3.374  noise 1.129
+               BTREE/ART                2.716  (0/5 below)  range 2.624-2.850  noise 1.086
+             absolute S0     at 200%: 848.934
+             absolute WIDE   at 200%: 337.469
+             absolute ART    at 200%: 107.882
+             absolute BTREE  at 200%: 297.374
+  tranco / grow
+    at  25%  WIDE/S0                  0.675  (5/5 below)  range 0.671-0.730  noise 1.088
+               S0/BTREE                 1.791  (0/5 below)  range 1.695-1.836  noise 1.083
+               WIDE/BTREE               1.221  (0/5 below)  range 1.206-1.263  noise 1.047
+               S0/ART                   5.293  (0/5 below)  range 5.213-5.488  noise 1.053
+               WIDE/ART                 3.724  (0/5 below)  range 3.651-3.861  noise 1.058
+               BTREE/ART                3.023  (0/5 below)  range 2.944-3.178  noise 1.080
+    at  50%  WIDE/S0                  0.669  (5/5 below)  range 0.653-0.700  noise 1.071
+               S0/BTREE                 1.808  (0/5 below)  range 1.730-1.831  noise 1.058
+               WIDE/BTREE               1.200  (0/5 below)  range 1.187-1.259  noise 1.061
+               S0/ART                   5.050  (0/5 below)  range 4.910-5.202  noise 1.060
+               WIDE/ART                 3.400  (0/5 below)  range 3.184-3.556  noise 1.117
+               BTREE/ART                2.783  (0/5 below)  range 2.650-2.941  noise 1.110
+    at 100%  WIDE/S0                  0.620  (5/5 below)  range 0.602-0.652  noise 1.084
+               S0/BTREE                 1.936  (0/5 below)  range 1.880-1.967  noise 1.046
+               WIDE/BTREE               1.207  (0/5 below)  range 1.180-1.226  noise 1.039
+               S0/ART                   5.246  (0/5 below)  range 5.100-5.411  noise 1.061
+               WIDE/ART                 3.224  (0/5 below)  range 3.147-3.492  noise 1.110
+               BTREE/ART                2.692  (0/5 below)  range 2.635-2.850  noise 1.081
+    at 200%  WIDE/S0                  0.738  (5/5 below)  range 0.720-0.763  noise 1.060
+               S0/BTREE                 1.678  (0/5 below)  range 1.626-1.766  noise 1.086
+               WIDE/BTREE               1.260  (0/5 below)  range 1.211-1.286  noise 1.062
+               S0/ART                   4.247  (0/5 below)  range 4.099-4.469  noise 1.090
+               WIDE/ART                 3.167  (0/5 below)  range 3.107-3.266  noise 1.051
+               BTREE/ART                2.540  (0/5 below)  range 2.454-2.650  noise 1.080
+             absolute S0     at 200%: 530.637
+             absolute WIDE   at 200%: 387.802
+             absolute ART    at 200%: 121.498
+             absolute BTREE  at 200%: 313.714
+
+### query_ms  -- fixed query sequence
+
+  mixed / same
+    at  25%  WIDE/S0                  0.793  (4/5 below)  range 0.735-1.094  noise 1.488
+               S0/BTREE                 0.611  (5/5 below)  range 0.514-0.731  noise 1.422
+               WIDE/BTREE               0.523  (5/5 below)  range 0.429-0.581  noise 1.356
+               S0/ART                   1.698  (0/5 below)  range 1.222-1.717  noise 1.405
+               WIDE/ART                 1.331  (0/5 below)  range 1.217-1.546  noise 1.270
+               BTREE/ART                2.466  (0/5 below)  range 2.366-2.924  noise 1.236
+    at  50%  WIDE/S0                  0.786  (5/5 below)  range 0.701-0.880  noise 1.256
+               S0/BTREE                 0.576  (5/5 below)  range 0.536-0.599  noise 1.119
+               WIDE/BTREE               0.422  (5/5 below)  range 0.416-0.489  noise 1.177
+               S0/ART                   1.584  (0/5 below)  range 1.364-1.642  noise 1.204
+               WIDE/ART                 1.270  (0/5 below)  range 1.110-1.323  noise 1.192
+               BTREE/ART                2.724  (0/5 below)  range 2.467-2.812  noise 1.140
+    at 100%  WIDE/S0                  0.616  (5/5 below)  range 0.506-0.650  noise 1.284
+               S0/BTREE                 0.718  (5/5 below)  range 0.664-0.743  noise 1.118
+               WIDE/BTREE               0.416  (5/5 below)  range 0.361-0.467  noise 1.294
+               S0/ART                   1.650  (0/5 below)  range 1.623-2.058  noise 1.268
+               WIDE/ART                 1.068  (1/5 below)  range 0.932-1.163  noise 1.248
+               BTREE/ART                2.440  (0/5 below)  range 2.253-2.752  noise 1.222
+    at 200%  WIDE/S0                  0.560  (5/5 below)  range 0.551-0.615  noise 1.116
+               S0/BTREE                 0.796  (5/5 below)  range 0.767-0.886  noise 1.156
+               WIDE/BTREE               0.477  (5/5 below)  range 0.356-0.482  noise 1.354
+               S0/ART                   1.790  (0/5 below)  range 1.558-2.002  noise 1.285
+               WIDE/ART                 0.996  (3/5 below)  range 0.862-1.124  noise 1.304
+               BTREE/ART                2.311  (0/5 below)  range 2.039-2.579  noise 1.265
+             absolute S0     at 200%: 11.1857
+             absolute WIDE   at 200%: 6.49379
+             absolute ART    at 200%: 6.44974
+             absolute BTREE  at 200%: 13.3458
+  mixed / grow
+    at  25%  WIDE/S0                  0.878  (4/5 below)  range 0.820-1.000  noise 1.220
+               S0/BTREE                 0.596  (5/5 below)  range 0.546-0.630  noise 1.153
+               WIDE/BTREE               0.530  (5/5 below)  range 0.473-0.553  noise 1.169
+               S0/ART                   1.591  (0/5 below)  range 1.382-1.730  noise 1.252
+               WIDE/ART                 1.396  (0/5 below)  range 1.236-1.512  noise 1.223
+               BTREE/ART                2.760  (0/5 below)  range 2.367-3.008  noise 1.270
+    at  50%  WIDE/S0                  0.781  (5/5 below)  range 0.748-0.807  noise 1.079
+               S0/BTREE                 0.548  (5/5 below)  range 0.536-0.579  noise 1.080
+               WIDE/BTREE               0.415  (5/5 below)  range 0.402-0.430  noise 1.069
+               S0/ART                   1.543  (0/5 below)  range 1.450-1.599  noise 1.103
+               WIDE/ART                 1.185  (0/5 below)  range 1.152-1.225  noise 1.063
+               BTREE/ART                2.804  (0/5 below)  range 2.718-2.916  noise 1.073
+    at 100%  WIDE/S0                  0.546  (5/5 below)  range 0.502-0.601  noise 1.199
+               S0/BTREE                 0.697  (5/5 below)  range 0.628-0.812  noise 1.293
+               WIDE/BTREE               0.386  (5/5 below)  range 0.319-0.414  noise 1.298
+               S0/ART                   1.835  (0/5 below)  range 1.538-1.912  noise 1.243
+               WIDE/ART                 0.947  (4/5 below)  range 0.834-1.107  noise 1.328
+               BTREE/ART                2.479  (0/5 below)  range 2.409-2.727  noise 1.132
+    at 200%  WIDE/S0                  0.549  (5/5 below)  range 0.515-0.656  noise 1.272
+               S0/BTREE                 0.716  (5/5 below)  range 0.639-0.735  noise 1.150
+               WIDE/BTREE               0.403  (5/5 below)  range 0.369-0.425  noise 1.152
+               S0/ART                   1.932  (0/5 below)  range 1.775-2.230  noise 1.256
+               WIDE/ART                 1.110  (1/5 below)  range 0.978-1.278  noise 1.307
+               BTREE/ART                2.876  (0/5 below)  range 2.595-3.028  noise 1.167
+             absolute S0     at 200%: 10.681
+             absolute WIDE   at 200%: 5.96464
+             absolute ART    at 200%: 5.44003
+             absolute BTREE  at 200%: 14.8635
+  skew / same
+    at  25%  WIDE/S0                  0.868  (5/5 below)  range 0.797-0.942  noise 1.183
+               S0/BTREE                 0.709  (5/5 below)  range 0.654-0.738  noise 1.128
+               WIDE/BTREE               0.591  (5/5 below)  range 0.542-0.647  noise 1.194
+               S0/ART                   1.038  (0/5 below)  range 1.009-1.120  noise 1.111
+               WIDE/ART                 0.907  (4/5 below)  range 0.841-1.028  noise 1.223
+               BTREE/ART                1.619  (0/5 below)  range 1.354-1.653  noise 1.221
+    at  50%  WIDE/S0                  0.789  (5/5 below)  range 0.746-0.851  noise 1.140
+               S0/BTREE                 0.756  (5/5 below)  range 0.661-0.818  noise 1.237
+               WIDE/BTREE               0.601  (5/5 below)  range 0.542-0.635  noise 1.173
+               S0/ART                   1.116  (0/5 below)  range 1.026-1.224  noise 1.193
+               WIDE/ART                 0.896  (5/5 below)  range 0.765-0.968  noise 1.265
+               BTREE/ART                1.562  (0/5 below)  range 1.252-1.685  noise 1.345
+    at 100%  WIDE/S0                  0.633  (5/5 below)  range 0.536-0.671  noise 1.253
+               S0/BTREE                 0.990  (5/5 below)  range 0.837-0.991  noise 1.184
+               WIDE/BTREE               0.548  (5/5 below)  range 0.500-0.631  noise 1.262
+               S0/ART                   1.453  (0/5 below)  range 1.281-1.554  noise 1.214
+               WIDE/ART                 0.884  (5/5 below)  range 0.745-0.983  noise 1.319
+               BTREE/ART                1.564  (0/5 below)  range 1.485-1.740  noise 1.172
+    at 200%  WIDE/S0                  0.564  (5/5 below)  range 0.549-0.576  noise 1.050
+               S0/BTREE                 0.904  (4/5 below)  range 0.856-1.051  noise 1.228
+               WIDE/BTREE               0.513  (5/5 below)  range 0.482-0.661  noise 1.373
+               S0/ART                   1.436  (0/5 below)  range 1.389-1.603  noise 1.154
+               WIDE/ART                 0.834  (5/5 below)  range 0.787-0.962  noise 1.223
+               BTREE/ART                1.579  (0/5 below)  range 1.455-1.759  noise 1.209
+             absolute S0     at 200%: 14.4364
+             absolute WIDE   at 200%: 7.91532
+             absolute ART    at 200%: 9.48005
+             absolute BTREE  at 200%: 15.1941
+  skew / grow
+    at  25%  WIDE/S0                  0.927  (4/5 below)  range 0.858-1.003  noise 1.169
+               S0/BTREE                 0.684  (5/5 below)  range 0.587-0.731  noise 1.245
+               WIDE/BTREE               0.617  (5/5 below)  range 0.583-0.654  noise 1.122
+               S0/ART                   1.030  (1/5 below)  range 0.993-1.197  noise 1.206
+               WIDE/ART                 0.972  (3/5 below)  range 0.887-1.166  noise 1.315
+               BTREE/ART                1.638  (0/5 below)  range 1.538-1.788  noise 1.163
+    at  50%  WIDE/S0                  0.752  (5/5 below)  range 0.738-0.785  noise 1.065
+               S0/BTREE                 0.735  (5/5 below)  range 0.644-0.835  noise 1.297
+               WIDE/BTREE               0.551  (5/5 below)  range 0.528-0.609  noise 1.155
+               S0/ART                   1.207  (0/5 below)  range 1.161-1.450  noise 1.249
+               WIDE/ART                 0.932  (3/5 below)  range 0.868-1.126  noise 1.297
+               BTREE/ART                1.704  (0/5 below)  range 1.614-1.821  noise 1.128
+    at 100%  WIDE/S0                  0.564  (5/5 below)  range 0.548-0.592  noise 1.080
+               S0/BTREE                 0.862  (5/5 below)  range 0.786-0.896  noise 1.140
+               WIDE/BTREE               0.483  (5/5 below)  range 0.430-0.486  noise 1.130
+               S0/ART                   1.710  (0/5 below)  range 1.465-1.859  noise 1.269
+               WIDE/ART                 0.981  (3/5 below)  range 0.822-1.097  noise 1.336
+               BTREE/ART                1.936  (0/5 below)  range 1.709-2.197  noise 1.286
+    at 200%  WIDE/S0                  0.568  (5/5 below)  range 0.519-0.597  noise 1.151
+               S0/BTREE                 0.891  (5/5 below)  range 0.807-0.905  noise 1.122
+               WIDE/BTREE               0.471  (5/5 below)  range 0.438-0.505  noise 1.153
+               S0/ART                   1.856  (0/5 below)  range 1.477-2.073  noise 1.403
+               WIDE/ART                 0.968  (3/5 below)  range 0.848-1.119  noise 1.320
+               BTREE/ART                2.156  (0/5 below)  range 1.768-2.295  noise 1.298
+             absolute S0     at 200%: 14.42
+             absolute WIDE   at 200%: 7.74698
+             absolute ART    at 200%: 7.61956
+             absolute BTREE  at 200%: 16.3605
+  tranco / same
+    at  25%  WIDE/S0                  0.838  (5/5 below)  range 0.796-0.858  noise 1.078
+               S0/BTREE                 0.656  (5/5 below)  range 0.585-0.691  noise 1.181
+               WIDE/BTREE               0.531  (5/5 below)  range 0.484-0.603  noise 1.245
+               S0/ART                   2.327  (0/5 below)  range 2.046-2.454  noise 1.200
+               WIDE/ART                 1.895  (0/5 below)  range 1.765-2.109  noise 1.195
+               BTREE/ART                3.583  (0/5 below)  range 3.367-3.892  noise 1.156
+    at  50%  WIDE/S0                  0.909  (4/5 below)  range 0.719-1.078  noise 1.499
+               S0/BTREE                 0.625  (5/5 below)  range 0.555-0.685  noise 1.234
+               WIDE/BTREE               0.539  (5/5 below)  range 0.488-0.586  noise 1.202
+               S0/ART                   2.174  (0/5 below)  range 1.677-2.299  noise 1.371
+               WIDE/ART                 1.932  (0/5 below)  range 1.749-2.153  noise 1.231
+               BTREE/ART                3.534  (0/5 below)  range 3.285-3.666  noise 1.116
+    at 100%  WIDE/S0                  0.795  (5/5 below)  range 0.676-0.828  noise 1.225
+               S0/BTREE                 0.591  (5/5 below)  range 0.540-0.603  noise 1.116
+               WIDE/BTREE               0.423  (5/5 below)  range 0.370-0.488  noise 1.318
+               S0/ART                   2.058  (0/5 below)  range 1.787-2.305  noise 1.290
+               WIDE/ART                 1.499  (0/5 below)  range 1.463-1.627  noise 1.112
+               BTREE/ART                3.631  (0/5 below)  range 3.139-3.880  noise 1.236
+    at 200%  WIDE/S0                  0.679  (5/5 below)  range 0.583-0.733  noise 1.256
+               S0/BTREE                 0.610  (5/5 below)  range 0.507-0.667  noise 1.317
+               WIDE/BTREE               0.402  (5/5 below)  range 0.387-0.454  noise 1.173
+               S0/ART                   1.921  (0/5 below)  range 1.449-2.142  noise 1.478
+               WIDE/ART                 1.214  (0/5 below)  range 1.067-1.476  noise 1.383
+               BTREE/ART                3.164  (0/5 below)  range 2.719-3.311  noise 1.218
+             absolute S0     at 200%: 9.44402
+             absolute WIDE   at 200%: 6.30555
+             absolute ART    at 200%: 4.87043
+             absolute BTREE  at 200%: 14.6676
+  tranco / grow
+    at  25%  WIDE/S0                  0.941  (4/5 below)  range 0.910-1.008  noise 1.108
+               S0/BTREE                 0.698  (5/5 below)  range 0.612-0.755  noise 1.234
+               WIDE/BTREE               0.627  (5/5 below)  range 0.557-0.756  noise 1.358
+               S0/ART                   2.396  (0/5 below)  range 2.245-2.499  noise 1.113
+               WIDE/ART                 2.293  (0/5 below)  range 2.099-2.401  noise 1.144
+               BTREE/ART                3.524  (0/5 below)  range 3.087-3.876  noise 1.256
+    at  50%  WIDE/S0                  0.923  (4/5 below)  range 0.805-1.012  noise 1.258
+               S0/BTREE                 0.613  (5/5 below)  range 0.575-0.636  noise 1.105
+               WIDE/BTREE               0.535  (5/5 below)  range 0.496-0.614  noise 1.239
+               S0/ART                   2.244  (0/5 below)  range 2.069-2.590  noise 1.252
+               WIDE/ART                 2.029  (0/5 below)  range 1.971-2.294  noise 1.164
+               BTREE/ART                4.000  (0/5 below)  range 3.605-4.120  noise 1.143
+    at 100%  WIDE/S0                  0.753  (5/5 below)  range 0.726-0.777  noise 1.070
+               S0/BTREE                 0.637  (5/5 below)  range 0.591-0.690  noise 1.168
+               WIDE/BTREE               0.510  (5/5 below)  range 0.489-0.608  noise 1.243
+               S0/ART                   2.698  (0/5 below)  range 2.503-3.177  noise 1.269
+               WIDE/ART                 2.053  (0/5 below)  range 1.858-2.416  noise 1.301
+               BTREE/ART                4.118  (0/5 below)  range 3.860-4.545  noise 1.177
+    at 200%  WIDE/S0                  0.751  (5/5 below)  range 0.562-0.801  noise 1.424
+               S0/BTREE                 0.684  (5/5 below)  range 0.673-0.841  noise 1.249
+               WIDE/BTREE               0.506  (5/5 below)  range 0.480-0.546  noise 1.136
+               S0/ART                   2.913  (0/5 below)  range 2.742-3.904  noise 1.424
+               WIDE/ART                 2.181  (0/5 below)  range 2.010-2.284  noise 1.136
+               BTREE/ART                4.095  (0/5 below)  range 4.077-4.788  noise 1.174
+             absolute S0     at 200%: 10.1713
+             absolute WIDE   at 200%: 7.86967
+             absolute ART    at 200%: 3.48556
+             absolute BTREE  at 200%: 14.8591
+
+### scan_ms  -- fixed scan sequence (ART not measured -- see the header)
+
+  mixed / same
+    at  25%  WIDE/S0                  0.974  (4/5 below)  range 0.835-1.032  noise 1.235
+               S0/BTREE                 1.390  (0/5 below)  range 1.320-1.528  noise 1.158
+               WIDE/BTREE               1.340  (0/5 below)  range 1.128-1.408  noise 1.248
+    at  50%  WIDE/S0                  0.960  (3/5 below)  range 0.934-1.029  noise 1.102
+               S0/BTREE                 1.404  (0/5 below)  range 1.286-1.442  noise 1.122
+               WIDE/BTREE               1.295  (0/5 below)  range 1.237-1.480  noise 1.196
+    at 100%  WIDE/S0                  0.984  (3/5 below)  range 0.932-1.062  noise 1.139
+               S0/BTREE                 1.513  (0/5 below)  range 1.427-1.629  noise 1.141
+               WIDE/BTREE               1.530  (0/5 below)  range 1.487-1.558  noise 1.048
+    at 200%  WIDE/S0                  0.935  (4/5 below)  range 0.828-1.020  noise 1.232
+               S0/BTREE                 1.569  (0/5 below)  range 1.343-1.639  noise 1.221
+               WIDE/BTREE               1.499  (1/5 below)  range 0.972-1.504  noise 1.547
+             absolute S0     at 200%: 0.710006
+             absolute WIDE   at 200%: 0.667776
+             absolute ART    at 200%: 0
+             absolute BTREE  at 200%: 0.456987
+  mixed / grow
+    at  25%  WIDE/S0                  0.951  (3/5 below)  range 0.939-1.070  noise 1.140
+               S0/BTREE                 1.406  (0/5 below)  range 1.294-1.438  noise 1.111
+               WIDE/BTREE               1.359  (0/5 below)  range 1.328-1.432  noise 1.078
+    at  50%  WIDE/S0                  0.870  (5/5 below)  range 0.818-0.978  noise 1.196
+               S0/BTREE                 1.458  (0/5 below)  range 1.393-1.550  noise 1.112
+               WIDE/BTREE               1.296  (0/5 below)  range 1.268-1.343  noise 1.059
+    at 100%  WIDE/S0                  0.902  (5/5 below)  range 0.873-0.970  noise 1.111
+               S0/BTREE                 1.455  (0/5 below)  range 1.425-1.550  noise 1.087
+               WIDE/BTREE               1.358  (0/5 below)  range 1.285-1.430  noise 1.113
+    at 200%  WIDE/S0                  0.894  (4/5 below)  range 0.863-1.243  noise 1.441
+               S0/BTREE                 1.556  (0/5 below)  range 1.440-1.734  noise 1.204
+               WIDE/BTREE               1.425  (0/5 below)  range 1.308-1.500  noise 1.146
+             absolute S0     at 200%: 0.747765
+             absolute WIDE   at 200%: 0.694532
+             absolute ART    at 200%: 0
+             absolute BTREE  at 200%: 0.482917
+  skew / same
+    at  25%  WIDE/S0                  1.007  (2/5 below)  range 0.938-1.173  noise 1.251
+               S0/BTREE                 1.247  (0/5 below)  range 1.137-1.271  noise 1.118
+               WIDE/BTREE               1.224  (0/5 below)  range 1.128-1.380  noise 1.224
+    at  50%  WIDE/S0                  1.102  (2/5 below)  range 0.885-1.141  noise 1.290
+               S0/BTREE                 1.186  (0/5 below)  range 1.058-1.320  noise 1.248
+               WIDE/BTREE               1.252  (0/5 below)  range 1.213-1.302  noise 1.073
+    at 100%  WIDE/S0                  0.953  (3/5 below)  range 0.895-1.097  noise 1.226
+               S0/BTREE                 1.254  (0/5 below)  range 1.170-1.405  noise 1.201
+               WIDE/BTREE               1.212  (0/5 below)  range 1.153-1.373  noise 1.190
+    at 200%  WIDE/S0                  1.025  (1/5 below)  range 0.938-1.210  noise 1.289
+               S0/BTREE                 1.261  (0/5 below)  range 1.084-1.327  noise 1.224
+               WIDE/BTREE               1.293  (0/5 below)  range 1.171-1.429  noise 1.220
+             absolute S0     at 200%: 0.759971
+             absolute WIDE   at 200%: 0.779598
+             absolute ART    at 200%: 0
+             absolute BTREE  at 200%: 0.599865
+  skew / grow
+    at  25%  WIDE/S0                  0.999  (3/5 below)  range 0.951-1.204  noise 1.266
+               S0/BTREE                 1.247  (1/5 below)  range 0.903-1.354  noise 1.499
+               WIDE/BTREE               1.305  (0/5 below)  range 1.249-1.392  noise 1.114
+    at  50%  WIDE/S0                  0.968  (4/5 below)  range 0.926-1.043  noise 1.127
+               S0/BTREE                 1.252  (0/5 below)  range 1.059-1.356  noise 1.280
+               WIDE/BTREE               1.214  (0/5 below)  range 1.191-1.331  noise 1.118
+    at 100%  WIDE/S0                  1.063  (2/5 below)  range 0.979-1.358  noise 1.386
+               S0/BTREE                 1.274  (0/5 below)  range 1.137-1.308  noise 1.151
+               WIDE/BTREE               1.268  (0/5 below)  range 1.221-1.524  noise 1.248
+    at 200%  WIDE/S0                  1.113  (0/5 below)  range 1.003-1.191  noise 1.188
+               S0/BTREE                 1.219  (0/5 below)  range 1.128-1.265  noise 1.122
+               WIDE/BTREE               1.334  (0/5 below)  range 1.100-1.352  noise 1.229
+             absolute S0     at 200%: 0.783469
+             absolute WIDE   at 200%: 0.847361
+             absolute ART    at 200%: 0
+             absolute BTREE  at 200%: 0.637714
+  tranco / same
+    at  25%  WIDE/S0                  0.987  (3/5 below)  range 0.851-1.089  noise 1.280
+               S0/BTREE                 1.923  (0/5 below)  range 1.422-2.397  noise 1.686
+               WIDE/BTREE               1.926  (0/5 below)  range 1.571-2.040  noise 1.299
+    at  50%  WIDE/S0                  1.066  (1/5 below)  range 0.964-1.155  noise 1.197
+               S0/BTREE                 2.062  (0/5 below)  range 1.831-2.173  noise 1.187
+               WIDE/BTREE               2.066  (0/5 below)  range 1.922-2.217  noise 1.153
+    at 100%  WIDE/S0                  1.078  (2/5 below)  range 0.867-1.109  noise 1.280
+               S0/BTREE                 1.990  (0/5 below)  range 1.923-2.141  noise 1.113
+               WIDE/BTREE               2.073  (0/5 below)  range 1.642-2.259  noise 1.376
+    at 200%  WIDE/S0                  1.013  (1/5 below)  range 0.896-1.472  noise 1.643
+               S0/BTREE                 1.961  (0/5 below)  range 1.716-2.176  noise 1.268
+               WIDE/BTREE               2.163  (0/5 below)  range 1.863-2.212  noise 1.187
+             absolute S0     at 200%: 0.239676
+             absolute WIDE   at 200%: 0.253661
+             absolute ART    at 200%: 0
+             absolute BTREE  at 200%: 0.11789
+  tranco / grow
+    at  25%  WIDE/S0                  1.057  (1/5 below)  range 0.952-1.105  noise 1.161
+               S0/BTREE                 2.033  (0/5 below)  range 1.835-2.309  noise 1.258
+               WIDE/BTREE               2.180  (0/5 below)  range 2.064-2.325  noise 1.127
+    at  50%  WIDE/S0                  1.016  (2/5 below)  range 0.969-1.096  noise 1.131
+               S0/BTREE                 2.187  (0/5 below)  range 2.099-2.440  noise 1.163
+               WIDE/BTREE               2.305  (0/5 below)  range 2.145-2.547  noise 1.187
+    at 100%  WIDE/S0                  1.093  (1/5 below)  range 0.959-1.297  noise 1.352
+               S0/BTREE                 2.176  (0/5 below)  range 1.870-2.269  noise 1.214
+               WIDE/BTREE               2.489  (0/5 below)  range 2.111-2.529  noise 1.198
+    at 200%  WIDE/S0                  1.144  (0/5 below)  range 1.110-1.223  noise 1.102
+               S0/BTREE                 2.086  (0/5 below)  range 1.962-2.437  noise 1.242
+               WIDE/BTREE               2.500  (0/5 below)  range 2.313-2.919  noise 1.262
+             absolute S0     at 200%: 0.314447
+             absolute WIDE   at 200%: 0.353644
+             absolute ART    at 200%: 0
+             absolute BTREE  at 200%: 0.143473
+
+### DETERMINISTIC COLUMNS at 200%  (counts and bytes; no noise-floor language)
+
+  mixed / same: S0 ov=128533 mem=41.13MB   WIDE ov=748 mem=22.86MB   ART n/a   BTREE n/a   BTREE nodes=40950
+  mixed / grow: S0 ov=129703 mem=42.25MB   WIDE ov=5698 mem=23.59MB   ART n/a   BTREE n/a   BTREE nodes=40950
+  skew / same: S0 ov=127070 mem=40.08MB   WIDE ov=950 mem=22.02MB   ART n/a   BTREE n/a   BTREE nodes=40950
+  skew / grow: S0 ov=128704 mem=41.32MB   WIDE ov=13919 mem=23.89MB   ART n/a   BTREE n/a   BTREE nodes=40950
+  tranco / same: S0 ov=127330 mem=34.88MB   WIDE ov=1924 mem=24.39MB   ART n/a   BTREE n/a   BTREE nodes=80980
+  tranco / grow: S0 ov=195278 mem=41.29MB   WIDE ov=46787 mem=28.36MB   ART n/a   BTREE n/a   BTREE nodes=81082
+
+### SCAN CORRECTNESS (gate, not a statistic)
+
+  scan_acc == scan_exp is asserted in-process for S0, WIDE and BTREE at every
+  checkpoint, against the reference map. A mismatch aborts the run before any
+  timing is recorded, so no scan timing in this file was taken on wrong output.
+  verified across every archived record: YES

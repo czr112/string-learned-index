@@ -16,6 +16,24 @@
 #include <utility>
 #include <vector>
 
+// E38: the LITS HPT backend. Included here rather than from the programs, because the backend
+// is selected by Config and the Region constructor has to be able to build one. The header
+// pulls in the pinned source's model only -- lits_model.hpp and its two dependencies -- and
+// deliberately NOT lits_node.hpp, which would drag in HOT, cnode, iter and PMSS.
+#include "model/lits_hpt_adapter.hpp"
+
+// BlockLinearRank (2026-10-11): the third backend. Region-scoped -- it fits from the region's own
+// sorted keys and keeps no shared state -- so unlike the LITS adapter it is included for the same
+// structural reason (Region::calibrate_block_rank must exist) but brings no vendor dependency.
+#include "model/block_linear_rank.hpp"
+
+// EqualDepthDir (2026-10-11): the fourth backend. A region-scoped SEPARATOR DIRECTORY -- the
+// empirical quantiles of the region's own keys -- chosen by the entry diagnosis
+// (RESULTS_THRESHOLD_ENTRY_20261011.md): max group load 1366/824/546 -> 12/12/12, empty groups
+// -> 0, and 0.6-5.0 KB per region once separators are truncated. The 63-bit COORDINATE form of
+// the same idea was measured and rejected (skew: 64/64 regions with duplicate thresholds).
+#include "model/equal_depth_dir.hpp"
+
 #if defined(__SSE2__)
 #include <emmintrin.h>
 #endif
@@ -96,6 +114,18 @@ inline Counts& counts() { static Counts c; return c; }
 #include <chrono>
 namespace validation {
 namespace e30 {
+inline std::uint64_t now_ns();
+#ifdef E30_WRITE
+// Declared before Timers so the fields can be listed first; the constructor calls the
+// forward-declared clock, whose definition follows in this same translation unit.
+struct WriteScope {
+    std::uint64_t t0;
+    std::uint64_t* add;
+    std::uint64_t* inc;
+    WriteScope(std::uint64_t* a, std::uint64_t* i) : t0(now_ns()), add(a), inc(i) {}
+    ~WriteScope() { *add += now_ns() - t0; ++*inc; }
+};
+#endif
 struct Timers {
     std::uint64_t compact_ns = 0, compact_calls = 0;
     std::uint64_t collect_ns = 0;   // gathering live records out of the sub-blocks
@@ -115,6 +145,46 @@ struct Timers {
     // the segment itself instead of dividing by insert_ns.
     std::uint64_t ov_insert_ns = 0, ov_insert_calls = 0;
     std::uint64_t ov_erase_ns = 0, ov_erase_calls = 0;
+    // A3 entry diagnosis: the insert's own two halves, so the breakdown can say how
+    // much of it is LOOKING and how much is CONSTRUCTING/SHIFTING. Both are sub-pieces
+    // of ov_insert_ns, which keeps its old meaning so E32's numbers stay comparable.
+    std::uint64_t ov_lookup_ns = 0, ov_lookup_calls = 0;
+    std::uint64_t ov_alloc_ns = 0, ov_alloc_calls = 0;
+#ifdef E30_WRITE
+    // E3 entry diagnosis (2026-10-10): the WHOLE write path, so the five work kinds the
+    // plan names -- real suffix writes, descriptor moves, container growth, short-lived
+    // temporaries, output materialisation -- have a denominator each. Every one of these
+    // NESTS (locate inside insert/erase, place inside insert, rebuild inside insert,
+    // all() inside rebuild), so a ratio against the outer clock is a SHARE and the
+    // components are never additive.
+    std::uint64_t w_insert_ns = 0, w_insert_calls = 0;       // Index::insert, whole
+    std::uint64_t w_erase_ns = 0, w_erase_calls = 0;         // Index::erase, whole
+    std::uint64_t w_locate_ns = 0, w_locate_calls = 0;       // Index::locate, called by both
+    // locate is SHARED by the two passes, so a per-pass budget cannot use the line above:
+    // the same counter would be charged twice. These two attribute it at the call site.
+    std::uint64_t w_locate_ins_ns = 0, w_locate_ins_calls = 0;
+    std::uint64_t w_locate_era_ns = 0, w_locate_era_calls = 0;
+    // The write path ALSO searches inside the region (find_located -> the model + the
+    // sub-block walk). Untimed, it would sit in the insert budget as an unattributed
+    // residual and the residual would be read as "something else".
+    std::uint64_t w_place_ns = 0, w_place_calls = 0;         // place_with_ctx
+    std::uint64_t w_rebuild_ns = 0, w_rebuild_calls = 0;     // rebuild / rebuild_with_caps
+    std::uint64_t w_rebuild_all_ns = 0, w_rebuild_all_calls = 0;  // the r.all() materialisation
+    std::uint64_t w_rebuild_all_records = 0;                 // records copied by all()
+    std::uint64_t w_reclaim_ns = 0, w_reclaim_calls = 0;     // repack_subblock, ALL calls
+    // Repack split (2026-10-11): the two segments of one FULL pass (n >= 2). sort =
+    // order[] init + insertion sort; move = the packing memmoves + offset rewrites +
+    // bottom. Each full pass reads one SHARED boundary between them and one at the end;
+    // the n<2 early return stays in the parent alone. See repack_subblock for the shape.
+    std::uint64_t w_rp_sort_ns = 0, w_rp_sort_calls = 0;     // sort end - entry
+    std::uint64_t w_rp_move_ns = 0, w_rp_move_calls = 0;     // move end - sort end
+    std::uint64_t w_findloc_ns = 0, w_findloc_calls = 0;     // Region::find_located
+    // Stage D supplementary check: the two walks the placement path re-runs. Named
+    // so the analyzer can read the re-derivation's price directly instead of
+    // bounding it by place-without-repack.
+    std::uint64_t w_walk_ns = 0, w_walk_calls = 0;           // put_primary's sub-block walk
+    std::uint64_t w_fc_ns = 0, w_fc_calls = 0;               // first_candidate
+#endif
     void reset() { *this = Timers{}; }
 };
 inline Timers& timers() { static Timers t; return t; }
@@ -127,10 +197,25 @@ inline std::uint64_t now_ns() {
 #define E30_T0() ::validation::e30::now_ns()
 #define E30_ADD(f, t0) (::validation::e30::timers().f += ::validation::e30::now_ns() - (t0))
 #define E30_INC(f) (++::validation::e30::timers().f)
+#ifdef E30_WRITE
+// E3 entry: one RAII clock per NAMED phase. E30_W(insert) declares a scope called
+// e30w_insert, so a function can time exactly one thing without inventing a name -- and
+// the name it uses is the field it writes, so a mistyped phase cannot compile.
+#define E30_W(field) \
+    ::validation::e30::WriteScope e30w_##field(&::validation::e30::timers().w_##field##_ns, \
+                                               &::validation::e30::timers().w_##field##_calls)
+#else
+#define E30_W(field) ((void)0)
+#endif
 #else
 #define E30_T0() 0
 #define E30_ADD(f, t0) ((void)0)
 #define E30_INC(f) ((void)0)
+// The write-path clocks exist only with E30_TIME + E30_WRITE, but their CALL SITES are
+// unconditional -- so the no-clock build needs the no-op too. Without this line the
+// gates (built with neither macro) fail to compile: the first version of this change did
+// exactly that, and only a build of an UNRELATED target caught it.
+#define E30_W(field) ((void)0)
 #endif
 
 #ifdef E24_DIAG
@@ -241,6 +326,10 @@ struct Counts {
     std::uint64_t erase_released_primary = 0;
     std::uint64_t erase_released_overflow = 0;
     std::uint64_t string_allocs = 0;       // std::string constructed into a container
+    // E3 entry: the KEY BYTES those constructions really copy. The count alone cannot say
+    // whether the temporary is a 5-byte string or a 200-byte one, and the plan's first
+    // category ("real suffix writes") is a byte quantity.
+    std::uint64_t ov_suffix_bytes_written = 0;
     std::uint64_t string_frees = 0;        // record destroyed, its string released
 
     // ---- E26: what compaction actually does ---------------------------------
@@ -257,10 +346,20 @@ struct Counts {
     std::uint64_t compact_bytes_copied = 0;
     std::uint64_t compact_garbage_before = 0;   // un-referenced bytes in the group, pre-compact
     std::uint64_t compact_tag_mismatch = 0;     // E26 diag: stored tag != recomputed tag
+    std::uint64_t compact_plan_violation = 0;   // I10 diag: plan_replay's guarantee broke
+    std::uint64_t compact_plan_rejected = 0;    // I10: plan_replay said the group cannot hold
     // The three branches E25's rewrite touched. Asserted by the gate.
     std::uint64_t notlocated_fallback = 0; // V2 upsert: no context, took the old path
     std::uint64_t subblock_reclaims = 0;        // E31: in-place sub-block passes run
     std::uint64_t subblock_reclaim_helped = 0;  // ... of which made the retry fit
+    // G3/A1': the WIDENED passes -- sub-blocks tightened after the rank-selected one had
+    // already been tried and the placement still failed. Non-emptiness of the first is what
+    // makes the gate's assertion about this branch meaningful; the ratio of the second to
+    // the first is the mechanism's own success rate, which is the number E37 could not
+    // separate from the migration's.
+    std::uint64_t reclaim_widened = 0;
+    std::uint64_t reclaim_widened_helped = 0;
+    std::uint64_t reclaim_widened_blocks_examined = 0;
     // E37: what the drain actually moved. `helped` is the narrower question -- whether the
     // retry that triggered the drain then succeeded.
     std::uint64_t migrate_calls = 0;
@@ -272,6 +371,82 @@ struct Counts {
     std::uint64_t migrate_rejected = 0;
     std::uint64_t reclaim_skipped_unchanged = 0;  // E31H: skipped, garbage not grown
     std::uint64_t reclaim_skipped_gap = 0;        // E31H: skipped, min operation gap unmet
+
+    // ---- Hole-reuse entry diagnosis (2026-09-27) ----------------------------
+    // A byte failure means the CONTIGUOUS free area is too small. It says nothing about
+    // the dead ranges inside the occupied region, because insert_into never consults them.
+    // `hole_fits` is the candidate's own match test; `repack_fits` is the existing
+    // mechanism's, evaluated ON THE SAME EVENT, so the two are comparable one-for-one
+    // rather than as two rates measured over different populations.
+    std::uint64_t fail_bytes_hole_fits = 0;      // some gap in the failing block >= len
+    std::uint64_t fail_bytes_hole_absent = 0;    // no gap in that block >= len
+    std::uint64_t fail_bytes_repack_fits = 0;    // contiguous + garbage >= len
+    std::uint64_t fail_bytes_len_sum = 0;        // the requested suffix lengths
+    std::uint64_t fail_bytes_best_hole_sum = 0;  // the best gap available, per event
+    std::uint64_t fail_bytes_garbage_sum = 0;    // this block's dead bytes, per event
+    std::uint64_t fail_bytes_live_sum = 0;       // bytes a repack here would have to copy
+    std::uint64_t hole_sweep_checks = 0;         // gap-sum vs garbage comparisons made
+    std::uint64_t hole_sweep_mismatch = 0;       // ... that disagreed (0 is expected)
+    std::uint64_t hole_events_recorded = 0;
+    std::uint64_t hole_events_dropped = 0;       // beyond kMaxHoleEvents, reported not hidden
+    // Low-activity reclaim: repack passes that the candidate LET THROUGH, i.e. blocks with
+    // 0 or 1 live records. The gate asserts this is non-zero, because a branch that never
+    // ran would make every downstream comparison vacuous -- the same hole the G0 audit
+    // found in gates that reported success for a comparison that never happened.
+    std::uint64_t low_activity_reclaimed = 0;
+    // The same passes split by the block's live count, plus the garbage they recovered.
+    // An empty block and a one-record block are different cases -- the first has nothing
+    // to move, the second moves one suffix -- so a single "low activity" number would
+    // hide which one the workload actually reaches. `bytes` is the block's garbage
+    // BEFORE the pass runs (occupied - live, the same definition subblock_garbage uses),
+    // because the pass is what removes it.
+    std::uint64_t low_activity_n0 = 0;
+    std::uint64_t low_activity_n1 = 0;
+    std::uint64_t low_activity_bytes = 0;
+    std::uint64_t low_activity_helped = 0;
+    // Of the passes above, the ones whose retry then PLACED the record -- the number the
+    // plan calls "promoted placements". Without it the only available reading was the
+    // difference in overflow inserts between arms, which mixes in every other effect the
+    // switch has. Counted at BOTH call sites next to subblock_reclaim_helped.
+    // cannot answer "how many dead ranges does a failing block have". These counters are
+    // exact over every refusal at no size cost.
+    std::uint64_t hole_nholes0 = 0;            // no dead range at all
+    std::uint64_t hole_nholes1 = 0;            // exactly one -- the run against bb_
+    std::uint64_t hole_nholes2plus = 0;        // a SPLIT dead region, the case a table needs
+    std::uint64_t hole_best_eq_garbage = 0;    // one run == all the dead bytes
+    std::uint64_t hole_count_lt2 = 0;          // 0-1 live records: repack_subblock would no-op
+    std::uint64_t hole_count_eq0 = 0;          //   ... of which the block held NOTHING
+    std::uint64_t hole_count_eq1 = 0;          //   ... and the block held exactly one record
+    std::uint64_t hole_slots_not_free = 0;     // must stay 0; recorded, not assumed
+    // repack_subblock refuses to act below two live records (index.hpp subblock_garbage
+    // applies the same guard), so this is the fitness test WITH that guard -- the version
+    // that matches the mechanism rather than the arithmetic.
+    std::uint64_t fail_bytes_repack_guarded = 0;
+    // ---- Repack split (2026-10-11): the work side of one repack_subblock pass -----
+    // The entry question for on-demand hole placement (candidate H) is what a reclaim
+    // pass spends its time on. The E30 clocks carry the time side of the same split;
+    // these count the WORK, exactly and machine-independently: a full pass processes n
+    // records, issues one memmove per record and rewrites every offset. `moved` vs
+    // `selfcopy` labels whether the record's offset actually changed -- a self-copy is
+    // a same-address memmove, a call whose data movement does not exist. Function work,
+    // not memory-bus traffic.
+    std::uint64_t rp_calls = 0;            // full passes (sort + move reached)
+    std::uint64_t rp_records = 0;          // records the packing loop handled
+    std::uint64_t rp_bytes = 0;            // their suffix bytes (the memmove lengths)
+    std::uint64_t rp_moved_records = 0;    // offset CHANGED: a real relocation
+    std::uint64_t rp_moved_bytes = 0;
+    std::uint64_t rp_selfcopy_records = 0;// offset unchanged: memmove(base+x, base+x, n)
+    std::uint64_t rp_selfcopy_bytes = 0;
+    // ---- Candidate H (primary_hole_reuse, 2026-10-11): the hole-placement branches -----
+    // The bounded entry round justified ONE minimal candidate; these count its behaviour so
+    // the gate can assert BOTH branches fired and the round can read how many repacks it
+    // replaces instead of assuming it. counted under E25_DIAG only, like every counter here.
+    std::uint64_t hole_reuse_attempts = 0;      // slot OK, bytes short, H applies
+    std::uint64_t hole_reuse_placed = 0;        // ... and a dead range took the suffix
+    std::uint64_t hole_reuse_absent = 0;        // ... and no gap was large enough
+    std::uint64_t hole_reuse_skipped_lt2 = 0;   // < 2 live records: low-activity territory
+    std::uint64_t hole_reuse_skipped_wide = 0;  // > 48 records: over the fixed stack bound
+    std::uint64_t hole_reuse_bytes = 0;         // suffix bytes written into dead ranges
     std::uint64_t prefix_rebuilds = 0;     // Index::insert prefix-mismatch rebuild
     std::uint64_t threshold_splits = 0;    // Index::insert region split at 2*region_keys
 
@@ -315,6 +490,21 @@ struct Counts {
     // holds live <= high_water; the gap at the peak is the worst case it produced.
     std::uint64_t ov_store_high_water = 0;
     std::uint64_t ov_store_live_water = 0;
+    // ---- Branch C, shrink-to-peak (2026-10-10): the cost side ----------------
+    // A policy that shrinks a container to its historical peak leaves capacity == peak,
+    // so the NEXT record past the peak has to reallocate. These three count exactly that
+    // moment: how often it happens, by how many elements the new peak exceeds the old one,
+    // and how many bytes the resulting copy moves. The 0 -> 1 transition is excluded --
+    // the container owned nothing before it, so both policies allocate there.
+    std::uint64_t ov_new_peak_events = 0;
+    std::uint64_t ov_new_peak_overshoot = 0;   // elements
+    std::uint64_t ov_new_peak_copy_bytes = 0;  // bytes the realloc would memcpy
+    // The same two quantities for the policy that is actually shipped: a change of
+    // element capacity is a growth reallocation. Reported together so the extra cost of
+    // the shrink is the DIFFERENCE, not the whole copy volume -- without this the new-peak
+    // bytes read as if the current policy copied nothing.
+    std::uint64_t ov_cap_change_events = 0;
+    std::uint64_t ov_cap_change_copy_bytes = 0;  // bytes, approximate: (size-1) records
     // ---- E35 (prefix decidability): would an inline comparison prefix pay? ----
     // Every comparison in the binary overflow search reads the record: on the stable arm
     // that is store_[order_[mid]], two indirections. An entry that carried the suffix's
@@ -353,6 +543,42 @@ struct Counts {
     std::uint64_t ov_tag_entries = 0;         // order entries examined by the linear scan
     std::uint64_t ov_tag_reject_pre = 0;      // rejected by the ENTRY's tag, store untouched
     std::uint64_t scan_start_locates = 0;    // E27 S2: locate(start) evaluations in scan()
+    // P2/A4 entry diagnosis: the three pieces of per-call and per-group setup that the
+    // plan suspects of repeating. Split so that "how many" can be read against "how
+    // many records came back" -- a count that does not grow with the result is setup,
+    // and a count that does is work the result forced.
+    std::uint64_t scan_canonical_group = 0;  // group-number re-derivations in scan()
+    std::uint64_t scan_cursor_starts = 0;    // per-group primary cursor initialisations
+    std::uint64_t scan_ov_cursor_starts = 0; // ... of which had an overflow container
+    // ---- Scan-entry round (2026-10-10). The one scan loop the earlier counters could
+    // not see. Every other piece of scan work was already counted, and B and W measured
+    // IDENTICAL on all of them (analyze_scandiag.py) while the wall clock was not -- so
+    // the starting-cursor advance is the remaining traversal loop. Split by side and by
+    // "comparison" vs "record consumed", because a lower_bound candidate replaces
+    // comparisons, not records, and the two have to be readable against each other.
+    // Every increment is E25_INC, i.e. compiled out of every timing build.
+    std::uint64_t scan_adv_p_cmps = 0;       // comparisons in the primary start advance
+    std::uint64_t scan_adv_p_skipped = 0;    // primary records passed (one compare each)
+    std::uint64_t scan_adv_p_subblocks = 0;  // sub-blocks fully stepped over by the advance
+    std::uint64_t scan_adv_ov_cmps = 0;      // comparisons in the overflow start advance
+    std::uint64_t scan_adv_ov_skipped = 0;   // overflow records passed
+    std::uint64_t scan_out_primary = 0;      // rows emitted from primary sub-blocks
+    std::uint64_t scan_out_overflow = 0;     // rows emitted from overflow containers
+    std::uint64_t scan_out_bytes = 0;        // full-key bytes materialised (prefix+suffix)
+    // ---- Stage D supplementary check (2026-10-10) --------------------------
+    // How much of the placement path is RE-DERIVATION of the sub-block index that
+    // find_impl's locate_subblock already computed for this very key and dropped.
+    // `put_primary_calls` and the two first_candidate counters price the walks;
+    // the hint_* family measures whether the directory answer really equals the
+    // block first_candidate picks -- the equality the candidate would rely on.
+    std::uint64_t put_primary_calls = 0;   // put_primary entries (one or more per insert)
+    std::uint64_t fc_calls = 0;            // first_candidate entries
+    std::uint64_t fc_probes = 0;           // ... its boundary-compare iterations
+    std::uint64_t fc_gap = 0;              // ... of which took the two-block (prev, i) path
+    std::uint64_t hint_eq = 0;             // directory answer == first_candidate's block
+    std::uint64_t hint_ne = 0;             // ... they disagreed (must stay 0)
+    std::uint64_t hint_nodir = 0;          // no directory: no answer to compare
+    std::uint64_t hint_below = 0;          // directory says below every primary key
     void reset() { *this = Counts{}; }
 };
 inline Counts& counts() { static Counts c; return c; }
@@ -581,6 +807,25 @@ struct Result {
 // E5-1: slots is an explicit layout parameter (default 16 reproduces the E3 behavior).
 enum class ModelKind { Context16, Position16, Unigram };
 
+// E38: which MODEL FAMILY a region is mapped by. This is a separate axis from ModelKind,
+// which selects a table shape INSIDE the Context16 family -- `model_kind` describes the
+// reference model's own rows, and folding LITS into it would make "kind == Context16" mean two
+// different things depending on another field.
+//
+// The task book's section 4 requires the two to be kept apart, and requires an unsupported
+// combination to be REFUSED rather than silently mapped to some other group function.
+enum class ModelBackend { Context16, LitsHpt, BlockLinearRank, EqualDepthDir };
+
+// The three backends answer the same question -- "which logical group does this key belong
+// to" -- with different machinery, and the index refuses combinations it does not implement
+// rather than substituting a near-enough mapping:
+//   Context16       the reference table below; trained per region on suffixes
+//   LitsHpt         one index-wide pinned HPT table, calibrated per region
+//   BlockLinearRank a per-region segmented rank model (model/block_linear_rank.hpp),
+//                   ported from the teammate model and fixed at 7 encoded bytes / 8 segments
+//   EqualDepthDir   a per-region separator directory at equal key RANKS
+//                   (model/equal_depth_dir.hpp): balances the group load by construction
+
 struct Config {
     std::uint32_t block_bytes = 1024;
     double load = .75;
@@ -588,6 +833,14 @@ struct Config {
     Route canonical = Route::Full;
     std::uint32_t fixed_groups = 0;
     ModelKind model_kind = ModelKind::Context16;
+    // E38: which model family maps a key to a group. Defaults to the reference model, so the
+    // shipped configuration is unchanged and a program that never mentions this field builds
+    // exactly what it built before.
+    //
+    // NOT free to combine with the rest: ModelBackend::LitsHpt supports only ModelKind::Context16
+    // and Route::Full, and the Region constructor REFUSES any other pairing rather than quietly
+    // falling back to a different group function (task book section 4).
+    ModelBackend model_backend = ModelBackend::Context16;
     std::uint32_t slots = 16;
     // E8-11: false = legacy fixed-stride addressing (base + g*block_bytes, uniform
     // capacity only); true = offset-directory addressing (required for demand caps).
@@ -649,6 +902,80 @@ struct Config {
     // unchanged; only the intermediate copy goes away.
     bool scan_reserve_result = true;
 
+    // -----------------------------------------------------------------------
+    // Low-activity sub-block reclaim (candidate, default OFF).
+    //
+    // repack_subblock returns immediately for a block holding fewer than two live records,
+    // and subblock_garbage excludes the same blocks from being reclaim candidates. Both are
+    // optimisations, not preconditions: the packing loop already handles n == 0 (top stays at
+    // bb_, the whole area free) and n == 1. On a replacement workload to 200%, 53%-98% of
+    // block-level byte refusals land on exactly these blocks.
+    //
+    // Orthogonal to subblock_reclaim and reclaim_widest, so each can be measured with this as
+    // the single varying field.
+    bool reclaim_low_activity = false;
+
+    // -----------------------------------------------------------------------
+    // Primary-hole reuse (candidate H, default OFF).
+    //
+    // When an insert's contiguous space is short, the shipped path repacks the target
+    // sub-block (subblock_reclaim) and retries. The bounded entry round measured that pass
+    // at 40.1%/40.8% move+rewrite (mixed@200%, ctx16/lits), 96.7% of its memmove bytes
+    // real relocations, ~4.6 KB per pass (RESULTS_REPACK_SPLIT_20261011.md). This candidate
+    // instead finds a DEAD RANGE in the SAME sub-block and writes the new suffix there,
+    // moving nothing else.
+    //
+    // Requires subblock_reclaim (the mechanism it substitutes for), never touches blocks
+    // under two live records, and is inert when off. See insert_into_hole for the scope
+    // locks.
+    bool primary_hole_reuse = false;
+
+    // -----------------------------------------------------------------------
+    // Compact region routing (candidate, default OFF).
+    //
+    // locate() binary-searches the region fences. Each step dereferences a Node -- a
+    // std::string plus a unique_ptr -- and then the fence's own heap buffer, so a step costs
+    // two dependent loads of unrelated cache lines. This switch keeps an 8-byte
+    // order-preserving digest of every fence in ONE contiguous array, so the same search
+    // walks 8 bytes per step.
+    //
+    // The result must be IDENTICAL to the original search, not merely close: the digest is
+    // order-preserving, so digest(a) < digest(b) implies a < b, but equal digests do not
+    // imply equal keys -- ties fall back to the full unsigned-byte comparison. The
+    // integration gate asserts equality of the two searches over every key, including short
+    // keys, the empty key, embedded NULs, high bytes, common prefixes beyond 8 bytes and
+    // deliberate digest collisions.
+    //
+    // Nothing about the region partition, the model, the group geometry, the blocks, the
+    // records or the values changes. Only how a key is routed to a region.
+    bool compact_region_routing = false;
+
+    // -----------------------------------------------------------------------
+    // LITS reference-table residency (2026-10-11, default OFF; candidate M3).
+    //
+    // A Region always trains and keeps a Context16 reference table (16 x 258 u32 =
+    // 16,512 B). For a region whose mapping is the LITS backend's, that table is never
+    // read: the query path (predict_for) and the placement path (canonical_group) both
+    // dispatch on use_lits_, and the entry round measured the table entry count as exactly
+    // the number of lookups that landed in a FALLBACK region -- zero on tranco/LITS across
+    // 10,000 queries, 262,144 corpus keys, the whole construction, 2,000 erases and 50
+    // scans (RESULTS_OWNER_ENTRY_20261011.md).
+    //
+    // With this switch ON, a region whose LITS calibration succeeded releases that table
+    // right after the calibration decides the mapping. The mapping, the calibration result,
+    // the rejection domain, the fallback coverage, the blocks and every answer are
+    // unchanged -- only 16,512 B per such region stops being resident. The training itself
+    // still runs, so the build time is unchanged: this is a SPACE candidate, and its
+    // prototype measured the saving as exactly the theoretical table bytes of LITS-mapped
+    // regions (2,113,536 B = 6.05% of the tranco/LITS accounting), with no resolvable
+    // regression in build, query, update or scan (RESULTS_OWNER_PROTOTYPE_20261011.md).
+    //
+    // Combinations that cannot keep their meaning are REFUSED rather than degraded: a
+    // preset offered for such a region cannot be validated against a digest of a table that
+    // no longer exists, and group_of() would otherwise read an empty table. Callers that
+    // need the reference model must use an independent reference object.
+    bool lits_skip_reference_table = false;
+
     // E29 C3: relax the compaction TRIGGER. Compaction is currently attempted only
     // when some single sub-block has both a free slot and enough suffix bytes -- and
     // the E28 measurement showed that is exactly the condition that is usually false
@@ -658,6 +985,34 @@ struct Config {
     // The budget test is not optional: compact() replays every live record and throws
     // if the group cannot hold them, so it must never be invoked on a short budget.
     bool compact_repack_budget = false;
+
+    // I10 (2026-09-23 review): make the COMMIT PHASE of compact() unable to be interrupted.
+    //
+    // The commit phase had two real throw sites, and one of them fired AFTER the old state
+    // was destroyed. rebuild_dir() does dir.clear() and then push_back's freshly constructed
+    // std::string boundaries, so a bad_alloc there leaves the group's records fully
+    // re-placed and its boundary directory PARTIAL -- and locate_subblock binary searches
+    // that directory, so the damage is a silently mis-routed lookup, not a visible lost
+    // record. The other site is the explicit throw inside the replay loop.
+    //
+    // The fix is task book section 6.3: do everything that can fail before the point of no
+    // return. The replay is PLANNED first (plan_replay): that both proves the group can hold
+    // the records and builds the directory the replay will produce, entirely in local
+    // scratch, while the group is still untouched. If the plan does not fit, compact()
+    // returns false having changed nothing. The commit then only appends into pre-existing
+    // block memory (append_planned: no capacity test, no allocation) and swaps the prepared
+    // directory in, and vector::swap is noexcept.
+    //
+    // So the commit phase contains no allocation and no fallible call: it cannot be
+    // interrupted.
+    //
+    // DEFAULT ON (2026-09-23). This is the one switch added since E24 that is a FIX rather
+    // than a candidate, so it does not follow the "new switches default off" rule -- an
+    // unsafe default is not something to leave opt-in. The paired measurement in
+    // RESULTS_I10_COMMIT.md section 7 shows the plan is FASTER, not slower: it replaces
+    // the per-record sub-block walk inside put_primary with one counter pass plus a direct
+    // write, maintenance 0.649-0.924 and p99 0.418-0.942 against the old path.
+    bool compact_plan_commit = true;
 
     // E31: reclaim the rank-selected sub-block IN PLACE before giving up on the
     // primary. erase() frees a slot but leaves the suffix bytes as garbage and does not
@@ -670,6 +1025,27 @@ struct Config {
     // The sub-block BOUNDARY does not change, so order invariant M1 is untouched and
     // the E25 Located context stays valid.
     bool subblock_reclaim = false;
+
+    // G3/A1' (2026-09-23): WIDEN WHICH SUB-BLOCKS THE RECLAIM MAY TOUCH.
+    //
+    // The placement path ever tightens exactly ONE sub-block: the one first_candidate
+    // returns, which shares put_primary's enumeration on purpose (E31). E37 then measured
+    // what actually moved the overflow numbers, and it was NOT the migration: its drain
+    // tightens the sub-blocks that individual OVERFLOW RECORDS would land in, i.e. blocks
+    // the insert path never reaches -- "reclaim enabled" rose by +40,000 to +163,000 while
+    // the migrated record count was only 2,165-32,012, a factor of 15x-30x.
+    //
+    // So this is that observation as a single-variable change: after the rank-selected
+    // block has been tightened and the placement STILL fails, tighten the group's remaining
+    // sub-blocks, dirtiest first, up to a FIXED budget, retrying the placement after each.
+    //
+    // In-place tightening only. Members, slot order, the sub-block key range and the
+    // boundary directory are all unchanged, so nothing a caller holds is invalidated --
+    // and, unlike E37, nothing is migrated and no overflow record is moved.
+    //
+    // Requires subblock_reclaim: it is a wider trigger surface for that mechanism, not a
+    // second mechanism. Default OFF, like every other candidate.
+    bool reclaim_widest = false;
 
     // E31H (checklist item 4.3): hysteresis and a minimum operation interval on the
     // reclaim trigger. E31's own measurement (2026-09-20) fired it 127,780 times (mixed
@@ -695,6 +1071,26 @@ struct Config {
     // (scan_start_locates), so the saving is measured rather than argued: the S0
     // arm counts R+1 per scan, the S2 arm exactly 1.
     bool scan_cache_start = false;
+
+    // Scan-entry round (2026-10-10), candidate S: the scan's START ADVANCE.
+    //
+    // The linear cursor walk from a group's head to the start position reads every record
+    // it passes -- up to the whole group when the start sits near its end, and a
+    // zero-result scan after the last key walks the group completely. Measured on the
+    // microbenchmark: 136-492 comparisons in ONE call at the extreme starts, costing
+    // 10-30 us; the walk exists in BOTH the baseline and the WIDE arms (moving records
+    // between the primary sub-blocks and the overflow container only changes which side
+    // pays it), so this is a general scan cost, not a WIDE artefact.
+    //
+    // ON, the position is found by ordered search instead: a two-level binary search
+    // over the rank-ordered primary sub-blocks (block level first -- the last record of
+    // the last non-empty block at or left of the midpoint -- then within the block), and
+    // the overflow container's existing ordered lookup (lower_bound_pos). The number of
+    // records passed is IDENTICAL to the linear walk (the counters prove it); the number
+    // of comparisons becomes logarithmic.
+    //
+    // Default OFF: every existing arm keeps the linear walk byte for byte.
+    bool scan_ordered_start = false;
 
     // O1 (2026-09-20, the overflow container's erase cost): stable record storage
     // plus an ordered handle array. E32 measured the ordered overflow vector at
@@ -831,7 +1227,16 @@ public:
 
     struct Prediction {
         std::uint32_t group;
+        // How many bytes the MODEL processed. This is `result.steps`, a quantity that has been
+        // reported since E5, and its meaning does not change with the backend.
         std::uint32_t consumed;
+        // E38: how many bytes the FINGERPRINT state has absorbed -- the offset the caller
+        // continues hashing from. On this fused path the model feeds every byte it reads into
+        // the hash, so the two are equal; a backend that reads a full key from an absolute
+        // position contributes NOTHING to the hash and reports 0 here instead. Keeping them
+        // apart is what lets `steps` keep its published meaning while the hash keeps producing
+        // the tags that were stored (see check_lits_fingerprint).
+        std::uint32_t fp_consumed;
     };
 
     template <bool Hash>
@@ -854,7 +1259,14 @@ public:
             if (stop) { ++p; break; }
         }
         // EOS has cumulative 0, so the final coordinate is the current lower bound.
-        return {bucket(lo, groups), static_cast<std::uint32_t>(p)};
+        //
+        // Field order: group, consumed, fp_consumed. The fused path hashes every byte it reads,
+        // so the fingerprint offset IS the model's count -- stated here rather than left to a
+        // default, which is the failure mode the review warned about (a stale two-field
+        // aggregate would have zeroed `fp_consumed` and silently changed every query tag).
+        const auto step = static_cast<std::uint32_t>(p);
+
+        return {bucket(lo, groups), step, step};
     }
 };
 
@@ -942,6 +1354,49 @@ struct BuildContext {
 // ---------------------------------------------------------------------------
 // Region: one contiguous lexicographic interval = model + capacity table + blocks.
 // ---------------------------------------------------------------------------
+
+// E38: how the LITS backend covered the regions it was asked to map. Counted, not asserted:
+// the task book's section 3.4 requires the fallback to be reported with its region, record and
+// query shares, so a round can say "LITS-HPT + Context16 fallback, N regions" instead of
+// presenting a mixed result as if it were a pure one.
+struct LitsStats {
+    std::uint64_t regions_calibrated = 0;
+    std::uint64_t regions_fallback = 0;
+    // Regions with fewer than two keys, which take the DEFINED BOUNDARY PATH (group 0) rather
+    // than a calibration. Kept apart from the two above because neither of those describes it:
+    // it did not calibrate, and it did not fall back either -- it never needed a table.
+    std::uint64_t regions_boundary = 0;
+    std::uint64_t keys_calibrated = 0;
+    std::uint64_t keys_fallback = 0;
+    std::uint64_t keys_boundary = 0;
+};
+
+// BlockLinearRank: how the rank backend covered the regions it was asked to map. There is no
+// fallback arm to report -- the 9-bit encoding accepts every byte string, so the only non-fitted
+// outcomes are the three DEFINED boundary cases (no keys / one key / one group), and all three
+// answer group 0, which is the answer the fit would give anyway. Counted for the same reason
+// LitsStats is: a round must be able to say what mapping it actually timed.
+struct BlockRankStats {
+    std::uint64_t regions_fitted = 0;
+    std::uint64_t keys_fitted = 0;
+    std::uint64_t regions_boundary = 0;
+    std::uint64_t keys_boundary = 0;
+    std::uint64_t segments_total = 0;   // sum of segment counts over the fitted regions
+    std::uint64_t fits = 0;             // fit() calls, boundary early-outs included
+};
+
+// EqualDepthDir: the same accounting for the directory backend. `duplicate_thresholds` counts
+// the regions where two thresholds are equal, i.e. where the depth could NOT be spread -- the
+// one place the balance is limited by the keys themselves rather than by the map.
+struct DepthDirStats {
+    std::uint64_t regions_fitted = 0;
+    std::uint64_t keys_fitted = 0;
+    std::uint64_t regions_boundary = 0;
+    std::uint64_t keys_boundary = 0;
+    std::uint64_t thresholds_total = 0;
+    std::uint64_t regions_with_duplicate_thresholds = 0;
+    std::uint64_t fits = 0;
+};
 
 class Region {
     // E5-1: the entry-slot count S and the entries-area end are per-region values now.
@@ -1078,6 +1533,7 @@ class Region {
         void insert_at(std::size_t pos, OverflowRecord rec) {
             if (!stable_) {
                 vec_.insert(vec_.begin() + static_cast<std::ptrdiff_t>(pos), std::move(rec));
+                track_insert();
                 return;
             }
             // The tag is read BEFORE the move, because the entry and the record must carry
@@ -1112,12 +1568,14 @@ class Region {
             // the peak: the store's slots -- holes included -- and the live count.
             E25_MAX(ov_store_high_water, store_.size());
             E25_MAX(ov_store_live_water, order_.size());
+            track_insert();
         }
 
         // Erase the record at position pos.
         void erase_at(std::size_t pos) {
             if (!stable_) {
                 vec_.erase(vec_.begin() + static_cast<std::ptrdiff_t>(pos));
+                track_erase();
                 return;
             }
             const std::uint32_t slot = order_[pos].handle;
@@ -1135,6 +1593,7 @@ class Region {
             E25_ADD(overflow_handle_move_bytes, shifted * sizeof(OrderedEntry));
             E25_ADD(overflow_record_moves_stable, 0);
             E25_ADD(overflow_record_move_bytes_stable, 0);
+            track_erase();
         }
 
         void erase(iterator it) { erase_at(it.pos); }
@@ -1163,6 +1622,7 @@ class Region {
                 }
 
                 vec_.resize(w);
+                track_erase();
                 return;
             }
 
@@ -1180,6 +1640,7 @@ class Region {
             }
 
             order_.resize(w);
+            track_erase();
         }
 
 #ifdef E25_DIAG
@@ -1227,7 +1688,113 @@ class Region {
             return total;
         }
 
+
+        // Branch C: the element capacity, WITH ITS UNIT STATED. The OFF arm is the
+        // vector's element capacity; the ON arm's order array is the handle vector whose
+        // capacity is the analogous quantity. There is deliberately no attempt to give the
+        // ON arm a single "element capacity": container_slot_bytes() sums three arrays
+        // whose elements are 48, 8 and 4 bytes, and collapsing them would invent a number.
+        std::size_t capacity_elems() const { return stable_ ? order_.capacity() : vec_.capacity(); }
+
+        // Branch C: which representation this container latched at construction. Recorded
+        // per checkpoint because stable_ comes from the Config at construction time, so it
+        // is a per-RUN fact and not a property anyone may assume from the shipped default.
+        bool stable_representation() const { return stable_; }
+
+        // Branch C: Term A needs the capacity, Term B needs the high-water. hw_ is this
+        // container's running maximum live count -- the peak it has to be compared against.
+        std::size_t size_high_water() const {
+#ifdef E25_DIAG
+            return hw_;
+#else
+            return size();
+#endif
+        }
+
+        // drops    -- how many times the live count FELL
+        // regrowth -- how many times it came back to the peak it had fallen from
+        std::uint64_t drop_events() const {
+#ifdef E25_DIAG
+            return drops_;
+#else
+            return 0;
+#endif
+        }
+
+        std::uint64_t regrowth_events() const {
+#ifdef E25_DIAG
+            return regrowth_;
+#else
+            return 0;
+#endif
+        }
+
+        // Branch C (2026-10-10): how many times this container exceeded its OWN previous
+        // peak. That is the count of reallocations a shrink-to-peak policy would have paid
+        // and the current geometric-capacity policy does not.
+        std::uint64_t new_peak_events() const {
+#ifdef E25_DIAG
+            return peaks_;
+#else
+            return 0;
+#endif
+        }
+
+        // How many times the SHIPPED policy had to grow this container. The difference
+        // against new_peak_events() is the reallocation count the shrink would add.
+        std::uint64_t cap_change_events() const {
+#ifdef E25_DIAG
+            return cap_changes_;
+#else
+            return 0;
+#endif
+        }
+
     private:
+#ifdef E25_DIAG
+        // Called at the END of every insert_at and erase_at, both arms, so the trackers see
+        // every size change and nothing else.
+        void track_insert() {
+            const std::size_t now = size();
+            const std::size_t cap = capacity_elems();
+            if (cap != last_cap_) {
+                if (last_cap_ != 0) {
+                    ++cap_changes_;
+                    E25_INC(ov_cap_change_events);
+                    E25_ADD(ov_cap_change_copy_bytes, (now - 1) * sizeof(OverflowRecord));
+                }
+                last_cap_ = cap;
+            }
+            if (now > hw_) {
+                if (hw_ != 0) {
+                    ++peaks_;
+                    E25_INC(ov_new_peak_events);
+                    E25_ADD(ov_new_peak_overshoot, now - hw_);
+                    E25_ADD(ov_new_peak_copy_bytes, now * sizeof(OverflowRecord));
+                }
+                hw_ = now;
+            }
+            if (fell_since_peak_ && now >= hw_) { ++regrowth_; fell_since_peak_ = false; }
+        }
+
+        void track_erase() {
+            ++drops_;
+            if (size() < hw_) fell_since_peak_ = true;
+        }
+
+        std::size_t hw_ = 0;
+        std::size_t last_cap_ = 0;
+        std::uint64_t peaks_ = 0;
+        std::uint64_t cap_changes_ = 0;
+        std::uint64_t drops_ = 0;
+        std::uint64_t regrowth_ = 0;
+        bool fell_since_peak_ = false;
+#else
+        void track_insert() {}
+        void track_erase() {}
+#endif
+
+    public:
         bool stable_ = false;
         bool tag_inline_ = false;                // E36: the order entry carries a tag copy
         std::vector<OverflowRecord> vec_;        // OFF arm: the ordered vector
@@ -1247,6 +1814,7 @@ class Region {
     // tables below describe ONE sub-block rather than the whole group. The count
     // is derived from off_ and bb_, so multi-block layouts add no locator metadata
     // at all. nb == 1 reproduces the E8 behaviour exactly.
+
     std::vector<std::uint16_t> sg_;   // slots per sub-block (<= MAX_SLOTS)
     std::vector<std::uint32_t> bb_;   // bytes per sub-block (64-aligned)
     std::vector<std::size_t> off_;    // group start offsets, size groups_+1
@@ -1270,6 +1838,48 @@ class Region {
 
     std::string prefix_;
     Model model_;
+
+    // ---- E38: the LITS HPT backend -------------------------------------------------------
+    //
+    // The shared table is trained ONCE for the whole index and owned by Index; every region
+    // holds a reference to the same object and adds its own three numbers. There is no
+    // per-region 2 MiB table (task book section 2.2).
+    //
+    // `shared_ptr<const ...>` rather than a raw pointer, because the lifetime question is the
+    // one the task book calls out: a region must not outlive the table it reads. The const
+    // makes "a region never trains or mutates the shared table" a compile-time property.
+    std::shared_ptr<const lits_hpt::SharedModel> lits_shared_;
+    lits_hpt::RegionModel lits_;
+    // Resolved ONCE, in the constructor. Every later decision -- the group mapping, the
+    // fingerprint offset, the demand pass -- reads this flag rather than re-deriving it.
+    bool use_lits_ = false;
+
+    // ---- BlockLinearRank (2026-10-11) ---------------------------------------------------
+    // A region-SCOPED rank model: no shared table, fitted from this region's own sorted keys,
+    // and it owns everything it keeps -- a prefix LENGTH plus its segments, never a view into
+    // the training keys. That lifetime rule is the one the LITS round had to fix, applied
+    // before the fact instead of after.
+    blockrank::RegionModel block_rank_;
+    // Resolved ONCE, in the constructor, exactly like use_lits_: every later decision (group
+    // mapping, demand pass, query path) reads this flag rather than re-deriving it. All four
+    // model statuses define an answer, so this is set on every construction path.
+    bool use_block_rank_ = false;
+    inline static BlockRankStats block_rank_stats_{};
+
+    // ---- EqualDepthDir (2026-10-11) -----------------------------------------------------
+    // A region-scoped separator directory. It owns its arena and offsets; nothing it keeps
+    // points into the training keys. Same lifetime rule as the rank model above.
+    equivdir::RegionModel depth_dir_;
+    bool use_depth_dir_ = false;
+    inline static DepthDirStats depth_dir_stats_{};
+
+    // Fallback coverage, counted rather than argued about. The task book's section 3.4 requires
+    // a region whose calibration fails to fall back to Context16 and the experiment to REPORT
+    // how many regions, records and queries that affects -- so the numbers are kept here and
+    // read back through Region::lits_stats(). The struct itself lives at namespace scope: a
+    // nested one with default member initializers cannot be used by an inline static member of
+    // its own enclosing class (the class is not complete yet at that point).
+    inline static LitsStats lits_stats_{};
     std::byte* storage_ = nullptr;
     std::uint32_t groups_ = 1;
     std::size_t size_ = 0, overflow_count_ = 0;
@@ -1349,11 +1959,38 @@ class Region {
                (!prefix_.size() || std::memcmp(s.data(), prefix_.data(), prefix_.size()) == 0);
     }
 
-    std::uint32_t canonical_group(std::string_view s) const {
+    // E38: THE ONE PLACE THE BACKEND IS CHOSEN.
+    //
+    // TAKES ONLY THE FULL KEY, and derives the suffix itself.
+    //
+    // The earlier version took both, on the theory that a second parameter would catch a caller
+    // who passed a suffix where a full key was wanted. It does force every OLD call site to be
+    // edited -- but the two quantities have the SAME TYPE, so `canonical_group(suffix, full_key)`
+    // and `canonical_group(suffix, suffix)` compile just as happily. Two parameters of one type
+    // are not evidence that the coordinates are right; only the implementation and its tests
+    // are. Deriving the suffix HERE removes the second argument, and with it the whole class of
+    // mistake: there is no longer a coordinate for a caller to supply wrongly.
+    //
+    //   reference model  maps the SUFFIX (its table is trained on suffixes and its rows are
+    //                    indexed by a suffix-relative position)
+    //   LITS HPT         maps the FULL KEY (the source's walk starts at an absolute position:
+    //                    lits_node.hpp:292 passes `ccpl + icpl`, and this region's prefix
+    //                    length is that same quantity -- see the adapter's header)
+    //
+    // M0 IS UNCHANGED BY THE DERIVATION: every call site used to compute
+    // `full_key.substr(prefix_.size())` itself and pass it, so this is the identical value.
+    std::uint32_t canonical_group(std::string_view full_key) const {
         E18_INC(group_calls);
 
         Fingerprint dummy;
-        const std::uint32_t group = model_.predict<false>(s, groups_, config_.canonical, dummy).group;
+        const std::uint32_t group = use_depth_dir_
+            ? depth_dir_.predict_group(full_key)
+            : use_block_rank_
+                ? block_rank_.predict_group(full_key)
+                : use_lits_
+                    ? lits_.predict_group(full_key)
+                    : model_.predict<false>(full_key.substr(prefix_.size()), groups_,
+                                            config_.canonical, dummy).group;
 
 #ifdef E25_DIAG
         // check_scan_contract's negative control. See the flag's own comment for what
@@ -1363,6 +2000,55 @@ class Region {
 #endif
 
         return group;
+    }
+
+    // E38: the FUSED query path's model call, backend-dispatched.
+    //
+    // This is the one place a prediction also touches the fingerprint, and the two quantities
+    // the caller needs are separate fields on purpose:
+    //
+    //   consumed     what the MODEL processed  -> `result.steps`, published since E5
+    //   fp_consumed  what the HASH has absorbed -> where `fp.tail` continues from
+    //
+    // The reference model reads a prefix of the suffix and feeds every byte into the hash, so
+    // the two are equal. The LITS walk reads the FULL key from an absolute position, so the
+    // bytes it touches are not a prefix of the suffix at all -- hashing them would produce a tag
+    // matching no stored record, which is the failure check_lits_fingerprint exists to catch.
+    // It therefore reports fp_consumed = 0 and lets the caller hash the whole suffix.
+    template <bool Hash>
+    Model::Prediction predict_for(std::string_view full_key, std::string_view suffix, Route route,
+                                  Fingerprint& fp) const {
+        if (use_depth_dir_) {
+            // The directory reads the full key from arbitrary positions of the suffix, so it
+            // contributes nothing to the fingerprint -- same split as the two branches below.
+            Model::Prediction p;
+            p.group = depth_dir_.predict_group(full_key, p.consumed);
+            p.fp_consumed = 0;
+
+            return p;
+        }
+
+        if (use_block_rank_) {
+            // Same two-field split as the LITS branch, for the same reason: the rank model reads
+            // the full key from an absolute position, so the bytes it touches are NOT a prefix of
+            // the suffix, and hashing them would produce a tag no stored record has. It reports
+            // fp_consumed = 0 and the caller hashes the whole suffix.
+            Model::Prediction p;
+            p.group = block_rank_.predict_group(full_key, p.consumed);
+            p.fp_consumed = 0;
+
+            return p;
+        }
+
+        if (use_lits_) {
+            Model::Prediction p;
+            p.group = lits_.predict_group(full_key, p.consumed);
+            p.fp_consumed = 0;
+
+            return p;
+        }
+
+        return model_.predict<Hash>(suffix, groups_, route, fp);
     }
 
     // --- E11 boundary directory ---
@@ -1383,6 +2069,12 @@ class Region {
         for (std::size_t i = 0; i < nb; ++i) {
             const auto& h = header(g, i);
             if (!h.count) continue;
+#ifdef E25_DIAG
+            // I10 injection point 2: the pre-I10 design reaches here AFTER the group has
+            // been rewritten, and `dir.clear()` has already destroyed the old directory --
+            // so an interruption here is exactly the half-update the review found.
+            if (maybe_inject(2)) throw std::bad_alloc();
+#endif
             dir.push_back({std::string(suffix(g, i, entries(g, i)[0])),
                            static_cast<std::uint32_t>(i)});
             ++dir_entries_built;
@@ -1478,6 +2170,43 @@ class Region {
         return h;
     }
 
+    // The identity the R1/R2 preset guard compares.
+    //
+    // For the reference and LITS backends this is the Context16 table digest it has always been
+    // (the LITS table is index-wide, so both sides hold the identical object). For
+    // BlockLinearRank the region's OWN fitted model is mixed in, because under that backend the
+    // rank model IS the mapping: two different rank models that happened to leave the reference
+    // table equal must not look like the same mapping to the guard.
+    static std::uint64_t mapping_identity(const Model& m, std::uint32_t groups, Route canonical,
+                                          ModelBackend backend,
+                                          const blockrank::RegionModel& block_rank,
+                                          const equivdir::RegionModel& depth_dir) {
+        std::uint64_t h = model_identity(m, groups, canonical);
+        if (backend == ModelBackend::EqualDepthDir) {
+            const std::uint64_t dtag = depth_dir.identity();
+            auto mix = [&h](const void* p, std::size_t n) {
+                const auto* b = static_cast<const unsigned char*>(p);
+                for (std::size_t i = 0; i < n; ++i) {
+                    h ^= b[i];
+                    h *= 1099511628211ULL;
+                }
+            };
+            mix(&dtag, sizeof(dtag));
+            return h;
+        }
+        if (backend != ModelBackend::BlockLinearRank) return h;
+        const std::uint64_t tag = block_rank.identity();
+        auto mix_bytes = [&h](const void* p, std::size_t n) {
+            const auto* b = static_cast<const unsigned char*>(p);
+            for (std::size_t i = 0; i < n; ++i) {
+                h ^= b[i];
+                h *= 1099511628211ULL;
+            }
+        };
+        mix_bytes(&tag, sizeof(tag));
+        return h;
+    }
+
     static std::uint32_t derive_groups(std::size_t n, std::uint64_t suffix_bytes, const Config& cfg) {
         const double count_groups = n / (double(cfg.slots) * cfg.load);
         const double byte_groups = suffix_bytes /
@@ -1493,6 +2222,136 @@ class Region {
     // --- write paths ---
 
     // Insert into one sub-block at its sorted position; false if it has no room.
+
+#ifdef E25_DIAG
+    // Walk the occupied region [h.bottom, bb_) and measure the gaps between live suffixes.
+    //
+    // Intervals are disjoint by construction -- an insert takes fresh space below the
+    // bottom and a repack re-packs without overlap -- so one sorted sweep is exact. The
+    // `cur` guard keeps a hypothetical overlap from producing a negative gap rather than
+    // an obviously wrong one.
+    std::size_t diag_holes(std::uint32_t g, std::size_t blk, std::size_t& best,
+                           std::size_t& gap_sum, std::size_t& live_out) const {
+        const auto& h = header(g, blk);
+        const auto* es = entries(g, blk);
+        const std::size_t n = h.count;
+
+        std::size_t iv[MAX_SLOTS][2];
+        std::size_t live = 0;
+
+        for (std::size_t j = 0; j < n; ++j) {
+            iv[j][0] = es[j].offset;
+            iv[j][1] = std::size_t(es[j].offset) + es[j].length;
+            live += es[j].length;
+        }
+
+        for (std::size_t a = 1; a < n; ++a) {
+            const std::size_t lo = iv[a][0], hi = iv[a][1];
+            std::size_t b = a;
+            while (b > 0 && iv[b - 1][0] > lo) {
+                iv[b][0] = iv[b - 1][0];
+                iv[b][1] = iv[b - 1][1];
+                --b;
+            }
+            iv[b][0] = lo;
+            iv[b][1] = hi;
+        }
+
+        best = 0;
+        gap_sum = 0;
+        std::size_t nholes = 0;
+        std::size_t cur = h.bottom;
+
+        for (std::size_t j = 0; j < n; ++j) {
+            if (iv[j][0] > cur) {
+                const std::size_t gap = iv[j][0] - cur;
+                ++nholes;
+                gap_sum += gap;
+                if (gap > best) best = gap;
+            }
+            if (iv[j][1] > cur) cur = iv[j][1];
+        }
+
+        if (std::size_t(bb_[g]) > cur) {
+            const std::size_t gap = std::size_t(bb_[g]) - cur;
+            ++nholes;
+            gap_sum += gap;
+            if (gap > best) best = gap;
+        }
+
+        live_out = live;
+        return nholes;
+    }
+
+    // Called from the ONE branch that refuses a record for want of bytes.
+    void diag_note_byte_failure(std::uint32_t g, std::size_t blk, std::size_t len) {
+        const auto& h = header(g, blk);
+        std::size_t best = 0, gap_sum = 0, live = 0;
+        const std::size_t nholes = diag_holes(g, blk, best, gap_sum, live);
+
+        const std::size_t contig = std::size_t(h.bottom) - start_of(g);
+        const std::size_t occupied = std::size_t(bb_[g]) - h.bottom;
+        const std::size_t garbage = occupied - live;
+
+        // The sweep and the index's own accounting describe the same region, so they must
+        // agree. A mismatch means the sweep is wrong, and a wrong sweep would make every
+        // downstream ratio meaningless while still looking plausible.
+        E25_INC(hole_sweep_checks);
+        if (gap_sum != garbage) E25_INC(hole_sweep_mismatch);
+
+        const bool fits_hole = best >= len;
+        const bool fits_repack = (contig + garbage) >= len;
+        const bool slots_free = h.count < slots_of(g);
+
+        if (fits_hole) E25_INC(fail_bytes_hole_fits);
+        else E25_INC(fail_bytes_hole_absent);
+
+        if (fits_repack) E25_INC(fail_bytes_repack_fits);
+
+        // Structure, over the FULL population. A histogram built from the capped event log
+        // cannot answer this, and the difference is not academic: the retained rows are the
+        // earliest, least-dead-byte refusals.
+        if (nholes == 0) E25_INC(hole_nholes0);
+        else if (nholes == 1) E25_INC(hole_nholes1);
+        else E25_INC(hole_nholes2plus);
+
+        if (best == garbage) E25_INC(hole_best_eq_garbage);
+        if (h.count < 2) E25_INC(hole_count_lt2);
+        // The split the plan asks for: an EMPTY block and a ONE-record block are different
+        // opportunities (nothing to move vs. one suffix to move), and hole_count_lt2 alone
+        // cannot say which one the refusals land on. Both are subsets of hole_count_lt2.
+        if (h.count == 0) E25_INC(hole_count_eq0);
+        else if (h.count == 1) E25_INC(hole_count_eq1);
+        if (!slots_free) E25_INC(hole_slots_not_free);
+        if (h.count >= 2 && fits_repack) E25_INC(fail_bytes_repack_guarded);
+
+        E25_ADD(fail_bytes_len_sum, len);
+        E25_ADD(fail_bytes_best_hole_sum, best);
+        E25_ADD(fail_bytes_garbage_sum, garbage);
+        E25_ADD(fail_bytes_live_sum, live);
+
+        if (diag_hole_total() < kMaxHoleEvents) {
+            HoleEvent e;
+            e.group = g;
+            e.blk = static_cast<std::uint16_t>(blk);
+            e.len = static_cast<std::uint16_t>(len);
+            e.contig = static_cast<std::uint16_t>(contig);
+            e.garbage = static_cast<std::uint16_t>(garbage);
+            e.live = static_cast<std::uint16_t>(live);
+            e.nholes = static_cast<std::uint16_t>(nholes);
+            e.best_hole = static_cast<std::uint16_t>(best);
+            e.fits_hole = fits_hole;
+            e.fits_repack = fits_repack;
+            e.slots_free = slots_free;
+            hole_events_.push_back(e);
+            ++diag_hole_total();
+            E25_INC(hole_events_recorded);
+        } else {
+            E25_INC(hole_events_dropped);
+        }
+    }
+
+#endif
     bool insert_into(std::uint32_t g, std::size_t i, std::string_view s,
                      std::uint64_t value, std::uint8_t tag) {
         E18_INC(insert_attempts);
@@ -1502,7 +2361,19 @@ class Region {
         // suffix bytes" call for different remedies, and a combined counter cannot
         // tell them apart.
         if (h.count >= slots_of(g)) { E25_INC(place_fail_slots); return false; }
-        if (s.size() > h.bottom - start_of(g)) { E25_INC(place_fail_bytes); return false; }
+        if (s.size() > h.bottom - start_of(g)) {
+            E25_INC(place_fail_bytes);
+#ifdef E25_DIAG
+            diag_note_byte_failure(g, i, s.size());
+#endif
+            // Candidate H (primary_hole_reuse): before the caller's repack machinery runs,
+            // try the block's own dead ranges. On failure this returns false exactly as the
+            // original code did, with the block untouched.
+            if (config_.primary_hole_reuse && config_.subblock_reclaim &&
+                insert_into_hole(g, i, s, value, tag))
+                return true;
+            return false;
+        }
         E18_INC(insert_ok);
         E18_ADD(suffix_bytes_copied, s.size());
 
@@ -1525,6 +2396,74 @@ class Region {
         return true;
     }
 
+    // Candidate H (primary_hole_reuse, default OFF): place the suffix into a DEAD RANGE of
+    // the SAME sub-block instead of repacking the block for contiguous room.
+    //
+    // H does not touch existing suffixes -- it finds a gap between them, writes the new
+    // suffix there, inserts the descriptor in KEY order and leaves h.bottom where it was.
+    // The bytes H consumes come from a dead range, not from the contiguous region below
+    // h.bottom, so the block's occupancy does not grow.
+    //
+    // Scope is FIXED and enforced here: same block only; at least two live records; at most
+    // 48 (a fixed stack bound, not a tuned parameter); the first fitting gap scanning
+    // PHYSICALLY from high to low; no persistent hole table, no new header field, nothing
+    // cached across calls. On failure nothing is modified and the caller's original control
+    // flow continues.
+    bool insert_into_hole(std::uint32_t g, std::size_t i, std::string_view s,
+                          std::uint64_t value, std::uint8_t tag) {
+        auto& h = header(g, i);
+        if (h.count >= slots_of(g)) return false;   // slots come first: H creates none
+        if (h.count < 2) { E25_INC(hole_reuse_skipped_lt2); return false; }
+        if (h.count > 48) { E25_INC(hole_reuse_skipped_wide); return false; }
+        E25_INC(hole_reuse_attempts);
+
+        const auto* es = entries(g, i);
+        const std::size_t n = h.count;
+        std::size_t order[48];
+        for (std::size_t j = 0; j < n; ++j) order[j] = j;
+        for (std::size_t a = 1; a < n; ++a) {
+            // The same descending-by-offset insertion sort repack_subblock uses; the
+            // physical order is NOT assumed to match the descriptor order.
+            const std::size_t key = order[a];
+            const std::uint32_t koff = es[key].offset;
+            std::size_t b = a;
+            while (b > 0 && es[order[b - 1]].offset < koff) { order[b] = order[b - 1]; --b; }
+            order[b] = key;
+        }
+
+        // Gaps, from the top of the block downward. A gap [low, cur) sits above the record
+        // whose top is `low`; the new suffix goes at the gap's LOW end, so it never crosses
+        // bb_ and whatever remains of the gap stays directly above it.
+        std::size_t pos = SIZE_MAX;
+        std::size_t cur = bb_[g];
+        for (std::size_t a = 0; a < n; ++a) {
+            const auto& e = es[order[a]];
+            const std::size_t low = std::size_t(e.offset) + e.length;
+            if (cur >= low && cur - low >= s.size()) { pos = low; break; }
+            cur = e.offset;
+        }
+        if (pos == SIZE_MAX && cur >= h.bottom && cur - h.bottom >= s.size())
+            pos = h.bottom;                          // the gap below the lowest record
+        if (pos == SIZE_MAX) { E25_INC(hole_reuse_absent); return false; }
+
+        auto* esw = entries(g, i);
+        std::size_t p = 0;
+        while (p < h.count && E25_CMP(suffix(g, i, esw[p]), s) < 0) ++p;
+        E18_ADD(entry_shifts, h.count - p);
+        for (std::size_t j = h.count; j > p; --j) {
+            esw[j] = esw[j - 1];
+            h.tags[j] = h.tags[j - 1];
+        }
+        if (!s.empty()) std::memcpy(base_of(g, i) + pos, s.data(), s.size());
+        esw[p] = {static_cast<std::uint32_t>(pos), static_cast<std::uint32_t>(s.size()), value};
+        h.tags[p] = tag;
+        ++h.count;
+        if (p == 0 && !suppress_dir_rebuild) rebuild_dir(g);
+        E25_INC(hole_reuse_placed);
+        E25_ADD(hole_reuse_bytes, s.size());
+        return true;
+    }
+
     // E9: a group's sub-blocks are rank-ordered, so every key in sub-block i is
     // smaller than every key in sub-block i+1 (invariant M1, which range scan
     // relies on). Placement below keeps M1 without ever shifting across blocks:
@@ -1533,17 +2472,25 @@ class Region {
     // E31: which sub-block would put_primary try FIRST for this key? Factored out of
     // put_primary's own enumeration so the reclaim and the placement cannot drift apart.
     std::size_t first_candidate(std::uint32_t g, std::string_view s) const {
+        E25_INC(fc_calls);
+        E30_W(fc);
         const std::size_t nb = subblocks(g);
         std::size_t prev = SIZE_MAX;
         for (std::size_t i = 0; i < nb; ++i) {
+            E25_INC(fc_probes);
             const auto& h = header(g, i);
             if (h.count == 0) continue;
             const auto* es = entries(g, i);
             if (compare(suffix(g, i, es[h.count - 1]), s) < 0) { prev = i; continue; }
-            if (prev != SIZE_MAX && compare(s, suffix(g, i, es[0])) < 0) return prev;
+            if (prev != SIZE_MAX && compare(s, suffix(g, i, es[0])) < 0) {
+                E25_INC(fc_gap);   // the two-block path: put_primary tries prev, then i
+                return prev;
+            }
             return i;
         }
-        return prev == SIZE_MAX ? 0 : prev;
+        if (prev == SIZE_MAX) return 0;
+        E25_INC(fc_gap);           // s above every block: the append path
+        return prev;
     }
 
     // E31: pack this sub-block's live suffixes toward the block end, in place.
@@ -1555,9 +2502,42 @@ class Region {
     // the boundary directory is untouched because the sub-block's key range is
     // unchanged -- its first and last entries keep their slots.
     void repack_subblock(std::uint32_t g, std::size_t blk) {
+        // Repack split (2026-10-11): one reading at entry, ONE SHARED boundary after the
+        // sort (sort's end == move's start) and one at the very end. The accumulation
+        // happens after the last reading, so the write-back is outside the window, and no
+        // second RAII pair is nested inside the parent clock. The parent keeps its
+        // stage-D meaning: every call in w_reclaim_calls, and the n<2 early return is
+        // charged to the parent alone, closed at the return itself.
+#if defined(E30_TIME) && defined(E30_WRITE)
+        const std::uint64_t rp_t0 = E30_T0();
+#endif
         auto& h = header(g, blk);
         const std::size_t n = h.count;
-        if (n < 2) return;                      // nothing to reclaim
+
+        // An optimisation, not a precondition. The loop below already handles n == 0 (it
+        // does not run, so top stays at bb_ and bottom becomes bb_, the whole area free) and
+        // n == 1 (the single record is packed to the top). The candidate lifts it because a
+        // block holding 0 or 1 records is where most late-checkpoint byte refusals land.
+        if (n < 2) {
+            if (!config_.reclaim_low_activity) {
+#if defined(E30_TIME) && defined(E30_WRITE)
+                E30_ADD(w_reclaim_ns, rp_t0);
+                E30_INC(w_reclaim_calls);
+#endif
+                return;
+            }
+            E25_INC(low_activity_reclaimed);
+            // The recovered bytes, measured BEFORE the packing loop moves anything, and
+            // with subblock_garbage's own definition of garbage. The entries are read here
+            // rather than in subblock_garbage() because the loop below rewrites offsets.
+            const auto* ea = entries(g, blk);
+            std::size_t la_live = 0;
+            for (std::size_t j = 0; j < n; ++j) la_live += ea[j].length;
+            const std::size_t la_occupied = std::size_t(bb_[g]) - h.bottom;
+            E25_ADD(low_activity_bytes, la_occupied > la_live ? la_occupied - la_live : 0);
+            if (n == 0) E25_INC(low_activity_n0); else E25_INC(low_activity_n1);
+        }
+        E25_INC(rp_calls);
         auto* es = entries(g, blk);
         std::byte* base = base_of(g, blk);
 
@@ -1571,14 +2551,114 @@ class Region {
             order[b] = key;
         }
 
+#if defined(E30_TIME) && defined(E30_WRITE)
+        const std::uint64_t rp_t1 = E30_T0();   // sort end == move start (shared)
+#endif
         std::size_t top = bb_[g];
         for (std::size_t a = 0; a < n; ++a) {
             Entry& e = es[order[a]];
             top -= e.length;
             std::memmove(base + top, base + e.offset, e.length);
+            // Work counters (count build only; the macros evaluate their argument only
+            // there, so no comparison lands in the timed loop). The offset is read BEFORE
+            // the rewrite: an unchanged offset is a same-address memmove -- counted, and
+            // labelled self-copy rather than movement.
+            E25_ADD(rp_records, 1);
+            E25_ADD(rp_bytes, e.length);
+            E25_ADD(rp_moved_records, (e.offset != top) ? 1 : 0);
+            E25_ADD(rp_moved_bytes, (e.offset != top) ? e.length : 0);
+            E25_ADD(rp_selfcopy_records, (e.offset == top) ? 1 : 0);
+            E25_ADD(rp_selfcopy_bytes, (e.offset == top) ? e.length : 0);
             e.offset = static_cast<std::uint32_t>(top);
         }
         h.bottom = static_cast<std::uint16_t>(top);
+#if defined(E30_TIME) && defined(E30_WRITE)
+        const std::uint64_t rp_t2 = E30_T0();   // move end == whole pass end
+        auto& rpT = ::validation::e30::timers();   // write-back, after the window
+        rpT.w_reclaim_ns += rp_t2 - rp_t0;
+        ++rpT.w_reclaim_calls;
+        rpT.w_rp_sort_ns += rp_t1 - rp_t0;
+        ++rpT.w_rp_sort_calls;
+        rpT.w_rp_move_ns += rp_t2 - rp_t1;
+        ++rpT.w_rp_move_calls;
+#endif
+    }
+
+    // G3/A1': what one sub-block could give back if it were tightened -- the bytes it
+    // occupies beyond its live suffixes. Zero means repack_subblock would do nothing (it
+    // returns immediately for fewer than two live records, and a block with no slack has
+    // nothing to reclaim either).
+    std::size_t subblock_garbage(std::uint32_t g, std::size_t blk) const {
+        const auto& h = header(g, blk);
+
+        // The same guard as repack_subblock's, and it has to move with it: this function is
+        // what reclaim_widen uses to CHOOSE candidates, so leaving it in place would keep the
+        // mechanism from ever looking at the blocks the candidate exists for.
+        if (h.count < 2 && !config_.reclaim_low_activity) return 0;
+        const auto* es = entries(g, blk);
+        std::size_t live = 0;
+        for (std::size_t j = 0; j < h.count; ++j) live += es[j].length;
+        const std::size_t occupied = std::size_t(bb_[g]) - h.bottom;
+        return occupied > live ? occupied - live : 0;
+    }
+
+    // G3/A1': how many MORE sub-blocks one failed placement may tighten. FIXED, not tuned
+    // per corpus -- the task book's rule for this package is that the budget is a fixed
+    // configuration, so it is a constant and not a Config field.
+    static constexpr std::size_t kReclaimWidenBudget = 4;
+
+    // G3/A1': tighten the group's OTHER sub-blocks after the rank-selected one was already
+    // tried and the placement still failed. Dirtiest first, fixed budget, retry after each.
+    //
+    // `already_tried` is the block first_candidate chose -- excluded here, because the call
+    // site already ran it. Returns true when the placement finally fits.
+    //
+    // In-place only: repack_subblock changes Entry::offset and Header::bottom and nothing
+    // else, so members, slot order, the sub-block key range and the boundary directory are
+    // all untouched. Nothing is migrated and no overflow record moves -- that is the whole
+    // difference from E37's drain, and the reason this is a clean single-variable change.
+    bool reclaim_widen(std::uint32_t g, std::string_view s, std::uint64_t value,
+                       std::uint8_t tag, std::size_t already_tried) {
+        const std::size_t nb = subblocks(g);
+        if (nb < 2) return false;               // nothing the rank-selected pass did not cover
+
+        // Which blocks are worth touching, dirtiest first. A group has ~1.6 sub-blocks on
+        // average (S0 snapshot) and at most a handful, so a small fixed array is enough and
+        // the budget bounds the work regardless.
+        std::size_t order[64];
+        std::size_t count = 0;
+
+        for (std::size_t i = 0; i < nb && count < 64; ++i) {
+            if (i == already_tried) continue;
+            if (subblock_garbage(g, i) == 0) continue;
+            order[count++] = i;
+        }
+
+        for (std::size_t a = 1; a < count; ++a) {
+            const std::size_t key = order[a];
+            const std::size_t kg = subblock_garbage(g, key);
+            std::size_t b = a;
+            while (b > 0 && subblock_garbage(g, order[b - 1]) < kg) {
+                order[b] = order[b - 1];
+                --b;
+            }
+            order[b] = key;
+        }
+
+        E25_ADD(reclaim_widened_blocks_examined, count);
+
+        const std::size_t budget = count < kReclaimWidenBudget ? count : kReclaimWidenBudget;
+
+        for (std::size_t a = 0; a < budget; ++a) {
+            E25_INC(reclaim_widened);
+            repack_subblock(g, order[a]);
+            if (put_primary(g, s, value, tag)) {
+                E25_INC(reclaim_widened_helped);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // E37: how many records one drain call may move. A CAP ON RECORDS, not a bound on the
@@ -1677,6 +2757,8 @@ class Region {
     }
 
     bool put_primary(std::uint32_t g, std::string_view s, std::uint64_t value, std::uint8_t tag) {
+        E25_INC(put_primary_calls);
+        E30_W(walk);
         const std::size_t nb = subblocks(g);
         std::size_t prev = SIZE_MAX;   // last non-empty sub-block whose max < s
 
@@ -1721,7 +2803,14 @@ class Region {
         // representation is live: lower_bound_pos returns the position in the
         // container's own order, and the OFF arm is the same std::lower_bound call
         // this line used to make.
+#ifdef E30_TIME
+        const auto ov_l0 = E30_T0();
+#endif
         const std::size_t pos = o->lower_bound_pos(s);
+#ifdef E30_TIME
+        E30_ADD(ov_lookup_ns, ov_l0);
+        E30_INC(ov_lookup_calls);
+#endif
         // E31 item 3: the distance the insertion has to push up, in records AND in
         // bytes, read while the distance is still valid. In the OFF arm those records
         // are the ones vector::insert relocates. In the ON arm the same distance is
@@ -1731,7 +2820,19 @@ class Region {
         E25_ADD(ov_shifted_records_insert, o->size() - pos);
         E25_ADD(ov_shifted_bytes_insert, (o->size() - pos) * sizeof(OverflowRecord));
         E25_INC(string_allocs);
+        E25_ADD(ov_suffix_bytes_written, s.size());
+#ifdef E30_TIME
+        // The construction is timed apart from the shift: the string is a heap allocation
+        // when the key exceeds SSO, while the shift is a memmove. E32 measured the shift;
+        // A3 needs to know which of the two the container's cost actually is.
+        const auto ov_a0 = E30_T0();
+        OverflowRecord rec{std::string(s), value, tag};
+        E30_ADD(ov_alloc_ns, ov_a0);
+        E30_INC(ov_alloc_calls);
+        o->insert_at(pos, std::move(rec));
+#else
         o->insert_at(pos, OverflowRecord{std::string(s), value, tag});
+#endif
         ++overflow_count_;
 #ifdef E30_TIME
         E30_ADD(ov_insert_ns, ov_t0);
@@ -1739,10 +2840,145 @@ class Region {
 #endif
     }
 
-    void compact(std::uint32_t g) {
+
+    // I10: reproduce the replay's placement decisions WITHOUT touching the group, or return
+    // false when the group cannot hold every record.
+    //
+    // EXACT, NOT AN ESTIMATE. `live` is gathered sub-block by sub-block and M1 makes
+    // sub-blocks rank-ordered, so `live` is globally ascending. For an ascending input every
+    // insertion goes to the END of whichever sub-block it lands in -- a new key is >= every
+    // key already placed -- so the in-block ordering inside insert_into is never exercised
+    // and the decision reduces to per-sub-block counters. This pass therefore reproduces
+    // put_primary's walk exactly, and `dir_out` is the directory the replay will produce.
+    //
+    // ALL scratch is local: every allocation this needs happens while the group is intact,
+    // which is the whole point. Nothing here writes to the group.
+    bool plan_replay(std::uint32_t g, const std::vector<Pair>& live,
+                     std::vector<std::uint32_t>& blk_out,
+                     std::vector<Boundary>& dir_out) const {
+        const std::size_t nb = subblocks(g);
+        const std::size_t cap_slots = slots_of(g);
+        const std::size_t cap_bytes = std::size_t(bb_[g]);
+
+        // `used[j]` counts from the block's own start, exactly as insert_into's
+        // `h.bottom - start_of(g)` does, so the byte test below is the same test.
+        std::vector<std::size_t> used(nb, start_of(g));
+        std::vector<std::size_t> cnt(nb, 0);
+        std::vector<std::uint32_t> first_rec(nb, 0);
+        std::vector<std::uint32_t> last_rec(nb, 0);
+        std::vector<char> has(nb, 0);
+
+        blk_out.assign(live.size(), 0);
+
+        auto fits = [&](std::size_t j, std::size_t len) {
+            return cnt[j] < cap_slots && used[j] + len <= cap_bytes;
+        };
+
+        auto place = [&](std::size_t j, std::size_t k) {
+            cnt[j] += 1;
+            used[j] += live[k].first.size();
+            if (!has[j]) { has[j] = 1; first_rec[j] = static_cast<std::uint32_t>(k); }
+            last_rec[j] = static_cast<std::uint32_t>(k);
+            blk_out[k] = static_cast<std::uint32_t>(j);
+        };
+
+        for (std::size_t k = 0; k < live.size(); ++k) {
+            const std::string_view s = live[k].first;
+            const std::size_t len = s.size();
+
+            std::size_t prev = SIZE_MAX;
+            bool done = false;
+
+            for (std::size_t i = 0; i < nb; ++i) {
+                if (!has[i]) continue;
+
+                if (compare(std::string_view(live[last_rec[i]].first), s) < 0) {
+                    prev = i;
+                    continue;
+                }
+
+                if (prev != SIZE_MAX &&
+                    compare(s, std::string_view(live[first_rec[i]].first)) < 0) {
+                    if (fits(prev, len)) { place(prev, k); done = true; }
+                    break;
+                }
+
+                if (fits(i, len)) { place(i, k); done = true; }
+                break;
+            }
+
+            if (!done) {
+                for (std::size_t j = (prev == SIZE_MAX ? 0 : prev); j < nb; ++j) {
+                    if (fits(j, len)) { place(j, k); done = true; break; }
+                }
+            }
+
+            // Unreachable for a well-formed group: it held these very records before the
+            // pack, and a pack only ever frees bytes. Reaching it means the caller must NOT
+            // commit -- which is exactly why the plan is computed before anything moves.
+            if (!done) return false;
+        }
+
+        dir_out.clear();
+
+        if (!dirs_.empty() && nb >= 2) {
+            for (std::size_t i = 0; i < nb; ++i) {
+                if (!has[i]) continue;
+#ifdef E25_DIAG
+                // I10 injection point 3: the same directory construction as point 2, but
+                // under the plan it runs BEFORE the group is touched -- so an interruption
+                // here must leave the index exactly as it was.
+                if (maybe_inject(3)) throw std::bad_alloc();
+#endif
+                dir_out.push_back(Boundary{std::string(live[first_rec[i]].first),
+                                           static_cast<std::uint32_t>(i)});
+            }
+        }
+
+        return true;
+    }
+
+    // I10: the commit phase's only write primitive. It performs the append the plan already
+    // proved feasible, so it has NO capacity test to fail and allocates nothing. Its
+    // preconditions are exactly plan_replay's guarantees, and the diagnostic build checks
+    // them (below) rather than trusting them.
+    void append_planned(std::uint32_t g, std::size_t i, std::string_view s,
+                        std::uint64_t value, std::uint8_t tag) {
+        auto& h = header(g, i);
+#ifdef E25_DIAG
+        // The plan is a transcription of insert_into's own arithmetic; if it ever drifts,
+        // this fires in the gates instead of writing past the block.
+        if (h.count >= slots_of(g) || s.size() > h.bottom - start_of(g))
+            E25_INC(compact_plan_violation);
+#endif
+        auto* es = entries(g, i);
+        h.bottom = static_cast<std::uint16_t>(h.bottom - s.size());
+        if (!s.empty()) std::memcpy(base_of(g, i) + h.bottom, s.data(), s.size());
+        es[h.count] = {h.bottom, static_cast<std::uint32_t>(s.size()), value};
+        h.tags[h.count] = tag;
+        ++h.count;
+        E18_INC(insert_ok);
+        E18_ADD(suffix_bytes_copied, s.size());
+    }
+
+    //
+    // I10: returns FALSE when the plan says the group cannot hold its own records, which
+    // is decided BEFORE anything moves -- in that case the caller sees an unchanged group.
+    // Both call sites discard the result today; the value exists so the failure has a
+    // defined, inspectable outcome rather than a throw from inside the commit.
+    bool compact(std::uint32_t g) {
         const auto e30_t0 = E30_T0();
         E30_INC(compact_calls);
-        ++compactions;
+        // `compactions` counts compactions that COMPLETED, so it is incremented at the end
+        // and not here. It used to be incremented on entry, which meant a compaction that
+        // threw before touching the group was still counted -- a counter half-update of
+        // exactly the kind task book invariant I10 forbids. Found by the G1 failure
+        // injection: with the PREPARE point armed, the index came back structurally
+        // identical but with `compactions` one higher.
+        //
+        // The E25/E30 counters below are NOT moved: they measure work that was actually
+        // performed before the failure (the gather really did read every live record), so
+        // counting that work is correct for them even when the compaction then fails.
         const std::size_t nb = subblocks(g);
         std::vector<Pair> live;
         // E26 C1. The tags are collected ONLY when they are going to be reused: making
@@ -1777,6 +3013,34 @@ class Region {
         E25_ADD(compact_bytes_copied, bytes_copied);
         E30_ADD(collect_ns, e30_t0);   // entry through the gather, before the re-fill
 
+#ifdef E25_DIAG
+        // PREPARE point: everything allocated and read, nothing in the group touched yet.
+        if (maybe_inject(0)) throw std::bad_alloc();
+#endif
+
+        // ---- PREPARE (I10) ----------------------------------------------------------
+        // Everything that can fail happens HERE, while the group is still intact: the
+        // replay is planned, and the directory the replay will produce is built. Both
+        // allocate; both are allowed to fail; neither has touched the group. If the plan
+        // does not fit, NOTHING has changed and compact() reports failure.
+        //
+        // Without this switch the directory is rebuilt after the replay instead, which is
+        // where the old code could be interrupted with the group already rewritten.
+        std::vector<std::uint32_t> plan_blk;
+        std::vector<Boundary> plan_dir;
+
+        if (config_.compact_plan_commit && !plan_replay(g, live, plan_blk, plan_dir)) {
+            // I10: the group cannot hold its own records. NOTHING has been touched, so this
+            // is a clean refusal and the caller simply keeps its old state.
+            E25_INC(compact_plan_rejected);
+            return false;
+        }
+
+        // ---- COMMIT ----------------------------------------------------------------
+        // From here to the end of the replay there is no allocation and no fallible call:
+        // append_planned cannot fail, and the directory swap below is noexcept. The commit
+        // is therefore not interruptible, which is the property task book invariant I10
+        // asks for.
         for (std::size_t i = 0; i < nb; ++i) {
             header(g, i).count = 0;
             header(g, i).bottom = static_cast<std::uint16_t>(bb_[g]);
@@ -1786,6 +3050,10 @@ class Region {
         // on each of those would be pure waste, so it is rebuilt once at the end.
         suppress_dir_rebuild = true;
         for (std::size_t k = 0; k < live.size(); ++k) {
+#ifdef E25_DIAG
+            // COMMIT point: half the records are already back in the group.
+            if (k == live.size() / 2 && maybe_inject(1)) throw std::bad_alloc();
+#endif
             std::uint8_t tg;
             if (want_tags) {
                 tg = live_tags[k];
@@ -1799,26 +3067,208 @@ class Region {
             } else {
                 tg = Fingerprint::of(live[k].first);
             }
-            bool ok = put_primary(g, live[k].first, live[k].second, tg);
-            if (!ok) throw std::logic_error("compaction lost capacity");
+
+            if (config_.compact_plan_commit) {
+                append_planned(g, plan_blk[k], live[k].first, live[k].second, tg);
+            } else if (!put_primary(g, live[k].first, live[k].second, tg)) {
+                throw std::logic_error("compaction lost capacity");
+            }
         }
         suppress_dir_rebuild = false;
-        rebuild_dir(g);
+
+        if (config_.compact_plan_commit) {
+            // Prepared above; vector::swap is noexcept, so this cannot be interrupted and
+            // the OLD directory is destroyed only after the new one is in place.
+            if (!dirs_.empty()) {
+                ++dir_rebuilds;
+                dir_entries_built += plan_dir.size();
+                dirs_[g].swap(plan_dir);
+            }
+        } else {
+            rebuild_dir(g);
+        }
+
+        ++compactions;   // see the note at the top of compact(): completed, not entered
         E30_ADD(compact_ns, e30_t0);          // whole call, collect + replay + directory
+        return true;
+    }
+
+    // E38: calibrate this region's view of the shared table, or take the Context16 fallback.
+    //
+    // THE FALLBACK IS PER REGION AND IS RECORDED, NOT SILENT. Task book section 3.4: a region
+    // whose calibration fails uses the reference model for the WHOLE region, and the experiment
+    // reports how many regions, records and queries that covers. A region that quietly mapped
+    // everything to group 0 instead would be a different layout wearing the LITS arm's name --
+    // and a content comparison would not notice, because group 0 is still a valid group.
+    void calibrate_lits(const std::vector<Pair>& sorted,
+                        const std::shared_ptr<const lits_hpt::SharedModel>& shared) {
+        // Combinations the adapter does not implement are REFUSED rather than mapped to
+        // something near enough (task book section 4).
+        if (config_.model_kind != ModelKind::Context16) {
+            throw std::invalid_argument("LitsHpt supports ModelKind::Context16 only");
+        }
+        if (config_.canonical != Route::Full) {
+            throw std::invalid_argument("LitsHpt supports Route::Full only");
+        }
+
+        // FEWER THAN TWO KEYS IS A DEFINED BOUNDARY CASE, NOT A FAILURE AND NOT A TRAINING.
+        //
+        // The pinned calibration reads `keys[1]` and divides by a span, so with one key there is
+        // nothing to do; with none there is not even a key. Task book section 3.4 gives both a
+        // defined answer -- group 0 -- and this branch takes it WITHOUT requiring a shared table
+        // at all, which is what lets an index built from an empty key set exist.
+        if (sorted.size() < 2) {
+            lits_ = lits_hpt::RegionModel::boundary(
+                groups_, sorted.empty() ? lits_hpt::Status::NoKeys : lits_hpt::Status::TooFewKeys);
+            use_lits_ = true;
+            ++lits_stats_.regions_boundary;
+            lits_stats_.keys_boundary += sorted.size();
+
+            return;
+        }
+
+        if (!shared) {
+            throw std::invalid_argument("model backend is LitsHpt but no shared table was given");
+        }
+
+        // The coefficient bound is computed from the region's own longest key, so it is tight
+        // rather than conservative -- check_lits_model measured a generic limit rejecting three
+        // regions that were in fact safe.
+        std::size_t max_key_bytes = 0;
+        for (const auto& kv : sorted) {
+            max_key_bytes = std::max(max_key_bytes, kv.first.size());
+        }
+
+        lits_ = sorted.empty()
+            ? lits_hpt::RegionModel::boundary(groups_, lits_hpt::Status::NoKeys)
+            : lits_hpt::RegionModel::calibrate(*shared, sorted.front().first,
+                                               sorted.back().first, prefix_.size(), groups_,
+                                               sorted.size(), max_key_bytes);
+
+        if (lits_.usable()) {
+            use_lits_ = true;
+            ++lits_stats_.regions_calibrated;
+            lits_stats_.keys_calibrated += sorted.size();
+        } else {
+            // The fallback, for this region's whole lifetime: the group mapping, the query
+            // path and the demand pass all read `use_lits_`, which is resolved here once.
+            use_lits_ = false;
+            ++lits_stats_.regions_fallback;
+            lits_stats_.keys_fallback += sorted.size();
+        }
+    }
+
+    // BlockLinearRank (2026-10-11): fit this region's rank model.
+    //
+    // WHERE THIS RUNS. After `prefix_` and `groups_` exist and BEFORE the demand pass, exactly
+    // where the LITS calibration runs and for the same reason: the pass below asks
+    // canonical_group for every key, and the plan it computes has to describe the layout this
+    // region will actually build.
+    //
+    // NO FALLBACK ARM. The rank model's input domain is every byte string -- empty key, embedded
+    // NUL, high bytes, arbitrary length -- so there is no admission decision to get wrong and no
+    // region is silently mapped by the reference model under this backend's name. The three
+    // boundary statuses still answer group 0, which is a defined answer rather than a failure.
+    //
+    // The combination refusals mirror calibrate_lits: a pairing this backend does not implement
+    // is REFUSED, not mapped to something near enough.
+    void calibrate_block_rank(const std::vector<Pair>& sorted) {
+        if (config_.model_kind != ModelKind::Context16) {
+            throw std::invalid_argument("BlockLinearRank supports ModelKind::Context16 only");
+        }
+        if (config_.canonical != Route::Full) {
+            throw std::invalid_argument("BlockLinearRank supports Route::Full only");
+        }
+
+        std::vector<std::string_view> keys;
+        keys.reserve(sorted.size());
+        for (const auto& kv : sorted) keys.push_back(kv.first);
+
+        block_rank_ = blockrank::RegionModel::fit(keys.data(), keys.size(), prefix_.size(), groups_);
+        use_block_rank_ = true;
+        ++block_rank_stats_.fits;
+
+        if (block_rank_.fitted()) {
+            ++block_rank_stats_.regions_fitted;
+            block_rank_stats_.keys_fitted += sorted.size();
+            block_rank_stats_.segments_total += block_rank_.segment_count();
+        } else {
+            ++block_rank_stats_.regions_boundary;
+            block_rank_stats_.keys_boundary += sorted.size();
+        }
+    }
+
+    // EqualDepthDir (2026-10-11): build this region's separator directory.
+    //
+    // Runs where the other two calibrations run -- after `prefix_` and `groups_` exist and
+    // BEFORE the demand pass, which asks canonical_group for every key. The plan it computes has
+    // to describe the layout this region will build.
+    //
+    // No fallback arm: the directory accepts every byte string (it compares arbitrary suffixes),
+    // so the only non-fitted outcomes are the three DEFINED boundary cases, all of which answer
+    // group 0. Combination refusals mirror the other backends.
+    void calibrate_depth_dir(const std::vector<Pair>& sorted) {
+        if (config_.model_kind != ModelKind::Context16) {
+            throw std::invalid_argument("EqualDepthDir supports ModelKind::Context16 only");
+        }
+        if (config_.canonical != Route::Full) {
+            throw std::invalid_argument("EqualDepthDir supports Route::Full only");
+        }
+
+        std::vector<std::string_view> keys;
+        keys.reserve(sorted.size());
+        for (const auto& kv : sorted) keys.push_back(kv.first);
+
+        depth_dir_ = equivdir::RegionModel::fit(keys.data(), keys.size(), prefix_.size(), groups_);
+        use_depth_dir_ = true;
+        ++depth_dir_stats_.fits;
+
+        if (depth_dir_.fitted()) {
+            ++depth_dir_stats_.regions_fitted;
+            depth_dir_stats_.keys_fitted += sorted.size();
+            depth_dir_stats_.thresholds_total += depth_dir_.threshold_count();
+
+            // A duplicate threshold means the depth band boundary fell inside a run of equal
+            // suffixes: that group can hold no key, and no map of the suffix alone can fix it.
+            // Counted here so a round can say whether the balance was limited by the keys.
+            std::vector<std::string_view> seps;
+            for (std::size_t j = 1; j <= depth_dir_.threshold_count(); ++j) {
+                const auto rank = std::min(sorted.size() - 1, (j * sorted.size()) / groups_);
+                seps.push_back(sorted[rank].first);
+            }
+            std::sort(seps.begin(), seps.end(), [](std::string_view a, std::string_view b) {
+                return equivdir::compare(a, b) < 0;
+            });
+            for (std::size_t j = 1; j < seps.size(); ++j)
+                if (equivdir::compare(seps[j - 1], seps[j]) == 0) {
+                    ++depth_dir_stats_.regions_with_duplicate_thresholds;
+                    break;
+                }
+        } else {
+            ++depth_dir_stats_.regions_boundary;
+            depth_dir_stats_.keys_boundary += sorted.size();
+        }
     }
 
 public:
-    Region(const std::vector<Pair>& sorted, Config cfg) : Region(sorted, cfg, {}, {}, {}) {}
+    Region(const std::vector<Pair>& sorted, Config cfg,
+           std::shared_ptr<const lits_hpt::SharedModel> lits_shared = nullptr)
+        : Region(sorted, cfg, {}, {}, {}, nullptr, std::move(lits_shared)) {}
 
     // nb_cap_in is an optional per-group ceiling on the sub-block count, used by
     // the strict-budget allocator to keep an unfunded group on its single-block
     // layout. It is build-time configuration only: nothing is stored, and
     // subblocks(g) still derives from off_ and bb_.
+    //
+    // E38: `lits_shared` is the ONE table the whole index shares. It is passed by value and
+    // moved into the member, so a region either holds a reference to the table it was built
+    // against or holds none -- there is no window in which it holds a dangling one.
     Region(const std::vector<Pair>& sorted, Config cfg,
            std::vector<std::uint16_t> sg_in, std::vector<std::uint32_t> bb_in,
            std::vector<std::uint16_t> nb_cap_in = {},
-           const RegionDemand* preset = nullptr)
-        : config_(cfg) {
+           const RegionDemand* preset = nullptr,
+           std::shared_ptr<const lits_hpt::SharedModel> lits_shared = nullptr)
+        : config_(cfg), lits_shared_(std::move(lits_shared)) {
         const auto e14_ctor_t0 = E14_T0();
         E14_INC(ctor_calls);
         E18_INC(region_ctors);
@@ -1863,6 +3313,30 @@ public:
             throw std::invalid_argument("capacity table size");
         sg_ = std::move(sg_in);
         bb_ = std::move(bb_in);
+
+        // E38: the LITS calibration, placed HERE because it needs `prefix_` and `groups_`, both
+        // of which exist by now -- and because it must run BEFORE the demand pass, which asks
+        // canonical_group for every key. Its cost is charged to the `layout` phase deliberately:
+        // E14's eight phases must keep partitioning the constructor for their sum to reconcile
+        // with ctor_total, and a ninth phase would break that reconciliation.
+        if (config_.model_backend == ModelBackend::LitsHpt) {
+            calibrate_lits(sorted, lits_shared_);
+        } else if (config_.model_backend == ModelBackend::BlockLinearRank) {
+            calibrate_block_rank(sorted);
+        } else if (config_.model_backend == ModelBackend::EqualDepthDir) {
+            calibrate_depth_dir(sorted);
+        }
+        // Candidate M3 (default OFF): the mapping is known here, so a LITS-mapped region can
+        // release the reference table it will never read. The preset path is refused first:
+        // its digest is computed from that table, and a silent mismatch would quietly turn
+        // the R1 reuse into a full recomputation.
+        if (config_.lits_skip_reference_table && use_lits_) {
+            if (preset != nullptr)
+                throw std::logic_error(
+                    "lits_skip_reference_table: a preset was offered for a LITS region whose "
+                    "reference table is dropped; refused rather than silently degraded");
+            Model::Table().swap(model_.cumulative);
+        }
         // E31H: hysteresis state, allocated only when the switch asks for it.
         if (reclaim_gated()) {
             reclaim_last_op_.assign(groups_, kNoReclaimAttempt);
@@ -1890,7 +3364,9 @@ public:
         const bool preset_ok = preset != nullptr && preset->group_ids.size() == sorted.size() &&
                                preset->prefix == prefix_ && preset->groups == groups_ &&
                                preset->model_digest ==
-                                   model_identity(model_, groups_, config_.canonical);
+                                   mapping_identity(model_, groups_, config_.canonical,
+                                                    config_.model_backend, block_rank_,
+                                                    depth_dir_);
         if (cfg.multiblock) {
             const auto t0 = E14_T0();
             entries_need.assign(groups_, 0);
@@ -1898,7 +3374,7 @@ public:
             if (config_.reuse_group_ids && !preset_ok) group_of.resize(sorted.size());
             for (std::size_t i = 0; i < sorted.size(); ++i) {
                 auto s = std::string_view(sorted[i].first).substr(prefix_.size());
-                const auto g = preset_ok ? preset->group_ids[i] : canonical_group(s);
+                const auto g = preset_ok ? preset->group_ids[i] : canonical_group(sorted[i].first);
                 if (!group_of.empty()) group_of[i] = g;
                 ++entries_need[g];
                 bytes_need[g] += s.size();
@@ -1979,7 +3455,7 @@ public:
             const auto t0 = E14_T0();
             for (std::size_t i = 0; i < sorted.size(); ++i) {
                 auto s = std::string_view(sorted[i].first).substr(prefix_.size());
-                pre_g[i] = reuse_ids ? group_of[i] : canonical_group(s);
+                pre_g[i] = reuse_ids ? group_of[i] : canonical_group(sorted[i].first);
                 E18_INC(fingerprint_calls);
                 pre_tag[i] = static_cast<std::uint8_t>(Fingerprint::of(s));
             }
@@ -2002,7 +3478,7 @@ public:
             // E19 (R1): read the id the demand pass computed rather than asking
             // the model the same question again.
             const auto g = preset_ok ? preset->group_ids[i]
-                                     : (reuse_ids ? group_of[i] : canonical_group(s));
+                                     : (reuse_ids ? group_of[i] : canonical_group(kv.first));
             E18_INC(fingerprint_calls);
             const auto tag = Fingerprint::of(s);
             if (!put_primary(g, s, kv.second, static_cast<std::uint8_t>(tag)))
@@ -2032,6 +3508,38 @@ public:
     std::size_t compaction_count() const { return compactions; }
     std::size_t prefix_length() const { return prefix_.size(); }
     const std::string& prefix() const { return prefix_; }
+
+    // E38: how the LITS backend covered the regions built so far. A round reports these rather
+    // than asserting the fallback count is zero -- the point of section 3.4 is that a fallback
+    // is allowed and must be VISIBLE, not that it never happens.
+    static const LitsStats& lits_stats() { return lits_stats_; }
+    static void reset_lits_stats() { lits_stats_ = LitsStats{}; }
+    // True when this region was mapped by the LITS table rather than by the reference model.
+    bool uses_lits() const { return use_lits_; }
+    // True when this region was mapped by the rank backend.
+    bool uses_block_rank() const { return use_block_rank_; }
+    // The group the PLACEMENT path would use for this full key, exposed for gates and
+    // diagnostics that must check order-preservation directly instead of inferring it from
+    // code. It is deliberately the same call the demand pass and the placement loop make.
+    std::uint32_t placement_group(std::string_view full_key) const {
+        return canonical_group(full_key);
+    }
+    blockrank::Status block_rank_status() const { return block_rank_.status(); }
+    static const BlockRankStats& block_rank_stats() { return block_rank_stats_; }
+    static void reset_block_rank_stats() { block_rank_stats_ = BlockRankStats{}; }
+    bool uses_depth_dir() const { return use_depth_dir_; }
+    equivdir::Status depth_dir_status() const { return depth_dir_.status(); }
+    std::size_t depth_dir_thresholds() const { return depth_dir_.threshold_count(); }
+    static const DepthDirStats& depth_dir_stats() { return depth_dir_stats_; }
+    static void reset_depth_dir_stats() { depth_dir_stats_ = DepthDirStats{}; }
+    // Candidate M3: whether the Context16 reference table is still resident.
+    bool reference_table_resident() const { return !model_.cumulative.empty(); }
+
+    // The status of this region's calibration, for a per-reason breakdown. Read from the region
+    // itself rather than from `lits_stats_`, which accumulates over every region ever
+    // CONSTRUCTED -- splits, prefix rebuilds and erases included -- and is therefore the wrong
+    // denominator for "what does the index I just timed look like".
+    lits_hpt::Status lits_status() const { return lits_.status; }
     std::uint32_t groups() const { return groups_; }
     // E33/SA0: read-only exposure of the group mapping, next to the other read-only
     // accessors (slot_table / block_table / boundary_dir / subblock_keys) that exist so a
@@ -2039,7 +3547,24 @@ public:
     // structure review asks for one trace from a real key to its group and for I1
     // (the query group equals the placement group) to be verified, and both need this
     // callable from outside without making the placement path itself public.
-    std::uint32_t group_of(std::string_view suffix) const { return canonical_group(suffix); }
+    // The REFERENCE model's answer for a SUFFIX, for gates and diagnostics. Deliberately not
+    // backend-dispatched: its callers use it as the frozen model's own mapping to compare
+    // against, and routing it through the backend would make those comparisons compare a
+    // model with itself.
+    std::uint32_t group_of(std::string_view suffix) const {
+        E18_INC(group_calls);
+
+        // Candidate M3: a region that released its reference table cannot answer this. Fail
+        // loudly instead of reading an empty table; callers that need the reference model
+        // must hold an independent object. Never reached with the switch off.
+        if (model_.cumulative.empty())
+            throw std::logic_error(
+                "group_of: this region has no resident reference table "
+                "(lits_skip_reference_table); use an independent reference object");
+
+        Fingerprint dummy;
+        return model_.predict<false>(suffix, groups_, config_.canonical, dummy).group;
+    }
 
     std::size_t slots() const { return sg_.empty() ? 0 : sg_[0]; }
 
@@ -2127,6 +3652,12 @@ public:
     // repack_subblock produces for a block it processes. Reclaim frees BYTES and never
     // SLOTS -- packing suffixes does not change count -- so the two tests are separate here
     // for the same reason insert_into separates them.
+    // WHAT A REPACK WOULD FREE IF IT ALWAYS RAN. (bb_ - start_of) - live is the whole suffix
+    // area minus the live bytes, and it does NOT model repack_subblock's n<2 early return.
+    // Under the shipped configuration that makes it an OVER-estimate for a block holding
+    // fewer than two live records -- it becomes the real figure only with
+    // reclaim_low_activity on. The gate measures the real capability by running the
+    // mechanism; nothing should read this number as "what the current code can reach".
     std::size_t diag_free_after_reclaim(std::uint32_t g, std::size_t i) const {
         const auto& h = header(g, i);
         std::size_t live = 0;
@@ -2304,7 +3835,10 @@ public:
         MemBreakdown m{};
         // E9: bb_ describes one sub-block, so the group's bytes come from off_.
         m.blocks = off_.back();
-        m.model = model_.allocated_bytes();
+        // The rank backend's segments are resident model memory too, so they belong in the
+        // same field instead of being left out of the decomposition.
+        m.model = model_.allocated_bytes() + block_rank_.owned_bytes() +
+                  depth_dir_.owned_bytes();
         m.prefix = prefix_.capacity() + 1;
         m.overflow = overflow_owners_.capacity() * sizeof(void*);
         // O1: the container reports its own space in the terms this decomposition
@@ -2460,12 +3994,14 @@ public:
 
     // E20 (R2): the same replay, but keeping the ids, the prefix and the logical
     // group count so the final construction can reuse them.
-    static RegionDemand demand_profile_ctx(const Pair* first, const Pair* last, const Config& cfg) {
-        return demand_profile_impl(first, last, cfg, true);
+    static RegionDemand demand_profile_ctx(const Pair* first, const Pair* last, const Config& cfg,
+                                           const std::shared_ptr<const lits_hpt::SharedModel>& lits_shared = nullptr) {
+        return demand_profile_impl(first, last, cfg, true, lits_shared);
     }
 
     static RegionDemand demand_profile_impl(const Pair* first, const Pair* last, const Config& cfg,
-                                            bool keep_ids) {
+                                            bool keep_ids,
+                                            const std::shared_ptr<const lits_hpt::SharedModel>& lits_shared = nullptr) {
         if (cfg.multiblock)
             throw std::invalid_argument("E16: demand_profile covers the single-block layout only");
         if (cfg.block_bytes > 65535 || cfg.block_bytes % 64 || cfg.load <= 0 || cfg.load >= 1)
@@ -2479,6 +4015,62 @@ public:
         E18_ADD(group_calls, n);   // one prediction per key in this pass
         Model model;
         model.train(first, last, prefix.size(), cfg.model_kind);
+
+        // E38: THE SAME BACKEND DECISION AND THE SAME TABLE AS THE REAL REGION.
+        //
+        // This pass computes the capacity plan, and the plan has to describe the layout the
+        // regions will actually build. Measuring with the reference model and placing with LITS
+        // is the mistake the task book's section 5.2 names -- and it would not show up as an
+        // error, only as a plan that fits the wrong demand.
+        bool use_lits = false;
+        lits_hpt::RegionModel lits;
+        // BlockLinearRank: the SAME fit the region will make, over the same key range, prefix and
+        // group count. Measuring demand with one mapping and placing with another is the mistake
+        // the E38 comment above names, and it would not show up as an error -- only as a plan
+        // that fits the wrong demand.
+        bool use_block_rank = false;
+        blockrank::RegionModel block_rank;
+        // EqualDepthDir: the same directory the region will build, from the same key range,
+        // prefix and group count. Measuring demand with one map and placing with another is the
+        // mistake the E38 comment above names.
+        bool use_depth_dir = false;
+        equivdir::RegionModel depth_dir;
+        std::size_t max_key_bytes = 0;
+        for (const Pair* it = first; it != last; ++it) {
+            max_key_bytes = std::max(max_key_bytes, it->first.size());
+        }
+
+        if (cfg.model_backend == ModelBackend::LitsHpt) {
+            if (!lits_shared) {
+                throw std::invalid_argument("demand profile: LitsHpt needs the shared table");
+            }
+            lits = n == 0
+                ? lits_hpt::RegionModel::boundary(groups, lits_hpt::Status::NoKeys)
+                : lits_hpt::RegionModel::calibrate(*lits_shared, first[0].first,
+                                                   first[n - 1].first, prefix.size(), groups, n,
+                                                   max_key_bytes);
+            // A region that fell back to the reference model in the real build must fall back
+            // HERE too, or the plan would fund a layout the build will not produce.
+            use_lits = lits.usable();
+        }
+
+        if (cfg.model_backend == ModelBackend::BlockLinearRank) {
+            std::vector<std::string_view> block_keys;
+            block_keys.reserve(n);
+            for (const Pair* it = first; it != last; ++it) block_keys.push_back(it->first);
+            block_rank = blockrank::RegionModel::fit(block_keys.data(), block_keys.size(),
+                                                     prefix.size(), groups);
+            use_block_rank = true;
+        }
+
+        if (cfg.model_backend == ModelBackend::EqualDepthDir) {
+            std::vector<std::string_view> depth_keys;
+            depth_keys.reserve(n);
+            for (const Pair* it = first; it != last; ++it) depth_keys.push_back(it->first);
+            depth_dir = equivdir::RegionModel::fit(depth_keys.data(), depth_keys.size(),
+                                                   prefix.size(), groups);
+            use_depth_dir = true;
+        }
 
         const std::size_t slots = cfg.slots;
         const std::size_t start = sizeof(Header) + slots * sizeof(Entry);
@@ -2498,7 +4090,15 @@ public:
         for (std::size_t i = 0; i < n; ++i) {
             const std::string_view s = std::string_view(first[i].first).substr(prefix.size());
             Fingerprint dummy;
-            const std::uint32_t g = model.predict<false>(s, groups, cfg.canonical, dummy).group;
+            // E38: the same dispatch the region uses, on the same coordinates -- full key to the
+            // LITS walk, suffix to the reference model.
+            const std::uint32_t g = use_depth_dir
+                ? depth_dir.predict_group(first[i].first)
+                : use_block_rank
+                    ? block_rank.predict_group(first[i].first)
+                    : use_lits
+                        ? lits.predict_group(first[i].first)
+                        : model.predict<false>(s, groups, cfg.canonical, dummy).group;
             where[i] = g;
             const std::size_t len = s.size();
             // insert_into's acceptance test, verbatim, for a single-block group.
@@ -2538,7 +4138,9 @@ public:
         RegionDemand rd;
         rd.prefix = prefix;
         rd.groups = groups;
-        rd.model_digest = model_identity(model, groups, cfg.canonical);
+        rd.model_digest =
+            mapping_identity(model, groups, cfg.canonical, cfg.model_backend, block_rank,
+                             depth_dir);
         if (keep_ids) rd.key_digest = key_sequence_digest(first, last);
         rd.stats = std::move(out);
         if (keep_ids) {
@@ -2652,14 +4254,17 @@ public:
 
         const auto s = key.substr(prefix_.size());
         Fingerprint fp;
-        const auto pred = model_.predict<Hash>(s, groups_, mode.route, fp);
+        const auto pred = predict_for<Hash>(key, s, mode.route, fp);
         const auto g = pred.group;
         const std::byte* address = base_of(g, 0);
 
         if (mode.prefetch == Prefetch::Early) __builtin_prefetch(address, 0, 3);
         std::uint8_t tag = 0;
         if constexpr (Hash) {
-            fp.tail(s.substr(pred.consumed));
+            // E38: `fp_consumed`, not `consumed`. On the reference path they are equal and this
+            // line is what it always was; on the LITS path the model contributed nothing to the
+            // hash and this hashes the whole suffix -- which is what reproduces the STORED tag.
+            fp.tail(s.substr(pred.fp_consumed));
             tag = fp.tag();
         }
         if (mode.prefetch == Prefetch::Late) __builtin_prefetch(address, 0, 3);
@@ -2985,6 +4590,7 @@ public:
     // Compaction may run here and move slots, but it does not change the group or
     // the tag, so those stay valid; put_primary recomputes the physical position.
     bool place_with_ctx(std::string_view key, std::uint64_t value, const Located& loc) {
+        E30_W(place);
         if (reclaim_gated()) {
             ++placements_since_;   // E31H/E31P: the interval and the state scale
         }
@@ -2993,9 +4599,44 @@ public:
             // E31H: the same reclaim, gated by the hysteresis when that switch is on.
             if (config_.subblock_reclaim && reclaim_allowed(loc.group)) {
                 E25_INC(subblock_reclaims);
-                repack_subblock(loc.group, first_candidate(loc.group, s));
+                const std::size_t rank_blk = first_candidate(loc.group, s);
+#ifdef E25_DIAG
+                {
+                    // Stage D supplementary check: would the SEARCH's own directory
+                    // answer have chosen this same block? The candidate threads that
+                    // answer through Located instead of recomputing it; this measures
+                    // the equality on the real workload rather than assuming it.
+                    if (!has_dir(loc.group)) {
+                        E25_INC(hint_nodir);
+                    } else {
+                        Result tmp;
+                        const std::size_t dir_cand = locate_subblock(loc.group, s, tmp);
+                        if (dir_cand == NO_SUBBLOCK) E25_INC(hint_below);
+                        else if (dir_cand == rank_blk) E25_INC(hint_eq);
+                        else E25_INC(hint_ne);
+                    }
+                }
+#endif
+                // DIAGNOSTIC ONLY, and it is read before the repack: the pass is what the
+                // candidate changes, and its retry is what may place the record. Guarded so
+                // that a timing build -- where E25_INC is ((void)0) -- does not even read the
+                // header, keeping the shipped path unchanged rather than merely equivalent.
+#ifdef E25_DIAG
+                const bool la_pass = header(loc.group, rank_blk).count < 2;
+#endif
+                repack_subblock(loc.group, rank_blk);
                 if (put_primary(loc.group, s, value, loc.tag)) {
                     E25_INC(subblock_reclaim_helped);
+#ifdef E25_DIAG
+                    if (la_pass) E25_INC(low_activity_helped);
+#endif
+                    ++size_;
+                    return true;
+                }
+                // G3/A1': the rank-selected block was not enough. Try the group's OTHER
+                // blocks -- the ones the insert path never reaches on its own.
+                if (config_.reclaim_widest &&
+                    reclaim_widen(loc.group, s, value, loc.tag, rank_blk)) {
                     ++size_;
                     return true;
                 }
@@ -3005,6 +4646,12 @@ public:
             // operation that triggered it. A failure is recorded as "did not enable
             // this placement", NOT as "the compaction had no value".
             E25_INC(compact_entered);
+            // I10: the result is DELIBERATELY not branched on. compact() returning false means
+            // the plan proved the group cannot hold its own records, in which case the group
+            // was left untouched -- so the put_primary below simply fails again and the record
+            // goes to overflow, which is exactly what would have happened had the compaction
+            // run and not helped. The two cases are indistinguishable here ON PURPOSE (neither
+            // changes what the caller must do); they are told apart by compact_plan_rejected.
             if (worth_compacting(loc.group, s.size())) compact(loc.group);
             if (put_primary(loc.group, s, value, loc.tag)) {
                 E25_INC(compact_helped);
@@ -3066,7 +4713,7 @@ public:
         E30_INC(insert_calls);
         struct E30Scope { std::uint64_t t0; ~E30Scope() { E30_ADD(insert_ns, t0); } } e30_scope{e30_t0};
         auto s = key.substr(prefix_.size());
-        const auto g = canonical_group(s);
+        const auto g = canonical_group(key);
         auto tag = Fingerprint::of(s);
 
         if (!put_primary(g, s, value, tag)) {
@@ -3076,9 +4723,24 @@ public:
             // E31H: the same reclaim, gated by the hysteresis when that switch is on.
             if (config_.subblock_reclaim && reclaim_allowed(g)) {
                 E25_INC(subblock_reclaims);
-                repack_subblock(g, first_candidate(g, s));
+                const std::size_t rank_blk = first_candidate(g, s);
+                // Same as the other call site; see the note there.
+#ifdef E25_DIAG
+                const bool la_pass = header(g, rank_blk).count < 2;
+#endif
+                repack_subblock(g, rank_blk);
                 if (put_primary(g, s, value, tag)) {
                     E25_INC(subblock_reclaim_helped);
+#ifdef E25_DIAG
+                    if (la_pass) E25_INC(low_activity_helped);
+#endif
+                    ++size_;
+                    return true;
+                }
+                // G3/A1': the rank-selected block was not enough. Try the group's OTHER
+                // blocks -- the ones the insert path never reaches on its own.
+                if (config_.reclaim_widest &&
+                    reclaim_widen(g, s, value, tag, rank_blk)) {
                     ++size_;
                     return true;
                 }
@@ -3088,6 +4750,8 @@ public:
             // operation that triggered it. A failure is recorded as "did not enable
             // this placement", NOT as "the compaction had no value".
             E25_INC(compact_entered);
+            // I10: see the note at the other call site -- the false return is handled by
+            // falling through to the overflow path, and the group is provably unchanged.
             if (worth_compacting(g, s.size())) compact(g);
             if (put_primary(g, s, value, tag)) {
                 E25_INC(compact_helped);
@@ -3114,8 +4778,18 @@ public:
     }
 
     // E25 V2: one locate, then either write or place. Returns true when an existing
-    // record was written and false when a new one was placed -- the same convention
-    // Index::upsert exposes. Duplicate detection IS the locate, so it is not skipped.
+    // record was written and false when a new one was placed.
+    //
+    // NOTE THE SIGN, because this comment used to claim the two functions shared a convention
+    // and they do not. `Index::upsert` writes `if (r.upsert_one(...)) return false;`, so at the
+    // INDEX level the answer is INVERTED: false means the record already existed, true means a
+    // new one was placed. The contract above is this function's own.
+    //
+    // The behaviour is unchanged -- E25's gates pin it -- and the correction is to the TEXT.
+    // check_lits_index found it by encoding the observed return value against a reference map,
+    // which is the only way a wrong comment gets caught.
+    //
+    // Duplicate detection IS the locate, so it is not skipped.
     //
     // Region level ONLY: the caller is responsible for the region-level control flow
     // that Index::insert owns (the prefix-mismatch rebuild and the region split). If
@@ -3133,6 +4807,7 @@ public:
 
     // E25 V1: one search through the query machinery, returning the position too.
     Result find_located(std::string_view key, Located& loc) const {
+        E30_W(findloc);
         const Mode m = write_mode();
         return m.fingerprint ? find_impl<true>(key, m, &loc) : find_impl<false>(key, m, &loc);
     }
@@ -3151,7 +4826,7 @@ public:
             return true;
         }
 
-        const auto g = canonical_group(s);
+        const auto g = canonical_group(key);
 
         for (std::size_t blk = 0, nb = subblocks(g); blk < nb; ++blk) {
             E24_UP_BLOCK();
@@ -3183,7 +4858,7 @@ public:
             return erase_at(loc);
         }
 
-        const auto g = canonical_group(s);
+        const auto g = canonical_group(key);
 
         for (std::size_t blk = 0, nb = subblocks(g); blk < nb; ++blk) {
             E24_ERA_BLOCK();
@@ -3248,6 +4923,12 @@ public:
         // "some candidate" and "the rank-selected candidate" is visible instead of assumed.
         bool f1_rank_fits = false;
         std::size_t cand_subblock = 0;      // which sub-block the first candidate is
+        // The rank-selected candidate's OWN refuse reason, as two booleans. The
+        // refused_by_* fields above are per-CANDIDATE counters; a share computed from them
+        // is a share of candidates, not of events, and this project has already paid once
+        // for presenting a per-candidate counter as an event property.
+        bool cand_refused_by_slots = false;
+        bool cand_refused_by_bytes = false;
         std::size_t cand_live_records = 0;  // live records in the first candidate
         std::size_t cand_headroom = 0;      // area - live in the first candidate = free + garbage
         bool f2_budget_suffices = false;  // whole-group repack, same budget
@@ -3286,9 +4967,15 @@ public:
             const std::size_t freeb = std::size_t(h.bottom) - start_of(g);
             const bool slot_ok = h.count < slots_of(g);
             const bool bytes_ok = len <= freeb;
-            if (t.candidates == 0) { t.cand_free_bytes = freeb; }
+            const bool was_first = (t.candidates == 0);
+            if (was_first) {
+                t.cand_free_bytes = freeb;
+                t.cand_refused_by_slots = !slot_ok;
+                t.cand_refused_by_bytes = !bytes_ok;
+            }
             ++t.candidates;
             if (slot_ok && bytes_ok) t.f0_fits = true;
+            // Unchanged, and still per-candidate: kept because E28/E30 report them.
             if (!slot_ok) ++t.refused_by_slots;
             else if (!bytes_ok) ++t.refused_by_bytes;
 
@@ -3326,6 +5013,134 @@ public:
         return t;
     }
 
+
+    // A2 entry diagnosis: one row per OVERFLOW EVENT, computed read-only.
+    //
+    // The population is fixed by the DRIVER, not here: the caller inserts, reads the
+    // result back, and calls this only when the record came out of the overflow container.
+    // Construction-time placements and drain re-stores are therefore excluded BY
+    // CONSTRUCTION rather than by a predicate that has to be got right.
+    struct A2Audit {
+        bool valid = false;
+        std::uint32_t group = 0;
+        std::size_t subblocks = 0;
+        std::size_t blk = 0;              // the rank-selected candidate
+
+        // F2 -- why THAT candidate refused. Booleans: this is one event's answer.
+        bool refuse_slots = false;
+        bool refuse_bytes = false;
+
+        // F3 -- would the GROUP's own totals have sufficed?
+        bool group_slots_ok = false;
+        bool group_bytes_ok = false;
+
+        // F4 -- can freeing room by moving ONE adjacent boundary (M1-preserving, both
+        // blocks staying inside their own slot and byte budgets) make the placement fit?
+        bool adjacent_move_fits = false;
+
+        // F5 -- what that move costs. F5c is in the unit the CODE pays, not "entries
+        // changed": there is no incremental directory update, so any boundary move forces
+        // one full rebuild_dir on the touched group.
+        std::size_t moved_records = 0;
+        std::size_t copied_bytes = 0;
+        std::size_t dir_entries_rebuilt = 0;
+    };
+
+    A2Audit diag_a2(std::string_view full_key) const {
+        A2Audit a;
+        const std::size_t pre = prefix_.size();
+
+        if (full_key.size() < pre || full_key.substr(0, pre) != prefix_) return a;
+
+        const std::string_view suffix_in = full_key.substr(pre);
+        const std::uint32_t g = canonical_group(full_key);
+        if (g >= groups_) return a;
+
+        a.valid = true;
+        a.group = g;
+
+        const std::size_t nb = subblocks(g);
+        a.subblocks = nb;
+
+        const TrialPlace tp = trial_place(g, suffix_in);
+        a.blk = tp.cand_subblock;
+        a.refuse_slots = tp.cand_refused_by_slots;
+        a.refuse_bytes = tp.cand_refused_by_bytes;
+
+        const std::size_t area = std::size_t(bb_[g]) - start_of(g);
+        a.group_slots_ok = tp.group_free_slots > 0;
+        a.group_bytes_ok = (tp.group_live_bytes + suffix_in.size() <= area * nb);
+
+        // What the placement needs from block B: one free slot and len free bytes.
+        const std::size_t len = suffix_in.size();
+        const auto& hb = header(g, a.blk);
+        const std::size_t b_free_slots = slots_of(g) - hb.count;
+        const std::size_t b_free_bytes = std::size_t(hb.bottom) - start_of(g);
+        const std::size_t need_slots = b_free_slots == 0 ? 1 : 0;
+        const std::size_t need_bytes = len > b_free_bytes ? len - b_free_bytes : 0;
+
+        // How many records must leave B, and how many bytes. Records are held in slot
+        // order, so the TAIL holds the largest keys and the HEAD the smallest.
+        std::size_t got_slots = 0, got_bytes = 0, k_tail = 0;
+        const auto* esb = entries(g, a.blk);
+
+        for (std::size_t j = hb.count; j-- > 0;) {
+            if (got_slots >= need_slots && got_bytes >= need_bytes) break;
+            got_slots += 1;
+            got_bytes += esb[j].length;
+            ++k_tail;
+        }
+
+        if (got_slots < need_slots || got_bytes < need_bytes) return a;   // B alone cannot give it
+
+        // F5c: one full rebuild_dir per touched group, sized by its NON-EMPTY sub-blocks.
+        std::size_t non_empty = 0;
+        for (std::size_t i = 0; i < nb; ++i) if (header(g, i).count) ++non_empty;
+        a.dir_entries_rebuilt = non_empty;
+
+        // Two directions, because either can free room in B:
+        //   TAIL of B -> head of B+1   (B's largest keys are still < B+1's smallest)
+        //   HEAD of B -> tail of B-1   (B's smallest keys are still > B-1's largest)
+        // Either way the receiver must stay inside ITS OWN slot cap and byte budget.
+        auto receiver_accepts = [&](std::size_t j, bool from_tail) {
+            if (j >= nb) return false;
+
+            const auto& hr = header(g, j);
+            std::size_t slots_left = slots_of(g) - hr.count;
+            std::size_t bytes_left = std::size_t(hr.bottom) - start_of(g);
+            std::size_t moved = 0, bytes = 0;
+
+            for (std::size_t n = 0; n < k_tail; ++n) {
+                const std::size_t rec = from_tail ? (hb.count - 1 - n) : n;
+                const std::size_t l = esb[rec].length;
+
+                if (slots_left == 0 || l > bytes_left) return false;
+
+                --slots_left;
+                bytes_left -= l;
+                ++moved;
+                bytes += l;
+            }
+
+            a.moved_records = moved;
+            a.copied_bytes = bytes;
+
+            return true;
+        };
+
+        if (a.blk + 1 < nb && receiver_accepts(a.blk + 1, true)) {
+            a.adjacent_move_fits = true;
+            return a;
+        }
+
+        if (a.blk > 0 && receiver_accepts(a.blk - 1, false)) {
+            a.adjacent_move_fits = true;
+            return a;
+        }
+
+        return a;
+    }
+
     // E26 long-run diagnosis: which logical group does a key map to, and which
     // sub-block does that group's key order select? Diagnostic only; the physical
     // group id is the thing the capacity plan was built for, so a replacement that
@@ -3340,6 +5155,84 @@ public:
         for (std::uint32_t g = 0; g < groups_; ++g)
             if (const auto* o = overflow(g))
                 if (!o->empty()) out.push_back(o->size());
+    }
+
+    // Branch C: per-container capacity state, WITH ITS UNITS. Every field's unit is in its
+    // name or its comment because the review's first finding was that "element capacity" had
+    // no accessor at all and the only capacity-shaped quantity in the container is in BYTES.
+    //
+    // EMPTY CONTAINERS ARE INCLUDED. A container that once held records keeps its vector
+    // capacity, so its slack is real; whether to count it depends on the question, so the
+    // program reports every existing container and the ANALYZER picks the population.
+#ifdef E25_DIAG
+    // One byte-failure event, as it happened. Sizes are bounded by bb_ (<= 65535) and by
+    // MAX_SLOTS, so the narrow types are exact rather than a guess.
+    struct HoleEvent {
+        std::uint32_t group = 0;
+        std::uint16_t blk = 0;
+        std::uint16_t len = 0;          // the suffix that could not be placed
+        std::uint16_t contig = 0;       // contiguous free bytes the failing test looked at
+        std::uint16_t garbage = 0;      // dead bytes in this block
+        std::uint16_t live = 0;         // bytes a repack of this block would copy
+        std::uint16_t nholes = 0;       // fragments a hole table would hold for this block
+        std::uint16_t best_hole = 0;
+        bool fits_hole = false;
+        bool fits_repack = false;
+        bool slots_free = false;        // true by construction; recorded, not assumed
+    };
+    // A cap, stated rather than silent. It is GLOBAL, not per region: the first version
+    // capped each region at 200k and a full-scale run has enough regions that the cap
+    // never bound anything, so the log grew without limit while still looking bounded.
+    // The driver reports the drop count, so a truncated run reads as truncated rather than
+    // as a complete sample. The AGGREGATES are counters and stay exact either way.
+    static constexpr std::size_t kMaxHoleEvents = 500000;
+    std::vector<HoleEvent> hole_events_;
+    static std::size_t& diag_hole_total() { static std::size_t n = 0; return n; }
+#endif
+
+    const std::vector<HoleEvent>& hole_events() const { return hole_events_; }
+
+    // The vector accumulates for the region's whole life, so a run that reports per
+    // checkpoint has to be able to start each segment clean; otherwise the events of the
+    // first quarter are indistinguishable from the events of the last.
+    //
+    // THE BUDGET IS RESET TOO, and that is not a detail. It is a process-global static, so
+    // without this the first segments consume it and every later segment records nothing --
+    // which is exactly what happened: the pure-insert arm recorded zero rows and a
+    // 2.9M-refusal checkpoint contributed none, while the structure table was published as
+    // if it described the population.
+    void clear_hole_events() {
+        hole_events_.clear();
+        diag_hole_total() = 0;
+    }
+
+    struct OvCapStat {
+        std::size_t size = 0;          // elements
+        std::size_t cap_elems = 0;     // elements
+        std::size_t cap_bytes = 0;     // bytes (container_slot_bytes)
+        std::size_t high_water = 0;    // elements
+        std::uint64_t drops = 0;       // events
+        std::uint64_t regrowth = 0;    // events
+        std::uint64_t peaks = 0;       // events: exceeded this container's own peak
+        std::uint64_t cap_changes = 0; // events: the shipped policy grew the capacity
+        bool stable = false;
+    };
+
+    void diag_overflow_caps(std::vector<OvCapStat>& out) const {
+        for (std::uint32_t g = 0; g < groups_; ++g)
+            if (const auto* o = overflow(g)) {
+                OvCapStat s;
+                s.size = o->size();
+                s.cap_elems = o->capacity_elems();
+                s.cap_bytes = o->container_slot_bytes();
+                s.high_water = o->size_high_water();
+                s.drops = o->drop_events();
+                s.regrowth = o->regrowth_events();
+                s.peaks = o->new_peak_events();
+                s.cap_changes = o->cap_change_events();
+                s.stable = o->stable_representation();
+                out.push_back(s);
+            }
     }
 
     // E36: how big an order entry really is. Published here because the movement and space
@@ -3374,8 +5267,50 @@ public:
     static constexpr std::size_t diag_overflow_record_bytes() { return sizeof(OverflowRecord); }
     std::uint32_t diag_group(std::string_view key) const {
         if (!prefix_matches(key)) return UINT32_MAX;   // no valid group
-        return canonical_group(key.substr(prefix_.size()));
+        return canonical_group(key);
     }
+
+#ifdef E25_DIAG
+    // Scan-entry round: enumerate one group's records so the hand-check can recompute the
+    // starting-position work INDEPENDENTLY of the counters the scan itself reports. The
+    // primary entries come back in sub-block-major order (blk, slot, suffix copy) -- the
+    // exact order the advance loop walks -- and the overflow records in container order.
+    // Read-only, diagnostic build only; a timing build does not carry either function.
+    struct DiagScanEntry {
+        std::size_t blk = 0;
+        std::size_t slot = 0;
+        std::string suffix;
+    };
+    void diag_primary_entries(std::uint32_t g, std::vector<DiagScanEntry>& out) const {
+        out.clear();
+        const std::size_t nb = subblocks(g);
+        for (std::size_t blk = 0; blk < nb; ++blk) {
+            const std::size_t count = header(g, blk).count;
+            for (std::size_t i = 0; i < count; ++i) {
+                DiagScanEntry e;
+                e.blk = blk;
+                e.slot = i;
+                e.suffix = std::string(suffix(g, blk, entries(g, blk)[i]));
+                out.push_back(std::move(e));
+            }
+        }
+    }
+    void diag_ov_entries(std::uint32_t g, std::vector<std::string>& out) const {
+        out.clear();
+        if (const auto* o = overflow(g))
+            for (std::size_t i = 0; i < o->size(); ++i) out.emplace_back((*o)[i].suffix);
+    }
+    // The advance loop steps over sub-blocks as whole units, EMPTY ONES INCLUDED, so an
+    // entry list alone undercounts the sub-blocks it passes. The hand-check walks the
+    // per-sub-block counts instead, which is the order the loop itself uses.
+    std::size_t diag_subblocks(std::uint32_t g) const { return subblocks(g); }
+    std::size_t diag_subblock_count(std::uint32_t g, std::size_t blk) const {
+        return header(g, blk).count;
+    }
+    std::string diag_suffix(std::uint32_t g, std::size_t blk, std::size_t slot) const {
+        return std::string(suffix(g, blk, entries(g, blk)[slot]));
+    }
+#endif
 
     // check_scan_contract's negative control, and the only thing in the tree that can
     // make key -> group non-monotone on purpose. Rotating every group id by one is
@@ -3392,6 +5327,36 @@ public:
     // unless -DE25_DIAG, like every other hook in this block; a timed build does not
     // even carry the branch.
     static inline bool sar_rotate_groups = false;
+
+    // G1 FAILURE INJECTION. Diagnostic-only in the same way as the hook above: no Config
+    // switch, no switches.hpp table touched, compiled out unless -DE25_DIAG.
+    //
+    // `inject_at < 0` is off. Otherwise the `inject_at`-th compaction that reaches the
+    // named point throws std::bad_alloc:
+    //
+    //   point 0 -- PREPARE. After the gather has read every live record and built its
+    //              scratch buffers, and BEFORE the first byte of the group is touched.
+    //   point 1 -- COMMIT. During the replay, after the blocks have been reset and half
+    //              the records re-placed, as if a placement refused a record the group
+    //              had just accepted.
+    //
+    // The two ask different questions and are NOT interchangeable. Point 0 asks whether a
+    // maintenance that fails while it still costs only its own scratch leaves the index
+    // exactly as it was. Point 1 asks whether the in-place replay can survive a commit
+    // that fails half way -- which is the case task book section 6.3's
+    // prepare/verify/commit split was written to rule out, and which this design does not
+    // provide, because E31 traded the temporary buffer for speed.
+    inline static long long inject_at = -1;
+    inline static long long inject_point = 0;
+    inline static long long inject_seen = 0;
+    inline static long long injected = 0;
+
+    static bool maybe_inject(long long point) {
+        if (inject_at < 0 || inject_point != point) return false;
+        if (inject_seen++ != inject_at) return false;
+        ++injected;
+        return true;
+    }
 #endif
 
 #ifdef E30_TIME
@@ -3536,26 +5501,113 @@ public:
         bool matches = prefix_matches(start);
         if (!matches && compare(start, prefix_) > 0) return;
         const auto s = matches ? start.substr(prefix_.size()) : std::string_view{};
-        const auto first = matches ? canonical_group(s) : 0;
+        const auto first = matches ? canonical_group(start) : 0;
+#ifdef E25_DIAG
+        // Counted only when it is actually evaluated: this region is the first one, so a
+        // later region in the same Index::scan never re-derives the group. Whether that is
+        // true is exactly what the diagnosis is for, so the counter sits on the call.
+        if (matches) E25_INC(scan_canonical_group);
+#endif
 
         for (std::uint32_t g = first; g < groups_ && out.size() < limit; ++g) {
             E25_INC(scan_groups);
             const auto* o = overflow(g);
             const std::size_t nb = subblocks(g);
             std::size_t blk = 0, a = 0, b = 0;
+            E25_INC(scan_cursor_starts);
+            if (o) E25_INC(scan_ov_cursor_starts);
 
             if (g == first && matches) {
                 // Advance the primary cursor past every entry < s. Sub-blocks are
                 // rank-ordered, so this skips whole sub-blocks at a time.
-                while (blk < nb) {
-                    while (a < header(g, blk).count &&
-                           compare(suffix(g, blk, entries(g, blk)[a]), s) < 0)
-                        ++a;
-                    if (a < header(g, blk).count) break;
-                    ++blk;
+                //
+                // Rewritten from the short-circuit form so the two things the round has
+                // to price can be counted where they happen: the comparison (evaluated
+                // even when it FAILS and stops the advance, so cmps is skipped, or
+                // skipped plus one per stopped sub-block) and the record it consumed.
+                // E25_INC is a no-op outside the diagnostic build, and the rewrite keeps
+                // the original evaluation order, so timed semantics are unchanged.
+                //
+                // scan_ordered_start replaces the WALK with an ORDERED SEARCH that lands
+                // on the same position, without reading the records in between. The
+                // skipped-record counter below is computed from the landed position, so
+                // "same records passed, fewer comparisons" is a measured statement.
+                if (config_.scan_ordered_start) {
+                    // Level 1: the first primary sub-block whose LAST record is >= s.
+                    // Emptied sub-blocks sit anywhere in the rank order, so the probe at
+                    // a midpoint walks left to the last non-empty block at or before it;
+                    // the predicate is monotone over physical indices, which is what the
+                    // binary search needs.
+                    std::size_t lo = 0, hi = nb;
+                    while (lo < hi) {
+                        const std::size_t mid = lo + (hi - lo) / 2;
+                        std::size_t j = mid;
+                        while (j > 0 && header(g, j).count == 0) --j;
+                        bool ge = false;
+                        if (header(g, j).count > 0) {
+                            E25_INC(scan_adv_p_cmps);
+                            ge = !(compare(suffix(g, j, entries(g, j)[header(g, j).count - 1]),
+                                           s) < 0);
+                        }
+                        if (ge) hi = mid; else lo = mid + 1;
+                    }
+                    blk = lo;
                     a = 0;
+                    if (blk < nb) {
+                        // Level 2: the first slot of that sub-block whose suffix is >= s.
+                        std::size_t clo = 0, chi = header(g, blk).count;
+                        while (clo < chi) {
+                            const std::size_t mid = clo + (chi - clo) / 2;
+                            E25_INC(scan_adv_p_cmps);
+                            if (compare(suffix(g, blk, entries(g, blk)[mid]), s) < 0) clo = mid + 1;
+                            else chi = mid;
+                        }
+                        a = clo;
+                    }
+#ifdef E25_DIAG
+                    // The same set of records the linear walk would have passed, derived
+                    // from where the search landed. blk counts fully-passed sub-blocks
+                    // (empty ones included), exactly as the linear loop counted them.
+                    {
+                        std::size_t skipped = a;
+                        for (std::size_t t = 0; t < blk && t < nb; ++t)
+                            skipped += header(g, t).count;
+                        E25_ADD(scan_adv_p_skipped, skipped);
+                        E25_ADD(scan_adv_p_subblocks, blk);
+                    }
+#endif
+                } else {
+                    while (blk < nb) {
+                        while (a < header(g, blk).count) {
+                            E25_INC(scan_adv_p_cmps);
+                            if (!(compare(suffix(g, blk, entries(g, blk)[a]), s) < 0)) break;
+                            E25_INC(scan_adv_p_skipped);
+                            ++a;
+                        }
+                        if (a < header(g, blk).count) break;
+                        E25_INC(scan_adv_p_subblocks);
+                        ++blk;
+                        a = 0;
+                    }
                 }
-                if (o) while (b < o->size() && compare((*o)[b].suffix, s) < 0) ++b;
+                if (o) {
+                    if (config_.scan_ordered_start) {
+                        // The container's own ordered lookup; the same position the linear
+                        // walk stopped at. Its internal comparisons are shared with the
+                        // write path and are not individually counted -- the search itself
+                        // is counted as one, and the skipped count is exact.
+                        b = o->lower_bound_pos(s);
+                        E25_INC(scan_adv_ov_cmps);
+                        E25_ADD(scan_adv_ov_skipped, b);
+                    } else {
+                        while (b < o->size()) {
+                            E25_INC(scan_adv_ov_cmps);
+                            if (!(compare((*o)[b].suffix, s) < 0)) break;
+                            E25_INC(scan_adv_ov_skipped);
+                            ++b;
+                        }
+                    }
+                }
             }
 
             while (out.size() < limit) {
@@ -3597,15 +5649,131 @@ public:
                         out.emplace_back(prefix_ + std::string(suf),
                                          entries(g, blk)[a].value);
                     }
+                    E25_INC(scan_out_primary);
+                    E25_ADD(scan_out_bytes, prefix_.size() + suf.size());
                     ++a;
                 } else {
                     E25_ADD(scan_result_allocs, 1);
                     out.emplace_back(prefix_ + (*o)[b].suffix, (*o)[b].value);
+                    E25_INC(scan_out_overflow);
+                    E25_ADD(scan_out_bytes, prefix_.size() + (*o)[b].suffix.size());
                     ++b;
                 }
             }
         }
     }
+
+#ifdef E25_SCAN_CONSUME
+    // ---------------------------------------------------------------------------
+    // Scan-entry round, stage B2: the traversal WITHOUT result materialisation.
+    //
+    // The counters said the start-advance is not the cost (one comparison, zero
+    // skipped records in every regressing cell) but the wall clock still differed,
+    // so the plan's single bounded discriminator is to run the SAME traversal with
+    // the result strings left unbuilt and see whether the W/B gap survives.
+    //
+    // This is a DIAGNOSTIC CONSUMPTION MODE, not a deployable API: the rows are
+    // delivered to a sink instead of a vector<Pair>. Guarded by E25_SCAN_CONSUME,
+    // which no existing target defines -- the timed targets' code does not see any
+    // of it. The body below is a mirror of scan(), row for row and branch for
+    // branch; the only difference is the row-production points.
+    // ---------------------------------------------------------------------------
+    struct ConsumeSink {
+        // Timed mode: counts and hashes only. Verify mode: additionally rebuilds the
+        // full key so the same rows can be checked against the reference one by one.
+        std::uint64_t rows = 0;
+        std::uint64_t bytes = 0;                     // suffix bytes delivered
+        std::uint64_t full_bytes = 0;                // prefix+suffix bytes, verify mode
+        std::uint64_t hash = 0;                      // row checksum (value + suffix bytes)
+        std::uint64_t suffix_hist[8] = {0, 0, 0, 0, 0, 0, 0, 0};  // <=15,<=23,<=31,<=63,<=127,<=255,<=1023,>1023
+        std::vector<Pair>* capture = nullptr;        // non-null: verify mode
+        const std::string* prefix = nullptr;         // set per region call, verify mode only
+        // Timed mode pays for the row and its byte count and nothing else: hashing and
+        // the histogram belong to the untimed verify pass, and a byte loop inside the
+        // timed span would swamp the very difference the discriminator is measuring.
+        bool timed_fast = false;
+
+        static void bucket(std::uint64_t* h, std::size_t n) {
+            const std::size_t b = n <= 15 ? 0 : n <= 23 ? 1 : n <= 31 ? 2 : n <= 63 ? 3
+                                : n <= 127 ? 4 : n <= 255 ? 5 : n <= 1023 ? 6 : 7;
+            ++h[b];
+        }
+
+        void row(std::string_view suffix, std::uint64_t value) {
+            ++rows;
+            bytes += suffix.size();
+            if (timed_fast) return;
+            hash = (hash ^ value) * 1099511628211ULL;
+            for (unsigned char c : suffix) hash = (hash ^ c) * 1099511628211ULL;
+            bucket(suffix_hist, suffix.size());
+            if (capture) {
+                std::string full;
+                full.reserve(prefix->size() + suffix.size());
+                full.append(*prefix);
+                full.append(suffix);
+                full_bytes += full.size();
+                capture->emplace_back(std::move(full), value);
+            }
+        }
+    };
+
+    void scan_consume(std::string_view start, std::size_t limit, ConsumeSink& sink) const {
+        if (!size_ || sink.rows >= limit) return;
+
+        sink.prefix = &prefix_;
+        bool matches = prefix_matches(start);
+        if (!matches && compare(start, prefix_) > 0) return;
+        const auto s = matches ? start.substr(prefix_.size()) : std::string_view{};
+        const auto first = matches ? canonical_group(start) : 0;
+
+        for (std::uint32_t g = first; g < groups_ && sink.rows < limit; ++g) {
+            const auto* o = overflow(g);
+            const std::size_t nb = subblocks(g);
+            std::size_t blk = 0, a = 0, b = 0;
+
+            if (g == first && matches) {
+                while (blk < nb) {
+                    while (a < header(g, blk).count) {
+                        if (!(compare(suffix(g, blk, entries(g, blk)[a]), s) < 0)) break;
+                        ++a;
+                    }
+                    if (a < header(g, blk).count) break;
+                    ++blk;
+                    a = 0;
+                }
+                if (o) {
+                    while (b < o->size()) {
+                        if (!(compare((*o)[b].suffix, s) < 0)) break;
+                        ++b;
+                    }
+                }
+            }
+
+            while (sink.rows < limit) {
+                while (blk < nb && a >= header(g, blk).count) {
+                    ++blk;
+                    a = 0;
+                }
+
+                const bool have_a = blk < nb;
+                const bool have_b = o && b < o->size();
+                if (!have_a && !have_b) break;
+
+                bool take_a = have_a;
+                if (have_a && have_b) {
+                    take_a = compare(suffix(g, blk, entries(g, blk)[a]), (*o)[b].suffix) < 0;
+                }
+                if (take_a) {
+                    sink.row(suffix(g, blk, entries(g, blk)[a]), entries(g, blk)[a].value);
+                    ++a;
+                } else {
+                    sink.row((*o)[b].suffix, (*o)[b].value);
+                    ++b;
+                }
+            }
+        }
+    }
+#endif
 
     std::vector<Pair> all() const {
         const auto t0 = E14_T0();
@@ -3635,6 +5803,21 @@ class Index {
     std::vector<Node> nodes_;
     std::size_t size_ = 0;
 
+    // ---- compact region routing (candidate) --------------------------------
+    // MUTABLE because the rebuild is lazy and happens inside locate(), which is const. The
+    // alternative -- rebuilding at each mutation site -- is a list of call sites that can
+    // grow a missing entry; a version compare cannot. `routing_version_` starts at a value no
+    // structure_version_ can take, so the first lookup after construction always rebuilds.
+    //
+    // Kept only while the switch is ON: a default build pays one integer compare per lookup
+    // and allocates nothing.
+    mutable std::vector<std::uint64_t> fence_digests_;
+    mutable std::size_t fence_prefix_len_ = 0;
+    mutable std::size_t routing_version_ = static_cast<std::size_t>(-1);
+
+    // E38: the one shared LITS table, or null when the backend is the reference model.
+    std::shared_ptr<const lits_hpt::SharedModel> lits_shared_;
+
     // E6-1: bumped on every fence-changing event so auxiliary routing metadata
     // (built outside the index) can detect staleness and rebuild.
     std::uint64_t structure_version_ = 0;
@@ -3644,20 +5827,60 @@ public:
 
     explicit Index(Config c) : config_(c) {}
 
+    // ---- E38: the shared LITS table -------------------------------------------------------
+    //
+    // ONE table for the whole index, trained from the initial complete key set and read-only
+    // afterwards (task book section 2.2). Every region and the statistics replay hold the same
+    // shared_ptr, so "the demand pass and the final build used the same mapping" is a property
+    // of the object graph rather than a consequence of two trainings happening to agree.
+    //
+    // Trained LAZILY and once. The alternative -- a constructor parameter -- would put the
+    // training on every path that builds an Index, including the ones that never look at a key.
+    void ensure_lits_shared(const std::vector<Pair>& pairs) {
+        if (config_.model_backend != ModelBackend::LitsHpt || lits_shared_) return;
+
+        // Fewer than two keys cannot be trained on -- the pinned train() reads keys[1] -- and
+        // must not throw either: an index built from an empty or single-key set is a legitimate
+        // object whose regions all take the boundary path. So the table is simply not built,
+        // and `calibrate_lits` handles the null.
+        if (pairs.size() < 2) return;
+
+        std::vector<std::string> keys;
+        keys.reserve(pairs.size());
+        for (const auto& kv : pairs) keys.push_back(kv.first);
+
+        lits_shared_ = lits_hpt::SharedModel::train_shared(keys);
+    }
+
+    // Adopt a table that was trained elsewhere. Used by bulk_load_reusing_ids, where the
+    // STATISTICS INDEX would otherwise train its own copy: two identical tables are two
+    // trainings, and the task book's section 5.2 is explicit that the default is one shared
+    // immutable object.
+    void adopt_lits_shared(std::shared_ptr<const lits_hpt::SharedModel> shared) {
+        if (!lits_shared_) lits_shared_ = std::move(shared);
+    }
+
+    const std::shared_ptr<const lits_hpt::SharedModel>& lits_shared() const { return lits_shared_; }
+
     const std::string& fence(std::size_t i) const { return nodes_[i].fence; }
     std::uint64_t structure_version() const { return structure_version_; }
 
     void bulk_load(const std::vector<Pair>& pairs) {
         const auto e14_t0 = E14_T0();
+        // E38: one table for the whole index, trained from the complete key set BEFORE any
+        // region exists -- so every region below references the same object.
+        ensure_lits_shared(pairs);
         nodes_.clear();
         size_ = pairs.size();
         const auto chunk = config_.region_keys ? config_.region_keys : std::max<std::size_t>(1, pairs.size());
         for (std::size_t p = 0; p < pairs.size(); p += chunk) {
             std::vector<Pair> part(pairs.begin() + p, pairs.begin() + std::min(p + chunk, pairs.size()));
-            nodes_.push_back({part.front().first, std::make_unique<Region>(part, config_)});
+            nodes_.push_back({part.front().first,
+                             std::make_unique<Region>(part, config_, lits_shared_)});
         }
         if (nodes_.empty())
-            nodes_.push_back({{}, std::make_unique<Region>(std::vector<Pair>{}, config_)});
+            nodes_.push_back({{}, std::make_unique<Region>(std::vector<Pair>{}, config_,
+                                                          lits_shared_)});
         ++structure_version_;
         E14_ADD(bulk_load, e14_t0);
     }
@@ -3718,6 +5941,9 @@ public:
         E14_INC(bulk_planned);
         if (!nb_cap.empty() && nb_cap.size() != sg.size())
             throw std::invalid_argument("E15: sub-block cap table size");
+
+        // E38: same table as the statistics pass -- see bulk_load_reusing_ids.
+        ensure_lits_shared(pairs);
         const auto chunk = config_.region_keys ? config_.region_keys : std::max<std::size_t>(1, pairs.size());
 
         // E21: a context is only usable on the very key vector it was built from.
@@ -3748,10 +5974,11 @@ public:
             }
             fresh.push_back({part.front().first,
                              std::make_unique<Region>(part, config_, sg[r], bb[r], std::move(cap),
-                                                      preset)});
+                                                      preset, lits_shared_)});
         }
         if (fresh.empty())
-            fresh.push_back({{}, std::make_unique<Region>(std::vector<Pair>{}, config_)});
+            fresh.push_back({{}, std::make_unique<Region>(std::vector<Pair>{}, config_,
+                                                        lits_shared_)});
 
         nodes_ = std::move(fresh);
         size_ = pairs.size();
@@ -3793,6 +6020,14 @@ public:
         // pipeline probes with; this index is built under its own config_. Two
         // configs, one call -- and `ctx` is an ordinary local either way.
         Index stats(stats_cfg);
+
+        // E38: the STATISTICS index trains the table and this index ADOPTS it, so the demand
+        // pass and the placement pass read one object. Training it twice would produce two
+        // identical tables today and two different ones the moment anything about the training
+        // or the input changes -- which is the failure the task book's section 5.2 names.
+        stats.ensure_lits_shared(pairs);
+        adopt_lits_shared(stats.lits_shared());
+
         const BuildContext ctx = stats.demand_profile_ctx(pairs);
         const CapacityPlan plan = plan_for(ctx.regions);
         bulk_load_with_context(pairs, plan.sg, plan.bb, plan.caps, &ctx);
@@ -3818,10 +6053,10 @@ public:
         for (std::size_t p = 0; p < pairs.size(); p += chunk) {
             const Pair* f = pairs.data() + p;
             const Pair* l = pairs.data() + std::min(p + chunk, pairs.size());
-            bc.regions.push_back(Region::demand_profile_ctx(f, l, config_));
+            bc.regions.push_back(Region::demand_profile_ctx(f, l, config_, lits_shared_));
         }
         if (bc.regions.empty())
-            bc.regions.push_back(Region::demand_profile_ctx(nullptr, nullptr, config_));
+            bc.regions.push_back(Region::demand_profile_ctx(nullptr, nullptr, config_, lits_shared_));
         return bc;
     }
 
@@ -3837,12 +6072,119 @@ public:
         return out;
     }
 
-    std::size_t locate(std::string_view key) const {
-        E25_INC(locate_calls);
-        if (nodes_.empty()) throw std::logic_error("bulk_load must initialize index");
+
+    // The 8-byte order-preserving digest. Big-endian, zero-padded past the end of the key, so
+    // for any two keys digest(a) < digest(b) whenever a < b. The converse does NOT hold and
+    // is not used: equal digests always fall back to comparing the full keys.
+    static std::uint64_t fence_digest(std::string_view s) {
+        std::uint64_t out = 0;
+
+        for (std::size_t i = 0; i < 8; ++i) {
+            out = (out << 8) | (i < s.size() ? static_cast<unsigned char>(s[i]) : 0);
+        }
+
+        return out;
+    }
+
+    // Recomputes the digest array from the CURRENT fences. O(regions), and called only when
+    // structure_version_ has moved -- so it runs once after a build, a rebuild or a split,
+    // and never on a steady-state lookup.
+    //
+    // const because locate() is const and the routing members are mutable: the digests are
+    // derived state, and rebuilding them does not change what the index contains.
+    void rebuild_region_routing() const {
+        const std::string_view first = nodes_.front().fence;
+        const std::string_view last = nodes_.back().fence;
+
+        // The bytes every fence shares are the same for every digest, so they carry no
+        // routing information. Skipping them makes the 8 bytes that DO matter land on the
+        // part of the key that distinguishes regions.
+        std::size_t common = 0;
+
+        while (common < std::min(first.size(), last.size()) && first[common] == last[common]) {
+            ++common;
+        }
+
+        fence_prefix_len_ = common;
+        fence_digests_.resize(nodes_.size());
+
+        for (std::size_t i = 0; i < nodes_.size(); ++i) {
+            fence_digests_[i] = fence_digest(std::string_view(nodes_[i].fence).substr(common));
+        }
+    }
+
+    // The compact search. Same predicate as the original upper_bound -- the first fence
+    // strictly greater than the key, minus one -- but the binary search walks fence_digests_
+    // instead of stepping over Nodes.
+    std::size_t locate_routed(std::string_view key) const {
+        const std::size_t n = nodes_.size();
+
+        // Keys outside the shared prefix cannot be inside any region and are answered
+        // without a search at all. This is exactly equivalent to the general path: a key
+        // below the shared prefix is below the first fence, and one above it is above the
+        // last -- both because every fence starts with that prefix.
+        if (fence_prefix_len_ != 0) {
+            const std::string_view head =
+                key.substr(0, std::min(key.size(), fence_prefix_len_));
+            const std::string_view shared =
+                std::string_view(nodes_.front().fence).substr(0, fence_prefix_len_);
+            const int order = compare(head, shared);
+
+            if (order < 0) return 0;
+            if (order > 0) return n - 1;
+        }
+
+        const std::uint64_t query = fence_digest(key.substr(fence_prefix_len_));
+        std::size_t lo = 0;
+        std::size_t hi = n;
+
+        while (lo < hi) {
+            const std::size_t mid = lo + (hi - lo) / 2;
+
+            // Equal digests mean the 8 informative bytes agree, NOT that the keys agree, so
+            // they fall back to the full comparison. This is the branch that makes short
+            // keys, embedded NULs and prefixes longer than 8 bytes correct.
+            const bool before = (query != fence_digests_[mid])
+                                    ? (query < fence_digests_[mid])
+                                    : (compare(key, nodes_[mid].fence) < 0);
+
+            if (before) {
+                hi = mid;
+            } else {
+                lo = mid + 1;
+            }
+        }
+
+        return lo == 0 ? 0 : lo - 1;
+    }
+
+    // The ORIGINAL search, kept as its own function so the gate can run both side by side on
+    // the same key. "The two implement the same predicate" is an argument; comparing their
+    // answers on every key is evidence, and only the second one belongs in a verdict.
+    std::size_t locate_scanned(std::string_view key) const {
         auto it = std::upper_bound(nodes_.begin(), nodes_.end(), key,
             [](std::string_view k, const Node& n) { return compare(k, n.fence) < 0; });
         return it == nodes_.begin() ? 0 : static_cast<std::size_t>(it - nodes_.begin() - 1);
+    }
+
+    std::size_t locate(std::string_view key) const {
+        E30_W(locate);
+        E25_INC(locate_calls);
+        if (nodes_.empty()) throw std::logic_error("bulk_load must initialize index");
+
+        if (!config_.compact_region_routing) {
+            return locate_scanned(key);
+        }
+
+        // Any change to nodes_ bumps structure_version_, so a mismatch means the digests
+        // describe a directory that no longer exists. Rebuilding here rather than at the
+        // mutation sites is what makes a missed call site impossible.
+        if (routing_version_ != structure_version_) {
+            rebuild_region_routing();
+            routing_version_ = structure_version_;
+        }
+
+        return locate_routed(key);
     }
 
     const Region& region(std::size_t i) const { return *nodes_[i].region; }
@@ -3850,6 +6192,113 @@ public:
     Result find_known(std::size_t r, std::string_view key, Mode m) const { return region(r).find(key, m); }
     std::size_t size() const { return size_; }
     std::size_t region_count() const { return nodes_.size(); }
+
+    // -----------------------------------------------------------------------
+    // E38: the LITS coverage of the CURRENT index, walked over its live regions.
+    //
+    // WHY THIS IS NOT `Region::lits_stats()`. That counter accumulates over every region ever
+    // CONSTRUCTED -- splits, prefix rebuilds and erases included -- so it answers "what fraction
+    // of the work went through LITS", not "what fraction of the index I am about to time is
+    // mapped by LITS". Those are different questions and the second is the one that explains a
+    // timed result. The reviewer's point: the coverage quoted beside a measurement must describe
+    // the state that was measured.
+    //
+    // The per-reason split exists for the same reason: "17% fell back" is not actionable until
+    // it says whether they fell back because of the numerical admission bound, a degenerate
+    // calibration, or a region too small to calibrate.
+    // -----------------------------------------------------------------------
+    struct LitsCoverage {
+        std::uint64_t regions = 0;
+        std::uint64_t regions_lits = 0;
+        std::uint64_t records = 0;
+        std::uint64_t records_lits = 0;
+        std::uint64_t reason_admission = 0;    // refused by the conservative coefficient bound
+        std::uint64_t reason_degenerate = 0;   // hi <= lo, non-finite coefficients, short key
+        std::uint64_t reason_boundary = 0;     // fewer than two keys: no calibration needed
+        std::uint64_t reason_unsupported = 0;  // outside the adapter's input domain
+    };
+
+    LitsCoverage lits_coverage() const {
+        LitsCoverage c;
+
+        // The reference-model backend has nothing to report here, and must not be described as a
+        // pile of fallbacks: its regions were never offered to the LITS calibration at all, so
+        // `lits_` still holds its default `NoKeys` and a naive reason breakdown would file every
+        // one of them under "boundary". The counts are still reported; the reasons are not.
+        const bool lits_backend = config_.model_backend == ModelBackend::LitsHpt;
+
+        for (const auto& n : nodes_) {
+            const Region& r = *n.region;
+            const std::uint64_t sz = r.size();
+
+            ++c.regions;
+            c.records += sz;
+
+            if (!lits_backend) continue;
+
+            switch (r.lits_status()) {
+                case lits_hpt::Status::Ok:
+                case lits_hpt::Status::SingleGroup:
+                    // G == 1 is a defined LITS answer (group 0), not a fallback: every model
+                    // maps a one-group region to its only group.
+                    ++c.regions_lits;
+                    c.records_lits += sz;
+                    break;
+
+                case lits_hpt::Status::CoefficientTooLarge:
+                    ++c.reason_admission;
+                    break;
+
+                case lits_hpt::Status::DegenerateCdf:
+                case lits_hpt::Status::NonFinite:
+                case lits_hpt::Status::KeyShorterThanPrefix:
+                    ++c.reason_degenerate;
+                    break;
+
+                case lits_hpt::Status::NoKeys:
+                case lits_hpt::Status::TooFewKeys:
+                    ++c.reason_boundary;
+                    break;
+
+                default:
+                    ++c.reason_unsupported;
+                    break;
+            }
+        }
+
+        return c;
+    }
+
+    // Which region a key routes to. Exposed so a benchmark can report the QUERY share of the
+    // fallback -- the one caliber that cannot be derived from the index's own state, because it
+    // depends on the query sequence that was run.
+    std::size_t which_region(std::string_view key) const { return locate(key); }
+
+    // The routing metadata's own footprint. UNCONDITIONAL, unlike the diag_* helpers below:
+    // it is a space account, not a counter, and the timing build has to be able to report
+    // what the candidate costs in memory without carrying diagnostic instrumentation.
+    // Counted at CAPACITY, because that is what the allocator actually holds.
+    std::size_t routing_bytes() const {
+        return fence_digests_.capacity() * sizeof(std::uint64_t);
+    }
+
+    std::size_t routing_regions() const { return fence_digests_.size(); }
+
+#ifdef E25_DIAG
+    // Compact-routing gate helpers. Both searches are reachable regardless of the switch, so
+    // the gate can compare them key by key on the SAME index state instead of running two
+    // builds and hoping they agree.
+    std::size_t diag_locate_scanned(std::string_view key) const { return locate_scanned(key); }
+
+    std::size_t diag_locate_routed(std::string_view key) const {
+        if (routing_version_ != structure_version_) {
+            rebuild_region_routing();
+            routing_version_ = structure_version_;
+        }
+
+        return locate_routed(key);
+    }
+#endif
 
     // E8-9: memory decomposition across regions plus index-level metadata.
     struct MemBreakdown {
@@ -3870,6 +6319,12 @@ public:
             m.regions_self += b.self;
             m.fences += x.fence.capacity() + 1;
         }
+
+        // The compact-routing digests are index-owned metadata, so they belong in this
+        // account. Reporting them ONLY in a side column would let a reader who looks at the
+        // size decomposition conclude the candidate costs nothing.
+        m.tables += fence_digests_.capacity() * sizeof(std::uint64_t);
+
         m.self = sizeof(*this) + nodes_.capacity() * sizeof(Node);
         return m;
     }
@@ -3901,6 +6356,27 @@ public:
         for (const auto& x : nodes_) x.region->diag_overflow_sizes(out);
     }
 
+    // Branch C: forward every region's container stats.
+    void diag_overflow_caps(std::vector<Region::OvCapStat>& out) const {
+        for (const auto& x : nodes_) x.region->diag_overflow_caps(out);
+    }
+
+#ifdef E25_DIAG
+    // Hole-reuse: forward every region's recorded byte-failure events. Each region only
+    // ever receives inserts for its own key range, so concatenating them does not mix
+    // populations -- the grouping that matters (which sub-block) is preserved on the row.
+    void diag_hole_events(std::vector<Region::HoleEvent>& out) const {
+        for (const auto& x : nodes_) {
+            const auto& ev = x.region->hole_events();
+            out.insert(out.end(), ev.begin(), ev.end());
+        }
+    }
+
+    void diag_clear_hole_events() {
+        for (const auto& x : nodes_) x.region->clear_hole_events();
+    }
+#endif
+
     void diag_overflow_suffix_lengths(std::vector<std::size_t>& out) const {
         for (const auto& x : nodes_) x.region->diag_overflow_suffix_lengths(out);
     }
@@ -3931,6 +6407,13 @@ public:
         return total;
     }
     std::size_t diag_overflow_record_bytes() const { return Region::diag_overflow_record_bytes(); }
+
+    // A2 entry diagnosis: forward to the region that owns the key. The caller must have
+    // just observed that this record landed in overflow -- see the note in Region::diag_a2.
+    Region::A2Audit diag_a2(std::string_view key) const {
+        const std::size_t i = locate(key);
+        return nodes_[i].region->diag_a2(key);
+    }
 
     Region::TrialPlace diag_trial(std::string_view key) const {
         const std::size_t r = locate(key);
@@ -3975,30 +6458,38 @@ public:
     void rebuild_with_caps(std::size_t i, std::vector<Pair> data,
                            std::vector<std::uint16_t> sg, std::vector<std::uint32_t> bb,
                            std::vector<std::uint16_t> nb_cap = {}) {
+        E30_W(rebuild);
         const auto e14_t0 = E14_T0();
         E14_INC(rebuild_calls);
+        // E38: a REBUILT region references the SAME shared table. A region that trained its
+        // own would map the same key to a different group than the one it was placed under,
+        // and a rebuild that changed the region's prefix or group count has already re-placed
+        // every survivor below.
         nodes_[i].region = std::make_unique<Region>(data, config_, std::move(sg), std::move(bb),
-                                                    std::move(nb_cap));
+                                                    std::move(nb_cap), nullptr, lits_shared_);
         ++rebuilds;
         ++structure_version_;
         E14_ADD(rebuild, e14_t0);
     }
 
     void rebuild(std::size_t i, std::vector<Pair> data) {
+        E30_W(rebuild);
         const auto e14_t0 = E14_T0();
         E14_INC(rebuild_calls);
         E25_INC(region_rebuilds);
         if (config_.region_keys && data.size() > 2 * config_.region_keys) {
             const auto mid = data.size() / 2;
             std::vector<Pair> left(data.begin(), data.begin() + mid), right(data.begin() + mid, data.end());
-            auto a = std::make_unique<Region>(left, config_);
-            auto b = std::make_unique<Region>(right, config_);
+            // A SPLIT calibres each half SEPARATELY -- a new prefix and a new G -- while both
+            // keep reading the one global table (task book section 8).
+            auto a = std::make_unique<Region>(left, config_, lits_shared_);
+            auto b = std::make_unique<Region>(right, config_, lits_shared_);
             const auto fence = right.front().first;
             nodes_[i].region = std::move(a);
             nodes_.insert(nodes_.begin() + i + 1, Node{fence, std::move(b)});
             ++splits;
         } else {
-            auto fresh = std::make_unique<Region>(data, config_);
+            auto fresh = std::make_unique<Region>(data, config_, lits_shared_);
             nodes_[i].region = std::move(fresh);
         }
         ++rebuilds;
@@ -4007,11 +6498,27 @@ public:
     }
 
     bool insert(std::string_view key, std::uint64_t value) {
+        E30_W(insert);
+#ifdef E30_WRITE
+        const auto w_l0 = E30_T0();
+#endif
         const auto i = locate(key);
+#ifdef E30_WRITE
+        E30_ADD(w_locate_ins_ns, w_l0);
+        E30_INC(w_locate_ins_calls);
+#endif
         auto& r = *nodes_[i].region;
         if (!r.accepts_prefix(key)) {
             E25_INC(prefix_rebuilds);
+#ifdef E30_WRITE
+            const auto w_a0 = E30_T0();
+#endif
             auto data = r.all();
+#ifdef E30_WRITE
+            E30_ADD(w_rebuild_all_ns, w_a0);
+            E30_INC(w_rebuild_all_calls);
+            ::validation::e30::timers().w_rebuild_all_records += data.size();
+#endif
             auto it = std::lower_bound(data.begin(), data.end(), key,
                 [](const Pair& a, std::string_view b) { return compare(a.first, b) < 0; });
             if (it != data.end() && compare(it->first, key) == 0) return false;
@@ -4024,7 +6531,16 @@ public:
         ++size_;
         if (config_.region_keys && r.size() > 2 * config_.region_keys) {
             E25_INC(threshold_splits);
-            rebuild(i, r.all());
+#ifdef E30_WRITE
+            const auto w_a0 = E30_T0();
+#endif
+            auto w_all = r.all();
+#ifdef E30_WRITE
+            E30_ADD(w_rebuild_all_ns, w_a0);
+            E30_INC(w_rebuild_all_calls);
+            ::validation::e30::timers().w_rebuild_all_records += w_all.size();
+#endif
+            rebuild(i, std::move(w_all));
         }
         return true;
     }
@@ -4032,7 +6548,19 @@ public:
     bool update(std::string_view key, std::uint64_t v) { return nodes_[locate(key)].region->update(key, v); }
 
     bool erase(std::string_view key) {
-        bool ok = nodes_[locate(key)].region->erase(key);
+        E30_W(erase);
+        // The locate is clocked ALONE. Bracketing the whole statement below would have
+        // charged the region erase to it as well -- the first version of this did exactly
+        // that, and locate read as 91% of Index::erase.
+#ifdef E30_WRITE
+        const auto w_l0 = E30_T0();
+#endif
+        const std::size_t w_r = locate(key);
+#ifdef E30_WRITE
+        E30_ADD(w_locate_era_ns, w_l0);
+        E30_INC(w_locate_era_calls);
+#endif
+        bool ok = nodes_[w_r].region->erase(key);
         if (ok) --size_;
         return ok;
     }
@@ -4092,6 +6620,27 @@ public:
         }
         return out;
     }
+
+#ifdef E25_SCAN_CONSUME
+    // The consume-mode mirror of scan(), region for region. The full limit is passed down
+    // and each region call sees the remaining budget, exactly as the materialised path
+    // does through out.size() -- the walk, the locate() count and the region arithmetic
+    // are the same; only the row production differs (see Region::scan_consume).
+    void scan_consume(std::string_view start, std::size_t count, Region::ConsumeSink& sink) const {
+        std::size_t i = locate(start);
+        // The region receives the GLOBAL target, not the remaining budget: the region
+        // loop compares the sink's running total against it, exactly as Region::scan
+        // compares out.size() against the shared vector's. Passing count - sink.rows
+        // here was wrong across a region boundary (the earlier regions' rows are
+        // already in sink.rows, so a remaining budget double-counts them and the walk
+        // stops short) -- found by this round's verify pass on tranco/limit=4096,
+        // where one start crosses regions. Same bug shape as the smoke check caught.
+        for (; i < nodes_.size() && sink.rows < count; ++i) {
+            nodes_[i].region->scan_consume(i == locate(start) ? start : std::string_view{}, count,
+                                           sink);
+        }
+    }
+#endif
 };
 
 // Test-only. Do not call from library code or from a benchmark: a context is

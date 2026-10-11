@@ -1,0 +1,72 @@
+### check_combo mixed 131072  ctx16 same
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":131072,"subblock_reclaims":223748,"reclaim_widened":0}
+mixed Context16 same frac=2 ok
+{"kind":"mixed","backend":"Context16","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":223898,"reclaim_widened":0}
+NOT EXERCISED: the widened reclaim branch never ran on this load (subblock_reclaims=223898, reclaim_widened=0); the timing round would be certifying nothing about WIDE on mixed/Context16
+rc=3
+### check_combo mixed 131072  lits same
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"subblock_reclaims":273546,"reclaim_widened":0}
+mixed LitsHpt same frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":273774,"reclaim_widened":0}
+NOT EXERCISED: the widened reclaim branch never ran on this load (subblock_reclaims=273774, reclaim_widened=0); the timing round would be certifying nothing about WIDE on mixed/LitsHpt
+rc=3
+### check_combo skew 131072  ctx16 same
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.25 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.5 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=1 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":2,"live":131072,"subblock_reclaims":503444,"reclaim_widened":0}
+skew Context16 same frac=2 ok
+{"kind":"skew","backend":"Context16","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":504468,"reclaim_widened":0}
+NOT EXERCISED: the widened reclaim branch never ran on this load (subblock_reclaims=504468, reclaim_widened=0); the timing round would be certifying nothing about WIDE on skew/Context16
+rc=3
+### check_combo skew 131072  lits same
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.25 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.5 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=1 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"subblock_reclaims":482386,"reclaim_widened":0}
+skew LitsHpt same frac=2 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":483292,"reclaim_widened":0}
+NOT EXERCISED: the widened reclaim branch never ran on this load (subblock_reclaims=483292, reclaim_widened=0); the timing round would be certifying nothing about WIDE on skew/LitsHpt
+rc=3
+### check_combo tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv ctx16 same
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":2,"live":131072,"subblock_reclaims":96678,"reclaim_widened":1244}
+tranco Context16 same frac=2 ok
+{"kind":"tranco","backend":"Context16","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":97100,"reclaim_widened":1248}
+786994/786994 checks passed; subblock_reclaims=97100 reclaim_widened=1248
+rc=0
+### check_combo tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv lits same
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"subblock_reclaims":53800,"reclaim_widened":682}
+tranco LitsHpt same frac=2 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":54106,"reclaim_widened":686}
+786994/786994 checks passed; subblock_reclaims=54106 reclaim_widened=686
+rc=0

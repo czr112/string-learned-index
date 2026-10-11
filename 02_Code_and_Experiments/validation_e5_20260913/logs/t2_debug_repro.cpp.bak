@@ -1,0 +1,23 @@
+#include "selected.hpp"
+#include <iostream>
+using namespace validation;
+int main(){
+    std::vector<Pair> data;
+    data.emplace_back(std::string(""),0);
+    for(int i=0;i<9;++i)data.emplace_back("common/prefix/path/"+std::string(1,char('a'+i)),2+i);
+    data.emplace_back(std::string(4096,'q'),1);
+    std::sort(data.begin(),data.end(),pair_less);
+    Config c;c.block_bytes=512;c.slots=8;c.region_keys=0;
+    std::cerr<<"stage1: construct Region S=8 B=512\n";
+    Region r(data,c);
+    std::cerr<<"stage2: constructed size="<<r.size()<<" groups="<<r.groups()<<"\n";
+    Mode ms{Route::Interval,Prefetch::Off,true,true};
+    Mode m0{Route::Interval,Prefetch::Off,true,false};
+    auto a=r.find("common/prefix/path/a",ms);std::cerr<<"stage3: simd find found="<<a.found<<"\n";
+    auto b=r.find("common/prefix/path/a",m0);std::cerr<<"stage4: scalar find found="<<b.found<<"\n";
+    auto l=r.find(std::string(4096,'q'),ms);std::cerr<<"stage5: long find found="<<l.found<<"\n";
+    std::cerr<<"stage6: insert\n";r.insert("common/prefix/path/zz",7);
+    std::vector<Pair> out;r.scan({},r.size(),out);std::cerr<<"stage7: scan size="<<out.size()<<"\n";
+    auto st=r.group_stats();std::cerr<<"stage8: stats groups="<<st.size()<<"\n";
+    std::cerr<<"done\n";
+}

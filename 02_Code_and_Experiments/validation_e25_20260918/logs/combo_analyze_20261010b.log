@@ -1,0 +1,1581 @@
+loaded 4800 row(s) from 4 file(s)
+========================================================================================================================
+EVIDENCE CHECKS
+========================================================================================================================
+
+  back   mode  corpus   frac  hit_exp  hit_obs miss_obs      mis scan_mis       hash   checksum   verdict
+  --------------------------------------------------------------------------------------------------------------------
+  Context16 grow  mixed    0.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  mixed    0.25     4096     4096        0        0        0       same       same  ok
+  Context16 grow  mixed    0.50     4096     4096        0        0        0       same       same  ok
+  Context16 grow  mixed    1.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  mixed    2.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  skew     0.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  skew     0.25     4096     4096        0        0        0       same       same  ok
+  Context16 grow  skew     0.50     4096     4096        0        0        0       same       same  ok
+  Context16 grow  skew     1.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  skew     2.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  tranco   0.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  tranco   0.25     4096     4096        0        0        0       same       same  ok
+  Context16 grow  tranco   0.50     4096     4096        0        0        0       same       same  ok
+  Context16 grow  tranco   1.00     4096     4096        0        0        0       same       same  ok
+  Context16 grow  tranco   2.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  mixed    0.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  mixed    0.25     4096     4096        0        0        0       same       same  ok
+  Context16 same  mixed    0.50     4096     4096        0        0        0       same       same  ok
+  Context16 same  mixed    1.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  mixed    2.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  skew     0.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  skew     0.25     4096     4096        0        0        0       same       same  ok
+  Context16 same  skew     0.50     4096     4096        0        0        0       same       same  ok
+  Context16 same  skew     1.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  skew     2.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  tranco   0.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  tranco   0.25     4096     4096        0        0        0       same       same  ok
+  Context16 same  tranco   0.50     4096     4096        0        0        0       same       same  ok
+  Context16 same  tranco   1.00     4096     4096        0        0        0       same       same  ok
+  Context16 same  tranco   2.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  mixed    0.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  mixed    0.25     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  mixed    0.50     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  mixed    1.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  mixed    2.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  skew     0.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  skew     0.25     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  skew     0.50     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  skew     1.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  skew     2.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  tranco   0.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  tranco   0.25     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  tranco   0.50     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  tranco   1.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt grow  tranco   2.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  mixed    0.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  mixed    0.25     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  mixed    0.50     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  mixed    1.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  mixed    2.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  skew     0.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  skew     0.25     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  skew     0.50     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  skew     1.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  skew     2.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  tranco   0.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  tranco   0.25     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  tranco   0.50     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  tranco   1.00     4096     4096        0        0        0       same       same  ok
+  LitsHpt same  tranco   2.00     4096     4096        0        0        0       same       same  ok
+
+  hit_exp is the number of probes that must be found; it must be > 0 so the phase
+  is not a degenerate all-miss workload, and hit_obs must equal it.
+  hash=checksum=live 'same' means all arms and repetitions saw the same keys,
+  produced the same answers, and held the same live count.
+
+  all 60 group(s) passed.
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=build_ns (build (per arm-run, ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |       60.009       64.018       54.010       59.902
+  Context16  same  mixed    0.25 |       60.009       64.018       54.010       59.902
+  Context16  same  mixed    0.50 |       60.009       64.018       54.010       59.902
+  Context16  same  mixed    1.00 |       60.009       64.018       54.010       59.902
+  Context16  same  mixed    2.00 |       60.009       64.018       54.010       59.902
+  Context16  same  skew     0.00 |       61.640       63.758       55.794       68.818
+  Context16  same  skew     0.25 |       61.640       63.758       55.794       68.818
+  Context16  same  skew     0.50 |       61.640       63.758       55.794       68.818
+  Context16  same  skew     1.00 |       61.640       63.758       55.794       68.818
+  Context16  same  skew     2.00 |       61.640       63.758       55.794       68.818
+  Context16  same  tranco   0.00 |       81.356       84.210       80.352       81.814
+  Context16  same  tranco   0.25 |       81.356       84.210       80.352       81.814
+  Context16  same  tranco   0.50 |       81.356       84.210       80.352       81.814
+  Context16  same  tranco   1.00 |       81.356       84.210       80.352       81.814
+  Context16  same  tranco   2.00 |       81.356       84.210       80.352       81.814
+  Context16  grow  mixed    0.00 |       51.833       58.064       50.475       59.285
+  Context16  grow  mixed    0.25 |       51.833       58.064       50.475       59.285
+  Context16  grow  mixed    0.50 |       51.833       58.064       50.475       59.285
+  Context16  grow  mixed    1.00 |       51.833       58.064       50.475       59.285
+  Context16  grow  mixed    2.00 |       51.833       58.064       50.475       59.285
+  Context16  grow  skew     0.00 |       59.752       62.537       57.527       61.827
+  Context16  grow  skew     0.25 |       59.752       62.537       57.527       61.827
+  Context16  grow  skew     0.50 |       59.752       62.537       57.527       61.827
+  Context16  grow  skew     1.00 |       59.752       62.537       57.527       61.827
+  Context16  grow  skew     2.00 |       59.752       62.537       57.527       61.827
+  Context16  grow  tranco   0.00 |       80.081       86.799       79.621       87.074
+  Context16  grow  tranco   0.25 |       80.081       86.799       79.621       87.074
+  Context16  grow  tranco   0.50 |       80.081       86.799       79.621       87.074
+  Context16  grow  tranco   1.00 |       80.081       86.799       79.621       87.074
+  Context16  grow  tranco   2.00 |       80.081       86.799       79.621       87.074
+  LitsHpt    same  mixed    0.00 |      193.113      181.443      186.324      196.045
+  LitsHpt    same  mixed    0.25 |      193.113      181.443      186.324      196.045
+  LitsHpt    same  mixed    0.50 |      193.113      181.443      186.324      196.045
+  LitsHpt    same  mixed    1.00 |      193.113      181.443      186.324      196.045
+  LitsHpt    same  mixed    2.00 |      193.113      181.443      186.324      196.045
+  LitsHpt    same  skew     0.00 |      196.307      194.679      193.540      201.597
+  LitsHpt    same  skew     0.25 |      196.307      194.679      193.540      201.597
+  LitsHpt    same  skew     0.50 |      196.307      194.679      193.540      201.597
+  LitsHpt    same  skew     1.00 |      196.307      194.679      193.540      201.597
+  LitsHpt    same  skew     2.00 |      196.307      194.679      193.540      201.597
+  LitsHpt    same  tranco   0.00 |      105.339      103.224       99.821      101.537
+  LitsHpt    same  tranco   0.25 |      105.339      103.224       99.821      101.537
+  LitsHpt    same  tranco   0.50 |      105.339      103.224       99.821      101.537
+  LitsHpt    same  tranco   1.00 |      105.339      103.224       99.821      101.537
+  LitsHpt    same  tranco   2.00 |      105.339      103.224       99.821      101.537
+  LitsHpt    grow  mixed    0.00 |      168.202      166.249      169.507      170.440
+  LitsHpt    grow  mixed    0.25 |      168.202      166.249      169.507      170.440
+  LitsHpt    grow  mixed    0.50 |      168.202      166.249      169.507      170.440
+  LitsHpt    grow  mixed    1.00 |      168.202      166.249      169.507      170.440
+  LitsHpt    grow  mixed    2.00 |      168.202      166.249      169.507      170.440
+  LitsHpt    grow  skew     0.00 |      183.901      180.135      176.649      182.756
+  LitsHpt    grow  skew     0.25 |      183.901      180.135      176.649      182.756
+  LitsHpt    grow  skew     0.50 |      183.901      180.135      176.649      182.756
+  LitsHpt    grow  skew     1.00 |      183.901      180.135      176.649      182.756
+  LitsHpt    grow  skew     2.00 |      183.901      180.135      176.649      182.756
+  LitsHpt    grow  tranco   0.00 |      106.342      114.970      108.193      116.716
+  LitsHpt    grow  tranco   0.25 |      106.342      114.970      108.193      116.716
+  LitsHpt    grow  tranco   0.50 |      106.342      114.970      108.193      116.716
+  LitsHpt    grow  tranco   1.00 |      106.342      114.970      108.193      116.716
+  LitsHpt    grow  tranco   2.00 |      106.342      114.970      108.193      116.716
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=seg_ns (maintenance segment (ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |        0.000        0.000        0.000        0.000
+  Context16  same  mixed    0.25 |       22.153       13.368       20.364       11.302
+  Context16  same  mixed    0.50 |       80.448       15.255       78.153       16.426
+  Context16  same  mixed    1.00 |      227.002       53.031      221.808       52.976
+  Context16  same  mixed    2.00 |      140.969       75.789      141.154       75.014
+  Context16  same  skew     0.00 |        0.000        0.000        0.000        0.000
+  Context16  same  skew     0.25 |      716.159       31.399      726.108       34.208
+  Context16  same  skew     0.50 |       99.061       31.498      100.084       31.441
+  Context16  same  skew     1.00 |      229.717       59.433      229.098       63.044
+  Context16  same  skew     2.00 |      213.700      119.861      216.396      122.351
+  Context16  same  tranco   0.00 |        0.000        0.000        0.000        0.000
+  Context16  same  tranco   0.25 |       80.134       42.639       75.613       36.732
+  Context16  same  tranco   0.50 |       70.934       40.248       67.480       36.136
+  Context16  same  tranco   1.00 |      178.383       82.475      169.782       73.081
+  Context16  same  tranco   2.00 |      237.565      162.437      220.600      136.098
+  Context16  grow  mixed    0.00 |        0.000        0.000        0.000        0.000
+  Context16  grow  mixed    0.25 |       15.250       11.432       15.349       11.261
+  Context16  grow  mixed    0.50 |       17.471       14.845       17.462       14.975
+  Context16  grow  mixed    1.00 |      102.522       53.697      101.025       54.623
+  Context16  grow  mixed    2.00 |      126.338       79.152      126.047       80.856
+  Context16  grow  skew     0.00 |        0.000        0.000        0.000        0.000
+  Context16  grow  skew     0.25 |      256.371       33.906      260.767       33.748
+  Context16  grow  skew     0.50 |       49.595       31.393       50.771       31.449
+  Context16  grow  skew     1.00 |       91.455       62.874       92.202       62.377
+  Context16  grow  skew     2.00 |      195.994      123.341      198.836      126.860
+  Context16  grow  tranco   0.00 |        0.000        0.000        0.000        0.000
+  Context16  grow  tranco   0.25 |       56.036       48.498       50.711       43.689
+  Context16  grow  tranco   0.50 |       55.225       46.916       50.900       42.498
+  Context16  grow  tranco   1.00 |      117.679       93.473      106.516       85.424
+  Context16  grow  tranco   2.00 |      212.279      196.299      197.393      178.583
+  LitsHpt    same  mixed    0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    same  mixed    0.25 |       10.015        8.936        9.900        9.147
+  LitsHpt    same  mixed    0.50 |       16.001       13.682       16.526       14.143
+  LitsHpt    same  mixed    1.00 |      442.146       61.270      415.083       61.739
+  LitsHpt    same  mixed    2.00 |      163.015       81.194      164.988       81.156
+  LitsHpt    same  skew     0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    same  skew     0.25 |     1426.653       37.715     1446.040       37.015
+  LitsHpt    same  skew     0.50 |      169.395       37.239      172.030       37.258
+  LitsHpt    same  skew     1.00 |      152.579       62.803      151.197       62.012
+  LitsHpt    same  skew     2.00 |      295.176      127.196      294.241      122.678
+  LitsHpt    same  tranco   0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    same  tranco   0.25 |      105.206       37.557      104.657       32.496
+  LitsHpt    same  tranco   0.50 |       59.975       34.577       58.075       28.890
+  LitsHpt    same  tranco   1.00 |      165.686       72.876      156.972       62.476
+  LitsHpt    same  tranco   2.00 |      211.404      140.173      192.770      116.568
+  LitsHpt    grow  mixed    0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    grow  mixed    0.25 |        9.802        8.272        8.877        7.823
+  LitsHpt    grow  mixed    0.50 |       13.742       12.987       13.613       13.227
+  LitsHpt    grow  mixed    1.00 |      194.434       63.723      189.045       64.135
+  LitsHpt    grow  mixed    2.00 |      150.261       82.075      152.059       83.471
+  LitsHpt    grow  skew     0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    grow  skew     0.25 |      529.755       37.292      536.914       38.964
+  LitsHpt    grow  skew     0.50 |       91.580       37.408       92.017       36.620
+  LitsHpt    grow  skew     1.00 |       81.789       60.023       82.849       60.573
+  LitsHpt    grow  skew     2.00 |      258.919      127.647      259.980      129.075
+  LitsHpt    grow  tranco   0.00 |        0.001        0.001        0.001        0.001
+  LitsHpt    grow  tranco   0.25 |       61.131       39.778       57.679       35.542
+  LitsHpt    grow  tranco   0.50 |       45.455       35.018       41.087       31.129
+  LitsHpt    grow  tranco   1.00 |       99.930       76.241       91.697       65.600
+  LitsHpt    grow  tranco   2.00 |      173.473      155.004      156.106      137.330
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=cum_ns (maintenance cumulative (ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |        0.000        0.000        0.000        0.000
+  Context16  same  mixed    0.25 |       22.153       13.368       20.364       11.303
+  Context16  same  mixed    0.50 |      103.804       29.230       98.579       27.840
+  Context16  same  mixed    1.00 |      333.454       83.862      323.033       82.922
+  Context16  same  mixed    2.00 |      481.955      159.145      460.972      157.954
+  Context16  same  skew     0.00 |        0.000        0.000        0.000        0.000
+  Context16  same  skew     0.25 |      716.159       31.399      726.108       34.208
+  Context16  same  skew     0.50 |      813.945       63.317      829.856       64.891
+  Context16  same  skew     1.00 |     1047.196      122.822     1065.412      129.932
+  Context16  same  skew     2.00 |     1263.404      242.005     1278.949      251.938
+  Context16  same  tranco   0.00 |        0.000        0.000        0.000        0.000
+  Context16  same  tranco   0.25 |       80.134       42.639       75.613       36.733
+  Context16  same  tranco   0.50 |      150.623       83.008      143.390       72.563
+  Context16  same  tranco   1.00 |      332.904      164.644      312.880      145.834
+  Context16  same  tranco   2.00 |      565.365      322.867      525.969      279.973
+  Context16  grow  mixed    0.00 |        0.000        0.000        0.000        0.000
+  Context16  grow  mixed    0.25 |       15.250       11.433       15.350       11.261
+  Context16  grow  mixed    0.50 |       32.586       26.397       33.451       27.065
+  Context16  grow  mixed    1.00 |      134.016       80.324      133.723       81.737
+  Context16  grow  mixed    2.00 |      261.295      159.468      259.963      164.546
+  Context16  grow  skew     0.00 |        0.000        0.000        0.000        0.000
+  Context16  grow  skew     0.25 |      256.371       33.906      260.767       33.748
+  Context16  grow  skew     0.50 |      308.825       65.781      314.264       64.898
+  Context16  grow  skew     1.00 |      409.945      130.114      417.765      127.802
+  Context16  grow  skew     2.00 |      606.193      255.889      610.658      256.946
+  Context16  grow  tranco   0.00 |        0.000        0.000        0.000        0.000
+  Context16  grow  tranco   0.25 |       56.037       48.498       50.711       43.690
+  Context16  grow  tranco   0.50 |      112.125       94.986      101.906       86.389
+  Context16  grow  tranco   1.00 |      229.283      187.931      208.111      172.489
+  Context16  grow  tranco   2.00 |      432.121      387.683      404.573      350.760
+  LitsHpt    same  mixed    0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    same  mixed    0.25 |       10.015        8.936        9.900        9.147
+  LitsHpt    same  mixed    0.50 |       27.671       22.850       26.589       24.301
+  LitsHpt    same  mixed    1.00 |      471.912       85.255      442.688       85.665
+  LitsHpt    same  mixed    2.00 |      639.015      167.530      607.126      168.708
+  LitsHpt    same  skew     0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    same  skew     0.25 |     1426.653       37.715     1446.040       37.015
+  LitsHpt    same  skew     0.50 |     1587.154       77.650     1626.064       75.207
+  LitsHpt    same  skew     1.00 |     1760.520      139.862     1793.656      135.007
+  LitsHpt    same  skew     2.00 |     2048.616      268.460     2090.464      259.635
+  LitsHpt    same  tranco   0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    same  tranco   0.25 |      105.206       37.558      104.657       32.496
+  LitsHpt    same  tranco   0.50 |      168.043       71.399      164.013       61.022
+  LitsHpt    same  tranco   1.00 |      330.622      145.089      318.133      120.920
+  LitsHpt    same  tranco   2.00 |      542.362      283.648      507.576      237.473
+  LitsHpt    grow  mixed    0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    grow  mixed    0.25 |        9.803        8.272        8.877        7.823
+  LitsHpt    grow  mixed    0.50 |       23.679       21.535       22.560       21.120
+  LitsHpt    grow  mixed    1.00 |      218.047       86.241      210.341       85.943
+  LitsHpt    grow  mixed    2.00 |      364.221      167.481      363.018      168.794
+  LitsHpt    grow  skew     0.00 |        0.000        0.000        0.000        0.000
+  LitsHpt    grow  skew     0.25 |      529.756       37.292      536.915       38.964
+  LitsHpt    grow  skew     0.50 |      623.008       75.213      631.865       76.497
+  LitsHpt    grow  skew     1.00 |      711.734      136.172      709.167      137.195
+  LitsHpt    grow  skew     2.00 |      952.864      265.117      976.968      267.528
+  LitsHpt    grow  tranco   0.00 |        0.001        0.001        0.001        0.001
+  LitsHpt    grow  tranco   0.25 |       61.132       39.779       57.680       35.543
+  LitsHpt    grow  tranco   0.50 |      106.938       75.152       97.171       66.761
+  LitsHpt    grow  tranco   1.00 |      208.566      151.514      190.579      133.891
+  LitsHpt    grow  tranco   2.00 |      381.465      306.015      348.208      269.197
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=hit_ns (hit queries (ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |       25.929       24.979       25.150       24.559
+  Context16  same  mixed    0.25 |       28.665       26.839       28.036       25.184
+  Context16  same  mixed    0.50 |       32.304       26.781       33.416       25.599
+  Context16  same  mixed    1.00 |       46.083       26.434       46.311       25.412
+  Context16  same  mixed    2.00 |       51.495       25.828       49.693       24.998
+  Context16  same  skew     0.00 |       35.071       35.753       34.547       35.334
+  Context16  same  skew     0.25 |       45.908       34.467       49.919       36.804
+  Context16  same  skew     0.50 |       57.639       35.150       56.454       36.817
+  Context16  same  skew     1.00 |       78.315       35.533       80.166       35.967
+  Context16  same  skew     2.00 |       78.916       36.177       80.776       37.150
+  Context16  same  tranco   0.00 |       27.190       28.171       21.595       21.238
+  Context16  same  tranco   0.25 |       30.302       27.796       23.878       21.712
+  Context16  same  tranco   0.50 |       32.887       27.978       26.185       21.811
+  Context16  same  tranco   1.00 |       37.549       27.424       30.145       21.546
+  Context16  same  tranco   2.00 |       40.539       28.091       33.317       21.959
+  Context16  grow  mixed    0.00 |       25.816       25.750       25.411       25.111
+  Context16  grow  mixed    0.25 |       28.465       25.410       28.674       25.553
+  Context16  grow  mixed    0.50 |       32.584       25.010       33.288       25.911
+  Context16  grow  mixed    1.00 |       47.859       26.132       46.708       25.947
+  Context16  grow  mixed    2.00 |       50.757       26.250       51.067       26.830
+  Context16  grow  skew     0.00 |       33.774       33.847       33.962       34.655
+  Context16  grow  skew     0.25 |       45.686       36.021       47.181       35.814
+  Context16  grow  skew     0.50 |       54.839       36.416       56.339       36.981
+  Context16  grow  skew     1.00 |       77.731       37.489       79.512       38.069
+  Context16  grow  skew     2.00 |       77.669       37.862       80.877       38.541
+  Context16  grow  tranco   0.00 |       28.034       29.061       22.351       22.613
+  Context16  grow  tranco   0.25 |       33.451       29.747       27.367       24.455
+  Context16  grow  tranco   0.50 |       36.611       31.654       30.819       25.876
+  Context16  grow  tranco   1.00 |       45.809       32.595       40.128       27.481
+  Context16  grow  tranco   2.00 |       49.309       33.118       42.912       26.733
+  LitsHpt    same  mixed    0.00 |       25.177       25.920       25.642       25.192
+  LitsHpt    same  mixed    0.25 |       27.144       25.881       27.255       26.384
+  LitsHpt    same  mixed    0.50 |       31.683       26.624       31.129       26.351
+  LitsHpt    same  mixed    1.00 |       45.448       25.994       45.764       25.454
+  LitsHpt    same  mixed    2.00 |       51.271       25.483       54.142       25.598
+  LitsHpt    same  skew     0.00 |       35.325       33.480       34.717       36.165
+  LitsHpt    same  skew     0.25 |       47.683       36.512       48.774       36.533
+  LitsHpt    same  skew     0.50 |       56.362       35.910       57.803       37.267
+  LitsHpt    same  skew     1.00 |       78.283       35.778       77.570       36.939
+  LitsHpt    same  skew     2.00 |       75.504       34.777       75.419       36.006
+  LitsHpt    same  tranco   0.00 |       26.489       27.267       20.082       19.782
+  LitsHpt    same  tranco   0.25 |       27.184       26.058       22.640       20.429
+  LitsHpt    same  tranco   0.50 |       28.925       25.967       22.909       19.982
+  LitsHpt    same  tranco   1.00 |       32.080       26.574       25.003       19.475
+  LitsHpt    same  tranco   2.00 |       33.884       26.902       28.108       20.094
+  LitsHpt    grow  mixed    0.00 |       24.710       25.106       24.305       24.317
+  LitsHpt    grow  mixed    0.25 |       26.396       25.098       26.316       24.055
+  LitsHpt    grow  mixed    0.50 |       30.826       25.267       30.448       25.218
+  LitsHpt    grow  mixed    1.00 |       46.038       25.411       44.590       25.336
+  LitsHpt    grow  mixed    2.00 |       50.983       25.252       52.553       26.100
+  LitsHpt    grow  skew     0.00 |       33.238       33.248       34.475       34.418
+  LitsHpt    grow  skew     0.25 |       45.607       35.613       48.027       36.047
+  LitsHpt    grow  skew     0.50 |       53.414       35.604       54.744       37.351
+  LitsHpt    grow  skew     1.00 |       74.043       37.160       76.161       38.428
+  LitsHpt    grow  skew     2.00 |       73.032       37.246       75.096       38.943
+  LitsHpt    grow  tranco   0.00 |       26.975       26.159       19.328       19.762
+  LitsHpt    grow  tranco   0.25 |       29.350       26.999       23.624       20.124
+  LitsHpt    grow  tranco   0.50 |       32.119       26.352       25.901       21.361
+  LitsHpt    grow  tranco   1.00 |       36.187       28.497       31.244       21.589
+  LitsHpt    grow  tranco   2.00 |       39.114       29.192       34.717       23.116
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=miss_ns (miss queries (ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |       21.120       21.208       20.973       20.909
+  Context16  same  mixed    0.25 |       24.558       21.477       24.955       21.464
+  Context16  same  mixed    0.50 |       28.840       21.961       30.036       20.896
+  Context16  same  mixed    1.00 |       43.931       21.222       44.868       20.431
+  Context16  same  mixed    2.00 |       44.657       21.056       45.131       20.368
+  Context16  same  skew     0.00 |       33.142       32.815       34.303       33.377
+  Context16  same  skew     0.25 |       42.688       32.506       44.993       33.734
+  Context16  same  skew     0.50 |       54.266       32.909       56.982       34.945
+  Context16  same  skew     1.00 |       77.756       32.639       78.121       32.176
+  Context16  same  skew     2.00 |       76.202       33.098       77.988       35.093
+  Context16  same  tranco   0.00 |       25.268       24.932       19.532       19.215
+  Context16  same  tranco   0.25 |       28.079       24.947       22.100       19.057
+  Context16  same  tranco   0.50 |       30.457       25.151       24.761       18.829
+  Context16  same  tranco   1.00 |       37.043       25.071       30.232       18.431
+  Context16  same  tranco   2.00 |       43.172       24.626       34.418       18.252
+  Context16  grow  mixed    0.00 |       21.315       21.499       21.257       21.306
+  Context16  grow  mixed    0.25 |       24.507       21.438       24.602       21.831
+  Context16  grow  mixed    0.50 |       29.081       21.746       28.896       21.320
+  Context16  grow  mixed    1.00 |       44.700       23.002       43.728       23.016
+  Context16  grow  mixed    2.00 |       44.813       23.388       44.346       23.287
+  Context16  grow  skew     0.00 |       32.123       32.462       32.915       33.365
+  Context16  grow  skew     0.25 |       41.611       36.914       43.515       37.227
+  Context16  grow  skew     0.50 |       54.530       37.833       55.463       38.146
+  Context16  grow  skew     1.00 |       75.302       39.286       77.638       40.920
+  Context16  grow  skew     2.00 |       75.089       42.021       77.963       41.639
+  Context16  grow  tranco   0.00 |       25.016       25.713       19.131       19.834
+  Context16  grow  tranco   0.25 |       30.224       27.907       24.182       21.139
+  Context16  grow  tranco   0.50 |       35.401       29.680       28.723       23.825
+  Context16  grow  tranco   1.00 |       45.047       32.678       39.349       27.686
+  Context16  grow  tranco   2.00 |       48.978       33.372       43.474       27.389
+  LitsHpt    same  mixed    0.00 |       22.198       23.003       23.039       22.730
+  LitsHpt    same  mixed    0.25 |       24.563       22.390       24.847       22.728
+  LitsHpt    same  mixed    0.50 |       28.884       22.923       29.135       22.649
+  LitsHpt    same  mixed    1.00 |       44.450       22.697       46.231       22.977
+  LitsHpt    same  mixed    2.00 |       49.345       22.904       48.302       22.110
+  LitsHpt    same  skew     0.00 |       34.869       34.045       34.435       34.447
+  LitsHpt    same  skew     0.25 |       44.409       33.460       44.284       34.814
+  LitsHpt    same  skew     0.50 |       56.675       34.776       56.400       34.505
+  LitsHpt    same  skew     1.00 |       73.679       34.190       76.758       34.583
+  LitsHpt    same  skew     2.00 |       75.453       34.237       76.295       34.060
+  LitsHpt    same  tranco   0.00 |       22.910       23.827       17.487       17.426
+  LitsHpt    same  tranco   0.25 |       24.844       23.155       19.608       17.115
+  LitsHpt    same  tranco   0.50 |       26.721       23.195       20.179       17.056
+  LitsHpt    same  tranco   1.00 |       31.588       23.792       24.298       16.900
+  LitsHpt    same  tranco   2.00 |       34.865       23.772       27.433       16.758
+  LitsHpt    grow  mixed    0.00 |       21.012       22.321       21.841       21.593
+  LitsHpt    grow  mixed    0.25 |       24.097       22.321       24.281       22.190
+  LitsHpt    grow  mixed    0.50 |       27.812       22.314       28.571       21.563
+  LitsHpt    grow  mixed    1.00 |       44.001       24.856       43.158       25.431
+  LitsHpt    grow  mixed    2.00 |       45.388       25.126       45.883       24.791
+  LitsHpt    grow  skew     0.00 |       32.456       33.232       33.896       33.632
+  LitsHpt    grow  skew     0.25 |       41.944       37.221       43.887       38.497
+  LitsHpt    grow  skew     0.50 |       51.569       41.503       54.106       42.155
+  LitsHpt    grow  skew     1.00 |       71.704       44.100       71.689       45.122
+  LitsHpt    grow  skew     2.00 |       70.387       46.382       72.202       47.376
+  LitsHpt    grow  tranco   0.00 |       23.226       23.673       16.845       17.352
+  LitsHpt    grow  tranco   0.25 |       26.492       23.834       20.322       17.747
+  LitsHpt    grow  tranco   0.50 |       28.743       24.751       23.468       19.748
+  LitsHpt    grow  tranco   1.00 |       34.534       27.564       29.382       22.173
+  LitsHpt    grow  tranco   2.00 |       39.834       27.814       33.349       22.093
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=scan16_ns (scan 16 (ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |        0.239        0.295        0.242        0.255
+  Context16  same  mixed    0.25 |        0.153        0.160        0.153        0.148
+  Context16  same  mixed    0.50 |        0.111        0.140        0.098        0.165
+  Context16  same  mixed    1.00 |        0.130        0.148        0.141        0.161
+  Context16  same  mixed    2.00 |        0.207        0.130        0.177        0.147
+  Context16  same  skew     0.00 |        0.565        0.471        0.467        0.513
+  Context16  same  skew     0.25 |        0.183        0.185        0.161        0.223
+  Context16  same  skew     0.50 |        0.129        0.196        0.148        0.256
+  Context16  same  skew     1.00 |        0.144        0.237        0.154        0.264
+  Context16  same  skew     2.00 |        0.150        0.251        0.166        0.274
+  Context16  same  tranco   0.00 |        0.048        0.047        0.050        0.047
+  Context16  same  tranco   0.25 |        0.062        0.065        0.071        0.056
+  Context16  same  tranco   0.50 |        0.081        0.076        0.076        0.079
+  Context16  same  tranco   1.00 |        0.111        0.090        0.095        0.088
+  Context16  same  tranco   2.00 |        0.093        0.077        0.081        0.078
+  Context16  grow  mixed    0.00 |        0.108        0.122        0.116        0.117
+  Context16  grow  mixed    0.25 |        0.116        0.131        0.126        0.144
+  Context16  grow  mixed    0.50 |        0.118        0.123        0.118        0.121
+  Context16  grow  mixed    1.00 |        0.083        0.098        0.093        0.114
+  Context16  grow  mixed    2.00 |        0.092        0.121        0.096        0.110
+  Context16  grow  skew     0.00 |        0.457        0.524        0.431        0.440
+  Context16  grow  skew     0.25 |        0.093        0.077        0.105        0.074
+  Context16  grow  skew     0.50 |        0.104        0.114        0.093        0.119
+  Context16  grow  skew     1.00 |        0.092        0.109        0.089        0.104
+  Context16  grow  skew     2.00 |        0.094        0.111        0.088        0.098
+  Context16  grow  tranco   0.00 |        0.054        0.060        0.056        0.056
+  Context16  grow  tranco   0.25 |        0.101        0.068        0.098        0.059
+  Context16  grow  tranco   0.50 |        0.115        0.136        0.110        0.130
+  Context16  grow  tranco   1.00 |        0.155        0.154        0.151        0.170
+  Context16  grow  tranco   2.00 |        0.067        0.154        0.068        0.172
+  LitsHpt    same  mixed    0.00 |        0.466        0.459        0.354        0.460
+  LitsHpt    same  mixed    0.25 |        0.147        0.846        0.150        0.976
+  LitsHpt    same  mixed    0.50 |        0.087        0.063        0.084        0.063
+  LitsHpt    same  mixed    1.00 |        0.111        0.085        0.114        0.078
+  LitsHpt    same  mixed    2.00 |        0.125        0.135        0.128        0.130
+  LitsHpt    same  skew     0.00 |        0.180        0.161        0.179        0.155
+  LitsHpt    same  skew     0.25 |        0.185        0.199        0.184        0.212
+  LitsHpt    same  skew     0.50 |        0.156        0.209        0.154        0.200
+  LitsHpt    same  skew     1.00 |        0.172        0.196        0.145        0.224
+  LitsHpt    same  skew     2.00 |        0.123        0.191        0.121        0.228
+  LitsHpt    same  tranco   0.00 |        0.047        0.050        0.045        0.042
+  LitsHpt    same  tranco   0.25 |        0.058        0.052        0.055        0.052
+  LitsHpt    same  tranco   0.50 |        0.084        0.059        0.084        0.061
+  LitsHpt    same  tranco   1.00 |        0.071        0.067        0.063        0.064
+  LitsHpt    same  tranco   2.00 |        0.063        0.055        0.062        0.056
+  LitsHpt    grow  mixed    0.00 |        0.102        0.100        0.119        0.097
+  LitsHpt    grow  mixed    0.25 |        0.111        0.106        0.130        0.122
+  LitsHpt    grow  mixed    0.50 |        0.111        0.125        0.102        0.117
+  LitsHpt    grow  mixed    1.00 |        0.085        0.101        0.086        0.136
+  LitsHpt    grow  mixed    2.00 |        0.085        0.129        0.086        0.128
+  LitsHpt    grow  skew     0.00 |        0.189        0.160        0.159        0.163
+  LitsHpt    grow  skew     0.25 |        0.086        0.074        0.087        0.093
+  LitsHpt    grow  skew     0.50 |        0.082        0.101        0.091        0.099
+  LitsHpt    grow  skew     1.00 |        0.090        0.102        0.089        0.087
+  LitsHpt    grow  skew     2.00 |        0.084        0.096        0.091        0.121
+  LitsHpt    grow  tranco   0.00 |        0.051        0.051        0.050        0.049
+  LitsHpt    grow  tranco   0.25 |        0.080        0.059        0.088        0.053
+  LitsHpt    grow  tranco   0.50 |        0.103        0.053        0.095        0.054
+  LitsHpt    grow  tranco   1.00 |        0.106        0.145        0.120        0.149
+  LitsHpt    grow  tranco   2.00 |        0.064        0.050        0.062        0.055
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=scan256_ns (scan 256 (ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |        1.743        1.909        1.985        1.865
+  Context16  same  mixed    0.25 |        2.034        2.410        2.193        2.507
+  Context16  same  mixed    0.50 |        1.591        2.212        1.496        2.407
+  Context16  same  mixed    1.00 |        1.700        2.326        1.841        2.424
+  Context16  same  mixed    2.00 |        2.369        2.567        1.890        2.935
+  Context16  same  skew     0.00 |        0.540        0.512        0.550        0.559
+  Context16  same  skew     0.25 |        0.630        1.040        0.618        1.084
+  Context16  same  skew     0.50 |        1.787        0.645        1.767        0.726
+  Context16  same  skew     1.00 |        1.587        0.568        1.608        0.565
+  Context16  same  skew     2.00 |        1.624        1.051        1.818        1.024
+  Context16  same  tranco   0.00 |        0.428        0.432        0.451        0.433
+  Context16  same  tranco   0.25 |        0.588        0.499        0.685        0.435
+  Context16  same  tranco   0.50 |        0.667        0.496        0.602        0.501
+  Context16  same  tranco   1.00 |        0.664        0.540        0.604        0.530
+  Context16  same  tranco   2.00 |        0.628        0.604        0.582        0.598
+  Context16  grow  mixed    0.00 |        1.681        1.940        1.985        1.932
+  Context16  grow  mixed    0.25 |        2.171        2.283        2.210        2.313
+  Context16  grow  mixed    0.50 |        2.299        2.523        2.148        2.123
+  Context16  grow  mixed    1.00 |        1.647        2.196        1.785        2.143
+  Context16  grow  mixed    2.00 |        1.713        2.967        1.991        3.153
+  Context16  grow  skew     0.00 |        0.497        0.518        0.506        0.520
+  Context16  grow  skew     0.25 |        1.580        1.209        1.609        1.309
+  Context16  grow  skew     0.50 |        1.829        1.937        1.485        1.889
+  Context16  grow  skew     1.00 |        1.585        1.753        1.553        2.022
+  Context16  grow  skew     2.00 |        1.585        1.877        1.561        1.555
+  Context16  grow  tranco   0.00 |        0.736        0.829        0.795        0.863
+  Context16  grow  tranco   0.25 |        0.982        1.143        1.033        1.096
+  Context16  grow  tranco   0.50 |        1.360        1.458        1.300        1.472
+  Context16  grow  tranco   1.00 |        1.155        1.684        1.140        2.024
+  Context16  grow  tranco   2.00 |        1.241        4.024        1.214        4.812
+  LitsHpt    same  mixed    0.00 |        1.844        2.032        1.695        2.293
+  LitsHpt    same  mixed    0.25 |        2.023        1.960        2.522        1.860
+  LitsHpt    same  mixed    0.50 |        1.693        2.158        1.547        2.393
+  LitsHpt    same  mixed    1.00 |        2.093        2.072        1.737        2.014
+  LitsHpt    same  mixed    2.00 |        1.546        1.998        1.834        2.551
+  LitsHpt    same  skew     0.00 |        0.692        0.668        0.773        0.649
+  LitsHpt    same  skew     0.25 |        0.703        0.999        0.737        0.976
+  LitsHpt    same  skew     0.50 |        1.670        0.702        1.671        0.659
+  LitsHpt    same  skew     1.00 |        1.718        0.627        1.608        0.640
+  LitsHpt    same  skew     2.00 |        1.622        0.816        1.606        0.789
+  LitsHpt    same  tranco   0.00 |        0.468        0.482        0.482        0.431
+  LitsHpt    same  tranco   0.25 |        0.646        0.506        0.609        0.498
+  LitsHpt    same  tranco   0.50 |        0.622        0.519        0.642        0.508
+  LitsHpt    same  tranco   1.00 |        0.657        0.545        0.628        0.535
+  LitsHpt    same  tranco   2.00 |        0.565        0.528        0.533        0.544
+  LitsHpt    grow  mixed    0.00 |        1.617        1.586        1.813        1.678
+  LitsHpt    grow  mixed    0.25 |        2.237        2.630        1.872        3.034
+  LitsHpt    grow  mixed    0.50 |        1.888        2.250        2.115        2.542
+  LitsHpt    grow  mixed    1.00 |        2.016        2.118        2.067        2.572
+  LitsHpt    grow  mixed    2.00 |        2.100        3.636        1.825        3.977
+  LitsHpt    grow  skew     0.00 |        0.648        0.592        0.626        0.587
+  LitsHpt    grow  skew     0.25 |        1.528        0.805        1.529        0.804
+  LitsHpt    grow  skew     0.50 |        1.419        1.763        1.564        1.816
+  LitsHpt    grow  skew     1.00 |        1.428        1.918        1.479        1.437
+  LitsHpt    grow  skew     2.00 |        1.529        1.659        1.463        1.772
+  LitsHpt    grow  tranco   0.00 |        0.797        0.806        0.722        0.852
+  LitsHpt    grow  tranco   0.25 |        0.822        1.058        1.060        1.106
+  LitsHpt    grow  tranco   0.50 |        1.286        1.240        1.114        1.417
+  LitsHpt    grow  tranco   1.00 |        1.634        1.759        1.658        1.640
+  LitsHpt    grow  tranco   2.00 |        0.774        2.189        0.712        2.467
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=scan4096_ns (scan 4096 (ns))  [displayed in ms]
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |       28.602       27.993       28.071       30.565
+  Context16  same  mixed    0.25 |       29.610       30.280       29.370       29.439
+  Context16  same  mixed    0.50 |       31.101       30.543       30.227       29.730
+  Context16  same  mixed    1.00 |       33.024       29.690       33.061       29.611
+  Context16  same  mixed    2.00 |       35.081       30.747       32.739       28.975
+  Context16  same  skew     0.00 |       29.822       29.994       28.134       30.086
+  Context16  same  skew     0.25 |       31.203       29.842       29.347       31.068
+  Context16  same  skew     0.50 |       33.563       31.177       32.696       31.422
+  Context16  same  skew     1.00 |       34.608       30.960       33.605       29.894
+  Context16  same  skew     2.00 |       34.334       30.783       34.611       31.149
+  Context16  same  tranco   0.00 |        9.011        9.002       10.197        9.298
+  Context16  same  tranco   0.25 |       10.426        8.966       10.945        8.567
+  Context16  same  tranco   0.50 |       10.887        9.323       10.872        8.873
+  Context16  same  tranco   1.00 |       11.854        7.671       11.087        8.028
+  Context16  same  tranco   2.00 |       11.549        6.879       11.381        6.526
+  Context16  grow  mixed    0.00 |       24.498       22.878       23.379       23.139
+  Context16  grow  mixed    0.25 |       26.765       23.755       25.016       25.860
+  Context16  grow  mixed    0.50 |       25.744       24.707       24.624       25.633
+  Context16  grow  mixed    1.00 |       31.537       26.077       29.685       25.370
+  Context16  grow  mixed    2.00 |       32.514       26.207       32.665       25.604
+  Context16  grow  skew     0.00 |       27.611       27.058       27.088       27.656
+  Context16  grow  skew     0.25 |       30.779       28.020       28.838       29.880
+  Context16  grow  skew     0.50 |       32.248       29.132       30.261       29.098
+  Context16  grow  skew     1.00 |       31.265       30.798       31.438       30.443
+  Context16  grow  skew     2.00 |       32.955       31.069       30.513       31.070
+  Context16  grow  tranco   0.00 |        8.484        8.639        8.770        8.964
+  Context16  grow  tranco   0.25 |       16.707       11.136       16.607       11.266
+  Context16  grow  tranco   0.50 |       18.908       20.243       18.216       19.792
+  Context16  grow  tranco   1.00 |       18.122       24.866       17.611       24.438
+  Context16  grow  tranco   2.00 |       15.423       23.970       15.879       24.038
+  LitsHpt    same  mixed    0.00 |       32.301       33.191       32.196       34.806
+  LitsHpt    same  mixed    0.25 |       33.678       31.617       34.794       34.097
+  LitsHpt    same  mixed    0.50 |       33.411       33.554       33.519       34.058
+  LitsHpt    same  mixed    1.00 |       37.236       34.747       37.384       34.169
+  LitsHpt    same  mixed    2.00 |       36.561       33.703       37.244       34.777
+  LitsHpt    same  skew     0.00 |       28.920       29.126       27.966       28.496
+  LitsHpt    same  skew     0.25 |       28.986       29.661       31.431       29.443
+  LitsHpt    same  skew     0.50 |       33.275       30.151       32.347       31.053
+  LitsHpt    same  skew     1.00 |       35.145       28.903       34.951       28.530
+  LitsHpt    same  skew     2.00 |       35.072       31.740       35.474       31.021
+  LitsHpt    same  tranco   0.00 |       10.236       10.314       10.523        9.963
+  LitsHpt    same  tranco   0.25 |       11.662       10.334       11.188        9.376
+  LitsHpt    same  tranco   0.50 |       11.775       10.338       11.734       10.296
+  LitsHpt    same  tranco   1.00 |       12.226        9.576       11.608        9.564
+  LitsHpt    same  tranco   2.00 |       12.313        9.043       12.346        9.643
+  LitsHpt    grow  mixed    0.00 |       23.927       23.332       23.049       22.678
+  LitsHpt    grow  mixed    0.25 |       24.472       24.818       25.098       25.078
+  LitsHpt    grow  mixed    0.50 |       27.134       26.497       25.565       26.576
+  LitsHpt    grow  mixed    1.00 |       33.843       25.856       33.355       27.208
+  LitsHpt    grow  mixed    2.00 |       36.451       26.944       36.152       26.731
+  LitsHpt    grow  skew     0.00 |       26.016       25.307       25.545       26.822
+  LitsHpt    grow  skew     0.25 |       30.907       29.498       28.851       29.121
+  LitsHpt    grow  skew     0.50 |       30.753       30.127       30.593       28.897
+  LitsHpt    grow  skew     1.00 |       31.533       29.354       30.879       28.283
+  LitsHpt    grow  skew     2.00 |       31.774       30.629       30.332       29.337
+  LitsHpt    grow  tranco   0.00 |        9.466        9.232        9.362        9.581
+  LitsHpt    grow  tranco   0.25 |       16.360       11.163       16.711       11.455
+  LitsHpt    grow  tranco   0.50 |       18.643       12.465       19.438       12.703
+  LitsHpt    grow  tranco   1.00 |       21.566       26.106       22.042       25.505
+  LitsHpt    grow  tranco   2.00 |       17.462       23.747       16.344       23.953
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=index_bytes (index bytes)
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |     23902305     23902305     23902817     23902817
+  Context16  same  mixed    0.25 |     25541608     23902305     25542120     23902817
+  Context16  same  mixed    0.50 |     29542162     23903759     29542674     23904271
+  Context16  same  mixed    1.00 |     39096582     23907125     39097094     23907637
+  Context16  same  mixed    2.00 |     43124969     23972577     43125481     23973089
+  Context16  same  skew     0.00 |     23082745     23082745     23083257     23083257
+  Context16  same  skew     0.25 |     26510575     23084209     26511087     23084721
+  Context16  same  skew     0.50 |     30836515     23085000     30837027     23085512
+  Context16  same  skew     1.00 |     41846941     23087892     41847453     23088404
+  Context16  same  skew     2.00 |     41999262     23090406     41999774     23090918
+  Context16  same  tranco   0.00 |     25552510     25552510     25553534     25553534
+  Context16  same  tranco   0.25 |     27466019     25555273     27467043     25556297
+  Context16  same  tranco   0.50 |     29326213     25559340     29327237     25560364
+  Context16  same  tranco   1.00 |     32821033     25566898     32822057     25567922
+  Context16  same  tranco   2.00 |     36549444     25578234     36550468     25579258
+  Context16  grow  mixed    0.00 |     23902305     23902305     23902817     23902817
+  Context16  grow  mixed    0.25 |     26009585     23941417     26010097     23941929
+  Context16  grow  mixed    0.50 |     30328079     23979439     30328591     23979951
+  Context16  grow  mixed    1.00 |     40451729     24624803     40452241     24625315
+  Context16  grow  mixed    2.00 |     44301181     24738850     44301693     24739362
+  Context16  grow  skew     0.00 |     23082745     23082745     23083257     23083257
+  Context16  grow  skew     0.25 |     26776785     23596805     26777297     23597317
+  Context16  grow  skew     0.50 |     31397893     24030455     31398405     24030967
+  Context16  grow  skew     1.00 |     43046913     24832865     43047425     24833377
+  Context16  grow  skew     2.00 |     43306140     25055628     43306652     25056140
+  Context16  grow  tranco   0.00 |     25552510     25552510     25553534     25553534
+  Context16  grow  tranco   0.25 |     28434530     26506039     28435554     26507063
+  Context16  grow  tranco   0.50 |     31238708     27482629     31239732     27483653
+  Context16  grow  tranco   1.00 |     36862857     29558967     36863881     29559991
+  Context16  grow  tranco   2.00 |     43280756     29738586     43281780     29739610
+  LitsHpt    same  mixed    0.00 |     23976899     23976899     23977411     23977411
+  LitsHpt    same  mixed    0.25 |     24547996     23976899     24548508     23977411
+  LitsHpt    same  mixed    0.50 |     27562508     23981017     27563020     23981529
+  LitsHpt    same  mixed    1.00 |     36621712     23986449     36622224     23986961
+  LitsHpt    same  mixed    2.00 |     42369983     24294374     42370495     24294886
+  LitsHpt    same  skew     0.00 |     23068014     23068014     23068526     23068526
+  LitsHpt    same  skew     0.25 |     26466435     23068812     26466947     23069324
+  LitsHpt    same  skew     0.50 |     30819342     23069477     30819854     23069989
+  LitsHpt    same  skew     1.00 |     41631218     23072094     41631730     23072606
+  LitsHpt    same  skew     2.00 |     41998644     23094170     41999156     23094682
+  LitsHpt    same  tranco   0.00 |     25551046     25551046     25552070     25552070
+  LitsHpt    same  tranco   0.25 |     26879370     25556489     26880394     25557513
+  LitsHpt    same  tranco   0.50 |     27813651     25560300     27814675     25561324
+  LitsHpt    same  tranco   1.00 |     30109286     25568256     30110310     25569280
+  LitsHpt    same  tranco   2.00 |     32624771     25580104     32625795     25581128
+  LitsHpt    grow  mixed    0.00 |     23976899     23976899     23977411     23977411
+  LitsHpt    grow  mixed    0.25 |     24922118     23976899     24922630     23977411
+  LitsHpt    grow  mixed    0.50 |     28218620     24043169     28219132     24043681
+  LitsHpt    grow  mixed    1.00 |     37856707     24781320     37857219     24781832
+  LitsHpt    grow  mixed    2.00 |     43840448     25147490     43840960     25148002
+  LitsHpt    grow  skew     0.00 |     23068014     23068014     23068526     23068526
+  LitsHpt    grow  skew     0.25 |     26763332     23588288     26763844     23588800
+  LitsHpt    grow  skew     0.50 |     31382947     24024023     31383459     24024535
+  LitsHpt    grow  skew     1.00 |     42778187     24744874     42778699     24745386
+  LitsHpt    grow  skew     2.00 |     43236339     24997142     43236851     24997654
+  LitsHpt    grow  tranco   0.00 |     25551046     25551046     25552070     25552070
+  LitsHpt    grow  tranco   0.25 |     27617410     26225833     27618434     26226857
+  LitsHpt    grow  tranco   0.50 |     29198602     26763016     29199626     26764040
+  LitsHpt    grow  tranco   1.00 |     32930974     28105851     32931998     28106875
+  LitsHpt    grow  tranco   2.00 |     37865034     28231465     37866058     28232489
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=overflow (overflow records)
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |          390          390          390          390
+  Context16  same  mixed    0.25 |        16743          390        16743          390
+  Context16  same  mixed    0.50 |        39829          397        39829          397
+  Context16  same  mixed    1.00 |        98564          412        98564          412
+  Context16  same  mixed    2.00 |       128533          748       128533          748
+  Context16  same  skew     0.00 |          913          913          913          913
+  Context16  same  skew     0.25 |        31724          925        31724          925
+  Context16  same  skew     0.50 |        62963          929        62963          929
+  Context16  same  skew     1.00 |       125996          941       125996          941
+  Context16  same  skew     2.00 |       127070          950       127070          950
+  Context16  same  tranco   0.00 |         1730         1730         1730         1730
+  Context16  same  tranco   0.25 |        23547         1755        23547         1755
+  Context16  same  tranco   0.50 |        45165         1788        45165         1788
+  Context16  same  tranco   1.00 |        85595         1859        85595         1859
+  Context16  same  tranco   2.00 |       127330         1924       127330         1924
+  Context16  grow  mixed    0.00 |          390          390          390          390
+  Context16  grow  mixed    0.25 |        19668          741        19668          741
+  Context16  grow  mixed    0.50 |        43860         1000        43860         1000
+  Context16  grow  mixed    1.00 |       103375         5058       103375         5058
+  Context16  grow  mixed    2.00 |       129703         5698       129703         5698
+  Context16  grow  skew     0.00 |          913          913          913          913
+  Context16  grow  skew     0.25 |        32343         5207        32343         5207
+  Context16  grow  skew     0.50 |        63946         8178        63946         8178
+  Context16  grow  skew     1.00 |       127701        12521       127701        12521
+  Context16  grow  skew     2.00 |       128704        13919       128704        13919
+  Context16  grow  tranco   0.00 |         1730         1730         1730         1730
+  Context16  grow  tranco   0.25 |        33650        12158        33650        12158
+  Context16  grow  tranco   0.50 |        64690        22904        64690        22904
+  Context16  grow  tranco   1.00 |       126872        45432       126872        45432
+  Context16  grow  tranco   2.00 |       195278        46787       195278        46787
+  LitsHpt    same  mixed    0.00 |          564          564          564          564
+  LitsHpt    same  mixed    0.25 |         6132          564         6132          564
+  LitsHpt    same  mixed    0.50 |        22178          583        22178          583
+  LitsHpt    same  mixed    1.00 |        79356          609        79356          609
+  LitsHpt    same  mixed    2.00 |       123350         2187       123350         2187
+  LitsHpt    same  skew     0.00 |          984          984          984          984
+  LitsHpt    same  skew     0.25 |        31450          991        31450          991
+  LitsHpt    same  skew     0.50 |        62402          994        62402          994
+  LitsHpt    same  skew     1.00 |       124654         1006       124654         1006
+  LitsHpt    same  skew     2.00 |       126878         1122       126878         1122
+  LitsHpt    same  tranco   0.00 |         1253         1253         1253         1253
+  LitsHpt    same  tranco   0.25 |        16335         1310        16335         1310
+  LitsHpt    same  tranco   0.50 |        27164         1349        27164         1349
+  LitsHpt    same  tranco   1.00 |        53091         1425        53091         1425
+  LitsHpt    same  tranco   2.00 |        81736         1515        81736         1515
+  LitsHpt    grow  mixed    0.00 |          564          564          564          564
+  LitsHpt    grow  mixed    0.25 |         9347          564         9347          564
+  LitsHpt    grow  mixed    0.50 |        26795          874        26795          874
+  LitsHpt    grow  mixed    1.00 |        84809         5401        84809         5401
+  LitsHpt    grow  mixed    2.00 |       127378         7235       127378         7235
+  LitsHpt    grow  skew     0.00 |          984          984          984          984
+  LitsHpt    grow  skew     0.25 |        32105         5225        32105         5225
+  LitsHpt    grow  skew     0.50 |        63316         8130        63316         8130
+  LitsHpt    grow  skew     1.00 |       126259        12043       126259        12043
+  LitsHpt    grow  skew     2.00 |       128348        13716       128348        13716
+  LitsHpt    grow  tranco   0.00 |         1253         1253         1253         1253
+  LitsHpt    grow  tranco   0.25 |        24073         8691        24073         8691
+  LitsHpt    grow  tranco   0.50 |        41449        14480        41449        14480
+  LitsHpt    grow  tranco   1.00 |        82204        28767        82204        28767
+  LitsHpt    grow  tranco   2.00 |       134712        29795       134712        29795
+
+========================================================================================================================
+ABSOLUTE MEDIANS (median over processes and reps), metric=routing_bytes (routing metadata bytes)
+========================================================================================================================
+  backend    mode  corpus   frac |            B            W            C           WC
+  ----------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |            0            0          512          512
+  Context16  same  mixed    0.25 |            0            0          512          512
+  Context16  same  mixed    0.50 |            0            0          512          512
+  Context16  same  mixed    1.00 |            0            0          512          512
+  Context16  same  mixed    2.00 |            0            0          512          512
+  Context16  same  skew     0.00 |            0            0          512          512
+  Context16  same  skew     0.25 |            0            0          512          512
+  Context16  same  skew     0.50 |            0            0          512          512
+  Context16  same  skew     1.00 |            0            0          512          512
+  Context16  same  skew     2.00 |            0            0          512          512
+  Context16  same  tranco   0.00 |            0            0         1024         1024
+  Context16  same  tranco   0.25 |            0            0         1024         1024
+  Context16  same  tranco   0.50 |            0            0         1024         1024
+  Context16  same  tranco   1.00 |            0            0         1024         1024
+  Context16  same  tranco   2.00 |            0            0         1024         1024
+  Context16  grow  mixed    0.00 |            0            0          512          512
+  Context16  grow  mixed    0.25 |            0            0          512          512
+  Context16  grow  mixed    0.50 |            0            0          512          512
+  Context16  grow  mixed    1.00 |            0            0          512          512
+  Context16  grow  mixed    2.00 |            0            0          512          512
+  Context16  grow  skew     0.00 |            0            0          512          512
+  Context16  grow  skew     0.25 |            0            0          512          512
+  Context16  grow  skew     0.50 |            0            0          512          512
+  Context16  grow  skew     1.00 |            0            0          512          512
+  Context16  grow  skew     2.00 |            0            0          512          512
+  Context16  grow  tranco   0.00 |            0            0         1024         1024
+  Context16  grow  tranco   0.25 |            0            0         1024         1024
+  Context16  grow  tranco   0.50 |            0            0         1024         1024
+  Context16  grow  tranco   1.00 |            0            0         1024         1024
+  Context16  grow  tranco   2.00 |            0            0         1024         1024
+  LitsHpt    same  mixed    0.00 |            0            0          512          512
+  LitsHpt    same  mixed    0.25 |            0            0          512          512
+  LitsHpt    same  mixed    0.50 |            0            0          512          512
+  LitsHpt    same  mixed    1.00 |            0            0          512          512
+  LitsHpt    same  mixed    2.00 |            0            0          512          512
+  LitsHpt    same  skew     0.00 |            0            0          512          512
+  LitsHpt    same  skew     0.25 |            0            0          512          512
+  LitsHpt    same  skew     0.50 |            0            0          512          512
+  LitsHpt    same  skew     1.00 |            0            0          512          512
+  LitsHpt    same  skew     2.00 |            0            0          512          512
+  LitsHpt    same  tranco   0.00 |            0            0         1024         1024
+  LitsHpt    same  tranco   0.25 |            0            0         1024         1024
+  LitsHpt    same  tranco   0.50 |            0            0         1024         1024
+  LitsHpt    same  tranco   1.00 |            0            0         1024         1024
+  LitsHpt    same  tranco   2.00 |            0            0         1024         1024
+  LitsHpt    grow  mixed    0.00 |            0            0          512          512
+  LitsHpt    grow  mixed    0.25 |            0            0          512          512
+  LitsHpt    grow  mixed    0.50 |            0            0          512          512
+  LitsHpt    grow  mixed    1.00 |            0            0          512          512
+  LitsHpt    grow  mixed    2.00 |            0            0          512          512
+  LitsHpt    grow  skew     0.00 |            0            0          512          512
+  LitsHpt    grow  skew     0.25 |            0            0          512          512
+  LitsHpt    grow  skew     0.50 |            0            0          512          512
+  LitsHpt    grow  skew     1.00 |            0            0          512          512
+  LitsHpt    grow  skew     2.00 |            0            0          512          512
+  LitsHpt    grow  tranco   0.00 |            0            0         1024         1024
+  LitsHpt    grow  tranco   0.25 |            0            0         1024         1024
+  LitsHpt    grow  tranco   0.50 |            0            0         1024         1024
+  LitsHpt    grow  tranco   1.00 |            0            0         1024         1024
+  LitsHpt    grow  tranco   2.00 |            0            0         1024         1024
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=build_ns (build (per arm-run, ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.035 2/5  1.23  0.933 5/5  1.13  0.990 4/5  1.08  1.125 0/5  1.08  1.023 2/5  1.20
+  Context16  same  mixed    0.25 |  1.035 2/5  1.23  0.933 5/5  1.13  0.990 4/5  1.08  1.125 0/5  1.08  1.023 2/5  1.20
+  Context16  same  mixed    0.50 |  1.035 2/5  1.23  0.933 5/5  1.13  0.990 4/5  1.08  1.125 0/5  1.08  1.023 2/5  1.20
+  Context16  same  mixed    1.00 |  1.035 2/5  1.23  0.933 5/5  1.13  0.990 4/5  1.08  1.125 0/5  1.08  1.023 2/5  1.20
+  Context16  same  mixed    2.00 |  1.035 2/5  1.23  0.933 5/5  1.13  0.990 4/5  1.08  1.125 0/5  1.08  1.023 2/5  1.20
+  Context16  same  skew     0.00 |  1.070 2/5  1.59  0.970 4/5  1.36  0.988 3/5  1.55  1.116 0/5  1.20  1.039 2/5  1.32
+  Context16  same  skew     0.25 |  1.070 2/5  1.59  0.970 4/5  1.36  0.988 3/5  1.55  1.116 0/5  1.20  1.039 2/5  1.32
+  Context16  same  skew     0.50 |  1.070 2/5  1.59  0.970 4/5  1.36  0.988 3/5  1.55  1.116 0/5  1.20  1.039 2/5  1.32
+  Context16  same  skew     1.00 |  1.070 2/5  1.59  0.970 4/5  1.36  0.988 3/5  1.55  1.116 0/5  1.20  1.039 2/5  1.32
+  Context16  same  skew     2.00 |  1.070 2/5  1.59  0.970 4/5  1.36  0.988 3/5  1.55  1.116 0/5  1.20  1.039 2/5  1.32
+  Context16  same  tranco   0.00 |  1.025 1/5  1.17  0.905 4/5  1.35  0.975 4/5  1.30  1.007 2/5  1.20  0.953 3/5  1.33
+  Context16  same  tranco   0.25 |  1.025 1/5  1.17  0.905 4/5  1.35  0.975 4/5  1.30  1.007 2/5  1.20  0.953 3/5  1.33
+  Context16  same  tranco   0.50 |  1.025 1/5  1.17  0.905 4/5  1.35  0.975 4/5  1.30  1.007 2/5  1.20  0.953 3/5  1.33
+  Context16  same  tranco   1.00 |  1.025 1/5  1.17  0.905 4/5  1.35  0.975 4/5  1.30  1.007 2/5  1.20  0.953 3/5  1.33
+  Context16  same  tranco   2.00 |  1.025 1/5  1.17  0.905 4/5  1.35  0.975 4/5  1.30  1.007 2/5  1.20  0.953 3/5  1.33
+  Context16  grow  mixed    0.00 |  1.136 1/5  1.27  0.972 3/5  1.17  1.060 1/5  1.13  1.120 0/5  1.15  1.033 0/5  1.28
+  Context16  grow  mixed    0.25 |  1.136 1/5  1.27  0.972 3/5  1.17  1.060 1/5  1.13  1.120 0/5  1.15  1.033 0/5  1.28
+  Context16  grow  mixed    0.50 |  1.136 1/5  1.27  0.972 3/5  1.17  1.060 1/5  1.13  1.120 0/5  1.15  1.033 0/5  1.28
+  Context16  grow  mixed    1.00 |  1.136 1/5  1.27  0.972 3/5  1.17  1.060 1/5  1.13  1.120 0/5  1.15  1.033 0/5  1.28
+  Context16  grow  mixed    2.00 |  1.136 1/5  1.27  0.972 3/5  1.17  1.060 1/5  1.13  1.120 0/5  1.15  1.033 0/5  1.28
+  Context16  grow  skew     0.00 |  0.983 3/5  1.13  0.998 3/5  1.05  1.000 2/5  1.06  1.116 0/5  1.20  1.078 1/5  1.11
+  Context16  grow  skew     0.25 |  0.983 3/5  1.13  0.998 3/5  1.05  1.000 2/5  1.06  1.116 0/5  1.20  1.078 1/5  1.11
+  Context16  grow  skew     0.50 |  0.983 3/5  1.13  0.998 3/5  1.05  1.000 2/5  1.06  1.116 0/5  1.20  1.078 1/5  1.11
+  Context16  grow  skew     1.00 |  0.983 3/5  1.13  0.998 3/5  1.05  1.000 2/5  1.06  1.116 0/5  1.20  1.078 1/5  1.11
+  Context16  grow  skew     2.00 |  0.983 3/5  1.13  0.998 3/5  1.05  1.000 2/5  1.06  1.116 0/5  1.20  1.078 1/5  1.11
+  Context16  grow  tranco   0.00 |  1.066 2/5  1.23  0.974 5/5  1.19  1.041 1/5  1.15  1.066 0/5  1.15  0.993 3/5  1.11
+  Context16  grow  tranco   0.25 |  1.066 2/5  1.23  0.974 5/5  1.19  1.041 1/5  1.15  1.066 0/5  1.15  0.993 3/5  1.11
+  Context16  grow  tranco   0.50 |  1.066 2/5  1.23  0.974 5/5  1.19  1.041 1/5  1.15  1.066 0/5  1.15  0.993 3/5  1.11
+  Context16  grow  tranco   1.00 |  1.066 2/5  1.23  0.974 5/5  1.19  1.041 1/5  1.15  1.066 0/5  1.15  0.993 3/5  1.11
+  Context16  grow  tranco   2.00 |  1.066 2/5  1.23  0.974 5/5  1.19  1.041 1/5  1.15  1.066 0/5  1.15  0.993 3/5  1.11
+  LitsHpt    same  mixed    0.00 |  0.989 3/5  1.08  0.974 4/5  1.32  1.024 1/5  1.09  1.060 1/5  1.25  1.022 2/5  1.11
+  LitsHpt    same  mixed    0.25 |  0.989 3/5  1.08  0.974 4/5  1.32  1.024 1/5  1.09  1.060 1/5  1.25  1.022 2/5  1.11
+  LitsHpt    same  mixed    0.50 |  0.989 3/5  1.08  0.974 4/5  1.32  1.024 1/5  1.09  1.060 1/5  1.25  1.022 2/5  1.11
+  LitsHpt    same  mixed    1.00 |  0.989 3/5  1.08  0.974 4/5  1.32  1.024 1/5  1.09  1.060 1/5  1.25  1.022 2/5  1.11
+  LitsHpt    same  mixed    2.00 |  0.989 3/5  1.08  0.974 4/5  1.32  1.024 1/5  1.09  1.060 1/5  1.25  1.022 2/5  1.11
+  LitsHpt    same  skew     0.00 |  1.016 2/5  1.09  0.950 5/5  1.11  1.053 1/5  1.09  1.093 0/5  1.13  1.025 1/5  1.08
+  LitsHpt    same  skew     0.25 |  1.016 2/5  1.09  0.950 5/5  1.11  1.053 1/5  1.09  1.093 0/5  1.13  1.025 1/5  1.08
+  LitsHpt    same  skew     0.50 |  1.016 2/5  1.09  0.950 5/5  1.11  1.053 1/5  1.09  1.093 0/5  1.13  1.025 1/5  1.08
+  LitsHpt    same  skew     1.00 |  1.016 2/5  1.09  0.950 5/5  1.11  1.053 1/5  1.09  1.093 0/5  1.13  1.025 1/5  1.08
+  LitsHpt    same  skew     2.00 |  1.016 2/5  1.09  0.950 5/5  1.11  1.053 1/5  1.09  1.093 0/5  1.13  1.025 1/5  1.08
+  LitsHpt    same  tranco   0.00 |  0.982 4/5  1.12  0.967 4/5  1.14  0.980 5/5  1.05  0.994 3/5  1.07  0.959 5/5  1.10
+  LitsHpt    same  tranco   0.25 |  0.982 4/5  1.12  0.967 4/5  1.14  0.980 5/5  1.05  0.994 3/5  1.07  0.959 5/5  1.10
+  LitsHpt    same  tranco   0.50 |  0.982 4/5  1.12  0.967 4/5  1.14  0.980 5/5  1.05  0.994 3/5  1.07  0.959 5/5  1.10
+  LitsHpt    same  tranco   1.00 |  0.982 4/5  1.12  0.967 4/5  1.14  0.980 5/5  1.05  0.994 3/5  1.07  0.959 5/5  1.10
+  LitsHpt    same  tranco   2.00 |  0.982 4/5  1.12  0.967 4/5  1.14  0.980 5/5  1.05  0.994 3/5  1.07  0.959 5/5  1.10
+  LitsHpt    grow  mixed    0.00 |  0.997 3/5  1.15  1.030 2/5  1.24  1.056 1/5  1.12  1.027 2/5  1.19  1.023 0/5  1.06
+  LitsHpt    grow  mixed    0.25 |  0.997 3/5  1.15  1.030 2/5  1.24  1.056 1/5  1.12  1.027 2/5  1.19  1.023 0/5  1.06
+  LitsHpt    grow  mixed    0.50 |  0.997 3/5  1.15  1.030 2/5  1.24  1.056 1/5  1.12  1.027 2/5  1.19  1.023 0/5  1.06
+  LitsHpt    grow  mixed    1.00 |  0.997 3/5  1.15  1.030 2/5  1.24  1.056 1/5  1.12  1.027 2/5  1.19  1.023 0/5  1.06
+  LitsHpt    grow  mixed    2.00 |  0.997 3/5  1.15  1.030 2/5  1.24  1.056 1/5  1.12  1.027 2/5  1.19  1.023 0/5  1.06
+  LitsHpt    grow  skew     0.00 |  0.969 4/5  1.10  0.980 5/5  1.06  1.016 0/5  1.03  1.042 0/5  1.07  1.022 1/5  1.08
+  LitsHpt    grow  skew     0.25 |  0.969 4/5  1.10  0.980 5/5  1.06  1.016 0/5  1.03  1.042 0/5  1.07  1.022 1/5  1.08
+  LitsHpt    grow  skew     0.50 |  0.969 4/5  1.10  0.980 5/5  1.06  1.016 0/5  1.03  1.042 0/5  1.07  1.022 1/5  1.08
+  LitsHpt    grow  skew     1.00 |  0.969 4/5  1.10  0.980 5/5  1.06  1.016 0/5  1.03  1.042 0/5  1.07  1.022 1/5  1.08
+  LitsHpt    grow  skew     2.00 |  0.969 4/5  1.10  0.980 5/5  1.06  1.016 0/5  1.03  1.042 0/5  1.07  1.022 1/5  1.08
+  LitsHpt    grow  tranco   0.00 |  1.053 1/5  1.10  0.975 3/5  1.07  1.029 1/5  1.06  1.077 0/5  1.10  1.091 0/5  1.10
+  LitsHpt    grow  tranco   0.25 |  1.053 1/5  1.10  0.975 3/5  1.07  1.029 1/5  1.06  1.077 0/5  1.10  1.091 0/5  1.10
+  LitsHpt    grow  tranco   0.50 |  1.053 1/5  1.10  0.975 3/5  1.07  1.029 1/5  1.06  1.077 0/5  1.10  1.091 0/5  1.10
+  LitsHpt    grow  tranco   1.00 |  1.053 1/5  1.10  0.975 3/5  1.07  1.029 1/5  1.06  1.077 0/5  1.10  1.091 0/5  1.10
+  LitsHpt    grow  tranco   2.00 |  1.053 1/5  1.10  0.975 3/5  1.07  1.029 1/5  1.06  1.077 0/5  1.10  1.091 0/5  1.10
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics build_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=seg_ns (maintenance segment (ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.075 0/5  1.19  0.999 3/5  1.66  1.018 2/5  1.38  0.949 3/5  2.00  0.940 3/5  1.35
+  Context16  same  mixed    0.25 |  0.603 5/5  1.31  0.965 5/5  1.17  0.913 3/5  1.31  0.600 5/5  1.19  0.543 5/5  1.15
+  Context16  same  mixed    0.50 |  0.199 5/5  1.23  1.014 1/5  1.21  1.042 1/5  1.12  0.203 5/5  1.24  0.205 5/5  1.25
+  Context16  same  mixed    1.00 |  0.232 5/5  1.11  1.002 2/5  1.03  0.980 4/5  1.17  0.239 5/5  1.13  0.233 5/5  1.20
+  Context16  same  mixed    2.00 |  0.532 5/5  1.04  0.984 3/5  1.12  0.982 4/5  1.10  0.524 5/5  1.05  0.518 5/5  1.11
+  Context16  same  skew     0.00 |  0.974 3/5  1.61  0.892 5/5  1.58  1.205 2/5  1.68  1.090 1/5  1.53  0.789 4/5  1.56
+  Context16  same  skew     0.25 |  0.044 5/5  1.17  1.045 2/5  1.14  1.051 2/5  1.44  0.046 5/5  1.48  0.047 5/5  1.22
+  Context16  same  skew     0.50 |  0.320 5/5  1.18  1.039 0/5  1.08  0.992 3/5  1.21  0.315 5/5  1.17  0.325 5/5  1.06
+  Context16  same  skew     1.00 |  0.270 5/5  1.17  0.998 3/5  1.19  1.037 2/5  1.15  0.268 5/5  1.09  0.286 5/5  1.20
+  Context16  same  skew     2.00 |  0.546 5/5  1.07  1.002 1/5  1.01  1.001 2/5  1.05  0.572 5/5  1.05  0.560 5/5  1.04
+  Context16  same  tranco   0.00 |  0.923 3/5  2.60  0.870 3/5  3.89  0.992 3/5  2.55  0.969 3/5  1.73  0.829 3/5  2.00
+  Context16  same  tranco   0.25 |  0.511 5/5  1.12  0.975 3/5  1.35  0.844 5/5  1.35  0.468 5/5  1.21  0.429 5/5  1.34
+  Context16  same  tranco   0.50 |  0.570 5/5  1.04  0.944 4/5  1.22  0.899 5/5  1.10  0.555 5/5  1.26  0.504 5/5  1.14
+  Context16  same  tranco   1.00 |  0.463 5/5  1.07  0.946 5/5  1.10  0.883 5/5  1.18  0.436 5/5  1.18  0.413 5/5  1.13
+  Context16  same  tranco   2.00 |  0.673 5/5  1.08  0.911 5/5  1.14  0.830 5/5  1.26  0.637 5/5  1.14  0.573 5/5  1.21
+  Context16  grow  mixed    0.00 |  1.044 1/5  1.26  0.851 4/5  1.49  1.006 2/5  1.26  1.166 0/5  1.20  0.981 3/5  1.38
+  Context16  grow  mixed    0.25 |  0.748 5/5  1.23  1.023 2/5  1.10  1.019 2/5  1.11  0.738 5/5  1.20  0.758 5/5  1.11
+  Context16  grow  mixed    0.50 |  0.840 5/5  1.28  1.043 2/5  1.20  1.017 2/5  1.17  0.878 5/5  1.15  0.864 5/5  1.05
+  Context16  grow  mixed    1.00 |  0.522 5/5  1.17  0.965 3/5  1.14  1.009 2/5  1.18  0.534 5/5  1.18  0.524 5/5  1.09
+  Context16  grow  mixed    2.00 |  0.625 5/5  1.11  0.996 3/5  1.04  1.071 1/5  1.12  0.651 5/5  1.13  0.655 5/5  1.11
+  Context16  grow  skew     0.00 |  1.010 2/5  1.50  0.878 4/5  1.37  0.866 3/5  1.35  0.997 3/5  1.27  0.902 4/5  1.49
+  Context16  grow  skew     0.25 |  0.135 5/5  1.11  1.020 1/5  1.07  0.997 3/5  1.03  0.130 5/5  1.07  0.133 5/5  1.08
+  Context16  grow  skew     0.50 |  0.636 5/5  1.11  1.049 0/5  1.08  1.007 1/5  1.12  0.631 5/5  1.15  0.649 5/5  1.16
+  Context16  grow  skew     1.00 |  0.702 5/5  1.17  1.033 2/5  1.14  0.996 3/5  1.13  0.683 5/5  1.09  0.707 5/5  1.11
+  Context16  grow  skew     2.00 |  0.632 5/5  1.07  0.984 3/5  1.18  1.045 1/5  1.07  0.628 5/5  1.16  0.654 5/5  1.10
+  Context16  grow  tranco   0.00 |  0.876 5/5  1.32  0.737 5/5  1.49  1.114 2/5  1.72  1.002 2/5  2.68  0.838 4/5  2.79
+  Context16  grow  tranco   0.25 |  0.859 5/5  1.13  0.936 4/5  1.16  0.922 5/5  1.11  0.877 5/5  1.11  0.770 5/5  1.07
+  Context16  grow  tranco   0.50 |  0.836 5/5  1.24  0.941 5/5  1.25  0.919 5/5  1.12  0.831 5/5  1.08  0.779 5/5  1.18
+  Context16  grow  tranco   1.00 |  0.797 5/5  1.11  0.904 5/5  1.12  0.909 5/5  1.04  0.797 5/5  1.03  0.714 5/5  1.14
+  Context16  grow  tranco   2.00 |  0.930 5/5  1.07  0.946 5/5  1.05  0.893 5/5  1.03  0.908 5/5  1.05  0.848 5/5  1.08
+  LitsHpt    same  mixed    0.00 |  0.925 4/5  2.15  1.048 1/5  1.86  1.078 2/5  1.81  0.844 4/5  1.96  0.923 3/5  1.65
+  LitsHpt    same  mixed    0.25 |  0.878 5/5  1.22  0.994 3/5  1.34  1.051 2/5  1.31  0.943 5/5  1.10  0.993 3/5  1.26
+  LitsHpt    same  mixed    0.50 |  0.853 5/5  1.13  1.035 1/5  1.12  1.006 2/5  1.33  0.829 5/5  1.24  0.859 5/5  1.23
+  LitsHpt    same  mixed    1.00 |  0.143 5/5  1.28  1.008 1/5  1.32  0.980 3/5  1.20  0.146 5/5  1.19  0.143 5/5  1.09
+  LitsHpt    same  mixed    2.00 |  0.502 5/5  1.05  0.992 4/5  1.08  0.982 4/5  1.15  0.497 5/5  1.11  0.492 5/5  1.12
+  LitsHpt    same  skew     0.00 |  0.931 3/5  1.39  1.157 2/5  1.51  1.046 0/5  1.14  0.973 3/5  1.17  0.939 3/5  1.58
+  LitsHpt    same  skew     0.25 |  0.027 5/5  1.27  1.013 2/5  1.08  0.964 5/5  1.14  0.026 5/5  1.07  0.026 5/5  1.05
+  LitsHpt    same  skew     0.50 |  0.217 5/5  1.09  1.021 2/5  1.17  0.980 3/5  1.29  0.213 5/5  1.19  0.211 5/5  1.29
+  LitsHpt    same  skew     1.00 |  0.414 5/5  1.15  0.978 3/5  1.08  0.999 4/5  1.15  0.427 5/5  1.14  0.412 5/5  1.09
+  LitsHpt    same  skew     2.00 |  0.426 5/5  1.12  0.974 3/5  1.07  1.034 1/5  1.18  0.421 5/5  1.14  0.424 5/5  1.10
+  LitsHpt    same  tranco   0.00 |  1.142 1/5  1.62  0.857 3/5  1.55  0.732 4/5  2.64  0.827 5/5  1.40  1.015 2/5  2.26
+  LitsHpt    same  tranco   0.25 |  0.350 5/5  1.04  0.958 5/5  1.07  0.874 5/5  1.20  0.320 5/5  1.13  0.312 5/5  1.15
+  LitsHpt    same  tranco   0.50 |  0.563 5/5  1.16  0.922 5/5  1.04  0.842 5/5  1.16  0.504 5/5  1.14  0.466 5/5  1.18
+  LitsHpt    same  tranco   1.00 |  0.446 5/5  1.05  0.972 5/5  1.10  0.857 5/5  1.08  0.392 5/5  1.13  0.374 5/5  1.08
+  LitsHpt    same  tranco   2.00 |  0.623 5/5  1.07  0.913 5/5  1.18  0.874 5/5  1.07  0.606 5/5  1.10  0.549 5/5  1.06
+  LitsHpt    grow  mixed    0.00 |  1.033 1/5  1.43  1.037 1/5  1.42  1.030 2/5  1.63  0.925 3/5  1.60  0.986 3/5  2.14
+  LitsHpt    grow  mixed    0.25 |  0.824 4/5  1.29  0.927 5/5  1.12  0.945 4/5  1.22  0.871 4/5  1.18  0.817 5/5  1.16
+  LitsHpt    grow  mixed    0.50 |  0.947 4/5  1.53  0.960 3/5  1.13  1.011 2/5  1.40  0.976 3/5  1.20  0.933 4/5  1.18
+  LitsHpt    grow  mixed    1.00 |  0.330 5/5  1.11  0.984 3/5  1.15  1.000 3/5  1.07  0.333 5/5  1.12  0.333 5/5  1.08
+  LitsHpt    grow  mixed    2.00 |  0.546 5/5  1.19  1.006 2/5  1.10  1.019 1/5  1.22  0.556 5/5  1.05  0.560 5/5  1.07
+  LitsHpt    grow  skew     0.00 |  0.888 4/5  1.80  0.892 4/5  2.19  1.112 2/5  1.45  1.203 1/5  1.78  1.121 2/5  1.89
+  LitsHpt    grow  skew     0.25 |  0.073 5/5  1.08  1.042 0/5  1.02  1.018 1/5  1.09  0.073 5/5  1.08  0.075 5/5  1.09
+  LitsHpt    grow  skew     0.50 |  0.409 5/5  1.04  1.012 1/5  1.05  0.985 4/5  1.09  0.398 5/5  1.03  0.406 5/5  1.10
+  LitsHpt    grow  skew     1.00 |  0.734 5/5  1.08  1.025 1/5  1.09  1.006 1/5  1.05  0.738 5/5  1.06  0.748 5/5  1.09
+  LitsHpt    grow  skew     2.00 |  0.494 5/5  1.03  1.013 1/5  1.06  1.018 1/5  1.09  0.502 5/5  1.05  0.499 5/5  1.08
+  LitsHpt    grow  tranco   0.00 |  1.007 2/5  2.20  0.905 3/5  1.71  0.903 3/5  1.51  1.018 2/5  1.92  0.977 3/5  1.69
+  LitsHpt    grow  tranco   0.25 |  0.637 5/5  1.11  0.930 5/5  1.08  0.908 5/5  1.08  0.619 5/5  1.04  0.570 5/5  1.05
+  LitsHpt    grow  tranco   0.50 |  0.785 5/5  1.14  0.889 5/5  1.13  0.869 5/5  1.15  0.760 5/5  1.12  0.686 5/5  1.06
+  LitsHpt    grow  tranco   1.00 |  0.760 5/5  1.10  0.906 4/5  1.13  0.870 5/5  1.06  0.720 5/5  1.08  0.648 5/5  1.06
+  LitsHpt    grow  tranco   2.00 |  0.903 5/5  1.08  0.910 5/5  1.04  0.887 5/5  1.07  0.870 5/5  1.02  0.790 5/5  1.04
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics seg_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=cum_ns (maintenance cumulative (ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.075 0/5  1.19  0.999 3/5  1.66  1.018 2/5  1.38  0.949 3/5  2.00  0.940 3/5  1.35
+  Context16  same  mixed    0.25 |  0.603 5/5  1.31  0.965 5/5  1.17  0.913 3/5  1.31  0.600 5/5  1.19  0.543 5/5  1.15
+  Context16  same  mixed    0.50 |  0.280 5/5  1.22  0.983 3/5  1.15  0.969 4/5  1.27  0.271 5/5  1.19  0.284 5/5  1.25
+  Context16  same  mixed    1.00 |  0.246 5/5  1.09  1.015 2/5  1.03  0.977 3/5  1.13  0.251 5/5  1.13  0.250 5/5  1.14
+  Context16  same  mixed    2.00 |  0.345 5/5  1.05  0.996 3/5  1.05  0.972 3/5  1.12  0.335 5/5  1.06  0.328 5/5  1.09
+  Context16  same  skew     0.00 |  0.974 3/5  1.61  0.892 5/5  1.58  1.205 2/5  1.68  1.090 1/5  1.53  0.789 4/5  1.56
+  Context16  same  skew     0.25 |  0.044 5/5  1.17  1.045 2/5  1.14  1.051 2/5  1.44  0.046 5/5  1.48  0.047 5/5  1.22
+  Context16  same  skew     0.50 |  0.082 5/5  1.15  1.034 2/5  1.13  1.019 2/5  1.28  0.077 5/5  1.36  0.080 5/5  1.12
+  Context16  same  skew     1.00 |  0.124 5/5  1.16  1.015 1/5  1.21  1.060 1/5  1.17  0.122 5/5  1.25  0.125 5/5  1.13
+  Context16  same  skew     2.00 |  0.199 5/5  1.10  1.005 1/5  1.17  1.010 1/5  1.07  0.193 5/5  1.15  0.199 5/5  1.09
+  Context16  same  tranco   0.00 |  0.923 3/5  2.60  0.870 3/5  3.89  0.992 3/5  2.55  0.969 3/5  1.73  0.829 3/5  2.00
+  Context16  same  tranco   0.25 |  0.511 5/5  1.12  0.975 3/5  1.35  0.844 5/5  1.35  0.468 5/5  1.21  0.429 5/5  1.34
+  Context16  same  tranco   0.50 |  0.536 5/5  1.11  0.924 5/5  1.15  0.837 5/5  1.23  0.515 5/5  1.20  0.461 5/5  1.21
+  Context16  same  tranco   1.00 |  0.494 5/5  1.07  0.903 5/5  1.11  0.883 5/5  1.21  0.472 5/5  1.18  0.431 5/5  1.18
+  Context16  same  tranco   2.00 |  0.583 5/5  1.05  0.937 5/5  1.10  0.844 5/5  1.18  0.537 5/5  1.17  0.486 5/5  1.18
+  Context16  grow  mixed    0.00 |  1.044 1/5  1.26  0.851 4/5  1.49  1.006 2/5  1.26  1.166 0/5  1.20  0.981 3/5  1.38
+  Context16  grow  mixed    0.25 |  0.748 5/5  1.23  1.023 2/5  1.10  1.019 2/5  1.11  0.738 5/5  1.20  0.758 5/5  1.11
+  Context16  grow  mixed    0.50 |  0.799 5/5  1.19  1.023 2/5  1.12  1.027 2/5  1.09  0.803 5/5  1.21  0.817 5/5  1.09
+  Context16  grow  mixed    1.00 |  0.603 5/5  1.10  0.989 3/5  1.13  1.022 2/5  1.14  0.593 5/5  1.17  0.592 5/5  1.05
+  Context16  grow  mixed    2.00 |  0.599 5/5  1.07  1.019 2/5  1.04  1.030 0/5  1.08  0.625 5/5  1.08  0.620 5/5  1.03
+  Context16  grow  skew     0.00 |  1.010 2/5  1.50  0.878 4/5  1.37  0.866 3/5  1.35  0.997 3/5  1.27  0.902 4/5  1.49
+  Context16  grow  skew     0.25 |  0.135 5/5  1.11  1.020 1/5  1.07  0.997 3/5  1.03  0.130 5/5  1.07  0.133 5/5  1.08
+  Context16  grow  skew     0.50 |  0.219 5/5  1.08  1.027 0/5  1.04  0.997 3/5  1.10  0.210 5/5  1.08  0.218 5/5  1.14
+  Context16  grow  skew     1.00 |  0.332 5/5  1.12  1.036 0/5  1.04  0.993 3/5  1.14  0.314 5/5  1.04  0.318 5/5  1.03
+  Context16  grow  skew     2.00 |  0.419 5/5  1.08  1.029 1/5  1.08  1.028 2/5  1.10  0.421 5/5  1.08  0.430 5/5  1.03
+  Context16  grow  tranco   0.00 |  0.876 5/5  1.32  0.737 5/5  1.49  1.114 2/5  1.72  1.002 2/5  2.68  0.838 4/5  2.79
+  Context16  grow  tranco   0.25 |  0.859 5/5  1.13  0.936 4/5  1.16  0.922 5/5  1.11  0.877 5/5  1.11  0.770 5/5  1.07
+  Context16  grow  tranco   0.50 |  0.860 5/5  1.12  0.943 5/5  1.18  0.916 5/5  1.03  0.851 5/5  1.08  0.773 5/5  1.14
+  Context16  grow  tranco   1.00 |  0.817 5/5  1.14  0.914 5/5  1.16  0.919 5/5  1.04  0.824 5/5  1.04  0.745 5/5  1.16
+  Context16  grow  tranco   2.00 |  0.887 5/5  1.06  0.936 5/5  1.06  0.905 5/5  1.01  0.858 5/5  1.04  0.796 5/5  1.04
+  LitsHpt    same  mixed    0.00 |  0.925 4/5  2.15  1.048 1/5  1.86  1.078 2/5  1.81  0.844 4/5  1.96  0.923 3/5  1.65
+  LitsHpt    same  mixed    0.25 |  0.878 5/5  1.22  0.994 3/5  1.34  1.051 2/5  1.31  0.943 5/5  1.09  0.993 3/5  1.26
+  LitsHpt    same  mixed    0.50 |  0.866 5/5  1.14  1.005 2/5  1.08  1.029 1/5  1.20  0.898 5/5  1.22  0.877 5/5  1.16
+  LitsHpt    same  mixed    1.00 |  0.190 5/5  1.25  1.017 1/5  1.32  0.999 3/5  1.13  0.192 5/5  1.19  0.188 5/5  1.07
+  LitsHpt    same  mixed    2.00 |  0.275 5/5  1.20  1.021 2/5  1.24  0.980 3/5  1.13  0.269 5/5  1.13  0.265 5/5  1.08
+  LitsHpt    same  skew     0.00 |  0.931 3/5  1.39  1.157 2/5  1.51  1.046 0/5  1.14  0.973 3/5  1.17  0.939 3/5  1.58
+  LitsHpt    same  skew     0.25 |  0.027 5/5  1.27  1.013 2/5  1.08  0.964 5/5  1.14  0.026 5/5  1.07  0.026 5/5  1.05
+  LitsHpt    same  skew     0.50 |  0.049 5/5  1.19  1.012 1/5  1.09  0.967 4/5  1.07  0.045 5/5  1.24  0.045 5/5  1.21
+  LitsHpt    same  skew     1.00 |  0.080 5/5  1.10  1.008 2/5  1.08  0.979 3/5  1.07  0.076 5/5  1.20  0.077 5/5  1.20
+  LitsHpt    same  skew     2.00 |  0.128 5/5  1.11  1.011 2/5  1.09  1.009 2/5  1.11  0.124 5/5  1.16  0.126 5/5  1.12
+  LitsHpt    same  tranco   0.00 |  1.142 1/5  1.62  0.857 3/5  1.55  0.732 4/5  2.64  0.827 5/5  1.40  1.015 2/5  2.26
+  LitsHpt    same  tranco   0.25 |  0.350 5/5  1.04  0.958 5/5  1.07  0.874 5/5  1.20  0.320 5/5  1.13  0.312 5/5  1.15
+  LitsHpt    same  tranco   0.50 |  0.427 5/5  1.07  0.939 5/5  1.04  0.857 5/5  1.15  0.394 5/5  1.14  0.350 5/5  1.10
+  LitsHpt    same  tranco   1.00 |  0.431 5/5  1.03  0.947 5/5  1.07  0.838 5/5  1.09  0.397 5/5  1.11  0.369 5/5  1.06
+  LitsHpt    same  tranco   2.00 |  0.513 5/5  1.03  0.940 5/5  1.13  0.855 5/5  1.05  0.481 5/5  1.11  0.426 5/5  1.06
+  LitsHpt    grow  mixed    0.00 |  1.033 1/5  1.43  1.037 1/5  1.42  1.030 2/5  1.63  0.925 3/5  1.60  0.986 3/5  2.14
+  LitsHpt    grow  mixed    0.25 |  0.824 4/5  1.29  0.927 5/5  1.12  0.945 4/5  1.22  0.871 4/5  1.18  0.817 5/5  1.16
+  LitsHpt    grow  mixed    0.50 |  0.905 4/5  1.37  0.958 5/5  1.10  1.022 2/5  1.22  0.950 4/5  1.10  0.889 5/5  1.14
+  LitsHpt    grow  mixed    1.00 |  0.395 5/5  1.13  0.979 3/5  1.14  1.006 2/5  1.10  0.399 5/5  1.11  0.392 5/5  1.08
+  LitsHpt    grow  mixed    2.00 |  0.462 5/5  1.08  0.986 3/5  1.12  1.004 2/5  1.12  0.461 5/5  1.08  0.455 5/5  1.06
+  LitsHpt    grow  skew     0.00 |  0.888 4/5  1.80  0.892 4/5  2.19  1.112 2/5  1.45  1.203 1/5  1.78  1.121 2/5  1.89
+  LitsHpt    grow  skew     0.25 |  0.073 5/5  1.08  1.042 0/5  1.02  1.018 1/5  1.09  0.073 5/5  1.08  0.075 5/5  1.09
+  LitsHpt    grow  skew     0.50 |  0.122 5/5  1.03  1.036 0/5  1.02  1.005 1/5  1.05  0.123 5/5  1.05  0.124 5/5  1.07
+  LitsHpt    grow  skew     1.00 |  0.196 5/5  1.02  1.033 0/5  1.02  1.001 2/5  1.08  0.197 5/5  1.04  0.195 5/5  1.05
+  LitsHpt    grow  skew     2.00 |  0.276 5/5  1.02  1.025 0/5  1.00  0.998 3/5  1.06  0.276 5/5  1.05  0.278 5/5  1.08
+  LitsHpt    grow  tranco   0.00 |  1.007 2/5  2.20  0.905 3/5  1.71  0.903 3/5  1.51  1.018 2/5  1.92  0.977 3/5  1.69
+  LitsHpt    grow  tranco   0.25 |  0.637 5/5  1.11  0.930 5/5  1.08  0.908 5/5  1.08  0.619 5/5  1.04  0.570 5/5  1.05
+  LitsHpt    grow  tranco   0.50 |  0.702 5/5  1.11  0.915 5/5  1.10  0.880 5/5  1.11  0.687 5/5  1.09  0.619 5/5  1.04
+  LitsHpt    grow  tranco   1.00 |  0.736 5/5  1.08  0.914 5/5  1.11  0.882 5/5  1.07  0.699 5/5  1.02  0.631 5/5  1.06
+  LitsHpt    grow  tranco   2.00 |  0.806 5/5  1.08  0.910 5/5  1.08  0.884 5/5  1.06  0.775 5/5  1.04  0.706 5/5  1.08
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics cum_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=hit_ns (hit queries (ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  0.972 4/5  1.11  0.961 4/5  1.32  0.983 4/5  1.11  0.984 4/5  1.13  0.966 5/5  1.13
+  Context16  same  mixed    0.25 |  0.992 3/5  1.24  0.968 3/5  1.23  0.946 3/5  1.21  0.923 5/5  1.11  0.859 5/5  1.15
+  Context16  same  mixed    0.50 |  0.850 5/5  1.24  1.021 1/5  1.11  0.982 4/5  1.10  0.764 5/5  1.10  0.768 5/5  1.20
+  Context16  same  mixed    1.00 |  0.565 5/5  1.09  0.997 3/5  1.15  0.972 3/5  1.13  0.548 5/5  1.17  0.540 5/5  1.06
+  Context16  same  mixed    2.00 |  0.504 5/5  1.04  0.973 4/5  1.06  0.970 5/5  1.11  0.492 5/5  1.05  0.477 5/5  1.06
+  Context16  same  skew     0.00 |  1.067 2/5  1.23  1.012 1/5  1.07  0.986 3/5  1.25  1.035 1/5  1.07  1.012 0/5  1.06
+  Context16  same  skew     0.25 |  0.740 5/5  1.10  1.056 1/5  1.09  1.102 1/5  1.39  0.745 5/5  1.27  0.792 5/5  1.17
+  Context16  same  skew     0.50 |  0.605 5/5  1.12  1.005 2/5  1.20  1.003 1/5  1.17  0.648 5/5  1.25  0.615 5/5  1.11
+  Context16  same  skew     1.00 |  0.445 5/5  1.16  1.016 1/5  1.09  1.029 1/5  1.08  0.446 5/5  1.09  0.456 5/5  1.23
+  Context16  same  skew     2.00 |  0.457 5/5  1.14  1.030 2/5  1.13  1.030 1/5  1.23  0.464 5/5  1.37  0.454 5/5  1.19
+  Context16  same  tranco   0.00 |  1.024 1/5  1.13  0.764 5/5  1.27  0.751 5/5  1.17  0.976 4/5  1.34  0.782 5/5  1.13
+  Context16  same  tranco   0.25 |  0.886 4/5  1.33  0.819 5/5  1.44  0.755 5/5  1.27  0.945 4/5  1.24  0.703 5/5  1.28
+  Context16  same  tranco   0.50 |  0.873 4/5  1.20  0.773 5/5  1.12  0.750 5/5  1.21  0.878 5/5  1.20  0.668 5/5  1.17
+  Context16  same  tranco   1.00 |  0.762 5/5  1.10  0.822 5/5  1.15  0.781 5/5  1.31  0.695 5/5  1.13  0.591 5/5  1.22
+  Context16  same  tranco   2.00 |  0.701 5/5  1.10  0.804 5/5  1.12  0.755 4/5  1.63  0.639 5/5  1.28  0.517 5/5  1.46
+  Context16  grow  mixed    0.00 |  1.041 2/5  1.16  0.973 4/5  1.34  0.978 3/5  1.13  0.989 3/5  1.20  0.970 4/5  1.14
+  Context16  grow  mixed    0.25 |  0.869 5/5  1.18  0.979 4/5  1.07  1.030 1/5  1.09  0.936 4/5  1.23  0.919 5/5  1.17
+  Context16  grow  mixed    0.50 |  0.769 5/5  1.09  1.008 2/5  1.07  1.055 1/5  1.07  0.799 5/5  1.18  0.792 5/5  1.10
+  Context16  grow  mixed    1.00 |  0.532 5/5  1.20  0.937 4/5  1.17  1.007 2/5  1.22  0.545 5/5  1.08  0.518 5/5  1.34
+  Context16  grow  mixed    2.00 |  0.521 5/5  1.05  0.985 3/5  1.19  1.041 2/5  1.11  0.529 5/5  1.06  0.532 5/5  1.13
+  Context16  grow  skew     0.00 |  1.021 0/5  1.01  1.029 1/5  1.20  1.018 1/5  1.03  1.014 2/5  1.14  1.008 1/5  1.09
+  Context16  grow  skew     0.25 |  0.811 5/5  1.11  1.020 1/5  1.05  1.011 1/5  1.04  0.758 5/5  1.10  0.789 5/5  1.18
+  Context16  grow  skew     0.50 |  0.662 5/5  1.19  1.053 0/5  1.14  1.035 1/5  1.33  0.646 5/5  1.31  0.675 5/5  1.09
+  Context16  grow  skew     1.00 |  0.469 5/5  1.08  1.026 1/5  1.19  1.001 2/5  1.05  0.479 5/5  1.13  0.496 5/5  1.13
+  Context16  grow  skew     2.00 |  0.445 5/5  1.20  1.074 1/5  1.22  1.061 0/5  1.09  0.480 5/5  1.12  0.511 5/5  1.11
+  Context16  grow  tranco   0.00 |  1.010 1/5  1.07  0.799 5/5  1.30  0.800 5/5  1.10  1.001 2/5  1.16  0.808 5/5  1.07
+  Context16  grow  tranco   0.25 |  0.904 5/5  1.09  0.849 5/5  1.28  0.817 5/5  1.07  0.871 5/5  1.17  0.732 5/5  1.03
+  Context16  grow  tranco   0.50 |  0.869 5/5  1.14  0.864 5/5  1.08  0.807 5/5  1.03  0.832 5/5  1.08  0.689 5/5  1.13
+  Context16  grow  tranco   1.00 |  0.736 5/5  1.05  0.875 5/5  1.12  0.813 5/5  1.09  0.685 5/5  1.09  0.592 5/5  1.08
+  Context16  grow  tranco   2.00 |  0.668 5/5  1.24  0.877 5/5  1.17  0.811 5/5  1.18  0.655 5/5  1.15  0.532 5/5  1.14
+  LitsHpt    same  mixed    0.00 |  1.023 1/5  1.12  1.004 2/5  1.20  1.012 2/5  1.22  0.983 3/5  1.20  1.005 2/5  1.09
+  LitsHpt    same  mixed    0.25 |  0.973 4/5  1.09  0.999 3/5  1.17  1.010 2/5  1.11  0.967 5/5  1.05  0.966 3/5  1.11
+  LitsHpt    same  mixed    0.50 |  0.858 5/5  1.20  1.030 1/5  1.33  0.993 3/5  1.15  0.804 5/5  1.27  0.877 5/5  1.18
+  LitsHpt    same  mixed    1.00 |  0.573 5/5  1.15  0.981 3/5  1.12  0.970 3/5  1.31  0.560 5/5  1.10  0.555 5/5  1.06
+  LitsHpt    same  mixed    2.00 |  0.497 5/5  1.23  1.063 0/5  1.18  0.992 4/5  1.26  0.480 5/5  1.19  0.478 5/5  1.09
+  LitsHpt    same  skew     0.00 |  0.965 3/5  1.11  0.987 4/5  1.10  1.072 1/5  1.21  1.012 2/5  1.16  1.014 0/5  1.03
+  LitsHpt    same  skew     0.25 |  0.748 5/5  1.11  0.961 3/5  1.19  1.025 1/5  1.08  0.747 5/5  1.17  0.760 5/5  1.12
+  LitsHpt    same  skew     0.50 |  0.597 5/5  1.29  0.976 3/5  1.18  1.041 2/5  1.42  0.632 5/5  1.44  0.637 5/5  1.34
+  LitsHpt    same  skew     1.00 |  0.480 5/5  1.12  1.022 1/5  1.20  1.009 1/5  1.12  0.465 5/5  1.17  0.475 5/5  1.09
+  LitsHpt    same  skew     2.00 |  0.460 5/5  1.06  0.984 3/5  1.22  0.982 3/5  1.17  0.459 5/5  1.36  0.473 5/5  1.11
+  LitsHpt    same  tranco   0.00 |  0.996 3/5  1.15  0.763 5/5  1.25  0.752 5/5  1.08  0.967 3/5  1.15  0.760 5/5  1.06
+  LitsHpt    same  tranco   0.25 |  0.972 4/5  1.15  0.833 5/5  1.15  0.802 5/5  1.14  0.914 5/5  1.16  0.712 5/5  1.11
+  LitsHpt    same  tranco   0.50 |  0.909 5/5  1.10  0.783 5/5  1.14  0.762 5/5  1.12  0.905 5/5  1.14  0.693 5/5  1.21
+  LitsHpt    same  tranco   1.00 |  0.849 5/5  1.07  0.812 5/5  1.20  0.743 5/5  1.11  0.776 5/5  1.12  0.618 5/5  1.20
+  LitsHpt    same  tranco   2.00 |  0.795 5/5  1.07  0.820 5/5  1.11  0.788 5/5  1.21  0.702 5/5  1.14  0.618 5/5  1.12
+  LitsHpt    grow  mixed    0.00 |  0.999 3/5  1.13  0.997 3/5  1.34  0.971 4/5  1.08  0.985 3/5  1.12  0.951 3/5  1.11
+  LitsHpt    grow  mixed    0.25 |  0.995 3/5  1.33  0.975 5/5  1.04  0.926 4/5  1.21  0.967 5/5  1.10  0.920 5/5  1.10
+  LitsHpt    grow  mixed    0.50 |  0.831 4/5  1.35  0.998 3/5  1.09  1.011 2/5  1.32  0.825 5/5  1.08  0.840 5/5  1.07
+  LitsHpt    grow  mixed    1.00 |  0.570 5/5  1.17  1.007 2/5  1.23  0.995 3/5  1.14  0.555 5/5  1.07  0.555 5/5  1.10
+  LitsHpt    grow  mixed    2.00 |  0.512 5/5  1.13  1.032 0/5  1.07  1.046 2/5  1.10  0.497 5/5  1.18  0.513 5/5  1.04
+  LitsHpt    grow  skew     0.00 |  1.017 2/5  1.16  1.041 1/5  1.11  1.043 1/5  1.12  0.984 3/5  1.07  1.052 1/5  1.14
+  LitsHpt    grow  skew     0.25 |  0.769 5/5  1.13  1.069 0/5  1.11  1.046 2/5  1.09  0.760 5/5  1.19  0.794 5/5  1.20
+  LitsHpt    grow  skew     0.50 |  0.671 5/5  1.06  1.042 1/5  1.10  1.046 1/5  1.10  0.663 5/5  1.10  0.696 5/5  1.11
+  LitsHpt    grow  skew     1.00 |  0.503 5/5  1.07  1.038 1/5  1.08  1.038 1/5  1.12  0.513 5/5  1.12  0.540 5/5  1.14
+  LitsHpt    grow  skew     2.00 |  0.505 5/5  1.09  1.028 1/5  1.10  1.043 2/5  1.13  0.536 5/5  1.18  0.543 5/5  1.08
+  LitsHpt    grow  tranco   0.00 |  0.975 4/5  1.10  0.717 5/5  1.08  0.762 5/5  1.10  1.050 2/5  1.13  0.731 5/5  1.13
+  LitsHpt    grow  tranco   0.25 |  0.888 5/5  1.20  0.777 5/5  1.10  0.760 5/5  1.10  0.864 5/5  1.10  0.688 5/5  1.02
+  LitsHpt    grow  tranco   0.50 |  0.819 5/5  1.13  0.802 5/5  1.07  0.803 5/5  1.05  0.827 5/5  1.12  0.685 5/5  1.08
+  LitsHpt    grow  tranco   1.00 |  0.781 5/5  1.12  0.844 5/5  1.17  0.744 5/5  1.10  0.704 5/5  1.13  0.618 5/5  1.14
+  LitsHpt    grow  tranco   2.00 |  0.748 5/5  1.30  0.867 5/5  1.25  0.788 5/5  1.06  0.669 5/5  1.12  0.567 5/5  1.23
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics hit_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=miss_ns (miss queries (ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.005 1/5  1.04  1.000 2/5  1.31  0.980 3/5  1.19  0.974 3/5  1.07  0.994 4/5  1.24
+  Context16  same  mixed    0.25 |  0.891 5/5  1.10  1.026 1/5  1.15  0.984 3/5  1.18  0.851 5/5  1.20  0.890 5/5  1.08
+  Context16  same  mixed    0.50 |  0.735 5/5  1.13  1.044 1/5  1.05  0.979 4/5  1.20  0.693 5/5  1.07  0.717 5/5  1.04
+  Context16  same  mixed    1.00 |  0.482 5/5  1.09  1.015 1/5  1.10  0.969 3/5  1.13  0.466 5/5  1.12  0.470 5/5  1.07
+  Context16  same  mixed    2.00 |  0.471 5/5  1.05  0.995 3/5  1.12  0.951 4/5  1.11  0.455 5/5  1.20  0.460 5/5  1.10
+  Context16  same  skew     0.00 |  0.918 3/5  1.35  1.027 2/5  1.13  1.006 2/5  1.05  0.976 4/5  1.08  1.016 2/5  1.10
+  Context16  same  skew     0.25 |  0.765 5/5  1.05  1.040 0/5  1.06  1.048 2/5  1.19  0.757 5/5  1.19  0.782 5/5  1.04
+  Context16  same  skew     0.50 |  0.598 5/5  1.12  1.037 1/5  1.39  1.074 0/5  1.19  0.603 5/5  1.47  0.617 5/5  1.17
+  Context16  same  skew     1.00 |  0.426 5/5  1.27  1.000 2/5  1.28  0.957 4/5  1.23  0.417 5/5  1.12  0.404 5/5  1.09
+  Context16  same  skew     2.00 |  0.445 5/5  1.13  0.993 3/5  1.15  1.057 2/5  1.07  0.459 5/5  1.34  0.429 5/5  1.33
+  Context16  same  tranco   0.00 |  0.961 3/5  1.13  0.736 5/5  1.30  0.756 5/5  1.32  0.912 4/5  1.32  0.747 5/5  1.31
+  Context16  same  tranco   0.25 |  0.904 5/5  1.17  0.776 5/5  1.16  0.710 5/5  1.20  0.900 5/5  1.23  0.676 5/5  1.23
+  Context16  same  tranco   0.50 |  0.812 5/5  1.04  0.805 5/5  1.16  0.735 5/5  1.25  0.802 5/5  1.22  0.577 5/5  1.18
+  Context16  same  tranco   1.00 |  0.662 5/5  1.22  0.836 5/5  1.14  0.735 5/5  1.47  0.611 5/5  1.20  0.510 5/5  1.28
+  Context16  same  tranco   2.00 |  0.573 5/5  1.34  0.771 5/5  1.09  0.747 5/5  1.59  0.524 5/5  1.16  0.437 5/5  1.22
+  Context16  grow  mixed    0.00 |  0.988 3/5  1.19  0.981 3/5  1.35  1.007 2/5  1.11  1.048 2/5  1.34  1.005 2/5  1.09
+  Context16  grow  mixed    0.25 |  0.884 5/5  1.18  0.996 3/5  1.13  1.021 2/5  1.06  0.883 5/5  1.02  0.878 5/5  1.17
+  Context16  grow  mixed    0.50 |  0.728 5/5  1.19  1.000 3/5  1.09  0.994 4/5  1.21  0.723 5/5  1.06  0.729 5/5  1.13
+  Context16  grow  mixed    1.00 |  0.512 5/5  1.17  0.954 4/5  1.13  1.026 1/5  1.08  0.525 5/5  1.24  0.521 5/5  1.31
+  Context16  grow  mixed    2.00 |  0.514 5/5  1.03  1.002 2/5  1.05  0.993 4/5  1.08  0.539 5/5  1.11  0.515 5/5  1.13
+  Context16  grow  skew     0.00 |  1.019 0/5  1.05  1.018 2/5  1.19  1.003 2/5  1.09  1.022 1/5  1.25  1.032 1/5  1.05
+  Context16  grow  skew     0.25 |  0.858 5/5  1.12  1.051 0/5  1.06  0.990 3/5  1.06  0.859 5/5  1.16  0.859 5/5  1.18
+  Context16  grow  skew     0.50 |  0.688 5/5  1.12  1.038 1/5  1.07  0.989 3/5  1.31  0.703 5/5  1.36  0.703 5/5  1.34
+  Context16  grow  skew     1.00 |  0.522 5/5  1.14  1.008 2/5  1.10  1.017 1/5  1.13  0.513 5/5  1.21  0.530 5/5  1.13
+  Context16  grow  skew     2.00 |  0.572 5/5  1.16  1.047 0/5  1.10  0.984 3/5  1.20  0.536 5/5  1.16  0.552 5/5  1.24
+  Context16  grow  tranco   0.00 |  0.988 3/5  1.13  0.747 5/5  1.29  0.777 5/5  1.08  1.023 2/5  1.17  0.777 5/5  1.15
+  Context16  grow  tranco   0.25 |  0.951 4/5  1.21  0.795 5/5  1.40  0.740 5/5  1.10  0.869 5/5  1.11  0.688 5/5  1.13
+  Context16  grow  tranco   0.50 |  0.832 5/5  1.21  0.809 5/5  1.26  0.780 5/5  1.11  0.808 5/5  1.06  0.675 5/5  1.15
+  Context16  grow  tranco   1.00 |  0.714 5/5  1.09  0.872 5/5  1.08  0.831 5/5  1.05  0.687 5/5  1.10  0.604 5/5  1.08
+  Context16  grow  tranco   2.00 |  0.676 5/5  1.11  0.907 5/5  1.05  0.854 5/5  1.22  0.629 5/5  1.12  0.564 5/5  1.08
+  LitsHpt    same  mixed    0.00 |  1.019 0/5  1.07  1.027 2/5  1.27  0.998 3/5  1.04  0.985 3/5  1.18  1.049 2/5  1.09
+  LitsHpt    same  mixed    0.25 |  0.897 5/5  1.08  1.022 1/5  1.14  1.026 1/5  1.14  0.904 5/5  1.11  0.932 5/5  1.07
+  LitsHpt    same  mixed    0.50 |  0.819 4/5  1.53  1.031 2/5  1.17  1.009 2/5  1.44  0.769 5/5  1.10  0.766 5/5  1.10
+  LitsHpt    same  mixed    1.00 |  0.520 5/5  1.20  1.020 1/5  1.22  1.017 2/5  1.32  0.499 5/5  1.18  0.512 5/5  1.14
+  LitsHpt    same  mixed    2.00 |  0.454 5/5  1.25  1.017 2/5  1.17  0.995 3/5  1.27  0.461 5/5  1.12  0.447 5/5  1.18
+  LitsHpt    same  skew     0.00 |  0.978 3/5  1.09  1.006 2/5  1.09  1.006 2/5  1.14  0.993 4/5  1.06  1.016 2/5  1.14
+  LitsHpt    same  skew     0.25 |  0.779 5/5  1.13  1.084 1/5  1.25  1.030 1/5  1.11  0.773 5/5  1.13  0.812 5/5  1.30
+  LitsHpt    same  skew     0.50 |  0.622 5/5  1.40  0.995 3/5  1.19  1.001 2/5  1.58  0.651 5/5  1.24  0.630 5/5  1.09
+  LitsHpt    same  skew     1.00 |  0.456 5/5  1.07  1.037 2/5  1.14  1.032 1/5  1.15  0.459 5/5  1.30  0.472 5/5  1.10
+  LitsHpt    same  skew     2.00 |  0.445 5/5  1.17  0.988 3/5  1.18  1.044 2/5  1.29  0.468 5/5  1.19  0.462 5/5  1.12
+  LitsHpt    same  tranco   0.00 |  1.021 2/5  1.11  0.740 5/5  1.23  0.722 5/5  1.17  1.029 1/5  1.24  0.729 5/5  1.04
+  LitsHpt    same  tranco   0.25 |  0.908 4/5  1.16  0.744 5/5  1.26  0.744 5/5  1.05  0.900 5/5  1.20  0.700 5/5  1.06
+  LitsHpt    same  tranco   0.50 |  0.850 5/5  1.15  0.761 5/5  1.10  0.713 5/5  1.11  0.818 5/5  1.28  0.647 5/5  1.17
+  LitsHpt    same  tranco   1.00 |  0.739 5/5  1.15  0.781 5/5  1.19  0.731 5/5  1.13  0.717 5/5  1.13  0.547 5/5  1.12
+  LitsHpt    same  tranco   2.00 |  0.703 5/5  1.14  0.810 5/5  1.26  0.717 5/5  1.05  0.648 5/5  1.16  0.506 5/5  1.25
+  LitsHpt    grow  mixed    0.00 |  1.008 1/5  1.09  1.032 1/5  1.07  0.978 4/5  1.07  0.990 4/5  1.04  1.002 2/5  1.10
+  LitsHpt    grow  mixed    0.25 |  0.942 4/5  1.24  0.999 3/5  1.09  1.003 2/5  1.30  0.928 5/5  1.14  0.915 5/5  1.13
+  LitsHpt    grow  mixed    0.50 |  0.785 5/5  1.24  1.011 2/5  1.13  1.000 3/5  1.25  0.752 5/5  1.10  0.751 5/5  1.07
+  LitsHpt    grow  mixed    1.00 |  0.580 5/5  1.05  0.992 4/5  1.05  1.009 2/5  1.06  0.591 5/5  1.06  0.582 5/5  1.06
+  LitsHpt    grow  mixed    2.00 |  0.547 5/5  1.19  1.026 1/5  1.08  1.012 2/5  1.10  0.532 5/5  1.13  0.545 5/5  1.11
+  LitsHpt    grow  skew     0.00 |  1.016 2/5  1.09  1.037 1/5  1.10  1.031 1/5  1.08  0.983 3/5  1.09  1.020 1/5  1.08
+  LitsHpt    grow  skew     0.25 |  0.884 5/5  1.10  1.046 0/5  1.07  1.058 0/5  1.07  0.889 5/5  1.04  0.933 5/5  1.06
+  LitsHpt    grow  skew     0.50 |  0.806 5/5  1.05  1.065 2/5  1.14  1.036 1/5  1.07  0.808 5/5  1.10  0.827 5/5  1.04
+  LitsHpt    grow  skew     1.00 |  0.630 5/5  1.25  0.995 3/5  1.12  0.986 4/5  1.07  0.613 5/5  1.10  0.627 5/5  1.28
+  LitsHpt    grow  skew     2.00 |  0.639 5/5  1.13  1.015 2/5  1.12  1.020 2/5  1.18  0.645 5/5  1.12  0.672 5/5  1.09
+  LitsHpt    grow  tranco   0.00 |  1.003 2/5  1.10  0.723 5/5  1.11  0.736 5/5  1.12  1.045 0/5  1.05  0.715 5/5  1.09
+  LitsHpt    grow  tranco   0.25 |  0.909 5/5  1.21  0.779 5/5  1.10  0.756 5/5  1.09  0.863 5/5  1.04  0.683 5/5  1.07
+  LitsHpt    grow  tranco   0.50 |  0.853 5/5  1.22  0.856 5/5  1.21  0.807 5/5  1.12  0.791 5/5  1.14  0.693 5/5  1.07
+  LitsHpt    grow  tranco   1.00 |  0.809 5/5  1.15  0.878 4/5  1.23  0.778 5/5  1.08  0.741 5/5  1.23  0.638 5/5  1.12
+  LitsHpt    grow  tranco   2.00 |  0.697 5/5  1.05  0.817 5/5  1.13  0.797 5/5  1.09  0.680 5/5  1.17  0.551 5/5  1.09
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics miss_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=scan16_ns (scan 16 (ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  0.958 3/5  2.01  1.149 0/5  1.14  0.879 4/5  1.49  1.161 2/5  1.35  1.203 2/5  1.64
+  Context16  same  mixed    0.25 |  0.989 3/5  1.56  0.997 3/5  1.72  1.209 2/5  1.46  1.070 2/5  1.62  1.013 2/5  1.88
+  Context16  same  mixed    0.50 |  1.146 0/5  1.61  0.949 3/5  1.58  1.014 2/5  1.79  1.500 0/5  1.75  1.551 0/5  1.65
+  Context16  same  mixed    1.00 |  1.080 0/5  1.25  1.089 1/5  1.35  1.122 1/5  1.83  1.162 2/5  1.48  1.239 1/5  1.50
+  Context16  same  mixed    2.00 |  0.711 5/5  1.35  0.931 4/5  1.42  1.078 1/5  1.46  0.878 5/5  1.29  0.755 5/5  1.27
+  Context16  same  skew     0.00 |  1.071 1/5  1.47  1.097 1/5  1.63  0.954 4/5  1.26  0.933 3/5  1.69  0.893 4/5  1.66
+  Context16  same  skew     0.25 |  1.165 1/5  1.32  1.014 2/5  1.64  1.174 2/5  1.34  1.239 0/5  1.41  1.237 0/5  1.32
+  Context16  same  skew     0.50 |  1.623 0/5  1.16  1.067 1/5  1.53  1.093 1/5  1.65  1.795 0/5  1.72  1.837 0/5  1.40
+  Context16  same  skew     1.00 |  1.726 0/5  1.21  1.049 1/5  1.50  1.143 1/5  1.34  1.654 0/5  1.51  1.726 0/5  1.54
+  Context16  same  skew     2.00 |  1.566 0/5  1.48  1.023 2/5  1.67  1.216 1/5  1.76  1.659 0/5  2.08  1.691 0/5  2.27
+  Context16  same  tranco   0.00 |  0.929 3/5  1.31  1.024 2/5  1.40  0.933 3/5  1.18  0.904 3/5  1.43  0.961 3/5  1.50
+  Context16  same  tranco   0.25 |  0.926 3/5  1.28  1.041 0/5  1.48  0.874 4/5  1.33  0.789 5/5  1.41  0.837 5/5  1.21
+  Context16  same  tranco   0.50 |  0.959 3/5  1.22  0.893 4/5  1.56  0.977 3/5  1.32  0.974 3/5  1.82  0.925 4/5  1.20
+  Context16  same  tranco   1.00 |  0.808 5/5  1.39  0.883 4/5  1.31  0.985 3/5  1.25  1.036 2/5  1.44  0.825 4/5  1.63
+  Context16  same  tranco   2.00 |  0.852 4/5  1.51  0.848 4/5  1.24  1.098 1/5  1.38  1.002 2/5  1.62  0.907 5/5  1.41
+  Context16  grow  mixed    0.00 |  1.028 2/5  1.56  1.043 2/5  1.67  0.940 3/5  2.10  0.923 3/5  1.59  1.095 0/5  1.13
+  Context16  grow  mixed    0.25 |  1.025 1/5  1.78  1.116 1/5  1.44  1.158 1/5  1.41  1.170 0/5  1.19  1.420 0/5  1.72
+  Context16  grow  mixed    0.50 |  1.038 1/5  1.37  0.947 3/5  1.50  1.007 1/5  1.21  1.055 2/5  1.42  1.187 1/5  1.62
+  Context16  grow  mixed    1.00 |  1.153 1/5  1.59  1.088 2/5  1.71  1.172 1/5  1.50  1.075 0/5  1.53  1.446 1/5  1.84
+  Context16  grow  mixed    2.00 |  1.337 0/5  1.41  1.086 2/5  1.27  0.985 3/5  1.43  1.289 1/5  1.60  1.394 0/5  1.58
+  Context16  grow  skew     0.00 |  1.278 0/5  1.28  0.958 3/5  1.33  0.856 5/5  1.62  0.993 3/5  1.82  1.011 2/5  1.42
+  Context16  grow  skew     0.25 |  0.803 5/5  1.53  1.100 1/5  1.42  0.994 3/5  1.37  0.770 5/5  1.51  0.827 5/5  1.44
+  Context16  grow  skew     0.50 |  1.023 2/5  1.83  1.076 2/5  1.93  1.115 2/5  2.00  1.308 1/5  2.03  1.420 1/5  1.90
+  Context16  grow  skew     1.00 |  1.054 1/5  1.79  0.918 3/5  1.93  1.119 2/5  1.36  1.198 1/5  1.99  1.048 1/5  1.85
+  Context16  grow  skew     2.00 |  1.187 1/5  1.50  1.001 2/5  1.37  1.017 2/5  1.60  1.117 1/5  1.23  1.003 2/5  1.25
+  Context16  grow  tranco   0.00 |  1.134 2/5  1.68  1.087 1/5  1.19  1.058 2/5  1.52  1.008 2/5  1.09  1.139 1/5  1.29
+  Context16  grow  tranco   0.25 |  0.681 5/5  1.34  0.908 4/5  1.45  0.829 5/5  1.06  0.606 5/5  1.29  0.596 5/5  1.29
+  Context16  grow  tranco   0.50 |  1.135 1/5  1.54  0.973 3/5  1.52  0.918 4/5  1.25  1.157 0/5  1.23  1.102 0/5  1.29
+  Context16  grow  tranco   1.00 |  0.968 3/5  1.39  0.967 3/5  1.25  1.221 1/5  1.73  1.130 1/5  1.62  1.099 2/5  1.85
+  Context16  grow  tranco   2.00 |  2.331 0/5  1.27  0.959 4/5  1.46  1.047 1/5  1.33  2.744 0/5  1.54  2.466 0/5  1.32
+  LitsHpt    same  mixed    0.00 |  0.942 4/5  1.61  0.882 4/5  1.35  1.103 2/5  1.61  1.275 2/5  2.46  0.936 3/5  1.22
+  LitsHpt    same  mixed    0.25 |  5.640 0/5  1.36  1.059 1/5  1.24  1.126 2/5  1.88  6.948 0/5  1.76  7.216 0/5  2.02
+  LitsHpt    same  mixed    0.50 |  0.777 5/5  1.68  1.030 2/5  1.30  1.036 2/5  1.92  0.716 5/5  1.30  0.683 5/5  1.32
+  LitsHpt    same  mixed    1.00 |  0.745 4/5  2.07  1.120 1/5  1.69  0.829 3/5  1.72  0.643 5/5  1.39  0.627 5/5  1.61
+  LitsHpt    same  mixed    2.00 |  1.021 2/5  1.82  0.868 3/5  1.53  0.962 3/5  2.23  0.902 3/5  1.48  0.885 3/5  1.79
+  LitsHpt    same  skew     0.00 |  0.990 3/5  1.75  0.994 3/5  1.84  1.059 2/5  1.64  1.005 2/5  1.25  0.922 3/5  2.09
+  LitsHpt    same  skew     0.25 |  1.210 2/5  1.60  1.001 2/5  1.32  0.957 3/5  1.79  1.068 0/5  1.27  1.187 0/5  1.32
+  LitsHpt    same  skew     0.50 |  1.451 1/5  1.67  1.017 2/5  1.42  0.959 3/5  1.44  1.408 0/5  1.39  1.355 0/5  1.30
+  LitsHpt    same  skew     1.00 |  1.140 2/5  1.59  0.986 3/5  2.00  1.284 2/5  1.86  1.667 1/5  2.30  1.196 0/5  1.62
+  LitsHpt    same  skew     2.00 |  1.462 0/5  1.43  1.016 2/5  1.33  1.102 0/5  1.47  1.929 0/5  1.54  1.879 0/5  1.37
+  LitsHpt    same  tranco   0.00 |  1.056 2/5  1.19  0.908 5/5  1.13  0.896 5/5  1.17  0.980 3/5  1.46  0.925 5/5  1.22
+  LitsHpt    same  tranco   0.25 |  0.945 4/5  1.21  0.876 4/5  1.44  0.991 3/5  1.33  1.009 2/5  1.32  0.888 5/5  1.26
+  LitsHpt    same  tranco   0.50 |  0.685 5/5  1.34  1.063 2/5  1.55  0.999 3/5  1.30  0.692 5/5  1.20  0.755 5/5  1.35
+  LitsHpt    same  tranco   1.00 |  0.952 3/5  2.08  0.836 4/5  1.52  1.032 2/5  1.71  1.072 1/5  1.30  0.898 5/5  1.10
+  LitsHpt    same  tranco   2.00 |  0.871 5/5  1.16  1.015 2/5  1.29  1.001 2/5  1.41  0.952 3/5  1.41  0.824 4/5  1.69
+  LitsHpt    grow  mixed    0.00 |  1.139 2/5  1.72  1.096 2/5  1.64  0.894 3/5  1.43  0.894 3/5  1.50  0.915 4/5  1.54
+  LitsHpt    grow  mixed    0.25 |  1.035 2/5  1.53  0.964 3/5  1.99  1.110 0/5  1.18  0.880 3/5  2.06  1.137 2/5  1.76
+  LitsHpt    grow  mixed    0.50 |  1.020 2/5  1.37  1.025 2/5  2.03  1.051 2/5  1.26  1.092 2/5  2.22  1.108 1/5  1.35
+  LitsHpt    grow  mixed    1.00 |  1.239 0/5  1.39  1.047 1/5  1.43  1.180 1/5  1.69  1.623 0/5  1.29  1.575 0/5  1.50
+  LitsHpt    grow  mixed    2.00 |  1.323 0/5  1.37  1.067 1/5  1.48  1.138 2/5  1.80  1.453 0/5  1.80  1.370 0/5  1.59
+  LitsHpt    grow  skew     0.00 |  0.893 4/5  1.68  0.950 3/5  1.65  0.992 3/5  1.62  0.879 3/5  1.84  0.935 3/5  2.27
+  LitsHpt    grow  skew     0.25 |  0.860 4/5  1.54  0.990 3/5  1.81  1.213 1/5  1.34  0.990 3/5  1.43  1.054 2/5  1.32
+  LitsHpt    grow  skew     0.50 |  1.186 1/5  1.72  1.068 0/5  1.19  1.008 2/5  1.40  1.072 1/5  1.14  1.161 0/5  1.49
+  LitsHpt    grow  skew     1.00 |  1.114 1/5  1.31  1.093 2/5  1.41  1.022 2/5  1.52  1.095 2/5  1.44  1.009 2/5  1.49
+  LitsHpt    grow  skew     2.00 |  1.036 0/5  1.32  1.095 0/5  1.23  1.099 1/5  1.53  1.142 0/5  1.33  1.225 0/5  1.49
+  LitsHpt    grow  tranco   0.00 |  1.011 2/5  1.20  0.995 3/5  1.09  0.994 3/5  1.58  0.992 3/5  1.57  0.970 4/5  1.15
+  LitsHpt    grow  tranco   0.25 |  0.692 5/5  1.39  1.091 2/5  1.76  0.923 5/5  1.25  0.577 5/5  1.24  0.622 5/5  1.47
+  LitsHpt    grow  tranco   0.50 |  0.556 5/5  1.36  1.037 2/5  1.29  0.998 3/5  1.41  0.555 5/5  1.52  0.528 5/5  1.33
+  LitsHpt    grow  tranco   1.00 |  1.336 1/5  1.79  1.196 2/5  1.40  1.086 2/5  1.48  1.190 0/5  1.29  1.253 0/5  1.60
+  LitsHpt    grow  tranco   2.00 |  0.869 4/5  1.42  0.890 4/5  1.36  0.985 3/5  1.36  0.909 3/5  1.21  0.918 4/5  1.40
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics scan16_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=scan256_ns (scan 256 (ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.174 1/5  1.34  1.243 2/5  1.37  1.049 1/5  1.15  0.944 4/5  1.28  1.051 2/5  1.72
+  Context16  same  mixed    0.25 |  1.281 1/5  1.65  1.024 2/5  1.37  1.060 2/5  1.34  1.068 0/5  1.26  1.172 1/5  1.54
+  Context16  same  mixed    0.50 |  1.299 0/5  1.34  1.039 2/5  1.39  1.175 2/5  1.54  1.527 0/5  1.67  1.510 0/5  1.24
+  Context16  same  mixed    1.00 |  1.264 0/5  1.35  1.061 0/5  1.10  1.055 2/5  1.98  1.285 1/5  1.71  1.237 0/5  1.56
+  Context16  same  mixed    2.00 |  1.187 1/5  1.86  0.888 5/5  1.36  1.103 1/5  1.37  1.498 0/5  1.18  1.352 0/5  1.25
+  Context16  same  skew     0.00 |  1.005 0/5  1.02  1.047 2/5  1.39  1.045 0/5  1.08  1.030 2/5  1.39  1.023 1/5  1.22
+  Context16  same  skew     0.25 |  1.563 0/5  1.31  0.952 3/5  1.24  1.059 1/5  1.20  1.716 0/5  1.24  1.703 0/5  1.34
+  Context16  same  skew     0.50 |  0.415 5/5  1.48  0.997 3/5  1.52  1.149 1/5  1.35  0.452 5/5  1.52  0.377 5/5  1.24
+  Context16  same  skew     1.00 |  0.366 5/5  1.23  0.996 3/5  1.12  0.966 3/5  1.30  0.326 5/5  1.34  0.339 5/5  1.45
+  Context16  same  skew     2.00 |  0.667 5/5  1.58  1.060 1/5  1.28  1.009 1/5  1.60  0.562 5/5  1.27  0.600 5/5  1.30
+  Context16  same  tranco   0.00 |  1.000 3/5  1.34  1.082 2/5  1.37  0.982 3/5  1.29  0.994 3/5  1.37  0.968 3/5  1.22
+  Context16  same  tranco   0.25 |  0.816 5/5  1.30  1.075 0/5  1.23  0.871 5/5  1.10  0.644 5/5  1.27  0.715 5/5  1.22
+  Context16  same  tranco   0.50 |  0.706 5/5  1.38  0.903 4/5  1.31  1.021 2/5  1.20  0.831 5/5  1.38  0.778 5/5  1.25
+  Context16  same  tranco   1.00 |  0.830 4/5  1.51  0.886 4/5  1.36  1.022 2/5  1.42  0.815 5/5  1.32  0.721 5/5  1.39
+  Context16  same  tranco   2.00 |  0.934 3/5  1.34  1.087 2/5  1.37  1.104 2/5  1.72  1.020 2/5  1.60  1.025 2/5  1.60
+  Context16  grow  mixed    0.00 |  1.035 2/5  1.48  1.127 2/5  1.91  1.063 1/5  1.54  1.006 2/5  1.92  1.089 2/5  1.48
+  Context16  grow  mixed    0.25 |  1.194 1/5  2.01  1.227 2/5  1.69  1.080 2/5  1.22  1.061 0/5  1.22  1.150 1/5  1.63
+  Context16  grow  mixed    0.50 |  1.097 1/5  1.44  1.133 2/5  1.53  0.921 4/5  1.54  0.925 3/5  2.22  1.086 1/5  1.37
+  Context16  grow  mixed    1.00 |  1.150 1/5  1.57  1.137 2/5  1.88  1.077 1/5  1.30  1.126 1/5  1.36  1.473 1/5  2.11
+  Context16  grow  mixed    2.00 |  1.450 0/5  1.68  1.024 1/5  1.16  1.063 1/5  1.36  1.625 0/5  1.58  1.596 0/5  1.53
+  Context16  grow  skew     0.00 |  1.006 2/5  1.29  1.076 2/5  1.15  1.019 2/5  1.19  1.015 2/5  1.10  0.997 3/5  1.25
+  Context16  grow  skew     0.25 |  0.782 5/5  1.27  1.134 1/5  1.51  1.061 1/5  1.55  0.807 5/5  1.33  0.895 4/5  1.56
+  Context16  grow  skew     0.50 |  1.125 1/5  2.09  0.984 3/5  1.31  1.047 2/5  2.06  1.205 1/5  1.63  1.130 2/5  1.98
+  Context16  grow  skew     1.00 |  1.131 2/5  1.77  0.870 3/5  1.44  1.159 2/5  1.89  1.316 0/5  1.35  1.295 0/5  1.23
+  Context16  grow  skew     2.00 |  1.187 2/5  1.72  1.029 2/5  1.50  0.907 3/5  1.40  1.001 2/5  1.40  0.878 3/5  1.51
+  Context16  grow  tranco   0.00 |  1.139 1/5  1.28  1.141 1/5  1.30  1.136 1/5  1.43  1.074 0/5  1.09  1.254 1/5  1.43
+  Context16  grow  tranco   0.25 |  1.300 2/5  1.62  0.949 3/5  1.59  0.951 3/5  1.60  1.136 1/5  1.37  1.178 0/5  1.22
+  Context16  grow  tranco   0.50 |  1.072 2/5  1.76  0.984 4/5  1.18  0.985 3/5  1.29  1.123 1/5  1.26  1.070 1/5  1.20
+  Context16  grow  tranco   1.00 |  1.413 0/5  1.57  0.912 3/5  1.28  1.040 1/5  1.23  1.551 0/5  1.59  1.508 0/5  1.43
+  Context16  grow  tranco   2.00 |  3.148 0/5  1.22  0.973 4/5  1.78  1.127 0/5  1.22  4.249 0/5  1.61  3.905 0/5  1.21
+  LitsHpt    same  mixed    0.00 |  1.102 2/5  1.25  1.004 2/5  1.40  1.137 1/5  1.83  1.172 0/5  1.50  1.218 1/5  1.50
+  LitsHpt    same  mixed    0.25 |  0.876 4/5  1.51  1.308 1/5  1.59  1.095 2/5  1.37  0.776 5/5  1.49  1.009 2/5  1.76
+  LitsHpt    same  mixed    0.50 |  1.331 0/5  1.54  1.068 2/5  1.16  1.109 2/5  2.19  1.365 0/5  1.49  1.424 0/5  1.61
+  LitsHpt    same  mixed    1.00 |  1.014 2/5  1.34  1.001 2/5  1.72  0.993 3/5  1.89  1.163 1/5  1.40  1.140 2/5  1.67
+  LitsHpt    same  mixed    2.00 |  1.491 0/5  1.52  1.196 1/5  1.70  0.984 3/5  2.18  1.321 0/5  1.30  1.624 0/5  1.66
+  LitsHpt    same  skew     0.00 |  1.024 2/5  1.44  1.012 1/5  1.38  0.976 4/5  1.30  0.920 4/5  1.32  0.996 3/5  1.24
+  LitsHpt    same  skew     0.25 |  1.356 0/5  1.40  1.032 2/5  1.42  1.001 2/5  1.48  1.330 0/5  1.63  1.491 0/5  1.23
+  LitsHpt    same  skew     0.50 |  0.404 5/5  1.61  1.011 1/5  1.79  0.981 3/5  1.30  0.379 5/5  1.50  0.398 5/5  1.46
+  LitsHpt    same  skew     1.00 |  0.352 5/5  1.45  0.880 4/5  1.25  1.041 2/5  1.56  0.386 5/5  1.35  0.376 5/5  1.24
+  LitsHpt    same  skew     2.00 |  0.480 5/5  1.32  0.897 4/5  1.38  1.041 1/5  1.21  0.475 5/5  1.33  0.467 5/5  1.27
+  LitsHpt    same  tranco   0.00 |  1.016 2/5  1.40  0.993 3/5  1.41  0.887 4/5  1.36  0.924 4/5  1.25  0.961 5/5  1.21
+  LitsHpt    same  tranco   0.25 |  0.791 5/5  1.26  0.919 3/5  1.49  1.054 2/5  1.48  0.757 5/5  1.48  0.753 5/5  1.23
+  LitsHpt    same  tranco   0.50 |  0.800 5/5  1.26  0.978 3/5  1.11  0.996 3/5  1.31  0.818 5/5  1.26  0.798 5/5  1.34
+  LitsHpt    same  tranco   1.00 |  0.851 4/5  1.60  1.088 2/5  1.56  1.026 2/5  1.58  0.806 4/5  1.36  0.804 5/5  1.38
+  LitsHpt    same  tranco   2.00 |  0.926 3/5  1.13  0.941 4/5  1.17  1.038 2/5  1.35  1.051 1/5  1.17  1.005 2/5  1.11
+  LitsHpt    grow  mixed    0.00 |  1.085 2/5  1.65  1.116 2/5  1.35  0.991 3/5  1.58  1.006 2/5  1.59  0.985 3/5  1.28
+  LitsHpt    grow  mixed    0.25 |  1.157 1/5  1.70  0.811 3/5  1.91  1.142 1/5  1.23  1.292 0/5  1.87  1.329 0/5  1.45
+  LitsHpt    grow  mixed    0.50 |  1.095 0/5  1.11  1.172 2/5  1.58  1.180 0/5  1.18  1.234 0/5  1.41  1.343 0/5  1.22
+  LitsHpt    grow  mixed    1.00 |  1.064 2/5  1.61  0.999 3/5  1.35  1.150 2/5  1.56  1.279 0/5  1.28  1.326 2/5  1.56
+  LitsHpt    grow  mixed    2.00 |  1.523 0/5  1.77  1.021 2/5  1.72  1.044 1/5  1.57  1.919 0/5  1.42  2.050 0/5  1.62
+  LitsHpt    grow  skew     0.00 |  1.005 2/5  1.28  0.942 3/5  1.31  1.038 2/5  1.18  1.013 2/5  1.37  1.034 2/5  1.54
+  LitsHpt    grow  skew     0.25 |  0.482 5/5  1.68  0.884 3/5  1.63  0.999 3/5  1.87  0.525 5/5  1.41  0.548 5/5  1.30
+  LitsHpt    grow  skew     0.50 |  1.262 0/5  1.52  1.028 1/5  1.17  1.049 2/5  1.27  1.300 0/5  1.29  1.227 0/5  1.25
+  LitsHpt    grow  skew     1.00 |  1.168 0/5  1.53  0.924 3/5  1.38  0.870 4/5  1.44  1.085 1/5  1.50  0.988 3/5  1.65
+  LitsHpt    grow  skew     2.00 |  1.223 1/5  1.84  1.001 2/5  1.52  0.973 3/5  1.76  1.047 2/5  1.51  1.114 2/5  1.23
+  LitsHpt    grow  tranco   0.00 |  1.016 2/5  1.31  1.061 1/5  1.23  1.069 2/5  1.32  1.177 2/5  1.41  1.043 0/5  1.10
+  LitsHpt    grow  tranco   0.25 |  1.140 0/5  1.28  1.068 1/5  1.57  0.995 3/5  1.26  1.014 1/5  1.43  1.211 1/5  1.42
+  LitsHpt    grow  tranco   0.50 |  1.064 2/5  1.78  0.948 3/5  1.65  1.085 1/5  1.63  1.271 1/5  1.44  1.141 1/5  1.68
+  LitsHpt    grow  tranco   1.00 |  1.207 2/5  1.58  0.944 3/5  1.57  0.950 3/5  1.70  0.989 3/5  1.68  0.990 3/5  1.41
+  LitsHpt    grow  tranco   2.00 |  3.430 0/5  1.34  0.904 4/5  1.32  1.048 2/5  1.66  3.184 0/5  1.32  3.163 0/5  1.46
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics scan256_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=scan4096_ns (scan 4096 (ns))  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.029 1/5  1.08  1.062 2/5  1.19  1.052 1/5  1.26  1.086 0/5  1.08  1.067 1/5  1.14
+  Context16  same  mixed    0.25 |  1.064 2/5  1.19  1.046 1/5  1.11  1.024 1/5  1.10  0.974 3/5  1.22  1.017 2/5  1.25
+  Context16  same  mixed    0.50 |  0.972 4/5  1.13  0.968 3/5  1.13  0.987 4/5  1.26  0.986 4/5  1.16  0.951 5/5  1.08
+  Context16  same  mixed    1.00 |  0.911 5/5  1.13  1.030 2/5  1.17  0.978 3/5  1.11  0.890 5/5  1.06  0.908 5/5  1.20
+  Context16  same  mixed    2.00 |  0.853 5/5  1.08  0.952 3/5  1.19  0.996 3/5  1.16  0.893 5/5  1.07  0.851 5/5  1.13
+  Context16  same  skew     0.00 |  0.976 3/5  1.44  1.001 2/5  1.35  0.977 3/5  1.19  1.076 0/5  1.07  1.017 2/5  1.45
+  Context16  same  skew     0.25 |  0.939 4/5  1.09  0.975 3/5  1.15  1.090 0/5  1.08  1.045 1/5  1.14  1.018 2/5  1.09
+  Context16  same  skew     0.50 |  0.922 5/5  1.20  1.027 2/5  1.30  1.055 0/5  1.20  0.935 5/5  1.20  0.977 4/5  1.29
+  Context16  same  skew     1.00 |  0.930 5/5  1.16  0.968 4/5  1.15  1.031 1/5  1.15  0.893 5/5  1.10  0.934 4/5  1.25
+  Context16  same  skew     2.00 |  0.884 5/5  1.23  1.031 2/5  1.09  1.056 1/5  1.20  0.908 5/5  1.17  0.933 4/5  1.23
+  Context16  same  tranco   0.00 |  1.033 2/5  1.32  1.024 2/5  1.20  0.983 3/5  1.16  0.943 4/5  1.27  0.995 3/5  1.15
+  Context16  same  tranco   0.25 |  0.851 5/5  1.20  1.005 2/5  1.27  0.927 4/5  1.27  0.799 5/5  1.10  0.815 5/5  1.20
+  Context16  same  tranco   0.50 |  0.868 5/5  1.23  0.942 4/5  1.23  0.984 4/5  1.17  0.813 5/5  1.10  0.804 5/5  1.15
+  Context16  same  tranco   1.00 |  0.674 5/5  1.12  0.914 5/5  1.11  0.968 3/5  1.34  0.683 5/5  1.15  0.675 5/5  1.29
+  Context16  same  tranco   2.00 |  0.606 5/5  1.12  0.981 3/5  1.23  1.026 2/5  1.29  0.576 5/5  1.37  0.562 5/5  1.26
+  Context16  grow  mixed    0.00 |  0.917 4/5  1.20  0.880 4/5  1.21  0.973 4/5  1.07  1.020 1/5  1.13  0.930 3/5  1.25
+  Context16  grow  mixed    0.25 |  0.827 5/5  1.27  0.904 4/5  1.20  1.098 0/5  1.14  1.019 1/5  1.10  0.919 4/5  1.17
+  Context16  grow  mixed    0.50 |  0.920 4/5  1.14  0.969 5/5  1.12  1.035 0/5  1.04  1.039 2/5  1.14  1.019 2/5  1.13
+  Context16  grow  mixed    1.00 |  0.815 5/5  1.09  0.987 3/5  1.10  0.992 3/5  1.27  0.863 5/5  1.20  0.845 5/5  1.17
+  Context16  grow  mixed    2.00 |  0.805 5/5  1.25  1.053 0/5  1.10  1.016 2/5  1.18  0.830 5/5  1.30  0.859 5/5  1.15
+  Context16  grow  skew     0.00 |  1.033 0/5  1.13  0.992 3/5  1.21  1.033 1/5  1.12  1.030 1/5  1.10  1.039 0/5  1.08
+  Context16  grow  skew     0.25 |  0.978 4/5  1.16  0.972 3/5  1.16  1.014 0/5  1.07  1.013 1/5  1.04  1.009 2/5  1.17
+  Context16  grow  skew     0.50 |  1.005 2/5  1.19  1.011 2/5  1.22  1.049 1/5  1.25  0.997 4/5  1.16  0.990 3/5  1.14
+  Context16  grow  skew     1.00 |  0.991 4/5  1.09  1.058 1/5  1.18  1.005 2/5  1.10  0.954 4/5  1.36  1.023 2/5  1.15
+  Context16  grow  skew     2.00 |  0.961 4/5  1.18  0.980 3/5  1.09  1.040 2/5  1.12  0.987 4/5  1.12  0.994 3/5  1.17
+  Context16  grow  tranco   0.00 |  1.028 1/5  1.20  1.073 1/5  1.15  0.986 3/5  1.27  0.986 3/5  1.47  1.066 0/5  1.11
+  Context16  grow  tranco   0.25 |  0.671 5/5  1.61  1.027 2/5  1.63  0.965 3/5  1.19  0.650 5/5  1.46  0.663 5/5  1.26
+  Context16  grow  tranco   0.50 |  1.069 1/5  1.16  0.971 4/5  1.15  0.993 3/5  1.20  1.145 0/5  1.18  1.037 1/5  1.26
+  Context16  grow  tranco   1.00 |  1.405 0/5  1.22  1.007 2/5  1.10  0.960 4/5  1.32  1.352 0/5  1.15  1.370 0/5  1.12
+  Context16  grow  tranco   2.00 |  1.562 0/5  1.12  1.023 2/5  1.28  1.079 1/5  1.19  1.454 0/5  1.40  1.558 0/5  1.40
+  LitsHpt    same  mixed    0.00 |  1.055 1/5  1.18  1.090 1/5  1.24  1.037 0/5  1.05  1.012 2/5  1.07  1.086 0/5  1.19
+  LitsHpt    same  mixed    0.25 |  1.044 1/5  1.14  1.096 0/5  1.13  1.087 1/5  1.23  0.974 3/5  1.12  1.056 2/5  1.21
+  LitsHpt    same  mixed    0.50 |  1.004 1/5  1.12  1.028 1/5  1.09  1.011 1/5  1.08  1.004 1/5  1.11  1.030 0/5  1.05
+  LitsHpt    same  mixed    1.00 |  0.900 5/5  1.12  0.994 3/5  1.13  1.002 2/5  1.18  0.890 5/5  1.12  0.930 4/5  1.24
+  LitsHpt    same  mixed    2.00 |  0.960 4/5  1.18  1.042 1/5  1.16  1.021 2/5  1.19  0.888 4/5  1.20  0.945 4/5  1.14
+  LitsHpt    same  skew     0.00 |  1.069 2/5  1.23  1.017 0/5  1.13  1.035 1/5  1.28  1.040 1/5  1.22  1.019 1/5  1.05
+  LitsHpt    same  skew     0.25 |  1.066 1/5  1.27  1.027 1/5  1.10  0.983 3/5  1.18  0.965 4/5  1.07  1.024 2/5  1.12
+  LitsHpt    same  skew     0.50 |  0.858 5/5  1.18  0.976 4/5  1.30  1.011 1/5  1.26  0.916 5/5  1.15  0.906 5/5  1.14
+  LitsHpt    same  skew     1.00 |  0.807 5/5  1.12  0.994 4/5  1.17  1.011 1/5  1.10  0.828 5/5  1.12  0.806 5/5  1.09
+  LitsHpt    same  skew     2.00 |  0.835 5/5  1.36  0.999 3/5  1.22  1.021 2/5  1.20  0.903 5/5  1.20  0.836 5/5  1.11
+  LitsHpt    same  tranco   0.00 |  1.042 2/5  1.27  0.957 3/5  1.22  0.992 3/5  1.22  1.005 2/5  1.23  0.991 3/5  1.13
+  LitsHpt    same  tranco   0.25 |  0.882 5/5  1.08  0.935 3/5  1.27  0.944 5/5  1.19  0.807 5/5  1.30  0.841 5/5  1.20
+  LitsHpt    same  tranco   0.50 |  0.839 5/5  1.17  1.021 2/5  1.23  1.020 2/5  1.10  0.841 5/5  1.06  0.857 5/5  1.10
+  LitsHpt    same  tranco   1.00 |  0.797 5/5  1.38  1.032 2/5  1.41  1.065 2/5  1.16  0.808 5/5  1.31  0.767 5/5  1.09
+  LitsHpt    same  tranco   2.00 |  0.728 5/5  1.31  0.963 3/5  1.26  1.063 1/5  1.25  0.850 5/5  1.45  0.747 5/5  1.42
+  LitsHpt    grow  mixed    0.00 |  1.031 1/5  1.18  1.046 2/5  1.16  0.938 4/5  1.26  0.987 3/5  1.13  0.992 3/5  1.19
+  LitsHpt    grow  mixed    0.25 |  1.002 2/5  1.37  1.025 1/5  1.16  0.976 3/5  1.31  0.970 4/5  1.14  0.986 3/5  1.17
+  LitsHpt    grow  mixed    0.50 |  1.034 2/5  1.27  0.915 4/5  1.22  0.998 3/5  1.11  1.066 1/5  1.21  1.008 1/5  1.14
+  LitsHpt    grow  mixed    1.00 |  0.714 5/5  1.29  0.973 3/5  1.11  1.056 1/5  1.30  0.790 5/5  1.12  0.765 5/5  1.14
+  LitsHpt    grow  mixed    2.00 |  0.727 5/5  1.25  1.009 2/5  1.19  0.980 3/5  1.31  0.722 5/5  1.17  0.735 5/5  1.10
+  LitsHpt    grow  skew     0.00 |  1.001 2/5  1.18  1.004 2/5  1.14  1.076 0/5  1.08  1.046 1/5  1.17  0.996 3/5  1.14
+  LitsHpt    grow  skew     0.25 |  0.990 3/5  1.15  1.036 2/5  1.14  1.002 2/5  1.16  0.970 4/5  1.16  1.013 1/5  1.05
+  LitsHpt    grow  skew     0.50 |  0.987 3/5  1.21  1.009 2/5  1.11  1.017 2/5  1.13  0.960 4/5  1.10  0.979 4/5  1.13
+  LitsHpt    grow  skew     1.00 |  1.019 2/5  1.26  0.976 3/5  1.13  0.991 3/5  1.13  0.962 5/5  1.18  0.952 4/5  1.17
+  LitsHpt    grow  skew     2.00 |  0.981 4/5  1.16  0.980 4/5  1.24  1.025 1/5  1.11  0.973 3/5  1.16  0.935 4/5  1.18
+  LitsHpt    grow  tranco   0.00 |  0.938 3/5  1.20  1.041 2/5  1.11  1.047 1/5  1.11  0.987 3/5  1.31  1.012 2/5  1.13
+  LitsHpt    grow  tranco   0.25 |  0.662 5/5  1.25  1.033 1/5  1.29  1.054 1/5  1.22  0.670 5/5  1.26  0.732 5/5  1.31
+  LitsHpt    grow  tranco   0.50 |  0.651 5/5  1.20  1.033 1/5  1.17  1.051 1/5  1.37  0.651 5/5  1.10  0.651 5/5  1.33
+  LitsHpt    grow  tranco   1.00 |  1.240 0/5  1.17  1.058 1/5  1.09  0.929 3/5  1.13  1.153 0/5  1.13  1.189 0/5  1.12
+  LitsHpt    grow  tranco   2.00 |  1.408 0/5  1.14  1.010 1/5  1.23  0.988 3/5  1.12  1.407 0/5  1.15  1.390 0/5  1.11
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics scan4096_ns and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=index_bytes (index bytes)  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  same  mixed    0.25 |  0.936 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.936 5/5  1.00  0.936 5/5  1.00
+  Context16  same  mixed    0.50 |  0.809 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.809 5/5  1.00  0.809 5/5  1.00
+  Context16  same  mixed    1.00 |  0.611 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.611 5/5  1.00  0.612 5/5  1.00
+  Context16  same  mixed    2.00 |  0.556 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.556 5/5  1.00  0.556 5/5  1.00
+  Context16  same  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  same  skew     0.25 |  0.871 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.871 5/5  1.00  0.871 5/5  1.00
+  Context16  same  skew     0.50 |  0.749 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.749 5/5  1.00  0.749 5/5  1.00
+  Context16  same  skew     1.00 |  0.552 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.552 5/5  1.00  0.552 5/5  1.00
+  Context16  same  skew     2.00 |  0.550 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.550 5/5  1.00  0.550 5/5  1.00
+  Context16  same  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  same  tranco   0.25 |  0.930 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.930 5/5  1.00  0.930 5/5  1.00
+  Context16  same  tranco   0.50 |  0.872 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.872 5/5  1.00  0.872 5/5  1.00
+  Context16  same  tranco   1.00 |  0.779 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.779 5/5  1.00  0.779 5/5  1.00
+  Context16  same  tranco   2.00 |  0.700 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.700 5/5  1.00  0.700 5/5  1.00
+  Context16  grow  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  grow  mixed    0.25 |  0.920 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.920 5/5  1.00  0.921 5/5  1.00
+  Context16  grow  mixed    0.50 |  0.791 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.791 5/5  1.00  0.791 5/5  1.00
+  Context16  grow  mixed    1.00 |  0.609 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.609 5/5  1.00  0.609 5/5  1.00
+  Context16  grow  mixed    2.00 |  0.558 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.558 5/5  1.00  0.558 5/5  1.00
+  Context16  grow  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  grow  skew     0.25 |  0.881 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.881 5/5  1.00  0.881 5/5  1.00
+  Context16  grow  skew     0.50 |  0.765 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.765 5/5  1.00  0.765 5/5  1.00
+  Context16  grow  skew     1.00 |  0.577 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.577 5/5  1.00  0.577 5/5  1.00
+  Context16  grow  skew     2.00 |  0.579 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.579 5/5  1.00  0.579 5/5  1.00
+  Context16  grow  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  grow  tranco   0.25 |  0.932 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.932 5/5  1.00  0.932 5/5  1.00
+  Context16  grow  tranco   0.50 |  0.880 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.880 5/5  1.00  0.880 5/5  1.00
+  Context16  grow  tranco   1.00 |  0.802 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.802 5/5  1.00  0.802 5/5  1.00
+  Context16  grow  tranco   2.00 |  0.687 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.687 5/5  1.00  0.687 5/5  1.00
+  LitsHpt    same  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    same  mixed    0.25 |  0.977 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.977 5/5  1.00  0.977 5/5  1.00
+  LitsHpt    same  mixed    0.50 |  0.870 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.870 5/5  1.00  0.870 5/5  1.00
+  LitsHpt    same  mixed    1.00 |  0.655 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.655 5/5  1.00  0.655 5/5  1.00
+  LitsHpt    same  mixed    2.00 |  0.573 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.573 5/5  1.00  0.573 5/5  1.00
+  LitsHpt    same  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    same  skew     0.25 |  0.872 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.872 5/5  1.00  0.872 5/5  1.00
+  LitsHpt    same  skew     0.50 |  0.749 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.749 5/5  1.00  0.749 5/5  1.00
+  LitsHpt    same  skew     1.00 |  0.554 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.554 5/5  1.00  0.554 5/5  1.00
+  LitsHpt    same  skew     2.00 |  0.550 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.550 5/5  1.00  0.550 5/5  1.00
+  LitsHpt    same  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    same  tranco   0.25 |  0.951 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.951 5/5  1.00  0.951 5/5  1.00
+  LitsHpt    same  tranco   0.50 |  0.919 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.919 5/5  1.00  0.919 5/5  1.00
+  LitsHpt    same  tranco   1.00 |  0.849 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.849 5/5  1.00  0.849 5/5  1.00
+  LitsHpt    same  tranco   2.00 |  0.784 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.784 5/5  1.00  0.784 5/5  1.00
+  LitsHpt    grow  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    grow  mixed    0.25 |  0.962 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.962 5/5  1.00  0.962 5/5  1.00
+  LitsHpt    grow  mixed    0.50 |  0.852 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.852 5/5  1.00  0.852 5/5  1.00
+  LitsHpt    grow  mixed    1.00 |  0.655 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.655 5/5  1.00  0.655 5/5  1.00
+  LitsHpt    grow  mixed    2.00 |  0.574 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.574 5/5  1.00  0.574 5/5  1.00
+  LitsHpt    grow  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    grow  skew     0.25 |  0.881 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.881 5/5  1.00  0.881 5/5  1.00
+  LitsHpt    grow  skew     0.50 |  0.766 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.766 5/5  1.00  0.766 5/5  1.00
+  LitsHpt    grow  skew     1.00 |  0.578 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.578 5/5  1.00  0.578 5/5  1.00
+  LitsHpt    grow  skew     2.00 |  0.578 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.578 5/5  1.00  0.578 5/5  1.00
+  LitsHpt    grow  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    grow  tranco   0.25 |  0.950 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.950 5/5  1.00  0.950 5/5  1.00
+  LitsHpt    grow  tranco   0.50 |  0.917 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.917 5/5  1.00  0.917 5/5  1.00
+  LitsHpt    grow  tranco   1.00 |  0.853 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.853 5/5  1.00  0.854 5/5  1.00
+  LitsHpt    grow  tranco   2.00 |  0.746 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.746 5/5  1.00  0.746 5/5  1.00
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics index_bytes and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=overflow (overflow records)  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  same  mixed    0.25 |  0.023 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.023 5/5  1.00  0.023 5/5  1.00
+  Context16  same  mixed    0.50 |  0.010 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.010 5/5  1.00  0.010 5/5  1.00
+  Context16  same  mixed    1.00 |  0.004 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.004 5/5  1.00  0.004 5/5  1.00
+  Context16  same  mixed    2.00 |  0.006 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.006 5/5  1.00  0.006 5/5  1.00
+  Context16  same  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  same  skew     0.25 |  0.029 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.029 5/5  1.00  0.029 5/5  1.00
+  Context16  same  skew     0.50 |  0.015 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.015 5/5  1.00  0.015 5/5  1.00
+  Context16  same  skew     1.00 |  0.007 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.007 5/5  1.00  0.007 5/5  1.00
+  Context16  same  skew     2.00 |  0.007 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.007 5/5  1.00  0.007 5/5  1.00
+  Context16  same  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  same  tranco   0.25 |  0.075 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.075 5/5  1.00  0.075 5/5  1.00
+  Context16  same  tranco   0.50 |  0.040 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.040 5/5  1.00  0.040 5/5  1.00
+  Context16  same  tranco   1.00 |  0.022 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.022 5/5  1.00  0.022 5/5  1.00
+  Context16  same  tranco   2.00 |  0.015 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.015 5/5  1.00  0.015 5/5  1.00
+  Context16  grow  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  grow  mixed    0.25 |  0.038 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.038 5/5  1.00  0.038 5/5  1.00
+  Context16  grow  mixed    0.50 |  0.023 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.023 5/5  1.00  0.023 5/5  1.00
+  Context16  grow  mixed    1.00 |  0.049 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.049 5/5  1.00  0.049 5/5  1.00
+  Context16  grow  mixed    2.00 |  0.044 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.044 5/5  1.00  0.044 5/5  1.00
+  Context16  grow  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  grow  skew     0.25 |  0.161 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.161 5/5  1.00  0.161 5/5  1.00
+  Context16  grow  skew     0.50 |  0.128 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.128 5/5  1.00  0.128 5/5  1.00
+  Context16  grow  skew     1.00 |  0.098 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.098 5/5  1.00  0.098 5/5  1.00
+  Context16  grow  skew     2.00 |  0.108 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.108 5/5  1.00  0.108 5/5  1.00
+  Context16  grow  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  Context16  grow  tranco   0.25 |  0.361 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.361 5/5  1.00  0.361 5/5  1.00
+  Context16  grow  tranco   0.50 |  0.354 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.354 5/5  1.00  0.354 5/5  1.00
+  Context16  grow  tranco   1.00 |  0.358 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.358 5/5  1.00  0.358 5/5  1.00
+  Context16  grow  tranco   2.00 |  0.240 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.240 5/5  1.00  0.240 5/5  1.00
+  LitsHpt    same  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    same  mixed    0.25 |  0.092 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.092 5/5  1.00  0.092 5/5  1.00
+  LitsHpt    same  mixed    0.50 |  0.026 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.026 5/5  1.00  0.026 5/5  1.00
+  LitsHpt    same  mixed    1.00 |  0.008 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.008 5/5  1.00  0.008 5/5  1.00
+  LitsHpt    same  mixed    2.00 |  0.018 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.018 5/5  1.00  0.018 5/5  1.00
+  LitsHpt    same  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    same  skew     0.25 |  0.032 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.032 5/5  1.00  0.032 5/5  1.00
+  LitsHpt    same  skew     0.50 |  0.016 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.016 5/5  1.00  0.016 5/5  1.00
+  LitsHpt    same  skew     1.00 |  0.008 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.008 5/5  1.00  0.008 5/5  1.00
+  LitsHpt    same  skew     2.00 |  0.009 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.009 5/5  1.00  0.009 5/5  1.00
+  LitsHpt    same  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    same  tranco   0.25 |  0.080 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.080 5/5  1.00  0.080 5/5  1.00
+  LitsHpt    same  tranco   0.50 |  0.050 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.050 5/5  1.00  0.050 5/5  1.00
+  LitsHpt    same  tranco   1.00 |  0.027 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.027 5/5  1.00  0.027 5/5  1.00
+  LitsHpt    same  tranco   2.00 |  0.019 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.019 5/5  1.00  0.019 5/5  1.00
+  LitsHpt    grow  mixed    0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    grow  mixed    0.25 |  0.060 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.060 5/5  1.00  0.060 5/5  1.00
+  LitsHpt    grow  mixed    0.50 |  0.033 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.033 5/5  1.00  0.033 5/5  1.00
+  LitsHpt    grow  mixed    1.00 |  0.064 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.064 5/5  1.00  0.064 5/5  1.00
+  LitsHpt    grow  mixed    2.00 |  0.057 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.057 5/5  1.00  0.057 5/5  1.00
+  LitsHpt    grow  skew     0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    grow  skew     0.25 |  0.163 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.163 5/5  1.00  0.163 5/5  1.00
+  LitsHpt    grow  skew     0.50 |  0.128 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.128 5/5  1.00  0.128 5/5  1.00
+  LitsHpt    grow  skew     1.00 |  0.095 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.095 5/5  1.00  0.095 5/5  1.00
+  LitsHpt    grow  skew     2.00 |  0.107 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.107 5/5  1.00  0.107 5/5  1.00
+  LitsHpt    grow  tranco   0.00 |  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00
+  LitsHpt    grow  tranco   0.25 |  0.361 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.361 5/5  1.00  0.361 5/5  1.00
+  LitsHpt    grow  tranco   0.50 |  0.349 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.349 5/5  1.00  0.349 5/5  1.00
+  LitsHpt    grow  tranco   1.00 |  0.350 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.350 5/5  1.00  0.350 5/5  1.00
+  LitsHpt    grow  tranco   2.00 |  0.221 5/5  1.00  1.000 0/5  1.00  1.000 0/5  1.00  0.221 5/5  1.00  0.221 5/5  1.00
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics overflow and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+
+========================================================================================================================
+PAIRED RATIOS (within repetition, per-process median), metric=routing_bytes (routing metadata bytes)  smaller is better
+========================================================================================================================
+  backend    mode  corpus   frac | W/B           C/B           WC/W          WC/C          WC/B         
+  --------------------------------------------------------------------------------------------------------------------
+  Context16  same  mixed    0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  mixed    0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  mixed    0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  mixed    1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  mixed    2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  skew     0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  skew     0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  skew     0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  skew     1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  skew     2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  tranco   0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  tranco   0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  tranco   0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  tranco   1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  same  tranco   2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  mixed    0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  mixed    0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  mixed    0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  mixed    1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  mixed    2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  skew     0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  skew     0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  skew     0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  skew     1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  skew     2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  tranco   0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  tranco   0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  tranco   0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  tranco   1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  Context16  grow  tranco   2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  mixed    0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  mixed    0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  mixed    0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  mixed    1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  mixed    2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  skew     0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  skew     0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  skew     0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  skew     1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  skew     2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  tranco   0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  tranco   0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  tranco   0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  tranco   1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    same  tranco   2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  mixed    0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  mixed    0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  mixed    0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  mixed    1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  mixed    2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  skew     0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  skew     0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  skew     0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  skew     1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  skew     2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  tranco   0.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  tranco   0.25 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  tranco   0.50 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  tranco   1.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+  LitsHpt    grow  tranco   2.00 | n/a           n/a           n/a            1.000 0/5  1.00 n/a          
+
+  the verdict text (UNRESOLVED / faster / SLOWER / mixed, with the noise floor)
+  is available per cell by re-running with --metrics routing_bytes and inspecting
+  the printed table; the full per-cell verdicts are reproduced in the round's
+  log by the driver's analysis pass.
+

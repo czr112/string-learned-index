@@ -1,0 +1,13 @@
+{
+  "analyzer_selftest_rejections": 11,
+  "cells": 6,
+  "sanitizer_cells_green": 6,
+  "fallback_positive_cells": [
+    "mixed",
+    "skew",
+    "tranco"
+  ],
+  "violations": [],
+  "passed": true,
+  "scope": "M3 lifecycle correctness re-validation only; no timings, no default flip"
+}

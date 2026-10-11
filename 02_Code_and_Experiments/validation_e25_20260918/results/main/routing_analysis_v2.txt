@@ -1,0 +1,57 @@
+
+====================================================================================================
+COMPACT REGION ROUTING  --  candidate / baseline, within-repetition paired ratios
+  <1 means the candidate is faster.  noise = max/min of the per-process medians.
+====================================================================================================
+
+lookup (query phase)
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          1.012      2/5      0.892-1.075     1.204  UNRESOLVED (inside the noise floor)
+  mixed    LITS-on/LITS-off        0.983      4/5      0.907-1.006     1.109  UNRESOLVED (inside the noise floor)
+  skew     C16-on/C16-off          1.010      1/5      0.927-1.073     1.157  UNRESOLVED (inside the noise floor)
+  skew     LITS-on/LITS-off        1.017      1/5      0.993-1.028     1.036  UNRESOLVED (inside the noise floor)
+  tranco   C16-on/C16-off          0.784      5/5      0.729-0.808     1.109  candidate faster, direction 5/5
+  tranco   LITS-on/LITS-off        0.737      5/5      0.671-0.749     1.115  candidate faster, direction 5/5
+
+maintenance
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          0.979      5/5      0.961-0.991     1.031  UNRESOLVED (inside the noise floor)
+  mixed    LITS-on/LITS-off        1.014      2/5      0.964-1.025     1.064  UNRESOLVED (inside the noise floor)
+  skew     C16-on/C16-off          1.032      1/5      0.985-1.068     1.084  UNRESOLVED (inside the noise floor)
+  skew     LITS-on/LITS-off        1.031      1/5      0.967-1.064     1.100  UNRESOLVED (inside the noise floor)
+  tranco   C16-on/C16-off          0.896      5/5      0.864-0.922     1.067  candidate faster, direction 5/5
+  tranco   LITS-on/LITS-off        0.867      5/5      0.833-0.876     1.052  candidate faster, direction 5/5
+
+build
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          1.041      2/5      0.880-1.103     1.253  UNRESOLVED (inside the noise floor)
+  mixed    LITS-on/LITS-off        1.022      2/5      0.979-1.059     1.082  UNRESOLVED (inside the noise floor)
+  skew     C16-on/C16-off          0.944      3/5      0.872-1.020     1.170  UNRESOLVED (inside the noise floor)
+  skew     LITS-on/LITS-off        1.012      2/5      0.968-1.074     1.109  UNRESOLVED (inside the noise floor)
+  tranco   C16-on/C16-off          0.961      3/5      0.848-1.031     1.216  UNRESOLVED (inside the noise floor)
+  tranco   LITS-on/LITS-off        0.998      3/5      0.986-1.032     1.047  negligible (-0.1518%, the metadata itself)
+
+index bytes
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  mixed    LITS-on/LITS-off        1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  skew     C16-on/C16-off          1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  skew     LITS-on/LITS-off        1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  tranco   C16-on/C16-off          1.000      0/5      1.000-1.000     1.000  negligible (0.0025%, the metadata itself)
+  tranco   LITS-on/LITS-off        1.000      0/5      1.000-1.000     1.000  negligible (0.0028%, the metadata itself)
+
+routing metadata bytes
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    candidate (absolute)        512        -                -         -  64 regions, 8.0 bytes/region
+  skew     candidate (absolute)        512        -                -         -  64 regions, 8.0 bytes/region
+  tranco   candidate (absolute)       1024        -                -         -  128 regions, 8.0 bytes/region
+
+checksums (identical across arms = the two configurations answered the same):
+  mixed    IDENTICAL
+  skew     IDENTICAL
+  tranco   IDENTICAL

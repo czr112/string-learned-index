@@ -1,0 +1,776 @@
+I10 closing round   OLD / NEW / ART   run_id=i10c
+ratios within one repetition; per-process medians; direction counted over processes
+NEW/OLD = the plan's cost. < 1 means the safe path is FASTER (expected: it is the
+same work, and the plan also removes the per-front-insert directory rebuild).
+========================================================================================================
+
+########################################################################################################
+## TIME
+########################################################################################################
+
+### cum_ms  -- maintenance + operations, cumulative
+
+  mixed / same
+    at  25%  NEW/OLD                 0.920  (5/5 below)  range 0.884-0.925  noise 1.047
+               NEW/ART                 2.132  (0/5 below)  range 2.051-2.194  noise 1.070
+               OLD/ART                 2.300  (0/5 below)  range 2.224-2.415  noise 1.086
+    at  50%  NEW/OLD                 0.816  (5/5 below)  range 0.801-0.836  noise 1.045
+               NEW/ART                 3.367  (0/5 below)  range 3.257-3.496  noise 1.073
+               OLD/ART                 4.095  (0/5 below)  range 4.033-4.249  noise 1.053
+    at 100%  NEW/OLD                 0.775  (5/5 below)  range 0.753-0.787  noise 1.045
+               NEW/ART                 2.756  (0/5 below)  range 2.711-2.809  noise 1.036
+               OLD/ART                 3.645  (0/5 below)  range 3.473-3.777  noise 1.088
+    at 200%  NEW/OLD                 0.854  (5/5 below)  range 0.837-0.886  noise 1.058
+               NEW/ART                 2.439  (0/5 below)  range 2.363-2.657  noise 1.125
+               OLD/ART                 2.871  (0/5 below)  range 2.838-2.982  noise 1.051
+             absolute OLD  at 200%: 364.461
+             absolute NEW  at 200%: 307.036
+             absolute ART  at 200%: 125.309
+  mixed / grow
+    at  25%  NEW/OLD                 0.931  (5/5 below)  range 0.920-0.986  noise 1.072
+               NEW/ART                 1.853  (0/5 below)  range 1.722-1.873  noise 1.088
+               OLD/ART                 1.934  (0/5 below)  range 1.837-1.960  noise 1.067
+    at  50%  NEW/OLD                 0.953  (5/5 below)  range 0.913-0.982  noise 1.076
+               NEW/ART                 1.833  (0/5 below)  range 1.795-1.911  noise 1.065
+               OLD/ART                 1.934  (0/5 below)  range 1.856-1.956  noise 1.054
+    at 100%  NEW/OLD                 0.851  (5/5 below)  range 0.828-0.886  noise 1.071
+               NEW/ART                 1.588  (0/5 below)  range 1.556-1.667  noise 1.071
+               OLD/ART                 1.861  (0/5 below)  range 1.824-1.908  noise 1.046
+    at 200%  NEW/OLD                 0.924  (5/5 below)  range 0.913-0.954  noise 1.044
+               NEW/ART                 1.806  (0/5 below)  range 1.776-1.914  noise 1.077
+               OLD/ART                 1.977  (0/5 below)  range 1.920-1.997  noise 1.040
+             absolute OLD  at 200%: 248.994
+             absolute NEW  at 200%: 232.184
+             absolute ART  at 200%: 126.911
+  skew / same
+    at  25%  NEW/OLD                 0.645  (5/5 below)  range 0.624-0.686  noise 1.098
+               NEW/ART                 5.242  (0/5 below)  range 4.882-5.594  noise 1.146
+               OLD/ART                 7.913  (0/5 below)  range 7.512-8.184  noise 1.089
+    at  50%  NEW/OLD                 0.651  (5/5 below)  range 0.625-0.697  noise 1.115
+               NEW/ART                 4.006  (0/5 below)  range 3.644-4.201  noise 1.153
+               OLD/ART                 5.891  (0/5 below)  range 5.698-6.287  noise 1.103
+    at 100%  NEW/OLD                 0.665  (5/5 below)  range 0.621-0.711  noise 1.146
+               NEW/ART                 3.525  (0/5 below)  range 3.293-3.730  noise 1.133
+               OLD/ART                 5.186  (0/5 below)  range 5.073-5.550  noise 1.094
+    at 200%  NEW/OLD                 0.741  (5/5 below)  range 0.704-0.791  noise 1.124
+               NEW/ART                 2.593  (0/5 below)  range 2.460-2.668  noise 1.085
+               OLD/ART                 3.466  (0/5 below)  range 3.360-3.586  noise 1.067
+             absolute OLD  at 200%: 868.562
+             absolute NEW  at 200%: 638.075
+             absolute ART  at 200%: 245.796
+  skew / grow
+    at  25%  NEW/OLD                 0.685  (5/5 below)  range 0.671-0.691  noise 1.029
+               NEW/ART                 2.492  (0/5 below)  range 2.414-2.613  noise 1.083
+               OLD/ART                 3.742  (0/5 below)  range 3.447-3.776  noise 1.095
+    at  50%  NEW/OLD                 0.706  (5/5 below)  range 0.701-0.709  noise 1.012
+               NEW/ART                 2.033  (0/5 below)  range 1.984-2.097  noise 1.057
+               OLD/ART                 2.963  (0/5 below)  range 2.773-2.991  noise 1.079
+    at 100%  NEW/OLD                 0.737  (5/5 below)  range 0.724-0.747  noise 1.032
+               NEW/ART                 1.843  (0/5 below)  range 1.805-1.909  noise 1.058
+               OLD/ART                 2.540  (0/5 below)  range 2.407-2.575  noise 1.070
+    at 200%  NEW/OLD                 0.843  (5/5 below)  range 0.811-0.847  noise 1.044
+               NEW/ART                 1.778  (0/5 below)  range 1.750-1.815  noise 1.038
+               OLD/ART                 2.104  (0/5 below)  range 2.072-2.173  noise 1.049
+             absolute OLD  at 200%: 491.772
+             absolute NEW  at 200%: 409.378
+             absolute ART  at 200%: 233.428
+  tranco / same
+    at  25%  NEW/OLD                 0.588  (5/5 below)  range 0.576-0.602  noise 1.046
+               NEW/ART                 4.381  (0/5 below)  range 4.170-4.588  noise 1.100
+               OLD/ART                 7.384  (0/5 below)  range 7.002-7.572  noise 1.081
+    at  50%  NEW/OLD                 0.600  (5/5 below)  range 0.581-0.622  noise 1.071
+               NEW/ART                 4.061  (0/5 below)  range 3.796-4.281  noise 1.128
+               OLD/ART                 6.874  (0/5 below)  range 6.464-7.149  noise 1.106
+    at 100%  NEW/OLD                 0.576  (5/5 below)  range 0.548-0.602  noise 1.097
+               NEW/ART                 4.328  (0/5 below)  range 4.156-4.589  noise 1.104
+               OLD/ART                 7.532  (0/5 below)  range 7.120-7.709  noise 1.083
+    at 200%  NEW/OLD                 0.649  (5/5 below)  range 0.607-0.661  noise 1.090
+               NEW/ART                 3.881  (0/5 below)  range 3.696-4.003  noise 1.083
+               OLD/ART                 5.989  (0/5 below)  range 5.863-6.040  noise 1.030
+             absolute OLD  at 200%: 892.966
+             absolute NEW  at 200%: 572.256
+             absolute ART  at 200%: 147.499
+  tranco / grow
+    at  25%  NEW/OLD                 0.724  (5/5 below)  range 0.702-0.741  noise 1.056
+               NEW/ART                 3.039  (0/5 below)  range 2.926-3.150  noise 1.076
+               OLD/ART                 4.178  (0/5 below)  range 4.135-4.275  noise 1.034
+    at  50%  NEW/OLD                 0.731  (5/5 below)  range 0.709-0.740  noise 1.044
+               NEW/ART                 2.898  (0/5 below)  range 2.835-2.929  noise 1.033
+               OLD/ART                 3.923  (0/5 below)  range 3.893-3.984  noise 1.023
+    at 100%  NEW/OLD                 0.709  (5/5 below)  range 0.694-0.728  noise 1.050
+               NEW/ART                 2.885  (0/5 below)  range 2.865-3.015  noise 1.052
+               OLD/ART                 4.135  (0/5 below)  range 4.053-4.197  noise 1.035
+    at 200%  NEW/OLD                 0.819  (5/5 below)  range 0.796-0.865  noise 1.087
+               NEW/ART                 2.757  (0/5 below)  range 2.665-2.844  noise 1.067
+               OLD/ART                 3.383  (0/5 below)  range 3.251-3.410  noise 1.049
+             absolute OLD  at 200%: 565.809
+             absolute NEW  at 200%: 465.94
+             absolute ART  at 200%: 169.119
+
+### build_ms  -- construction of the loaded index
+
+  mixed / same
+    at  25%  NEW/OLD                 0.962  (5/5 below)  range 0.885-0.999  noise 1.129
+    at  50%  NEW/OLD                 0.962  (5/5 below)  range 0.885-0.999  noise 1.129
+    at 100%  NEW/OLD                 0.962  (5/5 below)  range 0.885-0.999  noise 1.129
+    at 200%  NEW/OLD                 0.962  (5/5 below)  range 0.885-0.999  noise 1.129
+             absolute OLD  at 200%: 33.1007
+             absolute NEW  at 200%: 31.8574
+             absolute ART  at 200%: 0
+  mixed / grow
+    at  25%  NEW/OLD                 0.990  (3/5 below)  range 0.924-1.100  noise 1.191
+    at  50%  NEW/OLD                 0.990  (3/5 below)  range 0.924-1.100  noise 1.191
+    at 100%  NEW/OLD                 0.990  (3/5 below)  range 0.924-1.100  noise 1.191
+    at 200%  NEW/OLD                 0.990  (3/5 below)  range 0.924-1.100  noise 1.191
+             absolute OLD  at 200%: 33.7924
+             absolute NEW  at 200%: 32.9133
+             absolute ART  at 200%: 0
+  skew / same
+    at  25%  NEW/OLD                 1.005  (2/5 below)  range 0.988-1.079  noise 1.092
+    at  50%  NEW/OLD                 1.005  (2/5 below)  range 0.988-1.079  noise 1.092
+    at 100%  NEW/OLD                 1.005  (2/5 below)  range 0.988-1.079  noise 1.092
+    at 200%  NEW/OLD                 1.005  (2/5 below)  range 0.988-1.079  noise 1.092
+             absolute OLD  at 200%: 39.321
+             absolute NEW  at 200%: 39.4823
+             absolute ART  at 200%: 0
+  skew / grow
+    at  25%  NEW/OLD                 0.924  (4/5 below)  range 0.872-1.012  noise 1.160
+    at  50%  NEW/OLD                 0.924  (4/5 below)  range 0.872-1.012  noise 1.160
+    at 100%  NEW/OLD                 0.924  (4/5 below)  range 0.872-1.012  noise 1.160
+    at 200%  NEW/OLD                 0.924  (4/5 below)  range 0.872-1.012  noise 1.160
+             absolute OLD  at 200%: 41.0221
+             absolute NEW  at 200%: 38.2267
+             absolute ART  at 200%: 0
+  tranco / same
+    at  25%  NEW/OLD                 0.993  (4/5 below)  range 0.962-1.011  noise 1.051
+    at  50%  NEW/OLD                 0.993  (4/5 below)  range 0.962-1.011  noise 1.051
+    at 100%  NEW/OLD                 0.993  (4/5 below)  range 0.962-1.011  noise 1.051
+    at 200%  NEW/OLD                 0.993  (4/5 below)  range 0.962-1.011  noise 1.051
+             absolute OLD  at 200%: 71.9901
+             absolute NEW  at 200%: 71.9609
+             absolute ART  at 200%: 0
+  tranco / grow
+    at  25%  NEW/OLD                 0.981  (3/5 below)  range 0.967-1.029  noise 1.064
+    at  50%  NEW/OLD                 0.981  (3/5 below)  range 0.967-1.029  noise 1.064
+    at 100%  NEW/OLD                 0.981  (3/5 below)  range 0.967-1.029  noise 1.064
+    at 200%  NEW/OLD                 0.981  (3/5 below)  range 0.967-1.029  noise 1.064
+             absolute OLD  at 200%: 71.2324
+             absolute NEW  at 200%: 70.6449
+             absolute ART  at 200%: 0
+
+### query_ms  -- fixed query sequence
+
+  mixed / same
+    at  25%  NEW/OLD                 1.028  (2/5 below)  range 0.931-1.133  noise 1.217
+               NEW/ART                 1.499  (0/5 below)  range 1.278-1.723  noise 1.349
+               OLD/ART                 1.582  (0/5 below)  range 1.377-1.876  noise 1.363
+    at  50%  NEW/OLD                 0.994  (3/5 below)  range 0.942-1.038  noise 1.102
+               NEW/ART                 1.468  (0/5 below)  range 1.212-1.606  noise 1.324
+               OLD/ART                 1.456  (0/5 below)  range 1.399-1.567  noise 1.121
+    at 100%  NEW/OLD                 0.997  (3/5 below)  range 0.909-1.170  noise 1.288
+               NEW/ART                 1.702  (0/5 below)  range 1.604-2.054  noise 1.281
+               OLD/ART                 1.823  (0/5 below)  range 1.661-2.179  noise 1.312
+    at 200%  NEW/OLD                 0.992  (3/5 below)  range 0.918-1.164  noise 1.269
+               NEW/ART                 2.000  (0/5 below)  range 1.700-2.143  noise 1.260
+               OLD/ART                 1.989  (0/5 below)  range 1.836-2.327  noise 1.267
+             absolute OLD  at 200%: 11.5816
+             absolute NEW  at 200%: 11.498
+             absolute ART  at 200%: 6.05109
+  mixed / grow
+    at  25%  NEW/OLD                 1.043  (2/5 below)  range 0.944-1.156  noise 1.225
+               NEW/ART                 1.421  (0/5 below)  range 1.190-1.731  noise 1.455
+               OLD/ART                 1.286  (0/5 below)  range 1.150-1.649  noise 1.434
+    at  50%  NEW/OLD                 1.039  (1/5 below)  range 0.925-1.215  noise 1.314
+               NEW/ART                 1.500  (0/5 below)  range 1.310-1.576  noise 1.204
+               OLD/ART                 1.480  (0/5 below)  range 1.375-1.560  noise 1.135
+    at 100%  NEW/OLD                 0.999  (3/5 below)  range 0.933-1.131  noise 1.212
+               NEW/ART                 1.898  (0/5 below)  range 1.665-2.069  noise 1.242
+               OLD/ART                 1.902  (0/5 below)  range 1.712-1.992  noise 1.164
+    at 200%  NEW/OLD                 1.027  (1/5 below)  range 0.951-1.038  noise 1.091
+               NEW/ART                 1.818  (0/5 below)  range 1.777-1.945  noise 1.095
+               OLD/ART                 1.817  (0/5 below)  range 1.736-1.957  noise 1.127
+             absolute OLD  at 200%: 10.9551
+             absolute NEW  at 200%: 11.2055
+             absolute ART  at 200%: 6.14957
+  skew / same
+    at  25%  NEW/OLD                 1.014  (2/5 below)  range 0.946-1.125  noise 1.190
+               NEW/ART                 0.952  (3/5 below)  range 0.854-1.201  noise 1.407
+               OLD/ART                 0.930  (4/5 below)  range 0.897-1.137  noise 1.267
+    at  50%  NEW/OLD                 0.995  (3/5 below)  range 0.964-1.041  noise 1.080
+               NEW/ART                 1.123  (0/5 below)  range 1.045-1.272  noise 1.217
+               OLD/ART                 1.135  (0/5 below)  range 1.075-1.182  noise 1.099
+    at 100%  NEW/OLD                 1.009  (2/5 below)  range 0.818-1.052  noise 1.285
+               NEW/ART                 1.463  (0/5 below)  range 1.174-1.599  noise 1.362
+               OLD/ART                 1.497  (0/5 below)  range 1.339-1.539  noise 1.150
+    at 200%  NEW/OLD                 1.008  (0/5 below)  range 1.002-1.146  noise 1.144
+               NEW/ART                 1.485  (0/5 below)  range 1.373-1.548  noise 1.128
+               OLD/ART                 1.516  (0/5 below)  range 1.243-1.591  noise 1.280
+             absolute OLD  at 200%: 14.2719
+             absolute NEW  at 200%: 14.4883
+             absolute ART  at 200%: 9.81669
+  skew / grow
+    at  25%  NEW/OLD                 1.064  (2/5 below)  range 0.990-1.133  noise 1.145
+               NEW/ART                 1.067  (0/5 below)  range 1.011-1.139  noise 1.126
+               OLD/ART                 1.037  (1/5 below)  range 0.930-1.201  noise 1.292
+    at  50%  NEW/OLD                 1.025  (2/5 below)  range 0.918-1.113  noise 1.213
+               NEW/ART                 1.201  (0/5 below)  range 1.086-1.302  noise 1.199
+               OLD/ART                 1.268  (0/5 below)  range 1.244-1.483  noise 1.192
+    at 100%  NEW/OLD                 0.964  (3/5 below)  range 0.951-1.076  noise 1.130
+               NEW/ART                 1.540  (0/5 below)  range 1.423-1.643  noise 1.155
+               OLD/ART                 1.644  (0/5 below)  range 1.470-1.699  noise 1.156
+    at 200%  NEW/OLD                 1.002  (2/5 below)  range 0.883-1.037  noise 1.175
+               NEW/ART                 1.670  (0/5 below)  range 1.560-1.734  noise 1.111
+               OLD/ART                 1.722  (0/5 below)  range 1.631-1.764  noise 1.081
+             absolute OLD  at 200%: 14.8297
+             absolute NEW  at 200%: 14.3669
+             absolute ART  at 200%: 8.84291
+  tranco / same
+    at  25%  NEW/OLD                 1.009  (2/5 below)  range 0.967-1.066  noise 1.102
+               NEW/ART                 1.797  (0/5 below)  range 1.719-1.900  noise 1.105
+               OLD/ART                 1.825  (0/5 below)  range 1.715-2.027  noise 1.182
+    at  50%  NEW/OLD                 1.028  (2/5 below)  range 0.916-1.089  noise 1.188
+               NEW/ART                 1.698  (0/5 below)  range 1.624-2.018  noise 1.243
+               OLD/ART                 1.773  (0/5 below)  range 1.617-1.867  noise 1.154
+    at 100%  NEW/OLD                 1.120  (1/5 below)  range 0.922-1.165  noise 1.263
+               NEW/ART                 1.788  (0/5 below)  range 1.634-2.367  noise 1.448
+               OLD/ART                 1.743  (0/5 below)  range 1.609-1.909  noise 1.186
+    at 200%  NEW/OLD                 0.951  (4/5 below)  range 0.914-1.140  noise 1.248
+               NEW/ART                 1.904  (0/5 below)  range 1.777-2.502  noise 1.407
+               OLD/ART                 1.947  (0/5 below)  range 1.839-2.231  noise 1.213
+             absolute OLD  at 200%: 9.59854
+             absolute NEW  at 200%: 9.02051
+             absolute ART  at 200%: 4.6724
+  tranco / grow
+    at  25%  NEW/OLD                 0.914  (3/5 below)  range 0.857-1.131  noise 1.320
+               NEW/ART                 2.005  (0/5 below)  range 1.667-2.274  noise 1.364
+               OLD/ART                 1.984  (0/5 below)  range 1.794-2.265  noise 1.263
+    at  50%  NEW/OLD                 0.982  (3/5 below)  range 0.932-1.165  noise 1.249
+               NEW/ART                 1.984  (0/5 below)  range 1.837-2.391  noise 1.301
+               OLD/ART                 1.915  (0/5 below)  range 1.849-2.045  noise 1.106
+    at 100%  NEW/OLD                 1.046  (2/5 below)  range 0.956-1.143  noise 1.195
+               NEW/ART                 2.187  (0/5 below)  range 2.100-2.492  noise 1.187
+               OLD/ART                 2.152  (0/5 below)  range 1.950-2.473  noise 1.268
+    at 200%  NEW/OLD                 0.946  (5/5 below)  range 0.923-0.978  noise 1.060
+               NEW/ART                 2.589  (0/5 below)  range 2.044-2.652  noise 1.297
+               OLD/ART                 2.736  (0/5 below)  range 2.200-2.878  noise 1.308
+             absolute OLD  at 200%: 11.8993
+             absolute NEW  at 200%: 11.0733
+             absolute ART  at 200%: 4.67399
+
+########################################################################################################
+## PER-OPERATION LATENCY
+########################################################################################################
+
+### op_p50_ns  -- per-operation p50
+
+  mixed / same
+    at  25%  NEW/OLD                 1.003  (2/5 below)  range 0.945-1.003  noise 1.062
+               NEW/ART                 1.970  (0/5 below)  range 1.952-2.019  noise 1.034
+               OLD/ART                 1.977  (0/5 below)  range 1.951-2.073  noise 1.063
+    at  50%  NEW/OLD                 0.986  (4/5 below)  range 0.966-1.000  noise 1.036
+               NEW/ART                 1.925  (0/5 below)  range 1.876-1.947  noise 1.038
+               OLD/ART                 1.905  (0/5 below)  range 1.876-1.974  noise 1.052
+    at 100%  NEW/OLD                 0.986  (3/5 below)  range 0.961-1.062  noise 1.106
+               NEW/ART                 1.086  (0/5 below)  range 1.028-1.142  noise 1.111
+               OLD/ART                 1.122  (1/5 below)  range 0.984-1.160  noise 1.180
+    at 200%  NEW/OLD                 0.997  (3/5 below)  range 0.969-1.062  noise 1.096
+               NEW/ART                 2.604  (0/5 below)  range 2.543-2.815  noise 1.107
+               OLD/ART                 2.609  (0/5 below)  range 2.545-2.687  noise 1.055
+             absolute OLD  at 200%: 269
+             absolute NEW  at 200%: 269
+             absolute ART  at 200%: 103
+  mixed / grow
+    at  25%  NEW/OLD                 0.997  (3/5 below)  range 0.984-1.007  noise 1.023
+               NEW/ART                 1.878  (0/5 below)  range 1.778-1.885  noise 1.060
+               OLD/ART                 1.878  (0/5 below)  range 1.846-1.895  noise 1.026
+    at  50%  NEW/OLD                 0.971  (5/5 below)  range 0.959-0.994  noise 1.037
+               NEW/ART                 1.868  (0/5 below)  range 1.816-1.888  noise 1.039
+               OLD/ART                 1.891  (0/5 below)  range 1.834-1.934  noise 1.055
+    at 100%  NEW/OLD                 1.002  (2/5 below)  range 0.991-1.021  noise 1.030
+               NEW/ART                 1.103  (0/5 below)  range 1.083-1.154  noise 1.066
+               OLD/ART                 1.104  (0/5 below)  range 1.065-1.137  noise 1.067
+    at 200%  NEW/OLD                 0.995  (3/5 below)  range 0.980-1.007  noise 1.028
+               NEW/ART                 2.636  (0/5 below)  range 2.612-2.748  noise 1.052
+               OLD/ART                 2.652  (0/5 below)  range 2.617-2.709  noise 1.035
+             absolute OLD  at 200%: 281
+             absolute NEW  at 200%: 279
+             absolute ART  at 200%: 105
+  skew / same
+    at  25%  NEW/OLD                 1.028  (0/5 below)  range 1.018-1.069  noise 1.050
+               NEW/ART                 0.574  (5/5 below)  range 0.538-0.589  noise 1.095
+               OLD/ART                 0.544  (5/5 below)  range 0.520-0.562  noise 1.079
+    at  50%  NEW/OLD                 1.013  (2/5 below)  range 0.924-1.074  noise 1.162
+               NEW/ART                 0.610  (5/5 below)  range 0.526-0.614  noise 1.168
+               OLD/ART                 0.595  (5/5 below)  range 0.577-0.609  noise 1.055
+    at 100%  NEW/OLD                 1.014  (2/5 below)  range 0.840-1.083  noise 1.289
+               NEW/ART                 0.682  (5/5 below)  range 0.542-0.693  noise 1.278
+               OLD/ART                 0.674  (5/5 below)  range 0.655-0.693  noise 1.058
+    at 200%  NEW/OLD                 1.006  (2/5 below)  range 0.991-1.060  noise 1.069
+               NEW/ART                 1.284  (0/5 below)  range 1.264-1.345  noise 1.063
+               OLD/ART                 1.269  (0/5 below)  range 1.225-1.337  noise 1.092
+             absolute OLD  at 200%: 586
+             absolute NEW  at 200%: 593
+             absolute ART  at 200%: 459.5
+  skew / grow
+    at  25%  NEW/OLD                 0.997  (3/5 below)  range 0.991-1.008  noise 1.017
+               NEW/ART                 0.579  (5/5 below)  range 0.561-0.593  noise 1.057
+               OLD/ART                 0.580  (5/5 below)  range 0.558-0.582  noise 1.043
+    at  50%  NEW/OLD                 0.998  (4/5 below)  range 0.992-1.000  noise 1.008
+               NEW/ART                 0.633  (5/5 below)  range 0.610-0.644  noise 1.057
+               OLD/ART                 0.637  (5/5 below)  range 0.613-0.667  noise 1.088
+    at 100%  NEW/OLD                 0.997  (3/5 below)  range 0.993-1.031  noise 1.039
+               NEW/ART                 0.747  (5/5 below)  range 0.736-0.794  noise 1.079
+               OLD/ART                 0.756  (5/5 below)  range 0.734-0.786  noise 1.071
+    at 200%  NEW/OLD                 0.967  (4/5 below)  range 0.915-1.010  noise 1.105
+               NEW/ART                 1.419  (0/5 below)  range 1.370-1.476  noise 1.077
+               OLD/ART                 1.456  (0/5 below)  range 1.398-1.506  noise 1.077
+             absolute OLD  at 200%: 595
+             absolute NEW  at 200%: 593.5
+             absolute ART  at 200%: 407
+  tranco / same
+    at  25%  NEW/OLD                 0.998  (3/5 below)  range 0.998-1.029  noise 1.031
+               NEW/ART                 2.517  (0/5 below)  range 2.495-2.624  noise 1.052
+               OLD/ART                 2.523  (0/5 below)  range 2.517-2.539  noise 1.009
+    at  50%  NEW/OLD                 1.000  (3/5 below)  range 0.963-1.052  noise 1.092
+               NEW/ART                 2.485  (0/5 below)  range 2.375-2.654  noise 1.118
+               OLD/ART                 2.523  (0/5 below)  range 2.414-2.569  noise 1.064
+    at 100%  NEW/OLD                 1.018  (0/5 below)  range 1.009-1.122  noise 1.112
+               NEW/ART                 2.524  (0/5 below)  range 2.289-2.633  noise 1.150
+               OLD/ART                 2.395  (0/5 below)  range 2.188-2.527  noise 1.155
+    at 200%  NEW/OLD                 1.017  (1/5 below)  range 0.990-1.047  noise 1.057
+               NEW/ART                 2.879  (0/5 below)  range 2.575-3.021  noise 1.173
+               OLD/ART                 2.838  (0/5 below)  range 2.726-2.906  noise 1.066
+             absolute OLD  at 200%: 284
+             absolute NEW  at 200%: 293
+             absolute ART  at 200%: 102
+  tranco / grow
+    at  25%  NEW/OLD                 0.994  (3/5 below)  range 0.976-1.013  noise 1.038
+               NEW/ART                 2.558  (0/5 below)  range 2.529-2.593  noise 1.025
+               OLD/ART                 2.587  (0/5 below)  range 2.511-2.624  noise 1.045
+    at  50%  NEW/OLD                 0.995  (4/5 below)  range 0.975-1.015  noise 1.041
+               NEW/ART                 2.459  (0/5 below)  range 2.440-2.486  noise 1.019
+               OLD/ART                 2.488  (0/5 below)  range 2.456-2.509  noise 1.022
+    at 100%  NEW/OLD                 1.002  (2/5 below)  range 0.991-1.011  noise 1.021
+               NEW/ART                 2.454  (0/5 below)  range 2.433-2.471  noise 1.016
+               OLD/ART                 2.468  (0/5 below)  range 2.435-2.491  noise 1.023
+    at 200%  NEW/OLD                 1.012  (1/5 below)  range 0.991-1.031  noise 1.041
+               NEW/ART                 2.885  (0/5 below)  range 2.807-2.970  noise 1.058
+               OLD/ART                 2.849  (0/5 below)  range 2.788-2.911  noise 1.044
+             absolute OLD  at 200%: 339.5
+             absolute NEW  at 200%: 340
+             absolute ART  at 200%: 117
+
+### op_p99_ns  -- per-operation p99
+
+  mixed / same
+    at  25%  NEW/OLD                 0.640  (5/5 below)  range 0.628-0.661  noise 1.053
+               NEW/ART                 6.076  (0/5 below)  range 5.536-6.208  noise 1.121
+               OLD/ART                 9.573  (0/5 below)  range 8.268-9.935  noise 1.202
+    at  50%  NEW/OLD                 0.672  (5/5 below)  range 0.584-0.702  noise 1.203
+               NEW/ART                11.038  (0/5 below)  range 10.146-12.900  noise 1.271
+               OLD/ART                18.179  (0/5 below)  range 15.005-18.784  noise 1.252
+    at 100%  NEW/OLD                 0.657  (5/5 below)  range 0.649-0.695  noise 1.072
+               NEW/ART                24.773  (0/5 below)  range 23.179-25.204  noise 1.087
+               OLD/ART                37.547  (0/5 below)  range 36.422-39.754  noise 1.091
+    at 200%  NEW/OLD                 0.847  (5/5 below)  range 0.839-0.938  noise 1.118
+               NEW/ART                 3.594  (0/5 below)  range 3.505-3.862  noise 1.102
+               OLD/ART                 4.296  (0/5 below)  range 4.099-4.350  noise 1.061
+             absolute OLD  at 200%: 3353.5
+             absolute NEW  at 200%: 2825
+             absolute ART  at 200%: 792
+  mixed / grow
+    at  25%  NEW/OLD                 0.924  (4/5 below)  range 0.876-1.027  noise 1.172
+               NEW/ART                 2.259  (0/5 below)  range 2.182-2.526  noise 1.157
+               OLD/ART                 2.511  (0/5 below)  range 2.298-2.621  noise 1.140
+    at  50%  NEW/OLD                 1.004  (2/5 below)  range 0.893-1.039  noise 1.164
+               NEW/ART                 2.667  (0/5 below)  range 2.492-2.849  noise 1.144
+               OLD/ART                 2.744  (0/5 below)  range 2.485-2.959  noise 1.191
+    at 100%  NEW/OLD                 0.599  (5/5 below)  range 0.577-0.611  noise 1.059
+               NEW/ART                 8.744  (0/5 below)  range 7.750-8.922  noise 1.151
+               OLD/ART                14.783  (0/5 below)  range 13.835-15.280  noise 1.104
+    at 200%  NEW/OLD                 0.942  (5/5 below)  range 0.934-0.963  noise 1.031
+               NEW/ART                 3.579  (0/5 below)  range 3.488-3.735  noise 1.071
+               OLD/ART                 3.742  (0/5 below)  range 3.701-3.826  noise 1.034
+             absolute OLD  at 200%: 2890
+             absolute NEW  at 200%: 2730
+             absolute ART  at 200%: 761
+  skew / same
+    at  25%  NEW/OLD                 0.662  (5/5 below)  range 0.625-0.683  noise 1.092
+               NEW/ART                47.218  (0/5 below)  range 45.223-49.423  noise 1.093
+               OLD/ART                69.724  (0/5 below)  range 64.991-75.086  noise 1.155
+    at  50%  NEW/OLD                 0.640  (5/5 below)  range 0.567-0.659  noise 1.163
+               NEW/ART                22.436  (0/5 below)  range 22.024-24.517  noise 1.113
+               OLD/ART                37.062  (0/5 below)  range 34.737-41.124  noise 1.184
+    at 100%  NEW/OLD                 0.612  (5/5 below)  range 0.516-0.646  noise 1.252
+               NEW/ART                32.544  (0/5 below)  range 27.531-34.944  noise 1.269
+               OLD/ART                52.843  (0/5 below)  range 50.411-54.129  noise 1.074
+    at 200%  NEW/OLD                 0.601  (5/5 below)  range 0.596-0.633  noise 1.061
+               NEW/ART                 2.736  (0/5 below)  range 2.653-2.786  noise 1.050
+               OLD/ART                 4.478  (0/5 below)  range 4.368-4.595  noise 1.052
+             absolute OLD  at 200%: 4131
+             absolute NEW  at 200%: 2509
+             absolute ART  at 200%: 926
+  skew / grow
+    at  25%  NEW/OLD                 0.615  (5/5 below)  range 0.612-0.627  noise 1.025
+               NEW/ART                31.667  (0/5 below)  range 29.496-33.945  noise 1.151
+               OLD/ART                52.038  (0/5 below)  range 47.481-53.345  noise 1.124
+    at  50%  NEW/OLD                 0.581  (5/5 below)  range 0.571-0.587  noise 1.028
+               NEW/ART                15.735  (0/5 below)  range 14.978-15.787  noise 1.054
+               OLD/ART                26.520  (0/5 below)  range 25.464-26.660  noise 1.047
+    at 100%  NEW/OLD                 0.603  (5/5 below)  range 0.597-0.641  noise 1.074
+               NEW/ART                12.190  (0/5 below)  range 12.033-12.333  noise 1.025
+               OLD/ART                20.070  (0/5 below)  range 19.182-20.750  noise 1.082
+    at 200%  NEW/OLD                 0.903  (5/5 below)  range 0.870-0.926  noise 1.065
+               NEW/ART                 2.647  (0/5 below)  range 2.572-2.745  noise 1.067
+               OLD/ART                 2.961  (0/5 below)  range 2.889-3.086  noise 1.068
+             absolute OLD  at 200%: 2442.5
+             absolute NEW  at 200%: 2228.5
+             absolute ART  at 200%: 832.5
+  tranco / same
+    at  25%  NEW/OLD                 0.402  (5/5 below)  range 0.389-0.407  noise 1.049
+               NEW/ART                21.267  (0/5 below)  range 20.754-22.076  noise 1.064
+               OLD/ART                54.294  (0/5 below)  range 52.781-55.896  noise 1.059
+    at  50%  NEW/OLD                 0.408  (5/5 below)  range 0.389-0.441  noise 1.133
+               NEW/ART                17.397  (0/5 below)  range 15.852-21.010  noise 1.325
+               OLD/ART                42.346  (0/5 below)  range 39.113-52.325  noise 1.338
+    at 100%  NEW/OLD                 0.403  (5/5 below)  range 0.387-0.430  noise 1.111
+               NEW/ART                25.257  (0/5 below)  range 24.334-27.204  noise 1.118
+               OLD/ART                62.760  (0/5 below)  range 54.607-70.233  noise 1.286
+    at 200%  NEW/OLD                 0.418  (5/5 below)  range 0.405-0.436  noise 1.075
+               NEW/ART                11.207  (0/5 below)  range 10.700-11.936  noise 1.116
+               OLD/ART                26.548  (0/5 below)  range 25.395-29.435  noise 1.159
+             absolute OLD  at 200%: 11551
+             absolute NEW  at 200%: 4867.5
+             absolute ART  at 200%: 419
+  tranco / grow
+    at  25%  NEW/OLD                 0.400  (5/5 below)  range 0.398-0.417  noise 1.047
+               NEW/ART                 9.935  (0/5 below)  range 8.979-10.590  noise 1.179
+               OLD/ART                25.416  (0/5 below)  range 22.909-26.733  noise 1.167
+    at  50%  NEW/OLD                 0.407  (5/5 below)  range 0.395-0.414  noise 1.048
+               NEW/ART                 8.654  (0/5 below)  range 8.525-9.148  noise 1.073
+               OLD/ART                21.080  (0/5 below)  range 20.373-22.395  noise 1.099
+    at 100%  NEW/OLD                 0.399  (5/5 below)  range 0.392-0.405  noise 1.034
+               NEW/ART                 8.580  (0/5 below)  range 7.999-9.548  noise 1.194
+               OLD/ART                22.347  (0/5 below)  range 21.989-24.748  noise 1.125
+    at 200%  NEW/OLD                 0.657  (5/5 below)  range 0.656-0.680  noise 1.038
+               NEW/ART                 3.705  (0/5 below)  range 3.579-3.807  noise 1.064
+               OLD/ART                 5.494  (0/5 below)  range 5.264-5.791  noise 1.100
+             absolute OLD  at 200%: 2444
+             absolute NEW  at 200%: 1622.5
+             absolute ART  at 200%: 446
+
+### op_p999_ns  -- per-operation p99.9
+
+  mixed / same
+    at  25%  NEW/OLD                 0.634  (5/5 below)  range 0.630-0.677  noise 1.075
+               NEW/ART                 8.630  (0/5 below)  range 8.027-8.998  noise 1.121
+               OLD/ART                13.703  (0/5 below)  range 11.715-14.849  noise 1.268
+    at  50%  NEW/OLD                 0.712  (5/5 below)  range 0.684-0.721  noise 1.053
+               NEW/ART                98.470  (0/5 below)  range 82.597-120.100  noise 1.454
+               OLD/ART               142.956  (0/5 below)  range 120.389-177.998  noise 1.479
+    at 100%  NEW/OLD                 0.710  (5/5 below)  range 0.706-0.728  noise 1.031
+               NEW/ART                29.111  (0/5 below)  range 24.492-31.070  noise 1.269
+               OLD/ART                41.187  (0/5 below)  range 32.767-44.407  noise 1.355
+    at 200%  NEW/OLD                 0.629  (5/5 below)  range 0.579-0.724  noise 1.250
+               NEW/ART                 7.092  (0/5 below)  range 6.755-7.700  noise 1.140
+               OLD/ART                11.539  (0/5 below)  range 10.567-13.322  noise 1.261
+             absolute OLD  at 200%: 13709
+             absolute NEW  at 200%: 7971
+             absolute ART  at 200%: 1068
+  mixed / grow
+    at  25%  NEW/OLD                 0.645  (5/5 below)  range 0.615-0.662  noise 1.076
+               NEW/ART                 8.448  (0/5 below)  range 6.365-8.921  noise 1.402
+               OLD/ART                12.449  (0/5 below)  range 10.292-12.738  noise 1.238
+    at  50%  NEW/OLD                 0.831  (5/5 below)  range 0.705-0.955  noise 1.354
+               NEW/ART                 3.445  (0/5 below)  range 2.758-3.927  noise 1.424
+               OLD/ART                 4.127  (0/5 below)  range 3.778-5.033  noise 1.332
+    at 100%  NEW/OLD                 0.672  (5/5 below)  range 0.659-0.702  noise 1.065
+               NEW/ART                19.835  (0/5 below)  range 18.010-19.946  noise 1.107
+               OLD/ART                27.912  (0/5 below)  range 25.657-30.148  noise 1.175
+    at 200%  NEW/OLD                 0.991  (4/5 below)  range 0.931-1.012  noise 1.087
+               NEW/ART                 7.016  (0/5 below)  range 6.324-7.834  noise 1.239
+               OLD/ART                 7.227  (0/5 below)  range 6.846-7.550  noise 1.103
+             absolute OLD  at 200%: 8169
+             absolute NEW  at 200%: 7617
+             absolute ART  at 200%: 1145.5
+  skew / same
+    at  25%  NEW/OLD                 0.705  (5/5 below)  range 0.686-0.747  noise 1.088
+               NEW/ART                10.886  (0/5 below)  range 9.243-14.041  noise 1.519
+               OLD/ART                15.954  (0/5 below)  range 13.067-19.030  noise 1.456
+    at  50%  NEW/OLD                 0.622  (5/5 below)  range 0.547-0.656  noise 1.200
+               NEW/ART                 7.138  (0/5 below)  range 6.073-8.102  noise 1.334
+               OLD/ART                11.955  (0/5 below)  range 8.567-15.423  noise 1.800
+    at 100%  NEW/OLD                 0.637  (5/5 below)  range 0.541-0.666  noise 1.231
+               NEW/ART                21.592  (0/5 below)  range 15.600-27.335  noise 1.752
+               OLD/ART                37.421  (0/5 below)  range 24.432-40.615  noise 1.662
+    at 200%  NEW/OLD                 0.880  (3/5 below)  range 0.751-1.085  noise 1.445
+               NEW/ART                 3.629  (0/5 below)  range 2.947-5.399  noise 1.832
+               OLD/ART                 4.605  (0/5 below)  range 3.134-5.523  noise 1.763
+             absolute OLD  at 200%: 13345
+             absolute NEW  at 200%: 12318
+             absolute ART  at 200%: 3265.5
+  skew / grow
+    at  25%  NEW/OLD                 0.710  (5/5 below)  range 0.698-0.723  noise 1.035
+               NEW/ART                10.031  (0/5 below)  range 5.671-12.642  noise 2.229
+               OLD/ART                13.770  (0/5 below)  range 7.767-15.966  noise 2.056
+    at  50%  NEW/OLD                 0.625  (5/5 below)  range 0.617-0.627  noise 1.016
+               NEW/ART                 9.402  (0/5 below)  range 5.258-13.772  noise 2.619
+               OLD/ART                16.915  (0/5 below)  range 9.037-21.855  noise 2.418
+    at 100%  NEW/OLD                 0.652  (5/5 below)  range 0.643-0.664  noise 1.032
+               NEW/ART                21.053  (0/5 below)  range 20.408-22.405  noise 1.098
+               OLD/ART                33.940  (0/5 below)  range 32.455-35.241  noise 1.086
+    at 200%  NEW/OLD                 0.975  (3/5 below)  range 0.916-1.108  noise 1.210
+               NEW/ART                 4.899  (0/5 below)  range 2.998-6.462  noise 2.155
+               OLD/ART                 5.413  (0/5 below)  range 2.994-6.250  noise 2.087
+             absolute OLD  at 200%: 12028
+             absolute NEW  at 200%: 11722.5
+             absolute ART  at 200%: 2796.5
+  tranco / same
+    at  25%  NEW/OLD                 0.451  (5/5 below)  range 0.449-0.465  noise 1.035
+               NEW/ART                31.014  (0/5 below)  range 29.083-34.117  noise 1.173
+               OLD/ART                69.087  (0/5 below)  range 66.497-75.000  noise 1.128
+    at  50%  NEW/OLD                 0.384  (5/5 below)  range 0.359-0.431  noise 1.199
+               NEW/ART                26.822  (0/5 below)  range 25.929-35.505  noise 1.369
+               OLD/ART                67.939  (0/5 below)  range 67.475-91.379  noise 1.354
+    at 100%  NEW/OLD                 0.414  (5/5 below)  range 0.375-0.444  noise 1.185
+               NEW/ART                35.096  (0/5 below)  range 30.284-35.538  noise 1.173
+               OLD/ART                82.126  (0/5 below)  range 73.636-89.427  noise 1.214
+    at 200%  NEW/OLD                 0.422  (5/5 below)  range 0.380-0.439  noise 1.155
+               NEW/ART                18.838  (0/5 below)  range 17.860-21.137  noise 1.184
+               OLD/ART                44.790  (0/5 below)  range 43.691-48.451  noise 1.109
+             absolute OLD  at 200%: 35347
+             absolute NEW  at 200%: 14543.5
+             absolute ART  at 200%: 753.5
+  tranco / grow
+    at  25%  NEW/OLD                 0.402  (5/5 below)  range 0.385-0.407  noise 1.058
+               NEW/ART                16.426  (0/5 below)  range 15.764-17.476  noise 1.109
+               OLD/ART                41.921  (0/5 below)  range 37.397-44.303  noise 1.185
+    at  50%  NEW/OLD                 0.439  (5/5 below)  range 0.417-0.473  noise 1.136
+               NEW/ART                17.789  (0/5 below)  range 16.186-18.191  noise 1.124
+               OLD/ART                38.608  (0/5 below)  range 33.311-41.819  noise 1.255
+    at 100%  NEW/OLD                 0.420  (5/5 below)  range 0.405-0.437  noise 1.080
+               NEW/ART                27.645  (0/5 below)  range 25.594-31.391  noise 1.226
+               OLD/ART                67.686  (0/5 below)  range 63.555-74.356  noise 1.170
+    at 200%  NEW/OLD                 0.746  (5/5 below)  range 0.651-0.822  noise 1.261
+               NEW/ART                 6.996  (0/5 below)  range 6.448-7.159  noise 1.110
+               OLD/ART                 9.513  (0/5 below)  range 9.065-10.174  noise 1.122
+             absolute OLD  at 200%: 7139
+             absolute NEW  at 200%: 5335
+             absolute ART  at 200%: 753
+
+### op_max_ns  -- per-operation maximum
+
+  mixed / same
+    at  25%  NEW/OLD                 0.989  (3/5 below)  range 0.922-1.137  noise 1.234
+               NEW/ART                 1.313  (1/5 below)  range 0.855-1.482  noise 1.733
+               OLD/ART                 2.249  (1/5 below)  range 0.947-3.334  noise 3.522
+    at  50%  NEW/OLD                 0.983  (3/5 below)  range 0.515-1.274  noise 2.475
+               NEW/ART                 3.250  (0/5 below)  range 2.084-5.982  noise 2.870
+               OLD/ART                 3.874  (0/5 below)  range 2.979-6.190  noise 2.078
+    at 100%  NEW/OLD                 0.990  (3/5 below)  range 0.471-1.132  noise 2.403
+               NEW/ART                 2.006  (0/5 below)  range 1.333-5.558  noise 4.170
+               OLD/ART                 2.809  (0/5 below)  range 1.071-5.669  noise 5.294
+    at 200%  NEW/OLD                 0.789  (3/5 below)  range 0.664-3.774  noise 5.682
+               NEW/ART                 2.241  (0/5 below)  range 1.168-2.737  noise 2.343
+               OLD/ART                 1.929  (0/5 below)  range 1.042-3.037  noise 2.915
+             absolute OLD  at 200%: 314142
+             absolute NEW  at 200%: 271438
+             absolute ART  at 200%: 155878
+  mixed / grow
+    at  25%  NEW/OLD                 0.788  (5/5 below)  range 0.745-0.848  noise 1.138
+               NEW/ART                 1.631  (0/5 below)  range 1.443-1.814  noise 1.257
+               OLD/ART                 2.309  (0/5 below)  range 1.704-2.919  noise 1.713
+    at  50%  NEW/OLD                 0.927  (4/5 below)  range 0.662-1.579  noise 2.386
+               NEW/ART                 1.130  (0/5 below)  range 1.069-1.535  noise 1.436
+               OLD/ART                 1.335  (1/5 below)  range 0.672-2.469  noise 3.673
+    at 100%  NEW/OLD                 0.996  (3/5 below)  range 0.783-1.208  noise 1.542
+               NEW/ART                 1.584  (1/5 below)  range 0.946-2.090  noise 2.208
+               OLD/ART                 1.437  (0/5 below)  range 1.092-2.052  noise 1.880
+    at 200%  NEW/OLD                 1.038  (2/5 below)  range 0.575-2.147  noise 3.737
+               NEW/ART                 0.998  (3/5 below)  range 0.927-1.555  noise 1.678
+               OLD/ART                 1.041  (2/5 below)  range 0.892-1.790  noise 2.007
+             absolute OLD  at 200%: 259350
+             absolute NEW  at 200%: 355922
+             absolute ART  at 200%: 294141
+  skew / same
+    at  25%  NEW/OLD                 0.823  (4/5 below)  range 0.355-1.347  noise 3.790
+               NEW/ART                 1.995  (0/5 below)  range 1.499-6.087  noise 4.060
+               OLD/ART                 3.344  (0/5 below)  range 1.920-7.408  noise 3.858
+    at  50%  NEW/OLD                 0.735  (4/5 below)  range 0.522-1.072  noise 2.054
+               NEW/ART                 1.524  (0/5 below)  range 1.091-2.879  noise 2.640
+               OLD/ART                 2.225  (0/5 below)  range 1.322-4.762  noise 3.601
+    at 100%  NEW/OLD                 0.953  (4/5 below)  range 0.741-1.643  noise 2.219
+               NEW/ART                 2.665  (0/5 below)  range 1.803-6.721  noise 3.727
+               OLD/ART                 2.560  (0/5 below)  range 1.387-3.442  noise 2.482
+    at 200%  NEW/OLD                 0.587  (3/5 below)  range 0.463-1.491  noise 3.221
+               NEW/ART                 1.187  (2/5 below)  range 0.902-2.267  noise 2.513
+               OLD/ART                 1.648  (0/5 below)  range 1.352-4.925  noise 3.643
+             absolute OLD  at 200%: 515688
+             absolute NEW  at 200%: 352090
+             absolute ART  at 200%: 288321
+  skew / grow
+    at  25%  NEW/OLD                 0.739  (3/5 below)  range 0.580-1.522  noise 2.626
+               NEW/ART                 1.291  (0/5 below)  range 1.083-2.735  noise 2.525
+               OLD/ART                 1.923  (0/5 below)  range 1.088-3.138  noise 2.884
+    at  50%  NEW/OLD                 0.612  (4/5 below)  range 0.331-1.242  noise 3.753
+               NEW/ART                 1.163  (2/5 below)  range 0.682-3.132  noise 4.591
+               OLD/ART                 1.975  (1/5 below)  range 0.763-3.649  noise 4.782
+    at 100%  NEW/OLD                 0.905  (4/5 below)  range 0.420-1.360  noise 3.238
+               NEW/ART                 1.422  (0/5 below)  range 1.335-3.176  noise 2.378
+               OLD/ART                 2.309  (1/5 below)  range 0.952-2.704  noise 2.840
+    at 200%  NEW/OLD                 0.873  (4/5 below)  range 0.366-1.356  noise 3.706
+               NEW/ART                 0.871  (3/5 below)  range 0.714-1.547  noise 2.166
+               OLD/ART                 1.288  (1/5 below)  range 0.585-3.236  noise 5.528
+             absolute OLD  at 200%: 524477
+             absolute NEW  at 200%: 380458
+             absolute ART  at 200%: 421608
+  tranco / same
+    at  25%  NEW/OLD                 0.809  (4/5 below)  range 0.703-1.111  noise 1.581
+               NEW/ART                 2.721  (0/5 below)  range 1.475-6.638  noise 4.501
+               OLD/ART                 2.801  (0/5 below)  range 2.047-6.603  noise 3.225
+    at  50%  NEW/OLD                 0.711  (4/5 below)  range 0.479-1.323  noise 2.763
+               NEW/ART                 1.797  (0/5 below)  range 1.450-3.008  noise 2.074
+               OLD/ART                 3.159  (0/5 below)  range 1.439-6.158  noise 4.279
+    at 100%  NEW/OLD                 0.641  (3/5 below)  range 0.281-1.308  noise 4.653
+               NEW/ART                 3.185  (0/5 below)  range 1.610-5.875  noise 3.649
+               OLD/ART                 6.064  (0/5 below)  range 2.491-15.366  noise 6.168
+    at 200%  NEW/OLD                 1.012  (2/5 below)  range 0.633-1.440  noise 2.274
+               NEW/ART                 3.182  (0/5 below)  range 1.719-5.852  noise 3.404
+               OLD/ART                 2.601  (0/5 below)  range 1.470-5.041  noise 3.429
+             absolute OLD  at 200%: 431788
+             absolute NEW  at 200%: 456914
+             absolute ART  at 200%: 200946
+  tranco / grow
+    at  25%  NEW/OLD                 0.500  (4/5 below)  range 0.272-1.205  noise 4.431
+               NEW/ART                 1.555  (0/5 below)  range 1.072-3.632  noise 3.389
+               OLD/ART                 3.105  (0/5 below)  range 2.249-5.112  noise 2.273
+    at  50%  NEW/OLD                 0.902  (4/5 below)  range 0.464-2.528  noise 5.443
+               NEW/ART                 1.744  (0/5 below)  range 1.412-4.540  noise 3.216
+               OLD/ART                 2.502  (0/5 below)  range 1.975-4.348  noise 2.201
+    at 100%  NEW/OLD                 0.628  (3/5 below)  range 0.514-1.249  noise 2.430
+               NEW/ART                 2.506  (0/5 below)  range 1.914-4.019  noise 2.100
+               OLD/ART                 3.356  (0/5 below)  range 3.001-4.600  noise 1.532
+    at 200%  NEW/OLD                 0.855  (4/5 below)  range 0.270-4.872  noise 18.024
+               NEW/ART                 1.663  (1/5 below)  range 0.929-8.259  noise 8.891
+               OLD/ART                 2.045  (0/5 below)  range 1.292-5.472  noise 4.236
+             absolute OLD  at 200%: 534836
+             absolute NEW  at 200%: 502718
+             absolute ART  at 200%: 304096
+
+########################################################################################################
+## DETERMINISTIC STRUCTURE
+########################################################################################################
+
+### memory  -- resident index bytes
+
+  mixed / same
+    at  25%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 4.31315e+07
+             absolute NEW  at 200%: 4.31244e+07
+             absolute ART  at 200%: 0
+  mixed / grow
+    at  25%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 4.43058e+07
+             absolute NEW  at 200%: 4.43006e+07
+             absolute ART  at 200%: 0
+  skew / same
+    at  25%  NEW/OLD                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+    at  50%  NEW/OLD                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+    at 100%  NEW/OLD                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+    at 200%  NEW/OLD                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+             absolute OLD  at 200%: 4.20276e+07
+             absolute NEW  at 200%: 4.19987e+07
+             absolute ART  at 200%: 0
+  skew / grow
+    at  25%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+    at 100%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 4.33259e+07
+             absolute NEW  at 200%: 4.33056e+07
+             absolute ART  at 200%: 0
+  tranco / same
+    at  25%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+             absolute OLD  at 200%: 3.65739e+07
+             absolute NEW  at 200%: 3.65484e+07
+             absolute ART  at 200%: 0
+  tranco / grow
+    at  25%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+    at 200%  NEW/OLD                 1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 4.32992e+07
+             absolute NEW  at 200%: 4.32797e+07
+             absolute ART  at 200%: 0
+
+### overflow  -- overflow records
+
+  mixed / same
+    at  25%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 128533
+             absolute NEW  at 200%: 128533
+             absolute ART  at 200%: 0
+  mixed / grow
+    at  25%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 129703
+             absolute NEW  at 200%: 129703
+             absolute ART  at 200%: 0
+  skew / same
+    at  25%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 127070
+             absolute NEW  at 200%: 127070
+             absolute ART  at 200%: 0
+  skew / grow
+    at  25%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 128704
+             absolute NEW  at 200%: 128704
+             absolute ART  at 200%: 0
+  tranco / same
+    at  25%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 127330
+             absolute NEW  at 200%: 127330
+             absolute ART  at 200%: 0
+  tranco / grow
+    at  25%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at  50%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 100%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+    at 200%  NEW/OLD                 1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+             absolute OLD  at 200%: 195278
+             absolute NEW  at 200%: 195278
+             absolute ART  at 200%: 0
+
+########################################################################################################
+## HEADLINE at 200%%  (NEW/OLD; < 1 favours the safe path)
+########################################################################################################
+
+  kind       mode       cum_ms   build_ms        p99      p99.9        max
+  mixed      same        0.854      0.962      0.847      0.629      0.789
+  mixed      grow        0.924      0.990      0.942      0.991      1.038
+  skew       same        0.741      1.005      0.601      0.880      0.587
+  skew       grow        0.843      0.924      0.903      0.975      0.873
+  tranco     same        0.649      0.993      0.418      0.422      1.012
+  tranco     grow        0.819      0.981      0.657      0.746      0.855

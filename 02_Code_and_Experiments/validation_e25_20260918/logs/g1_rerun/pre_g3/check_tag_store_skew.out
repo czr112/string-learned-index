@@ -1,0 +1,1 @@
+{"gate":"check_tag_store","kind":"skew","keys":131072,"queries_compared":1433600,"absent_queries":40960,"scans_compared":5120,"records_compared":245760,"tag_pairings_checked":154336,"overflow_B":16969,"overflow_O":16969,"overflow_T":16969,"sizeof_OrderedEntry":8,"result":"pass"}

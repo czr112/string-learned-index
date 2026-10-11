@@ -1,0 +1,30 @@
+{
+ "target": "check_lits_model",
+ "build_id": "1790151909995045433",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_lits_model.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/check_lits_model.393.1790151909995036301.tmp.exe",
+ "sources": {
+  "check_lits_model.cpp": "34524f5ecdfa070c5e3d7efb4e4bbc5981e586135de5f73cc64032a51a28abd4",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "b21eefa06ead17190e71203da3104ef5f95a0e65effe0e7b707c799e6f973dfb",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "switches.hpp": "4c7ac0165326d585a158cf69f7dc37a033164067c74bce1c8f6b56068fbe8acc",
+  "model/lits_hpt_adapter.hpp": "97195dd7d185ef9323b89ec826cf7f5014751a4d8116679ce898894920d1f7c7",
+  "third_party/vendor/tlx/tlx/container/btree.hpp": "566bc3f8ba7199f6e926b1225f0b67358a5d4d9deec9f5af0293293188fc1629",
+  "third_party/vendor/tlx/tlx/container/btree_map.hpp": "4c640eaa8bf01f64179c31bfdf36dafe0b870c5e94d4776ab2612582355b74a2",
+  "third_party/vendor/tlx/tlx/die/core.hpp": "5c4e954c19dfb3a581ee187a6a23a12b89a53d40e5f1830753833e5ca303fc68",
+  "vendor/lits_model_safe/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+  "vendor/lits_model_safe/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+  "vendor/lits_model_safe/lits_model.hpp": "b5a1c28251da7e74fd011e6b14a40927481c65ed24c837cc4892f26740af4c18"
+ },
+ "extra_flags": [],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "cb3116b5bfb99fb44c72c7cd46ab92b554d171fef27002abd98d0fc233185e88",
+ "status": "OK"
+}

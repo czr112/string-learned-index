@@ -1,0 +1,39 @@
+{
+ "target": "check_hole_reuse",
+ "build_id": "1791713244892178126",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE25_DIAG /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_hole_reuse.cpp /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/art.o -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/check_hole_reuse.789.1791713244336808943.tmp.exe",
+ "sources": {
+  "check_hole_reuse.cpp": "41cf13e00804116ee08fe65b519114a51bc4e11f8ffdb4008a09e4889431aec7",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "46fdf520d82804e595727c267c428c5fbbb9d8c0da02e09ffe4ffc9f413a6957",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "switches.hpp": "f09dc3f6dbff1031d8aa8667ceb45822b784f419db7de9dbc026a4bdda62ecf1",
+  "model/block_linear_rank.hpp": "17d8714d175da10fb349bf1fe8dc00f35510cafaf142ba1d9a595c1e0e2aa5f8",
+  "model/lits_hpt_adapter.hpp": "51c52d687fef5684ac9a88a37f91be8ea17cf7dc491bcdaa12a8754cc30168b2",
+  "results/block_rank_20261011_native/identity/block_linear_rank.hpp": "17d8714d175da10fb349bf1fe8dc00f35510cafaf142ba1d9a595c1e0e2aa5f8",
+  "results/block_rank_20261011_native/identity/index.hpp": "46fdf520d82804e595727c267c428c5fbbb9d8c0da02e09ffe4ffc9f413a6957",
+  "results/block_rank_20261011_native/identity/switches.hpp": "f09dc3f6dbff1031d8aa8667ceb45822b784f419db7de9dbc026a4bdda62ecf1",
+  "third_party/vendor/tlx/tlx/container/btree.hpp": "566bc3f8ba7199f6e926b1225f0b67358a5d4d9deec9f5af0293293188fc1629",
+  "third_party/vendor/tlx/tlx/container/btree_map.hpp": "4c640eaa8bf01f64179c31bfdf36dafe0b870c5e94d4776ab2612582355b74a2",
+  "third_party/vendor/tlx/tlx/die/core.hpp": "5c4e954c19dfb3a581ee187a6a23a12b89a53d40e5f1830753833e5ca303fc68",
+  "vendor/lits_model_safe/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+  "vendor/lits_model_safe/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+  "vendor/lits_model_safe/lits_model.hpp": "4f8674b576f6d4ce2045e5b5a2106c7a61cb830c4df88febfdfbd34641ac93e3",
+  "third_party/vendor/libart/src/art.c": "b65f20fdc160a6e4c0b1b390086f682d381e3638d8690594158ad75cda33396e"
+ },
+ "extra_flags": [
+  "-DE25_DIAG"
+ ],
+ "c_objects": [
+  "build/art.o"
+ ],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "4418465d9d8dcd8a44de9541b0e74bddb94ce2c6bc2aa2657672b1d8c4cff41d",
+ "status": "OK"
+}

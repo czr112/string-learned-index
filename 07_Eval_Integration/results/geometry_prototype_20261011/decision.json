@@ -1,0 +1,23 @@
+{
+  "main_target": "tranco/context16",
+  "main_pass": false,
+  "risk_fail": {
+    "mixed/context16": false,
+    "skew/context16": false
+  },
+  "build_fail": {
+    "mixed/context16": false,
+    "mixed/lits": false,
+    "skew/context16": false,
+    "skew/lits": false,
+    "tranco/context16": false,
+    "tranco/lits": false
+  },
+  "analyzer_selftest_rejections": [
+    "missing main metric",
+    "missing cell",
+    "duplicate pairing",
+    "missing pairing"
+  ],
+  "integrate": false
+}

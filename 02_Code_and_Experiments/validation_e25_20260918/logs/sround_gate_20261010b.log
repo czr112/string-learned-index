@@ -1,0 +1,93 @@
+### check_sround mixed 131072  ctx16 same
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":63,"adv_cmps_s":270,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":66,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":198,"adv_cmps_s":264,"adv_cmps_w":195,"adv_cmps_ws":261,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":2229,"adv_cmps_s":141,"adv_cmps_w":2223,"adv_cmps_ws":207,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":3243,"adv_cmps_s":99,"adv_cmps_w":3240,"adv_cmps_ws":189,"subblock_reclaims":248726,"reclaim_widened":4034}
+mixed Context16 same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 3243/99/3240/189)
+rc=0
+### check_sround mixed 131072  lits same
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0,"live":131072,"adv_cmps_b":70,"adv_cmps_s":386,"adv_cmps_w":70,"adv_cmps_ws":386,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":76,"adv_cmps_s":386,"adv_cmps_w":70,"adv_cmps_ws":386,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":212,"adv_cmps_s":342,"adv_cmps_w":199,"adv_cmps_ws":344,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"adv_cmps_b":2729,"adv_cmps_s":141,"adv_cmps_w":2725,"adv_cmps_ws":281,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"adv_cmps_b":4510,"adv_cmps_s":49,"adv_cmps_w":4519,"adv_cmps_ws":290,"subblock_reclaims":259392,"reclaim_widened":4772}
+mixed LitsHpt same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 4510/49/4519/290)
+rc=0
+### check_sround skew 131072  ctx16 same
+{"kind":"skew","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":75,"adv_cmps_s":399,"adv_cmps_w":75,"adv_cmps_ws":399,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":1044,"adv_cmps_s":321,"adv_cmps_w":1041,"adv_cmps_ws":348,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.25 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":1260,"adv_cmps_s":261,"adv_cmps_w":1254,"adv_cmps_ws":312,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.5 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":2220,"adv_cmps_s":84,"adv_cmps_w":2226,"adv_cmps_ws":255,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=1 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":2658,"adv_cmps_s":72,"adv_cmps_w":2664,"adv_cmps_ws":249,"subblock_reclaims":485828,"reclaim_widened":10202}
+skew Context16 same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 2658/72/2664/249)
+rc=0
+### check_sround skew 131072  lits same
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0,"live":131072,"adv_cmps_b":66,"adv_cmps_s":402,"adv_cmps_w":66,"adv_cmps_ws":402,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":5367,"adv_cmps_s":369,"adv_cmps_w":5367,"adv_cmps_ws":375,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.25 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":5733,"adv_cmps_s":288,"adv_cmps_w":5736,"adv_cmps_ws":345,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.5 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"adv_cmps_b":6216,"adv_cmps_s":120,"adv_cmps_w":6225,"adv_cmps_ws":297,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=1 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"adv_cmps_b":2985,"adv_cmps_s":87,"adv_cmps_w":2997,"adv_cmps_ws":282,"subblock_reclaims":469500,"reclaim_widened":9608}
+skew LitsHpt same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 2985/87/2997/282)
+rc=0
+### check_sround tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv ctx16 same
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":51,"adv_cmps_s":288,"adv_cmps_w":51,"adv_cmps_ws":288,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":339,"adv_cmps_s":252,"adv_cmps_w":336,"adv_cmps_ws":261,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":471,"adv_cmps_s":213,"adv_cmps_w":465,"adv_cmps_ws":219,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":894,"adv_cmps_s":174,"adv_cmps_w":885,"adv_cmps_ws":183,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":942,"adv_cmps_s":180,"adv_cmps_w":939,"adv_cmps_ws":231,"subblock_reclaims":140248,"reclaim_widened":2754}
+tranco Context16 same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 942/180/939/231)
+rc=0
+### check_sround tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv lits same
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0,"live":131072,"adv_cmps_b":67,"adv_cmps_s":366,"adv_cmps_w":67,"adv_cmps_ws":366,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":254,"adv_cmps_s":324,"adv_cmps_w":247,"adv_cmps_ws":344,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":383,"adv_cmps_s":311,"adv_cmps_w":376,"adv_cmps_ws":331,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"adv_cmps_b":615,"adv_cmps_s":300,"adv_cmps_w":603,"adv_cmps_ws":322,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"adv_cmps_b":619,"adv_cmps_s":253,"adv_cmps_w":602,"adv_cmps_ws":336,"subblock_reclaims":76176,"reclaim_widened":1636}
+tranco LitsHpt same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 619/253/602/336)
+rc=0
+### check_sround mixed 131072  ctx16 grow
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0,"live":131072,"adv_cmps_b":63,"adv_cmps_s":270,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"adv_cmps_b":66,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"adv_cmps_b":69,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":1,"live":131072,"adv_cmps_b":63,"adv_cmps_s":150,"adv_cmps_w":63,"adv_cmps_ws":264,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=1 ok
+FAIL: S saved no comparisons at 200 per cent: the ordered advance never paid off on this load
+FAIL: WS saved no comparisons at 200 per cent
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":2,"live":131072,"adv_cmps_b":57,"adv_cmps_s":90,"adv_cmps_w":66,"adv_cmps_ws":264,"subblock_reclaims":286992,"reclaim_widened":4374}
+mixed Context16 grow frac=2 ok
+check_sround: 2600812 checks, 2 failures (adv_cmps B/S/W/WS at 200%: 57/90/66/264)
+rc=1

@@ -1,0 +1,9 @@
+[submodule "external-model"]
+	path = 02_Code_and_Experiments/Learned-Index-Model
+	url = https://github.com/Zephyr761/Learned-Index-Model.git
+[submodule "external-evaluator"]
+	path = 07_Eval_Integration/learned-index
+	url = https://github.com/zsh20070718/learned-index.git
+[submodule "external-hot"]
+	path = 07_Eval_Integration/hot-src
+	url = https://github.com/speedskater/hot.git

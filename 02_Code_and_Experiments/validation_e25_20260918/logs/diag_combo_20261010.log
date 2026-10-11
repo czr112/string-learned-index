@@ -1,0 +1,216 @@
+### diag_combo mixed 131072 reps=4 ctx16 same -> combo_diag_ctx16_same_mixed
+mixed Context16 same rep0 B done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 C done
+mixed Context16 same rep0 WC done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 C done
+mixed Context16 same rep1 WC done
+mixed Context16 same rep1 B done
+mixed Context16 same rep2 C done
+mixed Context16 same rep2 WC done
+mixed Context16 same rep2 B done
+mixed Context16 same rep2 W done
+mixed Context16 same rep3 WC done
+mixed Context16 same rep3 B done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 C done
+rc=0
+### diag_combo skew 131072 reps=4 ctx16 same -> combo_diag_ctx16_same_skew
+skew Context16 same rep0 B done
+skew Context16 same rep0 W done
+skew Context16 same rep0 C done
+skew Context16 same rep0 WC done
+skew Context16 same rep1 W done
+skew Context16 same rep1 C done
+skew Context16 same rep1 WC done
+skew Context16 same rep1 B done
+skew Context16 same rep2 C done
+skew Context16 same rep2 WC done
+skew Context16 same rep2 B done
+skew Context16 same rep2 W done
+skew Context16 same rep3 WC done
+skew Context16 same rep3 B done
+skew Context16 same rep3 W done
+skew Context16 same rep3 C done
+rc=0
+### diag_combo tranco 262144 reps=4 ctx16 same -> combo_diag_ctx16_same_tranco
+tranco Context16 same rep0 B done
+tranco Context16 same rep0 W done
+tranco Context16 same rep0 C done
+tranco Context16 same rep0 WC done
+tranco Context16 same rep1 W done
+tranco Context16 same rep1 C done
+tranco Context16 same rep1 WC done
+tranco Context16 same rep1 B done
+tranco Context16 same rep2 C done
+tranco Context16 same rep2 WC done
+tranco Context16 same rep2 B done
+tranco Context16 same rep2 W done
+tranco Context16 same rep3 WC done
+tranco Context16 same rep3 B done
+tranco Context16 same rep3 W done
+tranco Context16 same rep3 C done
+rc=0
+### diag_combo mixed 131072 reps=4 ctx16 grow -> combo_diag_ctx16_grow_mixed
+mixed Context16 grow rep0 B done
+mixed Context16 grow rep0 W done
+mixed Context16 grow rep0 C done
+mixed Context16 grow rep0 WC done
+mixed Context16 grow rep1 W done
+mixed Context16 grow rep1 C done
+mixed Context16 grow rep1 WC done
+mixed Context16 grow rep1 B done
+mixed Context16 grow rep2 C done
+mixed Context16 grow rep2 WC done
+mixed Context16 grow rep2 B done
+mixed Context16 grow rep2 W done
+mixed Context16 grow rep3 WC done
+mixed Context16 grow rep3 B done
+mixed Context16 grow rep3 W done
+mixed Context16 grow rep3 C done
+rc=0
+### diag_combo skew 131072 reps=4 ctx16 grow -> combo_diag_ctx16_grow_skew
+skew Context16 grow rep0 B done
+skew Context16 grow rep0 W done
+skew Context16 grow rep0 C done
+skew Context16 grow rep0 WC done
+skew Context16 grow rep1 W done
+skew Context16 grow rep1 C done
+skew Context16 grow rep1 WC done
+skew Context16 grow rep1 B done
+skew Context16 grow rep2 C done
+skew Context16 grow rep2 WC done
+skew Context16 grow rep2 B done
+skew Context16 grow rep2 W done
+skew Context16 grow rep3 WC done
+skew Context16 grow rep3 B done
+skew Context16 grow rep3 W done
+skew Context16 grow rep3 C done
+rc=0
+### diag_combo tranco 262144 reps=4 ctx16 grow -> combo_diag_ctx16_grow_tranco
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 C done
+tranco Context16 grow rep0 WC done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 C done
+tranco Context16 grow rep1 WC done
+tranco Context16 grow rep1 B done
+tranco Context16 grow rep2 C done
+tranco Context16 grow rep2 WC done
+tranco Context16 grow rep2 B done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep3 WC done
+tranco Context16 grow rep3 B done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 C done
+rc=0
+### diag_combo mixed 131072 reps=4 lits same -> combo_diag_lits_same_mixed
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 C done
+mixed LitsHpt same rep0 WC done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 C done
+mixed LitsHpt same rep1 WC done
+mixed LitsHpt same rep1 B done
+mixed LitsHpt same rep2 C done
+mixed LitsHpt same rep2 WC done
+mixed LitsHpt same rep2 B done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep3 WC done
+mixed LitsHpt same rep3 B done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 C done
+rc=0
+### diag_combo skew 131072 reps=4 lits same -> combo_diag_lits_same_skew
+skew LitsHpt same rep0 B done
+skew LitsHpt same rep0 W done
+skew LitsHpt same rep0 C done
+skew LitsHpt same rep0 WC done
+skew LitsHpt same rep1 W done
+skew LitsHpt same rep1 C done
+skew LitsHpt same rep1 WC done
+skew LitsHpt same rep1 B done
+skew LitsHpt same rep2 C done
+skew LitsHpt same rep2 WC done
+skew LitsHpt same rep2 B done
+skew LitsHpt same rep2 W done
+skew LitsHpt same rep3 WC done
+skew LitsHpt same rep3 B done
+skew LitsHpt same rep3 W done
+skew LitsHpt same rep3 C done
+rc=0
+### diag_combo tranco 262144 reps=4 lits same -> combo_diag_lits_same_tranco
+tranco LitsHpt same rep0 B done
+tranco LitsHpt same rep0 W done
+tranco LitsHpt same rep0 C done
+tranco LitsHpt same rep0 WC done
+tranco LitsHpt same rep1 W done
+tranco LitsHpt same rep1 C done
+tranco LitsHpt same rep1 WC done
+tranco LitsHpt same rep1 B done
+tranco LitsHpt same rep2 C done
+tranco LitsHpt same rep2 WC done
+tranco LitsHpt same rep2 B done
+tranco LitsHpt same rep2 W done
+tranco LitsHpt same rep3 WC done
+tranco LitsHpt same rep3 B done
+tranco LitsHpt same rep3 W done
+tranco LitsHpt same rep3 C done
+rc=0
+### diag_combo mixed 131072 reps=4 lits grow -> combo_diag_lits_grow_mixed
+mixed LitsHpt grow rep0 B done
+mixed LitsHpt grow rep0 W done
+mixed LitsHpt grow rep0 C done
+mixed LitsHpt grow rep0 WC done
+mixed LitsHpt grow rep1 W done
+mixed LitsHpt grow rep1 C done
+mixed LitsHpt grow rep1 WC done
+mixed LitsHpt grow rep1 B done
+mixed LitsHpt grow rep2 C done
+mixed LitsHpt grow rep2 WC done
+mixed LitsHpt grow rep2 B done
+mixed LitsHpt grow rep2 W done
+mixed LitsHpt grow rep3 WC done
+mixed LitsHpt grow rep3 B done
+mixed LitsHpt grow rep3 W done
+mixed LitsHpt grow rep3 C done
+rc=0
+### diag_combo skew 131072 reps=4 lits grow -> combo_diag_lits_grow_skew
+skew LitsHpt grow rep0 B done
+skew LitsHpt grow rep0 W done
+skew LitsHpt grow rep0 C done
+skew LitsHpt grow rep0 WC done
+skew LitsHpt grow rep1 W done
+skew LitsHpt grow rep1 C done
+skew LitsHpt grow rep1 WC done
+skew LitsHpt grow rep1 B done
+skew LitsHpt grow rep2 C done
+skew LitsHpt grow rep2 WC done
+skew LitsHpt grow rep2 B done
+skew LitsHpt grow rep2 W done
+skew LitsHpt grow rep3 WC done
+skew LitsHpt grow rep3 B done
+skew LitsHpt grow rep3 W done
+skew LitsHpt grow rep3 C done
+rc=0
+### diag_combo tranco 262144 reps=4 lits grow -> combo_diag_lits_grow_tranco
+tranco LitsHpt grow rep0 B done
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 C done
+tranco LitsHpt grow rep0 WC done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep1 C done
+tranco LitsHpt grow rep1 WC done
+tranco LitsHpt grow rep1 B done
+tranco LitsHpt grow rep2 C done
+tranco LitsHpt grow rep2 WC done
+tranco LitsHpt grow rep2 B done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep3 WC done
+tranco LitsHpt grow rep3 B done
+tranco LitsHpt grow rep3 W done
+tranco LitsHpt grow rep3 C done
+rc=0

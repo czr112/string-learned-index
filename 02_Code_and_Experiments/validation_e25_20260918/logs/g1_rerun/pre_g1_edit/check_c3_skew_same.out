@@ -1,0 +1,9 @@
+arms frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16] C3[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=1,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16]
+{"kind":"skew","mode":"same","frac":0.25,"live":131072,"frozen_overflow":31724,"c3_overflow":27732,"frozen_compactions":12272,"c3_compactions":31500,"frozen_memory":26524175,"c3_memory":26128238,"records_compared":131072}
+skew same frac=0.25 ok
+{"kind":"skew","mode":"same","frac":0.5,"live":131072,"frozen_overflow":62963,"c3_overflow":53322,"frozen_compactions":18018,"c3_compactions":62754,"frozen_memory":30856355,"c3_memory":29684911,"records_compared":262144}
+skew same frac=0.5 ok
+{"kind":"skew","mode":"same","frac":1,"live":131072,"frozen_overflow":125996,"c3_overflow":100957,"frozen_compactions":26930,"c3_compactions":125217,"frozen_memory":41875261,"c3_memory":37928490,"records_compared":393216}
+skew same frac=1 ok
+{"kind":"skew","mode":"same","frac":2,"live":131072,"frozen_overflow":127070,"c3_overflow":101829,"frozen_compactions":30877,"c3_compactions":151380,"frozen_memory":42027622,"c3_memory":38008836,"records_compared":524288}
+skew same frac=2 ok

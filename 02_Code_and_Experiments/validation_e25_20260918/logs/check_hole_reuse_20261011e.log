@@ -1,0 +1,27 @@
+OK check_hole_reuse build_id=1791652873078641686 exe=3ab9a58ef2191932…
+OK san_check_hole_reuse build_id=1791652887884372795 exe=aacc46f3e9bcc8bc…
+  H placed 2635 of 23654 attempts (259468 B); repacks 17874 -> 16641, moved bytes 31557440 -> 30532963
+{"kind":"mixed","backend":"ctx16","keys":131072,"final_size":131072,"regions":64,"h_attempts":23654,"h_placed":2635,"h_absent":21019,"h_skipped_lt2":6,"h_skipped_wide":0,"h_bytes":259468,"w_reclaims":17874,"h_reclaims":16641,"w_moved_bytes":31557440,"h_moved_bytes":30532963,"checks":2283,"failures":0}
+2283/2283 checks passed
+  H placed 995 of 23463 attempts (123244 B); repacks 18325 -> 17629, moved bytes 36112665 -> 35718426
+  LITS domain edge keys are covered by check_lits_index; skipped here by design
+{"kind":"mixed","backend":"lits","keys":131072,"final_size":131072,"regions":64,"h_attempts":23463,"h_placed":995,"h_absent":22468,"h_skipped_lt2":21,"h_skipped_wide":0,"h_bytes":123244,"w_reclaims":18325,"h_reclaims":17629,"w_moved_bytes":36112665,"h_moved_bytes":35718426,"checks":1693,"failures":0}
+1693/1693 checks passed
+  H placed 439 of 24159 attempts (7969 B); repacks 13160 -> 12849, moved bytes 3926706 -> 3857718
+{"kind":"tranco","backend":"ctx16","keys":262144,"final_size":262144,"regions":128,"h_attempts":24159,"h_placed":439,"h_absent":23720,"h_skipped_lt2":12,"h_skipped_wide":0,"h_bytes":7969,"w_reclaims":13160,"h_reclaims":12849,"w_moved_bytes":3926706,"h_moved_bytes":3857718,"checks":2283,"failures":0}
+2283/2283 checks passed
+  H placed 274 of 15812 attempts (5090 B); repacks 8551 -> 8357, moved bytes 2615230 -> 2574592
+  LITS domain edge keys are covered by check_lits_index; skipped here by design
+{"kind":"tranco","backend":"lits","keys":262144,"final_size":262144,"regions":128,"h_attempts":15812,"h_placed":274,"h_absent":15538,"h_skipped_lt2":30,"h_skipped_wide":0,"h_bytes":5090,"w_reclaims":8551,"h_reclaims":8357,"w_moved_bytes":2615230,"h_moved_bytes":2574592,"checks":1693,"failures":0}
+1693/1693 checks passed
+  H placed 2635 of 23654 attempts (259468 B); repacks 17874 -> 16641, moved bytes 31557440 -> 30532963
+{"kind":"mixed","backend":"ctx16","keys":131072,"final_size":131072,"regions":64,"h_attempts":23654,"h_placed":2635,"h_absent":21019,"h_skipped_lt2":6,"h_skipped_wide":0,"h_bytes":259468,"w_reclaims":17874,"h_reclaims":16641,"w_moved_bytes":31557440,"h_moved_bytes":30532963,"checks":2283,"failures":0}
+2283/2283 checks passed
+  H placed 995 of 23463 attempts (123244 B); repacks 18325 -> 17629, moved bytes 36112665 -> 35718426
+  LITS domain edge keys are covered by check_lits_index; skipped here by design
+{"kind":"mixed","backend":"lits","keys":131072,"final_size":131072,"regions":64,"h_attempts":23463,"h_placed":995,"h_absent":22468,"h_skipped_lt2":21,"h_skipped_wide":0,"h_bytes":123244,"w_reclaims":18325,"h_reclaims":17629,"w_moved_bytes":36112665,"h_moved_bytes":35718426,"checks":1693,"failures":0}
+1693/1693 checks passed
+  H placed 274 of 15812 attempts (5090 B); repacks 8551 -> 8357, moved bytes 2615230 -> 2574592
+  LITS domain edge keys are covered by check_lits_index; skipped here by design
+{"kind":"tranco","backend":"lits","keys":262144,"final_size":262144,"regions":128,"h_attempts":15812,"h_placed":274,"h_absent":15538,"h_skipped_lt2":30,"h_skipped_wide":0,"h_bytes":5090,"w_reclaims":8551,"h_reclaims":8357,"w_moved_bytes":2615230,"h_moved_bytes":2574592,"checks":1693,"failures":0}
+1693/1693 checks passed

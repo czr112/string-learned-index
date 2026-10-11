@@ -1,0 +1,44 @@
+widest sweep run_id=i10c  2026-09-23 18:03:09
+phase i10: target=bench_i10 reps=6 (phase table) processes=5
+    rep 0 arm order: 0 1 2
+    rep 1 arm order: 1 2 0
+    rep 2 arm order: 2 0 1
+    rep 3 arm order: 0 1 2
+    rep 4 arm order: 1 2 0
+    rep 5 arm order: 2 0 1
+    position balance verified: every arm occupies every position 2 time(s)
+--- phase i10 mode same -> long_i10_i10c_same.jsonl ---
+  bench_i10 mixed same reps=6 tag=P1 rc=0 wall=19s
+  bench_i10 skew same reps=6 tag=P1 rc=0 wall=29s
+  bench_i10 tranco same reps=6 tag=P1 rc=0 wall=40s
+  bench_i10 mixed same reps=6 tag=P2 rc=0 wall=21s
+  bench_i10 skew same reps=6 tag=P2 rc=0 wall=29s
+  bench_i10 tranco same reps=6 tag=P2 rc=0 wall=40s
+  bench_i10 mixed same reps=6 tag=P3 rc=0 wall=20s
+  bench_i10 skew same reps=6 tag=P3 rc=0 wall=29s
+  bench_i10 tranco same reps=6 tag=P3 rc=0 wall=40s
+  bench_i10 mixed same reps=6 tag=P4 rc=0 wall=22s
+  bench_i10 skew same reps=6 tag=P4 rc=0 wall=29s
+  bench_i10 tranco same reps=6 tag=P4 rc=0 wall=40s
+  bench_i10 mixed same reps=6 tag=P5 rc=0 wall=22s
+  bench_i10 skew same reps=6 tag=P5 rc=0 wall=26s
+  bench_i10 tranco same reps=6 tag=P5 rc=0 wall=43s
+    archived 1080 row(s) to long_i10_i10c_same.jsonl
+--- phase i10 mode grow -> long_i10_i10c_grow.jsonl ---
+  bench_i10 mixed grow reps=6 tag=P1 rc=0 wall=17s
+  bench_i10 skew grow reps=6 tag=P1 rc=0 wall=22s
+  bench_i10 tranco grow reps=6 tag=P1 rc=0 wall=41s
+  bench_i10 mixed grow reps=6 tag=P2 rc=0 wall=20s
+  bench_i10 skew grow reps=6 tag=P2 rc=0 wall=24s
+  bench_i10 tranco grow reps=6 tag=P2 rc=0 wall=40s
+  bench_i10 mixed grow reps=6 tag=P3 rc=0 wall=17s
+  bench_i10 skew grow reps=6 tag=P3 rc=0 wall=24s
+  bench_i10 tranco grow reps=6 tag=P3 rc=0 wall=40s
+  bench_i10 mixed grow reps=6 tag=P4 rc=0 wall=20s
+  bench_i10 skew grow reps=6 tag=P4 rc=0 wall=22s
+  bench_i10 tranco grow reps=6 tag=P4 rc=0 wall=43s
+  bench_i10 mixed grow reps=6 tag=P5 rc=0 wall=18s
+  bench_i10 skew grow reps=6 tag=P5 rc=0 wall=24s
+  bench_i10 tranco grow reps=6 tag=P5 rc=0 wall=40s
+    archived 1080 row(s) to long_i10_i10c_grow.jsonl
+sweep end 2026-09-23 18:17:28

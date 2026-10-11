@@ -1,0 +1,22 @@
+PGO/LTO run_id=pgosmoke  2026-09-23 05:35:45
+
+phase train
+  build bench_pgo_gen (instrumented)             rc=0 wall=18s
+  train mixed 65536 grow                         rc=0 wall=3s
+  train skew 65536 grow                          rc=0 wall=4s
+  profile: 1 .gcda file(s), 89692 bytes
+    /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/pgo_profile/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/pgo_obj.tmp-bench_widest.gcda (89692 bytes)
+
+phase build
+  build bench_widest (base)                      rc=0 wall=15s
+  build bench_lto                                rc=0 wall=14s
+  build bench_pgo                                rc=0 wall=13s
+  bench_pgo                    no profile diagnostic; exe 3ab8f1e0bbdd3ce5
+  build bench_pgo_lto                            rc=0 wall=13s
+  bench_pgo_lto                no profile diagnostic; exe 60305dd56b80ebe9
+
+executable hashes:
+  base       d2d4a9e5233a0576faa9ec47a51cf3fc3e989bca610c92d8d7e7ef2caab2a258
+  lto        13041efa8150b752f3cba4aa624bdaa99e6656143a00fceade5af340a18fd3ed
+  pgo        3ab8f1e0bbdd3ce5f3078f49055594de5b5e3f35af99c7ca6ef7c326679228f7
+  pgo_lto    60305dd56b80ebe9926e64f7bcadd344b4597ae33955fc70d2bad0cdd08ada2b

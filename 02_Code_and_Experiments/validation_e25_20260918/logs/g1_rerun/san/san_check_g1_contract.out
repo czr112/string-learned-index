@@ -1,0 +1,6 @@
+{"case":"A_value_update_layout","keys":131072,"updates":4096,"regions":64,"groups_total":20163,"layout_unchanged":true}
+{"case":"B_scan_zero_and_over","keys":131072,"starts":14,"zero_scans":14,"oversized_scans":14}
+{"case":"C_absent_key_group","mode":"interval","keys":131072,"probed":1024,"placed_and_observed":1024,"skipped_after_rebuild":0,"same_length_probes":512,"stretched_probes":512,"unprobeable":0,"placed_into_overflow":999,"placed_into_primary":25}
+{"case":"C_absent_key_group","mode":"full","keys":131072,"probed":1024,"placed_and_observed":1024,"skipped_after_rebuild":0,"same_length_probes":512,"stretched_probes":512,"unprobeable":0,"placed_into_overflow":999,"placed_into_primary":25}
+{"case":"D_prepare_failure_atomic","keys":131072,"ops_before_injection":373,"injection_fired":true,"index_unchanged":true,"records":131071}
+{"case":"D_commit_failure_measured","keys":131072,"ops_before_injection":373,"injection_fired":true,"records_before":131071,"size_after":131071,"reference_size":131071,"still_found":130898,"records_lost":173}

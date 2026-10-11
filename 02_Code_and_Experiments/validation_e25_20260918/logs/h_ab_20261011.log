@@ -1,0 +1,614 @@
+### host: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+### building bench_combo_h
+OK bench_combo_h build_id=1791656004913947571 exe=02b05c030fd2b914…
+build rc=0
+### hab_ctx16_same_mixed P1
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+  wall 13.00 s
+rc=0
+### hab_ctx16_same_mixed P2
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+  wall 12.70 s
+rc=0
+### hab_ctx16_same_mixed P3
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+  wall 12.77 s
+rc=0
+### hab_ctx16_same_mixed P4
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+  wall 13.48 s
+rc=0
+### hab_ctx16_same_mixed P5
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 WH done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 WH done
+mixed Context16 same rep1 W done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep2 W done
+mixed Context16 same rep2 WH done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 WH done
+mixed Context16 same rep3 W done
+  wall 12.77 s
+rc=0
+### hab_lits_same_mixed P1
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+  wall 15.18 s
+rc=0
+### hab_lits_same_mixed P2
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+  wall 14.92 s
+rc=0
+### hab_lits_same_mixed P3
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+  wall 14.97 s
+rc=0
+### hab_lits_same_mixed P4
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+  wall 14.65 s
+rc=0
+### hab_lits_same_mixed P5
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 WH done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 WH done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep2 WH done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 WH done
+mixed LitsHpt same rep3 W done
+  wall 14.65 s
+rc=0
+### hab_ctx16_grow_tranco P1
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+  wall 19.95 s
+rc=0
+### hab_ctx16_grow_tranco P2
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+  wall 20.10 s
+rc=0
+### hab_ctx16_grow_tranco P3
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+  wall 19.18 s
+rc=0
+### hab_ctx16_grow_tranco P4
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+  wall 20.05 s
+rc=0
+### hab_ctx16_grow_tranco P5
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 WH done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 WH done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep2 WH done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 WH done
+tranco Context16 grow rep3 W done
+  wall 19.31 s
+rc=0
+### hab_lits_grow_tranco P1
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+  wall 18.05 s
+rc=0
+### hab_lits_grow_tranco P2
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+  wall 17.69 s
+rc=0
+### hab_lits_grow_tranco P3
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+  wall 17.12 s
+rc=0
+### hab_lits_grow_tranco P4
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+  wall 18.01 s
+rc=0
+### hab_lits_grow_tranco P5
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 WH done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep1 WH done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep2 WH done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+tranco LitsHpt grow rep3 WH done
+tranco LitsHpt grow rep3 W done
+  wall 17.35 s
+rc=0
+### analyzing
+================================================================================================================
+hab_ctx16_same_mixed  (backend/mode/corpus = ('Context16', 'same', 'mixed'))  processes=5 ['hp1', 'hp2', 'hp3', 'hp4', 'hp5']
+  seg_ns      frac=0     | WH/W 0.979  dir 3/5 | W-slot floor 1.252
+  seg_ns      frac=0.25  | WH/W 1.194  dir 0/5 | W-slot floor 1.086
+  seg_ns      frac=0.5   | WH/W 1.001  dir 2/5 | W-slot floor 1.053
+  seg_ns      frac=1     | WH/W 0.746  dir 5/5 | W-slot floor 1.067
+  seg_ns      frac=2     | WH/W 0.913  dir 5/5 | W-slot floor 1.033
+
+  cum_ns      frac=0     | WH/W 0.979  dir 3/5 | W-slot floor 1.252
+  cum_ns      frac=0.25  | WH/W 1.194  dir 0/5 | W-slot floor 1.086
+  cum_ns      frac=0.5   | WH/W 1.082  dir 0/5 | W-slot floor 1.057
+  cum_ns      frac=1     | WH/W 0.867  dir 5/5 | W-slot floor 1.042
+  cum_ns      frac=2     | WH/W 0.885  dir 5/5 | W-slot floor 1.038
+
+  hit_ns      frac=0     | WH/W 1.017  dir 2/5 | W-slot floor 1.088
+  hit_ns      frac=0.25  | WH/W 1.023  dir 1/5 | W-slot floor 1.050
+  hit_ns      frac=0.5   | WH/W 1.010  dir 2/5 | W-slot floor 1.049
+  hit_ns      frac=1     | WH/W 1.025  dir 2/5 | W-slot floor 1.071
+  hit_ns      frac=2     | WH/W 1.023  dir 2/5 | W-slot floor 1.048
+
+  miss_ns     frac=0     | WH/W 0.976  dir 4/5 | W-slot floor 1.092
+  miss_ns     frac=0.25  | WH/W 1.009  dir 1/5 | W-slot floor 1.066
+  miss_ns     frac=0.5   | WH/W 0.985  dir 3/5 | W-slot floor 1.042
+  miss_ns     frac=1     | WH/W 1.010  dir 2/5 | W-slot floor 1.067
+  miss_ns     frac=2     | WH/W 1.017  dir 1/5 | W-slot floor 1.053
+
+  scan16_ns   frac=0     | WH/W 1.003  dir 2/5 | W-slot floor 1.383
+  scan16_ns   frac=0.25  | WH/W 0.854  dir 4/5 | W-slot floor 1.222
+  scan16_ns   frac=0.5   | WH/W 1.031  dir 2/5 | W-slot floor 1.337
+  scan16_ns   frac=1     | WH/W 1.063  dir 0/5 | W-slot floor 1.193
+  scan16_ns   frac=2     | WH/W 1.014  dir 2/5 | W-slot floor 1.166
+
+  scan256_ns  frac=0     | WH/W 1.020  dir 2/5 | W-slot floor 1.291
+  scan256_ns  frac=0.25  | WH/W 0.960  dir 3/5 | W-slot floor 1.360
+  scan256_ns  frac=0.5   | WH/W 1.002  dir 2/5 | W-slot floor 1.342
+  scan256_ns  frac=1     | WH/W 1.066  dir 0/5 | W-slot floor 1.162
+  scan256_ns  frac=2     | WH/W 0.941  dir 4/5 | W-slot floor 1.384
+
+  scan4096_ns frac=0     | WH/W 1.016  dir 2/5 | W-slot floor 1.089
+  scan4096_ns frac=0.25  | WH/W 1.025  dir 1/5 | W-slot floor 1.082
+  scan4096_ns frac=0.5   | WH/W 0.978  dir 4/5 | W-slot floor 1.090
+  scan4096_ns frac=1     | WH/W 1.010  dir 2/5 | W-slot floor 1.106
+  scan4096_ns frac=2     | WH/W 1.059  dir 0/5 | W-slot floor 1.078
+
+  index_bytes frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=0.25  | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=0.5   | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=1     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=2     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+
+  overflow    frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=0.25  | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=0.5   | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=1     | WH/W 0.998  dir 5/5 | W-slot floor 1.000
+  overflow    frac=2     | WH/W 0.999  dir 5/5 | W-slot floor 1.000
+
+ANALYZE_H_AB hab_ctx16_same_mixed OK
+================================================================================================================
+hab_lits_same_mixed  (backend/mode/corpus = ('LitsHpt', 'same', 'mixed'))  processes=5 ['hp1', 'hp2', 'hp3', 'hp4', 'hp5']
+  seg_ns      frac=0     | WH/W 0.963  dir 3/5 | W-slot floor 1.237
+  seg_ns      frac=0.25  | WH/W 1.041  dir 1/5 | W-slot floor 1.094
+  seg_ns      frac=0.5   | WH/W 0.881  dir 4/5 | W-slot floor 1.044
+  seg_ns      frac=1     | WH/W 0.726  dir 5/5 | W-slot floor 1.043
+  seg_ns      frac=2     | WH/W 0.818  dir 5/5 | W-slot floor 1.033
+
+  cum_ns      frac=0     | WH/W 0.963  dir 3/5 | W-slot floor 1.237
+  cum_ns      frac=0.25  | WH/W 1.041  dir 1/5 | W-slot floor 1.094
+  cum_ns      frac=0.5   | WH/W 0.940  dir 4/5 | W-slot floor 1.062
+  cum_ns      frac=1     | WH/W 0.780  dir 5/5 | W-slot floor 1.056
+  cum_ns      frac=2     | WH/W 0.803  dir 5/5 | W-slot floor 1.044
+
+  hit_ns      frac=0     | WH/W 0.978  dir 4/5 | W-slot floor 1.071
+  hit_ns      frac=0.25  | WH/W 0.994  dir 3/5 | W-slot floor 1.058
+  hit_ns      frac=0.5   | WH/W 1.029  dir 2/5 | W-slot floor 1.067
+  hit_ns      frac=1     | WH/W 0.999  dir 3/5 | W-slot floor 1.042
+  hit_ns      frac=2     | WH/W 0.995  dir 3/5 | W-slot floor 1.035
+
+  miss_ns     frac=0     | WH/W 1.012  dir 1/5 | W-slot floor 1.042
+  miss_ns     frac=0.25  | WH/W 1.009  dir 1/5 | W-slot floor 1.032
+  miss_ns     frac=0.5   | WH/W 1.012  dir 2/5 | W-slot floor 1.023
+  miss_ns     frac=1     | WH/W 1.000  dir 2/5 | W-slot floor 1.041
+  miss_ns     frac=2     | WH/W 1.011  dir 2/5 | W-slot floor 1.044
+
+  scan16_ns   frac=0     | WH/W 0.924  dir 5/5 | W-slot floor 1.273
+  scan16_ns   frac=0.25  | WH/W 1.006  dir 2/5 | W-slot floor 1.380
+  scan16_ns   frac=0.5   | WH/W 0.961  dir 4/5 | W-slot floor 1.191
+  scan16_ns   frac=1     | WH/W 1.037  dir 2/5 | W-slot floor 1.137
+  scan16_ns   frac=2     | WH/W 0.975  dir 3/5 | W-slot floor 1.289
+
+  scan256_ns  frac=0     | WH/W 1.000  dir 2/5 | W-slot floor 1.220
+  scan256_ns  frac=0.25  | WH/W 0.926  dir 3/5 | W-slot floor 1.255
+  scan256_ns  frac=0.5   | WH/W 0.936  dir 3/5 | W-slot floor 1.226
+  scan256_ns  frac=1     | WH/W 1.032  dir 1/5 | W-slot floor 1.087
+  scan256_ns  frac=2     | WH/W 1.030  dir 2/5 | W-slot floor 1.221
+
+  scan4096_ns frac=0     | WH/W 0.994  dir 3/5 | W-slot floor 1.054
+  scan4096_ns frac=0.25  | WH/W 1.016  dir 0/5 | W-slot floor 1.054
+  scan4096_ns frac=0.5   | WH/W 0.992  dir 3/5 | W-slot floor 1.056
+  scan4096_ns frac=1     | WH/W 1.000  dir 2/5 | W-slot floor 1.050
+  scan4096_ns frac=2     | WH/W 1.009  dir 1/5 | W-slot floor 1.036
+
+  index_bytes frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=0.25  | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=0.5   | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=1     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=2     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+
+  overflow    frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=0.25  | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=0.5   | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=1     | WH/W 0.995  dir 5/5 | W-slot floor 1.000
+  overflow    frac=2     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+
+ANALYZE_H_AB hab_lits_same_mixed OK
+================================================================================================================
+hab_ctx16_grow_tranco  (backend/mode/corpus = ('Context16', 'grow', 'tranco'))  processes=5 ['hp1', 'hp2', 'hp3', 'hp4', 'hp5']
+  seg_ns      frac=0     | WH/W 1.073  dir 1/5 | W-slot floor 1.145
+  seg_ns      frac=0.25  | WH/W 1.180  dir 0/5 | W-slot floor 1.054
+  seg_ns      frac=0.5   | WH/W 1.197  dir 0/5 | W-slot floor 1.080
+  seg_ns      frac=1     | WH/W 1.180  dir 0/5 | W-slot floor 1.033
+  seg_ns      frac=2     | WH/W 1.159  dir 0/5 | W-slot floor 1.083
+
+  cum_ns      frac=0     | WH/W 1.073  dir 1/5 | W-slot floor 1.145
+  cum_ns      frac=0.25  | WH/W 1.180  dir 0/5 | W-slot floor 1.054
+  cum_ns      frac=0.5   | WH/W 1.219  dir 0/5 | W-slot floor 1.075
+  cum_ns      frac=1     | WH/W 1.185  dir 0/5 | W-slot floor 1.034
+  cum_ns      frac=2     | WH/W 1.192  dir 0/5 | W-slot floor 1.053
+
+  hit_ns      frac=0     | WH/W 0.996  dir 3/5 | W-slot floor 1.056
+  hit_ns      frac=0.25  | WH/W 1.035  dir 1/5 | W-slot floor 1.073
+  hit_ns      frac=0.5   | WH/W 1.059  dir 2/5 | W-slot floor 1.115
+  hit_ns      frac=1     | WH/W 1.002  dir 2/5 | W-slot floor 1.044
+  hit_ns      frac=2     | WH/W 0.995  dir 3/5 | W-slot floor 1.066
+
+  miss_ns     frac=0     | WH/W 1.003  dir 2/5 | W-slot floor 1.047
+  miss_ns     frac=0.25  | WH/W 1.006  dir 2/5 | W-slot floor 1.062
+  miss_ns     frac=0.5   | WH/W 0.977  dir 3/5 | W-slot floor 1.065
+  miss_ns     frac=1     | WH/W 1.004  dir 2/5 | W-slot floor 1.046
+  miss_ns     frac=2     | WH/W 0.968  dir 4/5 | W-slot floor 1.064
+
+  scan16_ns   frac=0     | WH/W 1.049  dir 1/5 | W-slot floor 1.158
+  scan16_ns   frac=0.25  | WH/W 1.010  dir 2/5 | W-slot floor 1.172
+  scan16_ns   frac=0.5   | WH/W 1.090  dir 1/5 | W-slot floor 1.474
+  scan16_ns   frac=1     | WH/W 1.147  dir 2/5 | W-slot floor 1.225
+  scan16_ns   frac=2     | WH/W 1.044  dir 2/5 | W-slot floor 1.217
+
+  scan256_ns  frac=0     | WH/W 1.048  dir 0/5 | W-slot floor 1.201
+  scan256_ns  frac=0.25  | WH/W 0.954  dir 3/5 | W-slot floor 1.181
+  scan256_ns  frac=0.5   | WH/W 1.034  dir 1/5 | W-slot floor 1.433
+  scan256_ns  frac=1     | WH/W 0.979  dir 3/5 | W-slot floor 1.242
+  scan256_ns  frac=2     | WH/W 0.988  dir 3/5 | W-slot floor 1.370
+
+  scan4096_ns frac=0     | WH/W 1.045  dir 2/5 | W-slot floor 1.096
+  scan4096_ns frac=0.25  | WH/W 0.978  dir 4/5 | W-slot floor 1.116
+  scan4096_ns frac=0.5   | WH/W 1.029  dir 0/5 | W-slot floor 1.127
+  scan4096_ns frac=1     | WH/W 0.996  dir 3/5 | W-slot floor 1.160
+  scan4096_ns frac=2     | WH/W 0.989  dir 3/5 | W-slot floor 1.072
+
+  index_bytes frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=0.25  | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=0.5   | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=1     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=2     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+
+  overflow    frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=0.25  | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  overflow    frac=0.5   | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  overflow    frac=1     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  overflow    frac=2     | WH/W 0.998  dir 5/5 | W-slot floor 1.000
+
+ANALYZE_H_AB hab_ctx16_grow_tranco OK
+================================================================================================================
+hab_lits_grow_tranco  (backend/mode/corpus = ('LitsHpt', 'grow', 'tranco'))  processes=5 ['hp1', 'hp2', 'hp3', 'hp4', 'hp5']
+  seg_ns      frac=0     | WH/W 0.889  dir 3/5 | W-slot floor 1.323
+  seg_ns      frac=0.25  | WH/W 1.151  dir 0/5 | W-slot floor 1.036
+  seg_ns      frac=0.5   | WH/W 1.127  dir 0/5 | W-slot floor 1.053
+  seg_ns      frac=1     | WH/W 1.157  dir 0/5 | W-slot floor 1.054
+  seg_ns      frac=2     | WH/W 1.176  dir 0/5 | W-slot floor 1.035
+
+  cum_ns      frac=0     | WH/W 0.889  dir 3/5 | W-slot floor 1.323
+  cum_ns      frac=0.25  | WH/W 1.151  dir 0/5 | W-slot floor 1.036
+  cum_ns      frac=0.5   | WH/W 1.138  dir 0/5 | W-slot floor 1.023
+  cum_ns      frac=1     | WH/W 1.121  dir 0/5 | W-slot floor 1.038
+  cum_ns      frac=2     | WH/W 1.150  dir 0/5 | W-slot floor 1.033
+
+  hit_ns      frac=0     | WH/W 1.031  dir 1/5 | W-slot floor 1.053
+  hit_ns      frac=0.25  | WH/W 0.953  dir 5/5 | W-slot floor 1.083
+  hit_ns      frac=0.5   | WH/W 1.008  dir 2/5 | W-slot floor 1.042
+  hit_ns      frac=1     | WH/W 0.984  dir 4/5 | W-slot floor 1.076
+  hit_ns      frac=2     | WH/W 0.965  dir 3/5 | W-slot floor 1.074
+
+  miss_ns     frac=0     | WH/W 0.999  dir 3/5 | W-slot floor 1.069
+  miss_ns     frac=0.25  | WH/W 0.991  dir 4/5 | W-slot floor 1.083
+  miss_ns     frac=0.5   | WH/W 0.976  dir 4/5 | W-slot floor 1.066
+  miss_ns     frac=1     | WH/W 0.998  dir 4/5 | W-slot floor 1.068
+  miss_ns     frac=2     | WH/W 0.984  dir 3/5 | W-slot floor 1.041
+
+  scan16_ns   frac=0     | WH/W 1.043  dir 1/5 | W-slot floor 1.139
+  scan16_ns   frac=0.25  | WH/W 0.974  dir 3/5 | W-slot floor 1.158
+  scan16_ns   frac=0.5   | WH/W 0.978  dir 3/5 | W-slot floor 1.204
+  scan16_ns   frac=1     | WH/W 1.015  dir 2/5 | W-slot floor 1.232
+  scan16_ns   frac=2     | WH/W 1.037  dir 2/5 | W-slot floor 1.105
+
+  scan256_ns  frac=0     | WH/W 0.996  dir 3/5 | W-slot floor 1.184
+  scan256_ns  frac=0.25  | WH/W 1.024  dir 2/5 | W-slot floor 1.127
+  scan256_ns  frac=0.5   | WH/W 1.128  dir 1/5 | W-slot floor 1.132
+  scan256_ns  frac=1     | WH/W 0.869  dir 3/5 | W-slot floor 1.317
+  scan256_ns  frac=2     | WH/W 1.120  dir 1/5 | W-slot floor 1.108
+
+  scan4096_ns frac=0     | WH/W 1.038  dir 2/5 | W-slot floor 1.135
+  scan4096_ns frac=0.25  | WH/W 1.005  dir 2/5 | W-slot floor 1.109
+  scan4096_ns frac=0.5   | WH/W 1.042  dir 2/5 | W-slot floor 1.125
+  scan4096_ns frac=1     | WH/W 0.989  dir 3/5 | W-slot floor 1.083
+  scan4096_ns frac=2     | WH/W 0.997  dir 3/5 | W-slot floor 1.054
+
+  index_bytes frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  index_bytes frac=0.25  | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=0.5   | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=1     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  index_bytes frac=2     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+
+  overflow    frac=0     | WH/W 1.000  dir 0/5 | W-slot floor 1.000
+  overflow    frac=0.25  | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  overflow    frac=0.5   | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  overflow    frac=1     | WH/W 1.000  dir 5/5 | W-slot floor 1.000
+  overflow    frac=2     | WH/W 0.998  dir 5/5 | W-slot floor 1.000
+
+ANALYZE_H_AB hab_lits_grow_tranco OK
+### analyze rc=0

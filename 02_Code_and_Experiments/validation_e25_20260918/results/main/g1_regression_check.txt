@@ -1,0 +1,63 @@
+G1 regression check: every gate, before vs after the index.hpp edits
+================================================================================================
+
+## IDENTICAL after the edits (34)
+
+  check.out
+  check_c3.out
+  check_c3_mixed_same.out
+  check_c3_skew_same.out
+  check_c3_tranco_same.out
+  check_e11_locate.out
+  check_e15_plan.out
+  check_e16_probe.out
+  check_e19_reuse.out
+  check_e20_r2.out
+  check_e25_write.out
+  check_e25_write_mixed.out
+  check_e25_write_skew.out
+  check_e25_write_tranco.out
+  check_e26_c2.out
+  check_e26_c2_mixed.out
+  check_e26_c2_skew.out
+  check_e26_c2_tranco.out
+  check_e31.out
+  check_e31_mixed_same.out
+  check_e31_skew_same.out
+  check_e31_tranco_same.out
+  check_e8_hetero.out
+  check_e9_multiblock.out
+  check_migrate.out
+  check_migrate_mixed.out
+  check_migrate_skew.out
+  check_migrate_tranco.out
+  check_scan.out
+  check_scan_mixed.out
+  check_scan_skew.out
+  check_scan_tranco.out
+  san_check_g1_contract_mixed.out
+  san_check_g1_contract_skew.out
+
+## DIFFER (3)
+
+  check_g1_contract_mixed.out
+      record -1  <text>                     before=               after=text differs
+  check_g1_contract_skew.out
+      record -1  <text>                     before=               after=text differs
+  check_g1_contract_tranco.out
+      record -1  <text>                     before=               after=text differs
+
+## no pre-edit counterpart (12)
+
+  check_freeze_mixed.out
+  check_freeze_skew.out
+  check_freeze_tranco.out
+  check_overflow_store_mixed.out
+  check_overflow_store_skew.out
+  check_overflow_store_tranco.out
+  check_scan_contract_mixed.out
+  check_scan_contract_skew.out
+  check_scan_contract_tranco.out
+  check_tag_store_mixed.out
+  check_tag_store_skew.out
+  check_tag_store_tranco.out

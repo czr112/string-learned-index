@@ -1,0 +1,118 @@
+A3 entry diagnosis   run_tag=A3
+container share of maintenance, on the SHIPPED configuration; E34's O1 arm is NOT credited
+========================================================================================================
+
+########################################################################################################
+## long replacement to 200%
+########################################################################################################
+
+  mixed
+  all columns are %% of maintenance, and the instrument's own clock overhead
+  has been SUBTRACTED from each of them; the last column is what was subtracted.
+  phase        frac  maint_ms   ov_net    share   lookup   alloc insert*   erase   instr
+  short_term     25      18.6      5.0    27.2%      3.9%     8.1%    15.2%     0.0%     3.7%
+  short_term     50      47.8     14.5    30.4%      3.8%    10.7%    15.9%     0.0%     3.2%
+  short_term    100     121.9     35.1    28.8%      5.0%     9.3%    14.5%     0.0%     3.0%
+  past_one_full   200     308.7     98.5    31.9%      4.5%     7.7%    11.3%     8.4%     3.1%
+
+  phase        frac    ins_records        ins_bytes    ers_records        ers_bytes
+  short_term     25              0                0              0                0
+  short_term     50              0                0            105             5040
+  short_term    100              0                0            956            45888
+  past_one_full   200              0                0        9188217        441034416
+
+  skew
+  all columns are %% of maintenance, and the instrument's own clock overhead
+  has been SUBTRACTED from each of them; the last column is what was subtracted.
+  phase        frac  maint_ms   ov_net    share   lookup   alloc insert*   erase   instr
+  short_term     25      36.2      9.1    25.1%      7.7%     3.8%    13.5%     0.0%     3.3%
+  short_term     50      84.6     24.4    28.8%      6.5%     6.4%    15.9%     0.0%     2.9%
+  short_term    100     170.3     50.6    29.7%      6.4%     7.4%    15.9%     0.0%     2.8%
+  past_one_full   200     368.5    119.6    32.5%      5.3%     4.6%     9.6%    13.0%     3.1%
+
+  phase        frac    ins_records        ins_bytes    ers_records        ers_bytes
+  short_term     25              0                0            392            18816
+  short_term     50              0                0            826            39648
+  short_term    100              0                0           1535            73680
+  past_one_full   200              0                0       18482205        887145840
+
+  tranco
+  all columns are %% of maintenance, and the instrument's own clock overhead
+  has been SUBTRACTED from each of them; the last column is what was subtracted.
+  phase        frac  maint_ms   ov_net    share   lookup   alloc insert*   erase   instr
+  short_term     25      50.6      6.6    13.1%      3.8%     2.2%     7.0%     0.1%     2.6%
+  short_term     50     101.9     12.6    12.4%      3.8%     2.1%     6.3%     0.1%     2.5%
+  short_term    100     202.9     24.7    12.2%      3.8%     2.0%     6.3%     0.0%     2.5%
+  past_one_full   200     419.1     82.9    19.8%      4.2%     2.7%     9.4%     3.5%     3.7%
+
+  phase        frac    ins_records        ins_bytes    ers_records        ers_bytes
+  short_term     25            290            13920           1464            70272
+  short_term     50            558            26784           2246           107808
+  short_term    100           1258            60384           3654           175392
+  past_one_full   200           3333           159984        5158938        247629024
+
+########################################################################################################
+## pure insert
+########################################################################################################
+
+  mixed
+  all columns are %% of maintenance, and the instrument's own clock overhead
+  has been SUBTRACTED from each of them; the last column is what was subtracted.
+  phase        frac  maint_ms   ov_net    share   lookup   alloc insert*   erase   instr
+  short_term     25      13.8      5.8    42.3%     10.9%     7.9%    23.4%     0.0%     8.3%
+  short_term     50      31.1     12.8    41.1%     10.9%     7.8%    22.4%     0.0%     7.4%
+  short_term    100      76.0     27.4    36.0%     11.7%     6.3%    17.9%     0.0%     6.1%
+  past_one_full   200     265.0     53.7    20.3%      6.5%     3.5%    10.3%     0.0%     3.3%
+
+  phase        frac    ins_records        ins_bytes    ers_records        ers_bytes
+  short_term     25            238            11424              0                0
+  short_term     50          20593           988464              0                0
+  short_term    100         154127          7398096              0                0
+  past_one_full   200         841245         40379760              0                0
+
+  skew
+  all columns are %% of maintenance, and the instrument's own clock overhead
+  has been SUBTRACTED from each of them; the last column is what was subtracted.
+  phase        frac  maint_ms   ov_net    share   lookup   alloc insert*   erase   instr
+  short_term     25      26.9      8.1    30.1%     10.9%     5.0%    14.2%     0.0%     4.5%
+  short_term     50      50.5     15.5    30.7%     11.6%     4.9%    14.2%     0.0%     4.8%
+  short_term    100      96.2     30.6    31.8%     12.4%     5.0%    14.5%     0.0%     5.1%
+  past_one_full   200     318.0     64.6    20.3%      7.5%     3.3%     9.5%     0.0%     3.1%
+
+  phase        frac    ins_records        ins_bytes    ers_records        ers_bytes
+  short_term     25          65027          3121296              0                0
+  short_term     50         134594          6460512              0                0
+  short_term    100         245578         11787744              0                0
+  past_one_full   200        1146412         55027776              0                0
+
+  tranco
+  all columns are %% of maintenance, and the instrument's own clock overhead
+  has been SUBTRACTED from each of them; the last column is what was subtracted.
+  phase        frac  maint_ms   ov_net    share   lookup   alloc insert*   erase   instr
+  short_term     25      32.2     10.4    32.3%     10.1%     4.6%    17.6%     0.0%     8.8%
+  short_term     50      67.9     21.8    32.1%     10.0%     4.9%    17.2%     0.0%     8.3%
+  short_term    100     135.4     44.8    33.1%     10.3%     5.2%    17.6%     0.0%     8.3%
+  past_one_full   200     411.5     78.2    19.0%      5.8%     3.2%    10.0%     0.0%     5.0%
+
+  phase        frac    ins_records        ins_bytes    ers_records        ers_bytes
+  short_term     25          80924          3884352              0                0
+  short_term     50         132406          6355488              0                0
+  short_term    100         240492         11543616              0                0
+  past_one_full   200         247778         11893344              0                0
+
+########################################################################################################
+## VERDICT against the plan's rule: container > 20% of maintenance
+########################################################################################################
+
+  workload  kind     phase             frac      share verdict
+  replace   mixed    past_one_full     200%      31.9%  ABOVE 20%
+  replace   skew     past_one_full     200%      32.5%  ABOVE 20%
+  replace   tranco   past_one_full     200%      19.8%  below 20%
+  insert    mixed    past_one_full     200%      20.3%  ABOVE 20%
+  insert    skew     past_one_full     200%      20.3%  ABOVE 20%
+  insert    tranco   past_one_full     200%      19.0%  below 20%
+
+  cells above 20%: 4 of 6 (at the 200% checkpoint)
+
+  NOTE: this share is a CEILING on what any container change could save, not a
+  prediction. It is not a speedup and no speedup is estimated from it.

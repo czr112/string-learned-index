@@ -1,0 +1,379 @@
+VERDICT COUNTS over 60 cells (2 backends x 2 modes x 3 corpora x 5 checkpoints)
+  metric         pair     FASTER          SLOWER           UNRES           MIXED       
+  ----------------------------------------------------------------------------------------------------
+  seg_ns         W/B          42               0              18               0       
+  seg_ns         C/B           3               1              56               0       
+  seg_ns         WC/W          7               0              53               0       
+  seg_ns         WC/C         43               0              17               0       
+  seg_ns         WC/B         45               0              15               0       
+
+  cum_ns         W/B          44               0              16               0       
+  cum_ns         C/B           3               4              53               0       
+  cum_ns         WC/W          9               0              51               0       
+  cum_ns         WC/C         43               0              17               0       
+  cum_ns         WC/B         45               0              15               0       
+
+  hit_ns         W/B          34               1              25               0       
+  hit_ns         C/B          11               0              49               0       
+  hit_ns         WC/W         17               0              43               0       
+  hit_ns         WC/C         36               0              24               0       
+  hit_ns         WC/B         47               0              13               0       
+
+  miss_ns        W/B          37               0              23               0       
+  miss_ns        C/B          12               0              48               0       
+  miss_ns        WC/W         16               0              44               0       
+  miss_ns        WC/C         38               0              22               0       
+  miss_ns        WC/B         46               0              14               0       
+
+  scan16_ns      W/B           1               6              53               0       
+  scan16_ns      C/B           0               1              59               0       
+  scan16_ns      WC/W          1               0              59               0       
+  scan16_ns      WC/C          3               7              50               0       
+  scan16_ns      WC/B          3               7              50               0       
+
+  scan256_ns     W/B           4               3              53               0       
+  scan256_ns     C/B           0               0              60               0       
+  scan256_ns     WC/W          1               1              58               0       
+  scan256_ns     WC/C          8               8              44               0       
+  scan256_ns     WC/B          9              11              40               0       
+
+  scan4096_ns    W/B          10               4              46               0       
+  scan4096_ns    C/B           0               0              60               0       
+  scan4096_ns    WC/W          0               1              59               0       
+  scan4096_ns    WC/C         13               6              41               0       
+  scan4096_ns    WC/B         12               4              44               0       
+
+  index_bytes    W/B          48               0               0               0       
+  index_bytes    C/B           0              60               0               0       
+  index_bytes    WC/W          0              60               0               0       
+  index_bytes    WC/C         48               0               0               0       
+  index_bytes    WC/B         48              12               0               0       
+
+  overflow       W/B          48               0               0               0       
+  overflow       C/B           0               0               0               0       
+  overflow       WC/W          0               0               0               0       
+  overflow       WC/C         48               0               0               0       
+  overflow       WC/B         48               0               0               0       
+
+  routing_bytes  W/B           0               0               0               0       
+  routing_bytes  C/B           0               0               0               0       
+  routing_bytes  WC/W          0               0               0               0       
+  routing_bytes  WC/C          0               0               0               0       
+  routing_bytes  WC/B          0               0               0               0       
+
+========================================================================================================================
+DETAIL: pair medians at 200% by (backend, mode, corpus); cell = median direction noise-floor
+========================================================================================================================
+metric=seg_ns
+  backend   mode  corpus                           W/B                          C/B                         WC/W                         WC/C                         WC/B
+  Context16 same  mixed      0.532 5/5 FAST   1.04    0.984 3/5 UNRE   1.12    0.982 4/5 UNRE   1.10    0.524 5/5 FAST   1.05    0.518 5/5 FAST   1.11
+  Context16 same  skew       0.546 5/5 FAST   1.07    1.002 1/5 UNRE   1.01    1.001 2/5 UNRE   1.05    0.572 5/5 FAST   1.05    0.560 5/5 FAST   1.04
+  Context16 same  tranco     0.673 5/5 FAST   1.08    0.911 5/5 UNRE   1.14    0.830 5/5 UNRE   1.26    0.637 5/5 FAST   1.14    0.573 5/5 FAST   1.21
+  Context16 grow  mixed      0.625 5/5 FAST   1.11    0.996 3/5 UNRE   1.04    1.071 1/5 UNRE   1.12    0.651 5/5 FAST   1.13    0.655 5/5 FAST   1.11
+  Context16 grow  skew       0.632 5/5 FAST   1.07    0.984 3/5 UNRE   1.18    1.045 1/5 UNRE   1.07    0.628 5/5 FAST   1.16    0.654 5/5 FAST   1.10
+  Context16 grow  tranco     0.930 5/5 UNRE   1.07    0.946 5/5 FAST   1.05    0.893 5/5 FAST   1.03    0.908 5/5 FAST   1.05    0.848 5/5 FAST   1.08
+  LitsHpt   same  mixed      0.502 5/5 FAST   1.05    0.992 4/5 UNRE   1.08    0.982 4/5 UNRE   1.15    0.497 5/5 FAST   1.11    0.492 5/5 FAST   1.12
+  LitsHpt   same  skew       0.426 5/5 FAST   1.12    0.974 3/5 UNRE   1.07    1.034 1/5 UNRE   1.18    0.421 5/5 FAST   1.14    0.424 5/5 FAST   1.10
+  LitsHpt   same  tranco     0.623 5/5 FAST   1.07    0.913 5/5 UNRE   1.18    0.874 5/5 FAST   1.07    0.606 5/5 FAST   1.10    0.549 5/5 FAST   1.06
+  LitsHpt   grow  mixed      0.546 5/5 FAST   1.19    1.006 2/5 UNRE   1.10    1.019 1/5 UNRE   1.22    0.556 5/5 FAST   1.05    0.560 5/5 FAST   1.07
+  LitsHpt   grow  skew       0.494 5/5 FAST   1.03    1.013 1/5 UNRE   1.06    1.018 1/5 UNRE   1.09    0.502 5/5 FAST   1.05    0.499 5/5 FAST   1.08
+  LitsHpt   grow  tranco     0.903 5/5 FAST   1.08    0.910 5/5 FAST   1.04    0.887 5/5 FAST   1.07    0.870 5/5 FAST   1.02    0.790 5/5 FAST   1.04
+
+metric=hit_ns
+  backend   mode  corpus                           W/B                          C/B                         WC/W                         WC/C                         WC/B
+  Context16 same  mixed      0.504 5/5 FAST   1.04    0.973 4/5 UNRE   1.06    0.970 5/5 UNRE   1.11    0.492 5/5 FAST   1.05    0.477 5/5 FAST   1.06
+  Context16 same  skew       0.457 5/5 FAST   1.14    1.030 2/5 UNRE   1.13    1.030 1/5 UNRE   1.23    0.464 5/5 FAST   1.37    0.454 5/5 FAST   1.19
+  Context16 same  tranco     0.701 5/5 FAST   1.10    0.804 5/5 FAST   1.12    0.755 4/5 UNRE   1.63    0.639 5/5 FAST   1.28    0.517 5/5 FAST   1.46
+  Context16 grow  mixed      0.521 5/5 FAST   1.05    0.985 3/5 UNRE   1.19    1.041 2/5 UNRE   1.11    0.529 5/5 FAST   1.06    0.532 5/5 FAST   1.13
+  Context16 grow  skew       0.445 5/5 FAST   1.20    1.074 1/5 UNRE   1.22    1.061 0/5 UNRE   1.09    0.480 5/5 FAST   1.12    0.511 5/5 FAST   1.11
+  Context16 grow  tranco     0.668 5/5 FAST   1.24    0.877 5/5 UNRE   1.17    0.811 5/5 FAST   1.18    0.655 5/5 FAST   1.15    0.532 5/5 FAST   1.14
+  LitsHpt   same  mixed      0.497 5/5 FAST   1.23    1.063 0/5 UNRE   1.18    0.992 4/5 UNRE   1.26    0.480 5/5 FAST   1.19    0.478 5/5 FAST   1.09
+  LitsHpt   same  skew       0.460 5/5 FAST   1.06    0.984 3/5 UNRE   1.22    0.982 3/5 UNRE   1.17    0.459 5/5 FAST   1.36    0.473 5/5 FAST   1.11
+  LitsHpt   same  tranco     0.795 5/5 FAST   1.07    0.820 5/5 FAST   1.11    0.788 5/5 FAST   1.21    0.702 5/5 FAST   1.14    0.618 5/5 FAST   1.12
+  LitsHpt   grow  mixed      0.512 5/5 FAST   1.13    1.032 0/5 UNRE   1.07    1.046 2/5 UNRE   1.10    0.497 5/5 FAST   1.18    0.513 5/5 FAST   1.04
+  LitsHpt   grow  skew       0.505 5/5 FAST   1.09    1.028 1/5 UNRE   1.10    1.043 2/5 UNRE   1.13    0.536 5/5 FAST   1.18    0.543 5/5 FAST   1.08
+  LitsHpt   grow  tranco     0.748 5/5 UNRE   1.30    0.867 5/5 UNRE   1.25    0.788 5/5 FAST   1.06    0.669 5/5 FAST   1.12    0.567 5/5 FAST   1.23
+
+metric=miss_ns
+  backend   mode  corpus                           W/B                          C/B                         WC/W                         WC/C                         WC/B
+  Context16 same  mixed      0.471 5/5 FAST   1.05    0.995 3/5 UNRE   1.12    0.951 4/5 UNRE   1.11    0.455 5/5 FAST   1.20    0.460 5/5 FAST   1.10
+  Context16 same  skew       0.445 5/5 FAST   1.13    0.993 3/5 UNRE   1.15    1.057 2/5 UNRE   1.07    0.459 5/5 FAST   1.34    0.429 5/5 FAST   1.33
+  Context16 same  tranco     0.573 5/5 FAST   1.34    0.771 5/5 FAST   1.09    0.747 5/5 UNRE   1.59    0.524 5/5 FAST   1.16    0.437 5/5 FAST   1.22
+  Context16 grow  mixed      0.514 5/5 FAST   1.03    1.002 2/5 UNRE   1.05    0.993 4/5 UNRE   1.08    0.539 5/5 FAST   1.11    0.515 5/5 FAST   1.13
+  Context16 grow  skew       0.572 5/5 FAST   1.16    1.047 0/5 UNRE   1.10    0.984 3/5 UNRE   1.20    0.536 5/5 FAST   1.16    0.552 5/5 FAST   1.24
+  Context16 grow  tranco     0.676 5/5 FAST   1.11    0.907 5/5 FAST   1.05    0.854 5/5 UNRE   1.22    0.629 5/5 FAST   1.12    0.564 5/5 FAST   1.08
+  LitsHpt   same  mixed      0.454 5/5 FAST   1.25    1.017 2/5 UNRE   1.17    0.995 3/5 UNRE   1.27    0.461 5/5 FAST   1.12    0.447 5/5 FAST   1.18
+  LitsHpt   same  skew       0.445 5/5 FAST   1.17    0.988 3/5 UNRE   1.18    1.044 2/5 UNRE   1.29    0.468 5/5 FAST   1.19    0.462 5/5 FAST   1.12
+  LitsHpt   same  tranco     0.703 5/5 FAST   1.14    0.810 5/5 UNRE   1.26    0.717 5/5 FAST   1.05    0.648 5/5 FAST   1.16    0.506 5/5 FAST   1.25
+  LitsHpt   grow  mixed      0.547 5/5 FAST   1.19    1.026 1/5 UNRE   1.08    1.012 2/5 UNRE   1.10    0.532 5/5 FAST   1.13    0.545 5/5 FAST   1.11
+  LitsHpt   grow  skew       0.639 5/5 FAST   1.13    1.015 2/5 UNRE   1.12    1.020 2/5 UNRE   1.18    0.645 5/5 FAST   1.12    0.672 5/5 FAST   1.09
+  LitsHpt   grow  tranco     0.697 5/5 FAST   1.05    0.817 5/5 FAST   1.13    0.797 5/5 FAST   1.09    0.680 5/5 FAST   1.17    0.551 5/5 FAST   1.09
+
+metric=scan4096_ns
+  backend   mode  corpus                           W/B                          C/B                         WC/W                         WC/C                         WC/B
+  Context16 same  mixed      0.853 5/5 FAST   1.08    0.952 3/5 UNRE   1.19    0.996 3/5 UNRE   1.16    0.893 5/5 FAST   1.07    0.851 5/5 FAST   1.13
+  Context16 same  skew       0.884 5/5 UNRE   1.23    1.031 2/5 UNRE   1.09    1.056 1/5 UNRE   1.20    0.908 5/5 UNRE   1.17    0.933 4/5 UNRE   1.23
+  Context16 same  tranco     0.606 5/5 FAST   1.12    0.981 3/5 UNRE   1.23    1.026 2/5 UNRE   1.29    0.576 5/5 FAST   1.37    0.562 5/5 FAST   1.26
+  Context16 grow  mixed      0.805 5/5 UNRE   1.25    1.053 0/5 UNRE   1.10    1.016 2/5 UNRE   1.18    0.830 5/5 UNRE   1.30    0.859 5/5 UNRE   1.15
+  Context16 grow  skew       0.961 4/5 UNRE   1.18    0.980 3/5 UNRE   1.09    1.040 2/5 UNRE   1.12    0.987 4/5 UNRE   1.12    0.994 3/5 UNRE   1.17
+  Context16 grow  tranco     1.562 0/5 SLOW   1.12    1.023 2/5 UNRE   1.28    1.079 1/5 UNRE   1.19    1.454 0/5 SLOW   1.40    1.558 0/5 SLOW   1.40
+  LitsHpt   same  mixed      0.960 4/5 UNRE   1.18    1.042 1/5 UNRE   1.16    1.021 2/5 UNRE   1.19    0.888 4/5 UNRE   1.20    0.945 4/5 UNRE   1.14
+  LitsHpt   same  skew       0.835 5/5 UNRE   1.36    0.999 3/5 UNRE   1.22    1.021 2/5 UNRE   1.20    0.903 5/5 UNRE   1.20    0.836 5/5 FAST   1.11
+  LitsHpt   same  tranco     0.728 5/5 UNRE   1.31    0.963 3/5 UNRE   1.26    1.063 1/5 UNRE   1.25    0.850 5/5 UNRE   1.45    0.747 5/5 UNRE   1.42
+  LitsHpt   grow  mixed      0.727 5/5 FAST   1.25    1.009 2/5 UNRE   1.19    0.980 3/5 UNRE   1.31    0.722 5/5 FAST   1.17    0.735 5/5 FAST   1.10
+  LitsHpt   grow  skew       0.981 4/5 UNRE   1.16    0.980 4/5 UNRE   1.24    1.025 1/5 UNRE   1.11    0.973 3/5 UNRE   1.16    0.935 4/5 UNRE   1.18
+  LitsHpt   grow  tranco     1.408 0/5 SLOW   1.14    1.010 1/5 UNRE   1.23    0.988 3/5 UNRE   1.12    1.407 0/5 SLOW   1.15    1.390 0/5 SLOW   1.11
+
+metric=index_bytes
+  backend   mode  corpus                           W/B                          C/B                         WC/W                         WC/C                         WC/B
+  Context16 same  mixed      0.556 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.556 5/5 FAST   1.00    0.556 5/5 FAST   1.00
+  Context16 same  skew       0.550 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.550 5/5 FAST   1.00    0.550 5/5 FAST   1.00
+  Context16 same  tranco     0.700 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.700 5/5 FAST   1.00    0.700 5/5 FAST   1.00
+  Context16 grow  mixed      0.558 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.558 5/5 FAST   1.00    0.558 5/5 FAST   1.00
+  Context16 grow  skew       0.579 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.579 5/5 FAST   1.00    0.579 5/5 FAST   1.00
+  Context16 grow  tranco     0.687 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.687 5/5 FAST   1.00    0.687 5/5 FAST   1.00
+  LitsHpt   same  mixed      0.573 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.573 5/5 FAST   1.00    0.573 5/5 FAST   1.00
+  LitsHpt   same  skew       0.550 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.550 5/5 FAST   1.00    0.550 5/5 FAST   1.00
+  LitsHpt   same  tranco     0.784 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.784 5/5 FAST   1.00    0.784 5/5 FAST   1.00
+  LitsHpt   grow  mixed      0.574 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.574 5/5 FAST   1.00    0.574 5/5 FAST   1.00
+  LitsHpt   grow  skew       0.578 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.578 5/5 FAST   1.00    0.578 5/5 FAST   1.00
+  LitsHpt   grow  tranco     0.746 5/5 FAST   1.00    1.000 0/5 SLOW   1.00    1.000 0/5 SLOW   1.00    0.746 5/5 FAST   1.00    0.746 5/5 FAST   1.00
+
+metric=overflow
+  backend   mode  corpus                           W/B                          C/B                         WC/W                         WC/C                         WC/B
+  Context16 same  mixed      0.006 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.006 5/5 FAST   1.00    0.006 5/5 FAST   1.00
+  Context16 same  skew       0.007 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.007 5/5 FAST   1.00    0.007 5/5 FAST   1.00
+  Context16 same  tranco     0.015 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.015 5/5 FAST   1.00    0.015 5/5 FAST   1.00
+  Context16 grow  mixed      0.044 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.044 5/5 FAST   1.00    0.044 5/5 FAST   1.00
+  Context16 grow  skew       0.108 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.108 5/5 FAST   1.00    0.108 5/5 FAST   1.00
+  Context16 grow  tranco     0.240 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.240 5/5 FAST   1.00    0.240 5/5 FAST   1.00
+  LitsHpt   same  mixed      0.018 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.018 5/5 FAST   1.00    0.018 5/5 FAST   1.00
+  LitsHpt   same  skew       0.009 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.009 5/5 FAST   1.00    0.009 5/5 FAST   1.00
+  LitsHpt   same  tranco     0.019 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.019 5/5 FAST   1.00    0.019 5/5 FAST   1.00
+  LitsHpt   grow  mixed      0.057 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.057 5/5 FAST   1.00    0.057 5/5 FAST   1.00
+  LitsHpt   grow  skew       0.107 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.107 5/5 FAST   1.00    0.107 5/5 FAST   1.00
+  LitsHpt   grow  tranco     0.221 5/5 FAST   1.00    1.000 0/5 IDEN   1.00    1.000 0/5 IDEN   1.00    0.221 5/5 FAST   1.00    0.221 5/5 FAST   1.00
+
+========================================================================================================================
+HIT SERIES: Context16 same, three corpora, all checkpoints (W/B, C/B, WC/W, WC/B)
+========================================================================================================================
+  mixed   frac=0.00 | W/B 0.972 4/5 UNRE   C/B 0.961 4/5 UNRE   WC/W 0.983 4/5 UNRE   WC/B 0.966 5/5 UNRE
+  mixed   frac=0.25 | W/B 0.992 3/5 UNRE   C/B 0.968 3/5 UNRE   WC/W 0.946 3/5 UNRE   WC/B 0.859 5/5 UNRE
+  mixed   frac=0.50 | W/B 0.850 5/5 UNRE   C/B 1.021 1/5 UNRE   WC/W 0.982 4/5 UNRE   WC/B 0.768 5/5 FAST
+  mixed   frac=1.00 | W/B 0.565 5/5 FAST   C/B 0.997 3/5 UNRE   WC/W 0.972 3/5 UNRE   WC/B 0.540 5/5 FAST
+  mixed   frac=2.00 | W/B 0.504 5/5 FAST   C/B 0.973 4/5 UNRE   WC/W 0.970 5/5 UNRE   WC/B 0.477 5/5 FAST
+
+  skew    frac=0.00 | W/B 1.067 2/5 UNRE   C/B 1.012 1/5 UNRE   WC/W 0.986 3/5 UNRE   WC/B 1.012 0/5 UNRE
+  skew    frac=0.25 | W/B 0.740 5/5 FAST   C/B 1.056 1/5 UNRE   WC/W 1.102 1/5 UNRE   WC/B 0.792 5/5 FAST
+  skew    frac=0.50 | W/B 0.605 5/5 FAST   C/B 1.005 2/5 UNRE   WC/W 1.003 1/5 UNRE   WC/B 0.615 5/5 FAST
+  skew    frac=1.00 | W/B 0.445 5/5 FAST   C/B 1.016 1/5 UNRE   WC/W 1.029 1/5 UNRE   WC/B 0.456 5/5 FAST
+  skew    frac=2.00 | W/B 0.457 5/5 FAST   C/B 1.030 2/5 UNRE   WC/W 1.030 1/5 UNRE   WC/B 0.454 5/5 FAST
+
+  tranco  frac=0.00 | W/B 1.024 1/5 UNRE   C/B 0.764 5/5 UNRE   WC/W 0.751 5/5 FAST   WC/B 0.782 5/5 FAST
+  tranco  frac=0.25 | W/B 0.886 4/5 UNRE   C/B 0.819 5/5 UNRE   WC/W 0.755 5/5 UNRE   WC/B 0.703 5/5 FAST
+  tranco  frac=0.50 | W/B 0.873 4/5 UNRE   C/B 0.773 5/5 FAST   WC/W 0.750 5/5 FAST   WC/B 0.668 5/5 FAST
+  tranco  frac=1.00 | W/B 0.762 5/5 FAST   C/B 0.822 5/5 FAST   WC/W 0.781 5/5 UNRE   WC/B 0.591 5/5 FAST
+  tranco  frac=2.00 | W/B 0.701 5/5 FAST   C/B 0.804 5/5 FAST   WC/W 0.755 4/5 UNRE   WC/B 0.517 5/5 FAST
+
+========================================================================================================================
+EVERY RESOLVABLE REGRESSION (verdict SLOWER), all metrics
+========================================================================================================================
+  seg_ns       C/B   LitsHpt   grow  skew    frac=0.25  med=1.042 dir=0/5  noise=1.02
+  cum_ns       C/B   LitsHpt   grow  skew    frac=0.25  med=1.042 dir=0/5  noise=1.02
+  cum_ns       C/B   LitsHpt   grow  skew    frac=0.50  med=1.036 dir=0/5  noise=1.02
+  cum_ns       C/B   LitsHpt   grow  skew    frac=1.00  med=1.033 dir=0/5  noise=1.02
+  cum_ns       C/B   LitsHpt   grow  skew    frac=2.00  med=1.025 dir=0/5  noise=1.00
+  hit_ns       W/B   Context16 grow  skew    frac=0.00  med=1.021 dir=0/5  noise=1.01
+  scan16_ns    W/B   Context16 same  skew    frac=0.50  med=1.623 dir=0/5  noise=1.16
+  scan16_ns    W/B   Context16 same  skew    frac=1.00  med=1.726 dir=0/5  noise=1.21
+  scan16_ns    W/B   Context16 same  skew    frac=2.00  med=1.566 dir=0/5  noise=1.48
+  scan16_ns    W/B   Context16 grow  tranco  frac=2.00  med=2.331 dir=0/5  noise=1.27
+  scan16_ns    W/B   LitsHpt   same  mixed   frac=0.25  med=5.640 dir=0/5  noise=1.36
+  scan16_ns    W/B   LitsHpt   same  skew    frac=2.00  med=1.462 dir=0/5  noise=1.43
+  scan16_ns    C/B   Context16 same  mixed   frac=0.00  med=1.149 dir=0/5  noise=1.14
+  scan16_ns    WC/C  Context16 same  skew    frac=0.50  med=1.795 dir=0/5  noise=1.72
+  scan16_ns    WC/C  Context16 same  skew    frac=1.00  med=1.654 dir=0/5  noise=1.51
+  scan16_ns    WC/C  Context16 grow  tranco  frac=2.00  med=2.744 dir=0/5  noise=1.54
+  scan16_ns    WC/C  LitsHpt   same  mixed   frac=0.25  med=6.948 dir=0/5  noise=1.76
+  scan16_ns    WC/C  LitsHpt   same  skew    frac=0.50  med=1.408 dir=0/5  noise=1.39
+  scan16_ns    WC/C  LitsHpt   same  skew    frac=2.00  med=1.929 dir=0/5  noise=1.54
+  scan16_ns    WC/C  LitsHpt   grow  mixed   frac=1.00  med=1.623 dir=0/5  noise=1.29
+  scan16_ns    WC/B  Context16 same  skew    frac=0.50  med=1.837 dir=0/5  noise=1.40
+  scan16_ns    WC/B  Context16 same  skew    frac=1.00  med=1.726 dir=0/5  noise=1.54
+  scan16_ns    WC/B  Context16 grow  tranco  frac=2.00  med=2.466 dir=0/5  noise=1.32
+  scan16_ns    WC/B  LitsHpt   same  mixed   frac=0.25  med=7.216 dir=0/5  noise=2.02
+  scan16_ns    WC/B  LitsHpt   same  skew    frac=0.50  med=1.355 dir=0/5  noise=1.30
+  scan16_ns    WC/B  LitsHpt   same  skew    frac=2.00  med=1.879 dir=0/5  noise=1.37
+  scan16_ns    WC/B  LitsHpt   grow  mixed   frac=1.00  med=1.575 dir=0/5  noise=1.50
+  scan256_ns   W/B   Context16 same  skew    frac=0.25  med=1.563 dir=0/5  noise=1.31
+  scan256_ns   W/B   Context16 grow  tranco  frac=2.00  med=3.148 dir=0/5  noise=1.22
+  scan256_ns   W/B   LitsHpt   grow  tranco  frac=2.00  med=3.430 dir=0/5  noise=1.34
+  scan256_ns   WC/W  LitsHpt   grow  mixed   frac=0.50  med=1.180 dir=0/5  noise=1.18
+  scan256_ns   WC/C  Context16 same  mixed   frac=2.00  med=1.498 dir=0/5  noise=1.18
+  scan256_ns   WC/C  Context16 same  skew    frac=0.25  med=1.716 dir=0/5  noise=1.24
+  scan256_ns   WC/C  Context16 grow  mixed   frac=2.00  med=1.625 dir=0/5  noise=1.58
+  scan256_ns   WC/C  Context16 grow  tranco  frac=2.00  med=4.249 dir=0/5  noise=1.61
+  scan256_ns   WC/C  LitsHpt   same  mixed   frac=2.00  med=1.321 dir=0/5  noise=1.30
+  scan256_ns   WC/C  LitsHpt   grow  mixed   frac=2.00  med=1.919 dir=0/5  noise=1.42
+  scan256_ns   WC/C  LitsHpt   grow  skew    frac=0.50  med=1.300 dir=0/5  noise=1.29
+  scan256_ns   WC/C  LitsHpt   grow  tranco  frac=2.00  med=3.184 dir=0/5  noise=1.32
+  scan256_ns   WC/B  Context16 same  mixed   frac=0.50  med=1.510 dir=0/5  noise=1.24
+  scan256_ns   WC/B  Context16 same  mixed   frac=2.00  med=1.352 dir=0/5  noise=1.25
+  scan256_ns   WC/B  Context16 same  skew    frac=0.25  med=1.703 dir=0/5  noise=1.34
+  scan256_ns   WC/B  Context16 grow  mixed   frac=2.00  med=1.596 dir=0/5  noise=1.53
+  scan256_ns   WC/B  Context16 grow  skew    frac=1.00  med=1.295 dir=0/5  noise=1.23
+  scan256_ns   WC/B  Context16 grow  tranco  frac=1.00  med=1.508 dir=0/5  noise=1.43
+  scan256_ns   WC/B  Context16 grow  tranco  frac=2.00  med=3.905 dir=0/5  noise=1.21
+  scan256_ns   WC/B  LitsHpt   same  skew    frac=0.25  med=1.491 dir=0/5  noise=1.23
+  scan256_ns   WC/B  LitsHpt   grow  mixed   frac=0.50  med=1.343 dir=0/5  noise=1.22
+  scan256_ns   WC/B  LitsHpt   grow  mixed   frac=2.00  med=2.050 dir=0/5  noise=1.62
+  scan256_ns   WC/B  LitsHpt   grow  tranco  frac=2.00  med=3.163 dir=0/5  noise=1.46
+  scan4096_ns  W/B   Context16 grow  tranco  frac=1.00  med=1.405 dir=0/5  noise=1.22
+  scan4096_ns  W/B   Context16 grow  tranco  frac=2.00  med=1.562 dir=0/5  noise=1.12
+  scan4096_ns  W/B   LitsHpt   grow  tranco  frac=1.00  med=1.240 dir=0/5  noise=1.17
+  scan4096_ns  W/B   LitsHpt   grow  tranco  frac=2.00  med=1.408 dir=0/5  noise=1.14
+  scan4096_ns  WC/W  Context16 same  skew    frac=0.25  med=1.090 dir=0/5  noise=1.08
+  scan4096_ns  WC/C  Context16 same  mixed   frac=0.00  med=1.086 dir=0/5  noise=1.08
+  scan4096_ns  WC/C  Context16 same  skew    frac=0.00  med=1.076 dir=0/5  noise=1.07
+  scan4096_ns  WC/C  Context16 grow  tranco  frac=1.00  med=1.352 dir=0/5  noise=1.15
+  scan4096_ns  WC/C  Context16 grow  tranco  frac=2.00  med=1.454 dir=0/5  noise=1.40
+  scan4096_ns  WC/C  LitsHpt   grow  tranco  frac=1.00  med=1.153 dir=0/5  noise=1.13
+  scan4096_ns  WC/C  LitsHpt   grow  tranco  frac=2.00  med=1.407 dir=0/5  noise=1.15
+  scan4096_ns  WC/B  Context16 grow  tranco  frac=1.00  med=1.370 dir=0/5  noise=1.12
+  scan4096_ns  WC/B  Context16 grow  tranco  frac=2.00  med=1.558 dir=0/5  noise=1.40
+  scan4096_ns  WC/B  LitsHpt   grow  tranco  frac=1.00  med=1.189 dir=0/5  noise=1.12
+  scan4096_ns  WC/B  LitsHpt   grow  tranco  frac=2.00  med=1.390 dir=0/5  noise=1.11
+  index_bytes  C/B   Context16 same  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 same  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   Context16 grow  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   same  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  C/B   LitsHpt   grow  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 same  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  Context16 grow  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   same  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  mixed   frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  mixed   frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  mixed   frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  mixed   frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  skew    frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  skew    frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  skew    frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  skew    frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  tranco  frac=0.25  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  tranco  frac=0.50  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  tranco  frac=1.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/W  LitsHpt   grow  tranco  frac=2.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  Context16 same  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  Context16 same  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  Context16 same  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  Context16 grow  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  Context16 grow  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  Context16 grow  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  LitsHpt   same  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  LitsHpt   same  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  LitsHpt   same  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  LitsHpt   grow  mixed   frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  LitsHpt   grow  skew    frac=0.00  med=1.000 dir=0/5  noise=1.00
+  index_bytes  WC/B  LitsHpt   grow  tranco  frac=0.00  med=1.000 dir=0/5  noise=1.00
+
+  197 resolvable regression cell(s) in total

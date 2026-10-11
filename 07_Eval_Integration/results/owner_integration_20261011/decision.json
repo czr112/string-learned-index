@@ -1,0 +1,61 @@
+{
+  "analyzer_selftest_rejections": [
+    "missing cell",
+    "missing phase",
+    "missing pairing",
+    "duplicate pairing"
+  ],
+  "off_unchanged": true,
+  "switch_tables_registered": true,
+  "space_ok": true,
+  "control_ok": true,
+  "regressions": {
+    "mixed/context16": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "mixed/lits": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "skew/context16": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "skew/lits": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "tranco/context16": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "tranco/lits": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    }
+  },
+  "any_regression": false,
+  "savings": {
+    "mixed/context16": 0,
+    "mixed/lits": 1007232,
+    "skew/context16": 0,
+    "skew/lits": 1056768,
+    "tranco/context16": 0,
+    "tranco/lits": 2113536
+  },
+  "default_flipped": false,
+  "integrated": true
+}

@@ -1,0 +1,124 @@
+================================================================================================================
+BRANCH C ENTRY DIAGNOSIS
+  Plan measure  = Sigma(cap - size)/Sigma cap   (what the candidate would reclaim)
+  Term A        = cap - high_water              (capacity never used by this container)
+  Term B        = high_water - size             (capacity used before, unused now)
+  A is NOT 'the unreclaimable part'; both are above the live count. The split measures
+  DURABILITY: A is headroom never touched, B is headroom touched and possibly wanted again.
+================================================================================================================
+
+W1  LONG REPLACEMENT (live count constant)
+    Kept to reproduce E24's caliber. Note: a constant TOTAL says nothing about any single
+    container, so this arm's small Term B is a measurement, not an identity.
+
+    kind     phase          frac containers  plan A+B     A/cap     B/cap      SigA      SigB   B bytes
+    --------------------------------------------------------------------------------------------------------
+    mixed    before         0.00      219    21.28%    21.28%     0.00%       196         0         0
+    mixed    short_term     0.25     2898    27.51%    27.51%     0.00%     14930         0         0
+    mixed    short_term     0.50     8860    26.75%    26.75%     0.00%     31119         0         0
+    mixed    short_term     1.00    14273    27.41%    27.41%     0.00%     76724         0         0
+    mixed    past_one_full  2.00    14838    28.76%    28.76%     0.00%    104797        17       816
+    skew     before         0.00      641    18.40%    18.40%     0.00%       391         0         0
+    skew     short_term     0.25     1073    29.58%    29.58%     0.00%     25955         0         0
+    skew     short_term     0.50     1552    29.90%    29.90%     0.00%     52870         0         0
+    skew     short_term     1.00     2985    30.99%    30.99%     0.00%    112086         0         0
+    skew     past_one_full  2.00     3062    30.96%    30.95%     0.01%    114836        41      1968
+    tranco   before         0.00      614    18.32%    18.32%     0.00%       388         0         0
+    tranco   short_term     0.25     1114    29.69%    29.50%     0.19%     14117        90      4320
+    tranco   short_term     0.50     1699    29.71%    29.54%     0.17%     27184       153      7344
+    tranco   short_term     1.00     2865    29.52%    29.38%     0.14%     52882       259     12432
+    tranco   past_one_full  2.00     5142    30.71%    30.38%     0.33%     85619       939     45072
+
+W2  NET DECLINE (stride erasure 4/2/1 + 1 insert per 4 erasures)
+    Deepens the decline so Term B is exercised rather than incidental.
+
+    kind     phase          frac containers  plan A+B     A/cap     B/cap      SigA      SigB   B bytes
+    --------------------------------------------------------------------------------------------------------
+    mixed    past_half      0.25     4678    25.71%    25.09%     0.63%     10137       254     12192
+    mixed    short_term     0.50      732    27.77%    27.08%     0.69%      4712       120      5760
+    mixed    short_term     0.75      493    29.48%    28.07%     1.41%      2570       129      6192
+    mixed    before         1.00      219    21.28%    21.28%     0.00%       196         0         0
+    skew     past_half      0.25     2550    29.70%    28.95%     0.75%     23913       617     29616
+    skew     short_term     0.50     2100    28.41%    27.65%     0.76%     11140       305     14640
+    skew     short_term     0.75     1447    29.22%    27.68%     1.54%      5716       318     15264
+    skew     before         1.00      641    18.40%    18.40%     0.00%       391         0         0
+    tranco   past_half      0.25     1752    29.87%    27.24%     2.63%      8191       792     38016
+    tranco   short_term     0.50     1602    27.34%    24.64%     2.70%      3623       397     19056
+    tranco   short_term     0.75     1339    28.22%    22.95%     5.26%      1714       393     18864
+    tranco   before         1.00      614    18.32%    18.32%     0.00%       388         0         0
+
+================================================================================================================
+DURABILITY -- does the container come back for the capacity?
+================================================================================================================
+
+    kind     arm         drops    regrowth regrow/drop   reading
+    ------------------------------------------------------------------------------------------------
+    mixed    W1         203914      199489      97.83%   container re-consumes the share
+    mixed    W2            725         334      46.07%   container re-consumes the share
+    skew     W1         251382      243873      97.01%   container re-consumes the share
+    skew     W2           1734         858      49.48%   container re-consumes the share
+    tranco   W1         128602      113342      88.13%   container re-consumes the share
+    tranco   W2           1729         723      41.82%   container re-consumes the share
+
+================================================================================================================
+DECISION
+================================================================================================================
+
+    Two halves, and the round had to report both because they disagree:
+
+      (1) IS THERE ANYTHING TO RECLAIM?  The plan's own measure answers yes, on every
+          corpus -- 25.71%-29.87% of container capacity sits above the live count.
+      (2) IS THE RECLAIM DURABLE?  The re-growth counters answer no -- containers return
+          to their own peak after 41.82%-49.48% of declines in W2 and 88.13%-97.83% in W1.
+
+    kind        plan A+B      A/cap       B/cap   regrow/drop   disposition
+    ----------------------------------------------------------------------------------------------------
+    mixed         29.48%     28.07% 0.63%-1.41%        46.07%   does not enter / B negligible
+    skew          29.22%     27.68% 0.75%-1.54%        49.48%   does not enter / B negligible
+    tranco        28.22%     22.95% 2.63%-5.26%        41.82%   does not enter / B present
+
+    VERDICT: does NOT enter. The reason is recorded as the DURABILITY of the
+    reclaim, NOT as an absence of one. The earlier draft's verdict -- 'nothing to
+    reclaim, close as a negative result' -- is refuted by this run's own data: the
+    plan's measure is 25.71%-29.87% on every corpus, and E24's 22%-30% is that same quantity.
+    What E24's wording ('records decreased but the container still retains') does not
+    survive is the inference: the same ~21% appears at a checkpoint where NOT ONE
+    container has declined (mixed W1 'before': plan measure 21.28%, Sigma B = 0).
+
+    Recorded separately rather than folded in, because the corpora disagree by 3-8x:
+      tranco's Term B is the round's largest (see table) and over the tranco containers
+      that actually declined it is larger still -- it is the one place where a
+      shrink target below the historical peak would collect anything, and it is the
+      only corpus whose B/cap trips the '5%' label threshold above.
+
+    NOT MEASURED, and required before this candidate could be reopened on the
+    shrink-to-peak policy: the rate at which a container sets a NEW high. Shrinking to
+    the peak collects Term A (~29%) and only costs a reallocation when the container
+    exceeds its all-time maximum -- an event this round did not instrument. The
+    re-growth counter measures the return to an OLD peak, which under that policy is
+    free. So this round rules out the reclaim as non-durable for the live-count
+    target and leaves the peak target explicitly open rather than closed.
+
+    Per-container corroboration (NOT the criterion -- a weighted ratio over a skewed
+    population can be carried by a few large containers):
+
+    kind     phase          frac  medB/cap  p90B/cap      nB>0  declined     maxB
+    ------------------------------------------------------------------------------------
+    mixed    before         1.00     0.00%     0.00%         0         0        0
+    mixed    short_term     0.75     0.00%     3.12%       104       104        3
+    mixed    short_term     0.50     0.00%     1.56%        97        97        3
+    mixed    past_half      0.25     0.00%     0.00%       150       150        6
+    skew     before         1.00     0.00%     0.00%         0         0        0
+    skew     short_term     0.75     0.00%     6.25%       271       271        4
+    skew     short_term     0.50     0.00%     1.56%       260       260        4
+    skew     past_half      0.25     0.00%     1.56%       396       396        8
+    tranco   before         1.00     0.00%     0.00%         0         0        0
+    tranco   short_term     0.75     0.00%    12.50%       300       300        7
+    tranco   short_term     0.50     0.00%     6.25%       295       295        6
+    tranco   past_half      0.25     0.00%     6.25%       432       432       11
+
+    The median container reclaims 0.00% at every checkpoint; the weighted ratios
+    above are carried by a tail. And among containers that DID decline the mean size
+    is still 0.81-0.97 of that container's own peak, with a maximum single-container
+    Term B of 3-11 records -- so the reclaim is shallow as well as rare.
+

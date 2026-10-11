@@ -1,0 +1,20 @@
+### check_block_rank mixed 131072 
+{"kind":"mixed","n":131072,"regions":64,"rank_regions_fitted":64,"rank_regions_boundary":0,"rank_keys_fitted":131072,"rank_segments":436,"checksum_ref":14004954854973824228,"checksum_block":6790703351951297914,"ref_probes":1467679,"block_probes":2226426,"ref_cmps":170119,"block_cmps":193474,"ref_overflow_entered":2547,"block_overflow_entered":4828,"groups":21251,"group_load_min":0,"group_load_max":1366,"group_load_avg":6.1678,"overflow_records":4828}
+checks=324 failures=0
+rc=0
+### check_block_rank skew 131072 
+{"kind":"skew","n":131072,"regions":64,"rank_regions_fitted":64,"rank_regions_boundary":0,"rank_keys_fitted":131072,"rank_segments":150,"checksum_ref":7136238917750603242,"checksum_block":8666592465303760132,"ref_probes":2173636,"block_probes":8753277,"ref_cmps":205280,"block_cmps":438279,"ref_overflow_entered":5033,"block_overflow_entered":6577,"groups":20163,"group_load_min":0,"group_load_max":1431,"group_load_avg":6.50062,"overflow_records":6577}
+checks=315 failures=0
+rc=0
+### check_block_rank tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv
+{"kind":"tranco","n":131072,"regions":64,"rank_regions_fitted":64,"rank_regions_boundary":0,"rank_keys_fitted":131072,"rank_segments":511,"checksum_ref":16697048725911744996,"checksum_block":8245850232046782552,"ref_probes":327879,"block_probes":654006,"ref_cmps":132475,"block_cmps":134157,"ref_overflow_entered":0,"block_overflow_entered":0,"groups":10944,"group_load_min":0,"group_load_max":564,"group_load_avg":11.9766,"overflow_records":0}
+checks=325 failures=0
+rc=0
+OK san_check_block_rank build_id=1791712736842558849 exe=55ab6ff45325eb56…
+### san build rc=0
+{"kind":"mixed","n":8192,"regions":4,"rank_regions_fitted":4,"rank_regions_boundary":0,"rank_keys_fitted":8192,"rank_segments":14,"checksum_ref":13835528219701289225,"checksum_block":15617153804713645322,"ref_probes":545560,"block_probes":894976,"ref_cmps":19382,"block_cmps":27878,"ref_overflow_entered":392,"block_overflow_entered":539,"groups":1736,"group_load_min":0,"group_load_max":1878,"group_load_avg":4.71889,"overflow_records":539}
+checks=204 failures=0
+### san run mixed 8192 rc=0
+{"kind":"skew","n":2048,"regions":1,"rank_regions_fitted":1,"rank_regions_boundary":0,"rank_keys_fitted":2048,"rank_segments":2,"checksum_ref":10763304861343971158,"checksum_block":8798478627556452812,"ref_probes":8797,"block_probes":355522,"ref_cmps":2202,"block_cmps":10363,"ref_overflow_entered":62,"block_overflow_entered":195,"groups":493,"group_load_min":0,"group_load_max":1887,"group_load_avg":4.15416,"overflow_records":195}
+checks=199 failures=0
+### san run skew 2048 rc=0

@@ -1,0 +1,2 @@
+--- clean / same ---
+bench_lits_adapter mixed same reps=4 tag=P1 rc=0 wall=18s

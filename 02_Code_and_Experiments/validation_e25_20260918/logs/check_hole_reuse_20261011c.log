@@ -1,0 +1,13 @@
+OK check_hole_reuse build_id=1791652743336304724 exe=dc480ecfa09bf95f…
+OK san_check_hole_reuse build_id=1791652757019551926 exe=4af27e9c28f9586c…
+  H placed 1792 of 42639 attempts (105978 B); repacks 23834 -> 22895, moved bytes 7540544 -> 7186960
+{"kind":"mixed","backend":"ctx16","keys":131072,"final_size":131072,"regions":64,"h_attempts":42639,"h_placed":1792,"h_absent":40847,"h_skipped_lt2":0,"h_skipped_wide":0,"h_bytes":105978,"w_reclaims":23834,"h_reclaims":22895,"w_moved_bytes":7540544,"h_moved_bytes":7186960,"checks":2284,"failures":0}
+2284/2284 checks passed
+  H placed 1112 of 39971 attempts (81917 B); repacks 21924 -> 21296, moved bytes 6777502 -> 6559599
+  LITS domain edge keys are covered by check_lits_index; skipped here by design
+{"kind":"mixed","backend":"lits","keys":131072,"final_size":131072,"regions":64,"h_attempts":39971,"h_placed":1112,"h_absent":38859,"h_skipped_lt2":0,"h_skipped_wide":0,"h_bytes":81917,"w_reclaims":21924,"h_reclaims":21296,"w_moved_bytes":6777502,"h_moved_bytes":6559599,"checks":1694,"failures":0}
+1694/1694 checks passed
+FAIL: the H byte-refusal hook ran at all on this workload
+  NOT EXERCISED: placed=0 absent=0 -- this run does not cover both outcomes
+{"kind":"tranco","backend":"ctx16","keys":262144,"final_size":262144,"regions":128,"h_attempts":0,"h_placed":0,"h_absent":0,"h_skipped_lt2":0,"h_skipped_wide":0,"h_bytes":0,"w_reclaims":15,"h_reclaims":15,"w_moved_bytes":7955,"h_moved_bytes":7955,"checks":2284,"failures":1}
+1 FAILED out of 2284

@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/Zephyr761/Learned-Index-Model",
+  "commit": "60837a886b7040828e6f0bb5382d7950d8eed4fa",
+  "cloned_to": "02_Code_and_Experiments/Learned-Index-Model",
+  "manifests_note": "their manifests declare source_identity \"blocklearn-prototype-v1-source-uncommitted\"; the hashes below are the recorded identity for this round",
+  "source_sha256": {
+    "src/learned_index.h": "a076ccadeceae72391be1f8e99196094803aab38beb07e5b653008d7116ae41c",
+    "src/learned_index.cpp": "7a8fbb655eb074547a24ba065994036c830e794d7e3ce4ab916afcec1e4a993d",
+    "src/block_model.h": "1c3a4256eb66677ab8e9438497b5c859b6edf45ee2818f4bb5420e0d022ad0b1",
+    "src/block_model.cpp": "2e0d2e6b06f264da683fca712dc4dd3b58c39bce1040cd1e0d6950ef3d683313",
+    "src/residual_tags.h": "e804de3a2b81a5547d391121da8d97dd6e6c51b3ecf50197d6eef88e9ae63a95",
+    "src/residual_tags.cpp": "11afc4111852b83e2f7d6a18b35c6dbbaf0e27e91990d4b87bdb7e44d75a6944",
+    "src/tag_probe.h": "0a7d8b5964e5adb5034feb1cdbf4e1f5a2b13e17530240676416057edb2aeeeb",
+    "src/key_bytes.h": "cc1fb66423dc7ba0fa3622e01eaae08b62ed2c8d3c2a8264b52c3997480966d4",
+    "src/benchmark/model_factories.cpp": "a762eb88df5eede5982b9dd2e9267c5541711ef1366f83916476e4d8139fa98d",
+    "src/benchmark/mixed_runner.cpp": "231223a86514b7001f0a7e8d7a4a89ccbffccd11848c8dcf20458e8d1fc09bcd",
+    "src/benchmark/contract/index_contract.h": "dc465f360f99a6227e5fafb415b304b30fe55cc503c1cc300793778d16101d6c",
+    "src/CMakeLists.txt": "f17415dc96c054fab4a7172e367a095eb91d7b4669db16279a0bc7ff0abca78d"
+  },
+  "art_source": "02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart (armon/libart @301046804a per project pin), copied into related_works/libart",
+  "hot_source": "07_Eval_Integration/hot-src (speedskater/hot @96bf6fb7103b27e50e16a6026db8974c090ee84a), copied into related_works/hot",
+  "evaluator": "07_Eval_Integration/learned-index @403de526a9104147d5d2659b6882c126c1323b5f (unchanged)",
+  "round": "matrix4 (2026-10-11) + matrix4s (mixed, 15 repeats)"
+}

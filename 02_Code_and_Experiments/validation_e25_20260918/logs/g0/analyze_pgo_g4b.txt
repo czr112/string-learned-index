@@ -1,0 +1,555 @@
+G4/E1  PGO/LTO   run_id=g4b  mode=same
+four builds of ONE source: base / lto / pgo / pgo_lto
+ratios within one repetition (same process, SAME ARM); per-process medians
+============================================================================================================
+
+### MAINTENANCE + OPERATIONS (cumulative to the checkpoint)
+
+  mixed / S0
+    at  25%  lto/base               1.011  (2/5 below)  range 0.980-1.071  noise 1.092
+               pgo/base               1.080  (0/5 below)  range 1.031-1.118  noise 1.085
+               pgo_lto/base           1.022  (2/5 below)  range 0.943-1.065  noise 1.129
+               pgo/lto                1.050  (0/5 below)  range 1.049-1.141  noise 1.088
+               pgo_lto/pgo            0.968  (5/5 below)  range 0.863-0.974  noise 1.129
+    at  50%  lto/base               1.006  (2/5 below)  range 0.987-1.047  noise 1.061
+               pgo/base               1.088  (0/5 below)  range 1.062-1.104  noise 1.040
+               pgo_lto/base           1.116  (0/5 below)  range 1.046-1.174  noise 1.122
+               pgo/lto                1.074  (0/5 below)  range 1.049-1.107  noise 1.055
+               pgo_lto/pgo            1.034  (1/5 below)  range 0.983-1.047  noise 1.065
+    at 100%  lto/base               0.998  (3/5 below)  range 0.978-1.103  noise 1.128
+               pgo/base               1.123  (0/5 below)  range 1.094-1.168  noise 1.068
+               pgo_lto/base           1.140  (0/5 below)  range 1.125-1.209  noise 1.075
+               pgo/lto                1.122  (0/5 below)  range 1.095-1.127  noise 1.029
+               pgo_lto/pgo            1.003  (2/5 below)  range 0.966-1.039  noise 1.075
+    at 200%  lto/base               0.972  (3/5 below)  range 0.958-1.055  noise 1.102
+               pgo/base               1.055  (0/5 below)  range 1.034-1.085  noise 1.049
+               pgo_lto/base           1.055  (0/5 below)  range 1.041-1.106  noise 1.062
+               pgo/lto                1.072  (0/5 below)  range 1.059-1.096  noise 1.036
+               pgo_lto/pgo            1.002  (2/5 below)  range 0.965-1.033  noise 1.071
+  mixed / E31
+    at  25%  lto/base               1.036  (0/5 below)  range 1.016-1.052  noise 1.036
+               pgo/base               1.049  (0/5 below)  range 1.025-1.073  noise 1.047
+               pgo_lto/base           0.968  (4/5 below)  range 0.942-1.005  noise 1.066
+               pgo/lto                1.006  (2/5 below)  range 0.948-1.034  noise 1.091
+               pgo_lto/pgo            0.937  (5/5 below)  range 0.902-0.971  noise 1.077
+    at  50%  lto/base               1.042  (1/5 below)  range 0.972-1.084  noise 1.116
+               pgo/base               1.058  (0/5 below)  range 1.011-1.094  noise 1.082
+               pgo_lto/base           1.113  (0/5 below)  range 1.083-1.126  noise 1.041
+               pgo/lto                1.041  (0/5 below)  range 1.001-1.049  noise 1.047
+               pgo_lto/pgo            1.065  (1/5 below)  range 0.969-1.093  noise 1.127
+    at 100%  lto/base               0.992  (3/5 below)  range 0.946-1.045  noise 1.104
+               pgo/base               1.105  (0/5 below)  range 1.070-1.128  noise 1.054
+               pgo_lto/base           1.151  (0/5 below)  range 1.139-1.175  noise 1.031
+               pgo/lto                1.119  (0/5 below)  range 1.044-1.146  noise 1.098
+               pgo_lto/pgo            1.063  (0/5 below)  range 1.014-1.076  noise 1.062
+    at 200%  lto/base               0.986  (3/5 below)  range 0.940-1.046  noise 1.113
+               pgo/base               1.038  (0/5 below)  range 1.015-1.049  noise 1.033
+               pgo_lto/base           1.081  (0/5 below)  range 1.037-1.095  noise 1.056
+               pgo/lto                1.065  (1/5 below)  range 0.992-1.111  noise 1.120
+               pgo_lto/pgo            1.020  (1/5 below)  range 0.993-1.048  noise 1.055
+  mixed / WIDE
+    at  25%  lto/base               1.031  (1/5 below)  range 0.996-1.087  noise 1.092
+               pgo/base               1.018  (2/5 below)  range 0.955-1.071  noise 1.121
+               pgo_lto/base           0.964  (5/5 below)  range 0.940-0.976  noise 1.038
+               pgo/lto                1.010  (2/5 below)  range 0.955-1.030  noise 1.079
+               pgo_lto/pgo            0.949  (5/5 below)  range 0.890-0.970  noise 1.090
+    at  50%  lto/base               1.054  (0/5 below)  range 1.020-1.101  noise 1.080
+               pgo/base               1.045  (0/5 below)  range 1.022-1.080  noise 1.057
+               pgo_lto/base           0.985  (3/5 below)  range 0.970-1.013  noise 1.045
+               pgo/lto                1.013  (2/5 below)  range 0.931-1.047  noise 1.125
+               pgo_lto/pgo            0.957  (4/5 below)  range 0.917-1.012  noise 1.104
+    at 100%  lto/base               1.038  (1/5 below)  range 0.999-1.062  noise 1.063
+               pgo/base               1.006  (1/5 below)  range 0.982-1.042  noise 1.061
+               pgo_lto/base           0.987  (3/5 below)  range 0.968-1.012  noise 1.046
+               pgo/lto                0.992  (4/5 below)  range 0.929-1.002  noise 1.079
+               pgo_lto/pgo            0.979  (5/5 below)  range 0.959-0.983  noise 1.025
+    at 200%  lto/base               1.037  (1/5 below)  range 0.994-1.060  noise 1.066
+               pgo/base               1.003  (2/5 below)  range 0.987-1.046  noise 1.060
+               pgo_lto/base           0.988  (4/5 below)  range 0.978-1.020  noise 1.043
+               pgo/lto                0.989  (4/5 below)  range 0.937-1.040  noise 1.109
+               pgo_lto/pgo            0.977  (5/5 below)  range 0.945-0.993  noise 1.050
+  mixed / ART
+    at  25%  lto/base               0.980  (4/5 below)  range 0.936-1.065  noise 1.138
+               pgo/base               1.015  (2/5 below)  range 0.981-1.080  noise 1.100
+               pgo_lto/base           0.998  (3/5 below)  range 0.935-1.044  noise 1.117
+               pgo/lto                1.001  (2/5 below)  range 0.997-1.072  noise 1.076
+               pgo_lto/pgo            1.017  (2/5 below)  range 0.874-1.068  noise 1.222
+    at  50%  lto/base               1.006  (2/5 below)  range 0.908-1.024  noise 1.128
+               pgo/base               1.011  (2/5 below)  range 0.948-1.106  noise 1.167
+               pgo_lto/base           0.994  (3/5 below)  range 0.959-1.045  noise 1.089
+               pgo/lto                1.021  (1/5 below)  range 0.981-1.054  noise 1.075
+               pgo_lto/pgo            0.996  (3/5 below)  range 0.915-1.061  noise 1.159
+    at 100%  lto/base               0.981  (3/5 below)  range 0.911-1.038  noise 1.139
+               pgo/base               0.992  (4/5 below)  range 0.971-1.045  noise 1.077
+               pgo_lto/base           0.993  (4/5 below)  range 0.956-1.007  noise 1.053
+               pgo/lto                1.008  (1/5 below)  range 0.984-1.082  noise 1.100
+               pgo_lto/pgo            0.989  (3/5 below)  range 0.964-1.026  noise 1.065
+    at 200%  lto/base               0.966  (3/5 below)  range 0.946-1.046  noise 1.106
+               pgo/base               0.992  (3/5 below)  range 0.958-1.043  noise 1.089
+               pgo_lto/base           0.983  (5/5 below)  range 0.968-0.997  noise 1.030
+               pgo/lto                1.009  (2/5 below)  range 0.983-1.060  noise 1.078
+               pgo_lto/pgo            0.977  (3/5 below)  range 0.944-1.011  noise 1.071
+  skew / S0
+    at  25%  lto/base               0.973  (5/5 below)  range 0.909-0.983  noise 1.082
+               pgo/base               1.129  (0/5 below)  range 1.097-1.166  noise 1.063
+               pgo_lto/base           1.180  (0/5 below)  range 1.098-1.245  noise 1.134
+               pgo/lto                1.158  (0/5 below)  range 1.130-1.187  noise 1.051
+               pgo_lto/pgo            1.092  (1/5 below)  range 0.980-1.150  noise 1.173
+    at  50%  lto/base               0.957  (5/5 below)  range 0.917-0.973  noise 1.061
+               pgo/base               1.141  (0/5 below)  range 1.091-1.148  noise 1.053
+               pgo_lto/base           1.202  (0/5 below)  range 1.120-1.225  noise 1.094
+               pgo/lto                1.177  (0/5 below)  range 1.131-1.225  noise 1.083
+               pgo_lto/pgo            1.075  (1/5 below)  range 0.999-1.117  noise 1.118
+    at 100%  lto/base               0.929  (5/5 below)  range 0.920-0.987  noise 1.073
+               pgo/base               1.092  (0/5 below)  range 1.076-1.125  noise 1.046
+               pgo_lto/base           1.178  (0/5 below)  range 1.112-1.209  noise 1.087
+               pgo/lto                1.159  (0/5 below)  range 1.099-1.210  noise 1.101
+               pgo_lto/pgo            1.079  (0/5 below)  range 1.047-1.141  noise 1.090
+    at 200%  lto/base               0.952  (5/5 below)  range 0.909-0.973  noise 1.070
+               pgo/base               1.047  (0/5 below)  range 1.042-1.070  noise 1.028
+               pgo_lto/base           1.114  (0/5 below)  range 1.054-1.140  noise 1.082
+               pgo/lto                1.111  (0/5 below)  range 1.054-1.170  noise 1.111
+               pgo_lto/pgo            1.056  (0/5 below)  range 1.034-1.129  noise 1.092
+  skew / E31
+    at  25%  lto/base               0.941  (4/5 below)  range 0.918-1.006  noise 1.096
+               pgo/base               1.078  (0/5 below)  range 1.033-1.107  noise 1.072
+               pgo_lto/base           1.116  (0/5 below)  range 1.096-1.180  noise 1.076
+               pgo/lto                1.113  (0/5 below)  range 1.085-1.150  noise 1.060
+               pgo_lto/pgo            1.066  (0/5 below)  range 1.005-1.093  noise 1.088
+    at  50%  lto/base               0.940  (5/5 below)  range 0.910-0.981  noise 1.078
+               pgo/base               1.114  (0/5 below)  range 1.090-1.120  noise 1.028
+               pgo_lto/base           1.122  (0/5 below)  range 1.082-1.173  noise 1.084
+               pgo/lto                1.151  (0/5 below)  range 1.111-1.195  noise 1.076
+               pgo_lto/pgo            1.028  (0/5 below)  range 1.010-1.099  noise 1.087
+    at 100%  lto/base               0.946  (5/5 below)  range 0.912-0.951  noise 1.043
+               pgo/base               1.102  (0/5 below)  range 1.069-1.129  noise 1.057
+               pgo_lto/base           1.138  (0/5 below)  range 1.116-1.205  noise 1.080
+               pgo/lto                1.155  (0/5 below)  range 1.132-1.209  noise 1.068
+               pgo_lto/pgo            1.045  (0/5 below)  range 1.025-1.103  noise 1.076
+    at 200%  lto/base               0.943  (5/5 below)  range 0.909-0.952  noise 1.047
+               pgo/base               1.060  (0/5 below)  range 1.012-1.071  noise 1.058
+               pgo_lto/base           1.073  (0/5 below)  range 1.046-1.154  noise 1.104
+               pgo/lto                1.111  (0/5 below)  range 1.081-1.168  noise 1.080
+               pgo_lto/pgo            1.040  (0/5 below)  range 1.021-1.074  noise 1.052
+  skew / WIDE
+    at  25%  lto/base               0.974  (5/5 below)  range 0.964-0.998  noise 1.035
+               pgo/base               0.992  (4/5 below)  range 0.962-1.048  noise 1.089
+               pgo_lto/base           0.960  (5/5 below)  range 0.947-0.994  noise 1.050
+               pgo/lto                1.020  (1/5 below)  range 0.997-1.032  noise 1.036
+               pgo_lto/pgo            0.967  (4/5 below)  range 0.940-1.004  noise 1.069
+    at  50%  lto/base               0.981  (4/5 below)  range 0.964-1.007  noise 1.044
+               pgo/base               0.981  (4/5 below)  range 0.964-1.018  noise 1.055
+               pgo_lto/base           0.957  (5/5 below)  range 0.926-0.989  noise 1.068
+               pgo/lto                1.001  (1/5 below)  range 0.980-1.015  noise 1.036
+               pgo_lto/pgo            0.978  (5/5 below)  range 0.951-0.994  noise 1.046
+    at 100%  lto/base               0.980  (4/5 below)  range 0.963-1.009  noise 1.047
+               pgo/base               0.987  (3/5 below)  range 0.952-1.012  noise 1.062
+               pgo_lto/base           0.967  (5/5 below)  range 0.925-0.994  noise 1.075
+               pgo/lto                1.003  (2/5 below)  range 0.974-1.020  noise 1.047
+               pgo_lto/pgo            0.978  (4/5 below)  range 0.957-1.007  noise 1.053
+    at 200%  lto/base               0.975  (4/5 below)  range 0.932-1.004  noise 1.078
+               pgo/base               0.987  (5/5 below)  range 0.964-0.998  noise 1.036
+               pgo_lto/base           0.966  (5/5 below)  range 0.936-0.993  noise 1.061
+               pgo/lto                0.997  (3/5 below)  range 0.976-1.056  noise 1.083
+               pgo_lto/pgo            0.978  (4/5 below)  range 0.956-1.005  noise 1.051
+  skew / ART
+    at  25%  lto/base               0.990  (4/5 below)  range 0.938-1.018  noise 1.085
+               pgo/base               0.973  (5/5 below)  range 0.950-0.986  noise 1.038
+               pgo_lto/base           0.986  (3/5 below)  range 0.935-1.035  noise 1.106
+               pgo/lto                0.988  (4/5 below)  range 0.981-1.036  noise 1.056
+               pgo_lto/pgo            0.998  (3/5 below)  range 0.989-1.054  noise 1.066
+    at  50%  lto/base               0.971  (3/5 below)  range 0.960-1.024  noise 1.067
+               pgo/base               0.982  (5/5 below)  range 0.969-0.988  noise 1.021
+               pgo_lto/base           0.987  (3/5 below)  range 0.940-1.022  noise 1.087
+               pgo/lto                0.987  (4/5 below)  range 0.980-1.023  noise 1.044
+               pgo_lto/pgo            1.004  (2/5 below)  range 0.997-1.050  noise 1.053
+    at 100%  lto/base               0.988  (3/5 below)  range 0.971-1.011  noise 1.042
+               pgo/base               0.988  (4/5 below)  range 0.967-1.032  noise 1.067
+               pgo_lto/base           1.002  (2/5 below)  range 0.961-1.012  noise 1.053
+               pgo/lto                1.004  (2/5 below)  range 0.978-1.026  noise 1.050
+               pgo_lto/pgo            0.997  (3/5 below)  range 0.990-1.033  noise 1.043
+    at 200%  lto/base               0.994  (3/5 below)  range 0.973-1.023  noise 1.052
+               pgo/base               1.007  (2/5 below)  range 0.974-1.014  noise 1.041
+               pgo_lto/base           1.000  (2/5 below)  range 0.947-1.003  noise 1.059
+               pgo/lto                1.005  (2/5 below)  range 0.988-1.028  noise 1.041
+               pgo_lto/pgo            0.991  (3/5 below)  range 0.975-1.009  noise 1.035
+  tranco / S0
+    at  25%  lto/base               0.994  (3/5 below)  range 0.896-1.156  noise 1.289
+               pgo/base               1.018  (0/5 below)  range 1.007-1.157  noise 1.148
+               pgo_lto/base           1.043  (1/5 below)  range 0.975-1.082  noise 1.109
+               pgo/lto                1.066  (2/5 below)  range 0.987-1.126  noise 1.140
+               pgo_lto/pgo            0.993  (3/5 below)  range 0.948-1.042  noise 1.099
+    at  50%  lto/base               0.981  (3/5 below)  range 0.936-1.092  noise 1.167
+               pgo/base               1.030  (0/5 below)  range 1.019-1.098  noise 1.078
+               pgo_lto/base           1.053  (0/5 below)  range 1.011-1.122  noise 1.110
+               pgo/lto                1.034  (0/5 below)  range 1.006-1.112  noise 1.106
+               pgo_lto/pgo            1.001  (2/5 below)  range 0.962-1.008  noise 1.048
+    at 100%  lto/base               0.988  (4/5 below)  range 0.965-1.074  noise 1.113
+               pgo/base               1.046  (1/5 below)  range 0.944-1.079  noise 1.143
+               pgo_lto/base           1.053  (2/5 below)  range 0.973-1.098  noise 1.129
+               pgo/lto                1.042  (1/5 below)  range 0.971-1.138  noise 1.172
+               pgo_lto/pgo            1.010  (2/5 below)  range 0.978-1.016  noise 1.039
+    at 200%  lto/base               0.979  (4/5 below)  range 0.950-1.055  noise 1.110
+               pgo/base               1.138  (0/5 below)  range 1.038-1.162  noise 1.119
+               pgo_lto/base           1.117  (0/5 below)  range 1.080-1.178  noise 1.091
+               pgo/lto                1.159  (0/5 below)  range 1.050-1.231  noise 1.172
+               pgo_lto/pgo            1.002  (2/5 below)  range 0.961-1.043  noise 1.085
+  tranco / E31
+    at  25%  lto/base               1.016  (1/5 below)  range 0.958-1.113  noise 1.161
+               pgo/base               1.027  (0/5 below)  range 1.005-1.089  noise 1.083
+               pgo_lto/base           1.041  (1/5 below)  range 0.950-1.045  noise 1.099
+               pgo/lto                1.010  (2/5 below)  range 0.989-1.045  noise 1.056
+               pgo_lto/pgo            1.003  (2/5 below)  range 0.934-1.029  noise 1.101
+    at  50%  lto/base               0.991  (3/5 below)  range 0.951-1.081  noise 1.137
+               pgo/base               1.024  (0/5 below)  range 1.012-1.080  noise 1.067
+               pgo_lto/base           1.027  (1/5 below)  range 0.969-1.035  noise 1.069
+               pgo/lto                1.017  (0/5 below)  range 1.011-1.067  noise 1.056
+               pgo_lto/pgo            0.980  (5/5 below)  range 0.919-0.999  noise 1.087
+    at 100%  lto/base               0.991  (3/5 below)  range 0.955-1.049  noise 1.098
+               pgo/base               1.030  (1/5 below)  range 0.954-1.065  noise 1.115
+               pgo_lto/base           1.001  (2/5 below)  range 0.987-1.028  noise 1.042
+               pgo/lto                1.025  (1/5 below)  range 0.947-1.078  noise 1.139
+               pgo_lto/pgo            0.969  (4/5 below)  range 0.946-1.021  noise 1.080
+    at 200%  lto/base               0.980  (3/5 below)  range 0.960-1.023  noise 1.065
+               pgo/base               1.055  (1/5 below)  range 0.997-1.093  noise 1.096
+               pgo_lto/base           0.992  (3/5 below)  range 0.961-1.065  noise 1.108
+               pgo/lto                1.040  (1/5 below)  range 0.993-1.073  noise 1.080
+               pgo_lto/pgo            0.961  (4/5 below)  range 0.934-1.029  noise 1.102
+  tranco / WIDE
+    at  25%  lto/base               1.056  (1/5 below)  range 0.992-1.085  noise 1.094
+               pgo/base               1.041  (0/5 below)  range 1.009-1.079  noise 1.070
+               pgo_lto/base           0.995  (3/5 below)  range 0.961-1.042  noise 1.084
+               pgo/lto                1.001  (2/5 below)  range 0.982-1.045  noise 1.064
+               pgo_lto/pgo            0.954  (5/5 below)  range 0.937-0.993  noise 1.060
+    at  50%  lto/base               1.017  (2/5 below)  range 0.994-1.065  noise 1.072
+               pgo/base               1.035  (2/5 below)  range 0.995-1.077  noise 1.083
+               pgo_lto/base           0.988  (3/5 below)  range 0.944-1.033  noise 1.095
+               pgo/lto                1.020  (1/5 below)  range 0.996-1.037  noise 1.041
+               pgo_lto/pgo            0.972  (5/5 below)  range 0.944-0.992  noise 1.050
+    at 100%  lto/base               1.014  (2/5 below)  range 0.970-1.052  noise 1.084
+               pgo/base               1.015  (1/5 below)  range 0.998-1.074  noise 1.077
+               pgo_lto/base           0.997  (3/5 below)  range 0.928-1.008  noise 1.087
+               pgo/lto                1.008  (2/5 below)  range 0.994-1.124  noise 1.131
+               pgo_lto/pgo            0.958  (5/5 below)  range 0.930-0.976  noise 1.049
+    at 200%  lto/base               1.003  (2/5 below)  range 0.962-1.020  noise 1.060
+               pgo/base               1.029  (2/5 below)  range 0.932-1.064  noise 1.141
+               pgo_lto/base           0.992  (3/5 below)  range 0.974-1.025  noise 1.053
+               pgo/lto                1.026  (2/5 below)  range 0.923-1.073  noise 1.162
+               pgo_lto/pgo            0.970  (3/5 below)  range 0.939-1.041  noise 1.109
+  tranco / ART
+    at  25%  lto/base               0.960  (3/5 below)  range 0.944-1.051  noise 1.113
+               pgo/base               0.991  (3/5 below)  range 0.938-1.079  noise 1.151
+               pgo_lto/base           1.006  (2/5 below)  range 0.952-1.029  noise 1.081
+               pgo/lto                1.011  (2/5 below)  range 0.952-1.092  noise 1.148
+               pgo_lto/pgo            1.016  (1/5 below)  range 0.929-1.071  noise 1.153
+    at  50%  lto/base               0.995  (3/5 below)  range 0.959-1.037  noise 1.082
+               pgo/base               1.001  (2/5 below)  range 0.976-1.028  noise 1.053
+               pgo_lto/base           1.005  (2/5 below)  range 0.990-1.058  noise 1.069
+               pgo/lto                1.006  (2/5 below)  range 0.972-1.035  noise 1.064
+               pgo_lto/pgo            1.012  (1/5 below)  range 0.971-1.051  noise 1.082
+    at 100%  lto/base               0.971  (3/5 below)  range 0.950-1.037  noise 1.092
+               pgo/base               1.017  (0/5 below)  range 1.005-1.022  noise 1.016
+               pgo_lto/base           1.014  (1/5 below)  range 0.998-1.079  noise 1.081
+               pgo/lto                1.019  (0/5 below)  range 1.002-1.029  noise 1.027
+               pgo_lto/pgo            1.022  (1/5 below)  range 0.958-1.028  noise 1.072
+    at 200%  lto/base               0.981  (3/5 below)  range 0.912-1.012  noise 1.110
+               pgo/base               0.990  (3/5 below)  range 0.958-1.026  noise 1.071
+               pgo_lto/base           1.008  (2/5 below)  range 0.927-1.052  noise 1.135
+               pgo/lto                1.042  (1/5 below)  range 0.948-1.051  noise 1.108
+               pgo_lto/pgo            0.993  (3/5 below)  range 0.981-1.021  noise 1.041
+
+  absolutes at 200% (median over all records):
+    mixed    S0    base=381.548  lto=375.792  pgo=403.902  pgo_lto=408.648
+    mixed    E31   base=351.976  lto=350.361  pgo=367.45  pgo_lto=373.548
+    mixed    WIDE  base=160.466  lto=165.803  pgo=162.499  pgo_lto=157.334
+    mixed    ART   base=99.3107  lto=97.3732  pgo=98.4155  pgo_lto=97.8095
+    skew     S0    base=938.686  lto=889.886  pgo=990.307  pgo_lto=1039.57
+    skew     E31   base=912.342  lto=843.92  pgo=941.168  pgo_lto=996.413
+    skew     WIDE  base=254.021  lto=252.025  pgo=248.229  pgo_lto=245.644
+    skew     ART   base=233.663  lto=231.223  pgo=232.744  pgo_lto=231.493
+    tranco   S0    base=906.004  lto=895.06  pgo=1026.43  pgo_lto=1033.1
+    tranco   E31   base=424.325  lto=422.065  pgo=438.152  pgo_lto=427.866
+    tranco   WIDE  base=347.182  lto=353.535  pgo=356.455  pgo_lto=344.905
+    tranco   ART   base=108.242  lto=106.742  pgo=108.418  pgo_lto=109.504
+
+### FIXED QUERY SEQUENCE at the checkpoint
+
+  mixed / S0
+    at  25%  lto/base               1.041  (1/5 below)  range 0.865-1.245  noise 1.440
+               pgo/base               1.041  (0/5 below)  range 1.009-1.109  noise 1.100
+               pgo_lto/base           1.103  (2/5 below)  range 0.947-1.167  noise 1.232
+               pgo/lto                1.124  (2/5 below)  range 0.894-1.168  noise 1.307
+               pgo_lto/pgo            1.035  (2/5 below)  range 0.885-1.082  noise 1.222
+    at  50%  lto/base               1.058  (1/5 below)  range 0.998-1.076  noise 1.078
+               pgo/base               1.063  (0/5 below)  range 1.050-1.084  noise 1.033
+               pgo_lto/base           0.941  (3/5 below)  range 0.926-1.223  noise 1.320
+               pgo/lto                1.063  (1/5 below)  range 0.991-1.093  noise 1.103
+               pgo_lto/pgo            0.915  (4/5 below)  range 0.868-1.039  noise 1.197
+    at 100%  lto/base               1.081  (1/5 below)  range 0.996-1.230  noise 1.235
+               pgo/base               1.119  (2/5 below)  range 0.970-1.225  noise 1.262
+               pgo_lto/base           1.025  (2/5 below)  range 0.966-1.106  noise 1.145
+               pgo/lto                1.056  (2/5 below)  range 0.883-1.091  noise 1.235
+               pgo_lto/pgo            0.940  (4/5 below)  range 0.864-1.054  noise 1.220
+    at 200%  lto/base               0.929  (4/5 below)  range 0.885-1.031  noise 1.166
+               pgo/base               0.984  (3/5 below)  range 0.955-1.072  noise 1.123
+               pgo_lto/base           0.980  (5/5 below)  range 0.955-1.000  noise 1.047
+               pgo/lto                1.072  (1/5 below)  range 0.995-1.172  noise 1.178
+               pgo_lto/pgo            0.953  (4/5 below)  range 0.894-1.010  noise 1.129
+  mixed / E31
+    at  25%  lto/base               0.976  (4/5 below)  range 0.861-1.003  noise 1.166
+               pgo/base               0.946  (3/5 below)  range 0.908-1.025  noise 1.129
+               pgo_lto/base           1.014  (2/5 below)  range 0.971-1.027  noise 1.059
+               pgo/lto                1.074  (0/5 below)  range 1.035-1.231  noise 1.189
+               pgo_lto/pgo            1.009  (2/5 below)  range 0.988-1.059  noise 1.073
+    at  50%  lto/base               0.999  (3/5 below)  range 0.880-1.026  noise 1.166
+               pgo/base               1.006  (2/5 below)  range 0.958-1.047  noise 1.093
+               pgo_lto/base           0.973  (4/5 below)  range 0.850-1.116  noise 1.313
+               pgo/lto                1.002  (2/5 below)  range 0.906-1.130  noise 1.247
+               pgo_lto/pgo            0.950  (4/5 below)  range 0.858-1.023  noise 1.192
+    at 100%  lto/base               1.055  (0/5 below)  range 1.011-1.066  noise 1.054
+               pgo/base               0.974  (4/5 below)  range 0.953-1.091  noise 1.145
+               pgo_lto/base           1.085  (1/5 below)  range 0.961-1.168  noise 1.215
+               pgo/lto                0.904  (5/5 below)  range 0.880-0.967  noise 1.099
+               pgo_lto/pgo            1.077  (2/5 below)  range 0.945-1.214  noise 1.284
+    at 200%  lto/base               0.994  (3/5 below)  range 0.835-1.221  noise 1.463
+               pgo/base               1.075  (1/5 below)  range 0.966-1.242  noise 1.286
+               pgo_lto/base           0.972  (4/5 below)  range 0.880-1.076  noise 1.222
+               pgo/lto                1.079  (0/5 below)  range 1.029-1.263  noise 1.227
+               pgo_lto/pgo            0.866  (5/5 below)  range 0.853-0.999  noise 1.172
+  mixed / WIDE
+    at  25%  lto/base               1.010  (1/5 below)  range 0.947-1.116  noise 1.178
+               pgo/base               1.135  (2/5 below)  range 0.892-1.178  noise 1.321
+               pgo_lto/base           0.985  (3/5 below)  range 0.859-1.166  noise 1.357
+               pgo/lto                1.052  (2/5 below)  range 0.940-1.094  noise 1.164
+               pgo_lto/pgo            0.994  (3/5 below)  range 0.915-1.043  noise 1.140
+    at  50%  lto/base               0.910  (4/5 below)  range 0.905-1.024  noise 1.131
+               pgo/base               1.014  (2/5 below)  range 0.972-1.063  noise 1.094
+               pgo_lto/base           0.998  (3/5 below)  range 0.937-1.147  noise 1.224
+               pgo/lto                1.054  (0/5 below)  range 1.005-1.092  noise 1.086
+               pgo_lto/pgo            0.955  (3/5 below)  range 0.943-1.017  noise 1.078
+    at 100%  lto/base               1.023  (1/5 below)  range 0.998-1.257  noise 1.259
+               pgo/base               1.017  (1/5 below)  range 0.913-1.334  noise 1.461
+               pgo_lto/base           1.025  (1/5 below)  range 0.952-1.163  noise 1.223
+               pgo/lto                0.961  (3/5 below)  range 0.870-1.079  noise 1.239
+               pgo_lto/pgo            1.009  (2/5 below)  range 0.894-1.068  noise 1.195
+    at 200%  lto/base               1.059  (1/5 below)  range 0.982-1.178  noise 1.200
+               pgo/base               1.042  (2/5 below)  range 0.895-1.316  noise 1.470
+               pgo_lto/base           0.986  (3/5 below)  range 0.913-1.092  noise 1.195
+               pgo/lto                0.985  (3/5 below)  range 0.962-1.140  noise 1.185
+               pgo_lto/pgo            0.888  (4/5 below)  range 0.881-1.049  noise 1.190
+  mixed / ART
+    at  25%  lto/base               0.917  (4/5 below)  range 0.842-1.059  noise 1.258
+               pgo/base               0.933  (4/5 below)  range 0.822-1.065  noise 1.296
+               pgo_lto/base           0.897  (3/5 below)  range 0.872-1.167  noise 1.339
+               pgo/lto                0.943  (3/5 below)  range 0.927-1.096  noise 1.183
+               pgo_lto/pgo            1.106  (1/5 below)  range 0.968-1.259  noise 1.302
+    at  50%  lto/base               1.018  (2/5 below)  range 0.893-1.036  noise 1.161
+               pgo/base               1.003  (2/5 below)  range 0.809-1.066  noise 1.319
+               pgo_lto/base           1.053  (1/5 below)  range 0.928-1.127  noise 1.215
+               pgo/lto                1.006  (2/5 below)  range 0.906-1.045  noise 1.154
+               pgo_lto/pgo            1.041  (1/5 below)  range 0.995-1.065  noise 1.071
+    at 100%  lto/base               0.953  (4/5 below)  range 0.843-1.220  noise 1.448
+               pgo/base               1.017  (2/5 below)  range 0.838-1.232  noise 1.471
+               pgo_lto/base           1.007  (2/5 below)  range 0.984-1.124  noise 1.142
+               pgo/lto                1.028  (1/5 below)  range 0.714-1.278  noise 1.790
+               pgo_lto/pgo            0.986  (3/5 below)  range 0.896-1.313  noise 1.466
+    at 200%  lto/base               1.114  (2/5 below)  range 0.784-1.287  noise 1.641
+               pgo/base               1.076  (2/5 below)  range 0.948-1.180  noise 1.244
+               pgo_lto/base           1.113  (1/5 below)  range 0.990-1.277  noise 1.291
+               pgo/lto                1.051  (2/5 below)  range 0.930-1.386  noise 1.491
+               pgo_lto/pgo            1.053  (0/5 below)  range 1.032-1.076  noise 1.043
+  skew / S0
+    at  25%  lto/base               0.948  (3/5 below)  range 0.841-1.005  noise 1.194
+               pgo/base               0.950  (4/5 below)  range 0.845-1.102  noise 1.304
+               pgo_lto/base           0.985  (3/5 below)  range 0.960-1.048  noise 1.092
+               pgo/lto                1.000  (2/5 below)  range 0.907-1.178  noise 1.299
+               pgo_lto/pgo            1.056  (1/5 below)  range 0.875-1.092  noise 1.249
+    at  50%  lto/base               0.934  (3/5 below)  range 0.875-1.146  noise 1.309
+               pgo/base               0.986  (4/5 below)  range 0.906-1.170  noise 1.291
+               pgo_lto/base           0.987  (3/5 below)  range 0.870-1.125  noise 1.293
+               pgo/lto                1.012  (2/5 below)  range 0.854-1.059  noise 1.239
+               pgo_lto/pgo            1.012  (2/5 below)  range 0.968-1.103  noise 1.139
+    at 100%  lto/base               1.010  (1/5 below)  range 0.955-1.271  noise 1.331
+               pgo/base               1.006  (2/5 below)  range 0.846-1.116  noise 1.319
+               pgo_lto/base           1.006  (2/5 below)  range 0.948-1.121  noise 1.182
+               pgo/lto                0.997  (3/5 below)  range 0.894-1.239  noise 1.386
+               pgo_lto/pgo            1.056  (2/5 below)  range 0.924-1.063  noise 1.151
+    at 200%  lto/base               1.003  (2/5 below)  range 0.843-1.063  noise 1.261
+               pgo/base               0.996  (3/5 below)  range 0.976-1.138  noise 1.166
+               pgo_lto/base           1.064  (2/5 below)  range 0.895-1.095  noise 1.224
+               pgo/lto                1.013  (1/5 below)  range 0.944-1.093  noise 1.158
+               pgo_lto/pgo            1.019  (2/5 below)  range 0.905-1.071  noise 1.184
+  skew / E31
+    at  25%  lto/base               0.965  (3/5 below)  range 0.874-1.153  noise 1.319
+               pgo/base               1.051  (2/5 below)  range 0.906-1.164  noise 1.284
+               pgo_lto/base           0.923  (5/5 below)  range 0.785-0.989  noise 1.261
+               pgo/lto                1.105  (1/5 below)  range 0.943-1.166  noise 1.236
+               pgo_lto/pgo            0.866  (4/5 below)  range 0.857-1.108  noise 1.292
+    at  50%  lto/base               0.996  (3/5 below)  range 0.816-1.095  noise 1.342
+               pgo/base               1.023  (2/5 below)  range 0.955-1.070  noise 1.120
+               pgo_lto/base           0.922  (5/5 below)  range 0.896-0.980  noise 1.093
+               pgo/lto                1.034  (1/5 below)  range 0.908-1.183  noise 1.302
+               pgo_lto/pgo            0.932  (5/5 below)  range 0.843-0.983  noise 1.166
+    at 100%  lto/base               1.018  (2/5 below)  range 0.820-1.093  noise 1.332
+               pgo/base               0.897  (4/5 below)  range 0.811-1.044  noise 1.288
+               pgo_lto/base           1.002  (2/5 below)  range 0.870-1.097  noise 1.260
+               pgo/lto                0.930  (3/5 below)  range 0.900-1.060  noise 1.178
+               pgo_lto/pgo            1.089  (1/5 below)  range 0.919-1.119  noise 1.217
+    at 200%  lto/base               0.949  (4/5 below)  range 0.915-1.029  noise 1.125
+               pgo/base               0.931  (3/5 below)  range 0.845-1.215  noise 1.437
+               pgo_lto/base           0.989  (3/5 below)  range 0.831-1.339  noise 1.612
+               pgo/lto                1.000  (2/5 below)  range 0.945-1.191  noise 1.260
+               pgo_lto/pgo            1.003  (2/5 below)  range 0.919-1.292  noise 1.406
+  skew / WIDE
+    at  25%  lto/base               1.016  (2/5 below)  range 0.828-1.175  noise 1.418
+               pgo/base               1.047  (2/5 below)  range 0.918-1.086  noise 1.183
+               pgo_lto/base           0.992  (3/5 below)  range 0.867-1.083  noise 1.250
+               pgo/lto                0.944  (3/5 below)  range 0.898-1.193  noise 1.328
+               pgo_lto/pgo            0.977  (4/5 below)  range 0.972-1.066  noise 1.097
+    at  50%  lto/base               0.973  (4/5 below)  range 0.950-1.090  noise 1.148
+               pgo/base               0.997  (3/5 below)  range 0.894-1.176  noise 1.316
+               pgo_lto/base           1.022  (2/5 below)  range 0.903-1.053  noise 1.166
+               pgo/lto                1.039  (2/5 below)  range 0.925-1.128  noise 1.220
+               pgo_lto/pgo            0.971  (3/5 below)  range 0.902-1.036  noise 1.148
+    at 100%  lto/base               0.964  (3/5 below)  range 0.863-1.075  noise 1.245
+               pgo/base               1.055  (1/5 below)  range 0.883-1.152  noise 1.305
+               pgo_lto/base           1.012  (2/5 below)  range 0.934-1.125  noise 1.205
+               pgo/lto                1.146  (1/5 below)  range 0.928-1.248  noise 1.344
+               pgo_lto/pgo            0.978  (4/5 below)  range 0.924-1.018  noise 1.102
+    at 200%  lto/base               0.910  (5/5 below)  range 0.902-0.937  noise 1.039
+               pgo/base               1.009  (2/5 below)  range 0.922-1.156  noise 1.254
+               pgo_lto/base           0.944  (4/5 below)  range 0.930-1.099  noise 1.182
+               pgo/lto                1.061  (1/5 below)  range 0.926-1.162  noise 1.254
+               pgo_lto/pgo            0.934  (4/5 below)  range 0.834-1.147  noise 1.375
+  skew / ART
+    at  25%  lto/base               0.963  (3/5 below)  range 0.905-1.127  noise 1.246
+               pgo/base               1.008  (2/5 below)  range 0.825-1.316  noise 1.596
+               pgo_lto/base           1.019  (2/5 below)  range 0.979-1.194  noise 1.220
+               pgo/lto                1.027  (2/5 below)  range 0.887-1.114  noise 1.256
+               pgo_lto/pgo            1.124  (1/5 below)  range 0.934-1.247  noise 1.334
+    at  50%  lto/base               0.997  (3/5 below)  range 0.794-1.080  noise 1.360
+               pgo/base               0.999  (3/5 below)  range 0.873-1.073  noise 1.230
+               pgo_lto/base           0.947  (4/5 below)  range 0.911-1.074  noise 1.180
+               pgo/lto                1.130  (1/5 below)  range 0.815-1.192  noise 1.463
+               pgo_lto/pgo            0.951  (4/5 below)  range 0.868-1.099  noise 1.267
+    at 100%  lto/base               1.050  (1/5 below)  range 0.950-1.100  noise 1.158
+               pgo/base               0.991  (3/5 below)  range 0.977-1.126  noise 1.152
+               pgo_lto/base           1.032  (1/5 below)  range 0.990-1.103  noise 1.114
+               pgo/lto                1.001  (2/5 below)  range 0.943-1.017  noise 1.079
+               pgo_lto/pgo            1.082  (1/5 below)  range 0.995-1.105  noise 1.111
+    at 200%  lto/base               1.118  (1/5 below)  range 0.931-1.372  noise 1.473
+               pgo/base               1.107  (1/5 below)  range 0.962-1.281  noise 1.332
+               pgo_lto/base           1.120  (2/5 below)  range 0.958-1.287  noise 1.343
+               pgo/lto                0.996  (3/5 below)  range 0.844-1.160  noise 1.374
+               pgo_lto/pgo            0.986  (3/5 below)  range 0.839-1.137  noise 1.356
+  tranco / S0
+    at  25%  lto/base               0.965  (3/5 below)  range 0.939-1.157  noise 1.232
+               pgo/base               0.919  (3/5 below)  range 0.772-1.165  noise 1.508
+               pgo_lto/base           1.015  (2/5 below)  range 0.943-1.141  noise 1.210
+               pgo/lto                0.947  (4/5 below)  range 0.852-1.130  noise 1.326
+               pgo_lto/pgo            1.106  (1/5 below)  range 0.899-1.352  noise 1.503
+    at  50%  lto/base               0.997  (3/5 below)  range 0.838-1.025  noise 1.224
+               pgo/base               0.924  (3/5 below)  range 0.833-1.105  noise 1.327
+               pgo_lto/base           1.010  (2/5 below)  range 0.824-1.126  noise 1.366
+               pgo/lto                1.046  (2/5 below)  range 0.851-1.105  noise 1.298
+               pgo_lto/pgo            0.941  (3/5 below)  range 0.906-1.312  noise 1.449
+    at 100%  lto/base               0.981  (3/5 below)  range 0.880-1.192  noise 1.356
+               pgo/base               1.011  (2/5 below)  range 0.952-1.310  noise 1.376
+               pgo_lto/base           0.960  (3/5 below)  range 0.778-1.227  noise 1.576
+               pgo/lto                0.987  (4/5 below)  range 0.969-1.186  noise 1.223
+               pgo_lto/pgo            0.967  (4/5 below)  range 0.835-1.005  noise 1.204
+    at 200%  lto/base               1.104  (0/5 below)  range 1.021-1.219  noise 1.193
+               pgo/base               1.089  (2/5 below)  range 0.895-1.230  noise 1.374
+               pgo_lto/base           0.974  (3/5 below)  range 0.874-1.150  noise 1.316
+               pgo/lto                0.970  (4/5 below)  range 0.785-1.115  noise 1.419
+               pgo_lto/pgo            0.880  (4/5 below)  range 0.845-1.281  noise 1.516
+  tranco / E31
+    at  25%  lto/base               0.923  (5/5 below)  range 0.841-0.957  noise 1.138
+               pgo/base               1.055  (2/5 below)  range 0.918-1.096  noise 1.193
+               pgo_lto/base           0.915  (3/5 below)  range 0.850-1.076  noise 1.266
+               pgo/lto                1.087  (1/5 below)  range 0.971-1.267  noise 1.305
+               pgo_lto/pgo            0.977  (3/5 below)  range 0.857-1.153  noise 1.344
+    at  50%  lto/base               0.979  (4/5 below)  range 0.898-1.005  noise 1.120
+               pgo/base               0.958  (4/5 below)  range 0.876-1.134  noise 1.295
+               pgo_lto/base           0.982  (3/5 below)  range 0.956-1.139  noise 1.192
+               pgo/lto                0.972  (4/5 below)  range 0.924-1.234  noise 1.335
+               pgo_lto/pgo            1.070  (2/5 below)  range 0.917-1.130  noise 1.232
+    at 100%  lto/base               0.996  (3/5 below)  range 0.928-1.079  noise 1.163
+               pgo/base               1.018  (2/5 below)  range 0.903-1.075  noise 1.191
+               pgo_lto/base           0.992  (3/5 below)  range 0.804-1.187  noise 1.477
+               pgo/lto                0.969  (3/5 below)  range 0.903-1.147  noise 1.271
+               pgo_lto/pgo            0.979  (3/5 below)  range 0.877-1.125  noise 1.283
+    at 200%  lto/base               0.965  (3/5 below)  range 0.921-1.040  noise 1.129
+               pgo/base               1.001  (2/5 below)  range 0.926-1.095  noise 1.182
+               pgo_lto/base           0.982  (3/5 below)  range 0.954-1.263  noise 1.324
+               pgo/lto                0.996  (3/5 below)  range 0.910-1.244  noise 1.368
+               pgo_lto/pgo            0.987  (3/5 below)  range 0.840-1.215  noise 1.446
+  tranco / WIDE
+    at  25%  lto/base               1.014  (2/5 below)  range 0.975-1.158  noise 1.188
+               pgo/base               1.022  (2/5 below)  range 0.884-1.115  noise 1.262
+               pgo_lto/base           0.980  (3/5 below)  range 0.899-1.028  noise 1.143
+               pgo/lto                0.921  (3/5 below)  range 0.849-1.217  noise 1.433
+               pgo_lto/pgo            0.974  (3/5 below)  range 0.883-1.013  noise 1.148
+    at  50%  lto/base               0.999  (3/5 below)  range 0.863-1.220  noise 1.413
+               pgo/base               1.043  (2/5 below)  range 0.918-1.196  noise 1.303
+               pgo_lto/base           0.991  (3/5 below)  range 0.858-1.293  noise 1.507
+               pgo/lto                1.034  (1/5 below)  range 0.891-1.135  noise 1.274
+               pgo_lto/pgo            0.935  (3/5 below)  range 0.846-1.199  noise 1.416
+    at 100%  lto/base               0.984  (3/5 below)  range 0.831-1.154  noise 1.389
+               pgo/base               1.054  (1/5 below)  range 0.925-1.112  noise 1.203
+               pgo_lto/base           1.032  (1/5 below)  range 0.993-1.139  noise 1.147
+               pgo/lto                1.001  (2/5 below)  range 0.915-1.345  noise 1.470
+               pgo_lto/pgo            1.058  (2/5 below)  range 0.938-1.064  noise 1.135
+    at 200%  lto/base               0.880  (4/5 below)  range 0.817-1.046  noise 1.280
+               pgo/base               1.078  (1/5 below)  range 0.833-1.228  noise 1.474
+               pgo_lto/base           1.009  (2/5 below)  range 0.825-1.120  noise 1.357
+               pgo/lto                1.209  (0/5 below)  range 1.017-1.264  noise 1.243
+               pgo_lto/pgo            0.932  (5/5 below)  range 0.861-0.971  noise 1.127
+  tranco / ART
+    at  25%  lto/base               0.994  (4/5 below)  range 0.906-1.131  noise 1.249
+               pgo/base               0.960  (3/5 below)  range 0.848-1.200  noise 1.415
+               pgo_lto/base           1.162  (0/5 below)  range 1.046-1.164  noise 1.112
+               pgo/lto                1.041  (2/5 below)  range 0.846-1.209  noise 1.429
+               pgo_lto/pgo            1.105  (1/5 below)  range 0.901-1.335  noise 1.481
+    at  50%  lto/base               1.003  (2/5 below)  range 0.872-1.121  noise 1.286
+               pgo/base               0.944  (4/5 below)  range 0.852-1.070  noise 1.256
+               pgo_lto/base           1.186  (0/5 below)  range 1.092-1.290  noise 1.182
+               pgo/lto                0.992  (3/5 below)  range 0.895-1.036  noise 1.158
+               pgo_lto/pgo            1.256  (0/5 below)  range 1.123-1.395  noise 1.242
+    at 100%  lto/base               1.014  (2/5 below)  range 0.945-1.058  noise 1.120
+               pgo/base               1.018  (2/5 below)  range 0.922-1.179  noise 1.278
+               pgo_lto/base           1.142  (1/5 below)  range 1.000-1.385  noise 1.385
+               pgo/lto                1.046  (2/5 below)  range 0.928-1.131  noise 1.218
+               pgo_lto/pgo            1.132  (1/5 below)  range 0.966-1.259  noise 1.303
+    at 200%  lto/base               1.006  (2/5 below)  range 0.895-1.174  noise 1.312
+               pgo/base               0.967  (3/5 below)  range 0.830-1.180  noise 1.421
+               pgo_lto/base           1.069  (2/5 below)  range 0.861-1.604  noise 1.863
+               pgo/lto                0.944  (4/5 below)  range 0.849-1.023  noise 1.205
+               pgo_lto/pgo            1.109  (2/5 below)  range 0.976-1.368  noise 1.402
+
+  absolutes at 200% (median over all records):
+    mixed    S0    base=12.7694  lto=11.7672  pgo=12.6961  pgo_lto=12.2513
+    mixed    E31   base=8.68239  lto=8.2491  pgo=9.01021  pgo_lto=7.97688
+    mixed    WIDE  base=6.68038  lto=6.78329  pgo=6.8567  pgo_lto=6.32358
+    mixed    ART   base=6.18524  lto=6.20626  pgo=6.92856  pgo_lto=7.30773
+    skew     S0    base=15.1621  lto=15.2105  pgo=14.9151  pgo_lto=15.2729
+    skew     E31   base=13.5213  lto=12.7246  pgo=13.2894  pgo_lto=13.4514
+    skew     WIDE  base=8.6873  lto=8.13985  pgo=9.0826  pgo_lto=8.60665
+    skew     ART   base=9.02317  lto=10.2496  pgo=10.2854  pgo_lto=9.90989
+    tranco   S0    base=9.46884  lto=11.0595  pgo=10.4088  pgo_lto=9.65349
+    tranco   E31   base=7.58731  lto=6.99343  pgo=7.2675  pgo_lto=7.39987
+    tranco   WIDE  base=6.33403  lto=5.61518  pgo=7.00996  pgo_lto=6.6013
+    tranco   ART   base=4.31658  lto=4.71669  pgo=4.098  pgo_lto=4.54918
+
+### STRUCTURE CHECK across builds at 200% (must be identical; compilation cannot move it)
+
+  mixed    S0    base(ov=128533,blocks=21755392,mem=43131529)  lto(ov=128533,blocks=21755392,mem=43131529)  pgo(ov=128533,blocks=21755392,mem=43131529)  pgo_lto(ov=128533,blocks=21755392,mem=43131529)
+  mixed    E31   base(ov=39878,blocks=21755392,mem=30043192)  lto(ov=39878,blocks=21755392,mem=30043192)  pgo(ov=39878,blocks=21755392,mem=30043192)  pgo_lto(ov=39878,blocks=21755392,mem=30043192)
+  mixed    WIDE  base(ov=748,blocks=21755392,mem=23972017)  lto(ov=748,blocks=21755392,mem=23972017)  pgo(ov=748,blocks=21755392,mem=23972017)  pgo_lto(ov=748,blocks=21755392,mem=23972017)
+  skew     S0    base(ov=127070,blocks=20641984,mem=42027622)  lto(ov=127070,blocks=20641984,mem=42027622)  pgo(ov=127070,blocks=20641984,mem=42027622)  pgo_lto(ov=127070,blocks=20641984,mem=42027622)
+  skew     E31   base(ov=98022,blocks=20641984,mem=37461844)  lto(ov=98022,blocks=20641984,mem=37461844)  pgo(ov=98022,blocks=20641984,mem=37461844)  pgo_lto(ov=98022,blocks=20641984,mem=37461844)
+  skew     WIDE  base(ov=950,blocks=20641984,mem=23089846)  lto(ov=950,blocks=20641984,mem=23089846)  pgo(ov=950,blocks=20641984,mem=23089846)  pgo_lto(ov=950,blocks=20641984,mem=23089846)
+  tranco   S0    base(ov=127330,blocks=22153920,mem=36573932)  lto(ov=127330,blocks=22153920,mem=36573932)  pgo(ov=127330,blocks=22153920,mem=36573932)  pgo_lto(ov=127330,blocks=22153920,mem=36573932)
+  tranco   E31   base(ov=25437,blocks=22153920,mem=27748360)  lto(ov=25437,blocks=22153920,mem=27748360)  pgo(ov=25437,blocks=22153920,mem=27748360)  pgo_lto(ov=25437,blocks=22153920,mem=27748360)
+  tranco   WIDE  base(ov=1924,blocks=22153920,mem=25577162)  lto(ov=1924,blocks=22153920,mem=25577162)  pgo(ov=1924,blocks=22153920,mem=25577162)  pgo_lto(ov=1924,blocks=22153920,mem=25577162)
+

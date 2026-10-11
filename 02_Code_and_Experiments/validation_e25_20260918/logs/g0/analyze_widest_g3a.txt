@@ -1,0 +1,530 @@
+G3/A1'  S0 / E31 / WIDE / ART   run_id=g3a
+ratios within one repetition; per-process medians; direction counted over processes
+E31/S0 = the reclaim itself.  WIDE/E31 = widening its trigger surface.  NOT multiplied.
+============================================================================================================
+
+### cum_ms  -- maintenance + operations, cumulative
+
+  mixed / same
+    at  25%  E31/S0                   0.785  (5/5 below)  range 0.762-0.834  noise 1.095
+               WIDE/E31                 0.974  (4/5 below)  range 0.944-1.018  noise 1.078
+               WIDE/S0                  0.774  (5/5 below)  range 0.750-0.820  noise 1.094
+               WIDE/ART                 2.596  (0/5 below)  range 2.558-2.692  noise 1.052
+               S0/ART                   3.352  (0/5 below)  range 3.212-3.592  noise 1.119
+    at  50%  E31/S0                   0.925  (3/5 below)  range 0.895-1.030  noise 1.150
+               WIDE/E31                 0.410  (5/5 below)  range 0.397-0.423  noise 1.067
+               WIDE/S0                  0.391  (5/5 below)  range 0.376-0.418  noise 1.113
+               WIDE/ART                 2.648  (0/5 below)  range 2.531-2.754  noise 1.088
+               S0/ART                   6.728  (0/5 below)  range 6.489-7.046  noise 1.086
+    at 100%  E31/S0                   0.979  (3/5 below)  range 0.888-1.031  noise 1.161
+               WIDE/E31                 0.353  (5/5 below)  range 0.330-0.355  noise 1.075
+               WIDE/S0                  0.334  (5/5 below)  range 0.327-0.356  noise 1.089
+               WIDE/ART                 1.699  (0/5 below)  range 1.549-1.759  noise 1.136
+               S0/ART                   4.821  (0/5 below)  range 4.661-5.118  noise 1.098
+    at 200%  E31/S0                   0.951  (5/5 below)  range 0.883-0.985  noise 1.115
+               WIDE/E31                 0.463  (5/5 below)  range 0.431-0.473  noise 1.100
+               WIDE/S0                  0.441  (5/5 below)  range 0.407-0.450  noise 1.105
+               WIDE/ART                 1.667  (0/5 below)  range 1.562-1.725  noise 1.104
+               S0/ART                   3.767  (0/5 below)  range 3.690-4.064  noise 1.101
+             absolute S0    at 200%: 371.945
+             absolute E31   at 200%: 357.414
+             absolute WIDE  at 200%: 163.571
+             absolute ART   at 200%: 97.7164
+  mixed / grow
+    at  25%  E31/S0                   0.981  (4/5 below)  range 0.955-1.032  noise 1.081
+               WIDE/E31                 1.026  (2/5 below)  range 0.956-1.048  noise 1.097
+               WIDE/S0                  1.017  (1/5 below)  range 0.930-1.082  noise 1.163
+               WIDE/ART                 3.095  (0/5 below)  range 2.880-3.290  noise 1.142
+               S0/ART                   3.106  (0/5 below)  range 2.868-3.537  noise 1.233
+    at  50%  E31/S0                   1.032  (1/5 below)  range 0.982-1.125  noise 1.145
+               WIDE/E31                 0.986  (3/5 below)  range 0.954-1.054  noise 1.105
+               WIDE/S0                  1.064  (0/5 below)  range 1.001-1.082  noise 1.081
+               WIDE/ART                 2.934  (0/5 below)  range 2.688-3.011  noise 1.120
+               S0/ART                   2.840  (0/5 below)  range 2.636-3.083  noise 1.169
+    at 100%  E31/S0                   1.024  (1/5 below)  range 0.990-1.048  noise 1.059
+               WIDE/E31                 0.719  (5/5 below)  range 0.713-0.748  noise 1.050
+               WIDE/S0                  0.755  (5/5 below)  range 0.724-0.785  noise 1.084
+               WIDE/ART                 1.729  (0/5 below)  range 1.659-1.871  noise 1.128
+               S0/ART                   2.307  (0/5 below)  range 2.290-2.406  noise 1.051
+    at 200%  E31/S0                   0.987  (3/5 below)  range 0.949-1.004  noise 1.058
+               WIDE/E31                 0.715  (5/5 below)  range 0.691-0.752  noise 1.089
+               WIDE/S0                  0.711  (5/5 below)  range 0.684-0.761  noise 1.113
+               WIDE/ART                 1.704  (0/5 below)  range 1.640-1.797  noise 1.095
+               S0/ART                   2.444  (0/5 below)  range 2.408-2.520  noise 1.046
+             absolute S0    at 200%: 248.105
+             absolute E31   at 200%: 245.309
+             absolute WIDE  at 200%: 173.481
+             absolute ART   at 200%: 102.136
+  skew / same
+    at  25%  E31/S0                   0.969  (3/5 below)  range 0.872-1.048  noise 1.202
+               WIDE/E31                 0.094  (5/5 below)  range 0.087-0.102  noise 1.169
+               WIDE/S0                  0.091  (5/5 below)  range 0.086-0.092  noise 1.066
+               WIDE/ART                 0.853  (5/5 below)  range 0.823-0.901  noise 1.094
+               S0/ART                   9.786  (0/5 below)  range 8.949-10.179  noise 1.137
+    at  50%  E31/S0                   0.970  (3/5 below)  range 0.870-1.023  noise 1.176
+               WIDE/E31                 0.136  (5/5 below)  range 0.133-0.150  noise 1.131
+               WIDE/S0                  0.133  (5/5 below)  range 0.128-0.145  noise 1.129
+               WIDE/ART                 0.963  (5/5 below)  range 0.913-0.969  noise 1.061
+               S0/ART                   7.083  (0/5 below)  range 6.689-7.491  noise 1.120
+    at 100%  E31/S0                   0.981  (4/5 below)  range 0.901-1.065  noise 1.182
+               WIDE/E31                 0.183  (5/5 below)  range 0.174-0.189  noise 1.085
+               WIDE/S0                  0.176  (5/5 below)  range 0.167-0.193  noise 1.153
+               WIDE/ART                 1.134  (0/5 below)  range 1.093-1.171  noise 1.071
+               S0/ART                   6.444  (0/5 below)  range 6.056-6.609  noise 1.091
+    at 200%  E31/S0                   0.977  (4/5 below)  range 0.909-1.027  noise 1.130
+               WIDE/E31                 0.277  (5/5 below)  range 0.275-0.294  noise 1.067
+               WIDE/S0                  0.273  (5/5 below)  range 0.262-0.283  noise 1.081
+               WIDE/ART                 1.108  (0/5 below)  range 1.084-1.123  noise 1.036
+               S0/ART                   4.140  (0/5 below)  range 3.988-4.208  noise 1.055
+             absolute S0    at 200%: 936.212
+             absolute E31   at 200%: 890.619
+             absolute WIDE  at 200%: 251.913
+             absolute ART   at 200%: 228.385
+  skew / grow
+    at  25%  E31/S0                   0.981  (4/5 below)  range 0.933-1.022  noise 1.096
+               WIDE/E31                 0.235  (5/5 below)  range 0.225-0.243  noise 1.079
+               WIDE/S0                  0.229  (5/5 below)  range 0.223-0.232  noise 1.041
+               WIDE/ART                 0.957  (5/5 below)  range 0.911-0.985  noise 1.081
+               S0/ART                   4.199  (0/5 below)  range 4.131-4.308  noise 1.043
+    at  50%  E31/S0                   0.976  (4/5 below)  range 0.972-1.033  noise 1.063
+               WIDE/E31                 0.324  (5/5 below)  range 0.316-0.337  noise 1.066
+               WIDE/S0                  0.318  (5/5 below)  range 0.311-0.322  noise 1.037
+               WIDE/ART                 1.055  (0/5 below)  range 1.029-1.063  noise 1.032
+               S0/ART                   3.278  (0/5 below)  range 3.235-3.310  noise 1.023
+    at 100%  E31/S0                   1.028  (1/5 below)  range 0.999-1.064  noise 1.065
+               WIDE/E31                 0.422  (5/5 below)  range 0.415-0.426  noise 1.026
+               WIDE/S0                  0.431  (5/5 below)  range 0.423-0.435  noise 1.028
+               WIDE/ART                 1.238  (0/5 below)  range 1.210-1.252  noise 1.035
+               S0/ART                   2.836  (0/5 below)  range 2.803-2.878  noise 1.027
+    at 200%  E31/S0                   1.016  (2/5 below)  range 0.988-1.041  noise 1.054
+               WIDE/E31                 0.531  (5/5 below)  range 0.512-0.539  noise 1.053
+               WIDE/S0                  0.532  (5/5 below)  range 0.526-0.537  noise 1.021
+               WIDE/ART                 1.268  (0/5 below)  range 1.245-1.291  noise 1.037
+               S0/ART                   2.362  (0/5 below)  range 2.336-2.375  noise 1.017
+             absolute S0    at 200%: 495.994
+             absolute E31   at 200%: 505.361
+             absolute WIDE  at 200%: 264.721
+             absolute ART   at 200%: 213.438
+  tranco / same
+    at  25%  E31/S0                   0.436  (5/5 below)  range 0.425-0.498  noise 1.173
+               WIDE/E31                 0.726  (5/5 below)  range 0.713-0.753  noise 1.057
+               WIDE/S0                  0.323  (5/5 below)  range 0.308-0.349  noise 1.131
+               WIDE/ART                 3.289  (0/5 below)  range 3.193-3.307  noise 1.035
+               S0/ART                  10.310  (0/5 below)  range 9.203-10.637  noise 1.156
+    at  50%  E31/S0                   0.426  (5/5 below)  range 0.414-0.454  noise 1.097
+               WIDE/E31                 0.815  (5/5 below)  range 0.798-0.835  noise 1.045
+               WIDE/S0                  0.342  (5/5 below)  range 0.335-0.354  noise 1.056
+               WIDE/ART                 3.187  (0/5 below)  range 3.131-3.220  noise 1.029
+               S0/ART                   9.399  (0/5 below)  range 9.004-9.531  noise 1.059
+    at 100%  E31/S0                   0.390  (5/5 below)  range 0.365-0.393  noise 1.079
+               WIDE/E31                 0.805  (5/5 below)  range 0.797-0.837  noise 1.050
+               WIDE/S0                  0.312  (5/5 below)  range 0.290-0.318  noise 1.096
+               WIDE/ART                 3.204  (0/5 below)  range 3.102-3.324  noise 1.071
+               S0/ART                  10.479  (0/5 below)  range 10.131-10.648  noise 1.051
+    at 200%  E31/S0                   0.451  (5/5 below)  range 0.426-0.488  noise 1.147
+               WIDE/E31                 0.826  (5/5 below)  range 0.771-0.894  noise 1.159
+               WIDE/S0                  0.387  (5/5 below)  range 0.349-0.396  noise 1.134
+               WIDE/ART                 3.201  (0/5 below)  range 3.099-3.260  noise 1.052
+               S0/ART                   8.370  (0/5 below)  range 8.176-8.616  noise 1.054
+             absolute S0    at 200%: 916.909
+             absolute E31   at 200%: 417.485
+             absolute WIDE  at 200%: 349.217
+             absolute ART   at 200%: 109.541
+  tranco / grow
+    at  25%  E31/S0                   0.710  (5/5 below)  range 0.688-0.736  noise 1.069
+               WIDE/E31                 0.941  (5/5 below)  range 0.903-0.952  noise 1.054
+               WIDE/S0                  0.658  (5/5 below)  range 0.632-0.701  noise 1.108
+               WIDE/ART                 3.617  (0/5 below)  range 3.500-3.884  noise 1.110
+               S0/ART                   5.492  (0/5 below)  range 5.385-5.708  noise 1.060
+    at  50%  E31/S0                   0.723  (5/5 below)  range 0.695-0.729  noise 1.049
+               WIDE/E31                 0.925  (5/5 below)  range 0.898-0.930  noise 1.035
+               WIDE/S0                  0.643  (5/5 below)  range 0.635-0.666  noise 1.048
+               WIDE/ART                 3.329  (0/5 below)  range 3.232-3.406  noise 1.054
+               S0/ART                   5.095  (0/5 below)  range 4.940-5.174  noise 1.047
+    at 100%  E31/S0                   0.695  (5/5 below)  range 0.656-0.747  noise 1.139
+               WIDE/E31                 0.897  (5/5 below)  range 0.849-0.940  noise 1.108
+               WIDE/S0                  0.617  (5/5 below)  range 0.609-0.635  noise 1.043
+               WIDE/ART                 3.231  (0/5 below)  range 3.197-3.254  noise 1.018
+               S0/ART                   5.199  (0/5 below)  range 5.141-5.301  noise 1.031
+    at 200%  E31/S0                   0.835  (5/5 below)  range 0.752-0.850  noise 1.130
+               WIDE/E31                 0.905  (5/5 below)  range 0.871-0.951  noise 1.091
+               WIDE/S0                  0.733  (5/5 below)  range 0.713-0.762  noise 1.069
+               WIDE/ART                 3.128  (0/5 below)  range 3.090-3.270  noise 1.058
+               S0/ART                   4.230  (0/5 below)  range 4.218-4.319  noise 1.024
+             absolute S0    at 200%: 540.736
+             absolute E31   at 200%: 441.937
+             absolute WIDE  at 200%: 400.538
+             absolute ART   at 200%: 125.899
+
+### overflow  -- overflow records
+
+  mixed / same
+    at  25%  E31/S0                   0.042  (5/5 below)  range 0.042-0.042  noise 1.000
+               WIDE/E31                 0.550  (5/5 below)  range 0.550-0.550  noise 1.000
+               WIDE/S0                  0.023  (5/5 below)  range 0.023-0.023  noise 1.000
+    at  50%  E31/S0                   0.070  (5/5 below)  range 0.070-0.070  noise 1.000
+               WIDE/E31                 0.142  (5/5 below)  range 0.142-0.142  noise 1.000
+               WIDE/S0                  0.010  (5/5 below)  range 0.010-0.010  noise 1.000
+    at 100%  E31/S0                   0.391  (5/5 below)  range 0.391-0.391  noise 1.000
+               WIDE/E31                 0.011  (5/5 below)  range 0.011-0.011  noise 1.000
+               WIDE/S0                  0.004  (5/5 below)  range 0.004-0.004  noise 1.000
+    at 200%  E31/S0                   0.310  (5/5 below)  range 0.310-0.310  noise 1.000
+               WIDE/E31                 0.019  (5/5 below)  range 0.019-0.019  noise 1.000
+               WIDE/S0                  0.006  (5/5 below)  range 0.006-0.006  noise 1.000
+             absolute S0    at 200%: 128533
+             absolute E31   at 200%: 39878
+             absolute WIDE  at 200%: 748
+             absolute ART   at 200%: 0
+  mixed / grow
+    at  25%  E31/S0                   0.061  (5/5 below)  range 0.061-0.061  noise 1.000
+               WIDE/E31                 0.615  (5/5 below)  range 0.615-0.615  noise 1.000
+               WIDE/S0                  0.038  (5/5 below)  range 0.038-0.038  noise 1.000
+    at  50%  E31/S0                   0.077  (5/5 below)  range 0.077-0.077  noise 1.000
+               WIDE/E31                 0.295  (5/5 below)  range 0.295-0.295  noise 1.000
+               WIDE/S0                  0.023  (5/5 below)  range 0.023-0.023  noise 1.000
+    at 100%  E31/S0                   0.389  (5/5 below)  range 0.389-0.389  noise 1.000
+               WIDE/E31                 0.126  (5/5 below)  range 0.126-0.126  noise 1.000
+               WIDE/S0                  0.049  (5/5 below)  range 0.049-0.049  noise 1.000
+    at 200%  E31/S0                   0.318  (5/5 below)  range 0.318-0.318  noise 1.000
+               WIDE/E31                 0.138  (5/5 below)  range 0.138-0.138  noise 1.000
+               WIDE/S0                  0.044  (5/5 below)  range 0.044-0.044  noise 1.000
+             absolute S0    at 200%: 129703
+             absolute E31   at 200%: 41251
+             absolute WIDE  at 200%: 5698
+             absolute ART   at 200%: 0
+  skew / same
+    at  25%  E31/S0                   0.823  (5/5 below)  range 0.823-0.823  noise 1.000
+               WIDE/E31                 0.035  (5/5 below)  range 0.035-0.035  noise 1.000
+               WIDE/S0                  0.029  (5/5 below)  range 0.029-0.029  noise 1.000
+    at  50%  E31/S0                   0.809  (5/5 below)  range 0.809-0.809  noise 1.000
+               WIDE/E31                 0.018  (5/5 below)  range 0.018-0.018  noise 1.000
+               WIDE/S0                  0.015  (5/5 below)  range 0.015-0.015  noise 1.000
+    at 100%  E31/S0                   0.775  (5/5 below)  range 0.775-0.775  noise 1.000
+               WIDE/E31                 0.010  (5/5 below)  range 0.010-0.010  noise 1.000
+               WIDE/S0                  0.007  (5/5 below)  range 0.007-0.007  noise 1.000
+    at 200%  E31/S0                   0.771  (5/5 below)  range 0.771-0.771  noise 1.000
+               WIDE/E31                 0.010  (5/5 below)  range 0.010-0.010  noise 1.000
+               WIDE/S0                  0.007  (5/5 below)  range 0.007-0.007  noise 1.000
+             absolute S0    at 200%: 127070
+             absolute E31   at 200%: 98022
+             absolute WIDE  at 200%: 950
+             absolute ART   at 200%: 0
+  skew / grow
+    at  25%  E31/S0                   0.847  (5/5 below)  range 0.847-0.847  noise 1.000
+               WIDE/E31                 0.190  (5/5 below)  range 0.190-0.190  noise 1.000
+               WIDE/S0                  0.161  (5/5 below)  range 0.161-0.161  noise 1.000
+    at  50%  E31/S0                   0.830  (5/5 below)  range 0.830-0.830  noise 1.000
+               WIDE/E31                 0.154  (5/5 below)  range 0.154-0.154  noise 1.000
+               WIDE/S0                  0.128  (5/5 below)  range 0.128-0.128  noise 1.000
+    at 100%  E31/S0                   0.794  (5/5 below)  range 0.794-0.794  noise 1.000
+               WIDE/E31                 0.123  (5/5 below)  range 0.123-0.123  noise 1.000
+               WIDE/S0                  0.098  (5/5 below)  range 0.098-0.098  noise 1.000
+    at 200%  E31/S0                   0.793  (5/5 below)  range 0.793-0.793  noise 1.000
+               WIDE/E31                 0.136  (5/5 below)  range 0.136-0.136  noise 1.000
+               WIDE/S0                  0.108  (5/5 below)  range 0.108-0.108  noise 1.000
+             absolute S0    at 200%: 128704
+             absolute E31   at 200%: 102068
+             absolute WIDE  at 200%: 13919
+             absolute ART   at 200%: 0
+  tranco / same
+    at  25%  E31/S0                   0.256  (5/5 below)  range 0.256-0.256  noise 1.000
+               WIDE/E31                 0.291  (5/5 below)  range 0.291-0.291  noise 1.000
+               WIDE/S0                  0.075  (5/5 below)  range 0.075-0.075  noise 1.000
+    at  50%  E31/S0                   0.225  (5/5 below)  range 0.225-0.225  noise 1.000
+               WIDE/E31                 0.176  (5/5 below)  range 0.176-0.176  noise 1.000
+               WIDE/S0                  0.040  (5/5 below)  range 0.040-0.040  noise 1.000
+    at 100%  E31/S0                   0.214  (5/5 below)  range 0.214-0.214  noise 1.000
+               WIDE/E31                 0.102  (5/5 below)  range 0.102-0.102  noise 1.000
+               WIDE/S0                  0.022  (5/5 below)  range 0.022-0.022  noise 1.000
+    at 200%  E31/S0                   0.200  (5/5 below)  range 0.200-0.200  noise 1.000
+               WIDE/E31                 0.076  (5/5 below)  range 0.076-0.076  noise 1.000
+               WIDE/S0                  0.015  (5/5 below)  range 0.015-0.015  noise 1.000
+             absolute S0    at 200%: 127330
+             absolute E31   at 200%: 25437
+             absolute WIDE  at 200%: 1924
+             absolute ART   at 200%: 0
+  tranco / grow
+    at  25%  E31/S0                   0.508  (5/5 below)  range 0.508-0.508  noise 1.000
+               WIDE/E31                 0.711  (5/5 below)  range 0.711-0.711  noise 1.000
+               WIDE/S0                  0.361  (5/5 below)  range 0.361-0.361  noise 1.000
+    at  50%  E31/S0                   0.497  (5/5 below)  range 0.497-0.497  noise 1.000
+               WIDE/E31                 0.712  (5/5 below)  range 0.712-0.712  noise 1.000
+               WIDE/S0                  0.354  (5/5 below)  range 0.354-0.354  noise 1.000
+    at 100%  E31/S0                   0.499  (5/5 below)  range 0.499-0.499  noise 1.000
+               WIDE/E31                 0.718  (5/5 below)  range 0.718-0.718  noise 1.000
+               WIDE/S0                  0.358  (5/5 below)  range 0.358-0.358  noise 1.000
+    at 200%  E31/S0                   0.420  (5/5 below)  range 0.420-0.420  noise 1.000
+               WIDE/E31                 0.570  (5/5 below)  range 0.570-0.570  noise 1.000
+               WIDE/S0                  0.240  (5/5 below)  range 0.240-0.240  noise 1.000
+             absolute S0    at 200%: 195278
+             absolute E31   at 200%: 82073
+             absolute WIDE  at 200%: 46787
+             absolute ART   at 200%: 0
+
+### memory  -- resident index bytes
+
+  mixed / same
+    at  25%  E31/S0                   0.937  (5/5 below)  range 0.937-0.937  noise 1.000
+               WIDE/E31                 0.999  (5/5 below)  range 0.999-0.999  noise 1.000
+               WIDE/S0                  0.936  (5/5 below)  range 0.936-0.936  noise 1.000
+    at  50%  E31/S0                   0.823  (5/5 below)  range 0.823-0.823  noise 1.000
+               WIDE/E31                 0.983  (5/5 below)  range 0.983-0.983  noise 1.000
+               WIDE/S0                  0.809  (5/5 below)  range 0.809-0.809  noise 1.000
+    at 100%  E31/S0                   0.764  (5/5 below)  range 0.764-0.764  noise 1.000
+               WIDE/E31                 0.800  (5/5 below)  range 0.800-0.800  noise 1.000
+               WIDE/S0                  0.611  (5/5 below)  range 0.611-0.611  noise 1.000
+    at 200%  E31/S0                   0.697  (5/5 below)  range 0.697-0.697  noise 1.000
+               WIDE/E31                 0.798  (5/5 below)  range 0.798-0.798  noise 1.000
+               WIDE/S0                  0.556  (5/5 below)  range 0.556-0.556  noise 1.000
+             absolute S0    at 200%: 4.31315e+07
+             absolute E31   at 200%: 3.00432e+07
+             absolute WIDE  at 200%: 2.3972e+07
+             absolute ART   at 200%: 0
+  mixed / grow
+    at  25%  E31/S0                   0.922  (5/5 below)  range 0.922-0.922  noise 1.000
+               WIDE/E31                 0.998  (5/5 below)  range 0.998-0.998  noise 1.000
+               WIDE/S0                  0.920  (5/5 below)  range 0.920-0.920  noise 1.000
+    at  50%  E31/S0                   0.805  (5/5 below)  range 0.805-0.805  noise 1.000
+               WIDE/E31                 0.982  (5/5 below)  range 0.982-0.982  noise 1.000
+               WIDE/S0                  0.791  (5/5 below)  range 0.791-0.791  noise 1.000
+    at 100%  E31/S0                   0.751  (5/5 below)  range 0.751-0.751  noise 1.000
+               WIDE/E31                 0.811  (5/5 below)  range 0.811-0.811  noise 1.000
+               WIDE/S0                  0.609  (5/5 below)  range 0.609-0.609  noise 1.000
+    at 200%  E31/S0                   0.689  (5/5 below)  range 0.689-0.689  noise 1.000
+               WIDE/E31                 0.810  (5/5 below)  range 0.810-0.810  noise 1.000
+               WIDE/S0                  0.558  (5/5 below)  range 0.558-0.558  noise 1.000
+             absolute S0    at 200%: 4.43058e+07
+             absolute E31   at 200%: 3.05298e+07
+             absolute WIDE  at 200%: 2.47383e+07
+             absolute ART   at 200%: 0
+  skew / same
+    at  25%  E31/S0                   0.980  (5/5 below)  range 0.980-0.980  noise 1.000
+               WIDE/E31                 0.888  (5/5 below)  range 0.888-0.888  noise 1.000
+               WIDE/S0                  0.870  (5/5 below)  range 0.870-0.870  noise 1.000
+    at  50%  E31/S0                   0.954  (5/5 below)  range 0.954-0.954  noise 1.000
+               WIDE/E31                 0.784  (5/5 below)  range 0.784-0.784  noise 1.000
+               WIDE/S0                  0.748  (5/5 below)  range 0.748-0.748  noise 1.000
+    at 100%  E31/S0                   0.893  (5/5 below)  range 0.893-0.893  noise 1.000
+               WIDE/E31                 0.617  (5/5 below)  range 0.617-0.617  noise 1.000
+               WIDE/S0                  0.551  (5/5 below)  range 0.551-0.551  noise 1.000
+    at 200%  E31/S0                   0.891  (5/5 below)  range 0.891-0.891  noise 1.000
+               WIDE/E31                 0.616  (5/5 below)  range 0.616-0.616  noise 1.000
+               WIDE/S0                  0.549  (5/5 below)  range 0.549-0.549  noise 1.000
+             absolute S0    at 200%: 4.20276e+07
+             absolute E31   at 200%: 3.74618e+07
+             absolute WIDE  at 200%: 2.30898e+07
+             absolute ART   at 200%: 0
+  skew / grow
+    at  25%  E31/S0                   0.981  (5/5 below)  range 0.981-0.981  noise 1.000
+               WIDE/E31                 0.898  (5/5 below)  range 0.898-0.898  noise 1.000
+               WIDE/S0                  0.881  (5/5 below)  range 0.881-0.881  noise 1.000
+    at  50%  E31/S0                   0.955  (5/5 below)  range 0.955-0.955  noise 1.000
+               WIDE/E31                 0.801  (5/5 below)  range 0.801-0.801  noise 1.000
+               WIDE/S0                  0.765  (5/5 below)  range 0.765-0.765  noise 1.000
+    at 100%  E31/S0                   0.899  (5/5 below)  range 0.899-0.899  noise 1.000
+               WIDE/E31                 0.641  (5/5 below)  range 0.641-0.641  noise 1.000
+               WIDE/S0                  0.577  (5/5 below)  range 0.577-0.577  noise 1.000
+    at 200%  E31/S0                   0.898  (5/5 below)  range 0.898-0.898  noise 1.000
+               WIDE/E31                 0.644  (5/5 below)  range 0.644-0.644  noise 1.000
+               WIDE/S0                  0.578  (5/5 below)  range 0.578-0.578  noise 1.000
+             absolute S0    at 200%: 4.33259e+07
+             absolute E31   at 200%: 3.89085e+07
+             absolute WIDE  at 200%: 2.50551e+07
+             absolute ART   at 200%: 0
+  tranco / same
+    at  25%  E31/S0                   0.945  (5/5 below)  range 0.945-0.945  noise 1.000
+               WIDE/E31                 0.985  (5/5 below)  range 0.985-0.985  noise 1.000
+               WIDE/S0                  0.930  (5/5 below)  range 0.930-0.930  noise 1.000
+    at  50%  E31/S0                   0.897  (5/5 below)  range 0.897-0.897  noise 1.000
+               WIDE/E31                 0.971  (5/5 below)  range 0.971-0.971  noise 1.000
+               WIDE/S0                  0.871  (5/5 below)  range 0.871-0.871  noise 1.000
+    at 100%  E31/S0                   0.824  (5/5 below)  range 0.824-0.824  noise 1.000
+               WIDE/E31                 0.945  (5/5 below)  range 0.945-0.945  noise 1.000
+               WIDE/S0                  0.779  (5/5 below)  range 0.779-0.779  noise 1.000
+    at 200%  E31/S0                   0.759  (5/5 below)  range 0.759-0.759  noise 1.000
+               WIDE/E31                 0.922  (5/5 below)  range 0.922-0.922  noise 1.000
+               WIDE/S0                  0.699  (5/5 below)  range 0.699-0.699  noise 1.000
+             absolute S0    at 200%: 3.65739e+07
+             absolute E31   at 200%: 2.77484e+07
+             absolute WIDE  at 200%: 2.55772e+07
+             absolute ART   at 200%: 0
+  tranco / grow
+    at  25%  E31/S0                   0.947  (5/5 below)  range 0.947-0.947  noise 1.000
+               WIDE/E31                 0.984  (5/5 below)  range 0.984-0.984  noise 1.000
+               WIDE/S0                  0.932  (5/5 below)  range 0.932-0.932  noise 1.000
+    at  50%  E31/S0                   0.906  (5/5 below)  range 0.906-0.906  noise 1.000
+               WIDE/E31                 0.971  (5/5 below)  range 0.971-0.971  noise 1.000
+               WIDE/S0                  0.879  (5/5 below)  range 0.879-0.879  noise 1.000
+    at 100%  E31/S0                   0.847  (5/5 below)  range 0.847-0.847  noise 1.000
+               WIDE/E31                 0.947  (5/5 below)  range 0.947-0.947  noise 1.000
+               WIDE/S0                  0.801  (5/5 below)  range 0.801-0.801  noise 1.000
+    at 200%  E31/S0                   0.764  (5/5 below)  range 0.764-0.764  noise 1.000
+               WIDE/E31                 0.899  (5/5 below)  range 0.899-0.899  noise 1.000
+               WIDE/S0                  0.687  (5/5 below)  range 0.687-0.687  noise 1.000
+             absolute S0    at 200%: 4.32992e+07
+             absolute E31   at 200%: 3.30811e+07
+             absolute WIDE  at 200%: 2.97375e+07
+             absolute ART   at 200%: 0
+
+### query_ms  -- fixed query sequence
+
+  mixed / same
+    at  25%  E31/S0                   0.941  (4/5 below)  range 0.895-1.134  noise 1.267
+               WIDE/E31                 0.970  (3/5 below)  range 0.877-1.233  noise 1.407
+               WIDE/S0                  0.940  (3/5 below)  range 0.852-1.093  noise 1.283
+               WIDE/ART                 1.482  (0/5 below)  range 1.398-1.543  noise 1.104
+               S0/ART                   1.532  (0/5 below)  range 1.365-1.847  noise 1.353
+    at  50%  E31/S0                   0.819  (5/5 below)  range 0.780-0.894  noise 1.147
+               WIDE/E31                 1.027  (2/5 below)  range 0.987-1.059  noise 1.074
+               WIDE/S0                  0.846  (5/5 below)  range 0.746-0.935  noise 1.253
+               WIDE/ART                 1.231  (0/5 below)  range 1.145-1.437  noise 1.255
+               S0/ART                   1.480  (0/5 below)  range 1.451-1.638  noise 1.129
+    at 100%  E31/S0                   0.738  (5/5 below)  range 0.656-0.812  noise 1.238
+               WIDE/E31                 0.819  (5/5 below)  range 0.701-0.985  noise 1.406
+               WIDE/S0                  0.632  (5/5 below)  range 0.513-0.668  noise 1.303
+               WIDE/ART                 1.043  (1/5 below)  range 0.909-1.176  noise 1.294
+               S0/ART                   1.774  (0/5 below)  range 1.672-2.006  noise 1.200
+    at 200%  E31/S0                   0.684  (5/5 below)  range 0.639-0.779  noise 1.219
+               WIDE/E31                 0.737  (5/5 below)  range 0.710-0.851  noise 1.199
+               WIDE/S0                  0.532  (5/5 below)  range 0.447-0.638  noise 1.427
+               WIDE/ART                 1.025  (2/5 below)  range 0.949-1.097  noise 1.156
+               S0/ART                   1.850  (0/5 below)  range 1.780-2.401  noise 1.349
+             absolute S0    at 200%: 12.1714
+             absolute E31   at 200%: 8.35768
+             absolute WIDE  at 200%: 6.22227
+             absolute ART   at 200%: 6.10216
+  mixed / grow
+    at  25%  E31/S0                   0.852  (4/5 below)  range 0.704-1.120  noise 1.589
+               WIDE/E31                 1.006  (2/5 below)  range 0.781-1.289  noise 1.650
+               WIDE/S0                  0.884  (4/5 below)  range 0.776-1.091  noise 1.407
+               WIDE/ART                 1.359  (0/5 below)  range 1.257-1.514  noise 1.205
+               S0/ART                   1.580  (0/5 below)  range 1.460-1.771  noise 1.213
+    at  50%  E31/S0                   0.775  (5/5 below)  range 0.741-0.870  noise 1.173
+               WIDE/E31                 1.013  (1/5 below)  range 0.895-1.033  noise 1.154
+               WIDE/S0                  0.771  (5/5 below)  range 0.739-0.799  noise 1.082
+               WIDE/ART                 1.158  (0/5 below)  range 1.050-1.273  noise 1.213
+               S0/ART                   1.471  (0/5 below)  range 1.370-1.647  noise 1.202
+    at 100%  E31/S0                   0.692  (5/5 below)  range 0.634-0.750  noise 1.183
+               WIDE/E31                 0.783  (5/5 below)  range 0.663-0.809  noise 1.221
+               WIDE/S0                  0.529  (5/5 below)  range 0.459-0.551  noise 1.199
+               WIDE/ART                 1.058  (1/5 below)  range 0.986-1.232  noise 1.250
+               S0/ART                   2.019  (0/5 below)  range 1.988-2.140  noise 1.077
+    at 200%  E31/S0                   0.655  (5/5 below)  range 0.595-0.699  noise 1.175
+               WIDE/E31                 0.692  (5/5 below)  range 0.668-0.762  noise 1.141
+               WIDE/S0                  0.464  (5/5 below)  range 0.432-0.513  noise 1.186
+               WIDE/ART                 0.964  (3/5 below)  range 0.919-1.062  noise 1.155
+               S0/ART                   2.063  (0/5 below)  range 1.972-2.094  noise 1.062
+             absolute S0    at 200%: 11.7828
+             absolute E31   at 200%: 8.01547
+             absolute WIDE  at 200%: 5.75583
+             absolute ART   at 200%: 6.02918
+  skew / same
+    at  25%  E31/S0                   0.888  (3/5 below)  range 0.774-1.049  noise 1.355
+               WIDE/E31                 0.948  (3/5 below)  range 0.892-1.126  noise 1.262
+               WIDE/S0                  0.933  (5/5 below)  range 0.710-0.991  noise 1.397
+               WIDE/ART                 0.907  (3/5 below)  range 0.861-1.026  noise 1.191
+               S0/ART                   0.989  (3/5 below)  range 0.888-1.252  noise 1.411
+    at  50%  E31/S0                   0.915  (4/5 below)  range 0.809-1.168  noise 1.444
+               WIDE/E31                 0.808  (5/5 below)  range 0.633-0.883  noise 1.395
+               WIDE/S0                  0.764  (5/5 below)  range 0.727-0.833  noise 1.145
+               WIDE/ART                 0.847  (5/5 below)  range 0.801-0.915  noise 1.143
+               S0/ART                   1.130  (0/5 below)  range 1.019-1.277  noise 1.254
+    at 100%  E31/S0                   0.985  (3/5 below)  range 0.925-1.128  noise 1.219
+               WIDE/E31                 0.678  (5/5 below)  range 0.517-0.758  noise 1.466
+               WIDE/S0                  0.586  (5/5 below)  range 0.556-0.729  noise 1.311
+               WIDE/ART                 0.923  (4/5 below)  range 0.757-1.048  noise 1.385
+               S0/ART                   1.484  (0/5 below)  range 1.199-1.542  noise 1.286
+    at 200%  E31/S0                   0.896  (5/5 below)  range 0.825-0.979  noise 1.186
+               WIDE/E31                 0.622  (5/5 below)  range 0.605-0.661  noise 1.092
+               WIDE/S0                  0.592  (5/5 below)  range 0.554-0.629  noise 1.135
+               WIDE/ART                 0.796  (4/5 below)  range 0.723-1.031  noise 1.425
+               S0/ART                   1.543  (0/5 below)  range 1.300-1.728  noise 1.329
+             absolute S0    at 200%: 14.9016
+             absolute E31   at 200%: 13.7791
+             absolute WIDE  at 200%: 8.73344
+             absolute ART   at 200%: 10.0709
+  skew / grow
+    at  25%  E31/S0                   0.993  (3/5 below)  range 0.890-1.026  noise 1.154
+               WIDE/E31                 0.882  (5/5 below)  range 0.850-0.954  noise 1.122
+               WIDE/S0                  0.872  (4/5 below)  range 0.750-1.050  noise 1.400
+               WIDE/ART                 0.938  (4/5 below)  range 0.787-1.001  noise 1.272
+               S0/ART                   1.107  (1/5 below)  range 0.998-1.157  noise 1.159
+    at  50%  E31/S0                   0.939  (3/5 below)  range 0.874-1.106  noise 1.266
+               WIDE/E31                 0.771  (5/5 below)  range 0.693-0.935  noise 1.349
+               WIDE/S0                  0.719  (5/5 below)  range 0.701-0.812  noise 1.158
+               WIDE/ART                 0.876  (5/5 below)  range 0.858-0.985  noise 1.148
+               S0/ART                   1.240  (0/5 below)  range 1.083-1.294  noise 1.194
+    at 100%  E31/S0                   0.861  (5/5 below)  range 0.851-0.961  noise 1.128
+               WIDE/E31                 0.623  (5/5 below)  range 0.547-0.651  noise 1.190
+               WIDE/S0                  0.529  (5/5 below)  range 0.498-0.589  noise 1.182
+               WIDE/ART                 0.834  (5/5 below)  range 0.807-0.961  noise 1.190
+               S0/ART                   1.713  (0/5 below)  range 1.437-1.851  noise 1.288
+    at 200%  E31/S0                   0.837  (5/5 below)  range 0.808-0.850  noise 1.053
+               WIDE/E31                 0.616  (5/5 below)  range 0.573-0.716  noise 1.248
+               WIDE/S0                  0.552  (5/5 below)  range 0.496-0.571  noise 1.151
+               WIDE/ART                 0.946  (4/5 below)  range 0.915-1.078  noise 1.178
+               S0/ART                   1.764  (0/5 below)  range 1.648-1.922  noise 1.167
+             absolute S0    at 200%: 15.783
+             absolute E31   at 200%: 13.5093
+             absolute WIDE  at 200%: 8.24102
+             absolute ART   at 200%: 8.4663
+  tranco / same
+    at  25%  E31/S0                   0.992  (3/5 below)  range 0.812-1.339  noise 1.649
+               WIDE/E31                 0.958  (3/5 below)  range 0.867-1.030  noise 1.188
+               WIDE/S0                  0.850  (3/5 below)  range 0.831-1.236  noise 1.488
+               WIDE/ART                 1.957  (0/5 below)  range 1.749-2.268  noise 1.297
+               S0/ART                   2.194  (0/5 below)  range 1.727-2.428  noise 1.406
+    at  50%  E31/S0                   0.949  (4/5 below)  range 0.891-1.054  noise 1.183
+               WIDE/E31                 1.021  (2/5 below)  range 0.851-1.107  noise 1.300
+               WIDE/S0                  0.893  (5/5 below)  range 0.833-0.954  noise 1.146
+               WIDE/ART                 1.948  (0/5 below)  range 1.504-2.125  noise 1.413
+               S0/ART                   2.094  (0/5 below)  range 1.757-2.303  noise 1.311
+    at 100%  E31/S0                   0.767  (5/5 below)  range 0.757-0.898  noise 1.186
+               WIDE/E31                 0.887  (4/5 below)  range 0.754-1.085  noise 1.438
+               WIDE/S0                  0.736  (5/5 below)  range 0.643-0.813  noise 1.264
+               WIDE/ART                 1.573  (0/5 below)  range 1.497-1.664  noise 1.112
+               S0/ART                   2.385  (0/5 below)  range 2.072-2.418  noise 1.167
+    at 200%  E31/S0                   0.643  (5/5 below)  range 0.544-0.792  noise 1.456
+               WIDE/E31                 1.090  (2/5 below)  range 0.704-1.114  noise 1.583
+               WIDE/S0                  0.590  (5/5 below)  range 0.559-0.684  noise 1.223
+               WIDE/ART                 1.319  (0/5 below)  range 1.249-1.617  noise 1.295
+               S0/ART                   2.327  (0/5 below)  range 2.152-2.396  noise 1.113
+             absolute S0    at 200%: 9.99629
+             absolute E31   at 200%: 6.93517
+             absolute WIDE  at 200%: 6.45953
+             absolute ART   at 200%: 4.39319
+  tranco / grow
+    at  25%  E31/S0                   0.992  (3/5 below)  range 0.898-1.139  noise 1.268
+               WIDE/E31                 0.913  (4/5 below)  range 0.885-1.075  noise 1.214
+               WIDE/S0                  0.944  (4/5 below)  range 0.845-1.006  noise 1.191
+               WIDE/ART                 1.930  (0/5 below)  range 1.644-2.041  noise 1.242
+               S0/ART                   1.983  (0/5 below)  range 1.572-2.256  noise 1.435
+    at  50%  E31/S0                   0.971  (4/5 below)  range 0.838-1.172  noise 1.399
+               WIDE/E31                 0.969  (3/5 below)  range 0.891-1.076  noise 1.207
+               WIDE/S0                  0.900  (4/5 below)  range 0.847-1.204  noise 1.421
+               WIDE/ART                 1.983  (0/5 below)  range 1.757-2.213  noise 1.259
+               S0/ART                   2.323  (0/5 below)  range 1.759-2.624  noise 1.492
+    at 100%  E31/S0                   0.820  (5/5 below)  range 0.748-0.960  noise 1.283
+               WIDE/E31                 0.929  (4/5 below)  range 0.899-1.234  noise 1.372
+               WIDE/S0                  0.813  (5/5 below)  range 0.753-0.954  noise 1.267
+               WIDE/ART                 2.176  (0/5 below)  range 1.792-2.234  noise 1.246
+               S0/ART                   2.558  (0/5 below)  range 2.205-2.889  noise 1.310
+    at 200%  E31/S0                   0.704  (5/5 below)  range 0.577-0.810  noise 1.404
+               WIDE/E31                 0.885  (5/5 below)  range 0.796-0.981  noise 1.232
+               WIDE/S0                  0.686  (5/5 below)  range 0.508-0.706  noise 1.391
+               WIDE/ART                 2.039  (0/5 below)  range 1.692-2.272  noise 1.343
+               S0/ART                   3.064  (0/5 below)  range 2.691-3.399  noise 1.263
+             absolute S0    at 200%: 11.9318
+             absolute E31   at 200%: 8.49023
+             absolute WIDE  at 200%: 7.85981
+             absolute ART   at 200%: 3.77559
+
+### STRUCTURE at 200%  (counts and bytes, not timings -- no noise-floor language)
+
+  mixed / same: S0 ov=128533 mem=41.133MB   E31 ov=39878 mem=28.651MB   WIDE ov=748 mem=22.861MB   ART ov=0 mem=0.000MB
+  mixed / grow: S0 ov=129703 mem=42.253MB   E31 ov=41251 mem=29.115MB   WIDE ov=5698 mem=23.592MB   ART ov=0 mem=0.000MB
+  skew / same: S0 ov=127070 mem=40.081MB   E31 ov=98022 mem=35.726MB   WIDE ov=950 mem=22.020MB   ART ov=0 mem=0.000MB
+  skew / grow: S0 ov=128704 mem=41.319MB   E31 ov=102068 mem=37.106MB   WIDE ov=13919 mem=23.894MB   ART ov=0 mem=0.000MB
+  tranco / same: S0 ov=127330 mem=34.880MB   E31 ov=25437 mem=26.463MB   WIDE ov=1924 mem=24.392MB   ART ov=0 mem=0.000MB
+  tranco / grow: S0 ov=195278 mem=41.293MB   E31 ov=82073 mem=31.549MB   WIDE ov=46787 mem=28.360MB   ART ov=0 mem=0.000MB
+

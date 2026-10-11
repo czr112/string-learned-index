@@ -1,0 +1,1 @@
+{"gate":"check_lits_fingerprint","keys":524288,"fused_agrees":524288,"standalone_agrees":524288,"naive_agrees":2129,"naive_differs":516015,"naive_differs_fraction":0.984221,"consumed_zero":0,"consumed_max":21,"lits_group_differs":514125}

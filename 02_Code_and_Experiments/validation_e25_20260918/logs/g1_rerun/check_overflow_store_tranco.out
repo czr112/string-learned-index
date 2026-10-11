@@ -1,0 +1,12 @@
+check_overflow_store frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16] O1[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=1,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16]
+{"phase":"checkpoint","kind":"tranco","name":"initial","live":262144,"arm_a_overflow":1730,"arm_b_overflow":1730,"records_compared":262144}
+{"phase":"batch","name":"overflow_insert","steps":10199,"arm_a_overflow":11926,"arm_b_overflow":11926,"arm_a_record_shifts":511901,"arm_b_record_shifts":511901,"arm_b_handle_moves":511901}
+{"phase":"checkpoint","kind":"tranco","name":"overflow_insert","live":272343,"arm_a_overflow":11926,"arm_b_overflow":11926,"records_compared":534487}
+{"phase":"victims","kind":"tranco","overflow_resident":10196}
+{"phase":"batch","name":"overflow_erase","steps":512,"arm_a_overflow_released":7267,"arm_a_logical_shifts":52878,"arm_b_logical_shifts":52878,"arm_b_handle_moves":52878,"arm_b_record_moves":0}
+{"phase":"checkpoint","kind":"tranco","name":"overflow_erase","live":271831,"arm_a_overflow":11414,"arm_b_overflow":11414,"records_compared":806318}
+{"phase":"batch","name":"reinsert","steps":368,"arm_a_overflow":11782,"arm_b_overflow":11782}
+{"phase":"checkpoint","kind":"tranco","name":"reinsert","live":272199,"arm_a_overflow":11782,"arm_b_overflow":11782,"records_compared":1078517}
+{"phase":"find","kind":"tranco","present_probes":272199,"absent_probes":4125,"compared":276324}
+{"gate":"check_overflow_store","kind":"tranco","run_tag":"","keys":262144,"regions":128,"result":"pass","records_compared":1078517,"finds_compared":276324,"scans":778,"scan_records":277101,"arm_a_overflow":11782,"arm_b_overflow":11782,"arm_a_memory":26328426,"arm_b_memory":26407313,"handle_moves_total":564807,"record_moves_total":0,"store_high_water":260,"store_live_water":260}
+tranco overflow-store gate done

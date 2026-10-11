@@ -1,0 +1,60 @@
+### xfs_ctx16_same_mixed P1
+mixed Context16 same rep0 B done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 S done
+mixed Context16 same rep0 WS done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 S done
+mixed Context16 same rep1 WS done
+mixed Context16 same rep1 B done
+rc=0
+### xfs_ctx16_same_mixed P2
+mixed Context16 same rep0 B done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 S done
+mixed Context16 same rep0 WS done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 S done
+mixed Context16 same rep1 WS done
+mixed Context16 same rep1 B done
+rc=0
+### xfs_lits_same_mixed P1
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 S done
+mixed LitsHpt same rep0 WS done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 S done
+mixed LitsHpt same rep1 WS done
+mixed LitsHpt same rep1 B done
+rc=0
+### xfs_lits_same_mixed P2
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 S done
+mixed LitsHpt same rep0 WS done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 S done
+mixed LitsHpt same rep1 WS done
+mixed LitsHpt same rep1 B done
+rc=0
+### xfs_ctx16_same_skew P1
+skew Context16 same rep0 B done
+skew Context16 same rep0 W done
+skew Context16 same rep0 S done
+skew Context16 same rep0 WS done
+skew Context16 same rep1 W done
+skew Context16 same rep1 S done
+skew Context16 same rep1 WS done
+skew Context16 same rep1 B done
+rc=0
+### xfs_ctx16_same_skew P2
+skew Context16 same rep0 B done
+skew Context16 same rep0 W done
+skew Context16 same rep0 S done
+skew Context16 same rep0 WS done
+skew Context16 same rep1 W done
+skew Context16 same rep1 S done
+skew Context16 same rep1 WS done
+skew Context16 same rep1 B done
+rc=0

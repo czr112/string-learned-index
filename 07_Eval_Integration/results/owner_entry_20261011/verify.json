@@ -1,0 +1,106 @@
+{
+  "cells": [
+    {
+      "cell": "mixed/context16",
+      "checks": {
+        "identity_queries": true,
+        "identity_rows": true,
+        "identity_erase": true,
+        "scan_zero_or_fallback": true,
+        "zero_on_lits_only": true,
+        "diff": true,
+        "bytes_close": true,
+        "bytes_per_lits_region": true,
+        "regions_close": true,
+        "entry_pass": true
+      },
+      "savable_ratio": 0.0
+    },
+    {
+      "cell": "mixed/lits",
+      "checks": {
+        "identity_queries": true,
+        "identity_rows": true,
+        "identity_erase": true,
+        "scan_zero_or_fallback": true,
+        "zero_on_lits_only": true,
+        "diff": true,
+        "bytes_close": true,
+        "bytes_per_lits_region": true,
+        "regions_close": true,
+        "entry_pass": true
+      },
+      "savable_ratio": 0.027402112518226912
+    },
+    {
+      "cell": "skew/context16",
+      "checks": {
+        "identity_queries": true,
+        "identity_rows": true,
+        "identity_erase": true,
+        "scan_zero_or_fallback": true,
+        "zero_on_lits_only": true,
+        "diff": true,
+        "bytes_close": true,
+        "bytes_per_lits_region": true,
+        "regions_close": true,
+        "entry_pass": true
+      },
+      "savable_ratio": 0.0
+    },
+    {
+      "cell": "skew/lits",
+      "checks": {
+        "identity_queries": true,
+        "identity_rows": true,
+        "identity_erase": true,
+        "scan_zero_or_fallback": true,
+        "zero_on_lits_only": true,
+        "diff": true,
+        "bytes_close": true,
+        "bytes_per_lits_region": true,
+        "regions_close": true,
+        "entry_pass": true
+      },
+      "savable_ratio": 0.026260430748714807
+    },
+    {
+      "cell": "tranco/context16",
+      "checks": {
+        "identity_queries": true,
+        "identity_rows": true,
+        "identity_erase": true,
+        "scan_zero_or_fallback": true,
+        "zero_on_lits_only": true,
+        "diff": true,
+        "bytes_close": true,
+        "bytes_per_lits_region": true,
+        "regions_close": true,
+        "entry_pass": true
+      },
+      "savable_ratio": 0.0
+    },
+    {
+      "cell": "tranco/lits",
+      "checks": {
+        "identity_queries": true,
+        "identity_rows": true,
+        "identity_erase": true,
+        "scan_zero_or_fallback": true,
+        "zero_on_lits_only": true,
+        "diff": true,
+        "bytes_close": true,
+        "bytes_per_lits_region": true,
+        "regions_close": true,
+        "entry_pass": true
+      },
+      "savable_ratio": 0.06054929522508398
+    }
+  ],
+  "problems": [],
+  "identity_mismatches": [],
+  "target": "tranco/lits",
+  "target_savable_bytes": 2113536,
+  "target_pass_recomputed": true,
+  "all_checks_ok": true
+}

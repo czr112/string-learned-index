@@ -1,0 +1,106 @@
+{
+  "cells": [
+    {
+      "cell": "mixed/context16",
+      "checks": {
+        "planned_is_32_per_record": true,
+        "resident": true,
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "counters_agree": true,
+        "hist_sums": true,
+        "entry_pass": true
+      },
+      "reduction": 0.437539458381791,
+      "gt4_fraction": 0.3133
+    },
+    {
+      "cell": "mixed/lits",
+      "checks": {
+        "planned_is_32_per_record": true,
+        "resident": true,
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "counters_agree": true,
+        "hist_sums": true,
+        "entry_pass": true
+      },
+      "reduction": 0.4554974788984726,
+      "gt4_fraction": 0.3822
+    },
+    {
+      "cell": "skew/context16",
+      "checks": {
+        "planned_is_32_per_record": true,
+        "resident": true,
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "counters_agree": true,
+        "hist_sums": true,
+        "entry_pass": true
+      },
+      "reduction": 0.457216682677974,
+      "gt4_fraction": 0.8114
+    },
+    {
+      "cell": "skew/lits",
+      "checks": {
+        "planned_is_32_per_record": true,
+        "resident": true,
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "counters_agree": true,
+        "hist_sums": true,
+        "entry_pass": true
+      },
+      "reduction": 0.47346757026803943,
+      "gt4_fraction": 0.7866
+    },
+    {
+      "cell": "tranco/context16",
+      "checks": {
+        "planned_is_32_per_record": true,
+        "resident": true,
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "counters_agree": true,
+        "hist_sums": true,
+        "entry_pass": true
+      },
+      "reduction": 0.23874244920373422,
+      "gt4_fraction": 0.1718
+    },
+    {
+      "cell": "tranco/lits",
+      "checks": {
+        "planned_is_32_per_record": true,
+        "resident": true,
+        "heads": true,
+        "lines": true,
+        "space": true,
+        "diff": true,
+        "counters_agree": true,
+        "hist_sums": true,
+        "entry_pass": true
+      },
+      "reduction": 0.20697555002567447,
+      "gt4_fraction": 0.1301
+    }
+  ],
+  "problems": [],
+  "identity_mismatches": [],
+  "target": "mixed/context16",
+  "target_pass_recomputed": false,
+  "all_diff_clean": true,
+  "all_checks_ok": true
+}

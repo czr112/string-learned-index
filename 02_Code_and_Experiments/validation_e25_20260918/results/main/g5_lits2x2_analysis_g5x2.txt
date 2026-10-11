@@ -1,0 +1,703 @@
+G5 2x2 cross-backend   S0 / WIDE / S0L / WIDEL / ART   run_id=g5x2
+ratios within one repetition; per-process medians; direction counted over processes
+WIDE/S0 = A1' under M_old (Context16).  WIDEL/S0L = A1' under M_ref (LitsHpt).
+The two are separate measurements; their quotient is not formed.
+============================================================================================================
+
+### cum_ms  -- maintenance + operations, cumulative
+
+  mixed / same
+    at  25%  WIDE/S0                  0.784  (5/5 below)  range 0.734-0.839  noise 1.143
+               WIDEL/S0L                1.073  (2/5 below)  range 0.993-1.104  noise 1.111
+               S0L/S0                   0.704  (5/5 below)  range 0.643-0.766  noise 1.192
+               WIDEL/WIDE               0.965  (4/5 below)  range 0.914-1.035  noise 1.132
+               WIDE/ART                 2.685  (0/5 below)  range 2.470-2.746  noise 1.112
+               WIDEL/ART                2.491  (0/5 below)  range 2.457-2.688  noise 1.094
+               S0/ART                   3.269  (0/5 below)  range 3.157-3.453  noise 1.094
+    at  50%  WIDE/S0                  0.375  (5/5 below)  range 0.365-0.415  noise 1.135
+               WIDEL/S0L                1.018  (1/5 below)  range 0.993-1.095  noise 1.102
+               S0L/S0                   0.371  (5/5 below)  range 0.341-0.372  noise 1.091
+               WIDEL/WIDE               1.032  (2/5 below)  range 0.946-1.061  noise 1.122
+               WIDE/ART                 2.542  (0/5 below)  range 2.494-2.701  noise 1.083
+               WIDEL/ART                2.455  (0/5 below)  range 2.414-2.658  noise 1.101
+               S0/ART                   6.609  (0/5 below)  range 6.327-6.883  noise 1.088
+    at 100%  WIDE/S0                  0.325  (5/5 below)  range 0.313-0.346  noise 1.106
+               WIDEL/S0L                0.949  (5/5 below)  range 0.939-0.973  noise 1.036
+               S0L/S0                   0.578  (5/5 below)  range 0.571-0.623  noise 1.091
+               WIDEL/WIDE               1.702  (0/5 below)  range 1.572-1.745  noise 1.110
+               WIDE/ART                 1.581  (0/5 below)  range 1.553-1.711  noise 1.101
+               WIDEL/ART                2.694  (0/5 below)  range 2.542-2.811  noise 1.106
+               S0/ART                   4.734  (0/5 below)  range 4.704-4.950  noise 1.052
+    at 200%  WIDE/S0                  0.429  (5/5 below)  range 0.407-0.441  noise 1.082
+               WIDEL/S0L                0.973  (5/5 below)  range 0.889-0.986  noise 1.109
+               S0L/S0                   0.747  (5/5 below)  range 0.734-0.761  noise 1.037
+               WIDEL/WIDE               1.716  (0/5 below)  range 1.560-1.751  noise 1.123
+               WIDE/ART                 1.618  (0/5 below)  range 1.472-1.685  noise 1.145
+               WIDEL/ART                2.635  (0/5 below)  range 2.605-2.817  noise 1.081
+               S0/ART                   3.764  (0/5 below)  range 3.674-3.851  noise 1.048
+             absolute S0    at 200%: 377.254
+             absolute WIDE  at 200%: 158.87
+             absolute S0L   at 200%: 284.574
+             absolute WIDEL at 200%: 269.771
+             absolute ART   at 200%: 99.7659
+  mixed / grow
+    at  25%  WIDE/S0                  0.987  (3/5 below)  range 0.865-1.034  noise 1.195
+               WIDEL/S0L                0.847  (5/5 below)  range 0.764-0.901  noise 1.178
+               S0L/S0                   0.873  (5/5 below)  range 0.751-0.920  noise 1.225
+               WIDEL/WIDE               0.712  (5/5 below)  range 0.692-0.818  noise 1.181
+               WIDE/ART                 3.196  (0/5 below)  range 3.101-3.281  noise 1.058
+               WIDEL/ART                2.327  (0/5 below)  range 2.242-2.492  noise 1.111
+               S0/ART                   3.157  (0/5 below)  range 3.030-3.396  noise 1.121
+    at  50%  WIDE/S0                  1.018  (2/5 below)  range 0.918-1.045  noise 1.139
+               WIDEL/S0L                0.935  (5/5 below)  range 0.902-0.991  noise 1.099
+               S0L/S0                   0.940  (5/5 below)  range 0.869-0.954  noise 1.098
+               WIDEL/WIDE               0.819  (5/5 below)  range 0.802-0.912  noise 1.138
+               WIDE/ART                 2.814  (0/5 below)  range 2.646-3.033  noise 1.146
+               WIDEL/ART                2.540  (0/5 below)  range 2.384-2.571  noise 1.079
+               S0/ART                   2.896  (0/5 below)  range 2.783-2.962  noise 1.064
+    at 100%  WIDE/S0                  0.724  (5/5 below)  range 0.715-0.761  noise 1.065
+               WIDEL/S0L                0.963  (5/5 below)  range 0.951-0.974  noise 1.025
+               S0L/S0                   1.192  (0/5 below)  range 1.158-1.226  noise 1.059
+               WIDEL/WIDE               1.579  (0/5 below)  range 1.483-1.651  noise 1.113
+               WIDE/ART                 1.819  (0/5 below)  range 1.776-1.854  noise 1.044
+               WIDEL/ART                2.818  (0/5 below)  range 2.726-2.890  noise 1.060
+               S0/ART                   2.437  (0/5 below)  range 2.336-2.559  noise 1.096
+    at 200%  WIDE/S0                  0.702  (5/5 below)  range 0.681-0.725  noise 1.065
+               WIDEL/S0L                0.973  (5/5 below)  range 0.947-0.990  noise 1.045
+               S0L/S0                   1.125  (0/5 below)  range 1.092-1.164  noise 1.066
+               WIDEL/WIDE               1.563  (0/5 below)  range 1.473-1.696  noise 1.152
+               WIDE/ART                 1.763  (0/5 below)  range 1.723-1.798  noise 1.044
+               WIDEL/ART                2.718  (0/5 below)  range 2.689-2.885  noise 1.073
+               S0/ART                   2.499  (0/5 below)  range 2.395-2.526  noise 1.055
+             absolute S0    at 200%: 240.791
+             absolute WIDE  at 200%: 171.74
+             absolute S0L   at 200%: 272.646
+             absolute WIDEL at 200%: 266.939
+             absolute ART   at 200%: 96.3974
+  skew / same
+    at  25%  WIDE/S0                  0.091  (5/5 below)  range 0.088-0.095  noise 1.078
+               WIDEL/S0L                1.010  (2/5 below)  range 0.966-1.016  noise 1.051
+               S0L/S0                   0.228  (5/5 below)  range 0.211-0.241  noise 1.147
+               WIDEL/WIDE               2.482  (0/5 below)  range 2.403-2.520  noise 1.049
+               WIDE/ART                 0.881  (5/5 below)  range 0.845-0.886  noise 1.048
+               WIDEL/ART                2.161  (0/5 below)  range 2.125-2.216  noise 1.042
+               S0/ART                   9.424  (0/5 below)  range 9.082-9.806  noise 1.080
+    at  50%  WIDE/S0                  0.132  (5/5 below)  range 0.131-0.137  noise 1.043
+               WIDEL/S0L                0.997  (3/5 below)  range 0.952-1.018  noise 1.070
+               S0L/S0                   0.326  (5/5 below)  range 0.317-0.344  noise 1.086
+               WIDEL/WIDE               2.428  (0/5 below)  range 2.380-2.469  noise 1.037
+               WIDE/ART                 0.950  (5/5 below)  range 0.921-0.987  noise 1.071
+               WIDEL/ART                2.352  (0/5 below)  range 2.323-2.355  noise 1.014
+               S0/ART                   7.035  (0/5 below)  range 6.950-7.079  noise 1.019
+    at 100%  WIDE/S0                  0.177  (5/5 below)  range 0.171-0.179  noise 1.046
+               WIDEL/S0L                1.016  (2/5 below)  range 0.966-1.018  noise 1.053
+               S0L/S0                   0.357  (5/5 below)  range 0.354-0.379  noise 1.069
+               WIDEL/WIDE               2.016  (0/5 below)  range 1.958-2.088  noise 1.066
+               WIDE/ART                 1.133  (0/5 below)  range 1.108-1.198  noise 1.081
+               WIDEL/ART                2.287  (0/5 below)  range 2.261-2.354  noise 1.041
+               S0/ART                   6.257  (0/5 below)  range 6.107-6.616  noise 1.083
+    at 200%  WIDE/S0                  0.277  (5/5 below)  range 0.269-0.283  noise 1.049
+               WIDEL/S0L                1.012  (1/5 below)  range 0.973-1.030  noise 1.058
+               S0L/S0                   0.542  (5/5 below)  range 0.536-0.570  noise 1.063
+               WIDEL/WIDE               1.980  (0/5 below)  range 1.945-2.066  noise 1.062
+               WIDE/ART                 1.124  (0/5 below)  range 1.121-1.155  noise 1.031
+               WIDEL/ART                2.230  (0/5 below)  range 2.180-2.277  noise 1.045
+               S0/ART                   4.068  (0/5 below)  range 3.947-4.261  noise 1.079
+             absolute S0    at 200%: 902.768
+             absolute WIDE  at 200%: 251.698
+             absolute S0L   at 200%: 490.143
+             absolute WIDEL at 200%: 500.105
+             absolute ART   at 200%: 217.793
+  skew / grow
+    at  25%  WIDE/S0                  0.228  (5/5 below)  range 0.221-0.234  noise 1.062
+               WIDEL/S0L                1.016  (1/5 below)  range 0.989-1.023  noise 1.034
+               S0L/S0                   0.529  (5/5 below)  range 0.518-0.539  noise 1.039
+               WIDEL/WIDE               2.391  (0/5 below)  range 2.352-2.401  noise 1.021
+               WIDE/ART                 0.946  (5/5 below)  range 0.935-0.971  noise 1.039
+               WIDEL/ART                2.248  (0/5 below)  range 2.186-2.251  noise 1.030
+               S0/ART                   4.090  (0/5 below)  range 4.055-4.284  noise 1.056
+    at  50%  WIDE/S0                  0.317  (5/5 below)  range 0.312-0.327  noise 1.048
+               WIDEL/S0L                1.008  (0/5 below)  range 1.000-1.014  noise 1.013
+               S0L/S0                   0.734  (5/5 below)  range 0.715-0.770  noise 1.077
+               WIDEL/WIDE               2.316  (0/5 below)  range 2.299-2.363  noise 1.028
+               WIDE/ART                 1.052  (0/5 below)  range 1.022-1.090  noise 1.067
+               WIDEL/ART                2.414  (0/5 below)  range 2.375-2.498  noise 1.052
+               S0/ART                   3.279  (0/5 below)  range 3.155-3.361  noise 1.065
+    at 100%  WIDE/S0                  0.435  (5/5 below)  range 0.420-0.437  noise 1.040
+               WIDEL/S0L                1.005  (1/5 below)  range 0.990-1.012  noise 1.022
+               S0L/S0                   0.838  (5/5 below)  range 0.808-0.864  noise 1.069
+               WIDEL/WIDE               1.953  (0/5 below)  range 1.938-1.975  noise 1.019
+               WIDE/ART                 1.220  (0/5 below)  range 1.208-1.274  noise 1.054
+               WIDEL/ART                2.380  (0/5 below)  range 2.346-2.507  noise 1.069
+               S0/ART                   2.924  (0/5 below)  range 2.859-3.004  noise 1.051
+    at 200%  WIDE/S0                  0.536  (5/5 below)  range 0.527-0.556  noise 1.055
+               WIDEL/S0L                0.993  (3/5 below)  range 0.983-1.040  noise 1.058
+               S0L/S0                   0.978  (4/5 below)  range 0.962-1.010  noise 1.049
+               WIDEL/WIDE               1.787  (0/5 below)  range 1.773-1.869  noise 1.054
+               WIDE/ART                 1.268  (0/5 below)  range 1.252-1.348  noise 1.077
+               WIDEL/ART                2.340  (0/5 below)  range 2.241-2.365  noise 1.056
+               S0/ART                   2.404  (0/5 below)  range 2.345-2.461  noise 1.050
+             absolute S0    at 200%: 490.576
+             absolute WIDE  at 200%: 263.793
+             absolute S0L   at 200%: 485.73
+             absolute WIDEL at 200%: 481.186
+             absolute ART   at 200%: 204.543
+  tranco / same
+    at  25%  WIDE/S0                  0.323  (5/5 below)  range 0.312-0.343  noise 1.098
+               WIDEL/S0L                0.666  (5/5 below)  range 0.662-0.689  noise 1.040
+               S0L/S0                   0.558  (5/5 below)  range 0.524-0.591  noise 1.128
+               WIDEL/WIDE               1.130  (0/5 below)  range 1.118-1.173  noise 1.049
+               WIDE/ART                 3.515  (0/5 below)  range 3.245-3.794  noise 1.169
+               WIDEL/ART                3.792  (0/5 below)  range 3.770-4.409  noise 1.169
+               S0/ART                  10.039  (0/5 below)  range 9.458-11.411  noise 1.206
+    at  50%  WIDE/S0                  0.345  (5/5 below)  range 0.328-0.374  noise 1.139
+               WIDEL/S0L                0.742  (5/5 below)  range 0.733-0.766  noise 1.045
+               S0L/S0                   0.502  (5/5 below)  range 0.492-0.552  noise 1.122
+               WIDEL/WIDE               1.106  (0/5 below)  range 1.090-1.113  noise 1.021
+               WIDE/ART                 3.333  (0/5 below)  range 3.119-3.428  noise 1.099
+               WIDEL/ART                3.627  (0/5 below)  range 3.458-3.867  noise 1.118
+               S0/ART                   9.402  (0/5 below)  range 8.966-10.091  noise 1.125
+    at 100%  WIDE/S0                  0.308  (5/5 below)  range 0.290-0.334  noise 1.153
+               WIDEL/S0L                0.834  (5/5 below)  range 0.819-0.860  noise 1.050
+               S0L/S0                   0.427  (5/5 below)  range 0.395-0.457  noise 1.158
+               WIDEL/WIDE               1.149  (0/5 below)  range 1.085-1.194  noise 1.100
+               WIDE/ART                 3.282  (0/5 below)  range 3.088-3.295  noise 1.067
+               WIDEL/ART                3.646  (0/5 below)  range 3.573-3.849  noise 1.077
+               S0/ART                  10.383  (0/5 below)  range 10.179-11.284  noise 1.109
+    at 200%  WIDE/S0                  0.378  (5/5 below)  range 0.361-0.396  noise 1.099
+               WIDEL/S0L                0.890  (5/5 below)  range 0.856-0.927  noise 1.083
+               S0L/S0                   0.480  (5/5 below)  range 0.464-0.535  noise 1.153
+               WIDEL/WIDE               1.119  (0/5 below)  range 1.098-1.211  noise 1.103
+               WIDE/ART                 3.212  (0/5 below)  range 3.072-3.383  noise 1.101
+               WIDEL/ART                3.632  (0/5 below)  range 3.454-3.917  noise 1.134
+               S0/ART                   8.214  (0/5 below)  range 7.879-9.065  noise 1.150
+             absolute S0    at 200%: 900.125
+             absolute WIDE  at 200%: 344.807
+             absolute S0L   at 200%: 437.19
+             absolute WIDEL at 200%: 389.046
+             absolute ART   at 200%: 107.526
+  tranco / grow
+    at  25%  WIDE/S0                  0.657  (5/5 below)  range 0.633-0.679  noise 1.073
+               WIDEL/S0L                0.653  (5/5 below)  range 0.632-0.675  noise 1.069
+               S0L/S0                   1.050  (1/5 below)  range 0.986-1.069  noise 1.085
+               WIDEL/WIDE               1.052  (1/5 below)  range 0.991-1.088  noise 1.097
+               WIDE/ART                 3.781  (0/5 below)  range 3.417-3.844  noise 1.125
+               WIDEL/ART                3.806  (0/5 below)  range 3.630-4.061  noise 1.119
+               S0/ART                   5.644  (0/5 below)  range 5.220-5.736  noise 1.099
+    at  50%  WIDE/S0                  0.637  (5/5 below)  range 0.629-0.681  noise 1.083
+               WIDEL/S0L                0.767  (5/5 below)  range 0.745-0.783  noise 1.051
+               S0L/S0                   0.851  (5/5 below)  range 0.838-0.893  noise 1.066
+               WIDEL/WIDE               1.011  (1/5 below)  range 0.985-1.025  noise 1.040
+               WIDE/ART                 3.263  (0/5 below)  range 3.062-3.437  noise 1.122
+               WIDEL/ART                3.281  (0/5 below)  range 3.096-3.294  noise 1.064
+               S0/ART                   4.952  (0/5 below)  range 4.746-5.109  noise 1.076
+    at 100%  WIDE/S0                  0.615  (5/5 below)  range 0.582-0.619  noise 1.064
+               WIDEL/S0L                0.854  (5/5 below)  range 0.846-0.864  noise 1.021
+               S0L/S0                   0.731  (5/5 below)  range 0.717-0.751  noise 1.048
+               WIDEL/WIDE               1.024  (1/5 below)  range 0.982-1.028  noise 1.047
+               WIDE/ART                 3.216  (0/5 below)  range 3.158-3.313  noise 1.049
+               WIDEL/ART                3.287  (0/5 below)  range 3.247-3.372  noise 1.039
+               S0/ART                   5.183  (0/5 below)  range 5.181-5.613  noise 1.083
+    at 200%  WIDE/S0                  0.732  (5/5 below)  range 0.718-0.737  noise 1.027
+               WIDEL/S0L                0.904  (5/5 below)  range 0.887-0.936  noise 1.054
+               S0L/S0                   0.766  (5/5 below)  range 0.756-0.778  noise 1.028
+               WIDEL/WIDE               0.960  (5/5 below)  range 0.913-0.975  noise 1.068
+               WIDE/ART                 3.117  (0/5 below)  range 3.061-3.254  noise 1.063
+               WIDEL/ART                2.921  (0/5 below)  range 2.865-3.086  noise 1.077
+               S0/ART                   4.248  (0/5 below)  range 4.212-4.284  noise 1.017
+             absolute S0    at 200%: 535.524
+             absolute WIDE  at 200%: 396.178
+             absolute S0L   at 200%: 417.465
+             absolute WIDEL at 200%: 375.662
+             absolute ART   at 200%: 126.643
+
+### overflow  -- overflow records
+
+  mixed / same
+    at  25%  WIDE/S0                  0.023  (5/5 below)  range 0.023-0.023  noise 1.000
+               WIDEL/S0L                0.989  (5/5 below)  range 0.989-0.989  noise 1.000
+               S0L/S0                   5.162  (0/5 below)  range 5.162-5.162  noise 1.000
+               WIDEL/WIDE             219.238  (0/5 below)  range 219.238-219.238  noise 1.000
+    at  50%  WIDE/S0                  0.010  (5/5 below)  range 0.010-0.010  noise 1.000
+               WIDEL/S0L                0.971  (5/5 below)  range 0.971-0.971  noise 1.000
+               S0L/S0                   2.212  (0/5 below)  range 2.212-2.212  noise 1.000
+               WIDEL/WIDE             215.446  (0/5 below)  range 215.446-215.446  noise 1.000
+    at 100%  WIDE/S0                  0.004  (5/5 below)  range 0.004-0.004  noise 1.000
+               WIDEL/S0L                0.898  (5/5 below)  range 0.898-0.898  noise 1.000
+               S0L/S0                   0.967  (5/5 below)  range 0.967-0.967  noise 1.000
+               WIDEL/WIDE             207.648  (0/5 below)  range 207.648-207.648  noise 1.000
+    at 200%  WIDE/S0                  0.006  (5/5 below)  range 0.006-0.006  noise 1.000
+               WIDEL/S0L                0.791  (5/5 below)  range 0.791-0.791  noise 1.000
+               S0L/S0                   0.877  (5/5 below)  range 0.877-0.877  noise 1.000
+               WIDEL/WIDE             119.257  (0/5 below)  range 119.257-119.257  noise 1.000
+             absolute S0    at 200%: 128533
+             absolute WIDE  at 200%: 748
+             absolute S0L   at 200%: 112768
+             absolute WIDEL at 200%: 89204
+             absolute ART   at 200%: 0
+  mixed / grow
+    at  25%  WIDE/S0                  0.038  (5/5 below)  range 0.038-0.038  noise 1.000
+               WIDEL/S0L                0.981  (5/5 below)  range 0.981-0.981  noise 1.000
+               S0L/S0                   4.430  (0/5 below)  range 4.430-4.430  noise 1.000
+               WIDEL/WIDE             115.395  (0/5 below)  range 115.395-115.395  noise 1.000
+    at  50%  WIDE/S0                  0.023  (5/5 below)  range 0.023-0.023  noise 1.000
+               WIDEL/S0L                0.960  (5/5 below)  range 0.960-0.960  noise 1.000
+               S0L/S0                   2.031  (0/5 below)  range 2.031-2.031  noise 1.000
+               WIDEL/WIDE              85.544  (0/5 below)  range 85.544-85.544  noise 1.000
+    at 100%  WIDE/S0                  0.049  (5/5 below)  range 0.049-0.049  noise 1.000
+               WIDEL/S0L                0.893  (5/5 below)  range 0.893-0.893  noise 1.000
+               S0L/S0                   0.934  (5/5 below)  range 0.934-0.934  noise 1.000
+               WIDEL/WIDE              17.046  (0/5 below)  range 17.046-17.046  noise 1.000
+    at 200%  WIDE/S0                  0.044  (5/5 below)  range 0.044-0.044  noise 1.000
+               WIDEL/S0L                0.777  (5/5 below)  range 0.777-0.777  noise 1.000
+               S0L/S0                   0.892  (5/5 below)  range 0.892-0.892  noise 1.000
+               WIDEL/WIDE              15.780  (0/5 below)  range 15.780-15.780  noise 1.000
+             absolute S0    at 200%: 129703
+             absolute WIDE  at 200%: 5698
+             absolute S0L   at 200%: 115668
+             absolute WIDEL at 200%: 89917
+             absolute ART   at 200%: 0
+  skew / same
+    at  25%  WIDE/S0                  0.029  (5/5 below)  range 0.029-0.029  noise 1.000
+               WIDEL/S0L                1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   4.084  (0/5 below)  range 4.084-4.084  noise 1.000
+               WIDEL/WIDE             140.058  (0/5 below)  range 140.058-140.058  noise 1.000
+    at  50%  WIDE/S0                  0.015  (5/5 below)  range 0.015-0.015  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   2.058  (0/5 below)  range 2.058-2.058  noise 1.000
+               WIDEL/WIDE             139.455  (0/5 below)  range 139.455-139.455  noise 1.000
+    at 100%  WIDE/S0                  0.007  (5/5 below)  range 0.007-0.007  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.028  (0/5 below)  range 1.028-1.028  noise 1.000
+               WIDEL/WIDE             137.677  (0/5 below)  range 137.677-137.677  noise 1.000
+    at 200%  WIDE/S0                  0.007  (5/5 below)  range 0.007-0.007  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.021  (0/5 below)  range 1.021-1.021  noise 1.000
+               WIDEL/WIDE             136.500  (0/5 below)  range 136.500-136.500  noise 1.000
+             absolute S0    at 200%: 127070
+             absolute WIDE  at 200%: 950
+             absolute S0L   at 200%: 129686
+             absolute WIDEL at 200%: 129675
+             absolute ART   at 200%: 0
+  skew / grow
+    at  25%  WIDE/S0                  0.161  (5/5 below)  range 0.161-0.161  noise 1.000
+               WIDEL/S0L                1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   4.006  (0/5 below)  range 4.006-4.006  noise 1.000
+               WIDEL/WIDE              24.881  (0/5 below)  range 24.881-24.881  noise 1.000
+    at  50%  WIDE/S0                  0.128  (5/5 below)  range 0.128-0.128  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   2.026  (0/5 below)  range 2.026-2.026  noise 1.000
+               WIDEL/WIDE              15.842  (0/5 below)  range 15.842-15.842  noise 1.000
+    at 100%  WIDE/S0                  0.098  (5/5 below)  range 0.098-0.098  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.015  (0/5 below)  range 1.015-1.015  noise 1.000
+               WIDEL/WIDE              10.347  (0/5 below)  range 10.347-10.347  noise 1.000
+    at 200%  WIDE/S0                  0.108  (5/5 below)  range 0.108-0.108  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.008  (0/5 below)  range 1.008-1.008  noise 1.000
+               WIDEL/WIDE               9.322  (0/5 below)  range 9.322-9.322  noise 1.000
+             absolute S0    at 200%: 128704
+             absolute WIDE  at 200%: 13919
+             absolute S0L   at 200%: 129758
+             absolute WIDEL at 200%: 129746
+             absolute ART   at 200%: 0
+  tranco / same
+    at  25%  WIDE/S0                  0.075  (5/5 below)  range 0.075-0.075  noise 1.000
+               WIDEL/S0L                0.991  (5/5 below)  range 0.991-0.991  noise 1.000
+               S0L/S0                   7.818  (0/5 below)  range 7.818-7.818  noise 1.000
+               WIDEL/WIDE             103.985  (0/5 below)  range 103.985-103.985  noise 1.000
+    at  50%  WIDE/S0                  0.040  (5/5 below)  range 0.040-0.040  noise 1.000
+               WIDEL/S0L                0.986  (5/5 below)  range 0.986-0.986  noise 1.000
+               S0L/S0                   4.097  (0/5 below)  range 4.097-4.097  noise 1.000
+               WIDEL/WIDE             102.071  (0/5 below)  range 102.071-102.071  noise 1.000
+    at 100%  WIDE/S0                  0.022  (5/5 below)  range 0.022-0.022  noise 1.000
+               WIDEL/S0L                0.976  (5/5 below)  range 0.976-0.976  noise 1.000
+               S0L/S0                   2.185  (0/5 below)  range 2.185-2.185  noise 1.000
+               WIDEL/WIDE              98.181  (0/5 below)  range 98.181-98.181  noise 1.000
+    at 200%  WIDE/S0                  0.015  (5/5 below)  range 0.015-0.015  noise 1.000
+               WIDEL/S0L                0.946  (5/5 below)  range 0.946-0.946  noise 1.000
+               S0L/S0                   1.516  (0/5 below)  range 1.516-1.516  noise 1.000
+               WIDEL/WIDE              94.873  (0/5 below)  range 94.873-94.873  noise 1.000
+             absolute S0    at 200%: 127330
+             absolute WIDE  at 200%: 1924
+             absolute S0L   at 200%: 192980
+             absolute WIDEL at 200%: 182535
+             absolute ART   at 200%: 0
+  tranco / grow
+    at  25%  WIDE/S0                  0.361  (5/5 below)  range 0.361-0.361  noise 1.000
+               WIDEL/S0L                0.987  (5/5 below)  range 0.987-0.987  noise 1.000
+               S0L/S0                   5.521  (0/5 below)  range 5.521-5.521  noise 1.000
+               WIDEL/WIDE              15.087  (0/5 below)  range 15.087-15.087  noise 1.000
+    at  50%  WIDE/S0                  0.354  (5/5 below)  range 0.354-0.354  noise 1.000
+               WIDEL/S0L                0.980  (5/5 below)  range 0.980-0.980  noise 1.000
+               S0L/S0                   2.901  (0/5 below)  range 2.901-2.901  noise 1.000
+               WIDEL/WIDE               8.031  (0/5 below)  range 8.031-8.031  noise 1.000
+    at 100%  WIDE/S0                  0.358  (5/5 below)  range 0.358-0.358  noise 1.000
+               WIDEL/S0L                0.966  (5/5 below)  range 0.966-0.966  noise 1.000
+               S0L/S0                   1.510  (0/5 below)  range 1.510-1.510  noise 1.000
+               WIDEL/WIDE               4.074  (0/5 below)  range 4.074-4.074  noise 1.000
+    at 200%  WIDE/S0                  0.240  (5/5 below)  range 0.240-0.240  noise 1.000
+               WIDEL/S0L                0.915  (5/5 below)  range 0.915-0.915  noise 1.000
+               S0L/S0                   1.037  (0/5 below)  range 1.037-1.037  noise 1.000
+               WIDEL/WIDE               3.960  (0/5 below)  range 3.960-3.960  noise 1.000
+             absolute S0    at 200%: 195278
+             absolute WIDE  at 200%: 46787
+             absolute S0L   at 200%: 202450
+             absolute WIDEL at 200%: 185298
+             absolute ART   at 200%: 0
+
+### memory  -- resident index bytes
+
+  mixed / same
+    at  25%  WIDE/S0                  0.936  (5/5 below)  range 0.936-0.936  noise 1.000
+               WIDEL/S0L                0.997  (5/5 below)  range 0.997-0.997  noise 1.000
+               S0L/S0                   1.300  (0/5 below)  range 1.300-1.300  noise 1.000
+               WIDEL/WIDE               1.385  (0/5 below)  range 1.385-1.385  noise 1.000
+    at  50%  WIDE/S0                  0.809  (5/5 below)  range 0.809-0.809  noise 1.000
+               WIDEL/S0L                0.988  (5/5 below)  range 0.988-0.988  noise 1.000
+               S0L/S0                   1.134  (0/5 below)  range 1.134-1.134  noise 1.000
+               WIDEL/WIDE               1.385  (0/5 below)  range 1.385-1.385  noise 1.000
+    at 100%  WIDE/S0                  0.611  (5/5 below)  range 0.611-0.611  noise 1.000
+               WIDEL/S0L                0.959  (5/5 below)  range 0.959-0.959  noise 1.000
+               S0L/S0                   0.883  (5/5 below)  range 0.883-0.883  noise 1.000
+               WIDEL/WIDE               1.385  (0/5 below)  range 1.385-1.385  noise 1.000
+    at 200%  WIDE/S0                  0.556  (5/5 below)  range 0.556-0.556  noise 1.000
+               WIDEL/S0L                0.910  (5/5 below)  range 0.910-0.910  noise 1.000
+               S0L/S0                   0.862  (5/5 below)  range 0.862-0.862  noise 1.000
+               WIDEL/WIDE               1.411  (0/5 below)  range 1.411-1.411  noise 1.000
+             absolute S0    at 200%: 4.31315e+07
+             absolute WIDE  at 200%: 2.3972e+07
+             absolute S0L   at 200%: 3.71658e+07
+             absolute WIDEL at 200%: 3.38227e+07
+             absolute ART   at 200%: 0
+  mixed / grow
+    at  25%  WIDE/S0                  0.920  (5/5 below)  range 0.920-0.920  noise 1.000
+               WIDEL/S0L                0.995  (5/5 below)  range 0.995-0.995  noise 1.000
+               S0L/S0                   1.283  (0/5 below)  range 1.283-1.283  noise 1.000
+               WIDEL/WIDE               1.387  (0/5 below)  range 1.387-1.387  noise 1.000
+    at  50%  WIDE/S0                  0.791  (5/5 below)  range 0.791-0.791  noise 1.000
+               WIDEL/S0L                0.985  (5/5 below)  range 0.985-0.985  noise 1.000
+               S0L/S0                   1.117  (0/5 below)  range 1.117-1.117  noise 1.000
+               WIDEL/WIDE               1.390  (0/5 below)  range 1.390-1.390  noise 1.000
+    at 100%  WIDE/S0                  0.609  (5/5 below)  range 0.609-0.609  noise 1.000
+               WIDEL/S0L                0.956  (5/5 below)  range 0.956-0.956  noise 1.000
+               S0L/S0                   0.874  (5/5 below)  range 0.874-0.874  noise 1.000
+               WIDEL/WIDE               1.374  (0/5 below)  range 1.374-1.374  noise 1.000
+    at 200%  WIDE/S0                  0.558  (5/5 below)  range 0.558-0.558  noise 1.000
+               WIDEL/S0L                0.902  (5/5 below)  range 0.902-0.902  noise 1.000
+               S0L/S0                   0.867  (5/5 below)  range 0.867-0.867  noise 1.000
+               WIDEL/WIDE               1.400  (0/5 below)  range 1.400-1.400  noise 1.000
+             absolute S0    at 200%: 4.43058e+07
+             absolute WIDE  at 200%: 2.47383e+07
+             absolute S0L   at 200%: 3.83973e+07
+             absolute WIDEL at 200%: 3.46335e+07
+             absolute ART   at 200%: 0
+  skew / same
+    at  25%  WIDE/S0                  0.870  (5/5 below)  range 0.870-0.870  noise 1.000
+               WIDEL/S0L                1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.219  (0/5 below)  range 1.219-1.219  noise 1.000
+               WIDEL/WIDE               1.401  (0/5 below)  range 1.401-1.401  noise 1.000
+    at  50%  WIDE/S0                  0.748  (5/5 below)  range 0.748-0.748  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.048  (0/5 below)  range 1.048-1.048  noise 1.000
+               WIDEL/WIDE               1.401  (0/5 below)  range 1.401-1.401  noise 1.000
+    at 100%  WIDE/S0                  0.551  (5/5 below)  range 0.551-0.551  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   0.772  (5/5 below)  range 0.772-0.772  noise 1.000
+               WIDEL/WIDE               1.401  (0/5 below)  range 1.401-1.401  noise 1.000
+    at 200%  WIDE/S0                  0.549  (5/5 below)  range 0.549-0.549  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   0.770  (5/5 below)  range 0.770-0.770  noise 1.000
+               WIDEL/WIDE               1.402  (0/5 below)  range 1.402-1.402  noise 1.000
+             absolute S0    at 200%: 4.20276e+07
+             absolute WIDE  at 200%: 2.30898e+07
+             absolute S0L   at 200%: 3.23682e+07
+             absolute WIDEL at 200%: 3.23669e+07
+             absolute ART   at 200%: 0
+  skew / grow
+    at  25%  WIDE/S0                  0.881  (5/5 below)  range 0.881-0.881  noise 1.000
+               WIDEL/S0L                1.000  (0/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.215  (0/5 below)  range 1.215-1.215  noise 1.000
+               WIDEL/WIDE               1.380  (0/5 below)  range 1.380-1.380  noise 1.000
+    at  50%  WIDE/S0                  0.765  (5/5 below)  range 0.765-0.765  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   1.044  (0/5 below)  range 1.044-1.044  noise 1.000
+               WIDEL/WIDE               1.364  (0/5 below)  range 1.364-1.364  noise 1.000
+    at 100%  WIDE/S0                  0.577  (5/5 below)  range 0.577-0.577  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   0.772  (5/5 below)  range 0.772-0.772  noise 1.000
+               WIDEL/WIDE               1.340  (0/5 below)  range 1.340-1.340  noise 1.000
+    at 200%  WIDE/S0                  0.578  (5/5 below)  range 0.578-0.578  noise 1.000
+               WIDEL/S0L                1.000  (5/5 below)  range 1.000-1.000  noise 1.000
+               S0L/S0                   0.771  (5/5 below)  range 0.771-0.771  noise 1.000
+               WIDEL/WIDE               1.334  (0/5 below)  range 1.334-1.334  noise 1.000
+             absolute S0    at 200%: 4.33259e+07
+             absolute WIDE  at 200%: 2.50551e+07
+             absolute S0L   at 200%: 3.34174e+07
+             absolute WIDEL at 200%: 3.34159e+07
+             absolute ART   at 200%: 0
+  tranco / same
+    at  25%  WIDE/S0                  0.930  (5/5 below)  range 0.930-0.930  noise 1.000
+               WIDEL/S0L                0.997  (5/5 below)  range 0.997-0.997  noise 1.000
+               S0L/S0                   1.411  (0/5 below)  range 1.411-1.411  noise 1.000
+               WIDEL/WIDE               1.512  (0/5 below)  range 1.512-1.512  noise 1.000
+    at  50%  WIDE/S0                  0.871  (5/5 below)  range 0.871-0.871  noise 1.000
+               WIDEL/S0L                0.994  (5/5 below)  range 0.994-0.994  noise 1.000
+               S0L/S0                   1.324  (0/5 below)  range 1.324-1.324  noise 1.000
+               WIDEL/WIDE               1.511  (0/5 below)  range 1.511-1.511  noise 1.000
+    at 100%  WIDE/S0                  0.779  (5/5 below)  range 0.779-0.779  noise 1.000
+               WIDEL/S0L                0.990  (5/5 below)  range 0.990-0.990  noise 1.000
+               S0L/S0                   1.188  (0/5 below)  range 1.188-1.188  noise 1.000
+               WIDEL/WIDE               1.511  (0/5 below)  range 1.511-1.511  noise 1.000
+    at 200%  WIDE/S0                  0.699  (5/5 below)  range 0.699-0.699  noise 1.000
+               WIDEL/S0L                0.977  (5/5 below)  range 0.977-0.977  noise 1.000
+               S0L/S0                   1.081  (0/5 below)  range 1.081-1.081  noise 1.000
+               WIDEL/WIDE               1.511  (0/5 below)  range 1.511-1.511  noise 1.000
+             absolute S0    at 200%: 3.65739e+07
+             absolute WIDE  at 200%: 2.55772e+07
+             absolute S0L   at 200%: 3.95463e+07
+             absolute WIDEL at 200%: 3.86402e+07
+             absolute ART   at 200%: 0
+  tranco / grow
+    at  25%  WIDE/S0                  0.932  (5/5 below)  range 0.932-0.932  noise 1.000
+               WIDEL/S0L                0.995  (5/5 below)  range 0.995-0.995  noise 1.000
+               S0L/S0                   1.375  (0/5 below)  range 1.375-1.375  noise 1.000
+               WIDEL/WIDE               1.467  (0/5 below)  range 1.467-1.467  noise 1.000
+    at  50%  WIDE/S0                  0.879  (5/5 below)  range 0.879-0.879  noise 1.000
+               WIDEL/S0L                0.992  (5/5 below)  range 0.992-0.992  noise 1.000
+               S0L/S0                   1.262  (0/5 below)  range 1.262-1.262  noise 1.000
+               WIDEL/WIDE               1.424  (0/5 below)  range 1.424-1.424  noise 1.000
+    at 100%  WIDE/S0                  0.801  (5/5 below)  range 0.801-0.801  noise 1.000
+               WIDEL/S0L                0.986  (5/5 below)  range 0.986-0.986  noise 1.000
+               S0L/S0                   1.091  (0/5 below)  range 1.091-1.091  noise 1.000
+               WIDEL/WIDE               1.342  (0/5 below)  range 1.342-1.342  noise 1.000
+    at 200%  WIDE/S0                  0.687  (5/5 below)  range 0.687-0.687  noise 1.000
+               WIDEL/S0L                0.963  (5/5 below)  range 0.963-0.963  noise 1.000
+               S0L/S0                   0.954  (5/5 below)  range 0.954-0.954  noise 1.000
+               WIDEL/WIDE               1.337  (0/5 below)  range 1.337-1.337  noise 1.000
+             absolute S0    at 200%: 4.32992e+07
+             absolute WIDE  at 200%: 2.97375e+07
+             absolute S0L   at 200%: 4.13119e+07
+             absolute WIDEL at 200%: 3.97629e+07
+             absolute ART   at 200%: 0
+
+### query_ms  -- fixed query sequence
+
+  mixed / same
+    at  25%  WIDE/S0                  0.888  (5/5 below)  range 0.794-0.971  noise 1.222
+               WIDEL/S0L                1.051  (2/5 below)  range 0.946-1.060  noise 1.121
+               S0L/S0                   1.084  (0/5 below)  range 1.058-1.096  noise 1.036
+               WIDEL/WIDE               1.245  (0/5 below)  range 1.102-1.282  noise 1.164
+               WIDE/ART                 1.413  (0/5 below)  range 1.321-1.617  noise 1.224
+               WIDEL/ART                1.737  (0/5 below)  range 1.652-1.832  noise 1.109
+               S0/ART                   1.650  (0/5 below)  range 1.528-1.979  noise 1.295
+    at  50%  WIDE/S0                  0.811  (5/5 below)  range 0.720-0.914  noise 1.269
+               WIDEL/S0L                0.961  (4/5 below)  range 0.910-1.102  noise 1.211
+               S0L/S0                   1.118  (0/5 below)  range 1.109-1.149  noise 1.037
+               WIDEL/WIDE               1.317  (0/5 below)  range 1.284-1.536  noise 1.196
+               WIDE/ART                 1.108  (0/5 below)  range 1.072-1.248  noise 1.164
+               WIDEL/ART                1.688  (0/5 below)  range 1.457-1.789  noise 1.228
+               S0/ART                   1.483  (0/5 below)  range 1.386-1.581  noise 1.141
+    at 100%  WIDE/S0                  0.593  (5/5 below)  range 0.570-0.662  noise 1.160
+               WIDEL/S0L                1.000  (3/5 below)  range 0.864-1.020  noise 1.181
+               S0L/S0                   0.975  (3/5 below)  range 0.832-1.047  noise 1.259
+               WIDEL/WIDE               1.474  (0/5 below)  range 1.315-1.540  noise 1.172
+               WIDE/ART                 1.128  (2/5 below)  range 0.876-1.325  noise 1.513
+               WIDEL/ART                1.480  (0/5 below)  range 1.321-1.795  noise 1.358
+               S0/ART                   1.825  (0/5 below)  range 1.437-1.980  noise 1.378
+    at 200%  WIDE/S0                  0.524  (5/5 below)  range 0.439-0.578  noise 1.316
+               WIDEL/S0L                0.943  (4/5 below)  range 0.846-1.048  noise 1.239
+               S0L/S0                   0.971  (3/5 below)  range 0.850-1.021  noise 1.201
+               WIDEL/WIDE               1.643  (0/5 below)  range 1.584-1.834  noise 1.158
+               WIDE/ART                 0.936  (4/5 below)  range 0.859-1.051  noise 1.223
+               WIDEL/ART                1.490  (0/5 below)  range 1.451-1.697  noise 1.169
+               S0/ART                   2.034  (0/5 below)  range 1.833-2.056  noise 1.121
+             absolute S0    at 200%: 12.1946
+             absolute WIDE  at 200%: 6.05044
+             absolute S0L   at 200%: 11.5493
+             absolute WIDEL at 200%: 10.4113
+             absolute ART   at 200%: 6.19763
+  mixed / grow
+    at  25%  WIDE/S0                  0.824  (4/5 below)  range 0.684-1.006  noise 1.470
+               WIDEL/S0L                0.989  (3/5 below)  range 0.899-1.057  noise 1.176
+               S0L/S0                   1.139  (1/5 below)  range 0.997-1.215  noise 1.219
+               WIDEL/WIDE               1.370  (0/5 below)  range 1.264-1.410  noise 1.115
+               WIDE/ART                 1.286  (0/5 below)  range 1.243-1.399  noise 1.125
+               WIDEL/ART                1.756  (0/5 below)  range 1.648-1.776  noise 1.078
+               S0/ART                   1.496  (0/5 below)  range 1.390-1.614  noise 1.161
+    at  50%  WIDE/S0                  0.782  (5/5 below)  range 0.694-0.813  noise 1.172
+               WIDEL/S0L                1.013  (1/5 below)  range 0.981-1.109  noise 1.130
+               S0L/S0                   1.029  (0/5 below)  range 1.017-1.202  noise 1.182
+               WIDEL/WIDE               1.541  (0/5 below)  range 1.438-1.566  noise 1.089
+               WIDE/ART                 1.170  (1/5 below)  range 0.960-1.235  noise 1.287
+               WIDEL/ART                1.720  (0/5 below)  range 1.405-1.814  noise 1.291
+               S0/ART                   1.466  (0/5 below)  range 1.378-1.770  noise 1.284
+    at 100%  WIDE/S0                  0.591  (5/5 below)  range 0.532-0.618  noise 1.162
+               WIDEL/S0L                0.937  (3/5 below)  range 0.865-1.036  noise 1.197
+               S0L/S0                   0.944  (4/5 below)  range 0.829-1.037  noise 1.252
+               WIDEL/WIDE               1.760  (0/5 below)  range 1.468-1.991  noise 1.356
+               WIDE/ART                 1.044  (2/5 below)  range 0.851-1.212  noise 1.424
+               WIDEL/ART                1.695  (0/5 below)  range 1.614-2.022  noise 1.253
+               S0/ART                   1.958  (0/5 below)  range 1.625-2.073  noise 1.276
+    at 200%  WIDE/S0                  0.468  (5/5 below)  range 0.402-0.531  noise 1.321
+               WIDEL/S0L                0.887  (5/5 below)  range 0.723-0.907  noise 1.255
+               S0L/S0                   0.917  (5/5 below)  range 0.881-0.997  noise 1.132
+               WIDEL/WIDE               1.750  (0/5 below)  range 1.690-1.978  noise 1.170
+               WIDE/ART                 0.880  (5/5 below)  range 0.781-0.991  noise 1.268
+               WIDEL/ART                1.450  (0/5 below)  range 1.431-1.801  noise 1.259
+               S0/ART                   1.834  (0/5 below)  range 1.606-2.007  noise 1.250
+             absolute S0    at 200%: 11.5799
+             absolute WIDE  at 200%: 5.44228
+             absolute S0L   at 200%: 10.6111
+             absolute WIDEL at 200%: 9.4721
+             absolute ART   at 200%: 6.24202
+  skew / same
+    at  25%  WIDE/S0                  0.918  (3/5 below)  range 0.813-1.287  noise 1.583
+               WIDEL/S0L                0.956  (3/5 below)  range 0.871-1.234  noise 1.417
+               S0L/S0                   1.338  (0/5 below)  range 1.170-1.533  noise 1.310
+               WIDEL/WIDE               1.403  (0/5 below)  range 1.217-1.638  noise 1.345
+               WIDE/ART                 0.944  (3/5 below)  range 0.888-1.207  noise 1.359
+               WIDEL/ART                1.314  (0/5 below)  range 1.087-1.650  noise 1.519
+               S0/ART                   1.044  (2/5 below)  range 0.810-1.351  noise 1.668
+    at  50%  WIDE/S0                  0.773  (4/5 below)  range 0.720-1.017  noise 1.413
+               WIDEL/S0L                0.935  (5/5 below)  range 0.877-1.000  noise 1.140
+               S0L/S0                   1.252  (0/5 below)  range 1.061-1.289  noise 1.215
+               WIDEL/WIDE               1.403  (0/5 below)  range 1.278-1.527  noise 1.195
+               WIDE/ART                 0.944  (4/5 below)  range 0.792-1.032  noise 1.304
+               WIDEL/ART                1.259  (0/5 below)  range 1.040-1.310  noise 1.259
+               S0/ART                   1.135  (1/5 below)  range 0.966-1.266  noise 1.311
+    at 100%  WIDE/S0                  0.601  (5/5 below)  range 0.490-0.628  noise 1.282
+               WIDEL/S0L                1.021  (2/5 below)  range 0.910-1.118  noise 1.229
+               S0L/S0                   0.793  (5/5 below)  range 0.739-0.971  noise 1.313
+               WIDEL/WIDE               1.599  (0/5 below)  range 1.404-1.638  noise 1.167
+               WIDE/ART                 0.833  (5/5 below)  range 0.803-0.872  noise 1.087
+               WIDEL/ART                1.274  (0/5 below)  range 1.062-1.362  noise 1.283
+               S0/ART                   1.450  (0/5 below)  range 1.255-1.620  noise 1.290
+    at 200%  WIDE/S0                  0.587  (5/5 below)  range 0.539-0.637  noise 1.182
+               WIDEL/S0L                1.002  (2/5 below)  range 0.874-1.304  noise 1.492
+               S0L/S0                   0.743  (5/5 below)  range 0.709-0.938  noise 1.322
+               WIDEL/WIDE               1.523  (0/5 below)  range 1.369-1.686  noise 1.231
+               WIDE/ART                 0.861  (5/5 below)  range 0.822-0.960  noise 1.168
+               WIDEL/ART                1.196  (0/5 below)  range 1.062-1.386  noise 1.304
+               S0/ART                   1.513  (0/5 below)  range 1.469-1.627  noise 1.108
+             absolute S0    at 200%: 15.4569
+             absolute WIDE  at 200%: 8.24533
+             absolute S0L   at 200%: 12.1698
+             absolute WIDEL at 200%: 12.5979
+             absolute ART   at 200%: 9.78398
+  skew / grow
+    at  25%  WIDE/S0                  0.930  (4/5 below)  range 0.804-1.021  noise 1.270
+               WIDEL/S0L                1.105  (0/5 below)  range 1.028-1.140  noise 1.109
+               S0L/S0                   1.102  (0/5 below)  range 1.054-1.229  noise 1.166
+               WIDEL/WIDE               1.343  (0/5 below)  range 1.211-1.461  noise 1.207
+               WIDE/ART                 0.908  (4/5 below)  range 0.858-1.115  noise 1.299
+               WIDEL/ART                1.251  (0/5 below)  range 1.124-1.322  noise 1.176
+               S0/ART                   1.025  (1/5 below)  range 0.954-1.097  noise 1.150
+    at  50%  WIDE/S0                  0.812  (5/5 below)  range 0.699-0.906  noise 1.295
+               WIDEL/S0L                0.959  (3/5 below)  range 0.873-1.089  noise 1.248
+               S0L/S0                   1.103  (1/5 below)  range 0.925-1.268  noise 1.371
+               WIDEL/WIDE               1.391  (0/5 below)  range 1.215-1.541  noise 1.268
+               WIDE/ART                 1.015  (2/5 below)  range 0.987-1.162  noise 1.177
+               WIDEL/ART                1.314  (0/5 below)  range 1.167-1.391  noise 1.193
+               S0/ART                   1.238  (0/5 below)  range 1.056-1.287  noise 1.218
+    at 100%  WIDE/S0                  0.522  (5/5 below)  range 0.488-0.613  noise 1.256
+               WIDEL/S0L                0.951  (3/5 below)  range 0.854-1.061  noise 1.242
+               S0L/S0                   0.853  (5/5 below)  range 0.828-0.918  noise 1.109
+               WIDEL/WIDE               1.603  (0/5 below)  range 1.360-1.800  noise 1.324
+               WIDE/ART                 0.913  (4/5 below)  range 0.818-1.040  noise 1.271
+               WIDEL/ART                1.390  (0/5 below)  range 1.328-1.492  noise 1.123
+               S0/ART                   1.655  (0/5 below)  range 1.532-1.886  noise 1.231
+    at 200%  WIDE/S0                  0.551  (5/5 below)  range 0.484-0.644  noise 1.331
+               WIDEL/S0L                1.001  (2/5 below)  range 0.867-1.048  noise 1.209
+               S0L/S0                   0.859  (5/5 below)  range 0.743-0.899  noise 1.210
+               WIDEL/WIDE               1.496  (0/5 below)  range 1.309-1.638  noise 1.251
+               WIDE/ART                 0.960  (3/5 below)  range 0.861-1.062  noise 1.233
+               WIDEL/ART                1.390  (0/5 below)  range 1.214-1.523  noise 1.255
+               S0/ART                   1.696  (0/5 below)  range 1.579-1.993  noise 1.262
+             absolute S0    at 200%: 14.9492
+             absolute WIDE  at 200%: 8.24844
+             absolute S0L   at 200%: 12.5539
+             absolute WIDEL at 200%: 12.055
+             absolute ART   at 200%: 8.49331
+  tranco / same
+    at  25%  WIDE/S0                  1.021  (2/5 below)  range 0.826-1.137  noise 1.376
+               WIDEL/S0L                1.139  (1/5 below)  range 0.830-1.331  noise 1.603
+               S0L/S0                   1.154  (1/5 below)  range 0.926-1.338  noise 1.445
+               WIDEL/WIDE               1.252  (0/5 below)  range 1.108-1.436  noise 1.297
+               WIDE/ART                 2.209  (0/5 below)  range 1.975-2.437  noise 1.234
+               WIDEL/ART                2.712  (0/5 below)  range 2.487-3.457  noise 1.390
+               S0/ART                   2.175  (0/5 below)  range 1.967-2.447  noise 1.244
+    at  50%  WIDE/S0                  0.903  (5/5 below)  range 0.859-0.936  noise 1.090
+               WIDEL/S0L                0.901  (5/5 below)  range 0.790-0.992  noise 1.256
+               S0L/S0                   1.277  (0/5 below)  range 1.119-1.415  noise 1.265
+               WIDEL/WIDE               1.313  (0/5 below)  range 1.178-1.511  noise 1.283
+               WIDE/ART                 1.926  (0/5 below)  range 1.625-2.016  noise 1.241
+               WIDEL/ART                2.353  (0/5 below)  range 2.001-2.857  noise 1.428
+               S0/ART                   1.976  (0/5 below)  range 1.852-2.181  noise 1.178
+    at 100%  WIDE/S0                  0.733  (5/5 below)  range 0.643-0.790  noise 1.229
+               WIDEL/S0L                1.027  (2/5 below)  range 0.806-1.174  noise 1.456
+               S0L/S0                   1.125  (0/5 below)  range 1.105-1.272  noise 1.151
+               WIDEL/WIDE               1.750  (0/5 below)  range 1.628-1.884  noise 1.158
+               WIDE/ART                 1.491  (0/5 below)  range 1.187-1.760  noise 1.483
+               WIDEL/ART                2.213  (0/5 below)  range 1.827-2.512  noise 1.375
+               S0/ART                   1.926  (0/5 below)  range 1.499-2.401  noise 1.601
+    at 200%  WIDE/S0                  0.647  (5/5 below)  range 0.590-0.711  noise 1.205
+               WIDEL/S0L                1.024  (2/5 below)  range 0.813-1.075  noise 1.322
+               S0L/S0                   1.137  (2/5 below)  range 0.731-1.221  noise 1.670
+               WIDEL/WIDE               1.576  (0/5 below)  range 1.302-1.910  noise 1.467
+               WIDE/ART                 1.575  (0/5 below)  range 1.149-1.881  noise 1.636
+               WIDEL/ART                2.131  (0/5 below)  range 2.000-3.032  noise 1.516
+               S0/ART                   2.229  (0/5 below)  range 1.923-2.499  noise 1.299
+             absolute S0    at 200%: 9.80396
+             absolute WIDE  at 200%: 6.32145
+             absolute S0L   at 200%: 10.095
+             absolute WIDEL at 200%: 9.94263
+             absolute ART   at 200%: 4.16371
+  tranco / grow
+    at  25%  WIDE/S0                  0.911  (4/5 below)  range 0.708-1.039  noise 1.467
+               WIDEL/S0L                0.997  (3/5 below)  range 0.860-1.023  noise 1.189
+               S0L/S0                   1.198  (0/5 below)  range 1.057-1.457  noise 1.379
+               WIDEL/WIDE               1.303  (0/5 below)  range 1.117-1.425  noise 1.276
+               WIDE/ART                 2.051  (0/5 below)  range 1.508-2.212  noise 1.467
+               WIDEL/ART                2.459  (0/5 below)  range 2.175-2.712  noise 1.247
+               S0/ART                   2.059  (0/5 below)  range 1.851-2.405  noise 1.299
+    at  50%  WIDE/S0                  0.831  (5/5 below)  range 0.794-0.953  noise 1.200
+               WIDEL/S0L                0.947  (3/5 below)  range 0.895-1.052  noise 1.176
+               S0L/S0                   1.048  (1/5 below)  range 0.993-1.269  noise 1.279
+               WIDEL/WIDE               1.236  (0/5 below)  range 1.089-1.318  noise 1.211
+               WIDE/ART                 2.060  (0/5 below)  range 1.912-2.252  noise 1.177
+               WIDEL/ART                2.666  (0/5 below)  range 2.535-2.809  noise 1.108
+               S0/ART                   2.305  (0/5 below)  range 2.302-2.927  noise 1.271
+    at 100%  WIDE/S0                  0.775  (5/5 below)  range 0.759-0.814  noise 1.072
+               WIDEL/S0L                0.917  (5/5 below)  range 0.895-0.990  noise 1.105
+               S0L/S0                   1.058  (0/5 below)  range 1.019-1.218  noise 1.195
+               WIDEL/WIDE               1.378  (0/5 below)  range 1.285-2.011  noise 1.565
+               WIDE/ART                 1.756  (0/5 below)  range 1.560-2.291  noise 1.469
+               WIDEL/ART                2.779  (0/5 below)  range 2.150-3.083  noise 1.434
+               S0/ART                   2.625  (0/5 below)  range 2.212-3.050  noise 1.378
+    at 200%  WIDE/S0                  0.712  (5/5 below)  range 0.534-0.726  noise 1.360
+               WIDEL/S0L                0.962  (3/5 below)  range 0.866-1.139  noise 1.315
+               S0L/S0                   1.034  (2/5 below)  range 0.782-1.253  noise 1.602
+               WIDEL/WIDE               1.347  (0/5 below)  range 1.311-1.457  noise 1.111
+               WIDE/ART                 1.893  (0/5 below)  range 1.734-2.117  noise 1.221
+               WIDEL/ART                2.854  (0/5 below)  range 2.077-3.084  noise 1.485
+               S0/ART                   2.944  (0/5 below)  range 2.464-2.974  noise 1.207
+             absolute S0    at 200%: 11.244
+             absolute WIDE  at 200%: 7.45675
+             absolute S0L   at 200%: 10.5788
+             absolute WIDEL at 200%: 10.1854
+             absolute ART   at 200%: 3.90242
+
+### A1' EFFECT, SIDE BY SIDE at 200%  (two separate paired medians)
+
+  kind       mode      M_old WIDE/S0 M_ref WIDEL/S0L       keep
+  --------------------------------------------------------------
+  mixed      same              0.429          0.973         5%
+  mixed      grow              0.702          0.973         9%
+  skew       same              0.277          1.012        -2%
+  skew       grow              0.536          0.993         2%
+  tranco     same              0.378          0.890        18%
+  tranco     grow              0.732          0.904        36%
+
+  ("keep" = (1 - WIDEL/S0L) / (1 - WIDE/S0). It is a ratio of two paired medians, so
+   it inherits both uncertainties; it is a summary, not a measurement.)

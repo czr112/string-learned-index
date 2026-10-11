@@ -1,0 +1,20 @@
+{
+  "contract": "string-index/v1",
+  "id": "art-libart",
+  "source_dir": ".",
+  "cmake_target": "art_adapter",
+  "factory_header": "art_adapter.h",
+  "factory_symbol": "make_art_index",
+  "source_identity": {
+    "note": "The evaluator records this verbatim as adapter_declared_source_identity and does NOT hash the external source tree recursively. This is the only place the ART implementation's identity is bound to the result file.",
+    "library": "armon/libart",
+    "repository": "https://github.com/armon/libart",
+    "commit": "301046804af165269e37da6725f5a4aec9ecc881",
+    "art_c_sha256": "b65f20fdc160a6e4c0b1b390086f682d381e3638d8690594158ad75cda33396e",
+    "art_h_sha256": "4443de6fd42581982167f7826f63bd956d21a958f204575e52512e007deab5af",
+    "vendored_by": "02_Code_and_Experiments/validation_e25_20260918/third_party/fetch_libart.py",
+    "vendored_bytes_verified": "the on-disk files match the pinned digests above, which is checked by fetch_libart.py before it accepts them",
+    "isa": "x86-64-v3",
+    "assertions": "on (NDEBUG not defined)"
+  }
+}

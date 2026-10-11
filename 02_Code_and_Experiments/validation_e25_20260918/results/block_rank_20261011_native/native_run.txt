@@ -1,0 +1,10 @@
+native environment: Windows, MinGW-Builds g++ 15.2.0 (D:\STM32\mingw64\bin\g++.exe), -std=c++17 -O2 -DE25_DIAG, run 2026-10-11 from 02_Code_and_Experiments/validation_e25_20260918
+
+commands:
+  wsl-availability: NOT AVAILABLE in this turn (WSL/bash execution denied by the sandbox and the escalated re-run was refused by the approval reviewer; see RESULTS_BLOCK_RANK_20261011.md).
+  g++ -std=c++17 -O2 -DE25_DIAG -I. check_block_rank.cpp -o .scratch_blockrank/check_block_rank.exe
+  ./check_block_rank.exe mixed 131072
+  ./check_block_rank.exe skew  131072
+  ./check_block_rank.exe tranco 262144 ../validation_e5_20260913/data/tranco_XN6XN.csv
+
+exit codes: mixed 0, skew 0, tranco 0

@@ -1,0 +1,72 @@
+### check_combo mixed 131072  ctx16 grow
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":2,"live":131072,"subblock_reclaims":286992,"reclaim_widened":4374}
+mixed Context16 grow frac=2 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":287126,"reclaim_widened":4374}
+786994/786994 checks passed; subblock_reclaims=287126 reclaim_widened=4374
+rc=0
+### check_combo mixed 131072  lits grow
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"subblock_reclaims":281948,"reclaim_widened":5144}
+mixed LitsHpt grow frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":282080,"reclaim_widened":5144}
+786994/786994 checks passed; subblock_reclaims=282080 reclaim_widened=5144
+rc=0
+### check_combo skew 131072  ctx16 grow
+{"kind":"skew","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=0.25 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=0.5 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=1 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":2,"live":131072,"subblock_reclaims":511688,"reclaim_widened":11510}
+skew Context16 grow frac=2 ok
+{"kind":"skew","backend":"Context16","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":512710,"reclaim_widened":11532}
+786994/786994 checks passed; subblock_reclaims=512710 reclaim_widened=11532
+rc=0
+### check_combo skew 131072  lits grow
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=0.25 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=0.5 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=1 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"subblock_reclaims":504166,"reclaim_widened":10832}
+skew LitsHpt grow frac=2 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":505082,"reclaim_widened":10848}
+786994/786994 checks passed; subblock_reclaims=505082 reclaim_widened=10848
+rc=0
+### check_combo tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv ctx16 grow
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":2,"live":131072,"subblock_reclaims":249216,"reclaim_widened":4572}
+tranco Context16 grow frac=2 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":249898,"reclaim_widened":4586}
+786994/786994 checks passed; subblock_reclaims=249898 reclaim_widened=4586
+rc=0
+### check_combo tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv lits grow
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"subblock_reclaims":133290,"reclaim_widened":2438}
+tranco LitsHpt grow frac=2 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":133828,"reclaim_widened":2444}
+786994/786994 checks passed; subblock_reclaims=133828 reclaim_widened=2444
+rc=0

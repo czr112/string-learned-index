@@ -1,0 +1,7 @@
+  mixed: 131072 keys, 64 regions, training gcpl=0 table=2097152B in 1024 allocations
+    region 43 unusable: coefficient_too_large (prefix=121 G=171)
+    region 50 unusable: coefficient_too_large (prefix=89 G=268)
+    region 57 unusable: coefficient_too_large (prefix=58 G=388)
+  skew: 131072 keys, 64 regions, training gcpl=29 table=2097152B in 1024 allocations
+  tranco: 262144 keys, 128 regions, training gcpl=0 table=2097152B in 1024 allocations
+check_lits_model PASS: 518144 live + 518144 absent keys agree with the source's position arithmetic across 256 real regions

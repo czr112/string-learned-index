@@ -1,0 +1,9 @@
+arms frozen[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16] C3[write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=1,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16]
+{"kind":"mixed","mode":"same","frac":0.25,"live":131072,"frozen_overflow":16743,"c3_overflow":1324,"frozen_compactions":961,"c3_compactions":3580,"frozen_memory":25541128,"c3_memory":23996229,"records_compared":131072}
+mixed same frac=0.25 ok
+{"kind":"mixed","mode":"same","frac":0.5,"live":131072,"frozen_overflow":39829,"c3_overflow":3539,"frozen_compactions":1739,"c3_compactions":12548,"frozen_memory":29542882,"c3_memory":24400596,"records_compared":262144}
+mixed same frac=0.5 ok
+{"kind":"mixed","mode":"same","frac":1,"live":131072,"frozen_overflow":98564,"c3_overflow":40004,"frozen_compactions":7318,"c3_compactions":62320,"frozen_memory":39103142,"c3_memory":30046003,"records_compared":393216}
+mixed same frac=1 ok
+{"kind":"mixed","mode":"same","frac":2,"live":131072,"frozen_overflow":128533,"c3_overflow":40414,"frozen_compactions":8962,"c3_compactions":87871,"frozen_memory":43131529,"c3_memory":30089769,"records_compared":524288}
+mixed same frac=2 ok

@@ -1,0 +1,3 @@
+implementation_id,status,stage,sample_type,repeat,sample_index,build_ns,latency_build_ns,lookup_ns,operations,throughput_ops_per_second,latency_ns
+invalid-1,invalid_input,dataset,status,,,,,,,,
+invalid-2,invalid_input,dataset,status,,,,,,,,

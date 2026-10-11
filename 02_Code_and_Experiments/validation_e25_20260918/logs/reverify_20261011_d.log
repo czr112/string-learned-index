@@ -1,0 +1,362 @@
+### builds
+OK check_combo build_id=1791648482994629988 exe=cc4a9d530cd8c471…
+OK check_sround build_id=1791648501983844218 exe=9c30eb00f528e527…
+OK check_scan_entry build_id=1791648519768178485 exe=58a0ee57b85ee841…
+OK san_check_combo build_id=1791648536164579351 exe=968c980711084498…
+OK san_check_sround build_id=1791648563576943012 exe=986a778ae00b2eff…
+build rc=0
+### check_combo mixed 131072 ctx16 same
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":131072,"subblock_reclaims":248726,"reclaim_widened":4034}
+mixed Context16 same frac=2 ok
+{"kind":"mixed","backend":"Context16","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":248800,"reclaim_widened":4034}
+786994/786994 checks passed; subblock_reclaims=248800 reclaim_widened=4034
+rc=0
+### check_sround mixed 131072 ctx16 same
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":63,"adv_cmps_s":270,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":66,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":198,"adv_cmps_s":264,"adv_cmps_w":195,"adv_cmps_ws":261,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":2229,"adv_cmps_s":141,"adv_cmps_w":2223,"adv_cmps_ws":207,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":3243,"adv_cmps_s":99,"adv_cmps_w":3240,"adv_cmps_ws":189,"subblock_reclaims":248726,"reclaim_widened":4034}
+mixed Context16 same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 3243/99/3240/189)
+rc=0
+### check_combo mixed 131072 lits same
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"subblock_reclaims":259392,"reclaim_widened":4772}
+mixed LitsHpt same frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":259468,"reclaim_widened":4772}
+786994/786994 checks passed; subblock_reclaims=259468 reclaim_widened=4772
+rc=0
+### check_sround mixed 131072 lits same
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0,"live":131072,"adv_cmps_b":70,"adv_cmps_s":386,"adv_cmps_w":70,"adv_cmps_ws":386,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":76,"adv_cmps_s":386,"adv_cmps_w":70,"adv_cmps_ws":386,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":212,"adv_cmps_s":342,"adv_cmps_w":199,"adv_cmps_ws":344,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"adv_cmps_b":2729,"adv_cmps_s":141,"adv_cmps_w":2725,"adv_cmps_ws":281,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"adv_cmps_b":4510,"adv_cmps_s":49,"adv_cmps_w":4519,"adv_cmps_ws":290,"subblock_reclaims":259392,"reclaim_widened":4772}
+mixed LitsHpt same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 4510/49/4519/290)
+rc=0
+### check_combo skew 131072 ctx16 same
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.25 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.5 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=1 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":2,"live":131072,"subblock_reclaims":485828,"reclaim_widened":10202}
+skew Context16 same frac=2 ok
+{"kind":"skew","backend":"Context16","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":486764,"reclaim_widened":10222}
+786994/786994 checks passed; subblock_reclaims=486764 reclaim_widened=10222
+rc=0
+### check_sround skew 131072 ctx16 same
+{"kind":"skew","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":75,"adv_cmps_s":399,"adv_cmps_w":75,"adv_cmps_ws":399,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":1044,"adv_cmps_s":321,"adv_cmps_w":1041,"adv_cmps_ws":348,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.25 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":1260,"adv_cmps_s":261,"adv_cmps_w":1254,"adv_cmps_ws":312,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=0.5 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":2220,"adv_cmps_s":84,"adv_cmps_w":2226,"adv_cmps_ws":255,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 same frac=1 ok
+{"kind":"skew","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":2658,"adv_cmps_s":72,"adv_cmps_w":2664,"adv_cmps_ws":249,"subblock_reclaims":485828,"reclaim_widened":10202}
+skew Context16 same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 2658/72/2664/249)
+rc=0
+### check_combo skew 131072 lits same
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.25 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.5 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=1 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"subblock_reclaims":469500,"reclaim_widened":9608}
+skew LitsHpt same frac=2 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":470400,"reclaim_widened":9624}
+786994/786994 checks passed; subblock_reclaims=470400 reclaim_widened=9624
+rc=0
+### check_sround skew 131072 lits same
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0,"live":131072,"adv_cmps_b":66,"adv_cmps_s":402,"adv_cmps_w":66,"adv_cmps_ws":402,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":5367,"adv_cmps_s":369,"adv_cmps_w":5367,"adv_cmps_ws":375,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.25 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":5733,"adv_cmps_s":288,"adv_cmps_w":5736,"adv_cmps_ws":345,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=0.5 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"adv_cmps_b":6216,"adv_cmps_s":120,"adv_cmps_w":6225,"adv_cmps_ws":297,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt same frac=1 ok
+{"kind":"skew","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"adv_cmps_b":2985,"adv_cmps_s":87,"adv_cmps_w":2997,"adv_cmps_ws":282,"subblock_reclaims":469500,"reclaim_widened":9608}
+skew LitsHpt same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 2985/87/2997/282)
+rc=0
+### check_combo tranco 131072 ctx16 same
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":2,"live":131072,"subblock_reclaims":140248,"reclaim_widened":2752}
+tranco Context16 same frac=2 ok
+{"kind":"tranco","backend":"Context16","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":140596,"reclaim_widened":2760}
+786994/786994 checks passed; subblock_reclaims=140596 reclaim_widened=2760
+rc=0
+### check_sround tranco 131072 ctx16 same
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":51,"adv_cmps_s":288,"adv_cmps_w":51,"adv_cmps_ws":288,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":339,"adv_cmps_s":252,"adv_cmps_w":336,"adv_cmps_ws":261,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":471,"adv_cmps_s":213,"adv_cmps_w":465,"adv_cmps_ws":219,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":894,"adv_cmps_s":174,"adv_cmps_w":885,"adv_cmps_ws":183,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 same frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":942,"adv_cmps_s":180,"adv_cmps_w":939,"adv_cmps_ws":231,"subblock_reclaims":140248,"reclaim_widened":2754}
+tranco Context16 same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 942/180/939/231)
+rc=0
+### check_combo tranco 131072 lits same
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"subblock_reclaims":76174,"reclaim_widened":1634}
+tranco LitsHpt same frac=2 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":76498,"reclaim_widened":1638}
+786994/786994 checks passed; subblock_reclaims=76498 reclaim_widened=1638
+rc=0
+### check_sround tranco 131072 lits same
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0,"live":131072,"adv_cmps_b":67,"adv_cmps_s":366,"adv_cmps_w":67,"adv_cmps_ws":366,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":254,"adv_cmps_s":324,"adv_cmps_w":247,"adv_cmps_ws":344,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":383,"adv_cmps_s":311,"adv_cmps_w":376,"adv_cmps_ws":331,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"adv_cmps_b":615,"adv_cmps_s":300,"adv_cmps_w":603,"adv_cmps_ws":322,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt same frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"adv_cmps_b":619,"adv_cmps_s":253,"adv_cmps_w":602,"adv_cmps_ws":336,"subblock_reclaims":76176,"reclaim_widened":1636}
+tranco LitsHpt same frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 619/253/602/336)
+rc=0
+### check_combo mixed 131072 ctx16 grow
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":2,"live":131072,"subblock_reclaims":286992,"reclaim_widened":4374}
+mixed Context16 grow frac=2 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":287126,"reclaim_widened":4374}
+786994/786994 checks passed; subblock_reclaims=287126 reclaim_widened=4374
+rc=0
+### check_sround mixed 131072 ctx16 grow
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0,"live":131072,"adv_cmps_b":63,"adv_cmps_s":270,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"adv_cmps_b":66,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"adv_cmps_b":69,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":1,"live":131072,"adv_cmps_b":63,"adv_cmps_s":150,"adv_cmps_w":63,"adv_cmps_ws":264,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 grow frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"grow","frac":2,"live":131072,"adv_cmps_b":57,"adv_cmps_s":90,"adv_cmps_w":66,"adv_cmps_ws":264,"subblock_reclaims":286992,"reclaim_widened":4374}
+mixed Context16 grow frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 57/90/66/264)
+rc=0
+### check_combo mixed 131072 lits grow
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"subblock_reclaims":281948,"reclaim_widened":5144}
+mixed LitsHpt grow frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":282080,"reclaim_widened":5144}
+786994/786994 checks passed; subblock_reclaims=282080 reclaim_widened=5144
+rc=0
+### check_sround mixed 131072 lits grow
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":0,"live":131072,"adv_cmps_b":70,"adv_cmps_s":386,"adv_cmps_w":70,"adv_cmps_ws":386,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=0 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"adv_cmps_b":82,"adv_cmps_s":392,"adv_cmps_w":70,"adv_cmps_ws":386,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"adv_cmps_b":88,"adv_cmps_s":364,"adv_cmps_w":74,"adv_cmps_ws":390,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"adv_cmps_b":70,"adv_cmps_s":163,"adv_cmps_w":80,"adv_cmps_ws":390,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt grow frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"adv_cmps_b":52,"adv_cmps_s":73,"adv_cmps_w":80,"adv_cmps_ws":390,"subblock_reclaims":281948,"reclaim_widened":5144}
+mixed LitsHpt grow frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 52/73/80/390)
+rc=0
+### check_combo skew 131072 ctx16 grow
+{"kind":"skew","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=0.25 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=0.5 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=1 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":2,"live":131072,"subblock_reclaims":511688,"reclaim_widened":11510}
+skew Context16 grow frac=2 ok
+{"kind":"skew","backend":"Context16","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":512710,"reclaim_widened":11532}
+786994/786994 checks passed; subblock_reclaims=512710 reclaim_widened=11532
+rc=0
+### check_sround skew 131072 ctx16 grow
+{"kind":"skew","backend":"Context16","mode":"grow","frac":0,"live":131072,"adv_cmps_b":75,"adv_cmps_s":399,"adv_cmps_w":75,"adv_cmps_ws":399,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=0 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"adv_cmps_b":75,"adv_cmps_s":321,"adv_cmps_w":84,"adv_cmps_ws":405,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=0.25 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"adv_cmps_b":75,"adv_cmps_s":258,"adv_cmps_w":93,"adv_cmps_ws":411,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=0.5 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":1,"live":131072,"adv_cmps_b":54,"adv_cmps_s":78,"adv_cmps_w":96,"adv_cmps_ws":414,"subblock_reclaims":0,"reclaim_widened":0}
+skew Context16 grow frac=1 ok
+{"kind":"skew","backend":"Context16","mode":"grow","frac":2,"live":131072,"adv_cmps_b":51,"adv_cmps_s":72,"adv_cmps_w":96,"adv_cmps_ws":414,"subblock_reclaims":511688,"reclaim_widened":11510}
+skew Context16 grow frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 51/72/96/414)
+rc=0
+### check_combo skew 131072 lits grow
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=0.25 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=0.5 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=1 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"subblock_reclaims":504166,"reclaim_widened":10832}
+skew LitsHpt grow frac=2 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":505082,"reclaim_widened":10848}
+786994/786994 checks passed; subblock_reclaims=505082 reclaim_widened=10848
+rc=0
+### check_sround skew 131072 lits grow
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":0,"live":131072,"adv_cmps_b":66,"adv_cmps_s":402,"adv_cmps_w":66,"adv_cmps_ws":402,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=0 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"adv_cmps_b":63,"adv_cmps_s":333,"adv_cmps_w":72,"adv_cmps_ws":405,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=0.25 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"adv_cmps_b":60,"adv_cmps_s":249,"adv_cmps_w":75,"adv_cmps_ws":408,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=0.5 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"adv_cmps_b":54,"adv_cmps_s":75,"adv_cmps_w":87,"adv_cmps_ws":417,"subblock_reclaims":0,"reclaim_widened":0}
+skew LitsHpt grow frac=1 ok
+{"kind":"skew","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"adv_cmps_b":48,"adv_cmps_s":54,"adv_cmps_w":87,"adv_cmps_ws":417,"subblock_reclaims":504166,"reclaim_widened":10832}
+skew LitsHpt grow frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 48/54/87/417)
+rc=0
+### check_combo tranco 131072 ctx16 grow
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":2,"live":131072,"subblock_reclaims":249216,"reclaim_widened":4572}
+tranco Context16 grow frac=2 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":249898,"reclaim_widened":4586}
+786994/786994 checks passed; subblock_reclaims=249898 reclaim_widened=4586
+rc=0
+### check_sround tranco 131072 ctx16 grow
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0,"live":131072,"adv_cmps_b":51,"adv_cmps_s":288,"adv_cmps_w":51,"adv_cmps_ws":288,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.25,"live":131072,"adv_cmps_b":54,"adv_cmps_s":276,"adv_cmps_w":54,"adv_cmps_ws":291,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.5,"live":131072,"adv_cmps_b":63,"adv_cmps_s":267,"adv_cmps_w":60,"adv_cmps_ws":291,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":1,"live":131072,"adv_cmps_b":75,"adv_cmps_s":234,"adv_cmps_w":69,"adv_cmps_ws":294,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":2,"live":131072,"adv_cmps_b":57,"adv_cmps_s":153,"adv_cmps_w":69,"adv_cmps_ws":294,"subblock_reclaims":249216,"reclaim_widened":4572}
+tranco Context16 grow frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 57/153/69/294)
+rc=0
+### check_combo tranco 131072 lits grow
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"subblock_reclaims":133290,"reclaim_widened":2438}
+tranco LitsHpt grow frac=2 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":133828,"reclaim_widened":2444}
+786994/786994 checks passed; subblock_reclaims=133828 reclaim_widened=2444
+rc=0
+### check_sround tranco 131072 lits grow
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0,"live":131072,"adv_cmps_b":67,"adv_cmps_s":366,"adv_cmps_w":67,"adv_cmps_ws":366,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.25,"live":131072,"adv_cmps_b":74,"adv_cmps_s":330,"adv_cmps_w":74,"adv_cmps_ws":367,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.5,"live":131072,"adv_cmps_b":74,"adv_cmps_s":330,"adv_cmps_w":74,"adv_cmps_ws":367,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":1,"live":131072,"adv_cmps_b":87,"adv_cmps_s":323,"adv_cmps_w":78,"adv_cmps_ws":367,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":2,"live":131072,"adv_cmps_b":74,"adv_cmps_s":227,"adv_cmps_w":78,"adv_cmps_ws":365,"subblock_reclaims":133290,"reclaim_widened":2438}
+tranco LitsHpt grow frac=2 ok
+check_sround: 2600812 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 74/227/78/365)
+rc=0
+### san_check_combo mixed 8192 ctx16
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":8192,"subblock_reclaims":18896,"reclaim_widened":382}
+mixed Context16 same frac=2 ok
+{"kind":"mixed","backend":"Context16","mode":"same","keys":8192,"checks":49714,"failures":0,"subblock_reclaims":18964,"reclaim_widened":382}
+49714/49714 checks passed; subblock_reclaims=18964 reclaim_widened=382
+rc=0
+### san_check_sround mixed 8192 ctx16
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0,"live":8192,"adv_cmps_b":10410,"adv_cmps_s":378,"adv_cmps_w":10410,"adv_cmps_ws":378,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":8192,"adv_cmps_b":10410,"adv_cmps_s":378,"adv_cmps_w":10410,"adv_cmps_ws":378,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":8192,"adv_cmps_b":10410,"adv_cmps_s":327,"adv_cmps_w":10410,"adv_cmps_ws":378,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":8192,"adv_cmps_b":16536,"adv_cmps_s":165,"adv_cmps_w":16542,"adv_cmps_ws":366,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":8192,"adv_cmps_b":16533,"adv_cmps_s":129,"adv_cmps_w":16542,"adv_cmps_ws":366,"subblock_reclaims":18896,"reclaim_widened":382}
+mixed Context16 same frac=2 ok
+check_sround: 2099052 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 16533/129/16542/366)
+rc=0
+### san_check_combo mixed 8192 lits
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":8192,"subblock_reclaims":14732,"reclaim_widened":212}
+mixed LitsHpt same frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","keys":8192,"checks":49714,"failures":0,"subblock_reclaims":14804,"reclaim_widened":212}
+49714/49714 checks passed; subblock_reclaims=14804 reclaim_widened=212
+rc=0
+### san_check_sround mixed 8192 lits
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0,"live":8192,"adv_cmps_b":10032,"adv_cmps_s":398,"adv_cmps_w":10032,"adv_cmps_ws":398,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":8192,"adv_cmps_b":10035,"adv_cmps_s":389,"adv_cmps_w":10032,"adv_cmps_ws":398,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":8192,"adv_cmps_b":10038,"adv_cmps_s":389,"adv_cmps_w":10032,"adv_cmps_ws":398,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":8192,"adv_cmps_b":12082,"adv_cmps_s":177,"adv_cmps_w":12084,"adv_cmps_ws":380,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":8192,"adv_cmps_b":12069,"adv_cmps_s":105,"adv_cmps_w":12084,"adv_cmps_ws":380,"subblock_reclaims":14732,"reclaim_widened":212}
+mixed LitsHpt same frac=2 ok
+check_sround: 2099052 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 12069/105/12084/380)
+rc=0
+### check_scan_entry (counter hand-check)
+tiny case: 12 keys, prefix=k0 (2 bytes), groups=1, sub-block counts: g0[2,2,2,2], overflow sizes: 4
+ordered-start (S): 168 comparisons of linear vs ordered (80 with fewer comparisons, 48 walk-offs, 32 multi-skip overflow, 52 over the emptied sub-block)
+check_scan_entry: 1675 checks, 0 failures (sub-block steps=44, overflow skips=12, stopped-by-cmp=56, stopped-at-boundary=16)
+rc=0

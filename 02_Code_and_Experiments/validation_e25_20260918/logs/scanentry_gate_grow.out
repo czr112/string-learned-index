@@ -1,0 +1,13 @@
+### check_combo mixed 131072  ctx16 grow
+rc=2
+### check_combo mixed 131072  lits grow
+rc=2
+### check_combo skew 131072  ctx16 grow
+rc=2
+### check_combo skew 131072  lits grow
+rc=2
+### check_combo tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv ctx16 grow
+rc=2
+### check_combo tranco 131072 ../validation_e5_20260913/data/tranco_XN6XN.csv lits grow
+rc=2
+gate sweep done

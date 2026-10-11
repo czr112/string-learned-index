@@ -1,0 +1,52 @@
+{
+  "analyzer_selftest_rejections": [
+    "missing cell",
+    "missing phase",
+    "missing pairing",
+    "duplicate pairing"
+  ],
+  "space_ok": true,
+  "control_ok": true,
+  "regressions": {
+    "mixed/context16": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "mixed/lits": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "skew/context16": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "skew/lits": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "tranco/context16": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    },
+    "tranco/lits": {
+      "build": false,
+      "query": false,
+      "update": false,
+      "scan": false
+    }
+  },
+  "any_regression": false,
+  "target_build_resolvable": true,
+  "target_saving_bytes": 2113536,
+  "integrate": true
+}

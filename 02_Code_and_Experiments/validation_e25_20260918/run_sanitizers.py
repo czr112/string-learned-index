@@ -54,9 +54,29 @@ sys.path.insert(0, HERE)
 
 import tools_build  # noqa: E402  -- HERE has to be on sys.path first
 
-LOG = os.path.join(HERE, "logs", "run_sanitizers.log")
+# WHERE THE OUTPUT GOES, AND WHY IT NOW TAKES A TAG.
+#
+# Both files used to be written with the plain names below and opened "w", which is fine for a
+# driver that runs once -- and wrong for the second round that uses it. E38 ran it with two
+# added targets, and that run REPLACED E33's transcript and record in place: the E33 report
+# cites both paths as its evidence. Nothing was lost from the CLAIM (all five of E33's runs
+# are still in the file, re-executed under the E38 build, every one of them rc=0 with no
+# report), but the original run's identities were. The next round must not repeat that, so an
+# optional round tag now redirects BOTH files:
+#
+#     python3 run_sanitizers.py e39     ->  logs/run_sanitizers_e39.log
+#                                           results/main/sanitizer_runs_e39.jsonl
+#
+# Untagged still means the original names, so a re-run of E33's own set lands where E33 says
+# it does. That is deliberate: the alternative -- quietly renaming E33's evidence path -- would
+# break a document that has already been delivered.
+ROUND_TAG = sys.argv[1] if len(sys.argv) > 1 else ""
 
-RECORDS = os.path.join(HERE, "results", "main", "sanitizer_runs.jsonl")
+_SUFFIX = ("_" + ROUND_TAG) if ROUND_TAG else ""
+
+LOG = os.path.join(HERE, "logs", "run_sanitizers" + _SUFFIX + ".log")
+
+RECORDS = os.path.join(HERE, "results", "main", "sanitizer_runs" + _SUFFIX + ".jsonl")
 
 # halt_on_error: the first problem ends the process, so a non-zero exit status means
 # something. detect_leaks=0: the earlier round (validation_20260906) found LeakSanitizer's
@@ -171,6 +191,10 @@ RUNS = [
                   "defaults, including the exact-capacity sub-block cases the allocator "
                   "produces",
     },
+    # E33's sixth run. It has to stay: E38's first edit to this file put its two entries where
+    # this one was instead of after it, which silently dropped a coverage case E33's report
+    # claims. The count in that report ("6 runs") is what caught it, which is the argument for
+    # having written the count down.
     {
         "target": "san_bench_long_hyst",
         "args": ["mixed", "131072", "1", "", "", "same"],
@@ -179,6 +203,39 @@ RUNS = [
                   "saved positions going stale under long churn, at ONE repetition on the "
                   "smallest dataset -- coverage, not a timing run",
     },
+    {
+        "target": "san_check_lits_model",
+        "args": ["mixed:131072,skew:131072,tranco:262144",
+                 "../validation_e5_20260913/data/tranco_XN6XN.csv"],
+        "dataset": "all three corpora at their formal sizes",
+        "covers": "the LITS adapter end to end: the third-party HPT's 1,024 allocations and "
+                  "their release, training over 524,288 keys, the region calibration, every "
+                  "key of every real region (524,288 live and 524,288 absent) compared against "
+                  "the source's position arithmetic, the boundary regions at p=0/1/31/32/33/"
+                  "121/123, and the six REFUSAL paths (high byte, embedded NUL, too few keys, "
+                  "key shorter than the prefix, degenerate calibration, predicting on an "
+                  "unusable model)",
+    },
+    {
+        "target": "san_check_lits_index",
+        "args": ["mixed", "32768", ""],
+        "dataset": "mixed 32768, every maintenance path driven",
+        "covers": "the LITS backend through a REAL index: build, update, erase, "
+                  "prefix-mismatch rebuild, split, compaction, overflow insert and erase, "
+                  "and the full scan against a reference map. The corpus is a QUARTER of "
+                  "the formal size because this gate builds TWO indexes and runs seven "
+                  "operation phases over each; the paths it covers do not depend on the key "
+                  "count, and ASan's own overhead is what sets the size here",
+    },
+    {
+        "target": "san_check_lits_fingerprint",
+        "args": ["mixed:131072,skew:131072,tranco:262144",
+                 "../validation_e5_20260913/data/tranco_XN6XN.csv"],
+        "dataset": "all three corpora at their formal sizes",
+        "covers": "the fused fingerprint path read from the frozen model while the LITS "
+                  "adapter reads the same keys, including the negative control that hashes "
+                  "from the model's read offset",
+    },
 ]
 
 # The other half of the bounded claim. The user was explicit that a clean sanitizer run
@@ -186,12 +243,18 @@ RUNS = [
 NOT_COVERED = [
     "LeakSanitizer, and leaks in general: leak detection is switched off "
     "(ASAN_OPTIONS=detect_leaks=0), so this run says nothing about leaks.",
-    "the tranco dataset (262144 keys) and every dataset/mode/repetition combination the "
-    "timing sweeps use; only the runs listed above were executed.",
+    "the tranco corpus and every dataset/mode/repetition combination the timing sweeps use "
+    "-- EXCEPT that the E38 gates below do run tranco at its formal 262,144 keys, because "
+    "their claim is corpus-wide. The timing sweeps are still not covered.",
     "code reached only under -DE25_DIAG in the programs that were NOT built with it here "
     "(only san_check_e31 carries the counters).",
     "the split path as a claim of its own: whatever the listed programs execute is "
     "covered, but no run here asserts on a split in its own right.",
+    "the LITS adapter's NonFinite guard, which is unreachable with `hi > lo` on doubles: the "
+    "span is at least an ulp of `lo`, so `G * alpha` stays around 1e19. It is a defensive "
+    "branch and this run does not exercise it (check_lits_model reports it as untriggered).",
+    "the LITS adapter's empty-region path: all three corpora divide evenly by region_keys, so "
+    "no empty region exists for these runs to reach.",
     "any toolchain or platform other than the one this driver probes; the positive "
     "controls prove the detector is live ON THIS MACHINE only.",
     "memory errors that neither ASan nor UBSan can see.",
@@ -429,8 +492,13 @@ def summary(log, records, verdict, extra=()):
         log_line(log, "  * " + n)
 
     log_line(log, "")
-    log_line(log, "records: results/main/sanitizer_runs.jsonl")
-    log_line(log, "log:     logs/run_sanitizers.log")
+    log_line(log, "records: " + os.path.relpath(RECORDS, HERE).replace(os.sep, "/"))
+    log_line(log, "log:     " + os.path.relpath(LOG, HERE).replace(os.sep, "/"))
+
+    if ROUND_TAG:
+        log_line(log, "round tag: " + ROUND_TAG + " (the untagged names belong to the round "
+                      "that first delivered this driver's evidence)")
+
     log_line(log, "=" * 78)
 
 

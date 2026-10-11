@@ -1,0 +1,15 @@
+lits sweep run_id=p3b  2026-09-22 23:06:45
+phase mech: target=diag_lits_adapter reps=1 (phase table) processes=1
+    rep 0 arm order: 0 1 2
+    position balance NOT applicable to phase mech (1 repetition(s), counters only, no arm-to-arm comparison)
+--- phase mech mode same -> lits_adapter_diag_p3b_same.jsonl ---
+  diag_lits_adapter mixed same reps=1 tag=MECH rc=0 wall=6s
+  diag_lits_adapter skew same reps=1 tag=MECH rc=0 wall=8s
+  diag_lits_adapter tranco same reps=1 tag=MECH rc=0 wall=8s
+    archived 108 row(s) to lits_adapter_diag_p3b_same.jsonl
+--- phase mech mode grow -> lits_adapter_diag_p3b_grow.jsonl ---
+  diag_lits_adapter mixed grow reps=1 tag=MECH rc=0 wall=4s
+  diag_lits_adapter skew grow reps=1 tag=MECH rc=0 wall=6s
+  diag_lits_adapter tranco grow reps=1 tag=MECH rc=0 wall=8s
+    archived 108 row(s) to lits_adapter_diag_p3b_grow.jsonl
+sweep end 2026-09-22 23:07:26

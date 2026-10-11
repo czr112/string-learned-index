@@ -1,0 +1,13 @@
+widest sweep run_id=smoke  2026-09-23 04:37:46
+phase clean: target=bench_widest reps=4 (--reps) processes=1
+    rep 0 arm order: 0 1 2 3
+    rep 1 arm order: 1 2 3 0
+    rep 2 arm order: 2 3 0 1
+    rep 3 arm order: 3 0 1 2
+    position balance verified: every arm occupies every position 1 time(s)
+--- phase clean mode same -> long_widest_smoke_same.jsonl ---
+  bench_widest mixed same reps=4 tag=P1 rc=0 wall=18s
+  bench_widest skew same reps=4 tag=P1 rc=0 wall=24s
+  bench_widest tranco same reps=4 tag=P1 rc=0 wall=34s
+    archived 192 row(s) to long_widest_smoke_same.jsonl
+sweep end 2026-09-23 04:39:01

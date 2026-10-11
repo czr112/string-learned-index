@@ -1,0 +1,85 @@
+G0 evidence timeline (UTC). Build times decoded from each record's build_id.
+============================================================================================
+
+### shared headers, last modified on disk
+
+  index.hpp                                  2026-09-22 12:51:49
+  switches.hpp                               2026-09-22 10:57:48
+  model/lits_hpt_adapter.hpp                 2026-09-22 12:45:24
+  vendor/lits_model_safe/lits_model.hpp      2026-09-21 16:46:16
+  tools_build.py                             2026-09-22 13:12:37
+  data.hpp                                   2026-09-18 05:44:35
+
+### build records, newest first
+
+  target                             built (UTC)          sources
+  ----------------------------------------------------------------------------------------
+  diag_lits_adapter_m                2026-09-22 15:06:30  15
+  diag_lits_adapter                  2026-09-22 15:06:14  15
+  bench_lits_adapter                 2026-09-22 14:46:15  15
+  san_check_lits_model               2026-09-22 13:03:27  14
+  san_check_lits_index               2026-09-22 13:03:08  14
+  san_check_lits_fingerprint         2026-09-22 13:02:59  14
+  san_check_freeze                   2026-09-22 13:02:37  14
+  san_check_e9_multiblock            2026-09-22 13:02:19  14
+  san_check_e31                      2026-09-22 13:01:57  14
+  san_check_e11_locate               2026-09-22 13:01:37  14
+  san_bench_long_hyst                2026-09-22 13:01:16  15
+  check_scan_contract                2026-09-22 12:59:57  14
+  check_freeze                       2026-09-22 12:59:46  14
+  check_tag_store                    2026-09-22 12:59:32  14
+  check_overflow_store               2026-09-22 12:59:16  14
+  check_lits_fingerprint             2026-09-22 12:53:42  14
+  check_lits_model                   2026-09-22 12:53:29  14
+  check_lits_index                   2026-09-22 12:52:31  14
+  diag_domain                        2026-09-21 16:35:53  10
+  check_e31                          2026-09-21 11:28:55  10
+  diag_repair                        2026-09-21 10:54:26  11
+  bench_scan_s5                      2026-09-21 10:54:06  10
+  diag_migrate_b                     2026-09-21 10:53:47  11
+  bench_migrate                      2026-09-21 10:53:25  11
+  check_migrate                      2026-09-21 10:42:01  10
+  diag_migrate                       2026-09-21 08:10:09  11
+  bench_scan_s4                      2026-09-21 06:10:54  10
+  diag_tag                           2026-09-21 05:46:29  11
+  bench_tag                          2026-09-21 05:46:02  11
+  diag_compose                       2026-09-21 00:43:46  11
+  diag_prefix                        2026-09-21 00:25:12  11
+  bench_prefix                       2026-09-21 00:24:49  11
+  bench_scan_s3                      2026-09-20 16:16:42  10
+  diag_o1                            2026-09-20 15:56:47  11
+  bench_long_o1                      2026-09-20 15:56:33  11
+  diag_ov_cost                       2026-09-20 15:29:04  10
+  diag_trace                         2026-09-20 11:35:38  10
+  diag_hyst                          2026-09-20 11:05:47  11
+  bench_long_hyst                    2026-09-20 11:05:34  11
+  bench_scan_s2                      2026-09-20 10:55:22  10
+  check_scan                         2026-09-20 10:55:12  10
+  check_e11_locate                   2026-09-20 08:19:35  10
+  check_e9_multiblock                2026-09-20 08:19:24  10
+  bench_long_art                     2026-09-20 07:44:28  11
+  bench_long                         2026-09-20 07:09:37  10
+  check_e31_prehardening             2026-09-20 07:07:21  10
+  check_e25_write                    2026-09-20 07:07:09  10
+  check                              2026-09-20 07:06:37  10
+  bench_repack                       2026-09-20 05:49:06  10
+  bench_w_t                          2026-09-20 05:39:17  10
+  bench_w                            2026-09-20 05:39:04  10
+  diag_overflow                      2026-09-20 05:00:20  10
+  check_c3                           2026-09-20 03:55:38  10
+  check_e20_r2                       2026-09-20 03:53:58  10
+  check_e19_reuse                    2026-09-20 03:53:47  10
+  check_e16_probe                    2026-09-20 03:53:37  10
+  check_e15_plan                     2026-09-20 03:53:26  10
+  check_e8_hetero                    2026-09-20 03:52:55  10
+  diag_transfer                      2026-09-20 03:38:55  10
+  diag_long                          2026-09-19 17:26:56  10
+  check_freeze_prefix                2026-09-19 16:47:09  10
+  check_scan_preS2                   2026-09-19 16:47:00  10
+  check_e26_c2                       2026-09-19 16:46:50  10
+  bench_scan                         2026-09-19 16:35:40  10
+  bench_e26                          2026-09-19 16:35:29  11
+  diag_scan                          2026-09-19 14:34:05  9
+  diag_e26                           2026-09-19 13:08:50  9
+  bench_e25                          2026-09-19 12:40:24  10
+  diag_e25_calls                     2026-09-18 17:45:20  9

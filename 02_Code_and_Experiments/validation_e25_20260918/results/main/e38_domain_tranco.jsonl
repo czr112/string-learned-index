@@ -1,0 +1,9 @@
+{"section":"build","n":262144,"len_min":4,"len_mean":13.0044,"len_p50":12,"len_p95":20,"len_p99":25,"len_max":66,"len_over128":0,"len_over255":0,"with_high":0,"with_ctl":0,"with_nul":0,"empty":0,"max_byte":122}
+{"section":"region_prefix","n":128,"len_min":0,"len_mean":0.867188,"len_p50":1,"len_p95":2,"len_p99":2,"len_max":3,"len_over128":0,"len_over255":0,"with_high":0,"with_ctl":0,"with_nul":0,"empty":0,"max_byte":0}
+{"section":"region_prefix_shape","regions":128,"regions_p0":28,"hist_0":28,"hist_1_31":100,"hist_32_63":0,"hist_64_95":0,"hist_96_127":0,"hist_ge128":0,"empty_keys":0}
+{"section":"region_groups","regions":128,"groups_total":21888,"groups_mean":171,"groups_min":171,"groups_max":171,"region_keys":2048}
+{"section":"build_suffix","n":262144,"len_min":4,"len_mean":12.1372,"len_p50":12,"len_p95":20,"len_p99":24,"len_max":65,"len_over128":0,"len_over255":0,"with_high":0,"with_ctl":0,"with_nul":0,"empty":0,"max_byte":122}
+{"section":"query_miss_tilde","n":262144,"len_min":11,"len_mean":20.0044,"len_p50":19,"len_p95":27,"len_p99":32,"len_max":73,"len_over128":0,"len_over255":0,"with_high":0,"with_ctl":0,"with_nul":0,"empty":0,"max_byte":126}
+{"section":"query_miss_nul","n":262144,"len_min":5,"len_mean":14.0044,"len_p50":13,"len_p95":21,"len_p99":26,"len_max":67,"len_over128":0,"len_over255":0,"with_high":0,"with_ctl":262144,"with_nul":262144,"empty":0,"max_byte":122}
+{"section":"update_same","n":524288,"len_min":4,"len_mean":13.0044,"len_p50":12,"len_p95":20,"len_p99":25,"len_max":66,"len_over128":0,"len_over255":0,"with_high":0,"with_ctl":0,"with_nul":0,"empty":0,"max_byte":122}
+{"section":"update_grow","n":524288,"len_min":9,"len_mean":20.7925,"len_p50":20,"len_p95":28,"len_p99":33,"len_max":74,"len_over128":0,"len_over255":0,"with_high":0,"with_ctl":0,"with_nul":0,"empty":0,"max_byte":126}

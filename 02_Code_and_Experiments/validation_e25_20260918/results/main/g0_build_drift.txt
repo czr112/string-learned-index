@@ -1,0 +1,81 @@
+G0 evidence: build-record drift against the CURRENT on-disk sources
+LIVE  = every recorded source hash still matches disk
+DRIFT = at least one source changed since the build
+====================================================================================================
+
+total records 69   LIVE 18   DRIFT 51   other 0
+
+### LIVE
+
+  bench_lits_adapter                 15/15
+  check_freeze                       14/14
+  check_lits_fingerprint             14/14
+  check_lits_index                   14/14
+  check_lits_model                   14/14
+  check_overflow_store               14/14
+  check_scan_contract                14/14
+  check_tag_store                    14/14
+  diag_lits_adapter                  15/15
+  diag_lits_adapter_m                15/15
+  san_bench_long_hyst                15/15
+  san_check_e11_locate               14/14
+  san_check_e31                      14/14
+  san_check_e9_multiblock            14/14
+  san_check_freeze                   14/14
+  san_check_lits_fingerprint         14/14
+  san_check_lits_index               14/14
+  san_check_lits_model               14/14
+
+### DRIFT
+
+  bench_e25                          9/10   changed: index.hpp
+  bench_e26                          9/11   changed: index.hpp,switches.hpp
+  bench_long                         8/10   changed: index.hpp,switches.hpp
+  bench_long_art                     9/11   changed: index.hpp,switches.hpp
+  bench_long_hyst                    9/11   changed: index.hpp,switches.hpp
+  bench_long_o1                      9/11   changed: index.hpp,switches.hpp
+  bench_migrate                      9/11   changed: index.hpp,switches.hpp
+  bench_prefix                       9/11   changed: index.hpp,switches.hpp
+  bench_repack                       8/10   changed: index.hpp,switches.hpp
+  bench_scan                         8/10   changed: index.hpp,switches.hpp
+  bench_scan_s2                      8/10   changed: index.hpp,switches.hpp
+  bench_scan_s3                      8/10   changed: index.hpp,switches.hpp
+  bench_scan_s4                      8/10   changed: index.hpp,switches.hpp
+  bench_scan_s5                      8/10   changed: index.hpp,switches.hpp
+  bench_tag                          9/11   changed: index.hpp,switches.hpp
+  bench_w                            8/10   changed: index.hpp,switches.hpp
+  bench_w_t                          8/10   changed: index.hpp,switches.hpp
+  check                              8/10   changed: index.hpp,switches.hpp
+  check_c3                           8/10   changed: index.hpp,switches.hpp
+  check_e11_locate                   8/10   changed: index.hpp,switches.hpp
+  check_e15_plan                     8/10   changed: index.hpp,switches.hpp
+  check_e16_probe                    8/10   changed: index.hpp,switches.hpp
+  check_e19_reuse                    8/10   changed: index.hpp,switches.hpp
+  check_e20_r2                       8/10   changed: index.hpp,switches.hpp
+  check_e25_write                    8/10   changed: index.hpp,switches.hpp
+  check_e26_c2                       8/10   changed: index.hpp,switches.hpp
+  check_e31                          8/10   changed: index.hpp,switches.hpp
+  check_e31_prehardening             7/10   changed: check_e31.cpp,index.hpp,switches.hpp
+  check_e8_hetero                    8/10   changed: index.hpp,switches.hpp
+  check_e9_multiblock                8/10   changed: index.hpp,switches.hpp
+  check_freeze_prefix                7/10   changed: check_freeze.cpp,index.hpp,switches.hpp
+  check_migrate                      8/10   changed: index.hpp,switches.hpp
+  check_scan                         8/10   changed: index.hpp,switches.hpp
+  check_scan_preS2                   7/10   changed: check_scan.cpp,index.hpp,switches.hpp
+  diag_compose                       8/11   changed: diag_compose.cpp,index.hpp,switches.hpp
+  diag_domain                        8/10   changed: index.hpp,switches.hpp
+  diag_e25_calls                     7/9   changed: index.hpp,native_e22.hpp
+  diag_e26                           8/9   changed: index.hpp
+  diag_hyst                          9/11   changed: index.hpp,switches.hpp
+  diag_long                          7/10   changed: bench_long.cpp,index.hpp,switches.hpp
+  diag_migrate                       9/11   changed: index.hpp,switches.hpp
+  diag_migrate_b                     9/11   changed: index.hpp,switches.hpp
+  diag_o1                            9/11   changed: index.hpp,switches.hpp
+  diag_ov_cost                       8/10   changed: index.hpp,switches.hpp
+  diag_overflow                      8/10   changed: index.hpp,switches.hpp
+  diag_prefix                        9/11   changed: index.hpp,switches.hpp
+  diag_repair                        9/11   changed: index.hpp,switches.hpp
+  diag_scan                          8/9   changed: index.hpp
+  diag_tag                           9/11   changed: index.hpp,switches.hpp
+  diag_trace                         8/10   changed: index.hpp,switches.hpp
+  diag_transfer                      8/10   changed: index.hpp,switches.hpp

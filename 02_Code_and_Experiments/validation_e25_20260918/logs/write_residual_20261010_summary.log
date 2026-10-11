@@ -1,0 +1,50 @@
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: ctx16_grow_tranco_c.jsonl  corpus=tranco n=262144 thr=128 reps=4
+Context16 grow f=0.25 | ins/op recl=0.469(ok 0.289) widen=0.009 comp=0.175 ov=0.175 probe=3.32 att=1.70 cmp=11.5 cmpB=46 sfxB=15.8 esh=12.1 fb=0.000
+                    | era/op cmp=1.01 cmpB=12 sh=14.7 relP=12.2 relO=0.14 ovR=0.05 ovB=3 free=0.01 | ov=12158 MB=26.51
+Context16 grow f=2.00 | ins/op recl=0.459(ok 0.290) widen=0.008 comp=0.161 ov=0.161 probe=2.93 att=1.68 cmp=11.2 cmpB=40 sfxB=16.3 esh=9.5 fb=0.000
+                    | era/op cmp=1.03 cmpB=20 sh=12.6 relP=16.3 relO=3.42 ovR=3.18 ovB=153 free=0.16 | ov=46787 MB=29.74
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: ctx16_grow_tranco_t.jsonl  corpus=tranco n=262144 reps=4 calib=79.0 ns/pair
+Context16 grow f=0.25 | ins   940.7 = loc  140.9 + find  155.4 + place  520.4 (recl 158.2) + slow   0.0 + reb   0.0 + resid   45.0 ( 4.8%); ov  83.5
+                    | era   492.2 = loc  160.0 + region  235.7 (find 134.1) + resid   17.5 ( 3.6%)
+Context16 grow f=2.00 | ins   818.0 = loc  126.0 + find  145.7 + place  420.8 (recl 100.4) + slow   0.0 + reb   0.0 + resid   46.5 ( 5.7%); ov  68.2
+                    | era   505.5 = loc  137.2 + region  278.5 (find 153.6) + resid   10.8 ( 2.1%)
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: ctx16_same_mixed_c.jsonl  corpus=mixed n=131072 thr=128 reps=4
+Context16 same f=0.25 | ins/op recl=0.132(ok 0.132) widen=0.000 comp=0.000 ov=0.000 probe=1.23 att=1.14 cmp=13.1 cmpB=41 sfxB=31.5 esh=12.1 fb=0.000
+                    | era/op cmp=1.05 cmpB=32 sh=12.1 relP=31.5 relO=0.00 ovR=0.00 ovB=0 free=0.00 | ov=390 MB=23.90
+Context16 same f=2.00 | ins/op recl=0.980(ok 0.947) widen=0.020 comp=0.013 ov=0.013 probe=7.70 att=2.09 cmp=20.5 cmpB=341 sfxB=119.2 esh=18.6 fb=0.000
+                    | era/op cmp=1.50 cmpB=129 sh=18.6 relP=119.2 relO=1.56 ovR=0.02 ovB=1 free=0.01 | ov=748 MB=23.97
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: ctx16_same_mixed_t.jsonl  corpus=mixed n=131072 reps=4 calib=55.8 ns/pair
+Context16 same f=0.25 | ins   489.2 = loc  104.8 + find   92.9 + place  169.3 (recl  35.8) + slow   0.0 + reb   0.0 + resid   66.4 (13.6%); ov   0.0
+                    | era   431.2 = loc  137.0 + region  206.1 (find 117.1) + resid   32.4 ( 7.5%)
+Context16 same f=2.00 | ins  1156.1 = loc  111.2 + find  228.8 + place  676.9 (recl 395.2) + slow   0.0 + reb   0.0 + resid   83.4 ( 7.2%); ov   4.9
+                    | era   570.1 = loc  115.1 + region  364.2 (find 204.9) + resid   35.0 ( 6.1%)
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: lits_grow_tranco_c.jsonl  corpus=tranco n=262144 thr=128 reps=4
+LitsHpt grow f=0.25 | ins/op recl=0.328(ok 0.205) widen=0.005 comp=0.120 ov=0.120 probe=2.62 att=1.48 cmp=9.3 cmpB=41 sfxB=16.9 esh=9.4 fb=0.000
+                    | era/op cmp=1.01 cmpB=12 sh=11.3 relP=12.2 relO=0.11 ovR=0.04 ovB=2 free=0.01 | ov=8691 MB=26.23
+LitsHpt grow f=2.00 | ins/op recl=0.248(ok 0.165) widen=0.004 comp=0.079 ov=0.079 probe=2.23 att=1.36 cmp=9.0 cmpB=36 sfxB=18.0 esh=7.7 fb=0.000
+                    | era/op cmp=1.01 cmpB=20 sh=9.3 relP=18.0 relO=1.75 ovR=1.60 ovB=77 free=0.08 | ov=29795 MB=28.23
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: lits_grow_tranco_t.jsonl  corpus=tranco n=262144 reps=4 calib=56.3 ns/pair
+LitsHpt grow f=0.25 | ins   808.4 = loc  147.2 + find  114.4 + place  423.4 (recl 110.7) + slow   0.0 + reb   0.0 + resid   67.1 ( 8.3%); ov  60.5
+                    | era   501.5 = loc  173.4 + region  233.7 (find 134.5) + resid   38.2 ( 7.6%)
+LitsHpt grow f=2.00 | ins   644.2 = loc  126.7 + find  108.5 + place  293.2 (recl  58.3) + slow   0.0 + reb   0.0 + resid   59.5 ( 9.2%); ov  36.6
+                    | era   432.6 = loc  133.8 + region  216.2 (find 116.6) + resid   26.3 ( 6.1%)
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: lits_same_mixed_c.jsonl  corpus=mixed n=131072 thr=128 reps=4
+LitsHpt same f=0.25 | ins/op recl=0.035(ok 0.035) widen=0.000 comp=0.000 ov=0.000 probe=1.04 att=1.04 cmp=7.6 cmpB=26 sfxB=31.5 esh=6.7 fb=0.000
+                    | era/op cmp=1.03 cmpB=32 sh=6.7 relP=31.5 relO=0.00 ovR=0.00 ovB=0 free=0.00 | ov=564 MB=23.98
+LitsHpt same f=2.00 | ins/op recl=0.992(ok 0.959) widen=0.023 comp=0.010 ov=0.010 probe=21.13 att=2.12 cmp=23.6 cmpB=367 sfxB=119.5 esh=19.4 fb=0.000
+                    | era/op cmp=2.61 cmpB=136 sh=19.4 relP=119.5 relO=1.24 ovR=0.04 ovB=2 free=0.01 | ov=2187 MB=24.30
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: lits_same_mixed_t.jsonl  corpus=mixed n=131072 reps=4 calib=53.9 ns/pair
+LitsHpt same f=0.25 | ins   416.4 = loc  103.4 + find   66.2 + place  114.5 (recl   5.4) + slow   0.0 + reb   0.0 + resid   78.4 (18.8%); ov   0.0
+                    | era   394.8 = loc  120.7 + region  181.8 (find  94.4) + resid   38.4 ( 9.7%)
+LitsHpt same f=2.00 | ins  1400.4 = loc  110.7 + find  339.5 + place  819.2 (recl 410.2) + slow   0.0 + reb   0.0 + resid   77.0 ( 5.5%); ov   3.2
+                    | era   601.2 = loc  137.7 + region  353.6 (find 235.2) + resid   55.9 ( 9.3%)
+
+analyze_write_residual: done

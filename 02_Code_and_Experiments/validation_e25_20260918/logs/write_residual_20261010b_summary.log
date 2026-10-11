@@ -1,0 +1,66 @@
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: ctx16_grow_tranco_c.jsonl  corpus=tranco n=262144 thr=128 reps=4
+Context16 grow f=0.25 | ins/op recl=0.469(ok 0.289) widen=0.009 comp=0.175 ov=0.175 probe=3.32 att=1.70 cmp=11.5 cmpB=46 sfxB=15.8 esh=12.1 fb=0.000
+                    | walks/op put_primary=1.65 fc=0.47 fcprobe=1.12 gap=0.034 | hint eq/ne/nodir/below=3341/0/485/17
+                    | era/op cmp=1.01 cmpB=12 sh=14.7 relP=12.2 relO=0.14 ovR=0.05 ovB=3 free=0.01 | ov=12158 MB=26.51
+Context16 grow f=2.00 | ins/op recl=0.459(ok 0.290) widen=0.008 comp=0.161 ov=0.161 probe=2.93 att=1.68 cmp=11.2 cmpB=40 sfxB=16.3 esh=9.5 fb=0.000
+                    | walks/op put_primary=1.63 fc=0.46 fcprobe=1.00 gap=0.038 | hint eq/ne/nodir/below=3498/0/220/44
+                    | era/op cmp=1.03 cmpB=20 sh=12.6 relP=16.3 relO=3.42 ovR=3.18 ovB=153 free=0.16 | ov=46787 MB=29.74
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: ctx16_grow_tranco_t.jsonl  corpus=tranco n=262144 reps=4 calib=59.8 ns/pair
+Context16 grow f=0.25 | ins  1012.9 = loc  126.7 + find  150.4 + place  611.1 (recl 146.3) + slow   0.0 + reb   0.0 + resid   64.9 ( 6.4%); ov  79.3
+                    | era   475.3 = loc  163.0 + region  223.4 (find 130.7) + resid   29.0 ( 6.1%)
+                    | walks 224.8 (fc  27.2) ns/op; calls 1.65 + 0.47 /op
+Context16 grow f=2.00 | ins   935.8 = loc  126.2 + find  146.9 + place  544.2 (recl 100.9) + slow   0.0 + reb   0.0 + resid   58.7 ( 6.3%); ov  70.2
+                    | era   494.3 = loc  141.8 + region  261.5 (find 149.4) + resid   31.2 ( 6.3%)
+                    | walks 225.2 (fc  26.4) ns/op; calls 1.63 + 0.46 /op
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: ctx16_same_mixed_c.jsonl  corpus=mixed n=131072 thr=128 reps=4
+Context16 same f=0.25 | ins/op recl=0.132(ok 0.132) widen=0.000 comp=0.000 ov=0.000 probe=1.23 att=1.14 cmp=13.1 cmpB=41 sfxB=31.5 esh=12.1 fb=0.000
+                    | walks/op put_primary=1.13 fc=0.13 fcprobe=0.18 gap=0.008 | hint eq/ne/nodir/below=573/0/504/7
+                    | era/op cmp=1.05 cmpB=32 sh=12.1 relP=31.5 relO=0.00 ovR=0.00 ovB=0 free=0.00 | ov=390 MB=23.90
+Context16 same f=2.00 | ins/op recl=0.980(ok 0.947) widen=0.020 comp=0.013 ov=0.013 probe=7.70 att=2.09 cmp=20.5 cmpB=341 sfxB=119.2 esh=18.6 fb=0.000
+                    | walks/op put_primary=2.01 fc=0.98 fcprobe=3.75 gap=0.059 | hint eq/ne/nodir/below=7830/0/154/41
+                    | era/op cmp=1.50 cmpB=129 sh=18.6 relP=119.2 relO=1.56 ovR=0.02 ovB=1 free=0.01 | ov=748 MB=23.97
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: ctx16_same_mixed_t.jsonl  corpus=mixed n=131072 reps=4 calib=56.8 ns/pair
+Context16 same f=0.25 | ins   577.7 = loc  107.6 + find   94.9 + place  246.3 (recl  35.2) + slow   0.0 + reb   0.0 + resid   72.1 (12.5%); ov   0.0
+                    | era   448.0 = loc  141.1 + region  217.5 (find 123.1) + resid   32.7 ( 7.3%)
+                    | walks 131.7 (fc   5.6) ns/op; calls 1.13 + 0.13 /op
+Context16 same f=2.00 | ins  1175.3 = loc  105.2 + find  220.6 + place  731.8 (recl 315.9) + slow   0.0 + reb   0.0 + resid   60.9 ( 5.2%); ov   4.6
+                    | era   474.0 = loc   99.6 + region  294.6 (find 176.2) + resid   23.0 ( 4.8%)
+                    | walks 221.5 (fc  50.2) ns/op; calls 2.01 + 0.98 /op
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: lits_grow_tranco_c.jsonl  corpus=tranco n=262144 thr=128 reps=4
+LitsHpt grow f=0.25 | ins/op recl=0.328(ok 0.205) widen=0.005 comp=0.120 ov=0.120 probe=2.62 att=1.48 cmp=9.3 cmpB=41 sfxB=16.9 esh=9.4 fb=0.000
+                    | walks/op put_primary=1.45 fc=0.33 fcprobe=0.79 gap=0.023 | hint eq/ne/nodir/below=2550/0/128/11
+                    | era/op cmp=1.01 cmpB=12 sh=11.3 relP=12.2 relO=0.11 ovR=0.04 ovB=2 free=0.01 | ov=8691 MB=26.23
+LitsHpt grow f=2.00 | ins/op recl=0.248(ok 0.165) widen=0.004 comp=0.079 ov=0.079 probe=2.23 att=1.36 cmp=9.0 cmpB=36 sfxB=18.0 esh=7.7 fb=0.000
+                    | walks/op put_primary=1.33 fc=0.25 fcprobe=0.63 gap=0.020 | hint eq/ne/nodir/below=1768/0/242/19
+                    | era/op cmp=1.01 cmpB=20 sh=9.3 relP=18.0 relO=1.75 ovR=1.60 ovB=77 free=0.08 | ov=29795 MB=28.23
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: lits_grow_tranco_t.jsonl  corpus=tranco n=262144 reps=4 calib=58.0 ns/pair
+LitsHpt grow f=0.25 | ins   882.4 = loc  128.3 + find  110.7 + place  513.6 (recl 110.0) + slow   0.0 + reb   0.0 + resid   71.8 ( 8.1%); ov  61.1
+                    | era   468.7 = loc  162.5 + region  216.1 (find 124.5) + resid   32.2 ( 6.9%)
+                    | walks 202.9 (fc  20.3) ns/op; calls 1.45 + 0.33 /op
+LitsHpt grow f=2.00 | ins   723.7 = loc  123.5 + find   98.4 + place  387.9 (recl  53.0) + slow   0.0 + reb   0.0 + resid   56.0 ( 7.7%); ov  36.5
+                    | era   441.0 = loc  134.4 + region  218.3 (find 114.7) + resid   30.4 ( 6.9%)
+                    | walks 186.8 (fc  14.3) ns/op; calls 1.33 + 0.25 /op
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY count build: lits_same_mixed_c.jsonl  corpus=mixed n=131072 thr=128 reps=4
+LitsHpt same f=0.25 | ins/op recl=0.035(ok 0.035) widen=0.000 comp=0.000 ov=0.000 probe=1.04 att=1.04 cmp=7.6 cmpB=26 sfxB=31.5 esh=6.7 fb=0.000
+                    | walks/op put_primary=1.04 fc=0.04 fcprobe=0.04 gap=0.007 | hint eq/ne/nodir/below=0/0/290/0
+                    | era/op cmp=1.03 cmpB=32 sh=6.7 relP=31.5 relO=0.00 ovR=0.00 ovB=0 free=0.00 | ov=564 MB=23.98
+LitsHpt same f=2.00 | ins/op recl=0.992(ok 0.959) widen=0.023 comp=0.010 ov=0.010 probe=21.13 att=2.12 cmp=23.6 cmpB=367 sfxB=119.5 esh=19.4 fb=0.000
+                    | walks/op put_primary=2.03 fc=0.99 fcprobe=10.34 gap=0.058 | hint eq/ne/nodir/below=8113/0/1/16
+                    | era/op cmp=2.61 cmpB=136 sh=19.4 relP=119.5 relO=1.24 ovR=0.04 ovB=2 free=0.01 | ov=2187 MB=24.30
+----------------------------------------------------------------------------------------------------------------------
+SUMMARY time build: lits_same_mixed_t.jsonl  corpus=mixed n=131072 reps=4 calib=56.6 ns/pair
+LitsHpt same f=0.25 | ins   484.0 = loc  107.9 + find   74.3 + place  175.8 (recl   5.6) + slow   0.0 + reb   0.0 + resid   69.5 (14.4%); ov   0.0
+                    | era   426.6 = loc  142.3 + region  193.3 (find 101.7) + resid   34.4 ( 8.1%)
+                    | walks 105.8 (fc   1.5) ns/op; calls 1.04 + 0.04 /op
+LitsHpt same f=2.00 | ins  1427.7 = loc  108.3 + find  321.6 + place  866.2 (recl 345.4) + slow   0.0 + reb   0.0 + resid   75.0 ( 5.3%); ov   3.0
+                    | era   512.5 = loc  112.3 + region  312.2 (find 204.5) + resid   31.4 ( 6.1%)
+                    | walks 278.5 (fc  81.7) ns/op; calls 2.03 + 0.99 /op
+
+analyze_write_residual: done

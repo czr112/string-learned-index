@@ -1,0 +1,104 @@
+==============================================================================
+ITEM B: ASan/UBSan memory-safety coverage -- 2026-09-22 21:01:14
+These runs are for MEMORY-SAFETY COVERAGE ONLY. Their timings are
+meaningless: the targets are -O1 and instrumented. Never report them
+as performance, and never mix them with a timing sweep's numbers.
+==============================================================================
+compiler line: g++ -std=c++17 -O1 -g -march=x86-64-v2 -fsanitize=address,undefined -fno-omit-frame-pointer
+
+positive controls -- a detector that never fires proves nothing:
+CONTROL asan: fired (AddressSanitizer, rc=1)
+CONTROL ubsan: fired (runtime error:, rc=1)
+
+BUILD san_bench_long_hyst    ok
+BUILD san_check_e11_locate   ok
+BUILD san_check_e31          ok
+BUILD san_check_e9_multiblock ok
+BUILD san_check_freeze       ok
+BUILD san_check_lits_fingerprint ok
+BUILD san_check_lits_index   ok
+BUILD san_check_lits_model   ok
+
+RUN   san_check_e31          mixed 131072 same          rc=0   sanitizer=no (20s)
+  mixed same frac=0.5 ok
+  mixed same frac=1 ok
+  mixed same frac=2 ok
+RUN   san_check_e31          mixed 131072 grow          rc=0   sanitizer=no (14s)
+  mixed grow frac=0.5 ok
+  mixed grow frac=1 ok
+  mixed grow frac=2 ok
+RUN   san_check_e9_multiblock self-contained pool, 2 trials rc=0   sanitizer=no (1s)
+  {"status":"passed","operations":12000,"scan_checks":1830,"later_subblock_scans":60,"struct_validations":130,"groups_struct_checked":18590,"multiblock_group_observations":100,"singleblock_group_observations":186,"max_subblocks":5,"wide_subblocks_probed":142,"wide_subblock_simd_scalar_checks":3316,"subblock_wipe_refill_cases":5,"capped_groups":147,"uncapped_groups":139,"capped_groups_with_second_block_demand":9,"compactions":79,"seed":20260915}
+  trial region=64 ops=6000 multiblock_groups=1731 singleblock_groups=8769 max_subblocks=4 compactions=42
+  trial region=32 ops=6000 multiblock_groups=1915 singleblock_groups=7575 max_subblocks=5 compactions=37
+RUN   san_check_e11_locate   self-contained pool, 3 trials rc=0   sanitizer=no (1s)
+  trial region=64 block=2048 capped=yes groups=4
+  trial region=32 block=2048 capped=yes groups=2
+  trial region=64 block=1024 capped=no groups=23
+RUN   san_check_freeze       mixed 131072               rc=0   sanitizer=no (11s)
+  CHOSEN  [write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16]
+  SHIPPED [write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,model_backend=Context16]
+  mixed freeze confirmation done, 851968 element comparisons
+  DISCARDED 9204 byte(s) this sanitizer run appended to results/main/long_hyst_same.jsonl -- rows from an -O1 instrumented build are not measurements and are not kept
+RUN   san_bench_long_hyst    mixed 131072 reps=1 same   rc=0   sanitizer=no (48s)
+  mixed rep0 E31H done
+  mixed rep0 E31P done
+  mixed rep0 ART done
+RUN   san_check_lits_model   all three corpora at their formal sizes rc=0   sanitizer=no (9s)
+    skew: 131072 keys, 64 regions, training gcpl=29 table=2097152B in 1024 allocations
+    tranco: 262144 keys, 128 regions, training gcpl=0 table=2097152B in 1024 allocations
+  check_lits_model PASS: 518144 live + 518144 absent keys agree with the source's position arithmetic across 256 real regions
+RUN   san_check_lits_index   mixed 32768, every maintenance path driven rc=0   sanitizer=no (4s)
+    M0 [mixed]  CUMULATIVE over the whole gate: 0 regions constructed (0 calibrated, 0 fallback, 0 boundary)  ||  STATE AT THE END of the operation sequence: 27 live regions, 0 LITS-mapped (0), 0/38509 records (0), reasons: admission=0 degenerate=0 boundary=0 unsupported=0
+    LITS [mixed]  CUMULATIVE over the whole gate: 43 regions constructed (34 calibrated, 9 fallback, 0 boundary)  ||  STATE AT THE END of the operation sequence: 27 live regions, 23 LITS-mapped (0.851852), 30733/38509 records (0.798073), reasons: admission=3 degenerate=1 boundary=0 unsupported=0
+  check_lits_index PASS: 516036 keys, 151208 operation returns, 516984 scan records over 216 start probes
+RUN   san_check_lits_fingerprint all three corpora at their formal sizes rc=0   sanitizer=no (8s)
+    skew: checked 262144 keys so far
+    tranco: checked 524288 keys so far
+  check_lits_fingerprint PASS: 524288 keys; the tag is the suffix's under both models, and the naive offset would differ on 516015 of them
+
+==============================================================================
+ITEM B -- THE BOUNDED CLAIM
+==============================================================================
+CLAIM: 在指定配置与测试覆盖下，ASan/UBSan 未报告问题。
+       Under the listed configuration and test coverage, ASan/UBSan
+       reported no problem. That does NOT prove every path is safe, and
+       it does NOT replace the scan-contract acceptance (ITEM A).
+
+RESULT: PASS -- 9 run(s) completed and none reported a sanitizer problem. The claim is bounded by the coverage below.
+
+COVERED -- runs that completed with NO sanitizer report:
+  san_check_e31          mixed 131072 same         
+                         E31's in-place sub-block repack, the insert that follows it, deletes of the first and last live records, emptied middle sub-blocks, and the boundary directory re-checked against its own sub-blocks on BOTH arms
+  san_check_e31          mixed 131072 grow         
+                         the same repack and placement paths run with a growing key length, so suffixes that change size move through them
+  san_check_e9_multiblock self-contained pool, 2 trials
+                         structural invariants: rebuild, the sub-block sweep, the boundary directory, and empty middle sub-blocks
+  san_check_e11_locate   self-contained pool, 3 trials
+                         locate against the boundary directory across multi-block groups, including groups whose overflow holds records below every primary key
+  san_check_freeze       mixed 131072              
+                         rebuild paths: three whole indexes built from one plan at the shipped defaults, including the exact-capacity sub-block cases the allocator produces
+  san_bench_long_hyst    mixed 131072 reps=1 same  
+                         one overflow-heavy workload: overflow growth, overflow deletion and saved positions going stale under long churn, at ONE repetition on the smallest dataset -- coverage, not a timing run
+  san_check_lits_model   all three corpora at their formal sizes
+                         the LITS adapter end to end: the third-party HPT's 1,024 allocations and their release, training over 524,288 keys, the region calibration, every key of every real region (524,288 live and 524,288 absent) compared against the source's position arithmetic, the boundary regions at p=0/1/31/32/33/121/123, and the six REFUSAL paths (high byte, embedded NUL, too few keys, key shorter than the prefix, degenerate calibration, predicting on an unusable model)
+  san_check_lits_index   mixed 32768, every maintenance path driven
+                         the LITS backend through a REAL index: build, update, erase, prefix-mismatch rebuild, split, compaction, overflow insert and erase, and the full scan against a reference map. The corpus is a QUARTER of the formal size because this gate builds TWO indexes and runs seven operation phases over each; the paths it covers do not depend on the key count, and ASan's own overhead is what sets the size here
+  san_check_lits_fingerprint all three corpora at their formal sizes
+                         the fused fingerprint path read from the frozen model while the LITS adapter reads the same keys, including the negative control that hashes from the model's read offset
+
+NOT COVERED -- this run says NOTHING about:
+  * LeakSanitizer, and leaks in general: leak detection is switched off (ASAN_OPTIONS=detect_leaks=0), so this run says nothing about leaks.
+  * the tranco corpus and every dataset/mode/repetition combination the timing sweeps use -- EXCEPT that the E38 gates below do run tranco at its formal 262,144 keys, because their claim is corpus-wide. The timing sweeps are still not covered.
+  * code reached only under -DE25_DIAG in the programs that were NOT built with it here (only san_check_e31 carries the counters).
+  * the split path as a claim of its own: whatever the listed programs execute is covered, but no run here asserts on a split in its own right.
+  * the LITS adapter's NonFinite guard, which is unreachable with `hi > lo` on doubles: the span is at least an ulp of `lo`, so `G * alpha` stays around 1e19. It is a defensive branch and this run does not exercise it (check_lits_model reports it as untriggered).
+  * the LITS adapter's empty-region path: all three corpora divide evenly by region_keys, so no empty region exists for these runs to reach.
+  * any toolchain or platform other than the one this driver probes; the positive controls prove the detector is live ON THIS MACHINE only.
+  * memory errors that neither ASan nor UBSan can see.
+  * the scan-contract acceptance (ITEM A): no sanitizer result says anything about scan order, and the two must not be run together into one conclusion.
+
+records: results/main/sanitizer_runs_e38.jsonl
+log:     logs/run_sanitizers_e38.log
+round tag: e38 (the untagged names belong to the round that first delivered this driver's evidence)
+==============================================================================

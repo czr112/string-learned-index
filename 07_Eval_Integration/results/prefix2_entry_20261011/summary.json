@@ -1,0 +1,98 @@
+[
+  {
+    "corpus": "mixed",
+    "backend": "context16",
+    "gates": {
+      "cover": false,
+      "steps": false,
+      "space": false,
+      "diff": true,
+      "pass": false
+    },
+    "hits": 298,
+    "queries": 10000,
+    "avoided_steps": 596,
+    "total_steps": 77388,
+    "resident_bytes": 2705472,
+    "index_bytes": 39322736,
+    "l2_rows": 2446,
+    "region_count": 64
+  },
+  {
+    "corpus": "mixed",
+    "backend": "lits",
+    "gates": null,
+    "hits": 0,
+    "queries": 10000,
+    "avoided_steps": 0,
+    "total_steps": 59487,
+    "resident_bytes": 0,
+    "index_bytes": 36760625,
+    "l2_rows": 0,
+    "region_count": 64
+  },
+  {
+    "corpus": "skew",
+    "backend": "context16",
+    "gates": {
+      "cover": false,
+      "steps": false,
+      "space": false,
+      "diff": true,
+      "pass": false
+    },
+    "hits": 0,
+    "queries": 10000,
+    "avoided_steps": 0,
+    "total_steps": 148416,
+    "resident_bytes": 2554944,
+    "index_bytes": 40588521,
+    "l2_rows": 2299,
+    "region_count": 64
+  },
+  {
+    "corpus": "skew",
+    "backend": "lits",
+    "gates": null,
+    "hits": 0,
+    "queries": 10000,
+    "avoided_steps": 0,
+    "total_steps": 147379,
+    "resident_bytes": 0,
+    "index_bytes": 40244288,
+    "l2_rows": 0,
+    "region_count": 64
+  },
+  {
+    "corpus": "tranco",
+    "backend": "context16",
+    "gates": {
+      "cover": false,
+      "steps": false,
+      "space": false,
+      "diff": true,
+      "pass": false
+    },
+    "hits": 1602,
+    "queries": 10000,
+    "avoided_steps": 3197,
+    "total_steps": 32135,
+    "resident_bytes": 4638784,
+    "index_bytes": 38588589,
+    "l2_rows": 4138,
+    "region_count": 128
+  },
+  {
+    "corpus": "tranco",
+    "backend": "lits",
+    "gates": null,
+    "hits": 0,
+    "queries": 10000,
+    "avoided_steps": 0,
+    "total_steps": 31308,
+    "resident_bytes": 0,
+    "index_bytes": 34906031,
+    "l2_rows": 0,
+    "region_count": 128
+  }
+]

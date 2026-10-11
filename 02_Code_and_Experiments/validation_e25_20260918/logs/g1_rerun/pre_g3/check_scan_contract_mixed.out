@@ -1,0 +1,8 @@
+{"phase":"monotone","kind":"mixed","sampling":"full","keys_walked":131072,"adjacent_pairs":131008,"violations":0,"placement_hits":131072,"regions":64,"regions_single_group":0,"region0_prefix_len":8}
+{"phase":"scan","checkpoint":"initial","live":131072,"starts":7488,"counts":"1,2,16","scans":22465,"short_scans":5,"records_compared":273309}
+{"phase":"scan","checkpoint":"erased","live":130982,"starts":48,"counts":"1,2,16","scans":145,"short_scans":0,"records_compared":131894}
+{"phase":"scan","checkpoint":"overflow","live":131558,"starts":48,"counts":"1,2,16","scans":145,"short_scans":0,"records_compared":132470}
+{"phase":"ops","groups_touched":24,"deep_groups":160,"groups_emptied":3,"groups_overflowed":3,"erases":90,"inserts":576,"overflow_before":390,"overflow_after":966}
+{"phase":"negative_control","hook":"rotate_groups","full_ascending_ok":0,"full_multiset_ok":0,"drain_ascending_ok":0,"drain_multiset_ok":0,"start_probes":48,"start_probe_count":4096,"start_mismatches":35,"erase_missed":90,"region0_prefix_len":8,"failed":"full_ascending,full_multiset,drain_ascending,drain_multiset,start_mismatches"}
+{"phase":"hook_off_identity","structure_identical":1,"scan_identical":1,"regions":64,"subblocks":22292,"subblock_keys_compared":130592,"boundary_entries_compared":1261,"probes_compared":48}
+{"gate":"check_scan_contract","kind":"mixed","run_tag":"","keys":131072,"regions":64,"result":"pass","monotone_pairs":131008,"monotone_violations":0,"placement_hits":131072,"start_keys":7488,"total_scans":22755,"total_records_compared":537673,"total_short_scans":5,"subblock_keys_compared":130592,"boundary_entries_compared":1261}

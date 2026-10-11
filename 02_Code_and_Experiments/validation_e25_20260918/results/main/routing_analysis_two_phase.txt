@@ -1,0 +1,80 @@
+
+====================================================================================================
+COMPACT REGION ROUTING  --  candidate / baseline, within-repetition paired ratios
+  <1 means the candidate is faster.  noise = max/min of the per-process medians.
+====================================================================================================
+
+lookup -- STATIC phase (initial keys, mixed hit/miss)
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          1.003      1/5      0.959-1.044     1.089  UNRESOLVED (inside the noise floor)
+  mixed    LITS-on/LITS-off        0.981      3/5      0.956-1.146     1.198  UNRESOLVED (inside the noise floor)
+  skew     C16-on/C16-off          1.002      2/5      0.940-1.010     1.074  UNRESOLVED (inside the noise floor)
+  skew     LITS-on/LITS-off        0.981      4/5      0.930-1.203     1.294  UNRESOLVED (inside the noise floor)
+  tranco   C16-on/C16-off          0.821      5/5      0.727-0.917     1.260  UNRESOLVED (inside the noise floor)
+  tranco   LITS-on/LITS-off        0.771      5/5      0.683-0.784     1.149  candidate faster, direction 5/5
+
+lookup -- POST-UPDATE phase (live keys, mixed hit/miss)
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          0.988      4/5      0.937-1.006     1.073  UNRESOLVED (inside the noise floor)
+  mixed    LITS-on/LITS-off        1.001      2/5      0.974-1.040     1.068  UNRESOLVED (inside the noise floor)
+  skew     C16-on/C16-off          1.002      2/5      0.975-1.085     1.112  UNRESOLVED (inside the noise floor)
+  skew     LITS-on/LITS-off        1.041      2/5      0.971-1.101     1.134  UNRESOLVED (inside the noise floor)
+  tranco   C16-on/C16-off          0.826      5/5      0.791-0.876     1.107  candidate faster, direction 5/5
+  tranco   LITS-on/LITS-off        0.800      5/5      0.751-0.913     1.216  UNRESOLVED (inside the noise floor)
+
+maintenance
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          1.015      2/5      0.933-1.055     1.130  UNRESOLVED (inside the noise floor)
+  mixed    LITS-on/LITS-off        0.991      3/5      0.982-1.027     1.046  UNRESOLVED (inside the noise floor)
+  skew     C16-on/C16-off          1.033      0/5      1.012-1.079     1.067  UNRESOLVED (inside the noise floor)
+  skew     LITS-on/LITS-off        0.992      3/5      0.981-1.073     1.094  UNRESOLVED (inside the noise floor)
+  tranco   C16-on/C16-off          0.907      5/5      0.883-0.921     1.043  candidate faster, direction 5/5
+  tranco   LITS-on/LITS-off        0.858      5/5      0.827-0.904     1.092  candidate faster, direction 5/5
+
+build
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          0.985      3/5      0.954-1.052     1.103  UNRESOLVED (inside the noise floor)
+  mixed    LITS-on/LITS-off        1.014      1/5      0.988-1.193     1.208  UNRESOLVED (inside the noise floor)
+  skew     C16-on/C16-off          1.041      2/5      0.959-1.084     1.130  UNRESOLVED (inside the noise floor)
+  skew     LITS-on/LITS-off        1.005      2/5      0.907-1.042     1.149  UNRESOLVED (inside the noise floor)
+  tranco   C16-on/C16-off          0.996      3/5      0.979-1.049     1.072  UNRESOLVED (inside the noise floor)
+  tranco   LITS-on/LITS-off        1.016      1/5      0.992-1.047     1.056  UNRESOLVED (inside the noise floor)
+
+index bytes
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    C16-on/C16-off          1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  mixed    LITS-on/LITS-off        1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  skew     C16-on/C16-off          1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  skew     LITS-on/LITS-off        1.000      0/5      1.000-1.000     1.000  negligible (0.0009%, the metadata itself)
+  tranco   C16-on/C16-off          1.000      0/5      1.000-1.000     1.000  negligible (0.0025%, the metadata itself)
+  tranco   LITS-on/LITS-off        1.000      0/5      1.000-1.000     1.000  negligible (0.0028%, the metadata itself)
+
+routing metadata bytes
+  corpus   arm pair               median   faster            range     noise  reading
+  ----------------------------------------------------------------------------------------------
+  mixed    candidate (absolute)        512        -                -         -  64 regions, 8.0 bytes/region
+  skew     candidate (absolute)        512        -                -         -  64 regions, 8.0 bytes/region
+  tranco   candidate (absolute)       1024        -                -         -  128 regions, 8.0 bytes/region
+
+====================================================================================================
+EVIDENCE CHECKS (a cross-arm checksum match is NOT one of these)
+====================================================================================================
+
+  corpus   phase        expected   observed   mismatch probe_hash      verdict
+  ----------------------------------------------------------------------------------------
+  mixed    static          18072      18072          0 155341960134  ok
+  mixed    post            17999      17999          0 267648446594  ok
+  skew     static          18072      18072          0 110413817024  ok
+  skew     post            17999      17999          0 617887635110  ok
+  tranco   static          18072      18072          0 929632121636  ok
+  tranco   post            17999      17999          0 156628259824  ok
+
+  expected > 0 means the phase actually contained hits, which is exactly what the
+  first version of this bench did not have: every query was a miss and the checksum
+  still matched across arms.
+  probe_hash identical across arms means all four arms queried the same keys.

@@ -1,0 +1,28 @@
+{
+  "binary": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+  "binary_sha256": "77e47d84a6c5642e8c84afddf4dc68e0aee940d90aac90dceb169ced6c6ef694",
+  "objdump": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+  "nm": "GNU nm (GNU Binutils for Ubuntu) 2.42",
+  "pairs": [
+    {
+      "baseline_substr": "find_impl<true, false>",
+      "candidate_substr": "find_impl<true, true>",
+      "baseline": {
+        "symbol": "validation::Result validation::Region::find_impl<true, false>(std::basic_string_view<char, std::char_traits<char> >, validation::Mode, validation::Region::Located*) const [clone .isra.0]",
+        "instructions": 1308,
+        "div_total": 1,
+        "div_mnemonics": [
+          "div"
+        ]
+      },
+      "candidate": {
+        "symbol": "validation::Result validation::Region::find_impl<true, true>(std::basic_string_view<char, std::char_traits<char> >, validation::Mode, validation::Region::Located*) const [clone .isra.0]",
+        "instructions": 1253,
+        "div_total": 0,
+        "div_mnemonics": []
+      },
+      "div_delta": 1,
+      "eliminated_any_div": true
+    }
+  ]
+}

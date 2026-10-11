@@ -1,0 +1,4 @@
+{"case":"A_value_update_layout","keys":131072,"updates":4096,"regions":64,"groups_total":21251,"layout_unchanged":true}
+{"case":"B_scan_zero_and_over","keys":131072,"starts":14,"zero_scans":14,"oversized_scans":14}
+{"case":"C_absent_key_group","mode":"interval","keys":131072,"probed":1024,"placed_and_observed":1024,"skipped_after_rebuild":0,"same_length_probes":512,"stretched_probes":512,"unprobeable":0,"placed_into_overflow":1019,"placed_into_primary":5}
+{"case":"C_absent_key_group","mode":"full","keys":131072,"probed":1024,"placed_and_observed":1024,"skipped_after_rebuild":0,"same_length_probes":512,"stretched_probes":512,"unprobeable":0,"placed_into_overflow":1018,"placed_into_primary":6}

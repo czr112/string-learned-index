@@ -1,0 +1,117 @@
+{
+  "sources_sha256": {
+    "07_Eval_Integration/diagnostics/run_prefix2_entry.py": "1c201638dcb9b2c70d0515b3764ae51846c172d4930e1d8f4e380c0c4113f4f2",
+    "07_Eval_Integration/diagnostics/prefix2_entry.cpp": "c02d2e7868fed8e9f6a91f3e08e8e04cfa7cca7493a7ee34c02a652404dbfac0",
+    "07_Eval_Integration/diagnostics/lookup_structure.cpp": "b872a5d80241bddac24fe33d3ee06661796331f030378d492dfed838a948af75",
+    "docs/NEXT_ACTION_PLAN_20261011_MODEL.md": "6e95b722f519eb837aae797e435bcbe1cffc488bdb51f10ce9839594b7a03a8d",
+    "07_Eval_Integration/learned-index/src/unified/runner.cpp": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+    "07_Eval_Integration/learned-index/src/unified/runner.h": "d935232df2487b8baba03a86fe7fa668c1ca8311d40e7aa4a0f8e96c345518d1",
+    "02_Code_and_Experiments/validation_e25_20260918/data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+    "02_Code_and_Experiments/validation_e25_20260918/e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+    "02_Code_and_Experiments/validation_e25_20260918/index.hpp": "640660a32f1fd1476d0d889d541c007883e5597d70e476524e3bcf2556ec8aa1",
+    "02_Code_and_Experiments/validation_e25_20260918/model/lits_hpt_adapter.hpp": "97195dd7d185ef9323b89ec826cf7f5014751a4d8116679ce898894920d1f7c7",
+    "02_Code_and_Experiments/validation_e25_20260918/native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+    "02_Code_and_Experiments/validation_e25_20260918/native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+    "02_Code_and_Experiments/validation_e25_20260918/native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+    "02_Code_and_Experiments/validation_e25_20260918/native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+    "02_Code_and_Experiments/validation_e25_20260918/selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+    "02_Code_and_Experiments/validation_e25_20260918/switches.hpp": "5486909fffc61c1eef940c058eae3fe036e970f0db21c988b3b41800803f0d4e",
+    "02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/tlx/tlx/container/btree.hpp": "566bc3f8ba7199f6e926b1225f0b67358a5d4d9deec9f5af0293293188fc1629",
+    "02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/tlx/tlx/container/btree_map.hpp": "4c640eaa8bf01f64179c31bfdf36dafe0b870c5e94d4776ab2612582355b74a2",
+    "02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/tlx/tlx/die/core.hpp": "5c4e954c19dfb3a581ee187a6a23a12b89a53d40e5f1830753833e5ca303fc68",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_original/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_original/lits_entry.hpp": "505ef4a85589fd7fa11b40ee8bf15f41c7b2b60879f791ae738df811b86efdb9",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_original/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_original/lits_kv.hpp": "4b6a93822e6fb45cf4c2efeb2c5973a0b1b276af3f929f889b8f6cf7800c8316",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_original/lits_model.hpp": "d5ac9b88f796c476259ac89bd9d52a81199e51a0567dc0e304e9af733529fd73",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_original/lits_node.hpp": "5ffa790d5f763e2d795fd92d445ef940ca3f7951efd0811c46da3723b1620a9a",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_original/lits_utils.hpp": "6250c976cd4e622e6a2eab387728b00d6ff592172ec484788a8d88fd2c5d8995",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_safe/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_safe/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+    "02_Code_and_Experiments/validation_e25_20260918/vendor/lits_model_safe/lits_model.hpp": "4f8674b576f6d4ce2045e5b5a2106c7a61cb830c4df88febfdfbd34641ac93e3",
+    "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+    "07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin": "e25cd3f02aa25fc867a66c128b4db7c44f91ec92647a41d75260baa9dc3a248e",
+    "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+    "07_Eval_Integration/results/matrix2_skew/interchange/queries.bin": "db0dec1d8839aeca14e4bee48635e95545681015394cfa6e730d319195f6cadf",
+    "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+    "07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin": "3767376ae31a58a556606c3e031ec3e76d86370fe023a76ddde0fa5cc2adc18d"
+  },
+  "cpu": 0,
+  "commands": [
+    [
+      "g++",
+      "-O3",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-DE12_COUNT",
+      "-DE25_DIAG",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "diagnostics/prefix2_entry.cpp",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "g++",
+      "--version"
+    ]
+  ],
+  "binary_sha256": "06521c71d2a863d2a7d828d84b3a0103138fa4cc3c96dd606096d05719923bb8",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "scope": "PFX2 entry counters only; C enabled, W/S/H off, frozen switches pinned; no speed claim; entry conditions cover>=6/10, steps>=1/2, space<=5%, diff complete"
+}

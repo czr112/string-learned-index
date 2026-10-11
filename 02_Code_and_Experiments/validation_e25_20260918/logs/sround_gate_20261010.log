@@ -1,0 +1,19 @@
+### check_sround mixed 131072  ctx16 same
+FAIL: S did more comparisons than B
+FAIL: WS did more comparisons than W
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0,"live":131072,"adv_cmps_b":63,"adv_cmps_s":270,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0 ok
+FAIL: S did more comparisons than B
+FAIL: WS did more comparisons than W
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":131072,"adv_cmps_b":66,"adv_cmps_s":273,"adv_cmps_w":63,"adv_cmps_ws":270,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+FAIL: S did more comparisons than B
+FAIL: WS did more comparisons than W
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":131072,"adv_cmps_b":198,"adv_cmps_s":264,"adv_cmps_w":195,"adv_cmps_ws":261,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":131072,"adv_cmps_b":2229,"adv_cmps_s":141,"adv_cmps_w":2223,"adv_cmps_ws":207,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":131072,"adv_cmps_b":3243,"adv_cmps_s":99,"adv_cmps_w":3240,"adv_cmps_ws":189,"subblock_reclaims":248726,"reclaim_widened":4034}
+mixed Context16 same frac=2 ok
+check_sround: 2600812 checks, 6 failures (adv_cmps B/S/W/WS at 200%: 3243/99/3240/189)
+rc=1

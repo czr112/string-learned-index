@@ -1,0 +1,3 @@
+  M0 [mixed]  CUMULATIVE over the whole gate: 0 regions constructed (0 calibrated, 0 fallback, 0 boundary)  ||  STATE AT THE END of the operation sequence: 27 live regions, 0 LITS-mapped (0), 0/38509 records (0), reasons: admission=0 degenerate=0 boundary=0 unsupported=0
+  LITS [mixed]  CUMULATIVE over the whole gate: 43 regions constructed (34 calibrated, 9 fallback, 0 boundary)  ||  STATE AT THE END of the operation sequence: 27 live regions, 23 LITS-mapped (0.851852), 30733/38509 records (0.798073), reasons: admission=3 degenerate=1 boundary=0 unsupported=0
+check_lits_index PASS: 516036 keys, 151208 operation returns, 516984 scan records over 216 start probes

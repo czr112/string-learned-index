@@ -1,0 +1,4 @@
+  mixed: checked 131072 keys so far
+  skew: checked 262144 keys so far
+  tranco: checked 524288 keys so far
+check_lits_fingerprint PASS: 524288 keys; the tag is the suffix's under both models, and the naive offset would differ on 516015 of them

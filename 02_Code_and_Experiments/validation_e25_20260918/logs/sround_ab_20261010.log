@@ -1,0 +1,180 @@
+### sr lits/same/mixed P1
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 S done
+mixed LitsHpt same rep0 WS done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 S done
+mixed LitsHpt same rep1 WS done
+mixed LitsHpt same rep1 B done
+mixed LitsHpt same rep2 S done
+mixed LitsHpt same rep2 WS done
+mixed LitsHpt same rep2 B done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep3 WS done
+mixed LitsHpt same rep3 B done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 S done
+rc=0
+### sr lits/same/mixed P2
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 S done
+mixed LitsHpt same rep0 WS done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 S done
+mixed LitsHpt same rep1 WS done
+mixed LitsHpt same rep1 B done
+mixed LitsHpt same rep2 S done
+mixed LitsHpt same rep2 WS done
+mixed LitsHpt same rep2 B done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep3 WS done
+mixed LitsHpt same rep3 B done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 S done
+rc=0
+### sr lits/same/mixed P3
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 S done
+mixed LitsHpt same rep0 WS done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 S done
+mixed LitsHpt same rep1 WS done
+mixed LitsHpt same rep1 B done
+mixed LitsHpt same rep2 S done
+mixed LitsHpt same rep2 WS done
+mixed LitsHpt same rep2 B done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep3 WS done
+mixed LitsHpt same rep3 B done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 S done
+rc=0
+### sr lits/same/mixed P4
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 S done
+mixed LitsHpt same rep0 WS done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 S done
+mixed LitsHpt same rep1 WS done
+mixed LitsHpt same rep1 B done
+mixed LitsHpt same rep2 S done
+mixed LitsHpt same rep2 WS done
+mixed LitsHpt same rep2 B done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep3 WS done
+mixed LitsHpt same rep3 B done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 S done
+rc=0
+### sr lits/same/mixed P5
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 S done
+mixed LitsHpt same rep0 WS done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 S done
+mixed LitsHpt same rep1 WS done
+mixed LitsHpt same rep1 B done
+mixed LitsHpt same rep2 S done
+mixed LitsHpt same rep2 WS done
+mixed LitsHpt same rep2 B done
+mixed LitsHpt same rep2 W done
+mixed LitsHpt same rep3 WS done
+mixed LitsHpt same rep3 B done
+mixed LitsHpt same rep3 W done
+mixed LitsHpt same rep3 S done
+rc=0
+### sr ctx16/grow/tranco P1
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 S done
+tranco Context16 grow rep0 WS done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 S done
+tranco Context16 grow rep1 WS done
+tranco Context16 grow rep1 B done
+tranco Context16 grow rep2 S done
+tranco Context16 grow rep2 WS done
+tranco Context16 grow rep2 B done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep3 WS done
+tranco Context16 grow rep3 B done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 S done
+rc=0
+### sr ctx16/grow/tranco P2
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 S done
+tranco Context16 grow rep0 WS done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 S done
+tranco Context16 grow rep1 WS done
+tranco Context16 grow rep1 B done
+tranco Context16 grow rep2 S done
+tranco Context16 grow rep2 WS done
+tranco Context16 grow rep2 B done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep3 WS done
+tranco Context16 grow rep3 B done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 S done
+rc=0
+### sr ctx16/grow/tranco P3
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 S done
+tranco Context16 grow rep0 WS done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 S done
+tranco Context16 grow rep1 WS done
+tranco Context16 grow rep1 B done
+tranco Context16 grow rep2 S done
+tranco Context16 grow rep2 WS done
+tranco Context16 grow rep2 B done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep3 WS done
+tranco Context16 grow rep3 B done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 S done
+rc=0
+### sr ctx16/grow/tranco P4
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 S done
+tranco Context16 grow rep0 WS done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 S done
+tranco Context16 grow rep1 WS done
+tranco Context16 grow rep1 B done
+tranco Context16 grow rep2 S done
+tranco Context16 grow rep2 WS done
+tranco Context16 grow rep2 B done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep3 WS done
+tranco Context16 grow rep3 B done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 S done
+rc=0
+### sr ctx16/grow/tranco P5
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 S done
+tranco Context16 grow rep0 WS done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 S done
+tranco Context16 grow rep1 WS done
+tranco Context16 grow rep1 B done
+tranco Context16 grow rep2 S done
+tranco Context16 grow rep2 WS done
+tranco Context16 grow rep2 B done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep3 WS done
+tranco Context16 grow rep3 B done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 S done
+rc=0

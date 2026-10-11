@@ -1,0 +1,32 @@
+{
+ "target": "san_check_scan_entry",
+ "build_id": "1791639952746343324",
+ "command": "g++ -std=c++17 -O1 -g -march=x86-64-v2 -fsanitize=address,undefined -fno-omit-frame-pointer -DE25_DIAG /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_scan_entry.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/san_check_scan_entry.386.1791639952746337110.tmp.exe",
+ "sources": {
+  "check_scan_entry.cpp": "b9ca48c0b76cd80e93a8bd6f05796668c5235dc6b0e760ad075451d385522059",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "cad9673b30bbdbf32fae886556d73255388708c4751f2d09ee6f81b5938d656c",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "switches.hpp": "e75c7fad79a1944af4b1ecc48761b8d8180568aa473d7f0a0f0872ef16d0880f",
+  "model/lits_hpt_adapter.hpp": "97195dd7d185ef9323b89ec826cf7f5014751a4d8116679ce898894920d1f7c7",
+  "third_party/vendor/tlx/tlx/container/btree.hpp": "566bc3f8ba7199f6e926b1225f0b67358a5d4d9deec9f5af0293293188fc1629",
+  "third_party/vendor/tlx/tlx/container/btree_map.hpp": "4c640eaa8bf01f64179c31bfdf36dafe0b870c5e94d4776ab2612582355b74a2",
+  "third_party/vendor/tlx/tlx/die/core.hpp": "5c4e954c19dfb3a581ee187a6a23a12b89a53d40e5f1830753833e5ca303fc68",
+  "vendor/lits_model_safe/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+  "vendor/lits_model_safe/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+  "vendor/lits_model_safe/lits_model.hpp": "b5a1c28251da7e74fd011e6b14a40927481c65ed24c837cc4892f26740af4c18"
+ },
+ "extra_flags": [
+  "-DE25_DIAG"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_scan_entry.cpp: In function ‘int main(int, char**)’:\n/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_scan_entry.cpp:265:47: warning: ‘%02d’ directive output may be truncated writing between 2 and 11 bytes into a region of size 6 [-Wformat-truncation=]\n  265 |             std::snprintf(buf, sizeof buf, \"k0%02d\", i);\n      |                                               ^~~~\n/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_scan_entry.cpp:265:44: note: directive argument in the range [-2147483646, 11]\n  265 |             std::snprintf(buf, sizeof buf, \"k0%02d\", i);\n      |                                            ^~~~~~~~\nIn file included from /usr/include/stdio.h:980,\n                 from /usr/include/c++/13/cstdio:42,\n                 from /usr/include/c++/13/ext/string_conversions.h:45,\n                 from /usr/include/c++/13/bits/basic_string.h:4109,\n                 from /usr/include/c++/13/string:54,\n                 from /usr/include/c++/13/stdexcept:39,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/index.hpp:13,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/selected.hpp:2,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/data.hpp:2,\n                 from /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_scan_entry.cpp:35:\nIn function ‘int snprintf(char*, size_t, const char*, ...)’,\n    inlined from ‘int main(int, char**)’ at /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/check_scan_entry.cpp:265:26:\n/usr/include/x86_64-linux-gnu/bits/stdio2.h:54:35: note: ‘__builtin___snprintf_chk’ output between 5 and 14 bytes into a destination of size 8\n   54 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,\n      |          ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   55 |                                    __glibc_objsize (__s), __fmt,\n      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n   56 |                                    __va_arg_pack ());\n      |                                    ~~~~~~~~~~~~~~~~~\n",
+ "exe_sha256": "e4685b07b0a380a23de2eee96a697dc25196a6927c86ca6452e5a01ecfcec990",
+ "status": "OK"
+}

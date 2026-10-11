@@ -1,0 +1,522 @@
+### build check_scan_entry
+OK check_scan_entry build_id=1791632678088956039 exe=f83a5f890860f968…
+rc=0
+### build san_check_scan_entry
+OK san_check_scan_entry build_id=1791632694053092090 exe=f83a5f890860f968…
+rc=0
+### build check_combo
+OK check_combo build_id=1791632704025593482 exe=845dcffbd12c5ecd…
+rc=0
+### build san_check_combo
+OK san_check_combo build_id=1791632721037954464 exe=9c9927f414796595…
+rc=0
+### build diag_combo
+OK diag_combo build_id=1791632746491704601 exe=8776260b4e6520c8…
+rc=0
+### run check_scan_entry
+tiny case: 12 keys, prefix=k0 (2 bytes), groups=1, sub-block counts: g0[2,2,2,2], overflow sizes: 4
+check_scan_entry: 41 checks, 0 failures (sub-block steps=44, overflow skips=12, stopped-by-cmp=56, stopped-at-boundary=16)
+rc=0
+### run check_combo tranco 262144 ../validation_e5_20260913/data/tranco_XN6XN.csv ctx16 grow
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.25,"live":262144,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.25 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":0.5,"live":262144,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=0.5 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":1,"live":262144,"subblock_reclaims":0,"reclaim_widened":0}
+tranco Context16 grow frac=1 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","frac":2,"live":262144,"subblock_reclaims":499626,"reclaim_widened":8936}
+tranco Context16 grow frac=2 ok
+{"kind":"tranco","backend":"Context16","mode":"grow","keys":262144,"checks":1573426,"failures":0,"subblock_reclaims":500238,"reclaim_widened":8946}
+1573426/1573426 checks passed; subblock_reclaims=500238 reclaim_widened=8946
+rc=0
+### run check_combo tranco 262144 ../validation_e5_20260913/data/tranco_XN6XN.csv lits grow
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.25,"live":262144,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.25 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":0.5,"live":262144,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=0.5 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":1,"live":262144,"subblock_reclaims":0,"reclaim_widened":0}
+tranco LitsHpt grow frac=1 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","frac":2,"live":262144,"subblock_reclaims":323930,"reclaim_widened":5814}
+tranco LitsHpt grow frac=2 ok
+{"kind":"tranco","backend":"LitsHpt","mode":"grow","keys":262144,"checks":1573426,"failures":0,"subblock_reclaims":324604,"reclaim_widened":5826}
+1573426/1573426 checks passed; subblock_reclaims=324604 reclaim_widened=5826
+rc=0
+### run check_combo mixed 131072  lits same
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":131072,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":131072,"subblock_reclaims":259392,"reclaim_widened":4772}
+mixed LitsHpt same frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","keys":131072,"checks":786994,"failures":0,"subblock_reclaims":259468,"reclaim_widened":4772}
+786994/786994 checks passed; subblock_reclaims=259468 reclaim_widened=4772
+rc=0
+### run san_check_scan_entry
+tiny case: 12 keys, prefix=k0 (2 bytes), groups=1, sub-block counts: g0[2,2,2,2], overflow sizes: 4
+check_scan_entry: 41 checks, 0 failures (sub-block steps=44, overflow skips=12, stopped-by-cmp=56, stopped-at-boundary=16)
+rc=0
+### run san_check_combo mixed 8192  ctx16 same
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":8192,"subblock_reclaims":18896,"reclaim_widened":382}
+mixed Context16 same frac=2 ok
+{"kind":"mixed","backend":"Context16","mode":"same","keys":8192,"checks":49714,"failures":0,"subblock_reclaims":18964,"reclaim_widened":382}
+49714/49714 checks passed; subblock_reclaims=18964 reclaim_widened=382
+rc=0
+### run san_check_combo mixed 8192  lits same
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":8192,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":8192,"subblock_reclaims":14732,"reclaim_widened":212}
+mixed LitsHpt same frac=2 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","keys":8192,"checks":49714,"failures":0,"subblock_reclaims":14804,"reclaim_widened":212}
+49714/49714 checks passed; subblock_reclaims=14804 reclaim_widened=212
+rc=0
+### run diag_combo tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv se grow ctx16 combo_se_ctx16_growtranco
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 C done
+tranco Context16 grow rep0 WC done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 C done
+tranco Context16 grow rep1 WC done
+tranco Context16 grow rep1 B done
+tranco Context16 grow rep2 C done
+tranco Context16 grow rep2 WC done
+tranco Context16 grow rep2 B done
+tranco Context16 grow rep2 W done
+tranco Context16 grow rep3 WC done
+tranco Context16 grow rep3 B done
+tranco Context16 grow rep3 W done
+tranco Context16 grow rep3 C done
+rc=0
+### run diag_combo tranco 262144 4 ../validation_e5_20260913/data/tranco_XN6XN.csv se grow lits combo_se_lits_growtranco
+tranco LitsHpt grow rep0 B done
+tranco LitsHpt grow rep0 W done
+tranco LitsHpt grow rep0 C done
+tranco LitsHpt grow rep0 WC done
+tranco LitsHpt grow rep1 W done
+tranco LitsHpt grow rep1 C done
+tranco LitsHpt grow rep1 WC done
+tranco LitsHpt grow rep1 B done
+tranco LitsHpt grow rep2 C done
+tranco LitsHpt grow rep2 WC done
+tranco LitsHpt grow rep2 B done
+tranco LitsHpt grow rep2 W done
+tranco LitsHpt grow rep3 WC done
+tranco LitsHpt grow rep3 B done
+tranco LitsHpt grow rep3 W done
+tranco LitsHpt grow rep3 C done
+rc=0
+### run diag_combo mixed 131072 4  se same lits combo_se_lits_samemixed
+RUN REFUSED: diag_combo was built from sources that have since changed (refusing to run a binary that does not match the tree)
+  build_id 1791632746491704601 was made from 17 source(s); 2 differ from the ones on disk now:
+    changed    bench_combo.cpp
+    changed    index.hpp
+  Rebuild the target (python3 tools_build.py diag_combo), or use run_recorded to re-run the recorded binary deliberately.
+rc=2
+### analyze_scan_entry
+analysing combo_se_ctx16_growtranco
+
+=== combo_se_ctx16_growtranco ===
+kind=tranco mode=grow backend=Context16 n=262144 run_tag=se reps=[0, 1, 2, 3] arms=['B', 'W', 'C', 'WC']
+rows: scanwork=13200 main=80
+
+-- frac=0.0 limit=16 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0    16.0      0.0%    208.0     2.0
+W         1.0      0.0     0.0      0.0     0.0    16.0      0.0%    208.0     2.0
+C         1.0      0.0     0.0      0.0     0.0    16.0      0.0%    208.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0    16.0      0.0%    208.0     2.0
+
+-- frac=0.0 limit=256 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0   256.0      0.3%   3102.0     2.0
+W         1.0      0.0     0.0      0.0     0.0   256.0      0.3%   3102.0     2.0
+C         1.0      0.0     0.0      0.0     0.0   256.0      0.3%   3102.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0   256.0      0.3%   3102.0     2.0
+
+-- frac=0.0 limit=4096 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0  4096.0      0.6%  53767.0     3.0
+W         1.0      0.0     0.0      0.0     0.0  4096.0      0.6%  53767.0     3.0
+C         1.0      0.0     0.0      0.0     0.0  4096.0      0.6%  53767.0     3.0
+WC        1.0      0.0     0.0      0.0     0.0  4096.0      0.6%  53767.0     3.0
+
+-- frac=0.25 limit=16 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0    16.0     24.6%    227.0     2.0
+W         1.0      0.0     0.0      0.0     0.0    16.0      6.2%    227.0     2.0
+C         1.0      0.0     0.0      0.0     0.0    16.0     24.6%    227.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0    16.0      6.2%    227.0     2.0
+
+-- frac=0.25 limit=256 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0   256.0     12.8%   3447.0     2.0
+W         1.0      0.0     0.0      0.0     0.0   256.0      4.5%   3447.0     2.0
+C         1.0      0.0     0.0      0.0     0.0   256.0     12.8%   3447.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0   256.0      4.5%   3447.0     2.0
+
+-- frac=0.25 limit=4096 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0  4096.0     13.3%  55310.0     3.0
+W         1.0      0.0     0.0      0.0     0.0  4096.0      4.6%  55310.0     3.0
+C         1.0      0.0     0.0      0.0     0.0  4096.0     13.3%  55310.0     3.0
+WC        1.0      0.0     0.0      0.0     0.0  4096.0      4.6%  55310.0     3.0
+
+-- frac=0.5 limit=16 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0    16.0     25.7%    238.0     2.0
+W         1.0      0.0     0.0      0.0     0.0    16.0      6.6%    238.0     2.0
+C         1.0      0.0     0.0      0.0     0.0    16.0     25.7%    238.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0    16.0      6.6%    238.0     2.0
+
+-- frac=0.5 limit=256 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0   256.0     23.6%   4011.0     2.0
+W         1.0      0.0     0.0      0.0     0.0   256.0      8.6%   4011.0     2.0
+C         1.0      0.0     0.0      0.0     0.0   256.0     23.6%   4011.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0   256.0      8.6%   4011.0     2.0
+
+-- frac=0.5 limit=4096 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0  4096.0     24.8%  69861.0     3.0
+W         1.0      0.0     0.0      0.0     0.0  4096.0      8.6%  69861.0     3.0
+C         1.0      0.0     0.0      0.0     0.0  4096.0     24.8%  69861.0     3.0
+WC        1.0      0.0     0.0      0.0     0.0  4096.0      8.6%  69861.0     3.0
+
+-- frac=1.0 limit=16 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0    16.0     43.0%    331.0     2.0
+W         1.0      0.0     0.0      0.0     0.0    16.0     12.1%    331.0     2.0
+C         1.0      0.0     0.0      0.0     0.0    16.0     43.0%    331.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0    16.0     12.1%    331.0     2.0
+
+-- frac=1.0 limit=256 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0   256.0     45.0%   4997.0     2.0
+W         1.0      0.0     0.0      0.0     0.0   256.0     16.7%   4997.0     2.0
+C         1.0      0.0     0.0      0.0     0.0   256.0     45.0%   4997.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0   256.0     16.7%   4997.0     2.0
+
+-- frac=1.0 limit=4096 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      0.0     0.0  4096.0     47.5%  85619.0     3.0
+W         1.0      0.0     0.0      0.0     0.0  4096.0     16.8%  85619.0     3.0
+C         1.0      0.0     0.0      0.0     0.0  4096.0     47.5%  85619.0     3.0
+WC        1.0      0.0     0.0      0.0     0.0  4096.0     16.8%  85619.0     3.0
+
+-- frac=2.0 limit=16 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      1.0     0.0    16.0     60.7%    336.0     2.0
+W         1.0      0.0     0.0      0.0     0.0    16.0     15.1%    336.0     2.0
+C         1.0      0.0     0.0      1.0     0.0    16.0     60.7%    336.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0    16.0     15.1%    336.0     2.0
+
+-- frac=2.0 limit=256 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     0.0      1.0     0.0   256.0     67.2%   5150.0     2.0
+W         1.0      0.0     0.0      0.0     0.0   256.0     18.1%   5150.0     2.0
+C         1.0      0.0     0.0      1.0     0.0   256.0     67.2%   5150.0     2.0
+WC        1.0      0.0     0.0      0.0     0.0   256.0     18.1%   5150.0     2.0
+
+-- frac=2.0 limit=4096 (timed, median over 17 starts x 4 reps) --
+arm    p_cmps   p_skip   p_sub   o_cmps  o_skip    rows  ov_share out_bytes locates
+B         1.0      0.0     1.0      1.0     0.0  4096.0     73.5%  86535.0     3.0
+W         1.0      0.0     0.0      0.0     0.0  4096.0     17.6%  86535.0     3.0
+C         1.0      0.0     1.0      1.0     0.0  4096.0     73.5%  86535.0     3.0
+WC        1.0      0.0     0.0      0.0     0.0  4096.0     17.6%  86535.0     3.0
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=16 frac=0.0 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/0            1/0/0            1/0/0            1/0/0           
+3      1/0/0            1/0/0            1/0/0            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=16 frac=0.25 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/1            1/0/0            1/0/1            1/0/0           
+3      1/0/1            1/0/0            1/0/1            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=16 frac=0.5 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/1            1/0/0            1/0/1            1/0/0           
+3      1/0/1            1/0/0            1/0/1            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=16 frac=1.0 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/1            1/0/0            1/0/1            1/0/0           
+3      1/0/1            1/0/0            1/0/1            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=16 frac=2.0 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      0/0/2            1/0/0            0/0/2            1/0/0           
+3      0/0/2            1/0/0            0/0/2            1/0/0           
+4      0/0/2            1/0/0            0/0/2            1/0/0           
+5      0/0/1            1/0/0            0/0/1            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     0/0/2            1/0/0            0/0/2            1/0/0           
+15     0/0/2            1/0/0            0/0/2            1/0/0           
+16     0/0/2            1/0/0            0/0/2            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=256 frac=0.0 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/0            1/0/0            1/0/0            1/0/0           
+3      1/0/0            1/0/0            1/0/0            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=256 frac=0.25 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/1            1/0/0            1/0/1            1/0/0           
+3      1/0/1            1/0/0            1/0/1            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=256 frac=0.5 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/1            1/0/0            1/0/1            1/0/0           
+3      1/0/1            1/0/0            1/0/1            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=256 frac=1.0 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      1/0/1            1/0/0            1/0/1            1/0/0           
+3      1/0/1            1/0/0            1/0/1            1/0/0           
+4      1/0/0            1/0/0            1/0/0            1/0/0           
+5      1/0/0            1/0/0            1/0/0            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     1/0/0            1/0/0            1/0/0            1/0/0           
+15     1/0/0            1/0/0            1/0/0            1/0/0           
+16     1/0/0            1/0/0            1/0/0            1/0/0           
+
+-- per-start adv_p_cmps / adv_p_skipped / adv_p_subblocks, limit=256 frac=2.0 --
+start  B                W                C                WC              
+0      0/0/1            0/0/1            0/0/1            0/0/1           
+1      1/0/0            1/0/0            1/0/0            1/0/0           
+2      0/0/2            1/0/0            0/0/2            1/0/0           
+3      0/0/2            1/0/0            0/0/2            1/0/0           
+4      0/0/2            1/0/0            0/0/2            1/0/0           
+5      0/0/1            1/0/0            0/0/1            1/0/0           
+6      1/0/0            1/0/0            1/0/0            1/0/0           
+7      1/0/0            1/0/0            1/0/0            1/0/0           
+8      1/0/0            1/0/0            1/0/0            1/0/0           
+9      1/0/0            1/0/0            1/0/0            1/0/0           
+10     1/0/0            1/0/0            1/0/0            1/0/0           
+11     1/0/0            1/0/0            1/0/0            1/0/0           
+12     1/0/0            1/0/0            1/0/0            1/0/0           
+13     1/0/0            1/0/0            1/0/0            1/0/0           
+14     0/0/2            1/0/0            0/0/2            1/0/0           
+15     0/0/2            1/0/0            0/0/2            1/0/0           
+16     0/0/2            1/0/0            0/0/2            1/0/0           
+
+-- boundary probes (median over reps; phase=probe) --
+
+limit=16 frac=0.0
+probe         arm     rows   p_cmps   p_skip   o_cmps   o_skip out_bytes
+
+limit=16 frac=2.0
+probe         arm     rows   p_cmps   p_skip   o_cmps   o_skip out_bytes
+
+limit=256 frac=0.0
+probe         arm     rows   p_cmps   p_skip   o_cmps   o_skip out_bytes
+
+limit=256 frac=2.0
+probe         arm     rows   p_cmps   p_skip   o_cmps   o_skip out_bytes
+
+limit=4096 frac=0.0
+probe         arm     rows   p_cmps   p_skip   o_cmps   o_skip out_bytes
+
+limit=4096 frac=2.0
+probe         arm     rows   p_cmps   p_skip   o_cmps   o_skip out_bytes
+
+-- count ratios (sum over starts and reps; counts, never times) --
+limit=16    frac=0.0  W/B p_cmps=1.000 o_cmps=1.000 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=1.000 o_skip=-   
+limit=16    frac=0.25 W/B p_cmps=1.000 o_cmps=1.000 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=1.000 o_skip=-   
+limit=16    frac=0.5  W/B p_cmps=1.000 o_cmps=0.833 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=0.833 o_skip=-   
+limit=16    frac=1.0  W/B p_cmps=1.000 o_cmps=0.857 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=0.857 o_skip=-   
+limit=16    frac=2.0  W/B p_cmps=1.778 o_cmps=0.545 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.778 o_cmps=0.545 o_skip=-   
+limit=256   frac=0.0  W/B p_cmps=1.000 o_cmps=1.000 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=1.000 o_skip=-   
+limit=256   frac=0.25 W/B p_cmps=1.000 o_cmps=1.000 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=1.000 o_skip=-   
+limit=256   frac=0.5  W/B p_cmps=1.000 o_cmps=0.833 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=0.833 o_skip=-   
+limit=256   frac=1.0  W/B p_cmps=1.000 o_cmps=0.857 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=0.857 o_skip=-   
+limit=256   frac=2.0  W/B p_cmps=1.778 o_cmps=0.545 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.778 o_cmps=0.545 o_skip=-   
+limit=4096  frac=0.0  W/B p_cmps=1.000 o_cmps=1.000 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=1.000 o_skip=-   
+limit=4096  frac=0.25 W/B p_cmps=1.000 o_cmps=1.000 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=1.000 o_skip=-   
+limit=4096  frac=0.5  W/B p_cmps=1.000 o_cmps=0.833 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=0.833 o_skip=-   
+limit=4096  frac=1.0  W/B p_cmps=1.000 o_cmps=0.857 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.000 o_cmps=0.857 o_skip=-   
+limit=4096  frac=2.0  W/B p_cmps=1.778 o_cmps=0.545 o_skip=-   C/B p_cmps=1.000 o_cmps=1.000 o_skip=-   WC/B p_cmps=1.778 o_cmps=0.545 o_skip=-   
+--- combo_se_ctx16_growtranco: main-file deltas vs per-call sums (residual = maintenance) ---
+analysing combo_se_lits_growtranco
+analysing combo_se_lits_samemixed
+
+ANALYSIS REFUSED:
+  B/0/tranco/frac=0/limit=4096/timed/pass=0/start=0/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/timed/pass=0/start=1/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/timed/pass=0/start=5/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/timed/pass=0/start=12/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/timed/pass=1/start=0/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/timed/pass=1/start=1/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/timed/pass=1/start=5/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/timed/pass=1/start=12/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/verify/pass=0/start=0/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/verify/pass=0/start=1/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/verify/pass=0/start=5/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/verify/pass=0/start=12/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/probe/pass=0/start=-1/absent_mid: adv_p_cmps 3 is not in [adv_p_skipped=1, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/probe/pass=0/start=-1/first_key: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0/limit=4096/probe/pass=0/start=-1/before_first: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=0/start=0/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=0/start=0/: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=0/start=1/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=0/start=1/: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=0/start=5/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=0/start=12/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=1/start=0/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=1/start=0/: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=1/start=1/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=1/start=1/: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=1/start=5/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/timed/pass=1/start=12/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/verify/pass=0/start=0/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/verify/pass=0/start=0/: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/verify/pass=0/start=1/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/verify/pass=0/start=1/: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/verify/pass=0/start=5/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/verify/pass=0/start=12/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/probe/pass=0/start=-1/absent_mid: adv_p_cmps 3 is not in [adv_p_skipped=1, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/probe/pass=0/start=-1/first_key: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/probe/pass=0/start=-1/first_key: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/probe/pass=0/start=-1/before_first: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.25/limit=4096/probe/pass=0/start=-1/before_first: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  B/0/tranco/frac=0.5/limit=4096/timed/pass=0/start=0/: adv_p_cmps 2 is not in [adv_p_skipped=0, adv_p_skipped+1]
+  B/0/tranco/frac=0.5/limit=4096/timed/pass=0/start=0/: adv_o_cmps 2 is not in [adv_o_skipped=0, adv_o_skipped+1]
+  (1682 problem(s) total)
+analyzer rc=2
+scan-entry round done

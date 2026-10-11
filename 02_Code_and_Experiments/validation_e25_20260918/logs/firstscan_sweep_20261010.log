@@ -1,0 +1,40 @@
+### fs lits/same/mixed P1
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 C done
+mixed LitsHpt same rep0 WC done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 C done
+mixed LitsHpt same rep1 WC done
+mixed LitsHpt same rep1 B done
+rc=0
+### fs lits/same/mixed P2
+mixed LitsHpt same rep0 B done
+mixed LitsHpt same rep0 W done
+mixed LitsHpt same rep0 C done
+mixed LitsHpt same rep0 WC done
+mixed LitsHpt same rep1 W done
+mixed LitsHpt same rep1 C done
+mixed LitsHpt same rep1 WC done
+mixed LitsHpt same rep1 B done
+rc=0
+### fs ctx16/grow/tranco P1
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 C done
+tranco Context16 grow rep0 WC done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 C done
+tranco Context16 grow rep1 WC done
+tranco Context16 grow rep1 B done
+rc=0
+### fs ctx16/grow/tranco P2
+tranco Context16 grow rep0 B done
+tranco Context16 grow rep0 W done
+tranco Context16 grow rep0 C done
+tranco Context16 grow rep0 WC done
+tranco Context16 grow rep1 W done
+tranco Context16 grow rep1 C done
+tranco Context16 grow rep1 WC done
+tranco Context16 grow rep1 B done
+rc=0

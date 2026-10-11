@@ -1,0 +1,57 @@
+G1 evidence: switch-specific gates, historical log vs CURRENT source (field by field)
+current runs: logs/g1_rerun/, built 2026-09-23 from the tree on disk
+====================================================================================================
+
+### check_e25_write / mixed
+  10 shared field(s), 0 differ
+    only in current: branch_notlocated_fallback, branch_prefix_rebuild, branch_threshold_split, cfg_v0, cfg_v1, cfg_v2
+
+### check_e25_write / skew
+  10 shared field(s), 0 differ
+    only in current: branch_notlocated_fallback, branch_prefix_rebuild, branch_threshold_split, cfg_v0, cfg_v1, cfg_v2
+
+### check_e25_write / tranco
+  10 shared field(s), 0 differ
+    only in current: branch_notlocated_fallback, branch_prefix_rebuild, branch_threshold_split, cfg_v0, cfg_v1, cfg_v2
+
+### check_c3 / mixed
+  11 shared field(s), 2 differ
+    frozen_memory              historical=43122801     current=43131529     delta=8728  [byte accounting, expected]
+    c3_memory                  historical=30081041     current=30089769     delta=8728  [byte accounting, expected]
+
+### check_c3 / skew
+  11 shared field(s), 2 differ
+    frozen_memory              historical=42018894     current=42027622     delta=8728  [byte accounting, expected]
+    c3_memory                  historical=38000108     current=38008836     delta=8728  [byte accounting, expected]
+
+### check_c3 / tranco
+  11 shared field(s), 2 differ
+    frozen_memory              historical=36550180     current=36567612     delta=17432  [byte accounting, expected]
+    c3_memory                  historical=28899603     current=28917035     delta=17432  [byte accounting, expected]
+
+### check_e31 / mixed
+  12 shared field(s), 2 differ
+    frozen_memory              historical=43122801     current=43131529     delta=8728  [byte accounting, expected]
+    e31_memory                 historical=30034464     current=30043192     delta=8728  [byte accounting, expected]
+
+### check_e31 / skew
+  12 shared field(s), 2 differ
+    frozen_memory              historical=42018894     current=42027622     delta=8728  [byte accounting, expected]
+    e31_memory                 historical=37453116     current=37461844     delta=8728  [byte accounting, expected]
+
+### check_e31 / tranco
+  12 shared field(s), 2 differ
+    frozen_memory              historical=36550180     current=36567612     delta=17432  [byte accounting, expected]
+    e31_memory                 historical=27729376     current=27746808     delta=17432  [byte accounting, expected]
+
+### gates with no historical run log on disk (current run only)
+
+  check_e26_c2     mixed    status=?
+  check_e26_c2     skew     status=?
+  check_e26_c2     tranco   status=?
+  check_scan       mixed    status=?
+  check_scan       skew     status=?
+  check_scan       tranco   status=?
+  check_migrate    mixed    status=pass
+  check_migrate    skew     status=pass
+  check_migrate    tranco   status=pass

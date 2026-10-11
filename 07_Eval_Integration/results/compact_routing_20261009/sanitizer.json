@@ -1,0 +1,100 @@
+[
+  {
+    "test": "binary_domain_reference",
+    "output": "route_checks=569063, passed",
+    "stderr_empty": true,
+    "binary_sha256": "88aef40e56c26904c185284da53900eb4af87f16e17a8a580f687be30ff5c795"
+  },
+  {
+    "test": "corpus_routes",
+    "corpus": "mixed",
+    "backend": "context16",
+    "gate": {
+      "phase": "gate",
+      "route_checks": 141558,
+      "queries_checked": 10000,
+      "auxiliary_bytes": 1600,
+      "global_prefix_bytes": 0
+    },
+    "stderr_empty": true
+  },
+  {
+    "test": "corpus_routes",
+    "corpus": "mixed",
+    "backend": "lits",
+    "gate": {
+      "phase": "gate",
+      "route_checks": 141558,
+      "queries_checked": 10000,
+      "auxiliary_bytes": 1600,
+      "global_prefix_bytes": 0
+    },
+    "stderr_empty": true
+  },
+  {
+    "test": "corpus_routes",
+    "corpus": "skew",
+    "backend": "context16",
+    "gate": {
+      "phase": "gate",
+      "route_checks": 141558,
+      "queries_checked": 10000,
+      "auxiliary_bytes": 1600,
+      "global_prefix_bytes": 30
+    },
+    "stderr_empty": true
+  },
+  {
+    "test": "corpus_routes",
+    "corpus": "skew",
+    "backend": "lits",
+    "gate": {
+      "phase": "gate",
+      "route_checks": 141558,
+      "queries_checked": 10000,
+      "auxiliary_bytes": 1600,
+      "global_prefix_bytes": 30
+    },
+    "stderr_empty": true
+  },
+  {
+    "test": "corpus_routes",
+    "corpus": "tranco",
+    "backend": "context16",
+    "gate": {
+      "phase": "gate",
+      "route_checks": 273078,
+      "queries_checked": 10000,
+      "auxiliary_bytes": 3136,
+      "global_prefix_bytes": 0
+    },
+    "stderr_empty": true
+  },
+  {
+    "test": "corpus_routes",
+    "corpus": "tranco",
+    "backend": "lits",
+    "gate": {
+      "phase": "gate",
+      "route_checks": 273078,
+      "queries_checked": 10000,
+      "auxiliary_bytes": 3136,
+      "global_prefix_bytes": 0
+    },
+    "stderr_empty": true
+  },
+  {
+    "sanitizer_flags": [
+      "g++",
+      "-O1",
+      "-g",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer"
+    ],
+    "binary_sha256": "cde1ba1adc64a804186a57f887f4fc6f38594b963301417bc176a07bfb695723",
+    "router_sha256": "b6ee35ae943d5f7e0c27c3cbe6be4873a431d26f5419f2f5d9bb531c5166b636",
+    "reference_test_sha256": "88aa1acece463e0be579f3583d1735769e287b83e4270cef54b6334b0afcb48f"
+  }
+]

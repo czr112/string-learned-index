@@ -66,6 +66,47 @@ SAN_TARGETS = {
     "san_check_e11_locate",
     "san_check_freeze",
     "san_bench_long_hyst",
+    # E38: the LITS adapter is the first code in this tree that calls into a third-party
+    # header with raw pointers and its own 1,024 allocations, so it is the first that most
+    # needs the sanitizer rather than merely benefiting from it.
+    "san_check_lits_model",
+    "san_check_lits_fingerprint",
+    "san_check_lits_index",
+    # G1: the contract gate mutates -- it updates 4,096 values, inserts ~2,048 absent keys
+    # through BOTH the primary and the overflow placement paths, and re-reads the group
+    # geometry around every insert. That is exactly the kind of code ASan/UBSan is for, and
+    # it is new code, so it is in the sanitizer set rather than merely benefiting from it.
+    "san_check_g1_contract",
+    # G3/A1': the widened reclaim is NEW code on the write path -- it repacks sub-blocks the
+    # insert path never reaches, on a group whose placement has already failed once. That is
+    # exactly where an offset or a boundary would be wrong if it were going to be.
+    "san_check_widest",
+    "san_check_compact_routing",
+    "san_check_low_activity",
+    # Candidate H (2026-10-11): the hole-placement path writes suffixes into dead ranges
+    # and moves descriptors -- new code on the write side, so the sanitizer set first.
+    "san_check_hole_reuse",
+    # The mechanism diagnostic carries the same branch counters as the gate over a
+    # longer workload, so it runs under the sanitizer too.
+    "san_diag_low_activity",
+    # Combination round: the gate mutates both mechanisms at once and asserts the
+    # widened branch actually ran, so it runs under the sanitizer like its siblings.
+    "san_check_combo",
+    # Scan-entry round: the counter hand-check gate. Its FIRST registration named the
+    # target but forgot this set, so the build used the normal compiler and two then
+    # identical binaries (same exe hash) silently made the "sanitizer run" a no-op --
+    # found by comparing the two build records. A gate is only as good as the compiler
+    # line it was built with, so the entry lives here now.
+    "san_check_scan_entry",
+    # Scan-entry round: the S gate mutates all four arms and drives the ordered advance
+    # through emptied sub-blocks, so it runs under the sanitizer like its siblings.
+    "san_check_sround",
+    # BlockLinearRank round: the gate fits the rank model over binary keys (empty, embedded
+    # NUL, high bytes, 4,096-byte keys), compares EVERY corpus key against a re-derived
+    # reference, then mutates an index and walks the per-region group vectors -- new code
+    # over the encode / fit / map path, so it runs under the sanitizer like its siblings.
+    "san_check_block_rank",
+    "san_check_depth_dir",
 }
 
 # Per-target flags.
@@ -93,6 +134,23 @@ EXTRA = {
     # Config switch, so no switches.hpp table changes and the frozen configuration is
     # untouched. Source has an #error if this flag is missing. A gate is not a timing
     # build, so the counters cost nothing that is measured.
+    # BlockLinearRank round: the gate reports the entry numbers (primary probes, full
+    # comparisons, overflow entries). Those fields are written through E12_TICK, which is a
+    # no-op in a shipped build, so the gate is built WITH the counters. A gate is not a
+    # timing build, so the counters cost nothing that is measured.
+    # BlockLinearRank round (2026-10-11): this gate carries an #error without it, so a build
+    # that forgot the macro is a hard stop rather than a gate that silently skips its mapping
+    # comparison and its negative control.
+    # BlockLinearRank round: the gate reports the entry numbers (primary probes, full
+    # comparisons, overflow entries). Those fields are written through E12_TICK, which is a
+    # no-op in a shipped build, so the gate is built WITH the counters. A gate is not a
+    # timing build, so the counters cost nothing that is measured.
+    "check_block_rank": ["-DE12_COUNT"],
+    "san_check_block_rank": ["-DE12_COUNT"],
+    # EqualDepthDir gate: it reports the entry counters (primary probes, comparisons, overflow),
+    # which are written through E12_TICK -- a no-op in a shipped build.
+    "check_depth_dir": ["-DE12_COUNT"],
+    "san_check_depth_dir": ["-DE12_COUNT"],
     "check_scan_contract": ["-DE25_DIAG"],
     # The O1 gate asserts that the stable-store arm actually used the new
     # representation (its record-shift counter stays 0 while its handle counter rises)
@@ -141,9 +199,185 @@ EXTRA = {
     # build either, so the counters cost nothing that is measured anywhere.
     "san_check_e11_locate": ["-DE12_COUNT"],
     "san_check_e31": ["-DE25_DIAG"],
+    # E38: the index gate asserts that the prefix-rebuild, split and compaction branches RAN,
+    # so it is built WITH the counters. A gate is not a timing build, so they cost nothing that
+    # is measured -- and a gate that passes without executing the branch it names proves
+    # nothing (E31's lesson, which is why the assertion is here rather than in a comment).
+    "check_lits_index": ["-DE25_DIAG"],
+    "san_check_lits_index": ["-DE25_DIAG"],
+    # E38/P3: the diagnostic twin of the three-arm benchmark. One source, two targets --
+    # 'diag_lits_adapter' carries the counters, 'bench_lits_adapter' the timings. The timing
+    # build stays counter-free, because the counting cost sits inside the comparison loop and
+    # is not symmetric between the arms.
+    "diag_lits_adapter": ["-DE25_DIAG"],
+    "diag_lits_adapter_m": ["-DE25_DIAG", "-DE30_TIME"],
+    # G1: the contract gate reads the query-path group through Index::diag_where, which is
+    # diagnostic-only, so it is built WITH the counters. A gate is not a timing build, so
+    # they cost nothing that is measured. Source carries an #error without this flag, so a
+    # wrong build is a hard stop rather than a report that silently skips part C.
+    "check_g1_contract": ["-DE25_DIAG"],
+    # G3/A1': the widened-reclaim gate asserts that the new branch actually ran
+    # (reclaim_widened > 0), which needs the counters. Source carries an #error without this
+    # flag. A gate is not a timing build, so the counters cost nothing that is measured.
+    "check_widest": ["-DE25_DIAG"],
+    "diag_lits2x2": ["-DE25_DIAG"],
+    "check_i10_commit": ["-DE25_DIAG"],
+    "diag_scan_nav": ["-DE25_DIAG"],
+    "diag_a2_entry": ["-DE25_DIAG"],
+    "diag_ov_cost_a3": ["-DE25_DIAG", "-DE30_TIME"],
+    # Branch C: the capacity/decline probe reads the high-water and the drop/regrowth
+    # trackers, which are compiled out of every timing build. No -DE30_TIME: this round
+    # takes no timings at all -- counts locate candidates, they do not price them.
+    "diag_branchc": ["-DE25_DIAG"],
+    "diag_branchc2": ["-DE25_DIAG"],   # branch C2: the shrink-to-peak new-peak rate
+    "diag_write_cost": ["-DE25_DIAG", "-DE18_COUNT", "-DE30_TIME", "-DE30_WRITE"],   # E3 entry: the write-path budget
+    # Hole reuse: the event log is E25_DIAG-only, and this round takes no timings at all --
+    # counts locate candidates, they do not price them. No -DE30_TIME.
+    # -DE18_COUNT as well: E18's counters live behind their own guard, and the
+    # insert-level overflow count is the denominator the per-block refusals have to
+    # be read against. Counter-only build, still no timing macro of any kind.
+    "diag_holes": ["-DE25_DIAG", "-DE18_COUNT"],
+    # Compact region routing: the gate compares the routed and scanned searches key by key
+    # through Index::diag_locate_*, which are diagnostic-only. A gate is not a timing build.
+    "check_compact_routing": ["-DE25_DIAG"],
+    # Low-activity reclaim gate: it asserts the branch counter is non-zero, which needs
+    # the counters. A gate is not a timing build.
+    "check_low_activity": ["-DE25_DIAG"],
+    # Candidate H gate: asserts the branch counters are non-zero and reads the hole
+    # counters beside the repack counters, which needs the counters. Not a timing build.
+    "check_hole_reuse": ["-DE25_DIAG"],
+    "san_check_hole_reuse": ["-DE25_DIAG"],
+    # Low-activity MECHANISM diagnostic: counts only, no timing, and it reads the E18
+    # insert-level overflow count beside the block-level refusals, so both guards are on.
+    "diag_low_activity": ["-DE25_DIAG", "-DE18_COUNT"],
+    "san_diag_low_activity": ["-DE25_DIAG", "-DE18_COUNT"],
+
+    # The combination round (WIDE x compact routing). The gate asserts the widened branch
+    # ran on ITS load, so it is built with the counters; the diagnostic twin of the timing
+    # benchmark proves the same on the timing workload itself, where the clean build
+    # compiles the counters out entirely.
+    "check_combo": ["-DE25_DIAG"],
+    "san_check_combo": ["-DE25_DIAG"],
+    "diag_combo": ["-DE25_DIAG"],
+    # Scan-entry round stage B2: ONE source, two targets (the bench_w/bench_w_t pattern).
+    # This target runs the materialised and the no-materialisation scan side by side for
+    # the W/B discriminator; -DE25_SCAN_CONSUME is defined by NO other target, so the
+    # shipped bench_combo binary cannot see the consume path at all.
+    "bench_scanconsume": ["-DE25_SCAN_CONSUME"],
+    # Scan-entry round: the per-call first-batch probe. A copy of bench_combo.cpp; no
+    # extra flags -- it is a timing build and carries no counters.
+    "bench_firstscan": [],
+    # The S-armed twin of the first-batch probe: same source, the S round's arm set.
+    "bench_firstscan_s": ["-DE25_ARMS_S"],
+    # Scan-entry round, candidate S: the four-arm comparison B / W / S / W+S. One source,
+    # two targets (the bench_w/bench_w_t pattern); -DE25_ARMS_S is defined by NO other
+    # target, so the shipped bench_combo arm set cannot move underneath itself.
+    "bench_sround": ["-DE25_ARMS_S"],
+    # Candidate H A/B (2026-10-11): same combo framework, W / WH / W / WH arm slots.
+    "bench_combo_h": ["-DE25_ARMS_H"],
+    # Scan-entry round: the S gate asserts that the ordered advance ran and saved
+    # comparisons, so it is built WITH the counters; its sanitizer twin takes the same
+    # flags (and is registered in SAN_TARGETS below).
+    "check_sround": ["-DE25_DIAG", "-DE25_ARMS_S"],
+    # Phase D entry diagnosis (2026-10-10, NEXT_ACTION_PLAN_20261010_D.md). ONE source, TWO
+    # targets, and the split IS the requirement: the count build carries no clock and the
+    # phase-time build carries no counter, so no field in a row can be a zero that reads as
+    # "this work does not happen". The source carries an #error if both groups are defined or
+    # neither is, and `build` in every row names which one produced it.
+    "diag_write_residual": ["-DE25_DIAG", "-DE18_COUNT"],
+    "diag_write_residual_t": ["-DE30_TIME", "-DE30_WRITE"],
+    # Stage D probe: the timing build with the write path's SEARCH using the boundary
+    # directory (write_locate). Prices the per-block loop before a candidate is defined.
+    "diag_write_residual_tl": ["-DE30_TIME", "-DE30_WRITE", "-DDR_WRITE_LOCATE"],
+    # The sanitizer twin takes the SAME flags as the shipped target built from the same
+    # source (the source carries an #error without -DE25_DIAG, which is exactly how the
+    # missing entry announced itself on the first attempt).
+    "san_check_sround": ["-DE25_DIAG", "-DE25_ARMS_S"],
+    # Stage A scan-entry round: the counter hand-check reads the per-call scan counters and
+    # the diagnostic accessors, so it is built WITH the counters. A gate is not a timing
+    # build -- nothing here is ever timed.
+    "check_scan_entry": ["-DE25_DIAG"],
+    # One source, two targets -- the sanitizer build cannot drift from the gate it shadows.
+    "san_check_scan_entry": ["-DE25_DIAG"],
+    # Compact region routing A/B. NO diagnostic flags: it is a timing build, and the
+    # counters would both slow it and make its identity different from the arm it times.
+    "bench_routing": [],
+    "san_check_i10_commit": ["-DE25_DIAG"],
+    # The vendored B+ tree lives outside the round root, so its include path is
+    # spelled out here. -I is relative to the round directory (the cwd of the
+    # compile), which keeps the recorded command reproducible from the repo root.
+    "bench_btree": ["-Ithird_party/vendor/tlx"],
+    "diag_btree": ["-DE25_DIAG", "-Ithird_party/vendor/tlx"],
+    # The sanitizer build of the SAME source takes the SAME flags, for the same reason --
+    # without -DE25_DIAG the source refuses to compile at all (it carries an #error), so a
+    # wrong build is a hard stop rather than a run that silently skips part C.
+    "san_check_g1_contract": ["-DE25_DIAG"],
+    "san_check_widest": ["-DE25_DIAG"],
+    "san_check_compact_routing": ["-DE25_DIAG"],
+    "san_check_low_activity": ["-DE25_DIAG"],
+    # G4/E1: PGO/LTO. FOUR build variants of ONE source, so the algorithm, the ISA target and
+    # the data structures are identical and only the compilation differs.
+    #
+    #   bench_lto      LTO only
+    #   bench_pgo      PGO only            (profile read from build/pgo_profile)
+    #   bench_pgo_lto  both
+    #   bench_pgo_gen  the INSTRUMENTED build that produces the profile -- never timed
+    #
+    # -fprofile-correction is here because bench_widest runs several independent processes and
+    # g++ merges their profiles; without it g++ discards counters it considers inconsistent.
+    # It changes which counters are used, not the source or the semantics.
+    "bench_lto": ["-flto"],
+    "bench_pgo": ["-fprofile-use=build/pgo_profile", "-fprofile-correction", "-Wmissing-profile"],
+    "bench_pgo_lto": ["-flto", "-fprofile-use=build/pgo_profile", "-fprofile-correction",
+                      "-Wmissing-profile"],
+    "bench_pgo_gen": ["-fprofile-generate=build/pgo_profile"],
+}
+
+# PGO NEEDS A STABLE OBJECT NAME, and that is the one thing the unique temporary below cannot
+# give it. g++ derives the .gcda file name from the OBJECT's output path, so a build that
+# compiles to `<target>.<pid>.<ns>.tmp.exe` looks for a file name that no previous build could
+# have produced -- and a naive two-step PGO then produces a perfectly good binary with NO
+# profile applied. That happened here: the build succeeded, and only -Wmissing-profile said so.
+#
+# These three targets therefore share ONE fixed object path, so the generator's profile is
+# found by both consumers. `bench_lto` is NOT in this table: it has no profile to find, and it
+# keeps the unique temporary.
+#
+# ATOMICITY IS UNCHANGED. The binary still appears only on success, via the same os.replace.
+# What changes is that two CONCURRENT builds of the same target would now collide instead of
+# coexisting. Builds in this project are serial and the PGO pair is driven by one script.
+STABLE_TMP = {
+    "bench_pgo_gen": "pgo_obj.tmp.exe",
+    "bench_pgo": "pgo_obj.tmp.exe",
+    "bench_pgo_lto": "pgo_obj.tmp.exe",
 }
 LIBS = {"bench_e25": ["build/art.o"], "bench_e26": ["build/art.o"],
-        "bench_long_art": ["build/art.o"], "bench_long_hyst": ["build/art.o"],
+        "bench_long_art": ["build/art.o"], "bench_widest": ["build/art.o"],
+        "bench_lits2x2": ["build/art.o"],
+        "bench_i10": ["build/art.o"],
+        "bench_btree": ["build/art.o"],
+        "diag_btree": ["build/art.o"],
+        "check_i10_commit": ["build/art.o"],
+        "diag_scan_nav": ["build/art.o"],
+        "diag_a2_entry": ["build/art.o"],
+        "diag_ov_cost_a3": ["build/art.o"],
+        "diag_branchc": ["build/art.o"],
+        "diag_branchc2": ["build/art.o"],
+        "diag_write_cost": ["build/art.o"],
+        "diag_holes": ["build/art.o"],
+        "check_compact_routing": ["build/art.o"],
+        "check_low_activity": ["build/art.o"],
+        "san_check_compact_routing": ["build/art.o"],
+        "san_check_low_activity": ["build/art.o"],
+        "check_hole_reuse": ["build/art.o"],
+        "san_check_hole_reuse": ["build/art.o"],
+        "diag_low_activity": ["build/art.o"],
+        "san_diag_low_activity": ["build/art.o"],
+        "bench_routing": ["build/art.o"],
+        "san_check_i10_commit": ["build/art.o"],
+        "diag_lits2x2": ["build/art.o"],
+        "bench_lto": ["build/art.o"], "bench_pgo": ["build/art.o"],
+        "bench_pgo_lto": ["build/art.o"], "bench_pgo_gen": ["build/art.o"], "bench_long_hyst": ["build/art.o"],
         "diag_hyst": ["build/art.o"], "san_bench_long_hyst": ["build/art.o"],
         "bench_long_o1": ["build/art.o"], "diag_o1": ["build/art.o"],
         "bench_prefix": ["build/art.o"], "diag_prefix": ["build/art.o"],
@@ -151,7 +385,10 @@ LIBS = {"bench_e25": ["build/art.o"], "bench_e26": ["build/art.o"],
         "bench_tag": ["build/art.o"], "diag_tag": ["build/art.o"],
         "diag_migrate": ["build/art.o"],
         "bench_migrate": ["build/art.o"], "diag_migrate_b": ["build/art.o"],
-        "diag_repair": ["build/art.o"]}
+        "diag_repair": ["build/art.o"],
+        "bench_lits_adapter": ["build/art.o"],
+        "diag_lits_adapter": ["build/art.o"],
+        "diag_lits_adapter_m": ["build/art.o"]}
 C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "bench_e26": ["third_party/vendor/libart/src/art.c"],
              "bench_long_art": ["third_party/vendor/libart/src/art.c"],
@@ -168,7 +405,17 @@ C_SOURCES = {"bench_e25": ["third_party/vendor/libart/src/art.c"],
              "diag_migrate": ["third_party/vendor/libart/src/art.c"],
              "bench_migrate": ["third_party/vendor/libart/src/art.c"],
              "diag_migrate_b": ["third_party/vendor/libart/src/art.c"],
-             "diag_repair": ["third_party/vendor/libart/src/art.c"]}
+             "diag_repair": ["third_party/vendor/libart/src/art.c"],
+             "bench_lits_adapter": ["third_party/vendor/libart/src/art.c"],
+             "diag_lits_adapter": ["third_party/vendor/libart/src/art.c"],
+             "diag_lits_adapter_m": ["third_party/vendor/libart/src/art.c"],
+             # Candidate H (2026-10-11): these two live here rather than only in LIBS so the
+             # art object is rebuilt by the INVOKING toolchain on every build -- the stale
+             # MinGW/COFF art.o left in build/ made the first sanitizer link fail with PE
+             # relocations (R_AMD64_IMAGEBASE), and a target that compiles its own C source
+             # cannot inherit a foreign-format object from an earlier episode.
+             "check_hole_reuse": ["third_party/vendor/libart/src/art.c"],
+             "san_check_hole_reuse": ["third_party/vendor/libart/src/art.c"]}
 # diag_long is the SAME source as bench_long, built with the counters in. One source,
 # two targets, so the two builds cannot drift apart.
 SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
@@ -177,6 +424,8 @@ SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        "diag_compose": "diag_compose.cpp", "diag_tag": "bench_tag.cpp",
        "diag_migrate": "diag_migrate.cpp", "diag_migrate_b": "bench_migrate.cpp",
        "diag_repair": "diag_repair.cpp",
+       "diag_lits_adapter": "bench_lits_adapter.cpp",
+       "diag_lits_adapter_m": "bench_lits_adapter.cpp",
        # ITEM B: the sanitizer targets are new NAMES over these same sources. One
        # source, two targets -- as diag_long is for bench_long -- so the sanitizer
        # build and the shipped build of the same program cannot drift apart.
@@ -184,7 +433,69 @@ SRC = {"diag_long": "bench_long.cpp", "bench_w_t": "bench_w.cpp",
        "san_check_e9_multiblock": "check_e9_multiblock.cpp",
        "san_check_e11_locate": "check_e11_locate.cpp",
        "san_check_freeze": "check_freeze.cpp",
-       "san_bench_long_hyst": "bench_long_hyst.cpp"}
+       "san_bench_long_hyst": "bench_long_hyst.cpp",
+       "san_check_lits_model": "check_lits_model.cpp",
+       "san_check_lits_fingerprint": "check_lits_fingerprint.cpp",
+       "san_check_lits_index": "check_lits_index.cpp",
+       # G1: one source, two targets -- the sanitizer build and the shipped build of the
+       # same gate cannot drift apart.
+       "san_check_g1_contract": "check_g1_contract.cpp",
+       # G3/A1': one source, two targets.
+       "san_check_widest": "check_widest.cpp",
+       "san_check_compact_routing": "check_compact_routing.cpp",
+       "san_check_low_activity": "check_low_activity.cpp",
+       # Candidate H: one source, two targets -- the gate and its sanitizer twin.
+       "san_check_hole_reuse": "check_hole_reuse.cpp",
+       "san_diag_low_activity": "diag_low_activity.cpp",
+       # Combination round: one source, two targets -- the gate and its sanitizer twin.
+       "san_check_combo": "check_combo.cpp",
+       "diag_combo": "bench_combo.cpp",
+       "bench_scanconsume": "bench_combo.cpp",
+       "bench_firstscan": "bench_firstscan.cpp",
+       "bench_firstscan_s": "bench_firstscan.cpp",
+       "bench_sround": "bench_combo.cpp",
+       "bench_combo_h": "bench_combo.cpp",
+       "check_sround": "check_sround.cpp",
+       "san_check_sround": "check_sround.cpp",
+       # BlockLinearRank round (2026-10-11): one source, two targets -- the gate and its
+       # sanitizer twin, so the two builds of the same gate cannot drift apart.
+       "check_block_rank": "check_block_rank.cpp",
+       "san_check_block_rank": "check_block_rank.cpp",
+       # Equal-depth threshold directory: the entry diagnosis. One source, no counters (it reads
+       # Region::groups()/group_stats() and does its own arithmetic), no timing.
+       "diag_threshold_entry": "diag_threshold_entry.cpp",
+       # EqualDepthDir: one source, two targets (gate + sanitizer twin).
+       "check_depth_dir": "check_depth_dir.cpp",
+       "san_check_depth_dir": "check_depth_dir.cpp",
+       # EqualDepthDir A/B: two arms, position rotated, paired within a repetition.
+       "bench_depth_dir": "bench_depth_dir.cpp",
+       # Phase D entry diagnosis: one source, two builds (see EXTRA).
+       "diag_write_residual": "diag_write_residual.cpp",
+       "diag_write_residual_t": "diag_write_residual.cpp",
+       "diag_write_residual_tl": "diag_write_residual.cpp",
+       # Stage A: the scan-entry counter hand-check. One source, two targets -- the gate and
+       # its sanitizer twin.
+       "check_scan_entry": "check_scan_entry.cpp",
+       "san_check_scan_entry": "check_scan_entry.cpp",
+       # G4/E1: one source, four builds. Same source as bench_widest, so the four variants
+       # cannot drift apart from each other or from the timing baseline.
+       "bench_lto": "bench_widest.cpp",
+       "bench_pgo": "bench_widest.cpp",
+       "bench_pgo_lto": "bench_widest.cpp",
+       "bench_pgo_gen": "bench_widest.cpp",
+       # G5: the 2x2 cross-backend row. Same benchmark, four Index arms
+       # {S0, WIDE} x {Context16, LitsHpt}, plus libart.
+       "bench_lits2x2": "bench_lits2x2.cpp",
+       "diag_btree": "bench_btree.cpp",
+       # I10: old vs safe compaction path, paired. Same source as bench_long_hyst.cpp
+       # with the arm set replaced; that file and its record are left untouched.
+       "bench_i10": "bench_i10.cpp",
+       # I10: the commit-phase atomicity gate. Diagnostic-only, so it is never timing.
+       "check_i10_commit": "check_i10_commit.cpp",
+       "san_check_i10_commit": "check_i10_commit.cpp",
+       # G5 external baseline: TLX B+ tree, vendored under third_party/vendor/tlx.
+       "bench_btree": "bench_btree.cpp",
+       "diag_lits2x2": "bench_lits2x2.cpp"}
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -195,6 +506,47 @@ def sha256(path):
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def archive_stale_record(target, rec):
+    """Before replacing logs/build_<target>.json, preserve the record being replaced.
+
+    That path is FIXED and both writers in build() open it with "w", so building a target a
+    second time used to overwrite the previous identity -- build_id, executable hash, source
+    hashes -- in place. A report that quotes those fields then points at numbers that exist
+    nowhere afterwards. This round did exactly that to fourteen gates while re-establishing
+    their evidence against the current source, which is how the hole was noticed: the
+    freeze report's quoted check_e8_hetero build_id survives only as text in that report.
+
+    Keyed by build_id, so building the same target repeatedly keeps EVERY identity rather
+    than only the last, and archiving an already-archived record is a no-op. Nothing is
+    deleted, and a target whose record has not changed is not touched at all.
+    """
+    path = os.path.join(DIR, "logs", f"build_{target}.json")
+
+    if not os.path.exists(path):
+        return
+
+    try:
+        with open(path, encoding="utf-8") as f:
+            old = json.load(f)
+    except Exception:
+        return
+
+    old_id = old.get("build_id")
+
+    if not old_id or old_id == rec.get("build_id"):
+        return
+
+    adir = os.path.join(DIR, "logs", "archive")
+    os.makedirs(adir, exist_ok=True)
+    dest = os.path.join(adir, f"build_{target}.{old_id}.json")
+
+    if os.path.exists(dest):
+        return
+
+    with open(dest, "w", encoding="utf-8") as f:
+        json.dump(old, f, ensure_ascii=False, indent=1)
 
 
 def compile_c(target):
@@ -214,7 +566,10 @@ def compile_c(target):
 def build(target):
     src = os.path.join(DIR, SRC.get(target, target + ".cpp"))
     exe = os.path.join(DIR, "build", target + ".exe")
-    tmp = os.path.join(DIR, "build", f"{target}.{os.getpid()}.{time.time_ns()}.tmp.exe")
+    # See STABLE_TMP: the PGO pair must compile to a fixed object path or the profile it
+    # writes is looked for under a name that never existed.
+    tmp_name = STABLE_TMP.get(target, f"{target}.{os.getpid()}.{time.time_ns()}.tmp.exe")
+    tmp = os.path.join(DIR, "build", tmp_name)
 
     objs = compile_c(target)
     link = [os.path.join(DIR, p) for p in LIBS.get(target, [])]
@@ -228,9 +583,27 @@ def build(target):
     cmd = cxx + EXTRA.get(target, []) + [src] + link + ["-o", tmp]
     rec = {"target": target, "build_id": f"{time.time_ns()}", "command": " ".join(cmd), "sources": {}}
     rec["sources"][os.path.basename(src)] = sha256(src)
-    for f in sorted(os.listdir(DIR)):
-        if f.endswith(".hpp"):
-            rec["sources"][f] = sha256(os.path.join(DIR, f))
+    # Headers are tracked RECURSIVELY. This loop used to be os.listdir(DIR), which sees only
+    # the round's ROOT -- so a header under model/ or vendor/ was invisible to the strict run
+    # entry and an edit to it would not have refused the run. That is the same shape of gap
+    # as the E34 accident this entry exists to prevent, and E38 is the first round to put
+    # headers in subdirectories. Paths are recorded with forward slashes, which
+    # source_drift() already resolves; root-level headers keep their bare names, so every
+    # existing record still resolves exactly as before.
+    #
+    # vendor/lits_model_original/ is EXCLUDED on purpose: it is the provenance archive, not
+    # an input to any binary. Folding it in would make a change to the archived upstream
+    # bytes refuse a run for a build-input reason, which is the wrong diagnosis for the
+    # right suspicion -- the archive's own integrity is checked by fetch_lits_pinned.py
+    # against E4's recorded hashes, and by patch_lits_safety.py against E4's patched hash.
+    for root, dirs, files in os.walk(DIR):
+        dirs[:] = sorted(d for d in dirs
+                         if d not in ("build", "logs", "__pycache__", "lits_model_original"))
+        for f in sorted(files):
+            if not f.endswith(".hpp"):
+                continue
+            full = os.path.join(root, f)
+            rec["sources"][os.path.relpath(full, DIR).replace(os.sep, "/")] = sha256(full)
     for rel in C_SOURCES.get(target, []):
         rec["sources"][rel] = sha256(os.path.join(DIR, rel))
     rec["extra_flags"] = EXTRA.get(target, [])
@@ -243,6 +616,7 @@ def build(target):
     if r.returncode != 0 or not os.path.exists(tmp):
         rec["status"] = "COMPILE_FAILED"
         rec["exe_sha256"] = None
+        archive_stale_record(target, rec)
         with open(os.path.join(DIR, "logs", f"build_{target}.json"), "w", encoding="utf-8") as f:
             json.dump(rec, f, ensure_ascii=False, indent=1)
         if os.path.exists(tmp):
@@ -263,6 +637,7 @@ def build(target):
     os.replace(tmp, exe)          # atomic: the artifact exists only on success
     rec["exe_sha256"] = sha256(exe)
     rec["status"] = "OK"
+    archive_stale_record(target, rec)
     with open(os.path.join(DIR, "logs", f"build_{target}.json"), "w", encoding="utf-8") as f:
         json.dump(rec, f, ensure_ascii=False, indent=1)
     with open(os.path.join(DIR, "build", f"{target}.built.json"), "w", encoding="utf-8") as f:

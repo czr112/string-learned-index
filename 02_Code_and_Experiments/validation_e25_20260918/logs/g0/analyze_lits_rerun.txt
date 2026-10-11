@@ -1,0 +1,1 @@
+ANALYSIS REFUSED: bench_lits_adapter was built from source that has since changed (1 of 15 files). Pass allow_drift=True to analyze it as a HISTORICAL record.

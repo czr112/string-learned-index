@@ -1,0 +1,129 @@
+FAILED: stoi
+Command exited with non-zero status 1
+  wall 0.23 s
+FAILED: stoi
+Command exited with non-zero status 1
+  wall 0.24 s
+FAILED: stoi
+Command exited with non-zero status 1
+  wall 0.22 s
+FAILED: stoi
+Command exited with non-zero status 1
+  wall 0.36 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 52.2549 ns per timer pair
+  wall 2.83 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 53.0163 ns per timer pair
+  wall 2.82 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.951 ns per timer pair
+  wall 3.05 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 56.6595 ns per timer pair
+  wall 5.36 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 58.1603 ns per timer pair
+Command exited with non-zero status 245
+  wall 4.73 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 76.189 ns per timer pair
+  wall 3.65 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.2698 ns per timer pair
+Command exited with non-zero status 245
+  wall 4.83 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 63.0756 ns per timer pair
+  wall 2.60 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 50.8268 ns per timer pair
+Command exited with non-zero status 245
+  wall 2.02 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.1115 ns per timer pair
+  wall 3.16 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 61.8278 ns per timer pair
+  wall 3.42 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 74.8929 ns per timer pair
+  wall 1.16 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 75.4556 ns per timer pair
+  wall 3.10 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 41.7067 ns per timer pair
+  wall 1.14 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 34.7951 ns per timer pair
+  wall 2.56 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.5605 ns per timer pair
+  wall 0.94 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.8286 ns per timer pair
+  wall 3.07 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 62.4241 ns per timer pair
+  wall 3.55 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 50.6994 ns per timer pair
+  wall 1.29 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 66.435 ns per timer pair
+  wall 3.58 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 59.6463 ns per timer pair
+  wall 1.31 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 92.1073 ns per timer pair
+  wall 2.87 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 50.8024 ns per timer pair
+  wall 1.19 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.0217 ns per timer pair
+  wall 3.97 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.3418 ns per timer pair
+  wall 3.20 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 50.1542 ns per timer pair
+  wall 1.19 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 71.2162 ns per timer pair
+  wall 3.81 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 55.4452 ns per timer pair
+  wall 1.15 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 41.5321 ns per timer pair
+  wall 3.03 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 53.8257 ns per timer pair
+  wall 1.13 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 53.8246 ns per timer pair
+  wall 5.39 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 52.5251 ns per timer pair
+  wall 3.49 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 52.185 ns per timer pair
+  wall 1.13 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 56.3711 ns per timer pair
+  wall 3.80 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 350.678 ns per timer pair
+  wall 1.32 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 59.2241 ns per timer pair
+  wall 3.14 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 56.5765 ns per timer pair
+  wall 0.99 s
+diag_write_cost switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=0,reclaim_widest=0,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 51.9258 ns per timer pair
+  wall 3.19 s

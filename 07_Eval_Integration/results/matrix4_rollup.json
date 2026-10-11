@@ -1,0 +1,272 @@
+{
+  "mixed": {
+    "art-libart": {
+      "index_owned_bytes": null,
+      "latency_p50_ns": 981.0,
+      "latency_p99_ns": 4291.0,
+      "median_build_ms": 28.444989,
+      "median_lookup_ns": 3668448.0,
+      "median_throughput_ops_per_second": 2725948.411971493,
+      "ratio_vs_art": 1.0,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "block-hash": {
+      "index_owned_bytes": 1149688.0,
+      "latency_p50_ns": 1365.0,
+      "latency_p99_ns": 4321.0,
+      "median_build_ms": 636.675739,
+      "median_lookup_ns": 6394738.0,
+      "median_throughput_ops_per_second": 1563785.7250758358,
+      "ratio_vs_art": 1.7431725896073762,
+      "retained_input_bytes": 20884099.0,
+      "status": "passed"
+    },
+    "block-plain": {
+      "index_owned_bytes": 887544.0,
+      "latency_p50_ns": 1672.0,
+      "latency_p99_ns": 5778.0,
+      "median_build_ms": 604.181311,
+      "median_lookup_ns": 9325187.0,
+      "median_throughput_ops_per_second": 1072364.5541907095,
+      "ratio_vs_art": 2.5419978693987213,
+      "retained_input_bytes": 20884099.0,
+      "status": "passed"
+    },
+    "block-residual": {
+      "index_owned_bytes": 1149688.0,
+      "latency_p50_ns": 1049.0,
+      "latency_p99_ns": 2270.0,
+      "median_build_ms": 579.974091,
+      "median_lookup_ns": 6685866.0,
+      "median_throughput_ops_per_second": 1495692.5550108242,
+      "ratio_vs_art": 1.8225325805354198,
+      "retained_input_bytes": 20884099.0,
+      "status": "passed"
+    },
+    "block-residual-delta": {
+      "index_owned_bytes": 1149688.0,
+      "latency_p50_ns": 1325.0,
+      "latency_p99_ns": 3504.0,
+      "median_build_ms": 675.237742,
+      "median_lookup_ns": 6612909.0,
+      "median_throughput_ops_per_second": 1512193.8015478514,
+      "ratio_vs_art": 1.8026448787061995,
+      "retained_input_bytes": 20884099.0,
+      "status": "passed"
+    },
+    "hot": {
+      "index_owned_bytes": null,
+      "latency_p50_ns": 920.0,
+      "latency_p99_ns": 1817.0,
+      "median_build_ms": 38.93585,
+      "median_lookup_ns": 5023572.0,
+      "median_throughput_ops_per_second": 1990615.4425576064,
+      "ratio_vs_art": 1.3693998115824457,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "ours-context16": {
+      "index_owned_bytes": 39321200.0,
+      "latency_p50_ns": 1354.0,
+      "latency_p99_ns": 5375.0,
+      "median_build_ms": 76.394902,
+      "median_lookup_ns": 10275384.0,
+      "median_throughput_ops_per_second": 973199.6390597179,
+      "ratio_vs_art": 2.8010166697197287,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "ours-lits": {
+      "index_owned_bytes": 36759089.0,
+      "latency_p50_ns": 926.0,
+      "latency_p99_ns": 3229.0,
+      "median_build_ms": 95.635256,
+      "median_lookup_ns": 5768206.0,
+      "median_throughput_ops_per_second": 1733641.2742540748,
+      "ratio_vs_art": 1.572383198562444,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    }
+  },
+  "skew": {
+    "art-libart": {
+      "index_owned_bytes": null,
+      "latency_p50_ns": 1110.0,
+      "latency_p99_ns": 3831.0,
+      "median_build_ms": 55.47863,
+      "median_lookup_ns": 10450881.0,
+      "median_throughput_ops_per_second": 956857.1300352573,
+      "ratio_vs_art": 1.0,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "block-hash": {
+      "index_owned_bytes": 1305992.0,
+      "latency_p50_ns": 1148.0,
+      "latency_p99_ns": 2278.0,
+      "median_build_ms": 658.054034,
+      "median_lookup_ns": 7342448.0,
+      "median_throughput_ops_per_second": 1361943.591565102,
+      "ratio_vs_art": 0.7025673720713115,
+      "retained_input_bytes": 25821184.0,
+      "status": "passed"
+    },
+    "block-plain": {
+      "index_owned_bytes": 1043848.0,
+      "latency_p50_ns": 1921.0,
+      "latency_p99_ns": 3850.0,
+      "median_build_ms": 632.494764,
+      "median_lookup_ns": 10100954.0,
+      "median_throughput_ops_per_second": 990005.4984905386,
+      "ratio_vs_art": 0.9665169855058152,
+      "retained_input_bytes": 25821184.0,
+      "status": "passed"
+    },
+    "block-residual": {
+      "index_owned_bytes": 1305992.0,
+      "latency_p50_ns": 965.0,
+      "latency_p99_ns": 2257.0,
+      "median_build_ms": 745.6334,
+      "median_lookup_ns": 7399550.0,
+      "median_throughput_ops_per_second": 1351433.5331202573,
+      "ratio_vs_art": 0.7080312176552388,
+      "retained_input_bytes": 25821184.0,
+      "status": "passed"
+    },
+    "block-residual-delta": {
+      "index_owned_bytes": 1305992.0,
+      "latency_p50_ns": 890.0,
+      "latency_p99_ns": 2340.0,
+      "median_build_ms": 812.325131,
+      "median_lookup_ns": 6569542.0,
+      "median_throughput_ops_per_second": 1522176.1273464726,
+      "ratio_vs_art": 0.6286113103766084,
+      "retained_input_bytes": 25821184.0,
+      "status": "passed"
+    },
+    "hot": {
+      "index_owned_bytes": null,
+      "latency_p50_ns": 675.0,
+      "latency_p99_ns": 1645.0,
+      "median_build_ms": 37.165863,
+      "median_lookup_ns": 5992021.0,
+      "median_throughput_ops_per_second": 1668886.0069081867,
+      "ratio_vs_art": 0.5733508017170993,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "ours-context16": {
+      "index_owned_bytes": 40586985.0,
+      "latency_p50_ns": 979.0,
+      "latency_p99_ns": 3464.0,
+      "median_build_ms": 48.982989,
+      "median_lookup_ns": 6765560.0,
+      "median_throughput_ops_per_second": 1478074.2466255566,
+      "ratio_vs_art": 0.6473674324681336,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "ours-lits": {
+      "index_owned_bytes": 40242752.0,
+      "latency_p50_ns": 1004.0,
+      "latency_p99_ns": 3967.0,
+      "median_build_ms": 122.343482,
+      "median_lookup_ns": 6916989.0,
+      "median_throughput_ops_per_second": 1445715.758692113,
+      "ratio_vs_art": 0.6618570243025444,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    }
+  },
+  "tranco": {
+    "art-libart": {
+      "index_owned_bytes": null,
+      "latency_p50_ns": 694.0,
+      "latency_p99_ns": 1825.0,
+      "median_build_ms": 29.22474,
+      "median_lookup_ns": 2973574.0,
+      "median_throughput_ops_per_second": 3362956.496122175,
+      "ratio_vs_art": 1.0,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "block-hash": {
+      "index_owned_bytes": 2088568.0,
+      "latency_p50_ns": 843.0,
+      "latency_p99_ns": 2869.0,
+      "median_build_ms": 1053.047422,
+      "median_lookup_ns": 4668175.0,
+      "median_throughput_ops_per_second": 2142164.7646028693,
+      "ratio_vs_art": 1.5698869441285133,
+      "retained_input_bytes": 12408721.0,
+      "status": "passed"
+    },
+    "block-plain": {
+      "index_owned_bytes": 1564280.0,
+      "latency_p50_ns": 1324.0,
+      "latency_p99_ns": 2840.0,
+      "median_build_ms": 1014.873006,
+      "median_lookup_ns": 6902163.0,
+      "median_throughput_ops_per_second": 1448821.1883723987,
+      "ratio_vs_art": 2.321167389814412,
+      "retained_input_bytes": 12408721.0,
+      "status": "passed"
+    },
+    "block-residual": {
+      "index_owned_bytes": 2088568.0,
+      "latency_p50_ns": 792.0,
+      "latency_p99_ns": 2280.0,
+      "median_build_ms": 1011.806385,
+      "median_lookup_ns": 5694918.0,
+      "median_throughput_ops_per_second": 1755951.5343328912,
+      "ratio_vs_art": 1.9151761482983103,
+      "retained_input_bytes": 12408721.0,
+      "status": "passed"
+    },
+    "block-residual-delta": {
+      "index_owned_bytes": 2088568.0,
+      "latency_p50_ns": 926.0,
+      "latency_p99_ns": 2274.0,
+      "median_build_ms": 1040.077247,
+      "median_lookup_ns": 6281206.0,
+      "median_throughput_ops_per_second": 1592050.9532723492,
+      "ratio_vs_art": 2.1123422521181583,
+      "retained_input_bytes": 12408721.0,
+      "status": "passed"
+    },
+    "hot": {
+      "index_owned_bytes": null,
+      "latency_p50_ns": 849.0,
+      "latency_p99_ns": 2230.0,
+      "median_build_ms": 107.944255,
+      "median_lookup_ns": 7357808.0,
+      "median_throughput_ops_per_second": 1359100.4277360865,
+      "ratio_vs_art": 2.4743988210819707,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "ours-context16": {
+      "index_owned_bytes": 38585517.0,
+      "latency_p50_ns": 821.0,
+      "latency_p99_ns": 2419.0,
+      "median_build_ms": 65.200763,
+      "median_lookup_ns": 6033985.0,
+      "median_throughput_ops_per_second": 1657279.5590310548,
+      "ratio_vs_art": 2.029202905325376,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    },
+    "ours-lits": {
+      "index_owned_bytes": 34902959.0,
+      "latency_p50_ns": 702.0,
+      "latency_p99_ns": 1744.0,
+      "median_build_ms": 88.162865,
+      "median_lookup_ns": 4097263.0,
+      "median_throughput_ops_per_second": 2440653.6753925732,
+      "ratio_vs_art": 1.377891722217103,
+      "retained_input_bytes": 0.0,
+      "status": "passed"
+    }
+  }
+}

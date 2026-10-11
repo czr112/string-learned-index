@@ -1,0 +1,71 @@
+combo sweep run_id=combo_20261010a  2026-10-10 17:19:52
+position balance verified: [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]
+--- backend ctx16 mode same -> combo_combo_20261010a_ctx16_same.jsonl ---
+  bench_combo mixed ctx16 same reps=4 tag=cmb-P1-mixed rc=0 wall=18s
+  bench_combo skew ctx16 same reps=4 tag=cmb-P1-skew rc=0 wall=28s
+  bench_combo tranco ctx16 same reps=4 tag=cmb-P1-tranco rc=0 wall=19s
+  bench_combo mixed ctx16 same reps=4 tag=cmb-P2-mixed rc=0 wall=16s
+  bench_combo skew ctx16 same reps=4 tag=cmb-P2-skew rc=0 wall=31s
+  bench_combo tranco ctx16 same reps=4 tag=cmb-P2-tranco rc=0 wall=18s
+  bench_combo mixed ctx16 same reps=4 tag=cmb-P3-mixed rc=0 wall=16s
+  bench_combo skew ctx16 same reps=4 tag=cmb-P3-skew rc=0 wall=31s
+  bench_combo tranco ctx16 same reps=4 tag=cmb-P3-tranco rc=0 wall=17s
+  bench_combo mixed ctx16 same reps=4 tag=cmb-P4-mixed rc=0 wall=19s
+  bench_combo skew ctx16 same reps=4 tag=cmb-P4-skew rc=0 wall=29s
+  bench_combo tranco ctx16 same reps=4 tag=cmb-P4-tranco rc=0 wall=17s
+  bench_combo mixed ctx16 same reps=4 tag=cmb-P5-mixed rc=0 wall=19s
+  bench_combo skew ctx16 same reps=4 tag=cmb-P5-skew rc=0 wall=27s
+  bench_combo tranco ctx16 same reps=4 tag=cmb-P5-tranco rc=0 wall=19s
+    archived 1200 row(s), 0 child failure(s)
+--- backend ctx16 mode grow -> combo_combo_20261010a_ctx16_grow.jsonl ---
+  bench_combo mixed ctx16 grow reps=4 tag=cmb-P1-mixed rc=0 wall=15s
+  bench_combo skew ctx16 grow reps=4 tag=cmb-P1-skew rc=0 wall=25s
+  bench_combo tranco ctx16 grow reps=4 tag=cmb-P1-tranco rc=0 wall=21s
+  bench_combo mixed ctx16 grow reps=4 tag=cmb-P2-mixed rc=0 wall=15s
+  bench_combo skew ctx16 grow reps=4 tag=cmb-P2-skew rc=0 wall=24s
+  bench_combo tranco ctx16 grow reps=4 tag=cmb-P2-tranco rc=0 wall=18s
+  bench_combo mixed ctx16 grow reps=4 tag=cmb-P3-mixed rc=0 wall=17s
+  bench_combo skew ctx16 grow reps=4 tag=cmb-P3-skew rc=0 wall=21s
+  bench_combo tranco ctx16 grow reps=4 tag=cmb-P3-tranco rc=0 wall=21s
+  bench_combo mixed ctx16 grow reps=4 tag=cmb-P4-mixed rc=0 wall=14s
+  bench_combo skew ctx16 grow reps=4 tag=cmb-P4-skew rc=0 wall=24s
+  bench_combo tranco ctx16 grow reps=4 tag=cmb-P4-tranco rc=0 wall=23s
+  bench_combo mixed ctx16 grow reps=4 tag=cmb-P5-mixed rc=0 wall=14s
+  bench_combo skew ctx16 grow reps=4 tag=cmb-P5-skew rc=0 wall=23s
+  bench_combo tranco ctx16 grow reps=4 tag=cmb-P5-tranco rc=0 wall=18s
+    archived 1200 row(s), 0 child failure(s)
+--- backend lits mode same -> combo_combo_20261010a_lits_same.jsonl ---
+  bench_combo mixed lits same reps=4 tag=cmb-P1-mixed rc=0 wall=23s
+  bench_combo skew lits same reps=4 tag=cmb-P1-skew rc=0 wall=36s
+  bench_combo tranco lits same reps=4 tag=cmb-P1-tranco rc=0 wall=17s
+  bench_combo mixed lits same reps=4 tag=cmb-P2-mixed rc=0 wall=23s
+  bench_combo skew lits same reps=4 tag=cmb-P2-skew rc=0 wall=35s
+  bench_combo tranco lits same reps=4 tag=cmb-P2-tranco rc=0 wall=18s
+  bench_combo mixed lits same reps=4 tag=cmb-P3-mixed rc=0 wall=22s
+  bench_combo skew lits same reps=4 tag=cmb-P3-skew rc=0 wall=35s
+  bench_combo tranco lits same reps=4 tag=cmb-P3-tranco rc=0 wall=17s
+  bench_combo mixed lits same reps=4 tag=cmb-P4-mixed rc=0 wall=23s
+  bench_combo skew lits same reps=4 tag=cmb-P4-skew rc=0 wall=36s
+  bench_combo tranco lits same reps=4 tag=cmb-P4-tranco rc=0 wall=16s
+  bench_combo mixed lits same reps=4 tag=cmb-P5-mixed rc=0 wall=26s
+  bench_combo skew lits same reps=4 tag=cmb-P5-skew rc=0 wall=41s
+  bench_combo tranco lits same reps=4 tag=cmb-P5-tranco rc=0 wall=17s
+    archived 1200 row(s), 0 child failure(s)
+--- backend lits mode grow -> combo_combo_20261010a_lits_grow.jsonl ---
+  bench_combo mixed lits grow reps=4 tag=cmb-P1-mixed rc=0 wall=17s
+  bench_combo skew lits grow reps=4 tag=cmb-P1-skew rc=0 wall=29s
+  bench_combo tranco lits grow reps=4 tag=cmb-P1-tranco rc=0 wall=17s
+  bench_combo mixed lits grow reps=4 tag=cmb-P2-mixed rc=0 wall=21s
+  bench_combo skew lits grow reps=4 tag=cmb-P2-skew rc=0 wall=28s
+  bench_combo tranco lits grow reps=4 tag=cmb-P2-tranco rc=0 wall=17s
+  bench_combo mixed lits grow reps=4 tag=cmb-P3-mixed rc=0 wall=20s
+  bench_combo skew lits grow reps=4 tag=cmb-P3-skew rc=0 wall=26s
+  bench_combo tranco lits grow reps=4 tag=cmb-P3-tranco rc=0 wall=19s
+  bench_combo mixed lits grow reps=4 tag=cmb-P4-mixed rc=0 wall=17s
+  bench_combo skew lits grow reps=4 tag=cmb-P4-skew rc=0 wall=30s
+  bench_combo tranco lits grow reps=4 tag=cmb-P4-tranco rc=0 wall=17s
+  bench_combo mixed lits grow reps=4 tag=cmb-P5-mixed rc=0 wall=20s
+  bench_combo skew lits grow reps=4 tag=cmb-P5-skew rc=0 wall=29s
+  bench_combo tranco lits grow reps=4 tag=cmb-P5-tranco rc=0 wall=16s
+    archived 1200 row(s), 0 child failure(s)
+sweep end 2026-10-10 17:41:57

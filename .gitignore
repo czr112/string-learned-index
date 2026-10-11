@@ -23,3 +23,39 @@ __pycache__/
 **/*.docx
 **/*.pptx
 **/*.zip
+
+# Local snapshots, probes, and generated benchmark build trees.
+/06_Review_Package_20260923/
+/iso_probe.txt
+builds/
+CMakeFiles/
+CMakeCache.txt
+*.lib
+
+# External repositories are pinned as submodules, not copied into our history.
+/02_Code_and_Experiments/Learned-Index-Model/
+/07_Eval_Integration/learned-index/
+/07_Eval_Integration/hot-src/
+
+# Large A2 raw traces are published as lossless gzip archives; see
+# 04_Consolidation_and_Verification/archives/evidence_archives.json.
+/02_Code_and_Experiments/validation_e25_20260918/results/main/a2_entry_*.jsonl
+
+# Extensionless ELF executables produced by diagnostic runs.
+/07_Eval_Integration/results/contig_entry_20261011/contig_entry
+/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry
+/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean
+/07_Eval_Integration/results/geometry_prototype_20261011/lookup_geometry
+/07_Eval_Integration/results/geometry_prototype_20261011/san_lookup_geometry
+/07_Eval_Integration/results/owner_entry_20261011/owner_entry
+/07_Eval_Integration/results/owner_integration_20261011/owner_entry
+/07_Eval_Integration/results/owner_integration_20261011/owner_proto
+/07_Eval_Integration/results/owner_integration_20261011/san_owner_proto
+/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle
+/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle
+/07_Eval_Integration/results/owner_prototype_20261011/owner_proto
+/07_Eval_Integration/results/owner_prototype_20261011/san_owner_proto
+/07_Eval_Integration/results/prefix2_entry_20261011/prefix2_entry
+/07_Eval_Integration/results/subblock_entry_20261011/subblock_entry
+/07_Eval_Integration/results/subblock_prototype_20261011/lookup_subblock
+/07_Eval_Integration/results/subblock_prototype_20261011/san_lookup_subblock

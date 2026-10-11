@@ -1,0 +1,1 @@
+{"gate":"check_tag_store","kind":"tranco","keys":262144,"queries_compared":2826240,"absent_queries":40960,"scans_compared":5120,"records_compared":245760,"tag_pairings_checked":244716,"overflow_B":22772,"overflow_O":22772,"overflow_T":22772,"sizeof_OrderedEntry":8,"result":"pass"}

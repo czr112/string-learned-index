@@ -1,0 +1,216 @@
+{
+  "entry_all_pass": true,
+  "cells": [
+    {
+      "corpus": "mixed",
+      "backend": "context16",
+      "gates": {
+        "space": true,
+        "fields": true,
+        "address": true,
+        "diff": true,
+        "counters": true,
+        "hot_reads": true,
+        "pass": true
+      },
+      "descriptor_resident_bytes": 511560,
+      "index_bytes": 39324272,
+      "resident_ratio": 0.013008759577291093,
+      "groups_total": 21251,
+      "blocks_total": 33529,
+      "nb_hist": [
+        16280,
+        3393,
+        1070,
+        259,
+        76,
+        45,
+        128
+      ],
+      "multi_block_groups": 4971,
+      "max_blocks_per_group": 307,
+      "hot_reads": 194012,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "mixed",
+      "backend": "lits",
+      "gates": {
+        "space": true,
+        "fields": true,
+        "address": true,
+        "diff": true,
+        "counters": true,
+        "hot_reads": true,
+        "pass": true
+      },
+      "descriptor_resident_bytes": 511560,
+      "index_bytes": 36762161,
+      "resident_ratio": 0.013915395234790469,
+      "groups_total": 21251,
+      "blocks_total": 31474,
+      "nb_hist": [
+        18433,
+        2478,
+        81,
+        13,
+        42,
+        46,
+        158
+      ],
+      "multi_block_groups": 2818,
+      "max_blocks_per_group": 293,
+      "hot_reads": 238590,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "skew",
+      "backend": "context16",
+      "gates": {
+        "space": true,
+        "fields": true,
+        "address": true,
+        "diff": true,
+        "counters": true,
+        "hot_reads": true,
+        "pass": true
+      },
+      "descriptor_resident_bytes": 485448,
+      "index_bytes": 40590057,
+      "resident_ratio": 0.011959776257520408,
+      "groups_total": 20163,
+      "blocks_total": 34775,
+      "nb_hist": [
+        19269,
+        130,
+        98,
+        52,
+        80,
+        110,
+        424
+      ],
+      "multi_block_groups": 894,
+      "max_blocks_per_group": 112,
+      "hot_reads": 260091,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "skew",
+      "backend": "lits",
+      "gates": {
+        "space": true,
+        "fields": true,
+        "address": true,
+        "diff": true,
+        "counters": true,
+        "hot_reads": true,
+        "pass": true
+      },
+      "descriptor_resident_bytes": 485448,
+      "index_bytes": 40245824,
+      "resident_ratio": 0.012062071334407266,
+      "groups_total": 20163,
+      "blocks_total": 34522,
+      "nb_hist": [
+        19102,
+        202,
+        48,
+        20,
+        236,
+        301,
+        254
+      ],
+      "multi_block_groups": 1061,
+      "max_blocks_per_group": 202,
+      "hot_reads": 361974,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "tranco",
+      "backend": "context16",
+      "gates": {
+        "space": true,
+        "fields": true,
+        "address": true,
+        "diff": true,
+        "counters": true,
+        "hot_reads": true,
+        "pass": true
+      },
+      "descriptor_resident_bytes": 528384,
+      "index_bytes": 38591661,
+      "resident_ratio": 0.013691662558913959,
+      "groups_total": 21888,
+      "blocks_total": 33669,
+      "nb_hist": [
+        16881,
+        2441,
+        1153,
+        557,
+        669,
+        170,
+        17
+      ],
+      "multi_block_groups": 5007,
+      "max_blocks_per_group": 43,
+      "hot_reads": 98882,
+      "checksum": 2527145298674069018
+    },
+    {
+      "corpus": "tranco",
+      "backend": "lits",
+      "gates": {
+        "space": true,
+        "fields": true,
+        "address": true,
+        "diff": true,
+        "counters": true,
+        "hot_reads": true,
+        "pass": true
+      },
+      "descriptor_resident_bytes": 528384,
+      "index_bytes": 34909103,
+      "resident_ratio": 0.015135994757585149,
+      "groups_total": 21888,
+      "blocks_total": 30357,
+      "nb_hist": [
+        17875,
+        2499,
+        679,
+        269,
+        424,
+        120,
+        22
+      ],
+      "multi_block_groups": 4013,
+      "max_blocks_per_group": 43,
+      "hot_reads": 94803,
+      "checksum": 2527145298674069018
+    }
+  ],
+  "shape": {
+    "pairs": [
+      {
+        "baseline_substr": "find_impl<true, false>",
+        "candidate_substr": "find_impl<true, true>",
+        "baseline": {
+          "symbol": "validation::Result validation::Region::find_impl<true, false>(std::basic_string_view<char, std::char_traits<char> >, validation::Mode, validation::Region::Located*) const [clone .isra.0]",
+          "instructions": 1308,
+          "div_total": 1,
+          "div_mnemonics": [
+            "div"
+          ]
+        },
+        "candidate": {
+          "symbol": "validation::Result validation::Region::find_impl<true, true>(std::basic_string_view<char, std::char_traits<char> >, validation::Mode, validation::Region::Located*) const [clone .isra.0]",
+          "instructions": 1253,
+          "div_total": 0,
+          "div_mnemonics": []
+        },
+        "div_delta": 1,
+        "eliminated_any_div": true
+      }
+    ],
+    "eliminated_any_div": true
+  }
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "corpus": "mixed",
+    "backend": "context16",
+    "process_medians": [
+      0.9613017921089997,
+      0.8295055059636376,
+      0.9232931203481023,
+      0.9729831929333097,
+      0.9142524294733457
+    ],
+    "median": 0.9232931203481023,
+    "minimum": 0.8295055059636376,
+    "maximum": 0.9729831929333097,
+    "faster": 5,
+    "auxiliary_bytes": 1600,
+    "global_prefix_bytes": 0,
+    "route_checks": 141558,
+    "queries_checked": 10000
+  },
+  {
+    "corpus": "mixed",
+    "backend": "lits",
+    "process_medians": [
+      0.9848420866259651,
+      0.9639741777472318,
+      1.0475690674367875,
+      1.016360793381744,
+      0.9931722751189348
+    ],
+    "median": 0.9931722751189348,
+    "minimum": 0.9639741777472318,
+    "maximum": 1.0475690674367875,
+    "faster": 3,
+    "auxiliary_bytes": 1600,
+    "global_prefix_bytes": 0,
+    "route_checks": 141558,
+    "queries_checked": 10000
+  },
+  {
+    "corpus": "skew",
+    "backend": "context16",
+    "process_medians": [
+      1.0591879611697326,
+      1.0136377505646166,
+      1.112510490491394,
+      0.973432315155849,
+      1.0229457955801557
+    ],
+    "median": 1.0229457955801557,
+    "minimum": 0.973432315155849,
+    "maximum": 1.112510490491394,
+    "faster": 1,
+    "auxiliary_bytes": 1600,
+    "global_prefix_bytes": 30,
+    "route_checks": 141558,
+    "queries_checked": 10000
+  },
+  {
+    "corpus": "skew",
+    "backend": "lits",
+    "process_medians": [
+      0.9829911222292927,
+      1.0031119684328824,
+      0.9906888720995464,
+      1.058075127273427,
+      1.0301406113585319
+    ],
+    "median": 1.0031119684328824,
+    "minimum": 0.9829911222292927,
+    "maximum": 1.058075127273427,
+    "faster": 2,
+    "auxiliary_bytes": 1600,
+    "global_prefix_bytes": 30,
+    "route_checks": 141558,
+    "queries_checked": 10000
+  },
+  {
+    "corpus": "tranco",
+    "backend": "context16",
+    "process_medians": [
+      0.6928590792074303,
+      0.7172966465111134,
+      0.7128085312021213,
+      0.771007507614694,
+      0.7006418836939284
+    ],
+    "median": 0.7128085312021213,
+    "minimum": 0.6928590792074303,
+    "maximum": 0.771007507614694,
+    "faster": 5,
+    "auxiliary_bytes": 3136,
+    "global_prefix_bytes": 0,
+    "route_checks": 273078,
+    "queries_checked": 10000
+  },
+  {
+    "corpus": "tranco",
+    "backend": "lits",
+    "process_medians": [
+      0.8128024472793105,
+      0.6389738368941517,
+      0.7661273601463403,
+      0.7323488342485598,
+      0.7011443535410324
+    ],
+    "median": 0.7323488342485598,
+    "minimum": 0.6389738368941517,
+    "maximum": 0.8128024472793105,
+    "faster": 5,
+    "auxiliary_bytes": 3136,
+    "global_prefix_bytes": 0,
+    "route_checks": 273078,
+    "queries_checked": 10000
+  }
+]

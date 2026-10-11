@@ -1,0 +1,43 @@
+=== C2: shrink-to-peak, new-peak rate vs reclaimable Term A ===
+
+--- mixed (non-empty population) ---
+workload phase         frac   cap_bytes   A_bytes  iv_peaks iv_capchg iv_peak_copy  iv_cc_copy extra_MB
+replace  before        0          44208      9408       506       316      104064       33696     0.07
+replace  short_term    0.25     2604960    716640     35936     10264    24385056     2432160    20.94
+replace  short_term    0.5      5583456   1493712     39901     16883    68116848     2692320    62.39
+replace  short_term    1       13435824   3682752    112573     16378   758239584     7592544   715.87
+replace  past_one_full 2       17491920   5030256     55864     11558    36200832     4028976    30.68
+decline  before        1          44208      9408       506       316      104064       33696     0.07
+decline  short_term    0.75      439488    123360      5587      1345     4054368      382128     3.50
+decline  short_term    0.5       835248    226176      5864       585    10040976      384288     9.21
+decline  past_half     0.25     1939632    486576     13637      2519    38099760      914976    35.46
+  replace MAINTENANCE TOTAL: peaks=244274 (shipped growth=55083, extra=189191) copy=845.9 MB (shipped 16.0 MB, EXTRA 829.9 MB) vs reclaimable A=4.80 MB at the end
+  decline MAINTENANCE TOTAL: peaks=25088 (shipped growth=4449, extra=20639) copy=49.8 MB (shipped 1.6 MB, EXTRA 48.2 MB) vs reclaimable A=0.46 MB at the end
+
+--- skew (non-empty population) ---
+workload phase         frac   cap_bytes   A_bytes  iv_peaks iv_capchg iv_peak_copy  iv_cc_copy extra_MB
+replace  before        0         102000     18768      1093       709      228048       71232     0.15
+replace  short_term    0.25     4212048   1245840     59630      3195   470038656     4089312   444.36
+replace  short_term    0.5      8486688   2537760     61661      3737   417024336     4251648   393.65
+replace  short_term    1       17363232   5380128    124279      9632   642967536     8807760   604.78
+replace  past_one_full 2       17811024   5512128      6502       734     9045696      444096     8.20
+decline  before        1         102000     18768      1093       709      228048       71232     0.15
+decline  short_term    0.75      991344    274368     12397      3730     7557984      850656     6.40
+decline  short_term    0.5      1933920    534720     13560      1925    18567840      911232    16.84
+decline  past_half     0.25     3964464   1147824     29080      3374    70388448     2008944    65.21
+  replace MAINTENANCE TOTAL: peaks=252072 (shipped growth=17298, extra=234774) copy=1467.8 MB (shipped 16.8 MB, EXTRA 1451.0 MB) vs reclaimable A=5.26 MB at the end
+  decline MAINTENANCE TOTAL: peaks=55037 (shipped growth=9029, extra=46008) copy=92.0 MB (shipped 3.6 MB, EXTRA 88.4 MB) vs reclaimable A=1.09 MB at the end
+
+--- tranco (non-empty population) ---
+workload phase         frac   cap_bytes   A_bytes  iv_peaks iv_capchg iv_peak_copy  iv_cc_copy extra_MB
+replace  before        0         101664     18624      1116       741      228960       72192     0.15
+replace  short_term    0.25     2297136    677616     31510      3216    80629344     2171472    74.82
+replace  short_term    0.5      4417296   1304832     30518      3358    68280288     2092080    63.12
+replace  short_term    1        8640624   2538336     61122      6622   151525248     4167360   140.53
+replace  past_one_full 2       13528128   4109712     66809     11820    71320512     4778208    63.46
+decline  before        1         101664     18624      1116       741      228960       72192     0.15
+decline  short_term    0.75      358416     82272      3298      1749      942240      221952     0.69
+decline  short_term    0.5       705744    173904      5064      1738     2117616      334704     1.70
+decline  past_half     0.25     1443456    393168     10651      1827     8798208      730512     7.69
+  replace MAINTENANCE TOTAL: peaks=189959 (shipped growth=25016, extra=164943) copy=354.5 MB (shipped 12.6 MB, EXTRA 341.9 MB) vs reclaimable A=3.92 MB at the end
+  decline MAINTENANCE TOTAL: peaks=19013 (shipped growth=5314, extra=13699) copy=11.3 MB (shipped 1.2 MB, EXTRA 10.1 MB) vs reclaimable A=0.37 MB at the end

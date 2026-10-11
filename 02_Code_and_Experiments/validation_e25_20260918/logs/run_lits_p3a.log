@@ -1,0 +1,3 @@
+lits sweep run_id=p3a  2026-09-22 22:43:41
+phase mech: target=diag_lits_adapter reps=1 (phase table) processes=1
+    rep 0 arm order: 0 1 2

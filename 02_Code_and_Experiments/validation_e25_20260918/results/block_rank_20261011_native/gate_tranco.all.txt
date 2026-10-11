@@ -1,0 +1,7 @@
+{"phase":"long_keys","keys":128,"key_bytes":4096,"prefix":4032,"segments":8}
+{"phase":"mapping","keys":262144,"regions":128,"keys_compared":262144,"mismatches":0,"order_descents":0,"probes":12288,"probe_mismatches":0}
+{"phase":"semantics","keys":262144,"finds":524288,"queries":10000,"ops":3128,"after_writes":263644,"scan_records":263644}
+{"phase":"refusals","cases":3,"refused":3}
+{"phase":"negative_control","clean_descents":0,"clean_misses":0,"clean_scan_disorder":0,"rotated_descents":2,"rotated_misses":8192,"rotated_scan_disorder":2,"keys":8192}
+{"gate":"check_block_rank","kind":"tranco","keys":262144,"regions":128,"regions_fitted":128,"regions_boundary":0,"segments_total":1023,"keys_fitted":262144,"keys_boundary":0,"mapping_compared":262144,"mapping_mismatches":0,"order_descents":0,"probes":12288,"probe_mismatches":0,"keys_found":787932,"key_mismatches":0,"queries":10000,"query_mismatches":0,"ops":3128,"op_mismatches":0,"scan_records":263644,"scan_mismatches":0,"boundary_cases":4,"neg_descents":2,"neg_misses":8192}
+check_block_rank PASS: tranco 262144 keys, 128/128 regions fitted, 262144 keys compared against the contract reference, 10000 queries, 3128 writes

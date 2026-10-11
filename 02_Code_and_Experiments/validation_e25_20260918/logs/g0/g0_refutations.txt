@@ -1,0 +1,287 @@
+REFUTATION REPORT -- every completion claim that did NOT survive
+============================================================================================================
+
+## A-0-2   (4 of 6 claims fell)
+
+  * §0 优先级表 P0 第 2 行：冻结版与 ART 的同轮基准、插入失败分层
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      ①实现归属错：审计把 diag_transfer.cpp 说成也做「只读试放 Region::trial_place」。全目录 grep trial_place 只有 diag_overflow.cpp 命中（diag_overflow.cpp:195-199 读 trial.f1_fits / trial.f2_budget_suffices / trial.refused_by_*）；diag_transfer.cpp:1-25 自述回答的是另一个问题（替换键是否换逻辑组，E26 诊断的「第一步」）。trial_place 本体在 index.hpp:3540，F0/F1/F2 注释块在 3511-3517（且 F3 全代码只在注释里被提到，没有实现）。②证据计数错：审计写 results/main/transfer_diag.jsonl「6 条」，文件实为 24 行（3 语料 × same/grow × 4 个 frac 检查点，cat 可见 frac 0.25/0.5/1/2）。RESULTS_E28.md §6 也是「6 条」，属陈旧数。③本行自己的「进入下一步条件」（知道压力发生在哪些组与子块）被审计的 cove
+
+  * §0 优先级表 P1 主线：单子块后缀整理
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      实现与触发统计我核过、是对的：subblock_reclaim 在 index.hpp:3262、3345 被真实读取（字段声明在 695，非仅声明）；first_candidate index.hpp:1663、repack_subblock index.hpp:1685、switches.hpp 四张表 46/69/87/118 全部对得上；审计引的 E28 F1「80%–95%（same 63%–92%）」也成立——results/main/overflow_diag2.jsonl 里每一行 ov_F1_rank_fits 与 ov_F1_fits_after_tidy 完全相等，所以「按序选中子块」与「任一候选」在该数据上同值，口径没错。但支撑该状态的证据全部绑在已被取代的源码上：分支非空性断言门 check_e31 构建于 2026-09-21 11:28:55 UTC（g0_evidence_timeline.txt:36），源哈希对不上（g0_build_drift.txt:57）→ DRIFT；计时 bench_long（09-20 07:09:37）与 bench_long_art（09-20 07:44:
+
+  * §0 优先级表 P1 条件分支：有界迁回既有溢出
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      实现核对通过：overflow_migrate 在 index.hpp:3285、3365 被真实读取（声明 745）；drain_overflow_bounded index.hpp:1725、kMigrateBudget=64 index.hpp:1714、调用点 2526/3287/3367、OverflowList::erase_positions index.hpp:1202、只读诊断 diag_migration_scan index.hpp:2400 全部存在。但有三处不成立于该状态：①审计写的证据路径 logs/check_migrate_* 不存在——logs/ 下只有 build_check_migrate.json，没有任何 check_migrate 运行日志（同类文件只出现在审计之后才生成的 logs/g1_rerun/ 下），「三数据集 pass」没有给出可查的运行记录。②「NOW 全 0」与数据不符：results/main/e37_feasibility.txt §1 里 NOW可迁 在 tranco same B 为 547/1258/2334/928、tranco grow B 为 957
+
+  * §1.3 当前可用证据与限制：不得把 E21/E25/E26/E29 的比值拼成「最终版 vs ART」总成绩
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      该条点名的对象是 E21/E25/E26/E29 的比值，但审计给的三处证据全在 E29 之后：RESULTS_E31.md §3.3/§4.3/§5、RESULTS_E37.md §10、RESULTS_E38_P3.md §0；其 coverage 栏也自认「未审计 E21–E29 全部报告是否符合该限制」。即被点名的那四轮一条也没核，状态却记「已完成并采用」，证据与条目对象错位。另：引用的 RESULTS_E31.md §4.3 不存在——该文件 §4=「与 ART 的同轮对照」(:185)、§5=「查询侧」(:215)，没有 §4.x/§5.x 子标题；相关两句话在 RESULTS_E31.md:211（「不与 E22 的绝对值相减或拼接」）与 :223（「代价与收益不能相加」），都在 §4/§5 正文而非 §4.3/§5。
+
+
+## A-3   (2 of 7 claims fell)
+
+  * §3 I1（同一键构建/查找同一逻辑组；逐键对比放置组与查询组，含未命中新键）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      打开它引用的每个 file:line 后，实现描述在 I1 最要紧的那条轴上就是错的。index.hpp:4429 是 Index::insert 的函数定义行，它调用 locate(key)（4430）和 Region::insert（4443），并不调用 canonical_group；canonical_group 的实际调用点只有 3337/3432/3464（Region 写路径）、3817（Region::scan 起点）、3655（diag_group），加上构建期的 2110/2191/2214。更关键：点查路径根本不用 canonical_group——find_impl（index.hpp:2911）走 predict_for（:2920），predict_for 在 :1483 调 model_.predict<Hash>(suffix, groups_, mode.route, fp)，而 canonical_group（:1450）调 model_.predict<false>(..., config_.canonical, dummy)。两者是不同函数、不同模板实参、不同 route 参数，只靠 
+
+  * §3 I6（标签与键字节/哈希上下文一致；构建/移动/查询分别核对；碰撞仍需完整判等）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      两处硬伤。(1) 引用了不存在的原始数据：logs/check_tag_store_*.log 在整个工作区里没有（find 全库 *tag_store* 只得到 check_tag_store.cpp、build/check_tag_store.exe、build/check_tag_store.built.json、logs/build_check_tag_store.json；logs 下与 tag 有关的只有 run_tag.log 与 run_scan_tag.log，两者都是 bench_lits_adapter/bench_tag 的驱动日志，不是这个门）。也就是说 check_tag_store 只有 LIVE 构建记录、没有留存的运行记录，它的『pass』只能靠 RESULTS_E36.md/§E38 的转述。(2) 关于 LITS 那一半的断言描述是错的：check_lits_fingerprint.cpp 里 `const std::uint32_t fp_consumed = 0;` 是第 130 行**硬编码的常量**，随后只做 fresh.tail(suffix.substr(0)) 并要求等于存
+
+
+## A-4   (8 of 9 claims fell)
+
+  * [0] §4.1 correctness 构建：功能与结构验收（断言/参考表/结构遍历，可用时 ASan/UBSan）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      对的部分我核过了：check_freeze/check_overflow_store/check_tag_store/check_scan_contract 与 8 个 san_* 在 logs/build_*.json 里确为 LIVE（results/main/g0_build_drift.txt）;check_freeze.cpp:44、check_overflow_store.cpp:21、check_tag_store.cpp:23、check_scan_contract.cpp:81 的确各有独立 std::map 参考表;results/main/sanitizer_runs.jsonl(7 行)/sanitizer_runs_e38.jsonl(9 行)存在。但有硬伤：(a) item 写的『tools_build.py 的 COUNTER_TARGETS』在文件里不存在——只有 EXTRA(tools_build.py:78-162)与 SAN_TARGETS(63-75)，该符号名是编的;(b) 『本机无 libasan，只在有 clang++ 的环境跑』与构建记录矛盾:logs/build_san_ch
+
+  * [1] §4.1 diag 构建：执行工作量与空间核算（比较字节/复制量/分配配对/失败分类/可用硬件计数）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      实现核对通过:index.hpp:225-400 的 validation::e25::Counts 确在 -DE25_DIAG 下编译、关闭时展开为 no-op(index.hpp:395-400)，index.hpp:223 注释『Never on a timing path』;计数器确有读点(E25_INC(locate_calls)@4174、E25_INC(predict_calls)@872、fp_hash_bytes@485/507、place_fail_slots/bytes@1632-1633、string_allocs@1861、string_frees@1786/2892/3494);results/main 下 e25_calls.jsonl 等六个文件都存在。但两项不成立:①原任务该行明列『可用硬件计数』，全树 grep perf_event/PAPI/rdtsc/__rdpmc/perf_counter 零命中——该内容完全缺失(item 自己在 coverage 也承认);②item 引的 diag 记录全部 DRIFT:g0_build_drift.txt 列 diag_e25_calls/d
+
+  * [2] §4.1 timing 构建：正式性能，只留算法必需判断与元数据，关闭纯诊断计数与内存包装
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      计时构建确存在:bench_e25.cpp:3-5 写明 CLEAN TIMING BUILD;logs/build_bench_e25.json 的 extra_flags=[];E14_PHASE(index.hpp:402)与 E30_TIME(index.hpp:98)确是显式计时窗口。但 item 的实现断言『bench_* 不定义任何计数宏』是假的:logs/build_bench_repack.json 的 extra_flags=['-DE30_TIME','-DE25_DIAG'](tools_build.py:136)，bench_repack 属 bench_* 却带诊断计数;diag_lits_adapter_m 也是 bench_lits_adapter.cpp 的双目标之一。且 item 列出的 bench_e25/bench_e26/bench_long*/bench_tag/bench_migrate/bench_prefix 计时记录在 g0_build_drift.txt 中全部 DRIFT，只有 bench_lits_adapter 绑当前源码——历史绝对耗时不得当当前成绩(判定纪律明写
+
+  * [4] §4.3 覆盖 update_existing/insert_absent/重复插入/upsert_hit,miss/erase_hit,miss/删除后补入；语义与基线对齐
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      实现核对通过:diag_e25_calls.cpp:216-277 对 update/erase/insert/upsert 逐 API×category 运行并断言语义(254 行新键插入必须成功、260 行重复插入 dup!=0 即报错、269/275 行 upsert 命中/新键语义);check_e25_write.cpp:103-111 确用 e25sw::require_only_switches_differ 钉两臂;bench_e25.cpp:184,190 确有 replace(一删一插)，e25_calls.jsonl 实为 93 行(已核对)。但 item 的第一手证据全部 DRIFT:e25_calls.jsonl 由 09-18/09-19 二进制产出(g0_build_drift.txt:diag_e25_calls DRIFT，changed index.hpp,native_e22.hpp)，check_e25_write 也 DRIFT(check_e25_write.cpp 未变但 index.hpp/switches.hpp 变了)。09-23 的 g1_rerun 只重跑了 check
+
+  * [5] §4.3 每操作记录项1：定位/预测次数、哈希字节、完整比较次数与字节
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      实现核对通过:index.hpp:229-235 定义 locate_calls/predict_calls/fp_hash_bytes/cmp_calls/cmp_bytes;diag_e25_calls.cpp:190-214(emit lambda)逐条 emit 这六列;『指纹记在喂进哈希的字节层』的说明确在 index.hpp:211-217 与 diag_e25_calls.cpp:19-22;E25_CALLS.md:15-33 的列说明也在。但证据 results/main/e25_calls.jsonl 由 09-19 之前的二进制产生(g0_build_drift.txt:diag_e25_calls DRIFT)，且 G1 未重跑 diag_e25_calls 目标——所以『V0/V1/V2 三变体×三数据集』的六列计数目前不绑当前源码。item 自己在 coverage 也承认 DRIFT，却又给『已完成并采用』。
+
+  * [6] §4.3 每操作记录项5：每次维护处理的记录数、实际回收量、是否使当前插入成功
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      计数器与读点确在:compact_records_replayed 在 index.hpp:1904 被 E25_ADD、compact_garbage_before@1903、compact_helped@3278/3361、compact_no_help@3295/3375、E31 的 subblock_reclaim_helped@3266/3349;index.hpp:253-258 的注释(『did not enable this placement 不等于没有价值』)也确存在。但原任务要求的三项里『实际回收量』没有真正落地:只有回收前垃圾 compact_garbage_before(before)，没有回收后剩余或净回收量——item 自己在 coverage 里写明了这条缺口。证据 e26_diag.jsonl(12 行)与 long_*.jsonl 全部来自 built<09-22 12:51 的二进制(g0_build_drift.txt:diag_e26 与 diag_long 均 DRIFT)，G1 未重跑它们。要求少一列+证据 DRIFT。
+
+  * [7] §4.3 同一失败不先归单因；后续另给互斥的『最小成功修复级别』
+      原判 已完成并采用  ->  部分完成   [wrong]
+      前半成立:diag_overflow.cpp:193-194 确分别计 refused_by_bytes 与 refused_by_slots(不强归单因)。后半不成立且与 item 自己的陈述冲突:原任务要求『互斥的』最小成功修复级别，而 DiagOverflow 的 F0/F1/F2 是嵌套可行性计数(diag_overflow.cpp:7-13 自述为 F0/F1/F2 可行性问句)，item 自己在 coverage 里写『F 层是嵌套可行性计数，不是严格的首个成功层→互斥分类』、『F3 未实现』。MODEL_AND_MAPPING.md:158 更明确:『F3 本身未实现』『F0-F3 实际覆盖的约束只有两条……跨组与区域级容量错配未被任何一层覆盖』——item 引的 MODEL_AND_MAPPING.md:150『已做(名为 F0-F3)』与该文件 158 行自相矛盾。证据 overflow_diag.jsonl(24 行)/transfer_diag.jsonl(24 行)来自 built<09-22 的二进制(g0_build_drift.txt:diag_overflow/diag_transfer 均 
+
+  * [8] §4.4 溢出空间分列：活跃描述符、容器保留容量、字符串分配、元数据；SSO 与堆分开不重复计费
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      列确有:diag_ov_cost.cpp:308-330 计算、374-397 落盘 ov_rec_bytes/ov_size_mean,max/ov_containers/ov_containers_ge_*/ov_suffix_sso_inline,heap/ov_sso_char_bytes/ov_heap_char_bytes;index.hpp:1260-1265 的 container_slot_bytes()、1273-1283 的 allocated_bytes()、2541-2546 的 memory_breakdown 并入 m.overflow 确存在(SSO v<=15 内联、否则堆，避免重复计费这点是真的)。但原任务明列四列含『元数据』，而容器元数据未分列:container_slot_bytes()(index.hpp:1260-1265)把 store_ 槽位、order_、free_slots_ 合成一个数再并进 capacity，item 自己承认『元数据分列不清晰』。此外 ov_rec_bytes 只是描述符的元素尺寸(sizeof OverflowRecord)，『活跃描述符』的字节量要
+
+
+## A-5   (2 of 2 claims fell)
+
+  * §5 表 L221 A0 原路径：不改变状态，全部保持；要回答"是否真的是失败事件"。
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      逐条核过，实现与数据都在，但"已完成并采用"不成立。 (1) 点位真实：index.hpp:3522 确有 f0_fits 声明，3562–3571 的 consider() 确在每个候选上按 slot_ok/bytes_ok 置位并统计 refused_by_slots/bytes。但 f0_fits 只在 3569 被写，全仓 grep（*.cpp/*.hpp）无任何读取点——diag_overflow.cpp 只读 refused_by_bytes/refused_by_slots（193–194 行）。把 TrialPlace::f0_fits 列作 A0 的"F0 实现"是虚指；A0 的结论实际只由 overflow_landed 与 refused_by_* 两个计数器支撑。 (2) 证据绑在已被取代的源码上：logs/build_diag_overflow.json 的 build_id 解出 2026-09-20 05:00:20，而 index.hpp 现为 09-22 12:51:49（g0_evidence_timeline.txt:6/68），g0_build_drift.txt:75 亦判 diag
+
+  * §5 表 L222 A1 本子块整理：仅回收合法目标子块的后缀垃圾，保持记录归属、槽数、块大小、映射；要回答"单块碎片是否足以解释失败"。
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      实现与部分证据经核实为真，但"已完成并采用"与自身覆盖栏矛盾且证据为 DRIFT。 (1) 点位与数字真实：index.hpp:3523 f1_fits、3527 f1_rank_fits、3573–3590 F1 块；diag_overflow.cpp:195–196 确实读这两个字段。overflow_diag2.jsonl 28 行，我逐行比对 28/28 行 ov_F1_fits_after_tidy == ov_F1_rank_fits，与 E30 的"任意候选版与 rank 版逐格数值完全相同 92%／81%／80%"（EXPERIMENT_INDEX.md:62、RESULTS_E30.md:12/46–48）一致；E28 的 F1 80%–95%／same 63%–92% 也能在 overflow_diag.jsonl 里复算。这些引用无误。 (2) 同样 DRIFT，且诊断代码自身在 E28 之后被改：diag_overflow 构建于 09-20 05:00，index.hpp 09-22 12:51；RESULTS_E30.md:40–42 明说 E28 那时的 f1_fits 是"对每个候选置位"，为
+
+
+## A-6   (2 of 4 claims fell)
+
+  * [1] §6.1 检验命题：能否把『为了一个插入而重放整个组』改成『只复制目标块内的活跃后缀』；尚不能承诺它一定胜过冻结版
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      此行整条命题就是一个量化对照，而它引用的全部量化证据都绑在已被取代的源码上，当前树上没有任何一次重测。(1) 构建身份：build_bench_long.json 与 build_bench_long_art.json 的 index.hpp=61b04f19a38be71339b4995b296531f19c7ffab6b7515aa1525e39c7350debc5，当前 index.hpp=587172d2a6c970b93b7b09da4c229bad285cf86afb29ca0a32cc142124759018；g0_build_drift.txt 第 33-34 行明列 bench_long 8/10、bench_long_art 9/11，changed index.hpp,switches.hpp。(2) 这两个是这个检验命题的唯一端到端装置（grep 全树，bench_long/bench_long_art 没有 san_ 对应物，也无 g1 重测日志；g0_inherited_gates_rerun.txt 只重跑了 check/check_e8/e15/e16/e19/e20/e9/e11 八个门，不
+
+  * [3] §6.4 首轮不同时增加节流；失败缓存不能简单缓存『这个块失败过』，也不先拍定『每 100 次操作才整理一次』
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      行内断言分成两半：机制侧我核过属实，但把整行闭合为『负结果』的那一步只有 DRIFT 证据。(1) 属实的一半：reclaim_hysteresis/reclaim_skip_repeat 默认 false（index.hpp:705/712），reclaim_gated()/reclaim_allowed()（3225-3247）确实分别实现『间隔且垃圾未增长』与『只看垃圾增长』，间隔常量 kMinReclaimGap=64（1324），粒度按组（reclaim_last_op_[g]/reclaim_last_garbage_[g]，1316 行邻域），未缓存『这个块失败过』；bench_long_hyst.cpp:169-171 用 require_only_switches_differ 分别钉住 C2↔E31(subblock_reclaim)、E31↔E31H(reclaim_hysteresis)、E31↔E31P(reclaim_skip_repeat)，臂序真轮换（bench_long_art.cpp:206-209 的 order[]={r%5,...}，我在 grep 失败后打开源码确认）。这些都在当前
+
+
+## A-7   (5 of 6 claims fell)
+
+  * [0] §7.1 有界迁回机制 drain_overflow_bounded + 首版只选一种触发位置
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      四项实查。(1) 任务书第一个设计要点是“根据子块键范围在有序溢出中定位候选，不每次遍历全部溢出”。代码不是这样：drain_overflow_bounded 的主循环是 index.hpp:1749 `for (std::size_t j = 0; j < n && pos.size() < budget; ++j)`，逐条从容器 0 号扫到 n 号，再对每条调 diag_target_with（index.hpp:1758）求目标子块——即每次调用都按容器规模线性遍历，RESULTS_E37.md §10 自己也写“成本是 O(容器的候选遍历)”。implementation 栏“按子块键范围在有序溢出中定位候选”与代码不符。(2) 任务书“明确每次最多检查多少候选、复制多少字节、迁回多少条；跳过放不下的记录也消耗预算”：代码只限“迁回条数”(kMigrateBudget=64, index.hpp:1714)，候选数只受容器大小约束，index.hpp:1760 `if (blk == SIZE_MAX) continue;` 不递增 pos，即被跳过的记录不耗预算——与任务书这一句相反。(3) 正确性证据未绑在当前源
+
+  * [1] §7.1 验收口径（候选搜索、溢出删除搬移、保留容量是否释放、点查与扫描变化）
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      任务书这一条明列四项必须计入：候选搜索、溢出删除搬移、保留容量是否释放、点查与扫描变化。实查 RESULTS_E37.md 全文，“保留容量”出现 0 次（grep -c 于 RESULTS_E37.md、results/main/e37_analysis.txt、results/main/e37_feasibility.txt 均为 0），agent 的 coverage 栏也自认“保留容量是否释放未单列为一项”。候选搜索与溢出删除搬移也没有作为独立行进入 §8.1 验收表（该表只有 完整维护 R1/R0、R1/B、点查 R1/R0、R1/B、常驻空间 R1/R0、尾延迟 p99、扫描 七行）；results/main/e37_analysis.txt 里没有“候选/搜索”段，analyze_migr.py 只有 load/ratio_block/queue_block/scan_section/repair_section 五个函数。二者只在 §10 以解析式（O(容器) 候选遍历＋O(容器) 单趟压缩＋O(迁回字节)）一笔带过，不是“计入”。四项里至少一项完全没有、两项没有独立测量，验收口径这条不成立。另：验收侧程序 
+
+  * [2] §7.1 第二种实验“修复旧状态”：不维护／局部整理／有界迁回三臂
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      任务书原文要求：先用冻结版生成 200% 快照，“再分别不维护、局部整理、有界迁回”三种处理。实查 RESULTS_E37.md §9 只有“修复前/修复后”两态（表列：修复前溢出、修复后溢出、取出、放置成功、被退回、修复耗时），没有“不维护”与“局部整理”两个独立臂。而且快照不是在冻结版上生成的：§9 表里 mixed/same 修复前溢出 39,878，正是 §1 中 S 臂（冻结＋subblock_reclaim）的值，而冻结臂 B 是 128,533——即快照底座是 E37 的 S 臂（已开 subblock_reclaim），比“不维护”多了局部整理。所以“不维护 vs 局部整理 vs 有界迁回”三态被压缩成两态、且起点还不是任务书指定的冻结版。agent 的 coverage 栏已承认“尚未覆盖：明确的局部整理单独臂……三态只呈现为前/后两态”，但仍给“已完成”。按 status 取值表，缺任务书规定的实验臂属于“部分完成”。
+
+  * [3] §7.5 入口证据：局部整理后，替换仍主要消耗在溢出的插入/删除搬移/字符串分配而非主块维护
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      任务书这一条是“入口证据”（进入 §7.5 的前置判据），被审的清单原话是“确认溢出向量的移动／构造／分配仍占主要时间”。实测数字（RESULTS_E32.md §4：溢出向量占维护时间 37.6%/37.3%/12.2%，来自 results/main/ov_cost_diag.jsonl，24 条）显示溢出是维护时间的少数而非多数，主块路径占 62.4%–87.8%——E32 却写“前置条件成立”。任务书列举的三个成本成分里，“字符串分配”从未与字节搬移分离（agent 的 coverage 自认：“未把‘字符串分配’成本与‘字节搬移’分离”），而它正是判据三个成分之一。另外构建身份：logs/build_diag_ov_cost.json 记录的 index.hpp 是旧哈希，diag_ov_cost 在 g0_build_drift.txt 的 DRIFT 段——这条结论的测量不绑在当前源码上。判据本身未被满足、命中成分未被分离、证据为 DRIFT，三理由都不支持“已完成并采用”。（附带更正：agent 的 coverage 说“grow 模式未测”不准确——ov_cost_diag.jsonl 里 mode 取值集
+
+  * [5] §7.6 点查入口证据：核实 E11/E13 子块范围定位是否实际启用
+      原判 已完成，负结果或条件性候选  ->  部分完成   [wrong]
+      这一条的核心断言被代码直接否证。agent 的 implementation 写“E11/E13 的边界目录定位已存在并被默认路径使用”，但：(a) Mode::locate 默认就是 false，注释原文“Off by default, so the path is bit-identical to E10 unless a caller asks for it”（index.hpp:554-557）；(b) 写路径的 locate 字段来自 config_.write_locate，而 Config 默认 write_locate=false（index.hpp:657），switches.hpp 的白名单与 baseline_config/pin_frozen_switches 都不设置它——grep write_locate 在 switches.hpp 与全部 51 个 .cpp 里 0 命中，即所有配置下它恒为 false；(c) dirs_ 在整份 index.hpp 里只为“定位”被读两处：index.hpp:2975（`if (mode.locate && has_dir(g))`）与 index.hpp:
+
+
+## A-8-9   (8 of 14 claims fell)
+
+  * [1] §8.2 LITS 另立适配线
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      命名分离属实（original 8 文件含 lits_node.hpp；safe 3 文件；md5 显示 base/gpkl 两份逐字相同、model 两份不同；build_check_lits_model.json 只收 safe 三文件）。但 coverage 的『原生模型语义验证』夸大：check_lits_model.cpp:7 自述 reference 是 transcription 非第二实现、与适配器共用同一 getPos/getCdf；RESULTS_E38.md §7 自认『只证明适配，未独立验证 LITS 算法本身』，§5.3 登记 NonFinite 未触发。该限制未进未覆盖栏。
+
+  * [3] §9.1 BASE 五项显式＋R1，SA0 核对
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      五项与 R1 确显式（switches.hpp:64-68、:37-38），check_freeze LIVE 14/14。但任务该行要求『显式写出全部开关』：compact_repack_budget（E29 C3，index.hpp:683 声明、:3209 读）在 baseline_config（switches.hpp:41-52 无）与 pin_frozen_switches（:64-76 无）里都没写，只出现在 switches() 与白名单；该开关的默认值翻转仍能移动基线与冻结条件而不被察觉。
+
+  * [4] §9.1 迁移/相邻重分配作独立变体，沿用 require_only_switches_differ 一类检查
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      白名单确为 14 项含 model_backend（switches.hpp:117），switches() 在 :81-97。但 claim 自认『任务书点明的这一处仍空着』：offset_directory/write_simd/write_locate 既不在白名单也不在非开关相等断言（:138-143 只比 block_bytes/slots/model_kind/multiblock/reuse_group_ids/ov_threshold），故两臂若只差这三者会静默通过——正是该检查要防的塌成一个实现。既然仍空着，状态不应是已完成并采用。
+
+  * [5] §9.1 新子块策略不得被旧触发条件挡住，须事件断言验证
+      原判 已完成并采用  ->  已完成，负结果或条件性候选   [downgraded]
+      事件断言确有（check_e31.cpp:224-232 断言 subblock_reclaims>0，需 -DE25_DIAG；build_san_check_e31.json 带该宏且 LIVE）。但 E31 的 subblock_reclaim 是明确未采用的候选（RESULTS_E31.md:240『默认仍为 false』；FINAL_RESULTS_TABLE.md §5b『候选机制（未采用；开关默认关闭）』），属分类表另一格；且被引用的计数 12.8万-25.6万/20.4%-67.2% 出自 DRIFT 的 check_e31 运行，唯一 LIVE 重跑（san_check_e31）只覆盖 mixed/131072。
+
+  * [6] §9.1 非本轮变量固定；影响他项者应称组合改造
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      E31:240、E36:24/:136 确写固定变量；但被引的 E34 §4『适用边界』（:260-281）与 E37 §10 里都没有『模型/容量规划/主块预算未动』这类声明（E34 的声明在 :7，内容是两臂只差一个开关），证据位置不支持结论。更关键：全仓 RESULTS_E34/E37/E38/E38_P3 检索『组合』或『组合改造』零命中，而 E38 的 LITS 臂同时改了 model_backend 与区域级回退策略（RESULTS_E38_P3 §5.2 自认改了覆盖范围），任务要求的『明确称为组合改造』未做。
+
+  * [8] §9.2 周期=2 操作，报告周期数/操作数/活跃数
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      替换=erase+insert 且活跃数每段与参考表核对属实（bench_long_art.cpp 段内 seg、live 对 ref.size() 的检查）。但 claim 引的 LOG.md:144 是 E25 轮（短期替换）的记录（e25_time.jsonl 行内确有 cycles/ops/live 字段），而长期替换的原始记录 results/main/long_replace_same.jsonl 首行的键集合只有 cycles/live，没有 ops；RESULTS_LONG.md/E26_LONG.md 也检索不到『操作数』。因此『未覆盖：无（形式满足）』不成立，且 bench_long_art 的构建为 DRIFT。
+
+  * [11] §9.3 诊断与计时分离，若同进程采样须一致预热
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      分离本身属实：logs/build_bench_lits_adapter.json 与 build_diag_lits_adapter.json 的编译命令对照，一个无、一个带 -DE25_DIAG 与差分计数。但被引的『RESULTS_SUMMARY.md §3.5 工具段』不成立：§3.5（:146-171）是 O1 溢出容器一节，讲的是搬动字节与验收表，没有工具段；工具段在 §3.6 的 :320，而 clean/diag 一源两目标的证据在 §3.6 的 :297 与 E36 §0。引用位置与结论不符。
+
+  * [13] §9.5 同重复内配对比值，报每进程比值/极值/胜出数/绝对耗时
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      配对、逐进程中位数、噪声底、方向计数、绝对耗时都在（analyze_lits.py:70-95 只按 (run_tag,rep) 配对、noise=max/min）。但任务该句还要求『同时报告每个进程的比值』，analyze_lits.py:98-103 的 fmt() 只打印中位数/方向/range/噪声，不逐进程打印；results/main/e38_p3_analysis.txt 全文亦只有 range x-y，无五个进程各自的比值（analyze_e31.py 才有 per-process medians）。claim 的未覆盖只提置信区间，漏了这一项。
+
+
+## A-10-13   (5 of 6 claims fell)
+
+  * [0] §11 SA1 结构诊断（失败分层表/压力分布/A0–A5 可行性/冻结版同轮基准/ART 对照）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      我逐条去核了它引的证据。①失败分层的两个装置 diag_overflow.cpp / diag_transfer.cpp 在 g0_build_drift.txt 里都是 DRIFT（:75、:81），我重算磁盘哈希复现了 DRIFT：两本的记录 index.hpp 都对不上当前磁盘的 587172d2。g0_inherited_gates_rerun.txt 只重跑了 E24 的 8 个门，没有任何 diag_overflow / diag_transfer 的重跑。按项目自己的纪律，DRIFT 的门的'通过'不能当作当前源码的证据，所以'失败分层表（卡字节 208,689 对卡槽位 18,527）'不是当前源码的证据，而只是 2026-09-20 那份被取代源码上的一次读数（RESULTS_E28.md:40 的数字我确认原文如此，但那是报告复述，不是可绑当前源码的门记录）。②SA1 要求的'冻结版同轮基准 / ART 对照'，主张指到 RESULTS_E31.md §4 的 bench_long_art——E31 是 SA2 的轮次，不是 SA1；且 bench_long_art 在 g0_build_drift.tx
+
+  * [1] §11 SA2 最小局部原型（subblock_reclaim，事件断言/参考差分/BASE-GROUP-LOCAL 对照）
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      这一条的证据栏自己把话说错了。它写'构建身份：logs/build_check_e31.json（LIVE，见 results/main/g0_build_drift.txt）'——但它引的那份 g0_build_drift.txt 第 57 行把 check_e31 列在 ### DRIFT 之下（check_e31 8/10 changed: index.hpp,switches.hpp）。我打开 logs/build_check_e31.json 核对：记录 index.hpp=0a9a5eb3…、switches.hpp=51f838ee…，而当前磁盘是 index.hpp=587172d2…、switches.hpp=794ad74d…，两处都对不上——它当时是 DRIFT，不是 LIVE。（说明：我审计期间该记录被一个并发进程于 2026-09-23 02:16:47 重建为 14 源、index.hpp 已等于磁盘；但这是主张写下之后发生的事，主张当时的标注是错的。）实现本身我确认在当前源码里：Config::subblock_reclaim index.hpp:695 默认 false，且真的被读（index
+
+  * [2] §11 SA3 条件分支（选定溢出容器一条；E34 overflow_stable_store + E37 overflow_migrate；单变量消融）
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      实现与开关登记我核过，成立：Config::overflow_stable_store index.hpp:738（默认 false）在 index.hpp:1841 被读，Region::OverflowList 定义在 index.hpp:1039（using Overflow = OverflowList，:1294）；Config::overflow_migrate index.hpp:745 在 index.hpp:3285、:3365 被读；单变量消融确实由 require_only_switches_differ（switches.hpp:108-144，十四项字段表，我数过正好 14 项）实现。但证据栏绑不住当前源码：①E34 的计时 long_o1_* 来自 bench_long_o1，g0_build_drift.txt:36 判 DRIFT（我重算 9/11，index.hpp+switches.hpp 变）；②E37 的计时 migr_* 来自 bench_migrate，:37 DRIFT（重算 9/11）；③E37 的正确性门 check_migrate 在 :62 判 DRIFT（重算也在主张写
+
+  * [3] §11 SA4 完整评估（最终候选 vs BASE/ART，点查/写入/替换/扫描/空间；同轮最终表）
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      它引的交付物形态与它自己的结论直接打架。方案 §11 SA4 的必交付是'同轮最终表'（§12.4 也给了同轮最终表模板）。主张指到 FINAL_RESULTS_TABLE.md 第 5b 节——我读了：§5b（第 94 行起）是'候选机制（未采用；开关默认关闭）'的逐行表，而该文件 §6 第 161 行与 §7 第 163 行自己写明这是跨轮逐行表、'不能把各行拼成一个最终版本 vs 原版的总加速比'、同轮对照散落在 RESULTS_E26/E27/E31/E34 各轮。也就是说'同轮最终表'这个形态要件没有交付，而主张的覆盖栏自己也承认了这一点（'FINAL_RESULTS_TABLE.md 自述是跨轮逐行表、非同轮统一重测（其 §6），不满足 §12.4 的同轮最终表形态'）——一条自己承认缺交付要件的条目不能标'已完成'。此外 §5b 各行的数值来源我在 g0_build_drift.txt 里逐一查过：bench_long_o1(:36)、bench_tag(:45)、bench_migrate(:37)、bench_long_art(:34) 全是 DRIFT，我重算仍是 DRIFT——所以这张表既有形态问题又有
+
+  * [5] §12.3 构建闭环与运行顺序（编译失败删旧件/运行入口拒绝不匹配身份/批量构建逐个报告/六步顺序）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      §12.3 是一条逐项列举的硬要求，其中一项我能直接验伪：'批量构建逐个报告状态'。tools_build.py 的批量入口是 `else: for t in sys.argv[1:]: build(t)`（第 418–419 行），而 build() 在编译失败时直接 `sys.exit(1)`（第 308 行）——所以第一个目标失败之后，后面既未尝试也未报状态，'逐个报告状态'没有实现。主张的覆盖栏自己也写了这句（'批量构建遇失败即中止…后续目标既未尝试也未报状态…不满足逐个报告状态'），等于自认一条被明确列举的子要求未达成；既然任务书原文写的是'批量构建逐个报告状态，不能因某个命令提前退出而把未尝试的目标当成功'，那就不能标'已完成并采用'。其余部分我核过是对的：build() 第 243 行编译到临时文件、成功才 os.replace 原子改名；失败路径删 build/<target>.built.json 与 .exe 再退（第 296–308 行）；load_record 第 320 行无记录即 RUN REFUSED；run_current 第 372 行源哈希漂移即 rc=2 拒绝；'run' 就是 run_
+
+
+## B-1-3   (3 of 14 claims fell)
+
+  * [3] §2.1 增删改调用链计数（四行 + 字段清单）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      这一行自相矛盾：coverage 自己承认『发布矩阵中没有独立的"子块访问次数/操作"列』——而 item 的字段清单明确要求『子块访问』；承认缺一项就写不出『已完成并采用』。另有三处可查证的缺口：(a) item 要求的第四行是『删除后插入』，claim 的 coverage 却把第四行换成『upsert 新键』且未交代替换；E25_CALLS.md 的类别只有 primary_hit/overflow_hit/miss/new_key/duplicate_key/existing_key/region_split_build（我用 jsonl 枚举过 21 个 (kind,category)），没有『删除后插入』这一行；E24_TABLES.md 只有 replace25『状态』，不是该操作的调用链行。(b) item 要求『模型预测、指纹计算』计数，而 implementation 引的 E24 诊断里根本没有这两个量：e24_diag.jsonl 的 paths 记录字段是 find_cmps/upd_cmps/upd_bytes/upd_entries/upd_subblocks/era_*，我逐个检查过，无 pr
+
+  * [9] §3 四条行为（update / erase / insert / upsert）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      四条行为在**当前源码**里确实都在，且行号全对（update :3418-3430 走 find_located+store_at、慢路径保留在 :3434-3447；erase :3450-3462 + erase_at :2865-2906；insert :3304-3325 reuse 走 place_with_ctx；upsert :4460-4480 走 upsert_one 并补了区域级分裂 :4473-4475）。问题在证据身份：本行把 check_e25_write 的『通过』当成当前源码的证据却**没有标构建身份**——logs/build_check_e25_write.json 的 build_id 解出 2026-09-20 07:07:09，而 g0_evidence_timeline.txt 记 index.hpp 末改 2026-09-22 12:51:49，g0_build_drift.txt 记 check_e25_write 为 DRIFT（changed: index.hpp,switches.hpp）。这正是纪律禁止的『把漂移记录当成当前源码的证据』。此外 coverage 把『记录
+
+  * [12] §3 验收清单
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      两处硬伤。(1) 该清单唯一的承载门 check_e25_write 是 DRIFT（2026-09-20 07:07:09 构建，早于 index.hpp 末改 2026-09-22 12:51:49）——claim 自己也这么写，却又据此判『已完成并采用』；按纪律，漂移门的通过不能替当前源码背书，因此『完整键值与扫描结果必须与参考容器一致』这条在发布树上只剩 LIVE 的 check_freeze 与 check_scan_contract 部分承担（check_freeze.cpp:178,194-220 有 Reference std::map 比对，但只覆盖 update/insert/erase，不含 upsert，也不做三变体布局相等）。(2) coverage 自陈『压缩后位置失效无专门负向用例』——而『压缩后位置失效』正是任务书这条验收清单里点名的风险之一；点名项缺专门用例，写不出『已完成并采用』。另可查证的支持面：check_tag_store（CURRENT LIVE，build 2026-09-22 12:59:32）确实承担标签碰撞（check_tag_store.cpp:5『a tag colli
+
+
+## B-4-5   (3 of 5 claims fell)
+
+  * [0] §4 开篇约束（docs/字符串学习型索引_E23之后的优化方案.md 第 133-135 行）：首版不改前缀/模型/逻辑组数/组号映射、不扩大主块预算；一次只选一个分支、最多三种变体、不同时实现所有维护办法
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      引用的 file:line 是错的，而且这条判定的证据是自述而非测量。(1) 它写“不触 canonical_group（index.hpp:1685、1870、1725）”——1685/1870/1725 分别是 repack_subblock/compact/drain_overflow_bounded，canonical_group 实际在 index.hpp:1450；它写 Config 的 block_bytes/slots/model_kind/model_backend 在“index.hpp:634 一带”——634 行是一段 E27 散文注释，四个字段在 index.hpp:600/614/605/613。(2) “映射与前缀未动”没有任何测量：check_freeze.cpp:136-141 只断言开关串 SHIPPED==CHOSEN 与 14 项白名单的 require_only_switches_differ，其 OLD/CHOSEN 两臂跑的是同一份映射/模型代码（check_freeze.cpp:185-221），因此它原则上无法见证“映射相对历史基线未动”；支撑只剩各轮自述（RESULTS_F
+
+  * [2] §4 分支 B（第 139-149 行）：压缩后迁回溢出的保守算法五步，且“准备阶段完成可能失败的分配/复制/目录构造，提交阶段避免再分配”，临时峰值要计费
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      实现与逐步映射大部分核对通过：overflow_migrate 默认 false（index.hpp:745）、drain_overflow_bounded（index.hpp:1725）、drain_all_bounded（index.hpp:2522 与 4340）、kMigrateBudget（index.hpp:1714）、放置失败触发点（index.hpp:3287/3367）；步骤 3 的 room_virtual 同时要空槽与回收后字节（index.hpp:1754-1755）、步骤 5 的 migrate_rejected + put_overflow 放回（index.hpp:1794-1801）、步骤 2 的落记录前先 repack_subblock（index.hpp:1766-1769）都对；E37 §9 定位的 repack_subblock 缺口确在 index.hpp:1688（n<2 直接 return）；OverflowList::erase_positions 在 index.hpp:1202（判定写的 1197 是它上面的注释行）；check_migrate 确实有非空性断言（check
+
+  * [3] §4.1（第 157-169 行）：什么时候整理——只用写路径已在维护的轻量统计；条件为“空间压力 AND 合法回收机会 AND 超过最小维护间隔 AND 满足临时空间预算”；在插入失败或若干次更新后检查；采用触发高水位/解除低水位/冷却间隔；至少记录
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      源码引用几乎全对：worth_compacting（index.hpp:3204，C2 字节闸门 3206-3207，C3 3209-3213）、group_has_room（3162）、group_garbage_bytes（3174）、reclaim_allowed（3229）、kMinReclaimGap（1324）、计数（259-264）、reclaim_skipped_gap/unchanged（3236/3240）、E30 compact_ns（106，仅 -DE30_TIME）、复用 compact（1870）、调用点（3276/3359）我都打开确认过；“不每次删除都做压缩”成立（compact 只在放置失败路径被调）。但 “已完成并采用” 对不上任务书这条的几个“采用”项：(1) 触发四合一里的“超过最小维护间隔”在出厂配置里是空的——reclaim_hysteresis/reclaim_skip_repeat 默认 false（index.hpp:705/712）→ reclaim_gated() 恒 false（index.hpp:3226）→ reclaim_allowed() 是常量 true（in
+
+
+## B-6-10   (12 of 16 claims fell)
+
+  * [0] §6 首句：更新路径的预测调用次数应在 E24 一起记录
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      两处独立问题。(1) 该条的字面要求是「在 E24 一起记录」；E24 自己明确没做：RESULTS_E24.md:89「本轮没有这些计数…调用计数并入 E25 的诊断构建」、RESULTS_E24.md:284「本轮没有，E25 补」——审计自己引了这两行，却仍判「已完成并采用」，等于把要求的时间点换掉后宣布达标。(2) 唯一的运行证据身份不绑定当前源码：logs/build_diag_e25_calls.json 的 build_id=1789753520872303606（2026-09-18 17:45 UTC），其中 index.hpp 哈希 7aba50ef…，而当前磁盘 index.hpp 是 587172d2…（我实算 sha256sum 核对），g0_build_drift.txt 亦列为 DRIFT。因此 results/main/e25_calls.jsonl（我核过确为 93 行）描述的是被取代的源码，E25_CALLS.md 开头「V0 is the CURRENT source」这句现在已不成立。计数器本体（index.hpp:230 Counts::predict_calls、index.hpp
+
+  * [1] §6 第二段：减少重复调用、避免后缀复制、复用本次预测已产生的信息
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      实现部分我确认无误：index.hpp:643 reuse_locate_ctx 默认 true，使用点 index.hpp:3314/3317 与 index.hpp:4462 我逐个打开，确为「复用本次定位的组号/标签/判重结果」；switches.hpp:42（baseline 置 false）、:65（冻结组合置 true）、:113-114（白名单断言）均在。但整行结论的两个证据文件全部来自 DRIFT 构建：bench_e25 build_id 对应 2026-09-19 12:40、diag_e25_calls 为 2026-09-18 17:45，两者的 index.hpp 哈希都不同于当前磁盘——g0_build_drift.txt 明确列出这两行为 DRIFT。于是 E25_CALLS.md「insert 新键 V1 2.0→V2 1.0」「upsert 新键 2/3/1→1/1/1」与 E25_TIME.md 的「V2/V0 全格同向」都不是当前源码上的测量。另外「改变模型表达与训练交给模型负责人，共同约定接口后单独比较」这一半：审计把 model/lits_hpt_adapter.hpp 当成「约定接
+
+  * [2] §6 第三段：其他工程优化由证据触发（预取/路由/范围定位），SIMD 基线保留
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      这一段的触发条件是明确的诊断前提，而前提根本没被测。(a) 原文「若硬件计数可用，再看 cycles、instructions、分支失误与缓存失效」——我在整个轮目录里没有找到任何硬件计数（perf/PMU）记录，审计自己的 coverage 也承认「未覆盖用硬件计数判定『是否主要是内存等待/外层比较』的前提」。触发条件未做诊断，就不能把条件分支写成「已执行并采用」，只能算部分完成。(b) 该行的实现描述与项目后一轮自相矛盾：审计写「范围定位：E27 先测起点定位 2.01–2.49 次/扫描，『测了没改』」，但 README.md:70 的 E32 条目写明「扫描起点定位缓存：locate(start) 从每扫描 R+1 次降到 1 次，端到端 0.92–1.02、百万域名最好 0.932（5/5）」——该项后来确实改了（scan_cache_start，默认 false 的候选），审计把 E27 当轮的「没改」当成最终结论。(c) SIMD 那一半我核实成立：switches.hpp 全表、index.hpp、tools_build.py 中确有 AVX/AVX2/AVX-512 字样为零，编译命令固定 -march=x
+
+  * [3] §7 表格四行（ART/ALEX/LITS/B+树）的借鉴点/用途/边界；不照搬整棵 ART；不把节点自适应称为原创
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      审计给的项目侧证据经不起对照。它说等价物是 01_Research_Report/StringLearnedIndex_Literature_Review_and_Task2_Plan.md:177–185 的「借鉴对象表」——我把该表打开，它的表头是「原定创新点／共同要求 → 优先参考 → 本项目应具体研究的连接」，行是共享前缀模型、预测驱动物理布局、缓存预取、动态维护、创新验证；这与 §7 的四行（ART／ALEX／LITS／B+ 树 → 借鉴点／用途／边界）不是同一张表，谈不上「等价物」。另一条证据 README.md:60 我逐字读了，原文是「仍慢于成熟 ART…LITS 接入保留了诊断与失败证据…并发、在线调参和最终论文新颖性仍未完成验证」，它没有「不把 SIMD/位图/压缩称为原创」这层意思（我 grep 过 README.md 全文，「原创」零命中）。审计的 coverage 自己承认「未覆盖一张与 §7 逐行对应的『用途/边界』产物表」。于是「已完成」实际只剩任务书自身那张表在支撑——这是拿被审文档证明被审文档。ART 未照搬一点我认（index.hpp 中无 ART 节点结构，libart 只作 third
+
+  * [4] §7 贡献表述：槽位＋后缀字节＋键序三约束下的受预算物理布局维护，评估对更新退化的缓解
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      代码侧我确认：place_fail_slots/place_fail_bytes 在 index.hpp:1632–1633（我打开看到两处 E25_INC，注释明确「no free slot」与「not enough suffix bytes」分开计），子块内按键序插入在 index.hpp:1638–1640，M1「键序恰好选中一个子块」在 index.hpp:3779/3810。但这一行被拿来当证据的三处全部是 DRIFT 基准：RESULTS_E28 用的 diag_transfer/diag_overflow、RESULTS_E31 用的 bench_long_hyst、FINAL_RESULTS_TABLE §5b 引的 bench_long/bench_migrate——按 g0_build_drift.txt 它们全部 DRIFT，所以「三约束受预算维护缓解更新退化」这个实测结论没有绑在当前源码上。更实质的一点：同属 §7 末段的硬要求「要主张研究创新，还需与已有维护方法比较，说明组合中的具体新机制和适用边界，而不是用『实现由自己写』替代新颖性论证」，审计的 coverage 自己写「未覆盖『研究贡献已成立』
+
+  * [7] §8 分开三种构建：计时关诊断、计数诊断记执行工作、内存诊断记已覆盖分配接口下的请求字节
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      三种构建里第三种不存在，而它恰恰是原文单列的一项。(a) 「计时 vs 计数」两分我确认成立：tools_build.py:30 的说明段、以及 tools_build.py:84–130 的目标表把 diag_e25_calls/diag_e26/diag_scan/check_e31/check_overflow_store 等逐条挂在 -DE25_DIAG 上，并把「clean timing build stays counter-free」写进注释。(b) 但「内存诊断记录已覆盖分配接口下的请求字节」没有对应目标：我列了 logs/build_*.json 的全部目标名，没有任何 mem/alloc/space 类诊断构建；内存走的是 precheck_memory.py，而它的 docstring 第 4–6 行自陈「NOT a timing run and NOT a measurement of the index…no allocation accounting is added back into the clean timing program」，即它从进程**外部**读 RSS 与 mallinfo2，
+
+  * [9] §8 重复与统计：5 进程×5 配对重复、至少两时段、轮转平衡、按进程汇总、预先规定分析办法、未分辨纪律
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      大部分成立：analyze_e25_time.py 头部（第 1–13 行）我打开确认——配对在单次重复内成形、先按进程取中位数再报跨进程离散、不出「两个聚合中位数的商」、dir 计方向一致的独立进程数；RESULTS_E25.md §0.3 确实存在（第 76 行「默认版本选择」）；MODEL_AND_MAPPING.md:164 的「5 独立进程、配对在重复内、方向计数、噪声地板」也在。但原文的重复协议里有一项**没有记录**：「分至少两个运行时段」。E25 的正式协议里看不到时段划分，审计的 coverage 亦承认「『分布在两个运行时段』仅见 E31 的两次独立运行互检，未见 E25 正式协议中的时段划分记录」——E31 是另一轮、另一装置，不能顶替 E25 的协议条款。另：审计把 SUMMARY 的行号写成 RESULTS_SUMMARY.md:139，我核了该行是 E31 的「回收分支确实在跑」，不是未分辨纪律的出处，引用号不对。因此「已完成并采用」应降为部分完成。
+
+  * [10] §8 空间与正确性：空间入账＋差分验证＋七项专项检查＋ASan/UBSan
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      空间入账（RESULTS_E24.md:112–124 两块恒等式＋memory_breakdown，我读了确为该内容）与差分验证（check_lits_index/check_overflow_store/check_tag_store 在 g0_build_drift.txt 中为 LIVE，14/14）成立。问题有三：(1) 七项专项里「仅溢出组」「长后缀」审计自己承认「未见逐字独立门」；(2) 「目录边界删除与重复插入」引的是 validation_e25_20260918/LOG.md:62——那一行是当轮**开跑前**写的操作序列清单（我读了全文），不是某个门跑过之后的输出，用计划行当门证据；(3) 差分验证里引的 check_migrate 实际是 DRIFT（build 于 2026-09-21 10:42，index.hpp+switches.hpp 已改），所以迁回那条差分结论不绑当前源码。再有一条审计完全没提、却直接影响该行证据完好性的事实：RESULTS_E33.md 顶部更正写明，E33 引用的两个 sanitizer 证据文件（results/main/sanitizer_runs.jsonl、l
+
+  * [11] §9 三行表（统一定位/组级维护/扫描路径）的机制证据、采纳条件、退出/保留条件
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      §9 表格第一列就是「必须看到的机制证据」，而该行赖以成立的三处同轮对照是 DRIFT：统一定位与组级维护的证据来自 bench_e25/bench_e26（g0_build_drift.txt 列为 DRIFT，index.hpp+switches.hpp 已改），扫描来自 bench_scan（同样 DRIFT）；审计引的 RESULTS_SUMMARY.md §3.2/§3.3/§4.1、RESULTS_FREEZE.md §1/§6 我确认章节存在（§3.2 在第 107 行、§3.3 在第 119 行、§4.1 在第 339 行，FREEZE §1/§6 在 7/87 行），但它们是那些 DRIFT 数字的转述。其次，审计自己在 coverage 里写「未见一张与 §9 逐行对应的三行表（决策散落在各轮报告）」——§9 要求的是逐方向的「机制证据／采纳条件／退出条件」三列并列，缺了这张产物表就等于把「文档里有决策」当成「按条款交付」。所以判定应降级。
+
+  * [12] §9 达到目标后再看与 ART 差距；不全面超过也可成成果；需清楚回答在哪些分布/更新模式/扫描比例下有意义
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      前半句成立、后半句没做完，且证据行有一处硬错。硬错：审计写「README.md:123 明确『不声称全面超过 ART』」——我逐行打开，README.md:123 是「| 根 / 02_Code_and_Experiments/ 的**打包清单** |…」这一行打包说明；「本报告不声称全面超过 ART」的原句在 RESULTS_FREEZE.md:121（我核到），README 里对应的是第 60 行「仍慢于成熟 ART…」与第 62 行的分负载数字（持续插入快 2.06×、混合 1.14×、百万域名 1.69×、替换 1.72×／3.25×／6.50×）。全文 README 里「全面超过 ART」这一串零命中。后半句未完成是审计自己承认的：coverage 写「未覆盖『哪些字符串分布/扫描比例下有意义的完整结论』（边界散见，未成节）」——而原文把这一句列为该项必须回答的问题。加上分负载比值本身来自 DRIFT 的 bench_e25/bench_e26，故降为部分完成。
+
+  * [14] §10 交付纪律：每轮留档＋run_id/哈希/诊断标识＋分析脚本拒绝把内存诊断写进时间表＋构建失败硬停＋运行入口核对构建记录
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      除一项外我都能核到，且核到的那一项审计自己承认没做。成立的部分：tools_build.py:11–19 的 docstring 写明 run/run_current「refuses to run unless the build record exists and the executable hash matches it…ALSO refuses when any source recorded in the build has changed」；tools_build.py:372–398 的 run_current 在漂移时打印 RUN REFUSED 并 sys.exit(2)、run_recorded 打印「DESCRIBES THE RECORDED BUILD, NOT THE CURRENT SOURCE」；硬停有产物级验证，RESULTS_FREEZE.md §5 记「失败时一并删除 build/<target>.built.json 与 build/<target>.exe」、§7 给出「改坏源码后运行 → RUN REFUSED rc=2、两个文件已删除」的步骤表。没做的是原文专列的一项：「分析脚本
+
+  * [15] §10 更新项目入口 README 和总览：默认版 R1、可选 R2、当前前沿及后续计划、历史上下文、汇总清单声明覆盖范围
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      README 与总览确实被更新过，R1/R2/冻结/覆盖范围都在：README 头部第 3 行写「内容更新：2026-09-18、2026-09-20（冻结，以及冻结之后的 E28–E31）」，正文第 62 行起有冻结成绩，00_Overview/StringLearnedIndex_Project_Overview_and_Guide.md 第 22–38 行的「当前冻结版本」块与评估面表（构建/点查/更新/扫描/空间/更新路径/并发）也在。但「写清当前前沿及后续计划」这一半被 stale 掉了，且比审计写的更严重：我 grep README.md 全文，「E38」出现 **0** 次（前沿已到 E38）；README.md:81 仍保留「**下一轮（E37，审阅给定，尚未执行）：有界迁回**」，而 E37 在 09-21 已完成（README.md:80 自己就有 E37 的结果段）——同一份文件里「E37 尚未执行」与「E37 结果」并存；README.md 的 mtime 是 2026-09-21 19:32，即最后更新停在 E37 那一段。审计的 coverage 只写到「顶部日期停在 09-20/09-21」，没
+
+
+## C-long   (6 of 34 claims fell)
+
+  * [3] 不重做E24/不改冻结数据/模型创新·并发·GPU·新路由不进本任务 L22
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      该行 implementation 断言「模型/并发/GPU/路由未动」。但同一目录里已存在第二个模型族：index.hpp:23 `#include "model/lits_hpt_adapter.hpp"`，:597 `enum class ModelBackend { Context16, LitsHpt }`，:613 model_backend，另有 model/lits_hpt_adapter.hpp、vendor/lits_model_safe/*、MODEL_AND_MAPPING.md、LITS_AUDIT.md、check_lits_* 与 bench_lits_adapter；g0_evidence_timeline.txt 记 model/lits_hpt_adapter.hpp 改于 2026-09-22 12:45，LIVE 构建里也全是 check_lits_*/bench_lits_adapter。要么「模型未动」写得过宽，要么 L22 的边界在同一目录内被越过——该行两者都没交代，不能维持『已完成并采用』。
+
+  * [5] 第一阶段 L29：本轮关键覆盖（主块/溢出写入、未命中、重复插入、压缩后位置失效、跨SIMD批次 + 三条分支断言）
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      L29 把「压缩后位置失效」列为本轮必查项。逐行读 check_e25_write.cpp：用例确含主块/溢出更新删除、删子块首位、删最后一个活跃条目、能放下/进溢出/触发压缩的插入、重复插入被拒、未命中、删后重插、跨子块组(SIMD批次)，末尾三条分支断言(NotLocated=1/前缀重建=1/阈值分裂=9)也确在源码(约300-361行)——但**没有任何『压缩后位置失效』的构造或计数断言**。该行 coverage 自称「由 E26/E28 诊断覆盖」不成立：check_e26_c2 比的是内容与键序，RESULTS_E28.md 是只读试放分层(F0/F1/F2)，都不断言位置失效；真正出现「保存位置失效」字样的是更晚一轮的 san_bench_long_hyst(RESULTS_E33.md:91)，不属本阶段。另 check_e25_write 属 DRIFT(g0_build_drift.txt)。
+
+  * [6] 第一阶段 L31-39：调用矩阵四行类别与必报内容
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      L31-39 对 erase 要求「移动条目、实际复制字节和释放工作」，对 insert 要求「放置尝试、槽位/字节等失败原因、压缩事件」。核 E25_CALLS.md 的三张表：只给 shift(条目数)、relP/relO、att(slot/bytes) 与 B——**「实际复制字节」没有以字节形式给出**（该行 coverage 自认「以 shift 计数给出，非字节形式」）；**per-category 表中没有『压缩事件』列**（e25_calls.jsonl 每条确有 compactions 字段，本次核到 update/erase/insert/upsert 全为 0，实质影响小，但矩阵里只在 structural 行出现）。故「四行类别全部有数据」成立而「必报内容齐全」偏松。
+
+  * [15] 第三阶段 L87：E24 的 0/0/256 非上限；活跃后缀独立累计/水位独立读取；减法垃圾如实标明
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      L87 含三项要求。前两项(0/0/256 的界定、减法得到的垃圾不得称三路独立验证)确有据：RESULTS_SUMMARY.md §5 有「这是『压缩前』试放…不是所有重排方法的上限」与「垃圾是减法结果…无第三条独立路径验证其本身」。但**「活跃后缀独立累计、水位独立读取」在 E26 阶段没有落地**：grep 整个 E26_TAGS.md 与 RESULTS_E26.md，「水位」「bottom」「活跃后缀」零命中；该拆分只出现在更晚的 RESULTS_LONG.md §3.2(「水位 bottom 不动」)。该行 coverage 自己也承认「在 E26 阶段只在 E28/RESULTS_LONG §3.2 才被显式拆开」，却仍判「已完成并采用」，内部不一致。
+
+  * [26] 运行纪律 L143：编译失败不得启动旧二进制；写后解析；唯一 run_id；不覆盖已分析的运行
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      本条在**本轮内被实际违反过，且由项目自己的记录承认**：RESULTS_FREEZE.md §5/§7 写「本轮真的发生过一次(check_e8_hetero 缺 include 却『通过』)」——源码编译失败而 run 回退到上一次成功的二进制并报 passed，正是 L143 禁止的行为。另外 run_e25.py 至今仍无条件 `os.remove(results/main/e25_time.jsonl)`(本次核到该行仍在)，『不覆盖已经分析的运行』只在单次运行内成立；E26 的 e26_time.jsonl 正是被整体重跑替换(RESULTS_E26.md 的「表比数据旧」更正)。该行 coverage 自认这两点却仍判『已完成并采用』，内部不一致。tools_build.py:372-393 的 run_current/run_recorded 与 rc=2 拒绝确已实现。
+
+  * [27] 运行纪律 L145：大测试先小规模验证；基准串行；阶段末定向加验不重跑全部
+      原判 已完成并采用  ->  部分完成   [downgraded]
+      串行与「只对改动/风险门加验」有据：run_e25.py docstring「Processes run serially on purpose」；TASK_STATE.md 阶段四「继承门 11/11、E25 写门与 E26 C2 门取值不变」。但「预计开销很大的测试先小规模验证程序和输出」**没有记录**：LOG.md/TASK_STATE.md 里找不到任何小规模预验证；相反 TASK_STATE.md「被排除的运行」第2条记**首轮 3600 条计时 sweep 整套作废**(cycles 被写成常量、检查点百分比按最后一个检查点归一)——若先做小规模输出验证，这种协议级错误不会等到全量 sweep 跑完才暴露。该行 coverage 亦自认「小规模预验证的具体记录在 LOG 中未逐条列出」。
+
+
+## D-lit   (1 of 3 claims fell)
+
+  * [0] §二 方法3（P0）维护的收益判据与迟滞（ALEX；SALI）：设最小操作间隔、失败后记录布局版本，状态未变不反复尝试
+      原判 已完成，负结果或条件性候选  ->  部分完成   [downgraded]
+      实现那一半我逐字核过、成立：index.hpp:705 reclaim_hysteresis、index.hpp:712 reclaim_skip_repeat 都是真 Config 字段且默认 false；唯一读取点是 index.hpp:3226 的 reclaim_gated() 与 3234 的间隔判断，并且只在 config_.subblock_reclaim 为真时被 3262（place_with_ctx）和 3345（insert_slow）调用——开关确实被代码读，不是空声明；kMinReclaimGap=64 在 index.hpp:1324。但证据链撑不起“已完成”：(1) 它引作证据的门 check_e31 根本不覆盖这条分支。我在整个 51 个 .cpp 里 grep，reclaim_hysteresis / reclaim_skip_repeat 这两个标识符只出现在 bench_long_hyst.cpp（第 159/163/170/171 行）；check_e31.cpp 只打开 subblock_reclaim（第 146-147 行），从不打开迟滞开关。所以它的“通过”证明的是 E31，不
+
+============================================================================================================
+stands 65   downgraded 59   wrong 2

@@ -1,0 +1,42 @@
+widest sweep run_id=i10a  2026-09-23 17:00:18
+phase clean: target=bench_widest reps=4 (phase table) processes=5
+    rep 0 arm order: 0 1 2 3
+    rep 1 arm order: 1 2 3 0
+    rep 2 arm order: 2 3 0 1
+    rep 3 arm order: 3 0 1 2
+    position balance verified: every arm occupies every position 1 time(s)
+--- phase clean mode same -> long_widest_i10a_same.jsonl ---
+  bench_widest mixed same reps=4 tag=P1 rc=0 wall=16s
+  bench_widest skew same reps=4 tag=P1 rc=0 wall=23s
+  bench_widest tranco same reps=4 tag=P1 rc=0 wall=33s
+  bench_widest mixed same reps=4 tag=P2 rc=0 wall=16s
+  bench_widest skew same reps=4 tag=P2 rc=0 wall=24s
+  bench_widest tranco same reps=4 tag=P2 rc=0 wall=33s
+  bench_widest mixed same reps=4 tag=P3 rc=0 wall=16s
+  bench_widest skew same reps=4 tag=P3 rc=0 wall=24s
+  bench_widest tranco same reps=4 tag=P3 rc=0 wall=33s
+  bench_widest mixed same reps=4 tag=P4 rc=0 wall=16s
+  bench_widest skew same reps=4 tag=P4 rc=0 wall=24s
+  bench_widest tranco same reps=4 tag=P4 rc=0 wall=34s
+  bench_widest mixed same reps=4 tag=P5 rc=0 wall=19s
+  bench_widest skew same reps=4 tag=P5 rc=0 wall=22s
+  bench_widest tranco same reps=4 tag=P5 rc=0 wall=34s
+    archived 960 row(s) to long_widest_i10a_same.jsonl
+--- phase clean mode grow -> long_widest_i10a_grow.jsonl ---
+  bench_widest mixed grow reps=4 tag=P1 rc=0 wall=15s
+  bench_widest skew grow reps=4 tag=P1 rc=0 wall=21s
+  bench_widest tranco grow reps=4 tag=P1 rc=0 wall=34s
+  bench_widest mixed grow reps=4 tag=P2 rc=0 wall=14s
+  bench_widest skew grow reps=4 tag=P2 rc=0 wall=21s
+  bench_widest tranco grow reps=4 tag=P2 rc=0 wall=34s
+  bench_widest mixed grow reps=4 tag=P3 rc=0 wall=14s
+  bench_widest skew grow reps=4 tag=P3 rc=0 wall=22s
+  bench_widest tranco grow reps=4 tag=P3 rc=0 wall=33s
+  bench_widest mixed grow reps=4 tag=P4 rc=0 wall=14s
+  bench_widest skew grow reps=4 tag=P4 rc=0 wall=22s
+  bench_widest tranco grow reps=4 tag=P4 rc=0 wall=34s
+  bench_widest mixed grow reps=4 tag=P5 rc=0 wall=15s
+  bench_widest skew grow reps=4 tag=P5 rc=0 wall=20s
+  bench_widest tranco grow reps=4 tag=P5 rc=0 wall=34s
+    archived 960 row(s) to long_widest_i10a_grow.jsonl
+sweep end 2026-09-23 17:12:14

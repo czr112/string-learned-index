@@ -1,0 +1,29 @@
+{
+ "target": "bench_pgo_gen",
+ "build_id": "1790112433689751880",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -fprofile-generate=build/pgo_profile /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/bench_widest.cpp /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/art.o -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/bench_pgo_gen.422.1790112433689744905.tmp.exe",
+ "sources": {
+  "bench_widest.cpp": "e60942ea14aad36415b58fb2fbe30714636d94b49c74580b43e4be2828f78a24",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "269b65cf37b3f82c51f0241f8470a72e4172218e63e5369684c5f39d09d08209",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+  "native_e23.hpp": "218662905395e0ae5f86bfffd63a9051d9df213de265bda4260f2311b0ec021c",
+  "selected.hpp": "8ca2dd7d1f098c7de64b50d51ed6a9f56c6f45a1c393eb742f70b1bed32782ac",
+  "switches.hpp": "6846742141d284c13241161f092efb85531a8406f4fe6eebc9aa1a83d35eb2bd",
+  "model/lits_hpt_adapter.hpp": "97195dd7d185ef9323b89ec826cf7f5014751a4d8116679ce898894920d1f7c7",
+  "vendor/lits_model_safe/lits_base.hpp": "01c00afe63362305e63a7f3423659eef3bfd38920f442164b66484c0af22a23b",
+  "vendor/lits_model_safe/lits_gpkl.hpp": "df869f71969d740bd5cb3d76634edf01a3fc283a8e84e5d92ec6168e2928225c",
+  "vendor/lits_model_safe/lits_model.hpp": "b5a1c28251da7e74fd011e6b14a40927481c65ed24c837cc4892f26740af4c18"
+ },
+ "extra_flags": [
+  "-fprofile-generate=build/pgo_profile"
+ ],
+ "c_objects": [],
+ "returncode": 0,
+ "stderr_tail": "",
+ "exe_sha256": "18753f28605595855db2bf84d475649db30f504b46ea89fde1e3e0bfedb7c285",
+ "status": "OK"
+}

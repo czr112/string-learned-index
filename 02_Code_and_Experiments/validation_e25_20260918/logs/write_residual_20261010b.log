@@ -1,0 +1,703 @@
+### host: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+### cpu: Intel(R) Core(TM) Ultra 9 275HX
+### nproc: 24
+### build record diag_write_residual:
+{
+ "target": "diag_write_residual",
+ "build_id": "1791647843961258619",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE25_DIAG -DE18_COUNT /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/diag_write_residual.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/diag_write_residual.296.1791647843961251657.tmp.exe",
+ "sources": {
+  "diag_write_residual.cpp": "f1db47dbf00f069401775be6187b1924c1887a7e63fe28d36332d5cedef43b2d",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "6aa6be5c8fd5d7a4c7fe9587b81308969f1d6ac7e26fbc24d46eba65365d0a49",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+bc7e1962954bf5f4e16b5361aeabf2cd66c77466015722816139b9a3db86af42  build/diag_write_residual.exe
+### build record diag_write_residual_t:
+{
+ "target": "diag_write_residual_t",
+ "build_id": "1791647864584565405",
+ "command": "g++ -std=c++17 -O3 -march=x86-64-v2 -static -DE30_TIME -DE30_WRITE /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/diag_write_residual.cpp -o /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/build/diag_write_residual_t.296.1791647864584544838.tmp.exe",
+ "sources": {
+  "diag_write_residual.cpp": "f1db47dbf00f069401775be6187b1924c1887a7e63fe28d36332d5cedef43b2d",
+  "data.hpp": "94b60d6ae6b0a9beb8f2f229f0694f65e241f501a4ada626edc2264dca07902a",
+  "e9_alloc.hpp": "7711b186dd2531016401f0f1b5b9f3a4cd62a7bcb5a48be7ed7dd7e8636b0189",
+  "index.hpp": "6aa6be5c8fd5d7a4c7fe9587b81308969f1d6ac7e26fbc24d46eba65365d0a49",
+  "native.hpp": "9327c81ec257f80fe4c7c0f9c88fc1fe5de3d7d3926bc700079b758d7c66ce91",
+  "native_e20.hpp": "ed679f6bd592424227517c51797c2c824d574301854414e67ba4466094b73c4c",
+  "native_e22.hpp": "8d45c423a7ff1a8ffa91717f30fa45c55b6b1f824bb953a4281570186fa0c5d4",
+d27e843bd736d403d63be8601ab266692e0c5bea8379949b851556821bea706d  build/diag_write_residual_t.exe
+### diag_write_residual mixed 131072 reps=4 mode=same backend=ctx16 -> results/write_residual_20261010b/ctx16_same_mixed_c.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+mixed Context16 same rep0 done
+mixed Context16 same rep1 done
+mixed Context16 same rep2 done
+mixed Context16 same rep3 done
+{"kind":"mixed","mode":"same","backend":"Context16","case":"done"}
+  wall 4.06 s  rss 195036 KB
+rc=0
+### diag_write_residual tranco 262144 reps=4 mode=grow backend=ctx16 -> results/write_residual_20261010b/ctx16_grow_tranco_c.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+tranco Context16 grow rep0 done
+tranco Context16 grow rep1 done
+tranco Context16 grow rep2 done
+tranco Context16 grow rep3 done
+{"kind":"tranco","mode":"grow","backend":"Context16","case":"done"}
+  wall 7.92 s  rss 188792 KB
+rc=0
+### diag_write_residual_t mixed 131072 reps=4 mode=same backend=ctx16 -> results/write_residual_20261010b/ctx16_same_mixed_t.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 56.7673 ns per timer pair
+mixed Context16 same rep0 done
+mixed Context16 same rep1 done
+mixed Context16 same rep2 done
+mixed Context16 same rep3 done
+{"kind":"mixed","mode":"same","backend":"Context16","case":"done"}
+  wall 4.46 s  rss 190676 KB
+rc=0
+### diag_write_residual_t tranco 262144 reps=4 mode=grow backend=ctx16 -> results/write_residual_20261010b/ctx16_grow_tranco_t.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+clock calibration: 59.8182 ns per timer pair
+tranco Context16 grow rep0 done
+tranco Context16 grow rep1 done
+tranco Context16 grow rep2 done
+tranco Context16 grow rep3 done
+{"kind":"tranco","mode":"grow","backend":"Context16","case":"done"}
+  wall 8.96 s  rss 176060 KB
+rc=0
+### diag_write_residual mixed 131072 reps=4 mode=same backend=lits -> results/write_residual_20261010b/lits_same_mixed_c.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+mixed LitsHpt same rep0 done
+mixed LitsHpt same rep1 done
+mixed LitsHpt same rep2 done
+mixed LitsHpt same rep3 done
+{"kind":"mixed","mode":"same","backend":"LitsHpt","case":"done"}
+  wall 4.62 s  rss 197664 KB
+rc=0
+### diag_write_residual tranco 262144 reps=4 mode=grow backend=lits -> results/write_residual_20261010b/lits_grow_tranco_c.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+tranco LitsHpt grow rep0 done
+tranco LitsHpt grow rep1 done
+tranco LitsHpt grow rep2 done
+tranco LitsHpt grow rep3 done
+{"kind":"tranco","mode":"grow","backend":"LitsHpt","case":"done"}
+  wall 7.55 s  rss 183952 KB
+rc=0
+### diag_write_residual_t mixed 131072 reps=4 mode=same backend=lits -> results/write_residual_20261010b/lits_same_mixed_t.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+clock calibration: 56.6081 ns per timer pair
+mixed LitsHpt same rep0 done
+mixed LitsHpt same rep1 done
+mixed LitsHpt same rep2 done
+mixed LitsHpt same rep3 done
+{"kind":"mixed","mode":"same","backend":"LitsHpt","case":"done"}
+  wall 5.00 s  rss 193380 KB
+rc=0
+### diag_write_residual_t tranco 262144 reps=4 mode=grow backend=lits -> results/write_residual_20261010b/lits_grow_tranco_t.jsonl
+diag_write_residual switches write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+clock calibration: 57.9552 ns per timer pair
+tranco LitsHpt grow rep0 done
+tranco LitsHpt grow rep1 done
+tranco LitsHpt grow rep2 done
+tranco LitsHpt grow rep3 done
+{"kind":"tranco","mode":"grow","backend":"LitsHpt","case":"done"}
+  wall 8.43 s  rss 176748 KB
+rc=0
+### sweep done
+==============================================================================================================
+FILE ctx16_grow_tranco_c.jsonl
+  build=count corpus=tranco n=262144 reps=4 thr=128
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+  key_hash=2159501943207461314 sched_hash=12183538583180118563
+==============================================================================================================
+
+--- tranco / Context16 / grow / frac=0.25   (4 reps; interval 65536 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     1.000        1.000
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                   11.537       11.378
+    cmp bytes                  45.650       45.254
+    place attempts              1.699        1.674
+    fail: slots                 0.007        0.008
+    fail: bytes                 0.867        0.833
+    subblk probes               3.322        2.960
+    ins attempts                1.699        1.674
+    ins ok                      0.825        0.833
+    entry shifts               12.116       11.941
+    suffix bytes               15.794       15.771
+    reclaims                    0.469        0.458
+    reclaim helped              0.289        0.286
+    widen passes                0.009        0.008
+    widen blocks                0.009        0.008
+    compact entered             0.175        0.167
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.175        0.167
+    string allocs               0.175        0.167
+    ov suffix bytes             3.551        3.331
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    1.007        1.007
+    cmp bytes                  12.373       12.324
+    erase shifts               14.674       14.382
+    released primary           12.205       12.165
+    released overflow           0.140        0.107
+    string frees                0.012        0.008
+    ov shift recs               0.055        0.022
+    ov shift bytes              2.619        1.072
+    state@checkpoint: live=262144 overflow=12158 compactions=0 index_bytes=26509111 regions=128
+    driver walls (instrumented, NOT timings): seg=81.4 ms window=11.0 ms
+
+--- tranco / Context16 / grow / frac=2.00   (4 reps; interval 458752 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     1.000        1.000
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                   11.179       11.374
+    cmp bytes                  39.917       44.115
+    place attempts              1.677        1.708
+    fail: slots                 0.000        0.003
+    fail: bytes                 0.838        0.882
+    subblk probes               2.932        2.902
+    ins attempts                1.677        1.708
+    ins ok                      0.839        0.823
+    entry shifts                9.467       10.628
+    suffix bytes               16.345       16.343
+    reclaims                    0.459        0.479
+    reclaim helped              0.290        0.296
+    widen passes                0.008        0.009
+    widen blocks                0.008        0.009
+    compact entered             0.161        0.177
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.161        0.177
+    string allocs               0.161        0.177
+    ov suffix bytes             3.387        3.699
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    1.026        1.025
+    cmp bytes                  19.837       16.601
+    erase shifts               12.620       13.614
+    released primary           16.309       14.384
+    released overflow           3.423        2.064
+    string frees                0.164        0.102
+    ov shift recs               3.184        1.836
+    ov shift bytes            152.824       88.110
+    state@checkpoint: live=262144 overflow=46787 compactions=0 index_bytes=29741658 regions=128
+    driver walls (instrumented, NOT timings): seg=546.5 ms window=9.4 ms
+==============================================================================================================
+FILE ctx16_grow_tranco_t.jsonl
+  build=time corpus=tranco n=262144 reps=4 thr=128 calib=59.818 ns/pair cpu=0
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+  key_hash=2159501943207461314 sched_hash=12183538583180118563
+==============================================================================================================
+
+--- tranco / Context16 / grow / frac=0.25   (4 reps; interval 65536 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win     1012.9 ->      953.1 ( 100.0%)   int     1022.2 ->      962.3
+        locate (outer)             win      126.7 ->       66.9 (   7.0%)   int      133.2 ->       73.4
+        Region::find_located       win      150.4 ->       90.6 (   9.5%)   int      145.8 ->       85.9
+        place_with_ctx             win      611.1 ->      551.3 (  57.8%)   int      620.0 ->      560.1
+          of which repack_subblock win      146.3 ->      117.7 (  12.4%)   int      150.5 ->      122.6
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win       79.3 ->       68.8 (   7.2%)   int       80.1 ->       70.1
+          of which ov lookup       win       16.2 ->        5.7 (   0.6%)   int       15.9 ->        5.8
+          of which ov alloc        win       36.4 ->       25.9 (   2.7%)   int       38.4 ->       28.4
+      residual (uninstrumented)    win       64.9   (6.4% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      475.3 ->      415.5 ( 100.0%)   int      483.8 ->      424.0
+        locate (outer)             win      163.0 ->      103.2 (  24.8%)   int      162.3 ->      102.5
+        Region::erase              win      223.4 ->      163.5 (  39.4%)   int      229.1 ->      169.2
+          of which find_located    win      130.7 ->       70.9 (  17.1%)   int      132.7 ->       72.9
+          of which ov erase        win        1.1 ->        0.4 (   0.1%)   int        0.7 ->        0.2
+      residual (uninstrumented)    win       29.0   (6.1% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=262144 overflow=12158 compactions=0 index_bytes=26512183
+    driver walls (instrumented, NOT timings): seg=106.3 ms window=13.4 ms
+
+--- tranco / Context16 / grow / frac=2.00   (4 reps; interval 458752 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win      935.8 ->      876.0 ( 100.0%)   int      981.6 ->      921.8
+        locate (outer)             win      126.2 ->       66.4 (   7.6%)   int      129.4 ->       69.6
+        Region::find_located       win      146.9 ->       87.1 (   9.9%)   int      146.5 ->       86.7
+        place_with_ctx             win      544.2 ->      484.4 (  55.3%)   int      586.5 ->      526.7
+          of which repack_subblock win      100.9 ->       72.9 (   8.3%)   int      127.6 ->       98.5
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win       70.2 ->       60.5 (   6.9%)   int       77.2 ->       66.6
+          of which ov lookup       win       30.2 ->       20.6 (   2.3%)   int       26.2 ->       15.6
+          of which ov alloc        win       16.2 ->        6.5 (   0.7%)   int       23.6 ->       13.0
+      residual (uninstrumented)    win       58.7   (6.3% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      494.3 ->      434.5 ( 100.0%)   int      494.2 ->      434.4
+        locate (outer)             win      141.8 ->       82.0 (  18.9%)   int      160.8 ->      100.9
+        Region::erase              win      261.5 ->      201.7 (  46.4%)   int      246.4 ->      186.6
+          of which find_located    win      149.4 ->       89.6 (  20.6%)   int      143.1 ->       83.3
+          of which ov erase        win       18.4 ->        8.6 (   2.0%)   int       11.4 ->        5.4
+      residual (uninstrumented)    win       31.2   (6.3% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=262144 overflow=46787 compactions=0 index_bytes=29744730
+    driver walls (instrumented, NOT timings): seg=727.9 ms window=12.8 ms
+==============================================================================================================
+FILE ctx16_same_mixed_c.jsonl
+  build=count corpus=mixed n=131072 reps=4 thr=128
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+  key_hash=2678861052284337892 sched_hash=11511083231847525528
+==============================================================================================================
+
+--- mixed / Context16 / same / frac=0.25   (4 reps; interval 32768 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     1.000        1.000
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                   13.135       13.552
+    cmp bytes                  41.118       43.922
+    place attempts              1.135        1.113
+    fail: slots                 0.001        0.001
+    fail: bytes                 0.135        0.112
+    subblk probes               1.230        1.172
+    ins attempts                1.135        1.113
+    ins ok                      1.000        1.000
+    entry shifts               12.105       12.508
+    suffix bytes               31.496       31.684
+    reclaims                    0.132        0.110
+    reclaim helped              0.132        0.109
+    widen passes                0.000        0.000
+    widen blocks                0.000        0.000
+    compact entered             0.000        0.000
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.000        0.000
+    string allocs               0.000        0.000
+    ov suffix bytes             0.004        0.004
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    1.053        1.052
+    cmp bytes                  31.664       31.852
+    erase shifts               12.080       12.494
+    released primary           31.496       31.684
+    released overflow           0.004        0.004
+    string frees                0.000        0.000
+    ov shift recs               0.000        0.000
+    ov shift bytes              0.000        0.000
+    state@checkpoint: live=131072 overflow=390 compactions=0 index_bytes=23903841 regions=64
+    driver walls (instrumented, NOT timings): seg=21.3 ms window=5.9 ms
+
+--- mixed / Context16 / same / frac=2.00   (4 reps; interval 229376 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     1.000        1.000
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                   20.545       14.126
+    cmp bytes                 341.386      192.610
+    place attempts              2.093        1.575
+    fail: slots                 0.012        0.012
+    fail: bytes                 1.094        0.568
+    subblk probes               7.702        4.957
+    ins attempts                2.093        1.575
+    ins ok                      0.987        0.995
+    entry shifts               18.565       12.534
+    suffix bytes              119.188       87.885
+    reclaims                    0.980        0.526
+    reclaim helped              0.947        0.513
+    widen passes                0.020        0.009
+    widen blocks                0.020        0.009
+    compact entered             0.013        0.005
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.013        0.005
+    string allocs               0.013        0.005
+    ov suffix bytes             1.561        0.540
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    1.496        1.317
+    cmp bytes                 128.807       95.226
+    erase shifts               18.596       12.563
+    released primary          119.188       88.080
+    released overflow           1.561        0.345
+    string frees                0.013        0.003
+    ov shift recs               0.024        0.008
+    ov shift bytes              1.154        0.397
+    state@checkpoint: live=131072 overflow=748 compactions=0 index_bytes=23974113 regions=64
+    driver walls (instrumented, NOT timings): seg=275.7 ms window=16.2 ms
+==============================================================================================================
+FILE ctx16_same_mixed_t.jsonl
+  build=time corpus=mixed n=131072 reps=4 thr=128 calib=56.767 ns/pair cpu=0
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=Context16
+  key_hash=2678861052284337892 sched_hash=11511083231847525528
+==============================================================================================================
+
+--- mixed / Context16 / same / frac=0.25   (4 reps; interval 32768 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win      577.7 ->      520.9 ( 100.0%)   int      565.1 ->      508.3
+        locate (outer)             win      107.6 ->       50.8 (   9.8%)   int      110.2 ->       53.4
+        Region::find_located       win       94.9 ->       38.1 (   7.3%)   int       94.7 ->       37.9
+        place_with_ctx             win      246.3 ->      189.5 (  36.4%)   int      231.0 ->      174.3
+          of which repack_subblock win       35.2 ->       27.7 (   5.3%)   int       27.0 ->       20.7
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win        0.0 ->        0.0 (   0.0%)   int        0.1 ->        0.0
+          of which ov lookup       win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+          of which ov alloc        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+      residual (uninstrumented)    win       72.1   (12.5% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      448.0 ->      391.3 ( 100.0%)   int      439.1 ->      382.3
+        locate (outer)             win      141.1 ->       84.3 (  21.6%)   int      134.7 ->       77.9
+        Region::erase              win      217.5 ->      160.7 (  41.1%)   int      213.8 ->      157.0
+          of which find_located    win      123.1 ->       66.3 (  16.9%)   int      119.3 ->       62.5
+          of which ov erase        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+      residual (uninstrumented)    win       32.7   (7.3% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=131072 overflow=390 compactions=0 index_bytes=23905377
+    driver walls (instrumented, NOT timings): seg=36.8 ms window=9.6 ms
+
+--- mixed / Context16 / same / frac=2.00   (4 reps; interval 229376 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win     1175.3 ->     1118.6 ( 100.0%)   int      863.2 ->      806.4
+        locate (outer)             win      105.2 ->       48.5 (   4.3%)   int      110.0 ->       53.2
+        Region::find_located       win      220.6 ->      163.9 (  14.6%)   int      159.0 ->      102.3
+        place_with_ctx             win      731.8 ->      675.1 (  60.3%)   int      469.1 ->      412.4
+          of which repack_subblock win      315.9 ->      259.1 (  23.2%)   int      157.7 ->      127.4
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win        4.6 ->        3.9 (   0.3%)   int        2.2 ->        1.9
+          of which ov lookup       win        1.5 ->        0.7 (   0.1%)   int        0.5 ->        0.2
+          of which ov alloc        win        1.6 ->        0.9 (   0.1%)   int        0.9 ->        0.6
+      residual (uninstrumented)    win       60.9   (5.2% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      474.0 ->      417.2 ( 100.0%)   int      479.0 ->      422.3
+        locate (outer)             win       99.6 ->       42.8 (  10.3%)   int      130.0 ->       73.3
+        Region::erase              win      294.6 ->      237.9 (  57.0%)   int      259.7 ->      202.9
+          of which find_located    win      176.2 ->      119.4 (  28.6%)   int      161.5 ->      104.7
+          of which ov erase        win        1.2 ->        0.5 (   0.1%)   int        0.3 ->        0.1
+      residual (uninstrumented)    win       23.0   (4.8% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=131072 overflow=748 compactions=0 index_bytes=23975649
+    driver walls (instrumented, NOT timings): seg=333.2 ms window=14.5 ms
+==============================================================================================================
+FILE lits_grow_tranco_c.jsonl
+  build=count corpus=tranco n=262144 reps=4 thr=128
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+  key_hash=2159501943207461314 sched_hash=12183538583180118563
+==============================================================================================================
+
+--- tranco / LitsHpt / grow / frac=0.25   (4 reps; interval 65536 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     0.000        0.000
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                    9.296        9.460
+    cmp bytes                  41.100       41.259
+    place attempts              1.482        1.489
+    fail: slots                 0.005        0.006
+    fail: bytes                 0.597        0.603
+    subblk probes               2.616        2.746
+    ins attempts                1.482        1.489
+    ins ok                      0.880        0.880
+    entry shifts                9.442        9.545
+    suffix bytes               16.896       16.679
+    reclaims                    0.328        0.334
+    reclaim helped              0.205        0.210
+    widen passes                0.005        0.006
+    widen blocks                0.005        0.006
+    compact entered             0.120        0.120
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.120        0.120
+    string allocs               0.120        0.120
+    ov suffix bytes             2.449        2.423
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    1.005        1.010
+    cmp bytes                  12.368       12.350
+    erase shifts               11.285       11.307
+    released primary           12.231       12.187
+    released overflow           0.114        0.085
+    string frees                0.009        0.007
+    ov shift recs               0.041        0.021
+    ov shift bytes              1.980        0.987
+    state@checkpoint: live=262144 overflow=8691 compactions=0 index_bytes=26228905 regions=128
+    driver walls (instrumented, NOT timings): seg=70.9 ms window=9.4 ms
+
+--- tranco / LitsHpt / grow / frac=2.00   (4 reps; interval 458752 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     0.000        0.000
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                    8.961        9.551
+    cmp bytes                  36.007       40.976
+    place attempts              1.357        1.450
+    fail: slots                 0.000        0.002
+    fail: bytes                 0.435        0.558
+    subblk probes               2.234        2.392
+    ins attempts                1.357        1.450
+    ins ok                      0.921        0.889
+    entry shifts                7.662        8.641
+    suffix bytes               17.996       17.697
+    reclaims                    0.248        0.305
+    reclaim helped              0.165        0.191
+    widen passes                0.004        0.005
+    widen blocks                0.004        0.005
+    compact entered             0.079        0.111
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.079        0.111
+    string allocs               0.079        0.111
+    ov suffix bytes             1.736        2.346
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    1.013        1.043
+    cmp bytes                  19.792       16.750
+    erase shifts                9.252       10.787
+    released primary           17.984       15.119
+    released overflow           1.748        1.328
+    string frees                0.080        0.065
+    ov shift recs               1.603        1.426
+    ov shift bytes             76.951       68.437
+    state@checkpoint: live=262144 overflow=29795 compactions=0 index_bytes=28234537 regions=128
+    driver walls (instrumented, NOT timings): seg=440.1 ms window=7.2 ms
+==============================================================================================================
+FILE lits_grow_tranco_t.jsonl
+  build=time corpus=tranco n=262144 reps=4 thr=128 calib=57.955 ns/pair cpu=0
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+  key_hash=2159501943207461314 sched_hash=12183538583180118563
+==============================================================================================================
+
+--- tranco / LitsHpt / grow / frac=0.25   (4 reps; interval 65536 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win      882.4 ->      824.4 ( 100.0%)   int      884.4 ->      826.5
+        locate (outer)             win      128.3 ->       70.3 (   8.5%)   int      135.0 ->       77.1
+        Region::find_located       win      110.7 ->       52.8 (   6.4%)   int      111.4 ->       53.4
+        place_with_ctx             win      513.6 ->      455.7 (  55.3%)   int      516.8 ->      458.9
+          of which repack_subblock win      110.0 ->       90.7 (  11.0%)   int      111.3 ->       91.7
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win       61.1 ->       54.2 (   6.6%)   int       60.0 ->       53.0
+          of which ov lookup       win       12.3 ->        5.4 (   0.7%)   int       11.5 ->        4.5
+          of which ov alloc        win       29.4 ->       22.4 (   2.7%)   int       28.2 ->       21.2
+      residual (uninstrumented)    win       71.8   (8.1% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      468.7 ->      410.8 ( 100.0%)   int      467.2 ->      409.3
+        locate (outer)             win      162.5 ->      104.5 (  25.4%)   int      158.9 ->      101.0
+        Region::erase              win      216.1 ->      158.1 (  38.5%)   int      217.4 ->      159.4
+          of which find_located    win      124.5 ->       66.5 (  16.2%)   int      122.8 ->       64.8
+          of which ov erase        win        0.8 ->        0.4 (   0.1%)   int        0.6 ->        0.2
+      residual (uninstrumented)    win       32.2   (6.9% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=262144 overflow=8691 compactions=0 index_bytes=26231977
+    driver walls (instrumented, NOT timings): seg=96.3 ms window=12.2 ms
+
+--- tranco / LitsHpt / grow / frac=2.00   (4 reps; interval 458752 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win      723.7 ->      665.7 ( 100.0%)   int      789.1 ->      731.1
+        locate (outer)             win      123.5 ->       65.5 (   9.8%)   int      129.8 ->       71.9
+        Region::find_located       win       98.4 ->       40.4 (   6.1%)   int      104.7 ->       46.7
+        place_with_ctx             win      387.9 ->      329.9 (  49.6%)   int      437.8 ->      379.9
+          of which repack_subblock win       53.0 ->       38.4 (   5.8%)   int       77.7 ->       59.7
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win       36.5 ->       31.9 (   4.8%)   int       49.4 ->       43.0
+          of which ov lookup       win       14.9 ->       10.3 (   1.6%)   int       16.1 ->        9.7
+          of which ov alloc        win        8.9 ->        4.3 (   0.7%)   int       15.3 ->        8.9
+      residual (uninstrumented)    win       56.0   (7.7% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      441.0 ->      383.0 ( 100.0%)   int      464.6 ->      406.6
+        locate (outer)             win      134.4 ->       76.4 (  19.9%)   int      153.6 ->       95.7
+        Region::erase              win      218.3 ->      160.3 (  41.9%)   int      222.5 ->      164.6
+          of which find_located    win      114.7 ->       56.8 (  14.8%)   int      122.7 ->       64.8
+          of which ov erase        win        9.0 ->        4.4 (   1.1%)   int        7.8 ->        4.0
+      residual (uninstrumented)    win       30.4   (6.9% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=262144 overflow=29795 compactions=0 index_bytes=28237609
+    driver walls (instrumented, NOT timings): seg=624.5 ms window=10.6 ms
+==============================================================================================================
+FILE lits_same_mixed_c.jsonl
+  build=count corpus=mixed n=131072 reps=4 thr=128
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+  key_hash=2678861052284337892 sched_hash=11511083231847525528
+==============================================================================================================
+
+--- mixed / LitsHpt / same / frac=0.25   (4 reps; interval 32768 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     0.000        0.000
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                    7.630        7.580
+    cmp bytes                  25.554       26.844
+    place attempts              1.035        1.034
+    fail: slots                 0.000        0.000
+    fail: bytes                 0.035        0.034
+    subblk probes               1.035        1.034
+    ins attempts                1.035        1.034
+    ins ok                      1.000        1.000
+    entry shifts                6.659        6.611
+    suffix bytes               31.500       31.688
+    reclaims                    0.035        0.034
+    reclaim helped              0.035        0.034
+    widen passes                0.000        0.000
+    widen blocks                0.000        0.000
+    compact entered             0.000        0.000
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.000        0.000
+    string allocs               0.000        0.000
+    ov suffix bytes             0.000        0.000
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    1.028        1.027
+    cmp bytes                  31.592       31.780
+    erase shifts                6.659        6.611
+    released primary           31.500       31.688
+    released overflow           0.000        0.000
+    string frees                0.000        0.000
+    ov shift recs               0.000        0.000
+    ov shift bytes              0.000        0.000
+    state@checkpoint: live=131072 overflow=564 compactions=0 index_bytes=23978435 regions=64
+    driver walls (instrumented, NOT timings): seg=15.9 ms window=4.4 ms
+
+--- mixed / LitsHpt / same / frac=2.00   (4 reps; interval 229376 cycles, window 8192)
+    insert side            window/ins interval/ins
+    locate (outer)              1.000        1.000
+    predict                     0.000        0.054
+    fingerprint                 0.000        0.000
+    exists search               1.000        1.000
+    full cmp                   23.569       13.472
+    cmp bytes                 367.477      182.956
+    place attempts              2.119        1.625
+    fail: slots                 0.023        0.013
+    fail: bytes                 1.106        0.624
+    subblk probes              21.130        6.699
+    ins attempts                2.119        1.625
+    ins ok                      0.990        0.988
+    entry shifts               19.357       11.573
+    suffix bytes              119.510       87.004
+    reclaims                    0.992        0.561
+    reclaim helped              0.959        0.538
+    widen passes                0.023        0.010
+    widen blocks                0.025        0.011
+    compact entered             0.010        0.012
+    compact replay recs         0.000        0.000
+    compact bytes               0.000        0.000
+    overflow inserts            0.010        0.012
+    string allocs               0.010        0.012
+    ov suffix bytes             1.240        1.421
+    region rebuilds             0.000        0.000
+    threshold splits            0.000        0.000
+    erase side             window/era interval/era
+    locate (outer)              1.000        1.000
+    exists search               1.000        1.000
+    full cmp                    2.607        1.472
+    cmp bytes                 136.135       94.669
+    erase shifts               19.397       11.634
+    released primary          119.510       87.897
+    released overflow           1.239        0.528
+    string frees                0.010        0.005
+    ov shift recs               0.038        0.012
+    ov shift bytes              1.846        0.558
+    state@checkpoint: live=131072 overflow=2187 compactions=0 index_bytes=24295910 regions=64
+    driver walls (instrumented, NOT timings): seg=284.6 ms window=18.5 ms
+==============================================================================================================
+FILE lits_same_mixed_t.jsonl
+  build=time corpus=mixed n=131072 reps=4 thr=128 calib=56.608 ns/pair cpu=0
+  switches: write_fast_locate=1,reuse_locate_ctx=1,compact_reuse_tag=1,compact_needs_garbage=1,compact_repack_budget=0,subblock_reclaim=1,reclaim_widest=1,reclaim_hysteresis=0,reclaim_skip_repeat=0,scan_cache_start=0,scan_ordered_start=0,scan_reserve_result=1,overflow_stable_store=0,overflow_inline_tag=0,overflow_migrate=0,compact_plan_commit=1,compact_region_routing=0,reclaim_low_activity=0,model_backend=LitsHpt
+  key_hash=2678861052284337892 sched_hash=11511083231847525528
+==============================================================================================================
+
+--- mixed / LitsHpt / same / frac=0.25   (4 reps; interval 32768 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win      484.0 ->      427.4 ( 100.0%)   int      469.4 ->      412.8
+        locate (outer)             win      107.9 ->       51.3 (  12.0%)   int      106.2 ->       49.6
+        Region::find_located       win       74.3 ->       17.6 (   4.1%)   int       66.2 ->        9.6
+        place_with_ctx             win      175.8 ->      119.1 (  27.9%)   int      171.0 ->      114.4
+          of which repack_subblock win        5.6 ->        3.6 (   0.8%)   int        5.4 ->        3.5
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+          of which ov lookup       win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+          of which ov alloc        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+      residual (uninstrumented)    win       69.5   (14.4% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      426.6 ->      370.0 ( 100.0%)   int      419.3 ->      362.7
+        locate (outer)             win      142.3 ->       85.7 (  23.2%)   int      134.4 ->       77.8
+        Region::erase              win      193.3 ->      136.7 (  36.9%)   int      181.1 ->      124.5
+          of which find_located    win      101.7 ->       45.1 (  12.2%)   int       95.2 ->       38.6
+          of which ov erase        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+      residual (uninstrumented)    win       34.4   (8.1% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=131072 overflow=564 compactions=0 index_bytes=23979971
+    driver walls (instrumented, NOT timings): seg=33.2 ms window=8.5 ms
+
+--- mixed / LitsHpt / same / frac=2.00   (4 reps; interval 229376 cycles, window 8192)
+    call cross-check: w_insert_calls=8192 w_erase_calls=8192 vs window 8192 -> OK
+    INSERT side, window per operation (ns/op; raw -> corrected):
+      Index::insert (whole)        win     1427.7 ->     1371.1 ( 100.0%)   int      918.6 ->      862.0
+        locate (outer)             win      108.3 ->       51.7 (   3.8%)   int      115.7 ->       59.1
+        Region::find_located       win      321.6 ->      265.0 (  19.3%)   int      161.2 ->      104.6
+        place_with_ctx             win      866.2 ->      809.6 (  59.0%)   int      515.6 ->      459.0
+          of which repack_subblock win      345.4 ->      287.9 (  21.0%)   int      174.4 ->      142.1
+          of which compact         win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (all)              win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        rebuild (region)           win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        Region::insert_slow        win        0.0 ->        0.0 (   0.0%)   int        0.0 ->        0.0
+        ov insert (total)          win        3.0 ->        2.4 (   0.2%)   int        5.0 ->        4.3
+          of which ov lookup       win        1.3 ->        0.7 (   0.1%)   int        0.9 ->        0.2
+          of which ov alloc        win        0.5 ->       -0.1 (  -0.0%)   int        2.0 ->        1.3
+      residual (uninstrumented)    win       75.0   (5.3% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    ERASE side, window per operation (ns/op; raw -> corrected):
+      Index::erase (whole)         win      512.5 ->      455.9 ( 100.0%)   int      481.9 ->      425.3
+        locate (outer)             win      112.3 ->       55.7 (  12.2%)   int      138.0 ->       81.4
+        Region::erase              win      312.2 ->      255.6 (  56.1%)   int      251.8 ->      195.1
+          of which find_located    win      204.5 ->      147.9 (  32.5%)   int      154.2 ->       97.6
+          of which ov erase        win        0.9 ->        0.4 (   0.1%)   int        0.5 ->        0.3
+      residual (uninstrumented)    win       31.4   (6.1% of the whole; the whole own clock pair is removed, nested pairs stay inside their part)
+    state@checkpoint: live=131072 overflow=2187 compactions=0 index_bytes=24297446
+    driver walls (instrumented, NOT timings): seg=346.7 ms window=17.0 ms
+
+analyze_write_residual: done
+### analyze rc=0

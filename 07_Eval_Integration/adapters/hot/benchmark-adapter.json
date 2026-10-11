@@ -1,0 +1,22 @@
+{
+  "contract": "string-index/v1",
+  "id": "hot",
+  "source_dir": ".",
+  "cmake_target": "hot_adapter",
+  "factory_header": "hot_adapter.h",
+  "factory_symbol": "make_hot_index",
+  "source_identity": {
+    "note": "The evaluator records this verbatim as adapter_declared_source_identity and does NOT hash the external source tree recursively. This is the only place the HOT implementation's identity is bound to the result file.",
+    "library": "speedskater/hot",
+    "repository": "https://github.com/speedskater/hot",
+    "commit": "96bf6fb7103b27e50e16a6026db8974c090ee84a",
+    "license": "ISC",
+    "checkout": "07_Eval_Integration/hot-src",
+    "isa_requirement": "AVX2 + BMI2 (Haswell or newer). This is a HARD constraint of the library: it cannot be built for x86-64-v2, and it is why the whole round is compiled at x86-64-v3 rather than at the level earlier rounds used.",
+    "isa_used": "x86-64-v3",
+    "host_cpu_verified": "Intel Core Ultra 9 275HX with avx2, bmi1, bmi2, adx -- checked before the ISA decision, not assumed",
+    "assertions": "on (NDEBUG not defined)",
+    "value_type_constraint": "HOT requires its value type to fit in a pointer (its interface static-asserts this), so the trie stores pointers to adapter-owned pair records.",
+    "key_type_constraint": "HOT addresses keys as NUL-terminated const char*, so a key containing NUL cannot be represented and is declared unsupported."
+  }
+}

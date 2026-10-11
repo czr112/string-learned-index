@@ -1,0 +1,270 @@
+### xsr_ctx16_same_mixed P1
+mixed Context16 same rep0 B done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 S done
+mixed Context16 same rep0 WS done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 S done
+mixed Context16 same rep1 WS done
+mixed Context16 same rep1 B done
+mixed Context16 same rep2 S done
+mixed Context16 same rep2 WS done
+mixed Context16 same rep2 B done
+mixed Context16 same rep2 W done
+mixed Context16 same rep3 WS done
+mixed Context16 same rep3 B done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 S done
+rc=0
+### xsr_ctx16_same_mixed P2
+mixed Context16 same rep0 B done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 S done
+mixed Context16 same rep0 WS done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 S done
+mixed Context16 same rep1 WS done
+mixed Context16 same rep1 B done
+mixed Context16 same rep2 S done
+mixed Context16 same rep2 WS done
+mixed Context16 same rep2 B done
+mixed Context16 same rep2 W done
+mixed Context16 same rep3 WS done
+mixed Context16 same rep3 B done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 S done
+rc=0
+### xsr_ctx16_same_mixed P3
+mixed Context16 same rep0 B done
+mixed Context16 same rep0 W done
+mixed Context16 same rep0 S done
+mixed Context16 same rep0 WS done
+mixed Context16 same rep1 W done
+mixed Context16 same rep1 S done
+mixed Context16 same rep1 WS done
+mixed Context16 same rep1 B done
+mixed Context16 same rep2 S done
+mixed Context16 same rep2 WS done
+mixed Context16 same rep2 B done
+mixed Context16 same rep2 W done
+mixed Context16 same rep3 WS done
+mixed Context16 same rep3 B done
+mixed Context16 same rep3 W done
+mixed Context16 same rep3 S done
+rc=0
+### xsr_lits_same_skew P1
+skew LitsHpt same rep0 B done
+skew LitsHpt same rep0 W done
+skew LitsHpt same rep0 S done
+skew LitsHpt same rep0 WS done
+skew LitsHpt same rep1 W done
+skew LitsHpt same rep1 S done
+skew LitsHpt same rep1 WS done
+skew LitsHpt same rep1 B done
+skew LitsHpt same rep2 S done
+skew LitsHpt same rep2 WS done
+skew LitsHpt same rep2 B done
+skew LitsHpt same rep2 W done
+skew LitsHpt same rep3 WS done
+skew LitsHpt same rep3 B done
+skew LitsHpt same rep3 W done
+skew LitsHpt same rep3 S done
+rc=0
+### xsr_lits_same_skew P2
+skew LitsHpt same rep0 B done
+skew LitsHpt same rep0 W done
+skew LitsHpt same rep0 S done
+skew LitsHpt same rep0 WS done
+skew LitsHpt same rep1 W done
+skew LitsHpt same rep1 S done
+skew LitsHpt same rep1 WS done
+skew LitsHpt same rep1 B done
+skew LitsHpt same rep2 S done
+skew LitsHpt same rep2 WS done
+skew LitsHpt same rep2 B done
+skew LitsHpt same rep2 W done
+skew LitsHpt same rep3 WS done
+skew LitsHpt same rep3 B done
+skew LitsHpt same rep3 W done
+skew LitsHpt same rep3 S done
+rc=0
+### xsr_lits_same_skew P3
+skew LitsHpt same rep0 B done
+skew LitsHpt same rep0 W done
+skew LitsHpt same rep0 S done
+skew LitsHpt same rep0 WS done
+skew LitsHpt same rep1 W done
+skew LitsHpt same rep1 S done
+skew LitsHpt same rep1 WS done
+skew LitsHpt same rep1 B done
+skew LitsHpt same rep2 S done
+skew LitsHpt same rep2 WS done
+skew LitsHpt same rep2 B done
+skew LitsHpt same rep2 W done
+skew LitsHpt same rep3 WS done
+skew LitsHpt same rep3 B done
+skew LitsHpt same rep3 W done
+skew LitsHpt same rep3 S done
+rc=0
+### xsr_ctx16_same_skew P1
+skew Context16 same rep0 B done
+skew Context16 same rep0 W done
+skew Context16 same rep0 S done
+skew Context16 same rep0 WS done
+skew Context16 same rep1 W done
+skew Context16 same rep1 S done
+skew Context16 same rep1 WS done
+skew Context16 same rep1 B done
+skew Context16 same rep2 S done
+skew Context16 same rep2 WS done
+skew Context16 same rep2 B done
+skew Context16 same rep2 W done
+skew Context16 same rep3 WS done
+skew Context16 same rep3 B done
+skew Context16 same rep3 W done
+skew Context16 same rep3 S done
+rc=0
+### xsr_ctx16_same_skew P2
+skew Context16 same rep0 B done
+skew Context16 same rep0 W done
+skew Context16 same rep0 S done
+skew Context16 same rep0 WS done
+skew Context16 same rep1 W done
+skew Context16 same rep1 S done
+skew Context16 same rep1 WS done
+skew Context16 same rep1 B done
+skew Context16 same rep2 S done
+skew Context16 same rep2 WS done
+skew Context16 same rep2 B done
+skew Context16 same rep2 W done
+skew Context16 same rep3 WS done
+skew Context16 same rep3 B done
+skew Context16 same rep3 W done
+skew Context16 same rep3 S done
+rc=0
+### xsr_ctx16_same_skew P3
+skew Context16 same rep0 B done
+skew Context16 same rep0 W done
+skew Context16 same rep0 S done
+skew Context16 same rep0 WS done
+skew Context16 same rep1 W done
+skew Context16 same rep1 S done
+skew Context16 same rep1 WS done
+skew Context16 same rep1 B done
+skew Context16 same rep2 S done
+skew Context16 same rep2 WS done
+skew Context16 same rep2 B done
+skew Context16 same rep2 W done
+skew Context16 same rep3 WS done
+skew Context16 same rep3 B done
+skew Context16 same rep3 W done
+skew Context16 same rep3 S done
+rc=0
+### xsr_lits_same_tranco P1
+tranco LitsHpt same rep0 B done
+tranco LitsHpt same rep0 W done
+tranco LitsHpt same rep0 S done
+tranco LitsHpt same rep0 WS done
+tranco LitsHpt same rep1 W done
+tranco LitsHpt same rep1 S done
+tranco LitsHpt same rep1 WS done
+tranco LitsHpt same rep1 B done
+tranco LitsHpt same rep2 S done
+tranco LitsHpt same rep2 WS done
+tranco LitsHpt same rep2 B done
+tranco LitsHpt same rep2 W done
+tranco LitsHpt same rep3 WS done
+tranco LitsHpt same rep3 B done
+tranco LitsHpt same rep3 W done
+tranco LitsHpt same rep3 S done
+rc=0
+### xsr_lits_same_tranco P2
+tranco LitsHpt same rep0 B done
+tranco LitsHpt same rep0 W done
+tranco LitsHpt same rep0 S done
+tranco LitsHpt same rep0 WS done
+tranco LitsHpt same rep1 W done
+tranco LitsHpt same rep1 S done
+tranco LitsHpt same rep1 WS done
+tranco LitsHpt same rep1 B done
+tranco LitsHpt same rep2 S done
+tranco LitsHpt same rep2 WS done
+tranco LitsHpt same rep2 B done
+tranco LitsHpt same rep2 W done
+tranco LitsHpt same rep3 WS done
+tranco LitsHpt same rep3 B done
+tranco LitsHpt same rep3 W done
+tranco LitsHpt same rep3 S done
+rc=0
+### xsr_lits_same_tranco P3
+tranco LitsHpt same rep0 B done
+tranco LitsHpt same rep0 W done
+tranco LitsHpt same rep0 S done
+tranco LitsHpt same rep0 WS done
+tranco LitsHpt same rep1 W done
+tranco LitsHpt same rep1 S done
+tranco LitsHpt same rep1 WS done
+tranco LitsHpt same rep1 B done
+tranco LitsHpt same rep2 S done
+tranco LitsHpt same rep2 WS done
+tranco LitsHpt same rep2 B done
+tranco LitsHpt same rep2 W done
+tranco LitsHpt same rep3 WS done
+tranco LitsHpt same rep3 B done
+tranco LitsHpt same rep3 W done
+tranco LitsHpt same rep3 S done
+rc=0
+### xsr_ctx16_same_tranco P1
+tranco Context16 same rep0 B done
+tranco Context16 same rep0 W done
+tranco Context16 same rep0 S done
+tranco Context16 same rep0 WS done
+tranco Context16 same rep1 W done
+tranco Context16 same rep1 S done
+tranco Context16 same rep1 WS done
+tranco Context16 same rep1 B done
+tranco Context16 same rep2 S done
+tranco Context16 same rep2 WS done
+tranco Context16 same rep2 B done
+tranco Context16 same rep2 W done
+tranco Context16 same rep3 WS done
+tranco Context16 same rep3 B done
+tranco Context16 same rep3 W done
+tranco Context16 same rep3 S done
+rc=0
+### xsr_ctx16_same_tranco P2
+tranco Context16 same rep0 B done
+tranco Context16 same rep0 W done
+tranco Context16 same rep0 S done
+tranco Context16 same rep0 WS done
+tranco Context16 same rep1 W done
+tranco Context16 same rep1 S done
+tranco Context16 same rep1 WS done
+tranco Context16 same rep1 B done
+tranco Context16 same rep2 S done
+tranco Context16 same rep2 WS done
+tranco Context16 same rep2 B done
+tranco Context16 same rep2 W done
+tranco Context16 same rep3 WS done
+tranco Context16 same rep3 B done
+tranco Context16 same rep3 W done
+tranco Context16 same rep3 S done
+rc=0
+### xsr_ctx16_same_tranco P3
+tranco Context16 same rep0 B done
+tranco Context16 same rep0 W done
+tranco Context16 same rep0 S done
+tranco Context16 same rep0 WS done
+tranco Context16 same rep1 W done
+tranco Context16 same rep1 S done
+tranco Context16 same rep1 WS done
+tranco Context16 same rep1 B done
+tranco Context16 same rep2 S done
+tranco Context16 same rep2 WS done
+tranco Context16 same rep2 B done
+tranco Context16 same rep2 W done
+tranco Context16 same rep3 WS done
+tranco Context16 same rep3 B done
+tranco Context16 same rep3 W done
+tranco Context16 same rep3 S done
+rc=0

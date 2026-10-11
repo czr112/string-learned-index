@@ -1,0 +1,6 @@
+### check_block_rank mixed 131072 
+FAIL: collision keys share a group
+FAIL: erased keys are gone
+{"kind":"mixed","n":131072,"regions":64,"rank_regions_fitted":64,"rank_regions_boundary":0,"rank_keys_fitted":131072,"rank_segments":436,"checksum_ref":14004954854973824228,"checksum_block":6790703351951297914,"ref_probes":0,"block_probes":0,"ref_cmps":0,"block_cmps":0,"ref_overflow_entered":0,"block_overflow_entered":0,"groups":21251,"group_load_min":0,"group_load_max":1366,"group_load_avg":6.1678,"overflow_records":4828}
+checks=325 failures=2
+rc=1

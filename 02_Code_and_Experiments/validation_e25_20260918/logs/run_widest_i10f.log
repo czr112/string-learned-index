@@ -1,0 +1,43 @@
+widest sweep run_id=i10f  2026-09-23 19:43:18
+phase x2: target=bench_lits2x2 reps=5 (phase table) processes=5
+    rep 0 arm order: 0 1 2 3 4
+    rep 1 arm order: 1 2 3 4 0
+    rep 2 arm order: 2 3 4 0 1
+    rep 3 arm order: 3 4 0 1 2
+    rep 4 arm order: 4 0 1 2 3
+    position balance verified: every arm occupies every position 1 time(s)
+--- phase x2 mode same -> long_lits2x2_i10f_same.jsonl ---
+  bench_lits2x2 mixed same reps=5 tag=P1 rc=0 wall=27s
+  bench_lits2x2 skew same reps=5 tag=P1 rc=0 wall=34s
+  bench_lits2x2 tranco same reps=5 tag=P1 rc=0 wall=49s
+  bench_lits2x2 mixed same reps=5 tag=P2 rc=0 wall=28s
+  bench_lits2x2 skew same reps=5 tag=P2 rc=0 wall=34s
+  bench_lits2x2 tranco same reps=5 tag=P2 rc=0 wall=51s
+  bench_lits2x2 mixed same reps=5 tag=P3 rc=0 wall=25s
+  bench_lits2x2 skew same reps=5 tag=P3 rc=0 wall=34s
+  bench_lits2x2 tranco same reps=5 tag=P3 rc=0 wall=52s
+  bench_lits2x2 mixed same reps=5 tag=P4 rc=0 wall=28s
+  bench_lits2x2 skew same reps=5 tag=P4 rc=0 wall=34s
+  bench_lits2x2 tranco same reps=5 tag=P4 rc=0 wall=50s
+  bench_lits2x2 mixed same reps=5 tag=P5 rc=0 wall=28s
+  bench_lits2x2 skew same reps=5 tag=P5 rc=0 wall=34s
+  bench_lits2x2 tranco same reps=5 tag=P5 rc=0 wall=49s
+    archived 1500 row(s) to long_lits2x2_i10f_same.jsonl
+--- phase x2 mode grow -> long_lits2x2_i10f_grow.jsonl ---
+  bench_lits2x2 mixed grow reps=5 tag=P1 rc=0 wall=26s
+  bench_lits2x2 skew grow reps=5 tag=P1 rc=0 wall=32s
+  bench_lits2x2 tranco grow reps=5 tag=P1 rc=0 wall=50s
+  bench_lits2x2 mixed grow reps=5 tag=P2 rc=0 wall=28s
+  bench_lits2x2 skew grow reps=5 tag=P2 rc=0 wall=32s
+  bench_lits2x2 tranco grow reps=5 tag=P2 rc=0 wall=53s
+  bench_lits2x2 mixed grow reps=5 tag=P3 rc=0 wall=26s
+  bench_lits2x2 skew grow reps=5 tag=P3 rc=0 wall=32s
+  bench_lits2x2 tranco grow reps=5 tag=P3 rc=0 wall=53s
+  bench_lits2x2 mixed grow reps=5 tag=P4 rc=0 wall=26s
+  bench_lits2x2 skew grow reps=5 tag=P4 rc=0 wall=32s
+  bench_lits2x2 tranco grow reps=5 tag=P4 rc=0 wall=52s
+  bench_lits2x2 mixed grow reps=5 tag=P5 rc=0 wall=24s
+  bench_lits2x2 skew grow reps=5 tag=P5 rc=0 wall=33s
+  bench_lits2x2 tranco grow reps=5 tag=P5 rc=0 wall=54s
+    archived 1500 row(s) to long_lits2x2_i10f_grow.jsonl
+sweep end 2026-09-23 20:01:46

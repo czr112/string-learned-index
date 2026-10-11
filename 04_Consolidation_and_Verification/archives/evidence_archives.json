@@ -1,0 +1,30 @@
+{
+  "format": "lossless-gzip-evidence/v1",
+  "restore": "python3 tools/restore_evidence.py",
+  "archives": [
+    {
+      "original": "02_Code_and_Experiments/validation_e25_20260918/results/main/a2_entry_mixed.jsonl",
+      "archive": "04_Consolidation_and_Verification/archives/a2_entry_mixed.jsonl.gz",
+      "original_bytes": 56181909,
+      "archive_bytes": 7168192,
+      "original_sha256": "79c5872a1e9b36ef75f15f5065eb58e1ca3866ae035a1555694ed6a69bfae71b",
+      "archive_sha256": "fd426c885d31969f963a7fe76797cf92a1172589325e0aee7764d8b6de6758ef"
+    },
+    {
+      "original": "02_Code_and_Experiments/validation_e25_20260918/results/main/a2_entry_skew.jsonl",
+      "archive": "04_Consolidation_and_Verification/archives/a2_entry_skew.jsonl.gz",
+      "original_bytes": 67748406,
+      "archive_bytes": 7718524,
+      "original_sha256": "1972e4bb8fd672a59fa489a0f42c05bc9f96b3b8f7ac740af3ab4c62ee4a87a5",
+      "archive_sha256": "6d18e367b642804e087a18c9af881996cc6632c2f2444621da8772e0c3925776"
+    },
+    {
+      "original": "02_Code_and_Experiments/validation_e25_20260918/results/main/a2_entry_tranco.jsonl",
+      "archive": "04_Consolidation_and_Verification/archives/a2_entry_tranco.jsonl.gz",
+      "original_bytes": 102620407,
+      "archive_bytes": 3808928,
+      "original_sha256": "d10aa7b5cd1db9d4f144cb967d9010e26103f1ecc593e7f8ca6bb16aa84ef00f",
+      "archive_sha256": "d2540742591a431053654451d5e17fe5886bf9feeedabf3451311fd05c9d208a"
+    }
+  ]
+}

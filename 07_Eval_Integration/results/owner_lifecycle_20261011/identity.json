@@ -1,0 +1,147 @@
+{
+  "sources_sha256": {
+    "07_Eval_Integration/diagnostics/run_owner_lifecycle.py": "5236d143a1f2454f186332bc82b0bfb6585fab8273ea7c1d4049d6f7c5083921",
+    "07_Eval_Integration/diagnostics/check_owner_lifecycle.cpp": "9de2b6b39ab1061482b48b6db5b23cd5e3dc9593b6858ff4c7e8d51af5aae882",
+    "02_Code_and_Experiments/validation_e25_20260918/index.hpp": "b20c83cab42787078508d5af6dd8a9e3c512fb0731618b9b0b81dc8fc64056d6",
+    "02_Code_and_Experiments/validation_e25_20260918/switches.hpp": "72856bdc89f994e489c5b41c5e87a21dbafb51873c41f08e2550b71efc3edba7",
+    "02_Code_and_Experiments/validation_e25_20260918/model/lits_hpt_adapter.hpp": "51c52d687fef5684ac9a88a37f91be8ea17cf7dc491bcdaa12a8754cc30168b2",
+    "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+    "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+    "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2"
+  },
+  "binary_sha256": "b9183b45e73abf7492f9546c56830494587784357a1dd448c339979980c98295",
+  "lits_hpt_adapter_sha256": "51c52d687fef5684ac9a88a37f91be8ea17cf7dc491bcdaa12a8754cc30168b2",
+  "sanitizer_binary_sha256": "4fc87421a95773c6dd1fb7185116cb7847e8f375bd5405679da2e7e6b6e2f8a4",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "cpu": 0,
+  "commands": [
+    [
+      "g++",
+      "-O3",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-DE25_DIAG",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "diagnostics/check_owner_lifecycle.cpp",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle"
+    ],
+    [
+      "g++",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-DE25_DIAG",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "diagnostics/check_owner_lifecycle.cpp",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/san_check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/owner_lifecycle_20261011/check_owner_lifecycle",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "lits"
+    ],
+    [
+      "g++",
+      "--version"
+    ]
+  ],
+  "scope": "M3 lifecycle correctness re-validation only; no timings, no default flip"
+}

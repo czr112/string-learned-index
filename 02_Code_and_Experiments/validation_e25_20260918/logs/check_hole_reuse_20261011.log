@@ -1,0 +1,13 @@
+OK check_hole_reuse build_id=1791652561155567844 exe=5aae7a8a5ca08d38…
+OK san_check_hole_reuse build_id=1791652577804646429 exe=d63fe3b39011fe0a…
+  H placed 1792 of 42639 attempts (105978 B); repacks 23834 -> 22895, moved bytes 7540544 -> 7186960
+FAIL: after deleting a live key: and it is the number the reference holds
+FAIL: after deleting a live key: every live key answers the same in all three
+FAIL: after reinserting it: and it is the number the reference holds
+FAIL: after reinserting it: every live key answers the same in all three
+FAIL: after a refused duplicate insert: and it is the number the reference holds
+FAIL: after a refused duplicate insert: every live key answers the same in all three
+FAIL: edge keys: NUL, high bytes, 4092-byte key: every live key answers the same in all three
+FAIL: edge keys: after inserts: every live key answers the same in all three
+{"kind":"mixed","backend":"ctx16","keys":131072,"final_size":131073,"regions":64,"h_attempts":42639,"h_placed":1792,"h_absent":40847,"h_skipped_lt2":0,"h_skipped_wide":0,"h_bytes":105978,"w_reclaims":23834,"h_reclaims":22895,"w_moved_bytes":7540544,"h_moved_bytes":7186960,"checks":2266,"failures":8}
+8 FAILED out of 2266

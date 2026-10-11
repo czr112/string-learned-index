@@ -1,0 +1,105 @@
+{
+  "target": "tranco/lits",
+  "cells": [
+    {
+      "corpus": "mixed",
+      "backend": "context16",
+      "gates": {
+        "identity": true,
+        "zero": true,
+        "diff": true,
+        "space": true,
+        "pass": true
+      },
+      "regions_lits": 0,
+      "regions_fallback": 64,
+      "model_bytes_lits": 0,
+      "savable_ratio": 0.0,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "mixed",
+      "backend": "lits",
+      "gates": {
+        "identity": true,
+        "zero": true,
+        "diff": true,
+        "space": true,
+        "pass": true
+      },
+      "regions_lits": 61,
+      "regions_fallback": 3,
+      "model_bytes_lits": 1007232,
+      "savable_ratio": 0.027402112518226912,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "skew",
+      "backend": "context16",
+      "gates": {
+        "identity": true,
+        "zero": true,
+        "diff": true,
+        "space": true,
+        "pass": true
+      },
+      "regions_lits": 0,
+      "regions_fallback": 64,
+      "model_bytes_lits": 0,
+      "savable_ratio": 0.0,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "skew",
+      "backend": "lits",
+      "gates": {
+        "identity": true,
+        "zero": true,
+        "diff": true,
+        "space": true,
+        "pass": true
+      },
+      "regions_lits": 64,
+      "regions_fallback": 0,
+      "model_bytes_lits": 1056768,
+      "savable_ratio": 0.026260430748714807,
+      "checksum": 5076600105132327806
+    },
+    {
+      "corpus": "tranco",
+      "backend": "context16",
+      "gates": {
+        "identity": true,
+        "zero": true,
+        "diff": true,
+        "space": true,
+        "pass": true
+      },
+      "regions_lits": 0,
+      "regions_fallback": 128,
+      "model_bytes_lits": 0,
+      "savable_ratio": 0.0,
+      "checksum": 2527145298674069018
+    },
+    {
+      "corpus": "tranco",
+      "backend": "lits",
+      "gates": {
+        "identity": true,
+        "zero": true,
+        "diff": true,
+        "space": true,
+        "pass": true
+      },
+      "regions_lits": 128,
+      "regions_fallback": 0,
+      "model_bytes_lits": 2113536,
+      "savable_ratio": 0.06054929522508398,
+      "checksum": 2527145298674069018
+    }
+  ],
+  "target_pass": true,
+  "target_savable_bytes": 2113536,
+  "target_savable_ratio": 0.06054929522508398,
+  "all_cells_pass": true
+}

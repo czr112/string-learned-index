@@ -1,0 +1,4 @@
+  mixed: 131072 keys, 64 regions, training gcpl=0 table=2097152B in 1024 allocations
+  skew: 131072 keys, 64 regions, training gcpl=29 table=2097152B in 1024 allocations
+  tranco: 262144 keys, 128 regions, training gcpl=0 table=2097152B in 1024 allocations
+check_lits_model PASS: 524288 live + 524288 absent keys agree with the source's position arithmetic across 256 real regions

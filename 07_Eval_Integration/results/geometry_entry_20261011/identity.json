@@ -1,0 +1,179 @@
+{
+  "sources_sha256": {
+    "07_Eval_Integration/diagnostics/run_geometry_entry.py": "5def9facf6cc6319bbcc346c37bd8c3a4778681685ca030e6f52140f9ef4745d",
+    "07_Eval_Integration/diagnostics/geometry_entry.cpp": "85252b10070db9679dc210c183faf4870ba941aa30fb8b1d8fa0f2d2e7d93ee7",
+    "07_Eval_Integration/diagnostics/make_geometry_prototype.py": "dc1651f1d01934e0075772102b2f4009304b2c1fc04a6a6f6a80399cf45114bb",
+    "07_Eval_Integration/diagnostics/check_geometry_shape.py": "ee963858bf864a1922f25f6f5ad4a9417183cd5a137c0057b3377344c808c68f",
+    "07_Eval_Integration/results/geometry_entry_20261011/probe/index.hpp": "824757b4cbd2b1125575c9edb8312b96fbf7d3ba9b1073b2f467944e04533092",
+    "07_Eval_Integration/diagnostics/lookup_structure.cpp": "b872a5d80241bddac24fe33d3ee06661796331f030378d492dfed838a948af75",
+    "docs/NEXT_ACTION_PLAN_20261011_GEOMETRY.md": "8c0202d9f2f448df767f675b0656e9c8ec290db61e193a98956b2413a8eb5fb6",
+    "07_Eval_Integration/learned-index/src/unified/runner.cpp": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+    "07_Eval_Integration/learned-index/src/unified/runner.h": "d935232df2487b8baba03a86fe7fa668c1ca8311d40e7aa4a0f8e96c345518d1",
+    "02_Code_and_Experiments/validation_e25_20260918/index.hpp": "640660a32f1fd1476d0d889d541c007883e5597d70e476524e3bcf2556ec8aa1",
+    "02_Code_and_Experiments/validation_e25_20260918/switches.hpp": "5486909fffc61c1eef940c058eae3fe036e970f0db21c988b3b41800803f0d4e",
+    "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+    "07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin": "e25cd3f02aa25fc867a66c128b4db7c44f91ec92647a41d75260baa9dc3a248e",
+    "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+    "07_Eval_Integration/results/matrix2_skew/interchange/queries.bin": "db0dec1d8839aeca14e4bee48635e95545681015394cfa6e730d319195f6cadf",
+    "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+    "07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin": "3767376ae31a58a556606c3e031ec3e76d86370fe023a76ddde0fa5cc2adc18d"
+  },
+  "cpu": 0,
+  "commands": [
+    [
+      "g++",
+      "-O3",
+      "-DE12_COUNT",
+      "-DE25_DIAG",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/probe",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "diagnostics/geometry_entry.cpp",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry"
+    ],
+    [
+      "g++",
+      "-O3",
+      "-DGD_SHAPE_PROBE",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/probe",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "diagnostics/geometry_entry.cpp",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "python3",
+      "-B",
+      "diagnostics/check_geometry_shape.py",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/geometry_entry_20261011/geometry_entry_clean",
+      "--pair",
+      "find_impl<true, false>",
+      "find_impl<true, true>"
+    ],
+    [
+      "g++",
+      "--version"
+    ]
+  ],
+  "binary_sha256": "380d52b879ef18f40a0b3ad49cda2de7e96e5b830196b26dd3f77205ab902a90",
+  "shape_binary_sha256": "77e47d84a6c5642e8c84afddf4dc68e0aee940d90aac90dceb169ced6c6ef694",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "prototype_from": "640660a32f1fd1476d0d889d541c007883e5597d70e476524e3bcf2556ec8aa1",
+  "scope": "GD entry counters only; C on, W/S/H off, frozen switches pinned; no speed claim; gates fields/address/diff/counters/space/hot_reads, plus one division in the baseline instantiation and none in the descriptor instantiation"
+}

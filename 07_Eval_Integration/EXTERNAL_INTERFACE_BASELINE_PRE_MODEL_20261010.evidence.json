@@ -1,0 +1,209 @@
+{
+  "scope": "frozen pre-new-model external static point lookup",
+  "index_hpp_sha256_declared_in_historical_reports": "f573480d5ab602cb29de68ffc8e1ff480f4ad9b89c4a5049cea0bf69d0687f0a",
+  "source_files_sha256": {
+    "results/matrix3_mixed/report.json": "1139dab1475aa22cadb5ff6fa741c758e012dfcbdd94731c3c5f29823f4c4636",
+    "results/matrix3_mixed/summary.csv": "4825be08c95777391dcd5982b16c80cbdf689316936362aafe2be9eee5f4e284",
+    "results/matrix3_mixed/samples.csv": "8704085f49999e035358f7c18d08cdb8cc405cda9227ea0a242db4b0c141aa00",
+    "results/matrix3_skew/report.json": "2d8062f5a8e00833590c081e71a59f434dea097cb708e47b2010b02da6ade8a6",
+    "results/matrix3_skew/summary.csv": "8f1e5e7a5750d4f6f94a259a80cce60eb330d179383e4467e8f6907f9809fcdb",
+    "results/matrix3_skew/samples.csv": "088a7d6b2677ea7b3196c81a63f80edacd356705c51ee820a1f678f277bf4b0f",
+    "results/matrix3_tranco/report.json": "a075d47995aac55001efc8a97efc884c70781c2a6319076dfc7e57a16e694869",
+    "results/matrix3_tranco/summary.csv": "bcc31d881baf50d641ed13ecf330923456292b7824c20ca6692bb70966984ba3",
+    "results/matrix3_tranco/samples.csv": "12542d7ccbe8e6d868fe1df1a380b15fefd4dad7741a9e2c898f2bcb709607c0",
+    "results/matrix3s_tranco/report.json": "23ad9fe64978464ca575ad41e2d1e716d80381bd7f9339fb3c61427fe2b7b1d5",
+    "results/matrix3s_tranco/summary.csv": "d3276495936c4951fd6684299963694fdc48b2763538f98e3b4a77d48ecb40f4",
+    "results/matrix3s_tranco/samples.csv": "9c3d5a7352e40bd1344e17f5faa90e7ea73717922ec51a9fafdf6299061c99d9"
+  },
+  "rounds": {
+    "matrix3_mixed": {
+      "dataset": {
+        "duplicate_records": 0,
+        "empty_keys": 0,
+        "estimated_preparation_memory_bytes": 27044483,
+        "high_bit_keys": 0,
+        "key_field": null,
+        "logical_hash_format": "string-dataset/v1 with unsigned LEB128 lengths",
+        "logical_sha256": "52336c6920f8c96c0130a2d961f0120e82b80ab2227697468dc558b2ce772476",
+        "max_key_bytes": 158,
+        "min_key_bytes": 39,
+        "normalization": "unsigned-byte lexicographic sort and exact deduplication",
+        "nul_keys": 0,
+        "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/datasets/mixed.keys",
+        "prefix_adjacent_pairs": 0,
+        "reader": "raw-lines",
+        "rows_sha256": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+        "source_records": 131072,
+        "source_sha256": "c92b19b9050f1c7f13da473036b6b509289eb20dae18c18feaaedbccf80ab824",
+        "total_unique_key_bytes": 15510147,
+        "unique_keys": 131072
+      },
+      "workload": {
+        "actual_operations": 10000,
+        "controlled_misses": 1000,
+        "latency_samples": 1000,
+        "miss_key_strategy": "source key plus deterministic ASCII suffix and counter",
+        "miss_ratio_decimal": "0.1",
+        "operations": 10000,
+        "queries_sha256": "e25cd3f02aa25fc867a66c128b4db7c44f91ec92647a41d75260baa9dc3a248e",
+        "repeats": 3,
+        "schema": "static-uniform-point/v1",
+        "seed": 42,
+        "source": null
+      }
+    },
+    "matrix3_skew": {
+      "dataset": {
+        "duplicate_records": 0,
+        "empty_keys": 0,
+        "estimated_preparation_memory_bytes": 31981568,
+        "high_bit_keys": 0,
+        "key_field": null,
+        "logical_hash_format": "string-dataset/v1 with unsigned LEB128 lengths",
+        "logical_sha256": "56c61e3cef8a21065bb7100f57a3b5711557b17e5b6bb6ded9bfd70b98bf60af",
+        "max_key_bytes": 156,
+        "min_key_bytes": 156,
+        "normalization": "unsigned-byte lexicographic sort and exact deduplication",
+        "nul_keys": 0,
+        "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/datasets/skew.keys",
+        "prefix_adjacent_pairs": 0,
+        "reader": "raw-lines",
+        "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+        "source_records": 131072,
+        "source_sha256": "746c53fb4556bdb3b3f238cc10fe5bbaa874eb37bb95c9adc4e4bfdeb00a543a",
+        "total_unique_key_bytes": 20447232,
+        "unique_keys": 131072
+      },
+      "workload": {
+        "actual_operations": 10000,
+        "controlled_misses": 1000,
+        "latency_samples": 1000,
+        "miss_key_strategy": "source key plus deterministic ASCII suffix and counter",
+        "miss_ratio_decimal": "0.1",
+        "operations": 10000,
+        "queries_sha256": "db0dec1d8839aeca14e4bee48635e95545681015394cfa6e730d319195f6cadf",
+        "repeats": 3,
+        "schema": "static-uniform-point/v1",
+        "seed": 42,
+        "source": null
+      }
+    },
+    "matrix3_tranco": {
+      "dataset": {
+        "duplicate_records": 0,
+        "empty_keys": 0,
+        "estimated_preparation_memory_bytes": 26477693,
+        "high_bit_keys": 0,
+        "key_field": null,
+        "logical_hash_format": "string-dataset/v1 with unsigned LEB128 lengths",
+        "logical_sha256": "d2bcc1cc2e4bb317d73b21c1f04a1c01ad89d1ea06d70a7486105125da12a2ef",
+        "max_key_bytes": 66,
+        "min_key_bytes": 4,
+        "normalization": "unsigned-byte lexicographic sort and exact deduplication",
+        "nul_keys": 0,
+        "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/datasets/tranco.keys",
+        "prefix_adjacent_pairs": 1620,
+        "reader": "raw-lines",
+        "rows_sha256": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+        "source_records": 262144,
+        "source_sha256": "75a15743177a5a0ff45bbdc99a82897abcbf9f52e22b1267d1d7c617186d2f18",
+        "total_unique_key_bytes": 3409021,
+        "unique_keys": 262144
+      },
+      "workload": {
+        "actual_operations": 10000,
+        "controlled_misses": 1000,
+        "latency_samples": 1000,
+        "miss_key_strategy": "source key plus deterministic ASCII suffix and counter",
+        "miss_ratio_decimal": "0.1",
+        "operations": 10000,
+        "queries_sha256": "3767376ae31a58a556606c3e031ec3e76d86370fe023a76ddde0fa5cc2adc18d",
+        "repeats": 3,
+        "schema": "static-uniform-point/v1",
+        "seed": 42,
+        "source": null
+      }
+    },
+    "matrix3s_tranco": {
+      "dataset": {
+        "duplicate_records": 0,
+        "empty_keys": 0,
+        "estimated_preparation_memory_bytes": 26477693,
+        "high_bit_keys": 0,
+        "key_field": null,
+        "logical_hash_format": "string-dataset/v1 with unsigned LEB128 lengths",
+        "logical_sha256": "d2bcc1cc2e4bb317d73b21c1f04a1c01ad89d1ea06d70a7486105125da12a2ef",
+        "max_key_bytes": 66,
+        "min_key_bytes": 4,
+        "normalization": "unsigned-byte lexicographic sort and exact deduplication",
+        "nul_keys": 0,
+        "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/datasets/tranco.keys",
+        "prefix_adjacent_pairs": 1620,
+        "reader": "raw-lines",
+        "rows_sha256": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+        "source_records": 262144,
+        "source_sha256": "75a15743177a5a0ff45bbdc99a82897abcbf9f52e22b1267d1d7c617186d2f18",
+        "total_unique_key_bytes": 3409021,
+        "unique_keys": 262144
+      },
+      "workload": {
+        "actual_operations": 10000,
+        "controlled_misses": 1000,
+        "latency_samples": 1000,
+        "miss_key_strategy": "source key plus deterministic ASCII suffix and counter",
+        "miss_ratio_decimal": "0.1",
+        "operations": 10000,
+        "queries_sha256": "3767376ae31a58a556606c3e031ec3e76d86370fe023a76ddde0fa5cc2adc18d",
+        "repeats": 15,
+        "schema": "static-uniform-point/v1",
+        "seed": 42,
+        "source": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/workload_repeats15.json"
+      }
+    }
+  },
+  "routing_ratios_by_corresponding_repeat_number": {
+    "Context16": {
+      "ratios_by_repeat": [
+        0.5391787241421605,
+        0.7629928824375022,
+        1.209155934046594,
+        0.9126795420052686,
+        1.1656144389504703,
+        0.5988995607537776,
+        0.9563150206511553,
+        0.9781897982589834,
+        0.8261753750458583,
+        1.0558071029407405,
+        0.8371098899790551,
+        0.918022677047011,
+        0.7868063995866961,
+        0.98529545318273,
+        0.6059303863743829
+      ],
+      "median": 0.9126795420052686,
+      "faster": 12
+    },
+    "LITS": {
+      "ratios_by_repeat": [
+        0.9647856888687607,
+        0.6499155047540492,
+        0.6505779375222795,
+        0.6177357479887498,
+        0.7655978199539415,
+        1.1869538889842728,
+        0.6113973263506547,
+        0.5828417906469343,
+        1.3756945416586734,
+        1.09244857629858,
+        0.9398598742873332,
+        0.527415902735404,
+        0.918577620858686,
+        1.1279888407108105,
+        1.3886384219446897
+      ],
+      "median": 0.918577620858686,
+      "faster": 10
+    }
+  },
+  "verification": "24 arm summaries recomputed from throughput samples; statuses and per-round checksums agree"
+}

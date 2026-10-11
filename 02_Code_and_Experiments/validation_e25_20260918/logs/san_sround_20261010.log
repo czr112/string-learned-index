@@ -1,0 +1,33 @@
+### rebuild san_check_scan_entry
+OK san_check_scan_entry build_id=1791642486956909687 exe=d108acd6deb9ce4f…
+build rc=0
+tiny case: 12 keys, prefix=k0 (2 bytes), groups=1, sub-block counts: g0[2,2,2,2], overflow sizes: 4
+ordered-start (S): 168 comparisons of linear vs ordered (80 with fewer comparisons, 48 walk-offs, 32 multi-skip overflow, 52 over the emptied sub-block)
+check_scan_entry: 1675 checks, 0 failures (sub-block steps=44, overflow skips=12, stopped-by-cmp=56, stopped-at-boundary=16)
+run rc=0
+### san_check_sround mixed 8192 ctx16 same
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0,"live":8192,"adv_cmps_b":10410,"adv_cmps_s":378,"adv_cmps_w":10410,"adv_cmps_ws":378,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.25,"live":8192,"adv_cmps_b":10410,"adv_cmps_s":378,"adv_cmps_w":10410,"adv_cmps_ws":378,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.25 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":0.5,"live":8192,"adv_cmps_b":10410,"adv_cmps_s":327,"adv_cmps_w":10410,"adv_cmps_ws":378,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=0.5 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":1,"live":8192,"adv_cmps_b":16536,"adv_cmps_s":165,"adv_cmps_w":16542,"adv_cmps_ws":366,"subblock_reclaims":0,"reclaim_widened":0}
+mixed Context16 same frac=1 ok
+{"kind":"mixed","backend":"Context16","mode":"same","frac":2,"live":8192,"adv_cmps_b":16533,"adv_cmps_s":129,"adv_cmps_w":16542,"adv_cmps_ws":366,"subblock_reclaims":18896,"reclaim_widened":382}
+mixed Context16 same frac=2 ok
+check_sround: 2099052 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 16533/129/16542/366)
+rc=0
+### san_check_sround mixed 8192 lits same
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0,"live":8192,"adv_cmps_b":10032,"adv_cmps_s":398,"adv_cmps_w":10032,"adv_cmps_ws":398,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.25,"live":8192,"adv_cmps_b":10035,"adv_cmps_s":389,"adv_cmps_w":10032,"adv_cmps_ws":398,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.25 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":0.5,"live":8192,"adv_cmps_b":10038,"adv_cmps_s":389,"adv_cmps_w":10032,"adv_cmps_ws":398,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=0.5 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":1,"live":8192,"adv_cmps_b":12082,"adv_cmps_s":177,"adv_cmps_w":12084,"adv_cmps_ws":380,"subblock_reclaims":0,"reclaim_widened":0}
+mixed LitsHpt same frac=1 ok
+{"kind":"mixed","backend":"LitsHpt","mode":"same","frac":2,"live":8192,"adv_cmps_b":12069,"adv_cmps_s":105,"adv_cmps_w":12084,"adv_cmps_ws":380,"subblock_reclaims":14732,"reclaim_widened":212}
+mixed LitsHpt same frac=2 ok
+check_sround: 2099052 checks, 0 failures (adv_cmps B/S/W/WS at 200%: 12069/105/12084/380)
+rc=0

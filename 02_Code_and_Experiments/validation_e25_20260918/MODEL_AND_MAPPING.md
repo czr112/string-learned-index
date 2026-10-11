@@ -1,8 +1,17 @@
 # MODEL_AND_MAPPING：运行中的模型、映射链与边界
 
+> **行号身份（2026-09-23 重绑）**：本文的行引用已重绑到当前 `index.hpp`（4530 行，SHA-256 `587172d2a6c970b9…`，末改 2026-09-22 12:51:49 UTC）。行号会随源码变动，**引用时以符号名为准**。重绑前后的对照与未覆盖项见 `logs/g0/rebind_report.md`。
+
+
 日期：2026-09-20。对象：`validation_e25_20260918` 的**冻结版本**（五个开关默认全开 + R1 构建）。性质：**SA0 交付**（源码、实际配置、模型接口与不变量的核查）。**不改代码、不给性能结论。**
 
 **本文件是为《结构审查与优化执行方案》§1.2 的八问写的**，末尾附该方案 SA0–SA5 与本项目已有轮次的对照，避免重复劳动。
+
+> **补注（2026-09-23，G0 事后核查）——一个本文写作时还不存在的第二个模型后端**：E38 加入了 `ModelBackend { Context16, LitsHpt }`（`index.hpp:597`）。区域可以在校准时改用 LITS-HPT 适配器（`model/lits_hpt_adapter.hpp`），**校准不通过的区域整体回退 `Context16` 并计数**。
+>
+> **本文 §1–§3 的八问只描述 `Context16` 那条链。** LITS 后端的分派点在 `Region::canonical_group`（`index.hpp:1450`，分派在 `:1454–1457`）与 `Region::predict_for`（`:1483`）；接入审计见 `LITS_AUDIT.md` 与 `RESULTS_E38.md`。
+>
+> **默认后端仍是 `Context16`**（`Config::model_backend` 的默认值），所以本文关于发布配置的结论**仍然成立**。但"换模型必须重测"现在有了第二个实例：E38/P3 的 HPT 臂在 skew／tranco 上点查更快（0.770／0.843），而构建慢 2.4–2.7×。
 
 ---
 
@@ -19,14 +28,14 @@
 
 | 项 | 内容 | 位置 |
 |---|---|---|
-| 种类枚举 | `ModelKind { Context16, Position16, Unigram }` | `index.hpp:468` |
-| 实际启用 | `Context16`（`Config` 默认值与 `baseline_config()` 都显式写死） | `index.hpp:476`、`switches.hpp:46` |
-| 模型类 | `class Model`：**量化概率上的整数区间运算**。位置标度 `Q = 2^47`、概率质量 `MASS = 2^16`、**16 个上下文行** | `index.hpp:583` 起 |
+| 种类枚举 | `ModelKind { Context16, Position16, Unigram }` | `index.hpp:588` |
+| 实际启用 | `Context16`（`Config` 默认值与 `baseline_config()` 都显式写死） | `index.hpp:605`、`switches.hpp:33` |
+| 模型类 | `class Model`：**量化概率上的整数区间运算**。位置标度 `Q = 2^47`、概率质量 `MASS = 2^16`、**16 个上下文行** | `index.hpp:770` 起 |
 | 累计表 | `using Table = std::vector<std::array<std::uint32_t, 258>>`（258 = 256 字节 + 2 个哨兵） | 同上 |
 | 行选择 | `Unigram` → 第 0 行；`Position16` → `min(15, pos)`；`Context16` → `((pos & 3) << 2) | (previous & 3)`，即 **4 个位置段 × 4 个前驱字节桶 = 16 行** | `Model::row()` |
-| 训练 | `Model::train(first, last, prefix, kind)`，由区域构建调用：`model_.train(sorted, prefix_.size(), config_.model_kind)` | `index.hpp:1248` |
+| 训练 | `Model::train(first, last, prefix, kind)`，由区域构建调用：`model_.train(sorted, prefix_.size(), config_.model_kind)` | `index.hpp:2036` |
 | 预测 | `Model::predict<Hash>(s, groups, route, fp)` → 返回 `{group, …}`，把区间映射到**逻辑组号** | `canonical_group` |
-| 映射入口 | `Region::canonical_group(s)` = `model_.predict<false>(s, groups_, config_.canonical, dummy).group` | `index.hpp:959` |
+| 映射入口 | `Region::canonical_group(s)` = `model_.predict<false>(s, groups_, config_.canonical, dummy).group` | `index.hpp:1450` |
 
 **三点必须一起说清：**
 1. **它是训练出来的，不是空接口**：`bulk_load` 对**每个区域**的**已排序键**、**去掉该区域公共前缀之后的后缀**做统计，生成累计表。输入是真实数据，不是常量表。
@@ -63,14 +72,14 @@
 
 | # | 问题 | 答案 | 依据 |
 |---|---|---|---|
-| 1 | 外层区域如何选取？ | `Index::locate(key)` 用外层路由（`Route::Full` 默认；A/B 两种替换方案只在实验开关里，不默认）选出区域下标 | `index.hpp:2810`；E6 |
-| 2 | 公共前缀何时计算，模型输入是完整键还是后缀？ | 构建时 `compute_prefix(该区域已排序键)` 一次算好；**模型吃的是后缀**（`key.substr(prefix_.size())`），它的统计与预测都在后缀上 | `index.hpp:1242`、`:1248`、`Region::canonical_group` |
+| 1 | 外层区域如何选取？ | `Index::locate(key)` 用外层路由（`Route::Full` 默认；A/B 两种替换方案只在实验开关里，不默认）选出区域下标 | `index.hpp:4173`；E6 |
+| 2 | 公共前缀何时计算，模型输入是完整键还是后缀？ | 构建时 `compute_prefix(该区域已排序键)` 一次算好；**模型吃的是后缀**（`key.substr(prefix_.size())`），它的统计与预测都在后缀上 | `index.hpp:1560`、`:1248`、`Region::canonical_group` |
 | 3 | 训练代码来自哪里、是否改写过、实际启用哪个？ | 项目自研的表驱动条件模型（非 LITS 官方实现、非第三方）；`Context16`；`bulk_load` 时按区域训练 | §1 的表 |
 | 4 | 返回的是近似排名、坐标、物理位置还是逻辑组号？ | **逻辑组号**（区域内下标）。近似排名／坐标只在模型内部作为中间量 | `predict` 的返回结构 |
-| 5 | 逻辑组数如何确定？截断、早停、取整、限幅如何处理？ | `derive_groups(n, suffix_bytes, cfg)` = `max(按键数估的组数, 按后缀字节估的组数) + 1`，可被 `fixed_groups` 覆盖；模型内部按 `Q = 2^47` 定点、`MASS = 2^16` 量化，最后映射并**限幅**到 `[0, groups)`；`canonical_group` 里 `groups_` 作为上界传入 | `index.hpp:1007–1017`、`Model::predict` |
+| 5 | 逻辑组数如何确定？截断、早停、取整、限幅如何处理？ | `derive_groups(n, suffix_bytes, cfg)` = `max(按键数估的组数, 按后缀字节估的组数) + 1`，可被 `fixed_groups` 覆盖；模型内部按 `Q = 2^47` 定点、`MASS = 2^16` 量化，最后映射并**限幅**到 `[0, groups)`；`canonical_group` 里 `groups_` 作为上界传入 | `index.hpp:1450–1017`、`Model::predict` |
 | 6 | 构建、点查、插入、删除、扫描用的映射是否一致？ | **构建、点查、插入、删除四处都用同一个 `canonical_group`**；**扫描不调用它来定位记录**（它按子块序 + 组内槽序 + 溢出有序归并推进），**但扫描的输出顺序依赖它——见 Q8 与 §3.1** | `canonical_group` 的调用点；E9/E11；`Region::scan` |
 | 7 | 什么时候重训或改变组数？哪些记录必须重放？ | `rebuild(region, data)`／`rebuild_all()` 会重建区域（含重训）；`compact()` 只重排组内物理布局、**不重训、不改组数**；分裂／容量重规划会改变组几何。需要重放的记录：被重建区域的全体活跃记录 + 溢出记录 | `INDEX` 的 rebuild／compact／split 路径；E20 §生命周期 |
-| 8 | 扫描是否依赖"组号随字典序不下降"？这种性质从何而来？ | **依赖，而且是硬依赖（本条在 2026-09-20 被更正）。** `Region::scan` 是 `for (g = first; g < groups_; ++g)`——**按组号升序逐组**输出，组内才做子块与溢出的有序归并。因此"扫描按键序返回"要求**区域内 `canonical_group` 随键序单调不减**；M1 只保证**一个组内部**的子块有序，**跨组不保证**，边界目录也只是组内的边界。这条性质**代码里没有断言，任何门都没有覆盖**（见 §3.1） | `index.hpp:2677`（组升序遍历）、`:1125`（M1 的范围是"一个组的子块"）、`:2683–2694`（起点推进同样依赖）、`Index::scan`（按区域序） |
+| 8 | 扫描是否依赖"组号随字典序不下降"？这种性质从何而来？ | **依赖，而且是硬依赖（本条在 2026-09-20 被更正）。** `Region::scan` 是 `for (g = first; g < groups_; ++g)`——**按组号升序逐组**输出，组内才做子块与溢出的有序归并。因此"扫描按键序返回"要求**区域内 `canonical_group` 随键序单调不减**；M1 只保证**一个组内部**的子块有序，**跨组不保证**，边界目录也只是组内的边界。这条性质**代码里没有断言，任何门都没有覆盖**（见 §3.1） | `index.hpp:3811`（组升序遍历）、`:1125`（M1 的范围是"一个组的子块"）、`:2683–2694`（起点推进同样依赖）、`Index::scan`（按区域序） |
 
 **结论（对方案 §1.3 的回应，已按 §3.1 更正）**：模型与映射都是**表驱动、按区域训练、输出逻辑组号**。**但「换模型很简单」这个推论不成立**：扫描的正确性**依赖** `canonical_group` 在同一区域内随键序单调不减，而这条性质**没有任何断言在守着**。所以接入新模型的契约里必须写明**保序性**（或有门验证它），否则扫描会静默返回错序或漏键的结果——**门不会失败，因为没有门在看这件事**。换模型同样影响训练成本、模型内存与预测耗时，不只是组内字节分布。
 
@@ -91,7 +100,7 @@
 
 组内各自有序（组 0 是 `a,c`，组 1 是 `b,d`），但按组升序扫出来是 **`a,c,b,d`**——
 **既错序，又会在 `count` 用尽时漏掉键**（从 `a` 起取 2 条会得到 `a,c`，`b` 永不返回）。
-M1 管不到这里：它的范围是**一个组内部**的子块（`index.hpp:1125` 的原话是 a group's sub-blocks），
+M1 管不到这里：它的范围是**一个组内部**的子块（`index.hpp:1656` 的原话是 a group's sub-blocks），
 边界目录也只是组内边界。
 
 **这条性质从哪来、由谁守着**：

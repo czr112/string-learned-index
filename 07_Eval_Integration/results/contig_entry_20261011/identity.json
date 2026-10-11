@@ -1,0 +1,100 @@
+{
+  "sources_sha256": {
+    "07_Eval_Integration/diagnostics/run_contig_entry.py": "c72d9b7612814eac2e51d694870116061cb46162447dcb584398f18a8a6ef1a1",
+    "07_Eval_Integration/diagnostics/contig_entry.cpp": "3a4d85d5ec70890bbc250b2422668c645a3a22c16c6ce1eea5bb196a0b17e2e0",
+    "07_Eval_Integration/diagnostics/make_contig_probe.py": "b6aa68db3ce9a0e8305c604f319d75d9c488f5fb931becbf10df9d08d681aa91",
+    "07_Eval_Integration/results/contig_entry_20261011/probe/index.hpp": "45977ba070f8ceccf606840f82fc243014f7bf0399a5bdc28430d2215f10a783",
+    "07_Eval_Integration/diagnostics/lookup_structure.cpp": "b872a5d80241bddac24fe33d3ee06661796331f030378d492dfed838a948af75",
+    "docs/NEXT_ACTION_PLAN_20261011_CONTIG.md": "dab6d13932234c6df7a00c35b3fb2166606a361070bb181de16f341510645246",
+    "07_Eval_Integration/learned-index/src/unified/runner.cpp": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+    "07_Eval_Integration/learned-index/src/unified/runner.h": "d935232df2487b8baba03a86fe7fa668c1ca8311d40e7aa4a0f8e96c345518d1",
+    "02_Code_and_Experiments/validation_e25_20260918/index.hpp": "640660a32f1fd1476d0d889d541c007883e5597d70e476524e3bcf2556ec8aa1",
+    "02_Code_and_Experiments/validation_e25_20260918/switches.hpp": "5486909fffc61c1eef940c058eae3fe036e970f0db21c988b3b41800803f0d4e",
+    "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+    "07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin": "e25cd3f02aa25fc867a66c128b4db7c44f91ec92647a41d75260baa9dc3a248e",
+    "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+    "07_Eval_Integration/results/matrix2_skew/interchange/queries.bin": "db0dec1d8839aeca14e4bee48635e95545681015394cfa6e730d319195f6cadf",
+    "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+    "07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin": "3767376ae31a58a556606c3e031ec3e76d86370fe023a76ddde0fa5cc2adc18d"
+  },
+  "cpu": 0,
+  "commands": [
+    [
+      "g++",
+      "-O3",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-DE12_COUNT",
+      "-DE25_DIAG",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/probe",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "diagnostics/contig_entry.cpp",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/contig_entry"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/contig_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/contig_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/contig_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/contig_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/contig_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "context16"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/contig_entry_20261011/contig_entry",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/queries.bin",
+      "lits"
+    ],
+    [
+      "g++",
+      "--version"
+    ]
+  ],
+  "binary_sha256": "1817a5af2d877105bf253f5f208ca7b574ea78864146d77754dddfd728fbafbb",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "probe_from": "640660a32f1fd1476d0d889d541c007883e5597d70e476524e3bcf2556ec8aa1",
+  "scope": "M2 entry counters only; C on, W/S/H off, pinned layout (1024 B, 16 slots); panel laid out for real at 32 B per block with a 16 B aligned tag start; address-layout proxy, not a cache-miss measurement; no speed claim"
+}

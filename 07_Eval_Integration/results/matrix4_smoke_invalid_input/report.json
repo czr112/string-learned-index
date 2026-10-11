@@ -1,0 +1,126 @@
+{
+  "config": {
+    "build_timeout_seconds": 120,
+    "dataset": "/mnt/d/StringLearnedIndex_Workspace/datasets/mixed.keys",
+    "implementations": [
+      "/mnt/d/StringLearnedIndex_Workspace/adapters/our_index",
+      "/mnt/d/02_Code_and_Experiments/Learned-Index-Model/src/experiments/block-residual-delta"
+    ],
+    "jobs": 2,
+    "key": null,
+    "memory_budget_mib": 1024,
+    "network_downloads": "not performed by the benchmark",
+    "output": "/mnt/d/StringLearnedIndex_Workspace/results/matrix4_smoke_mixed",
+    "reader": "auto",
+    "run_timeout_seconds": 120,
+    "workload": null
+  },
+  "dataset": {
+    "duplicate_records": null,
+    "key_field": null,
+    "logical_sha256": null,
+    "path": "/mnt/d/StringLearnedIndex_Workspace/datasets/mixed.keys",
+    "reader": "auto",
+    "source_records": null,
+    "source_sha256": null,
+    "status": "invalid_input",
+    "unique_keys": null
+  },
+  "environment": {
+    "cpu_count": 24,
+    "machine": "x86_64",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "threading": "single-threaded benchmark runner"
+  },
+  "generated_at": "2026-10-11T08:25:25+00:00",
+  "limitations": [
+    "Only bulk_load and find are accredited in this first slice.",
+    "Latency includes timer overhead; the process is not CPU-pinned.",
+    "Memory fields retain the adapter's accounting scope and are not ranked."
+  ],
+  "results": [
+    {
+      "build_identity": {
+        "adapter_declared_source_identity": null,
+        "adapter_manifest_sha256": null,
+        "compiler": {
+          "id": null,
+          "path": null,
+          "version": null
+        },
+        "configuration": {
+          "build_type": "Release",
+          "cmake_arguments": [
+            "-DCMAKE_BUILD_TYPE=Release"
+          ],
+          "cxx_extensions": false,
+          "cxx_flags": null,
+          "cxx_release_flags": null,
+          "cxx_standard": "17",
+          "exe_linker_flags": null,
+          "generator": null
+        },
+        "external_source_identity_note": "External source trees are not recursively hashed; provide immutable source_identity in the adapter manifest when available.",
+        "external_source_tree_sha256": null,
+        "runner_binary_sha256": null,
+        "runner_harness_sha256": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+        "schema": "string-index-build-identity/v1"
+      },
+      "implementation_id": "invalid-1",
+      "reason": "dataset metadata read failed: No such file or directory",
+      "requested_path": "/mnt/d/StringLearnedIndex_Workspace/adapters/our_index",
+      "runner_result": null,
+      "stage": "dataset",
+      "status": "invalid_input"
+    },
+    {
+      "build_identity": {
+        "adapter_declared_source_identity": null,
+        "adapter_manifest_sha256": null,
+        "compiler": {
+          "id": null,
+          "path": null,
+          "version": null
+        },
+        "configuration": {
+          "build_type": "Release",
+          "cmake_arguments": [
+            "-DCMAKE_BUILD_TYPE=Release"
+          ],
+          "cxx_extensions": false,
+          "cxx_flags": null,
+          "cxx_release_flags": null,
+          "cxx_standard": "17",
+          "exe_linker_flags": null,
+          "generator": null
+        },
+        "external_source_identity_note": "External source trees are not recursively hashed; provide immutable source_identity in the adapter manifest when available.",
+        "external_source_tree_sha256": null,
+        "runner_binary_sha256": null,
+        "runner_harness_sha256": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+        "schema": "string-index-build-identity/v1"
+      },
+      "implementation_id": "invalid-2",
+      "reason": "dataset metadata read failed: No such file or directory",
+      "requested_path": "/mnt/d/StringLearnedIndex_Workspace/../02_Code_and_Experiments/Learned-Index-Model/src/experiments/block-residual-delta",
+      "runner_result": null,
+      "stage": "dataset",
+      "status": "invalid_input"
+    }
+  ],
+  "schema": "string-index-benchmark-report/v1",
+  "scope": "single-threaded static unique-key point lookup",
+  "workload": {
+    "actual_operations": null,
+    "controlled_misses": null,
+    "latency_samples": 1000,
+    "miss_key_strategy": "source key plus deterministic ASCII suffix and counter",
+    "miss_ratio_decimal": "0.1",
+    "operations": 10000,
+    "repeats": 3,
+    "schema": "static-uniform-point/v1",
+    "seed": 42,
+    "source": null
+  }
+}
