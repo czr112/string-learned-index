@@ -1,0 +1,11 @@
+char_signed=1
+trunc=0 byte=1 expected=0 actual=3
+trunc=0 byte=127 expected=1 actual=3
+trunc=0 byte=128 expected=2 actual=2
+trunc=0 byte=255 expected=3 actual=3
+trunc=0 queries=256 mismatches=128 inversions=1
+trunc=1 byte=1 expected=0 actual=3
+trunc=1 byte=127 expected=1 actual=3
+trunc=1 byte=128 expected=2 actual=2
+trunc=1 byte=255 expected=3 actual=3
+trunc=1 queries=256 mismatches=128 inversions=1
