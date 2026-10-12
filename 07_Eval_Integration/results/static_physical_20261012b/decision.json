@@ -1,0 +1,12 @@
+{
+  "stage": "S2",
+  "target_speed_pass": true,
+  "target_model_increment_pass": true,
+  "target_space_pass": true,
+  "risk_regression": false,
+  "production_default_changed": false,
+  "dynamic_support": false,
+  "advance_S3": true,
+  "static_scenario_candidate_eligible": true,
+  "generic_default_eligible": false
+}

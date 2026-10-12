@@ -1,0 +1,10 @@
+{
+  "all_checks_ok": true,
+  "cells": 6,
+  "timing_rows": 1470,
+  "ratio_pairs_checked": 3360,
+  "sanitizer_cells": 6,
+  "advance_S3": false,
+  "carryover_balanced": false,
+  "verifier_sha256": "eef728fec79cc4141f5c9512245c615ef18cf3468c6f28db9b8f5de767309d08"
+}

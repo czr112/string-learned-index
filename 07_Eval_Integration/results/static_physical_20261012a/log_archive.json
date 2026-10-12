@@ -1,0 +1,9 @@
+{
+  "original": "commands.log",
+  "archive": "commands.log.gz",
+  "original_bytes": 30012317,
+  "original_sha256": "8e5f528611574e404d604c99b97e9376a24373bd1dd8c69ec541de3110255a03",
+  "archive_bytes": 260105,
+  "archive_sha256": "2bf2139b5ae72a68c76d99c1e953c9a27712f421fe886be8af87c488b4424d13",
+  "roundtrip_verified": true
+}

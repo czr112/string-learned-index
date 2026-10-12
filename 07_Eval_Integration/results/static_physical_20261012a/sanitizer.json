@@ -1,0 +1,38 @@
+[
+  {
+    "corpus": "tranco",
+    "queue": "historical",
+    "rc": 0,
+    "stderr_bytes": 0
+  },
+  {
+    "corpus": "tranco",
+    "queue": "heldout",
+    "rc": 0,
+    "stderr_bytes": 0
+  },
+  {
+    "corpus": "mixed",
+    "queue": "historical",
+    "rc": 0,
+    "stderr_bytes": 0
+  },
+  {
+    "corpus": "mixed",
+    "queue": "heldout",
+    "rc": 0,
+    "stderr_bytes": 0
+  },
+  {
+    "corpus": "skew",
+    "queue": "historical",
+    "rc": 0,
+    "stderr_bytes": 0
+  },
+  {
+    "corpus": "skew",
+    "queue": "heldout",
+    "rc": 0,
+    "stderr_bytes": 0
+  }
+]
