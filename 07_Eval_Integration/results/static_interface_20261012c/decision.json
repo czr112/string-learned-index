@@ -1,0 +1,10 @@
+{
+  "interface_accepted": true,
+  "integration_regression": true,
+  "skew_gain_pass": true,
+  "risk_regression": false,
+  "production_default_changed": false,
+  "readonly_default": "learned",
+  "dynamic_support": false,
+  "retain_wide_directory": false
+}

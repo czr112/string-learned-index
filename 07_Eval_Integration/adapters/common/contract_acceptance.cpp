@@ -161,10 +161,13 @@ void test_descriptor() {
 
   check(capabilities.bulk_load != sib::Support::unsupported, "bulk_load is declared supported");
   check(capabilities.find != sib::Support::unsupported, "find is declared supported");
-  check(capabilities.insert != sib::Support::unsupported, "insert is declared supported");
-  check(capabilities.update != sib::Support::unsupported, "update is declared supported");
-  check(capabilities.erase != sib::Support::unsupported, "erase is declared supported");
-  check(capabilities.scan != sib::Support::unsupported, "scan is declared supported");
+  const auto valid_support = [](sib::Support s) {
+    return s == sib::Support::native || s == sib::Support::adapted || s == sib::Support::unsupported;
+  };
+  check(valid_support(capabilities.insert), "insert has a valid capability declaration");
+  check(valid_support(capabilities.update), "update has a valid capability declaration");
+  check(valid_support(capabilities.erase), "erase has a valid capability declaration");
+  check(valid_support(capabilities.scan), "scan has a valid capability declaration");
 
   const bool any_adapted = capabilities.bulk_load == sib::Support::adapted ||
                            capabilities.find == sib::Support::adapted ||
@@ -326,7 +329,7 @@ void test_find() {
 }
 
 // --------------------------------------------------------------- insert / update / erase
-void test_mutations() {
+void test_all_supported_mutations() {
   const auto keys = base_keys();
   auto index = fresh();
   index->bulk_load(rows_of(keys));
@@ -380,11 +383,56 @@ void test_mutations() {
   }
 }
 
+void test_mutations() {
+  const auto caps=fresh()->descriptor().capabilities;
+  if(caps.insert!=sib::Support::unsupported && caps.update!=sib::Support::unsupported && caps.erase!=sib::Support::unsupported) {
+    test_all_supported_mutations();return;
+  }
+  // Probe each optional capability independently, including partial-support adapters.
+  auto index=fresh();const auto rows=rows_of(base_keys());index->bulk_load(rows);
+  const auto unchanged=[&] {
+    for(const auto& row:rows)check(index->find(row.key)==std::optional<sib::Value>(row.value), "unsupported mutation preserves every loaded value");
+    check(!index->find("new"), "unsupported mutation does not insert a new key");
+  };
+  const auto unsupported=[&](auto operation) {
+    bool threw=false;try {operation();}catch(const sib::UnsupportedOperation&){threw=true;}
+    check(threw,"declared unsupported mutation throws UnsupportedOperation");unchanged();
+  };
+  if(caps.insert==sib::Support::unsupported) {
+    unsupported([&]{index->insert("new",7);});unsupported([&]{index->insert("a",999);});
+  } else {
+    check(index->insert("new",7)==sib::InsertResult::inserted,"supported insert adds key");
+    check(index->insert("new",999)==sib::InsertResult::already_exists,"duplicate insert reports existing");
+    check(index->find("new")==std::optional<sib::Value>(7),"duplicate insert preserves value");
+    index=fresh();index->bulk_load(rows);
+  }
+  if(caps.update==sib::Support::unsupported) {
+    unsupported([&]{index->update("a",99);});unsupported([&]{index->update("new",99);});
+  } else {
+    check(index->update("a",99)==sib::UpdateResult::updated,"supported update changes key");
+    check(index->find("a")==std::optional<sib::Value>(99),"supported update stores value");
+    check(index->update("new",99)==sib::UpdateResult::not_found&&!index->find("new"),"missing update does not insert");
+    index=fresh();index->bulk_load(rows);
+  }
+  if(caps.erase==sib::Support::unsupported) {
+    unsupported([&]{index->erase("a");});unsupported([&]{index->erase("new");});
+  } else {
+    check(index->erase("a")==sib::EraseResult::erased&&!index->find("a"),"supported erase removes key");
+    check(index->erase("a")==sib::EraseResult::not_found,"missing erase reports not_found");
+  }
+}
+
 // ------------------------------------------------------------------------------- scan
 void test_scan() {
   const auto keys = base_keys();
   auto index = fresh();
   index->bulk_load(rows_of(keys));
+  if(index->descriptor().capabilities.scan==sib::Support::unsupported) {
+    bool threw=false;try {(void)index->scan("",10);}catch(const sib::UnsupportedOperation&){threw=true;}
+    check(threw,"unsupported scan throws UnsupportedOperation");
+    for(const auto& row:keys)check(index->find(row.first)==std::optional<sib::Value>(row.second),"unsupported scan preserves values");
+    return;
+  }
 
   std::map<std::string, std::uint64_t, UnsignedByteLess> reference;
 
@@ -486,9 +534,14 @@ void test_key_domain() {
   // The length ceiling: a key AT the declared maximum must be accepted. The maximum is taken
   // from the declaration, so a backend that declares 4096 is asked for 4096 and a backend
   // that declares no bound is asked for a large key.
+  // Bound fixture allocation. A representational multi-GiB limit must not make
+  // a small contract gate allocate multiple GiB. Explicitly report unprobed ceilings.
+  constexpr std::size_t allocation_limit=1024*1024;
   const std::size_t longest = domain.max_bytes.has_value()
-                                  ? static_cast<std::size_t>(*domain.max_bytes)
+                                  ? static_cast<std::size_t>(*domain.max_bytes<=allocation_limit?*domain.max_bytes:4096)
                                   : 4096;
+  if(domain.max_bytes && *domain.max_bytes>allocation_limit)
+    std::cout << "  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)\n";
   probes.emplace_back(std::string(longest, 'L'), 6);
 
   std::sort(probes.begin(), probes.end(),
@@ -543,7 +596,7 @@ void test_key_domain() {
     return false;
   };
 
-  if (domain.max_bytes.has_value()) {
+  if (domain.max_bytes.has_value() && *domain.max_bytes<allocation_limit) {
     check(refused_when_built(probe_pair(std::string(*domain.max_bytes + 1, 'L'))),
           "a key longer than the declared maximum is refused");
   }

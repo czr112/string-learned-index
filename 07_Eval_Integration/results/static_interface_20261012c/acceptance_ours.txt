@@ -1,0 +1,12 @@
+adapter under acceptance: make_our_index_index
+
+descriptor:
+  implementation = string learned index (shared prefix + conditional reference)
+  version        = index.hpp sha256 b20c83cab42787078508d5af6dd8a9e3c512fb0731618b9b0b81dc8fc64056d6
+  support        = bulk_load=1 find=1 insert=1 update=1 erase=1 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = model backend: Context16; frozen switch set pinned by pin_frozen_switches(), compact_plan_commit asserted on; ov_threshold fixed at 128 for every corpus (skew's project-tuned value is 64; disclosed, not hidden); bulk_load copies Row->Pair once at build time and releases it; scan moves keys out of the implementation's owning vector (a descriptor move per row, no key-byte copy); find adds no conversion, no scratch buffer and no allocation; range_sum has no implementation and is declared unsupported rather than stubbed
+  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)
+  key domain     = min_bytes=0 max_bytes=none nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=18454 adapter_owned=72 retained_input=0
+
+99/99 checks passed

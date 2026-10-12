@@ -1,0 +1,12 @@
+adapter under acceptance: make_art_index
+
+descriptor:
+  implementation = libart (Adaptive Radix Tree)
+  version        = armon/libart commit 301046804af165269e37da6725f5a4aec9ecc881
+  support        = bulk_load=1 find=1 insert=1 update=2 erase=1 scan=2 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = libart COPIES the key into its leaf (make_leaf memcpys it) but stores the VALUE as the pointer it is given, so this adapter owns only a stable array of values and no key copies at all. find() requires no conversion: libart takes (pointer, length) and the contract supplies exactly that, so there is no scratch buffer, no terminator and no per-query copy. update is adapted: libart has no update primitive, so this adapter searches and then writes through the returned pointer, which keeps update from inserting. scan is adapted and NOT seekable: libart iterates in order from the first key, so reaching lower_bound costs a walk over every key below it -- O(keys below the bound), not O(returned rows) -- and the walk stops as soon as the requested rows are collected.
+  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)
+  key domain     = min_bytes=0 max_bytes=none nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=unavailable adapter_owned=48 retained_input=0
+
+99/99 checks passed

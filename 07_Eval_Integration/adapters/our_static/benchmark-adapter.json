@@ -1,0 +1,22 @@
+{
+  "contract": "string-index/v1",
+  "id": "ours-static-physical-learned",
+  "source_dir": ".",
+  "cmake_target": "our_static_adapter",
+  "factory_header": "our_static_adapter.h",
+  "factory_symbol": "make_our_static_index",
+  "source_identity": {
+    "implementation": "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp",
+    "core_sha256": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "adapter_digest": "38a0e8303c9bf86cba0ae198b312f6518ebca2f205ef01355218f3ad607bd18d",
+    "adapter_digest_rule": "SHA256(concat(cpp_sha256_hex,header_sha256_hex))",
+    "default_lookup": "learned",
+    "region_keys": 2048,
+    "block_entries": 16,
+    "coordinate_bits": 63,
+    "normal_certificate_blocks": 3,
+    "isa": "x86-64-v3",
+    "readonly": true,
+    "notes": "Separate immutable type. Does not replace production Index or Context16. Bulk-load/find/owning scan native; insert/update/erase/range_sum unsupported. Wide-directory candidate requires explicit lookup parameter. CMake independently hashes the core and adapter for runtime descriptor."
+  }
+}

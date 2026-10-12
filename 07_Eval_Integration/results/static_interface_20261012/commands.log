@@ -1,0 +1,28 @@
+$ g++ --version
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+$ python3 --version
+Python 3.12.3
+$ g++ -O2 -std=c++17 -march=x86-64-v3 -I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918 -Ilearned-index/src -Iadapters/our_static -DSTATIC_CORE_SHA256="bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089" -DSTATIC_ADAPTER_SHA256="38a0e8303c9bf86cba0ae198b312f6518ebca2f205ef01355218f3ad607bd18d" -DACCEPTANCE_FACTORY_HEADER="our_static_adapter.h" -DACCEPTANCE_FACTORY_SYMBOL=make_our_static_index -DACCEPTANCE_SAMPLE_PARAMETER=lookup adapters/common/contract_acceptance.cpp /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_static/our_static_adapter.cpp -o /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/build/acceptance
+$ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/build/acceptance
+adapter under acceptance: make_our_static_index
+
+descriptor:
+  implementation = StaticPhysicalIndex
+  version        = bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089
+  support        = bulk_load=1 find=1 insert=0 update=0 erase=0 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = Owning immutable index; one successful build; native owning scan. Insert/update/erase/range_sum unsupported. Aggregate suffix arena and block count each limited to UINT32_MAX; overflow throws length_error before publication. Lookup policy=learned
+  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)
+  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=588 adapter_owned=16 retained_input=0
+
+128/128 checks passed
+$ g++ -O2 -std=c++17 -march=x86-64-v3 -I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918 -Ilearned-index/src -Iadapters/our_static -DSTATIC_CORE_SHA256="bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089" -DSTATIC_ADAPTER_SHA256="38a0e8303c9bf86cba0ae198b312f6518ebca2f205ef01355218f3ad607bd18d" diagnostics/check_static_interface.cpp learned-index/src/unified/runner.cpp /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_static/our_static_adapter.cpp -o /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/build/check
+$ g++ -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer -fno-pie -no-pie -std=c++17 -march=x86-64-v3 -I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918 -Ilearned-index/src -Iadapters/our_static -DSTATIC_CORE_SHA256="bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089" -DSTATIC_ADAPTER_SHA256="38a0e8303c9bf86cba0ae198b312f6518ebca2f205ef01355218f3ad607bd18d" diagnostics/check_static_interface.cpp learned-index/src/unified/runner.cpp /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_static/our_static_adapter.cpp -o /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/build/san_check
+$ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/build/check /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/tranco_full_100000_queries.bin
+{"checks":10371955,"domain_checks":3175900,"scans":310904,"rows":262144,"queries":100000,"learned_blocks":229402,"hybrid_blocks":220866,"fallback_queries":1012,"directory_steps":3509,"core_bytes":8118685}
+$ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/build/san_check /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012/tranco_full_100000_queries.bin
+{"checks":10371955,"domain_checks":3175900,"scans":310904,"rows":262144,"queries":100000,"learned_blocks":229399,"hybrid_blocks":220863,"fallback_queries":1012,"directory_steps":3509,"core_bytes":8118685}

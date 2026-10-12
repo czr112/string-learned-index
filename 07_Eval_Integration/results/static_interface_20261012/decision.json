@@ -1,0 +1,10 @@
+{
+  "stage": "correctness_runner",
+  "timing_started": false,
+  "reason": "incorrect requirement of identical work counters across O2 and O1+ASan/UBSan; semantic gates both pass",
+  "clean_checks": 10371955,
+  "sanitized_checks": 10371955,
+  "clean_blocks": 229402,
+  "sanitized_blocks": 229399,
+  "adopted": false
+}

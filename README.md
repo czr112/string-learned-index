@@ -7,8 +7,9 @@
 
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
-- **最新静态点查结果**：[物理块原型接近 ART，仍慢约 10%–17%](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)。
-- **当前行动计划**：[静态点查：模型预测与物理块对齐](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)，S0–S2 已完成，下一步只读集成及碰撞处理。
+- **最新静态点查结果**：[只读接口与长前缀回退：场景收益通过，集成回归门未通过](07_Eval_Integration/RESULTS_STATIC_INTERFACE_20261012.md)。
+- **当前行动计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)。
+- **上一阶段静态原型**：[物理块预测与 ART 对照](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)；[S0–S2 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)、[S3 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC_S3.md)均已执行。
 - **暂后移的采用计划**：[M5 配置采用、新查询验证与双外部基线](docs/NEXT_ACTION_PLAN_20261012_M5.md)。
 - **上一阶段计划与正确性修复**：[P0/P1/M4 执行计划](docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md)；
   目录候选的前置缺陷见 [字节序核查](07_Eval_Integration/AUDIT_DEPTH_DIR_ORDER_20261011.md)。
@@ -25,6 +26,9 @@ mixed 主目标未通过；其截断形态（EqualDepthDirTrunc）证实了截�
 历史实验的测量结果继续绑定其当时源码，不视为当前版本重新测量。
 2026-10-12 的 StaticPhysicalBlocks 是独立只读原型：相对 Context16+C，短键点查少约 24%–26% 耗时，
 自有空间记账少约 79%；长前缀的模型增量仍有负结果。它尚未替换上述默认或接入动态更新。
+后续S3已交付独立只读类型及bulk-load/find/owning scan接口。宽证书回退在skew减少约14%–16%耗时，
+100k均匀查询相对ART为tranco 0.938、mixed 1.066、skew 0.810；10k队列与64k数据规模仍存在差距。
+正式接口在skew/100k出现7.8%集成回归，整包采用未通过，生产默认不变；下一步首先定位该回归。
 
 获取评测依赖（WSL/Linux）与恢复大体积原始证据：
 

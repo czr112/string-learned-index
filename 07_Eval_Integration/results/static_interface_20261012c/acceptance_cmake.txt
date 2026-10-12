@@ -1,0 +1,12 @@
+adapter under acceptance: make_our_static_index
+
+descriptor:
+  implementation = StaticPhysicalIndex
+  version        = bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089
+  support        = bulk_load=1 find=1 insert=0 update=0 erase=0 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = Owning immutable index; one successful build; native owning scan. Insert/update/erase/range_sum unsupported. Aggregate suffix arena and block count each limited to UINT32_MAX; overflow throws length_error before publication. Lookup policy=learned
+  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)
+  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=588 adapter_owned=16 retained_input=0
+
+128/128 checks passed
