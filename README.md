@@ -1,13 +1,14 @@
 # 字符串学习型索引课题总资料包
 
-## 最新入口（2026-10-11）
+## 最新入口（2026-10-12）
 
 本项目唯一主仓库为 [czr112/string-learned-index](https://github.com/czr112/string-learned-index)。
 工作区现直接关联该仓库；下列模型、评测器和 HOT 仓库只是固定版本的外部依赖。
 
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
-- **下一阶段行动计划**：[字节序修复、读路径诊断与 M4](docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md)；
+- **下一阶段行动计划**：[M5 配置采用、新查询验证与双外部基线](docs/NEXT_ACTION_PLAN_20261012_M5.md)。
+- **上一阶段计划与正确性修复**：[P0/P1/M4 执行计划](docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md)；
   目录候选的前置缺陷见 [字节序核查](07_Eval_Integration/AUDIT_DEPTH_DIR_ORDER_20261011.md)。
 - **读路径入口诊断（P1）**：[目录额外工作来源与收口判定](07_Eval_Integration/RESULTS_DEPTH_DIR_READ_PATH_ENTRY_20261011.md)。
 - **M4 归并入口**：[有序段归并未通过、机制收口](07_Eval_Integration/RESULTS_MERGE_ENTRY_20261011.md)。
