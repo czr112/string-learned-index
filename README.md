@@ -1,6 +1,6 @@
 # 字符串学习型索引课题总资料包
 
-## 最新入口（2026-10-12）
+## 最新入口（2026-10-18）
 
 本项目唯一主仓库为 [czr112/string-learned-index](https://github.com/czr112/string-learned-index)。
 工作区现直接关联该仓库；下列模型、评测器和 HOT 仓库只是固定版本的外部依赖。
@@ -8,7 +8,8 @@
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
 - **最新静态点查结果**：[只读接口与长前缀回退：场景收益通过，集成回归门未通过](07_Eval_Integration/RESULTS_STATIC_INTERFACE_20261012.md)。
-- **当前行动计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)。
+- **当前长期策略与详细步骤**：[物理叶页、可替换模型与局部维护](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)。本次完成数据审计与规划，最近性能结果仍为10月12日。
+- **前版近期计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)，其失败判定继续保留。
 - **上一阶段静态原型**：[物理块预测与 ART 对照](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)；[S0–S2 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)、[S3 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC_S3.md)均已执行。
 - **暂后移的采用计划**：[M5 配置采用、新查询验证与双外部基线](docs/NEXT_ACTION_PLAN_20261012_M5.md)。
 - **上一阶段计划与正确性修复**：[P0/P1/M4 执行计划](docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md)；

@@ -1,0 +1,244 @@
+{
+  "date": "2026-10-18",
+  "base_commit": "564df24461e70cc0a4270351a42d807a8f9902a9",
+  "audit_source_sha256": "20205e0f7988f79cf92146982d7e54928616e6502ccf59627c3138084a51190a",
+  "core_sha256": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+  "region_keys": 2048,
+  "block_entries": 16,
+  "coordinate_symbols": 7,
+  "scope": "existing bytes and frozen S3 inputs only; no benchmarks, no model fitting, no production mutations",
+  "cases": [
+    {
+      "corpus": "tranco",
+      "scale": "full",
+      "rows": 262144,
+      "rows_sha256": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+      "key_length": {
+        "count": 262144,
+        "min": 4,
+        "p50": 12,
+        "p99": 25,
+        "max": 66
+      },
+      "geometry": {
+        "regions": 128,
+        "blocks": 16384,
+        "coordinate_ambiguous_rows": 2406,
+        "coordinate_ambiguous_row_fraction": 0.00917816162109375,
+        "ambiguous_fraction_by_region": {
+          "count": 128,
+          "min": 0.0,
+          "p50": 0.0,
+          "p99": 0.068359375,
+          "max": 0.33349609375
+        },
+        "regions_with_one_fence_coordinate": 0,
+        "equal_coordinate_candidate_span": {
+          "count": 16194,
+          "min": 1,
+          "p50": 2,
+          "p99": 2,
+          "max": 44
+        },
+        "additional_lcp_in_wide_families": {
+          "count": 28,
+          "min": 7,
+          "p50": 7,
+          "p99": 9,
+          "max": 9
+        },
+        "meaning": "Equal-coordinate byte-fence predecessor ambiguity, including previous block. Data geometry only; not the actual trained certificate or runtime query frequency."
+      },
+      "coverage": {
+        "10000": {
+          "queries": 10000,
+          "hits": 9000,
+          "unique_hit_keys": 8841,
+          "fraction_of_stored_keys_hit": 0.033725738525390625,
+          "sha256": "0615c906512c3fcdf94e06b4214030f99a14458fec12dcf47d5ea9ff7609bff4"
+        },
+        "100000": {
+          "queries": 100000,
+          "hits": 90000,
+          "unique_hit_keys": 76199,
+          "fraction_of_stored_keys_hit": 0.2906761169433594,
+          "sha256": "e101b8be5fa1d27783e1c45453cd00c524eb8f56d85892e0be000d375bb9313c"
+        }
+      }
+    },
+    {
+      "corpus": "tranco",
+      "scale": "64k",
+      "rows": 65536,
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "key_length": {
+        "count": 65536,
+        "min": 4,
+        "p50": 12,
+        "p99": 25,
+        "max": 60
+      },
+      "geometry": {
+        "regions": 32,
+        "blocks": 4096,
+        "coordinate_ambiguous_rows": 235,
+        "coordinate_ambiguous_row_fraction": 0.0035858154296875,
+        "ambiguous_fraction_by_region": {
+          "count": 32,
+          "min": 0.0,
+          "p50": 0.0,
+          "p99": 0.02685546875,
+          "max": 0.087890625
+        },
+        "regions_with_one_fence_coordinate": 0,
+        "equal_coordinate_candidate_span": {
+          "count": 4075,
+          "min": 1,
+          "p50": 2,
+          "p99": 2,
+          "max": 13
+        },
+        "additional_lcp_in_wide_families": {
+          "count": 2,
+          "min": 7,
+          "p50": 7,
+          "p99": 7,
+          "max": 7
+        },
+        "meaning": "Equal-coordinate byte-fence predecessor ambiguity, including previous block. Data geometry only; not the actual trained certificate or runtime query frequency."
+      },
+      "coverage": {
+        "10000": {
+          "queries": 10000,
+          "hits": 9000,
+          "unique_hit_keys": 8377,
+          "fraction_of_stored_keys_hit": 0.1278228759765625,
+          "sha256": "9f9b3b8f7dff6a28ff2b0190797f491cd0e9eea734ad42b470c5b1549052a10d"
+        },
+        "100000": {
+          "queries": 100000,
+          "hits": 90000,
+          "unique_hit_keys": 48865,
+          "fraction_of_stored_keys_hit": 0.7456207275390625,
+          "sha256": "eb9918aeb7e50c05b95160572482c17cec63183fa1eb7ff0f7959268667a7f88"
+        }
+      }
+    },
+    {
+      "corpus": "mixed",
+      "scale": "full",
+      "rows": 131072,
+      "rows_sha256": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+      "key_length": {
+        "count": 131072,
+        "min": 39,
+        "p50": 158,
+        "p99": 158,
+        "max": 158
+      },
+      "geometry": {
+        "regions": 64,
+        "blocks": 8192,
+        "coordinate_ambiguous_rows": 47103,
+        "coordinate_ambiguous_row_fraction": 0.35936737060546875,
+        "ambiguous_fraction_by_region": {
+          "count": 64,
+          "min": 0.0,
+          "p50": 0.0,
+          "p99": 1.0,
+          "max": 1.0
+        },
+        "regions_with_one_fence_coordinate": 0,
+        "equal_coordinate_candidate_span": {
+          "count": 5366,
+          "min": 1,
+          "p50": 2,
+          "p99": 29,
+          "max": 86
+        },
+        "additional_lcp_in_wide_families": {
+          "count": 118,
+          "min": 8,
+          "p50": 14,
+          "p99": 32,
+          "max": 125
+        },
+        "meaning": "Equal-coordinate byte-fence predecessor ambiguity, including previous block. Data geometry only; not the actual trained certificate or runtime query frequency."
+      },
+      "coverage": {
+        "10000": {
+          "queries": 10000,
+          "hits": 9000,
+          "unique_hit_keys": 8688,
+          "fraction_of_stored_keys_hit": 0.0662841796875,
+          "sha256": "da566e00e8b00085ab12689606ec20ded701fc17fa268b4e90c36174ed501076"
+        },
+        "100000": {
+          "queries": 100000,
+          "hits": 90000,
+          "unique_hit_keys": 65103,
+          "fraction_of_stored_keys_hit": 0.49669647216796875,
+          "sha256": "577fe0acabd1de7b79e3263a2c1fa163cfa2ae52ec4f9b2731a445b8c1c7a2f7"
+        }
+      }
+    },
+    {
+      "corpus": "skew",
+      "scale": "full",
+      "rows": 131072,
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "key_length": {
+        "count": 131072,
+        "min": 156,
+        "p50": 156,
+        "p99": 156,
+        "max": 156
+      },
+      "geometry": {
+        "regions": 64,
+        "blocks": 8192,
+        "coordinate_ambiguous_rows": 130975,
+        "coordinate_ambiguous_row_fraction": 0.9992599487304688,
+        "ambiguous_fraction_by_region": {
+          "count": 64,
+          "min": 0.97705078125,
+          "p50": 1.0,
+          "p99": 1.0,
+          "max": 1.0
+        },
+        "regions_with_one_fence_coordinate": 0,
+        "equal_coordinate_candidate_span": {
+          "count": 158,
+          "min": 3,
+          "p50": 48,
+          "p99": 90,
+          "max": 91
+        },
+        "additional_lcp_in_wide_families": {
+          "count": 156,
+          "min": 12,
+          "p50": 13,
+          "p99": 15,
+          "max": 15
+        },
+        "meaning": "Equal-coordinate byte-fence predecessor ambiguity, including previous block. Data geometry only; not the actual trained certificate or runtime query frequency."
+      },
+      "coverage": {
+        "10000": {
+          "queries": 10000,
+          "hits": 9000,
+          "unique_hit_keys": 8688,
+          "fraction_of_stored_keys_hit": 0.0662841796875,
+          "sha256": "2b61bcf411a09dd561b2f34703a0f0b6d4633f2da1402fbc8da954a1d9151997"
+        },
+        "100000": {
+          "queries": 100000,
+          "hits": 90000,
+          "unique_hit_keys": 65103,
+          "fraction_of_stored_keys_hit": 0.49669647216796875,
+          "sha256": "df27c3313e992a27954c91174283c9c7dd70e03805139f53bc3505198c4773ac"
+        }
+      }
+    }
+  ]
+}
