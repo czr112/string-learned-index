@@ -1,0 +1,26 @@
+{
+  "binary_sha256": "30f693d4ba8367e00e1ae372786cd4ffb14829d272e7b247d3f728783a36fc1d",
+  "comparison_source_sha256": "a5ac17fde9ab0f5f5484f99edbd27e248755fa240360eb09687a5f3ca02b705e",
+  "normalization": "Internal jump offsets relative to function; RIP constants and external targets resolved to absolute linked addresses. Registers, operations, data offsets and nops retained.",
+  "scope": "Textual emitted-code comparison, not a cycle/cache equivalence proof",
+  "pairs": [
+    {
+      "wrapper": "plain",
+      "old_bytes": 2271,
+      "new_bytes": 2271,
+      "old_instruction_count": 551,
+      "new_instruction_count": 551,
+      "normalized_equal": true,
+      "different_diff_lines": 0
+    },
+    {
+      "wrapper": "checked",
+      "old_bytes": 2324,
+      "new_bytes": 2324,
+      "old_instruction_count": 564,
+      "new_instruction_count": 564,
+      "normalized_equal": true,
+      "different_diff_lines": 0
+    }
+  ]
+}

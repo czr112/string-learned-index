@@ -1,7 +1,7 @@
 # 索引长期改进策略与实施路线
 
 日期：2026-10-18。分析基点：`main@564df24`，当日本地与远程main一致，工作区起始干净。
-最近一次性能实验仍为2026-10-12的S3 c轮；本次新增的是只读数据审计与规划，不是新性能结果。
+路线依据的最近外部对照为2026-10-12的S3 c轮；本路线由只读数据审计与规划形成，后续A阶段执行记录见文末。
 
 ## 1. 决策
 
@@ -242,4 +242,8 @@ flowchart LR
 - [ALEX论文](https://www.microsoft.com/en-us/research/wp-content/uploads/2020/04/MSRAlexTechnicalReportV2.pdf)将数据布局与动态扩张/分裂共同设计。
   [官方实现](https://github.com/microsoft/ALEX#limitations-and-future-research-directions)仅支持数值键，不能直接当作字符串替代品。
 
-本次完成路线与审计；A–G实现尚未开始，生产Index和静态核心均未改。
+路线制定时A–G尚未开始。后续执行记录（2026-10-18）：
+
+- A阶段完成一次冻结的反事实归因；三格已记录工作量逐查询相同，同包装规范化机器码相同；状态检查解释未获支持。
+  原S3回归仍未解释，按A停止条件收口，不改核心/默认，不追加重复。见[执行结果](../07_Eval_Integration/RESULTS_INTEGRATION_ATTRIBUTION_20261018.md)。
+- B阶段[契约v0](PHYSICAL_LOCATOR_CONTRACT_20261018.md)已落盘，存储/模型接缝待实现；C–G未启动。

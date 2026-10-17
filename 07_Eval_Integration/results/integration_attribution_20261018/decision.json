@@ -1,0 +1,13 @@
+{
+  "stage": "A",
+  "status": "closed_unexplained",
+  "recorded_work_mismatch_queries": 0,
+  "normalized_codegen_equal": true,
+  "state_check_explanation_supported": false,
+  "controlled_primary_regression_reproduced": false,
+  "original_S3_failure_preserved": true,
+  "adoption_eligible": false,
+  "implementation_changed": false,
+  "defaults_changed": false,
+  "next_stage": "B: physical locator contract; implementation pending"
+}

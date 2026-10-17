@@ -1,0 +1,101 @@
+[
+  {
+    "corpus": "skew",
+    "work": {
+      "phase": "work",
+      "different_queries": 0,
+      "crc_differences": 0,
+      "old": {
+        "queries": 100000,
+        "rejected": 0,
+        "model_steps": 199996,
+        "window_blocks": 6835150,
+        "blocks": 3806530,
+        "exact": 281442,
+        "wide": 99931,
+        "directory_steps": 0
+      },
+      "new": {
+        "queries": 100000,
+        "rejected": 0,
+        "model_steps": 199996,
+        "window_blocks": 6835150,
+        "blocks": 3806530,
+        "exact": 281442,
+        "wide": 99931,
+        "directory_steps": 0
+      }
+    },
+    "gate": {
+      "phase": "gate",
+      "verified_answers": 1386432,
+      "core_memory_equal": true
+    }
+  },
+  {
+    "corpus": "tranco",
+    "work": {
+      "phase": "work",
+      "different_queries": 0,
+      "crc_differences": 0,
+      "old": {
+        "queries": 100000,
+        "rejected": 0,
+        "model_steps": 491455,
+        "window_blocks": 300704,
+        "blocks": 229402,
+        "exact": 90844,
+        "wide": 1012,
+        "directory_steps": 0
+      },
+      "new": {
+        "queries": 100000,
+        "rejected": 0,
+        "model_steps": 491455,
+        "window_blocks": 300704,
+        "blocks": 229402,
+        "exact": 90844,
+        "wide": 1012,
+        "directory_steps": 0
+      }
+    },
+    "gate": {
+      "phase": "gate",
+      "verified_answers": 2172864,
+      "core_memory_equal": true
+    }
+  },
+  {
+    "corpus": "mixed",
+    "work": {
+      "phase": "work",
+      "different_queries": 0,
+      "crc_differences": 0,
+      "old": {
+        "queries": 100000,
+        "rejected": 0,
+        "model_steps": 404710,
+        "window_blocks": 1292557,
+        "blocks": 764708,
+        "exact": 126509,
+        "wide": 35990,
+        "directory_steps": 0
+      },
+      "new": {
+        "queries": 100000,
+        "rejected": 0,
+        "model_steps": 404710,
+        "window_blocks": 1292557,
+        "blocks": 764708,
+        "exact": 126509,
+        "wide": 35990,
+        "directory_steps": 0
+      }
+    },
+    "gate": {
+      "phase": "gate",
+      "verified_answers": 1386432,
+      "core_memory_equal": true
+    }
+  }
+]

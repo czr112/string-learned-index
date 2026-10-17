@@ -8,7 +8,8 @@
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
 - **最新静态点查结果**：[只读接口与长前缀回退：场景收益通过，集成回归门未通过](07_Eval_Integration/RESULTS_STATIC_INTERFACE_20261012.md)。
-- **当前长期策略与详细步骤**：[物理叶页、可替换模型与局部维护](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)。本次完成数据审计与规划，最近性能结果仍为10月12日。
+- **当前长期策略与详细步骤**：[物理叶页、可替换模型与局部维护](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)。10月18日已完成数据审计、规划及A阶段归因，最近ART/HOT排名仍为10月12日。
+- **最新执行（10月18日）**：[A阶段集成归因](07_Eval_Integration/RESULTS_INTEGRATION_ATTRIBUTION_20261018.md)：已记录查询工作量逐条相同、同包装规范化指令相同；原7.8%仍未解释，核心与默认不改。下一步按[B阶段定位契约](docs/PHYSICAL_LOCATOR_CONTRACT_20261018.md)实现接缝。
 - **前版近期计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)，其失败判定继续保留。
 - **上一阶段静态原型**：[物理块预测与 ART 对照](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)；[S0–S2 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)、[S3 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC_S3.md)均已执行。
 - **暂后移的采用计划**：[M5 配置采用、新查询验证与双外部基线](docs/NEXT_ACTION_PLAN_20261012_M5.md)。
@@ -29,7 +30,7 @@ mixed 主目标未通过；其截断形态（EqualDepthDirTrunc）证实了截�
 自有空间记账少约 79%；长前缀的模型增量仍有负结果。它尚未替换上述默认或接入动态更新。
 后续S3已交付独立只读类型及bulk-load/find/owning scan接口。宽证书回退在skew减少约14%–16%耗时，
 100k均匀查询相对ART为tranco 0.938、mixed 1.066、skew 0.810；10k队列与64k数据规模仍存在差距。
-正式接口在skew/100k出现7.8%集成回归，整包采用未通过，生产默认不变；下一步首先定位该回归。
+正式接口在skew/100k出现7.8%集成回归，整包采用未通过，生产默认不变；10月18日归因仍未解释，下一步实现物理块定位接缝。
 
 获取评测依赖（WSL/Linux）与恢复大体积原始证据：
 
