@@ -1,0 +1,143 @@
+{
+  "base_commit": "eb41d23326748318ce9598ed6fb4bbed7c1acc97",
+  "cpu": 0,
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/diagnostics/BM_ENCODING_AUDIT_SPEC_20261019.md": "8e00aafccf42c3b0be323a1d1e606d2745ab2d095d93da44e9aa3eb29c911244",
+    "07_Eval_Integration/diagnostics/audit_bm_encoding.cpp": "91bbb0ac3cc5ade4dc956e6602ff481a4b6ba963009dc94dec9c41cc2607050c",
+    "07_Eval_Integration/diagnostics/run_bm_encoding_audit.py": "7e89b977f3e728b267ae8248c53727f7c2886c316ff99a96cc720dcd11f82b72",
+    "07_Eval_Integration/diagnostics/static_input.hpp": "1e764ea7e7d9b9cce608707921902f350ecdc8ee0c89977459b65e90cc4e825f",
+    "07_Eval_Integration/diagnostics/verify_bm_encoding_audit.py": "871a43cfbcb0758ac416e86e716abf2a36b7c588e0b901aa86e65e52d4ca5c14",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h": "3587addd4e4fda743975534a95173ccb8d09d38029f5239ff3998574b45c3a39",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp": "fbbb922511bc590b1f1c68b77309d25001c3e98047975c5d9358c7b70092aa5b",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.h": "9f3b0b658da7caf143dc14822a6de5772fa5d497dbb7b4fcabe2fe9f1adc64f7",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "inputs": {
+    "english_words": {
+      "rows_path": "07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_real_20261018/interchange/english_words_queries.bin",
+      "queries_sha256": "c1663a904cf572fa200320c093457c8cdd1644c515ea62b7d152554f0070032a",
+      "queries": 65536
+    },
+    "memetracker_urls": {
+      "rows_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_queries.bin",
+      "queries_sha256": "fd9d8b7a7ffd1e5aab4b9dec5a3a8a8154b02c89243e237071010ee25f22ac9f",
+      "queries": 65536
+    },
+    "memetracker_phrases": {
+      "rows_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_rows.bin",
+      "rows_sha256": "0939a1f6b2c14824187d18aadfb2517534d5a1ff746833ce587d342a57d37baa",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_queries.bin",
+      "queries_sha256": "ee9a87e42e822606ac8638ffb2897ee91d69a98a321813eb508c0761c935f150",
+      "queries": 65536
+    },
+    "tranco64_norepl": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin",
+      "queries_sha256": "43295a93e51334401edc11903e2a757523ef9c30ab26c5043de517c25c384977",
+      "queries": 65536
+    }
+  },
+  "artifacts": {
+    "build/audit_bm_encoding": "8636df4061c257582c2a73b5f693931728426aa2b7b779ed9092fb868e8788a8",
+    "build/audit_bm_encoding_san": "4c2bfd5a311500db6d6d3147ab283cdf2c55fcb6aedebf2be34f3f939efb2fb7"
+  },
+  "commands": [
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O2",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/audit_bm_encoding.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_encoding_audit_20261019/build/audit_bm_encoding"
+    ],
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/audit_bm_encoding.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_encoding_audit_20261019/build/audit_bm_encoding_san"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_encoding_audit_20261019/build/audit_bm_encoding",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_encoding_audit_20261019/build/audit_bm_encoding",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_encoding_audit_20261019/build/audit_bm_encoding",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_encoding_audit_20261019/build/audit_bm_encoding",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_encoding_audit_20261019/build/audit_bm_encoding_san",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_queries.bin"
+    ]
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "upstream_commit": "e8e05411135b222edb82e3861799a2ae07ae5470",
+  "benchmark_commit": "003a55bf674b43350fbb70242070fb74f33a56ce",
+  "protocol": "counts only: per-page BlockModel rebuilt exactly as the BM leaf does (2048 rows, occupancy 15, fit(1,7,8,1)); windows, collisions and absent-key coverage",
+  "limits": [
+    "counts are not timings",
+    "synthetic queries from real keys (hit plus 10% absent)",
+    "no candidate is built in this round",
+    "no default change"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "verified",
+  "cells": 4,
+  "sanitized_cells": 1,
+  "justified_cells": [
+    "memetracker_urls"
+  ],
+  "editable_sources": {
+    "07_Eval_Integration/diagnostics/BM_ENCODING_AUDIT_SPEC_20261019.md": {
+      "current": "8e00aafccf42c3b0be323a1d1e606d2745ab2d095d93da44e9aa3eb29c911244",
+      "recorded_at_run": "8e00aafccf42c3b0be323a1d1e606d2745ab2d095d93da44e9aa3eb29c911244"
+    },
+    "07_Eval_Integration/diagnostics/verify_bm_encoding_audit.py": {
+      "current": "900897f76f4a0937b4b179c376284a2e5e6311218c3a6849d886fde81eb054c5",
+      "recorded_at_run": "871a43cfbcb0758ac416e86e716abf2a36b7c588e0b901aa86e65e52d4ca5c14"
+    }
+  },
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "counters",
+    "sanitized",
+    "decision"
+  ]
+}

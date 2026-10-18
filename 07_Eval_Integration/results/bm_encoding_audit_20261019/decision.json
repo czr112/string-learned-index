@@ -1,0 +1,69 @@
+{
+  "collision_share": {
+    "english_words": 0.00387774,
+    "memetracker_urls": 0.443431,
+    "memetracker_phrases": 0.251825,
+    "tranco64_norepl": 0.00821168
+  },
+  "extra_prefix_median": {
+    "english_words": 0,
+    "memetracker_urls": 11,
+    "memetracker_phrases": 1,
+    "tranco64_norepl": 0
+  },
+  "window_rows_mean": {
+    "english_words": 18,
+    "memetracker_urls": 26,
+    "memetracker_phrases": 19,
+    "tranco64_norepl": 17
+  },
+  "window_rows_p95": {
+    "english_words": 31,
+    "memetracker_urls": 73,
+    "memetracker_phrases": 31,
+    "tranco64_norepl": 31
+  },
+  "predicted_is_containing": {
+    "english_words": 0.0932007,
+    "memetracker_urls": 0.0861969,
+    "memetracker_phrases": 0.0977783,
+    "tranco64_norepl": 0.0988922
+  },
+  "window_covers_containing": {
+    "english_words": 0.985992,
+    "memetracker_urls": 0.984909,
+    "memetracker_phrases": 0.983856,
+    "tranco64_norepl": 0.982147
+  },
+  "absent_outside_window": {
+    "english_words": 0.012666,
+    "memetracker_urls": 0.0193804,
+    "memetracker_phrases": 0.0152602,
+    "tranco64_norepl": 0.0163284
+  },
+  "ambiguity_material": {
+    "english_words": false,
+    "memetracker_urls": true,
+    "memetracker_phrases": false,
+    "tranco64_norepl": false
+  },
+  "window_is_wide": {
+    "english_words": true,
+    "memetracker_urls": true,
+    "memetracker_phrases": true,
+    "tranco64_norepl": true
+  },
+  "encoding_refinement_justified": true,
+  "justified_cells": [
+    "memetracker_urls"
+  ],
+  "certified_pages": {
+    "english_words": 0,
+    "memetracker_urls": 0,
+    "memetracker_phrases": 0,
+    "tranco64_norepl": 0
+  },
+  "verification_available": true,
+  "production_adopted": false,
+  "status": "stage-3 audit only; no candidate, no timing"
+}

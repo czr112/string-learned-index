@@ -1,0 +1,56 @@
+[
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "blocks": 4384,
+    "window_blocks": {
+      "mean": 26,
+      "p50": 21,
+      "p95": 73,
+      "max": 136
+    },
+    "window_rows": {
+      "mean": 26,
+      "p50": 21,
+      "p95": 73,
+      "max": 137
+    },
+    "segments": {
+      "total": 229,
+      "per_page": 7.15625
+    },
+    "certified_pages": 0,
+    "predicted_is_containing": {
+      "keys": 65536,
+      "hits": 5649,
+      "rate": 0.0861969
+    },
+    "window_covers_containing": {
+      "inside": 64547,
+      "outside": 989,
+      "rate": 0.984909
+    },
+    "absent": {
+      "queries": 6553,
+      "prefix_rejected": 0,
+      "pred_inside_window": 6426,
+      "pred_outside_window": 127,
+      "outside_rate": 0.0193804
+    },
+    "collisions": {
+      "fences_in_runs": 1944,
+      "runs": 392,
+      "share": 0.443431,
+      "run_mean": 4,
+      "run_p50": 3,
+      "run_p95": 13,
+      "run_max": 91,
+      "extra_prefix_mean": 14,
+      "extra_prefix_p50": 11,
+      "extra_prefix_p95": 37,
+      "extra_prefix_max": 112
+    },
+    "cell": "memetracker_urls"
+  }
+]

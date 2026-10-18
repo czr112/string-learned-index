@@ -1,0 +1,218 @@
+[
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "blocks": 4384,
+    "window_blocks": {
+      "mean": 18,
+      "p50": 19,
+      "p95": 31,
+      "max": 33
+    },
+    "window_rows": {
+      "mean": 18,
+      "p50": 19,
+      "p95": 31,
+      "max": 33
+    },
+    "segments": {
+      "total": 256,
+      "per_page": 8
+    },
+    "certified_pages": 0,
+    "predicted_is_containing": {
+      "keys": 65536,
+      "hits": 6108,
+      "rate": 0.0932007
+    },
+    "window_covers_containing": {
+      "inside": 64618,
+      "outside": 918,
+      "rate": 0.985992
+    },
+    "absent": {
+      "queries": 6553,
+      "prefix_rejected": 0,
+      "pred_inside_window": 6470,
+      "pred_outside_window": 83,
+      "outside_rate": 0.012666
+    },
+    "collisions": {
+      "fences_in_runs": 17,
+      "runs": 5,
+      "share": 0.00387774,
+      "run_mean": 3,
+      "run_p50": 2,
+      "run_p95": 4,
+      "run_max": 7,
+      "extra_prefix_mean": 0,
+      "extra_prefix_p50": 0,
+      "extra_prefix_p95": 0,
+      "extra_prefix_max": 1
+    },
+    "cell": "english_words"
+  },
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "blocks": 4384,
+    "window_blocks": {
+      "mean": 26,
+      "p50": 21,
+      "p95": 73,
+      "max": 136
+    },
+    "window_rows": {
+      "mean": 26,
+      "p50": 21,
+      "p95": 73,
+      "max": 137
+    },
+    "segments": {
+      "total": 229,
+      "per_page": 7.15625
+    },
+    "certified_pages": 0,
+    "predicted_is_containing": {
+      "keys": 65536,
+      "hits": 5649,
+      "rate": 0.0861969
+    },
+    "window_covers_containing": {
+      "inside": 64547,
+      "outside": 989,
+      "rate": 0.984909
+    },
+    "absent": {
+      "queries": 6553,
+      "prefix_rejected": 0,
+      "pred_inside_window": 6426,
+      "pred_outside_window": 127,
+      "outside_rate": 0.0193804
+    },
+    "collisions": {
+      "fences_in_runs": 1944,
+      "runs": 392,
+      "share": 0.443431,
+      "run_mean": 4,
+      "run_p50": 3,
+      "run_p95": 13,
+      "run_max": 91,
+      "extra_prefix_mean": 14,
+      "extra_prefix_p50": 11,
+      "extra_prefix_p95": 37,
+      "extra_prefix_max": 112
+    },
+    "cell": "memetracker_urls"
+  },
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "blocks": 4384,
+    "window_blocks": {
+      "mean": 19,
+      "p50": 19,
+      "p95": 31,
+      "max": 45
+    },
+    "window_rows": {
+      "mean": 19,
+      "p50": 19,
+      "p95": 31,
+      "max": 45
+    },
+    "segments": {
+      "total": 251,
+      "per_page": 7.84375
+    },
+    "certified_pages": 0,
+    "predicted_is_containing": {
+      "keys": 65536,
+      "hits": 6408,
+      "rate": 0.0977783
+    },
+    "window_covers_containing": {
+      "inside": 64478,
+      "outside": 1058,
+      "rate": 0.983856
+    },
+    "absent": {
+      "queries": 6553,
+      "prefix_rejected": 0,
+      "pred_inside_window": 6453,
+      "pred_outside_window": 100,
+      "outside_rate": 0.0152602
+    },
+    "collisions": {
+      "fences_in_runs": 1104,
+      "runs": 305,
+      "share": 0.251825,
+      "run_mean": 3,
+      "run_p50": 3,
+      "run_p95": 9,
+      "run_max": 37,
+      "extra_prefix_mean": 1,
+      "extra_prefix_p50": 1,
+      "extra_prefix_p95": 4,
+      "extra_prefix_max": 8
+    },
+    "cell": "memetracker_phrases"
+  },
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "blocks": 4384,
+    "window_blocks": {
+      "mean": 17,
+      "p50": 15,
+      "p95": 31,
+      "max": 33
+    },
+    "window_rows": {
+      "mean": 17,
+      "p50": 15,
+      "p95": 31,
+      "max": 33
+    },
+    "segments": {
+      "total": 256,
+      "per_page": 8
+    },
+    "certified_pages": 0,
+    "predicted_is_containing": {
+      "keys": 65536,
+      "hits": 6481,
+      "rate": 0.0988922
+    },
+    "window_covers_containing": {
+      "inside": 64366,
+      "outside": 1170,
+      "rate": 0.982147
+    },
+    "absent": {
+      "queries": 6553,
+      "prefix_rejected": 0,
+      "pred_inside_window": 6446,
+      "pred_outside_window": 107,
+      "outside_rate": 0.0163284
+    },
+    "collisions": {
+      "fences_in_runs": 36,
+      "runs": 11,
+      "share": 0.00821168,
+      "run_mean": 3,
+      "run_p50": 2,
+      "run_p95": 4,
+      "run_max": 12,
+      "extra_prefix_mean": 0,
+      "extra_prefix_p50": 0,
+      "extra_prefix_p95": 1,
+      "extra_prefix_max": 1
+    },
+    "cell": "tranco64_norepl"
+  }
+]
