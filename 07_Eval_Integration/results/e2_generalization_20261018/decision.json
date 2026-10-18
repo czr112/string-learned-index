@@ -1,0 +1,39 @@
+{
+  "warm_full_library_ratios_to_ART": {
+    "skew_full_norepl": 0.8235480298900897,
+    "mixed_full_norepl": 1.0205607020326073,
+    "tranco64_norepl": 1.357948265135739,
+    "skew_miss": 0.8868242182967643,
+    "tranco64_miss": 1.3525431058478605
+  },
+  "warm_full_library_ratios_to_HOT": {
+    "skew_full_norepl": 0.8894939736114562,
+    "mixed_full_norepl": 0.7534510045883344,
+    "tranco64_norepl": 0.816968023861858,
+    "skew_miss": 0.8457282275842675,
+    "tranco64_miss": 0.8667649851087416
+  },
+  "warm_integrated_vs_prototype": {
+    "skew_full_norepl": 1.0044213899123973,
+    "mixed_full_norepl": 1.000030114405046,
+    "tranco64_norepl": 0.9791749563992174,
+    "skew_miss": 1.0206201834895818,
+    "tranco64_miss": 1.019740860599609
+  },
+  "ART_within_10_percent_all_E2_cells": false,
+  "full_library_clear_gain_cells": [
+    "skew_full_norepl",
+    "skew_miss"
+  ],
+  "clear_integration_regression_cells": [],
+  "short_key_endpoint_ratios_to_ART": {
+    "tranco64_norepl": 1.357948265135739,
+    "tranco64_miss": 1.3525431058478605
+  },
+  "E1_general_gate_failure_preserved": true,
+  "million_unique_keys_covered": false,
+  "in_range_perturbation_and_boundary_misses_covered": false,
+  "production_adopted": false,
+  "dynamic_updates_implemented": false,
+  "status": "evidence-only; explicit read-only candidate retained; F/G not started"
+}

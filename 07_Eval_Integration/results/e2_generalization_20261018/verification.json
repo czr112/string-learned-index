@@ -1,0 +1,53 @@
+{
+  "status": "verified",
+  "cells": 15,
+  "timing_rows": 2700,
+  "gate_rows": 150,
+  "ledger_rows": 16,
+  "workloads": [
+    [
+      "workload",
+      "skew_full_norepl",
+      "hit",
+      131072
+    ],
+    [
+      "workload",
+      "mixed_full_norepl",
+      "hit",
+      131072
+    ],
+    [
+      "workload",
+      "tranco64_norepl",
+      "hit",
+      65536
+    ],
+    [
+      "workload",
+      "skew_miss",
+      "miss",
+      131072
+    ],
+    [
+      "workload",
+      "tranco64_miss",
+      "miss",
+      65536
+    ]
+  ],
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "pairing",
+    "checksums",
+    "ratios",
+    "flags",
+    "ns_per_op",
+    "gates",
+    "process_gates",
+    "ledger",
+    "decision"
+  ]
+}

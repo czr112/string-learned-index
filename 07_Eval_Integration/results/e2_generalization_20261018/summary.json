@@ -1,0 +1,3437 @@
+[
+  {
+    "cell": "skew_full_norepl",
+    "dataset": "skew",
+    "kind": "hit",
+    "mode": "warm",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9989744206628295,
+          0.9687207623308786,
+          1.011261094746773,
+          1.0044213899123973,
+          1.0248100937198474
+        ],
+        "median": 1.0044213899123973,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.8235480298900897,
+          0.8007033506184323,
+          0.8749975708917204,
+          0.7985132440331777,
+          0.8392912643788517
+        ],
+        "median": 0.8235480298900897,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8804345925646424,
+          0.8438816016558386,
+          0.8894939736114562,
+          0.8897514320502429,
+          0.8916480407605948
+        ],
+        "median": 0.8894939736114562,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.8053710559540619,
+          0.8544197947467755,
+          0.8467002020040708,
+          0.7972104211336231,
+          0.8148022383835097
+        ],
+        "median": 0.8148022383835097,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8710851322826063,
+          0.9005152984195852,
+          0.8645634453279776,
+          0.8958244026582735,
+          0.8703641446513202
+        ],
+        "median": 0.8710851322826063,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9688294133650681,
+          1.0095222457801583,
+          0.9646387671210772,
+          0.9860436279154654,
+          0.9949480328809404
+        ],
+        "median": 0.9860436279154654,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0171154268279783,
+          1.0036713312935737,
+          0.9789497261915112,
+          1.0142144183827924,
+          0.9561745651253213
+        ],
+        "median": 1.0036713312935737,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0366574868066487,
+      "integrated_AA/integrated": 1.0458341358085954
+    },
+    "observed_band": 1.0458341358085954,
+    "ns_per_op": {
+      "prototype": 558.4216918945312,
+      "prototype_AA": 553.816349029541,
+      "integrated": 545.7389831542969,
+      "integrated_AA": 559.8880958557129,
+      "ART": 663.3103637695312,
+      "HOT": 640.7262840270996
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "skew_full_norepl",
+    "dataset": "skew",
+    "kind": "hit",
+    "mode": "first",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9892504916077725,
+          0.9512254857806053,
+          0.9950803615110675,
+          1.0062161579945537,
+          0.9673955233155309
+        ],
+        "median": 0.9892504916077725,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.8499008101347647,
+          0.8475368079354708,
+          0.8212323227638373,
+          0.8378933397191883,
+          0.7998284037515209
+        ],
+        "median": 0.8378933397191883,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.9341935577842805,
+          0.8713917797315213,
+          0.8675828394687919,
+          0.8628909936183694,
+          0.8955671902788
+        ],
+        "median": 0.8713917797315213,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.8416333736294166,
+          0.8769300063589419,
+          0.8464216432658529,
+          0.8292992445865027,
+          0.8183129192344418
+        ],
+        "median": 0.8416333736294166,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8934751528546099,
+          0.878357377453499,
+          0.8852913069882544,
+          0.8620545433616462,
+          0.9241673843040199
+        ],
+        "median": 0.8852913069882544,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9971955107397337,
+          0.9290403900364084,
+          0.9815387530446646,
+          0.9733800767911156,
+          0.942525426010341
+        ],
+        "median": 0.9733800767911156,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.031769161864313,
+          1.0055148696218508,
+          0.9716185815109266,
+          0.9597617635990761,
+          0.9922464123860962
+        ],
+        "median": 0.9922464123860962,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0763794671626825,
+      "integrated_AA/integrated": 1.041925233872656
+    },
+    "observed_band": 1.0763794671626825,
+    "ns_per_op": {
+      "prototype": 528.0596122741699,
+      "prototype_AA": 507.9861488342285,
+      "integrated": 510.22424697875977,
+      "integrated_AA": 508.13134765625,
+      "ART": 605.003589630127,
+      "HOT": 576.2134208679199
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "skew_full_norepl",
+    "dataset": "skew",
+    "kind": "hit",
+    "mode": "evicted",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.0367714338883296,
+          0.9217439967542942,
+          1.0254863335801858,
+          1.006592553211888,
+          1.0640673554525504
+        ],
+        "median": 1.0254863335801858,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.8617787911050707,
+          0.7630911883360172,
+          0.8263074866170519,
+          0.8038008362725191,
+          0.8916733497577175
+        ],
+        "median": 0.8263074866170519,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.9218998923429154,
+          0.8479379043622197,
+          0.8985313284577106,
+          0.919279077916954,
+          1.020304767646551
+        ],
+        "median": 0.919279077916954,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.8772953437383406,
+          0.8514340758068779,
+          0.800634083813052,
+          0.7802658267799294,
+          0.8334721494589847
+        ],
+        "median": 0.8334721494589847,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.938694548745248,
+          0.9117011655762732,
+          0.861586575316746,
+          0.8792362992449427,
+          0.8796386389569955
+        ],
+        "median": 0.8796386389569955,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9614200407754663,
+          0.9211636336292546,
+          1.0360665166999747,
+          1.0213550323330685,
+          1.0978512767630453
+        ],
+        "median": 1.0213550323330685,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          0.9857287136892363,
+          1.034482104386065,
+          0.9949781847337387,
+          1.0055087422365419,
+          0.9533108092839688
+        ],
+        "median": 0.9949781847337387,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0978512767630453,
+      "integrated_AA/integrated": 1.0489758327099001
+    },
+    "observed_band": 1.0978512767630453,
+    "ns_per_op": {
+      "prototype": 511.74270248413086,
+      "prototype_AA": 507.2311210632324,
+      "integrated": 523.1903762817383,
+      "integrated_AA": 497.4443550109863,
+      "ART": 614.9822311401367,
+      "HOT": 570.20361328125
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "mixed_full_norepl",
+    "dataset": "mixed",
+    "kind": "hit",
+    "mode": "warm",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.99461229149584,
+          1.0139310804894004,
+          0.9582792319777187,
+          1.000030114405046,
+          1.014793468982405
+        ],
+        "median": 1.000030114405046,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.0242292631298042,
+          1.0218071253993566,
+          0.9448495916358379,
+          1.0023954417883933,
+          1.0205607020326073
+        ],
+        "median": 1.0205607020326073,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8395856202107996,
+          0.7835505834486522,
+          0.748196091432252,
+          0.7534510045883344,
+          0.6566312850144979
+        ],
+        "median": 0.7534510045883344,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.0053259853156786,
+          0.9765977601597366,
+          1.0037160000673633,
+          0.9643979606935383,
+          1.0369287084466157
+        ],
+        "median": 1.0037160000673633,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8010248535723039,
+          0.7268029981754907,
+          0.7917418451562956,
+          0.7465752954043472,
+          0.6560624916563553
+        ],
+        "median": 0.7465752954043472,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.032758262880042,
+          1.0273271740242966,
+          0.9950784845330524,
+          0.9624786261143696,
+          1.012490408338442
+        ],
+        "median": 1.012490408338442,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0976012437753127,
+          1.0560545353521693,
+          1.0345590295071867,
+          0.9722485352373123,
+          1.0051029151845348
+        ],
+        "median": 1.0345590295071867,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.038984111301368,
+      "integrated_AA/integrated": 1.0976012437753127
+    },
+    "observed_band": 1.0976012437753127,
+    "ns_per_op": {
+      "prototype": 466.3179016113281,
+      "prototype_AA": 455.33732986450195,
+      "integrated": 462.50111389160156,
+      "integrated_AA": 463.7787055969238,
+      "ART": 463.37773513793945,
+      "HOT": 617.5024185180664
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "mixed_full_norepl",
+    "dataset": "mixed",
+    "kind": "hit",
+    "mode": "first",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9616419558833098,
+          0.938656762312081,
+          0.9932602301851241,
+          1.0760990531035992,
+          0.9852283530833181
+        ],
+        "median": 0.9852283530833181,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.938489510641948,
+          1.007071569151496,
+          1.013280000126632,
+          1.0232995721195388,
+          0.9235812525304772
+        ],
+        "median": 1.007071569151496,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8418751512911736,
+          0.8072279451478035,
+          0.7630622462310372,
+          0.8561388423465848,
+          0.8239645043696391
+        ],
+        "median": 0.8239645043696391,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.9905142676241052,
+          1.0613264513437346,
+          1.0086780817446321,
+          0.9619670104538252,
+          0.9466621581161992
+        ],
+        "median": 0.9905142676241052,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8309233111570327,
+          0.8322972662521477,
+          0.7645068911275705,
+          0.8012651070707231,
+          0.8093841029694377
+        ],
+        "median": 0.8093841029694377,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9792459611015223,
+          0.9274529178442057,
+          1.0507788610229298,
+          1.000299245653173,
+          1.0371919556561553
+        ],
+        "median": 1.000299245653173,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.061350960046227,
+          1.0157628104552254,
+          0.9817862836230635,
+          1.0893058053954068,
+          1.0197496536541482
+        ],
+        "median": 1.0197496536541482,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.078221849066392,
+      "integrated_AA/integrated": 1.0893058053954068
+    },
+    "observed_band": 1.0893058053954068,
+    "ns_per_op": {
+      "prototype": 405.3484191894531,
+      "prototype_AA": 406.58127212524414,
+      "integrated": 395.7092056274414,
+      "integrated_AA": 416.0182800292969,
+      "ART": 407.4492530822754,
+      "HOT": 509.5690574645996
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "mixed_full_norepl",
+    "dataset": "mixed",
+    "kind": "hit",
+    "mode": "evicted",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.070019522758662,
+          1.0922781504000865,
+          1.021119910758745,
+          1.022292475168419,
+          1.018393817173763
+        ],
+        "median": 1.022292475168419,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.118881864070485,
+          1.0228288203073816,
+          1.0368468835507905,
+          0.9771760286285933,
+          1.0317758569204036
+        ],
+        "median": 1.0317758569204036,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.842633651154992,
+          0.8718359252300385,
+          0.7999432312712559,
+          0.8144307004040179,
+          0.7761826199960105
+        ],
+        "median": 0.8144307004040179,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.0458615927594943,
+          0.9406044514249223,
+          1.0157836216115448,
+          0.9828919952533335,
+          1.0652071002140704
+        ],
+        "median": 1.0157836216115448,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.7536702416881711,
+          0.792169423691731,
+          0.7657463432057585,
+          0.8078634342412829,
+          0.772307200062307
+        ],
+        "median": 0.772307200062307,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.0058265785219551,
+          1.091378596896102,
+          1.0326246107494277,
+          0.969816346923907,
+          0.9757795097854931
+        ],
+        "median": 1.0058265785219551,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          0.9741866539798003,
+          0.9398373159285092,
+          1.0478416037350722,
+          0.9919308402422911,
+          1.0592179316060997
+        ],
+        "median": 0.9919308402422911,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.091378596896102,
+      "integrated_AA/integrated": 1.0640139341690784
+    },
+    "observed_band": 1.091378596896102,
+    "ns_per_op": {
+      "prototype": 396.8080291748047,
+      "prototype_AA": 404.472713470459,
+      "integrated": 415.2554359436035,
+      "integrated_AA": 415.00125885009766,
+      "ART": 396.4612274169922,
+      "HOT": 507.04199981689453
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco64_norepl",
+    "dataset": "tranco64",
+    "kind": "hit",
+    "mode": "warm",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9791749563992174,
+          1.02996737158885,
+          0.8675488106616477,
+          1.0058512080218855,
+          0.9747079031072123
+        ],
+        "median": 0.9791749563992174,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.372813841369473,
+          1.5287808095189348,
+          1.325691768648126,
+          1.357948265135739,
+          1.3139659893543654
+        ],
+        "median": 1.357948265135739,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8470732046248315,
+          0.8508843374967595,
+          0.7942020584932425,
+          0.816968023861858,
+          0.7631488825489774
+        ],
+        "median": 0.816968023861858,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.4113947993220894,
+          1.5098455625652272,
+          1.509884818406464,
+          1.4590208082978062,
+          1.2919123395719092
+        ],
+        "median": 1.4590208082978062,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8157800669586818,
+          0.8138233583706714,
+          0.8773480880077797,
+          0.9083264334731764,
+          0.7793109564944125
+        ],
+        "median": 0.8157800669586818,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9669381760329936,
+          0.9608852746721429,
+          0.9068700959504732,
+          0.9228885790856927,
+          1.100835926567465
+        ],
+        "median": 0.9608852746721429,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0647934675405537,
+          0.8732514801515151,
+          1.1038764969037076,
+          0.9071039029692349,
+          0.9738377852885953
+        ],
+        "median": 0.9738377852885953,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.1026937644822428,
+      "integrated_AA/integrated": 1.1451454967204786
+    },
+    "observed_band": 1.1451454967204786,
+    "ns_per_op": {
+      "prototype": 293.96163177490234,
+      "prototype_AA": 269.5379638671875,
+      "integrated": 267.68921661376953,
+      "integrated_AA": 250.50777435302734,
+      "ART": 195.1140594482422,
+      "HOT": 350.47438049316406
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco64_norepl",
+    "dataset": "tranco64",
+    "kind": "hit",
+    "mode": "first",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9220345090805901,
+          0.904441324149362,
+          1.0512974191070954,
+          1.1536792456375706,
+          1.0178024174913165
+        ],
+        "median": 1.0178024174913165,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.1420961690548381,
+          1.1214821378679365,
+          1.1889354089898045,
+          1.5273402307825963,
+          1.2334506418564162
+        ],
+        "median": 1.1889354089898045,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.6880856258436157,
+          0.7375568223653152,
+          0.8126616081253639,
+          0.9236350500796169,
+          0.7776926561234307
+        ],
+        "median": 0.7776926561234307,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.1957046925137575,
+          1.2133707220795644,
+          1.1765039311426733,
+          1.258746826122621,
+          1.1961695770791017
+        ],
+        "median": 1.1961695770791017,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.7834021842194016,
+          0.8244852084471248,
+          0.7559541567757191,
+          0.8138472642886764,
+          0.7787472128867234
+        ],
+        "median": 0.7834021842194016,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.8832805521433549,
+          0.9824814401073089,
+          0.9850778914760095,
+          1.0822572619315538,
+          0.9961141082232177
+        ],
+        "median": 0.9850778914760095,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.031978831615058,
+          1.1065019735722288,
+          0.980259435303664,
+          0.9535095844892139,
+          1.001027660373341
+        ],
+        "median": 1.001027660373341,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.1321431198427447,
+      "integrated_AA/integrated": 1.1065019735722288
+    },
+    "observed_band": 1.1321431198427447,
+    "ns_per_op": {
+      "prototype": 197.45917510986328,
+      "prototype_AA": 192.1665802001953,
+      "integrated": 195.91600036621094,
+      "integrated_AA": 199.74595642089844,
+      "ART": 163.57196807861328,
+      "HOT": 252.5064926147461
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco64_norepl",
+    "dataset": "tranco64",
+    "kind": "hit",
+    "mode": "evicted",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.028793161715316,
+          1.078623811733474,
+          1.101576529570762,
+          1.0722137238278988,
+          1.014797519702984
+        ],
+        "median": 1.0722137238278988,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.3731134557377196,
+          1.2109444756784027,
+          1.2118461707241086,
+          1.0116618916126259,
+          1.3063245217787063
+        ],
+        "median": 1.2118461707241086,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8302390512221034,
+          0.8828177641367233,
+          0.8077401393568128,
+          0.9115999380022428,
+          0.8800442942523197
+        ],
+        "median": 0.8800442942523197,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.126734755170583,
+          1.1706751727594946,
+          1.1884468609745076,
+          0.9620831494897777,
+          1.3645899330308604
+        ],
+        "median": 1.1706751727594946,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.789450563352179,
+          0.8446507375686583,
+          0.7135201332103205,
+          0.8518731985992174,
+          0.8686914326109669
+        ],
+        "median": 0.8446507375686583,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.030302699277672,
+          1.12000718253078,
+          1.086028436055852,
+          1.068303064851255,
+          0.9967001594637139
+        ],
+        "median": 1.068303064851255,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          0.8714753061833143,
+          0.9245728281544052,
+          0.9788575108452946,
+          1.1325683076735231,
+          0.9895753647113643
+        ],
+        "median": 0.9788575108452946,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.12000718253078,
+      "integrated_AA/integrated": 1.1474794442306901
+    },
+    "observed_band": 1.1474794442306901,
+    "ns_per_op": {
+      "prototype": 194.18507385253906,
+      "prototype_AA": 199.08995056152344,
+      "integrated": 199.4046401977539,
+      "integrated_AA": 195.6891632080078,
+      "ART": 151.27560424804688,
+      "HOT": 233.95633697509766
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "skew_miss",
+    "dataset": "skew",
+    "kind": "miss",
+    "mode": "warm",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.0244199474645796,
+          0.9168061566975891,
+          1.042115158396916,
+          0.9756837889633057,
+          1.0206201834895818
+        ],
+        "median": 1.0206201834895818,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.8734134050327585,
+          0.8520579315520445,
+          1.0058345913985707,
+          0.8868242182967643,
+          0.9081597245767914
+        ],
+        "median": 0.8868242182967643,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.9201624749441624,
+          0.78680836805744,
+          0.8457282275842675,
+          0.847516819507688,
+          0.8286642308742558
+        ],
+        "median": 0.8457282275842675,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.8397353359344519,
+          0.9631477988173271,
+          0.9655091395693293,
+          0.9097497638496743,
+          0.8803388938199741
+        ],
+        "median": 0.9097497638496743,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.9104145971288471,
+          0.8317537309445178,
+          0.8400838379964222,
+          0.9079383516206554,
+          0.8029888035241979
+        ],
+        "median": 0.8400838379964222,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.0750681452281783,
+          1.013326574715516,
+          1.0399567276983956,
+          0.9526445696849943,
+          1.0347838355197412
+        ],
+        "median": 1.0347838355197412,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0385626043330936,
+          1.0974244747452084,
+          0.9952155078425792,
+          0.9769515168382934,
+          1.0197879652864092
+        ],
+        "median": 1.0197879652864092,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0750681452281783,
+      "integrated_AA/integrated": 1.0974244747452084
+    },
+    "observed_band": 1.0974244747452084,
+    "ns_per_op": {
+      "prototype": 506.6769714355469,
+      "prototype_AA": 524.1580467224121,
+      "integrated": 500.13697052001953,
+      "integrated_AA": 516.8533401489258,
+      "ART": 536.9519805908203,
+      "HOT": 607.3648529052734
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "skew_miss",
+    "dataset": "skew",
+    "kind": "miss",
+    "mode": "first",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9876241901901575,
+          1.074682364147233,
+          1.0116972158108841,
+          1.029382215650962,
+          1.0027310329858719
+        ],
+        "median": 1.0116972158108841,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.9022607979191135,
+          0.911037871436645,
+          0.918338012576627,
+          0.9026896018871651,
+          0.9963849538984142
+        ],
+        "median": 0.911037871436645,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8222264043003745,
+          0.8635300154384364,
+          0.8166401487726779,
+          0.8450804173633591,
+          0.896016404039097
+        ],
+        "median": 0.8450804173633591,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.9308912020057749,
+          0.8404333198900436,
+          0.930421174029091,
+          0.9133386732627569,
+          0.9407781534812879
+        ],
+        "median": 0.930421174029091,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8359978686577108,
+          0.8152862276113613,
+          0.8223441256294846,
+          0.8354899939667968,
+          0.8675514049954892
+        ],
+        "median": 0.8354899939667968,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9883696798003851,
+          1.067579144704729,
+          1.0058155588538429,
+          0.9689269067482,
+          0.9957471021307955
+        ],
+        "median": 0.9957471021307955,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0252083187492267,
+          1.0020185780274147,
+          1.0144688045106864,
+          0.9861300636734753,
+          1.0023037051293073
+        ],
+        "median": 1.0023037051293073,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.067579144704729,
+      "integrated_AA/integrated": 1.0252083187492267
+    },
+    "observed_band": 1.067579144704729,
+    "ns_per_op": {
+      "prototype": 472.2457695007324,
+      "prototype_AA": 468.90819549560547,
+      "integrated": 475.22409439086914,
+      "integrated_AA": 469.8627014160156,
+      "ART": 512.2112655639648,
+      "HOT": 563.2261619567871
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "skew_miss",
+    "dataset": "skew",
+    "kind": "miss",
+    "mode": "evicted",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.0091137600808113,
+          1.0079313953091658,
+          0.9493581111408933,
+          0.9496290413503772,
+          1.0034789582189414
+        ],
+        "median": 1.0034789582189414,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.9491627129202427,
+          0.8749994338206921,
+          0.9023087001111093,
+          0.8742508434576964,
+          0.8666009212244296
+        ],
+        "median": 0.8749994338206921,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8130271009454004,
+          0.8411354924522505,
+          0.8243642982665133,
+          0.8406914644221886,
+          0.7856869601117298
+        ],
+        "median": 0.8243642982665133,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.9506743552373604,
+          0.8601812827948063,
+          0.9434217862416461,
+          0.8917548633138193,
+          0.8685081384850899
+        ],
+        "median": 0.8917548633138193,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8528996869884384,
+          0.8150788999105607,
+          0.8468988993238356,
+          0.8386523880714079,
+          0.7747980373978783
+        ],
+        "median": 0.8386523880714079,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9813461394119787,
+          1.026917666123627,
+          0.937673091336799,
+          0.9641032766612954,
+          0.9729576969936529
+        ],
+        "median": 0.9729576969936529,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          0.9450570001158589,
+          0.9777296483265316,
+          1.0103482076339474,
+          0.9799098679407041,
+          0.9788963590260129
+        ],
+        "median": 0.9788963590260129,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.066469763544504,
+      "integrated_AA/integrated": 1.058137233920711
+    },
+    "observed_band": 1.066469763544504,
+    "ns_per_op": {
+      "prototype": 471.5461196899414,
+      "prototype_AA": 461.8472213745117,
+      "integrated": 484.0348243713379,
+      "integrated_AA": 477.197452545166,
+      "ART": 539.5305404663086,
+      "HOT": 578.1897430419922
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco64_miss",
+    "dataset": "tranco64",
+    "kind": "miss",
+    "mode": "warm",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9783475143710014,
+          1.0757485105784768,
+          1.019740860599609,
+          1.0903502581927687,
+          1.0080900885305568
+        ],
+        "median": 1.019740860599609,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.2209859531335705,
+          1.625268335650332,
+          1.411480140477063,
+          1.3525431058478605,
+          1.3177731788421858
+        ],
+        "median": 1.3525431058478605,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.7904912501206034,
+          0.8896724554250327,
+          0.8667649851087416,
+          0.8882231310063273,
+          0.8052629113574887
+        ],
+        "median": 0.8667649851087416,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.2757774576588758,
+          1.3596684232392584,
+          1.3625688527959627,
+          1.2775283942739648,
+          1.2736008116860909
+        ],
+        "median": 1.2775283942739648,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8206150638051297,
+          0.8587344438577051,
+          0.8435540422559149,
+          0.7540293044260644,
+          0.8459750317280263
+        ],
+        "median": 0.8435540422559149,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.018980014115369,
+          1.0654801314109963,
+          1.079918346943726,
+          1.0939658218782218,
+          1.0053425884682634
+        ],
+        "median": 1.0654801314109963,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.1517399488493596,
+          0.9084618906208084,
+          1.0027663408311476,
+          1.0700090336083163,
+          0.8987781970920583
+        ],
+        "median": 1.0027663408311476,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0939658218782218,
+      "integrated_AA/integrated": 1.1517399488493596
+    },
+    "observed_band": 1.1517399488493596,
+    "ns_per_op": {
+      "prototype": 184.5251007080078,
+      "prototype_AA": 195.9258804321289,
+      "integrated": 183.51274871826172,
+      "integrated_AA": 190.77047729492188,
+      "ART": 137.9754180908203,
+      "HOT": 222.06873321533203
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco64_miss",
+    "dataset": "tranco64",
+    "kind": "miss",
+    "mode": "first",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9233637636233584,
+          1.02793761677606,
+          0.9187946564977602,
+          1.007820008248831,
+          1.0129285813589846
+        ],
+        "median": 1.007820008248831,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.2846010264935042,
+          1.1598935276708682,
+          1.2268059513937994,
+          1.172832778690902,
+          1.2116632393631874
+        ],
+        "median": 1.2116632393631874,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8343530351422843,
+          0.7302588510110593,
+          0.7754141547328648,
+          0.8851640337065056,
+          0.7381718358472612
+        ],
+        "median": 0.7754141547328648,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.3252488424967959,
+          1.3179393233203087,
+          1.307949505242744,
+          1.2435046380331494,
+          1.1758595389893534
+        ],
+        "median": 1.307949505242744,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.9397960220104122,
+          0.7572331775399391,
+          0.8969737555910882,
+          0.9142300208673446,
+          0.7293227674731138
+        ],
+        "median": 0.8969737555910882,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9468229074089581,
+          1.0929813320396815,
+          0.9220047501321695,
+          0.9768863368787211,
+          0.9788141299835826
+        ],
+        "median": 0.9768863368787211,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0097348607287515,
+          1.0293525807655617,
+          1.0415595497454713,
+          0.9855370827780635,
+          0.977765035265864
+        ],
+        "median": 1.0097348607287515,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0929813320396815,
+      "integrated_AA/integrated": 1.0415595497454713
+    },
+    "observed_band": 1.0929813320396815,
+    "ns_per_op": {
+      "prototype": 220.2262725830078,
+      "prototype_AA": 219.6982879638672,
+      "integrated": 215.50013732910156,
+      "integrated_AA": 223.54261779785156,
+      "ART": 174.92378997802734,
+      "HOT": 263.3382339477539
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco64_miss",
+    "dataset": "tranco64",
+    "kind": "miss",
+    "mode": "evicted",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9019128784512342,
+          1.0914868968886924,
+          1.0427809247059536,
+          0.9980564106662315,
+          1.0526586623932592
+        ],
+        "median": 1.0427809247059536,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.3202633945228883,
+          1.3660467856687377,
+          1.1357285863355722,
+          1.344758617029552,
+          1.3363343721573153
+        ],
+        "median": 1.3363343721573153,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8663037977080437,
+          0.7503983892047632,
+          0.913403654908376,
+          0.9163668299062673,
+          0.9010824385094767
+        ],
+        "median": 0.9010824385094767,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.5178760021598339,
+          1.3390592635126177,
+          1.3574815829969322,
+          1.4137626240057761,
+          1.376321238233606
+        ],
+        "median": 1.376321238233606,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.8635621412434584,
+          0.8083736604640854,
+          0.8922412237487884,
+          0.9396593478704228,
+          0.8863593708297748
+        ],
+        "median": 0.8863593708297748,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9673895822664984,
+          1.09161229096734,
+          0.9329495775741232,
+          1.0232995827062505,
+          0.9844023775460071
+        ],
+        "median": 0.9844023775460071,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0260232974499968,
+          1.0333713603516093,
+          0.9293635285852115,
+          1.0160074132237267,
+          0.9999526010337747
+        ],
+        "median": 1.0160074132237267,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.09161229096734,
+      "integrated_AA/integrated": 1.076005211353968
+    },
+    "observed_band": 1.09161229096734,
+    "ns_per_op": {
+      "prototype": 219.8348617553711,
+      "prototype_AA": 224.43619537353516,
+      "integrated": 215.74642181396484,
+      "integrated_AA": 216.31712341308594,
+      "ART": 161.44132232666016,
+      "HOT": 246.46411895751953
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  }
+]

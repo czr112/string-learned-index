@@ -7,8 +7,9 @@
 
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
+- **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。
-- **当前长期策略与详细步骤**：[物理叶页、可替换模型与局部维护](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)。10月18日已完成A归因、B接缝、C1入口、D1内部A/B及E1正式接口外部复测，下一步有限泛化与空间账本。
+- **当前长期策略与详细步骤**：[物理叶页、可替换模型与局部维护](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)。10月18日已完成A归因、B接缝、C1入口、D1内部A/B、E1正式接口外部复测与E2有限泛化/空间账本，下一步短键固定路径与F局部页更新。
 - **最新结构结果（10月18日）**：[D1簇内前缀辨识](07_Eval_Integration/RESULTS_COLLISION_REFINEMENT_20261018.md)：skew相对B模型耗时下降32%–38%，相对旧宽回退下降20%–25%，风险格无清晰回归；空间+1.18%。四份完整sanitizer门通过；后续E1正式接入与外部复测已完成，生产默认不改。
 - **前版近期计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)，其失败判定继续保留。
 - **上一阶段静态原型**：[物理块预测与 ART 对照](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)；[S0–S2 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)、[S3 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC_S3.md)均已执行。
@@ -30,7 +31,7 @@ mixed 主目标未通过；其截断形态（EqualDepthDirTrunc）证实了截�
 自有空间记账少约 79%；长前缀的模型增量仍有负结果。它尚未替换上述默认或接入动态更新。
 后续S3已交付独立只读类型及bulk-load/find/owning scan接口。宽证书回退在skew减少约14%–16%耗时，
 100k均匀查询相对ART为tranco 0.938、mixed 1.066、skew 0.810；10k队列与64k数据规模仍存在差距。
-正式接口在skew/100k出现7.8%集成回归，整包采用未通过，生产默认不变；10月18日归因仍未解释，B接缝已验收，C1入口失败，D1内部筛选及E1正式集成/ART/HOT复测完成；本轮无清晰集成回归，通用静态门仍失败，下一步有限泛化及空间账本。
+正式接口在skew/100k出现7.8%集成回归，整包采用未通过，生产默认不变；10月18日归因仍未解释，B接缝已验收，C1入口失败，D1内部筛选、E1正式集成/ART/HOT复测与E2全库泛化/空间账本完成；无清晰集成回归，通用静态门仍失败（tranco/64k两端点均约1.35倍），可发布场景收窄为长公共前缀，下一步短键固定路径与F局部页更新。
 
 获取评测依赖（WSL/Linux）与恢复大体积原始证据：
 

@@ -1,0 +1,12 @@
+adapter under acceptance: make_hot_index
+
+descriptor:
+  implementation = HOT (Height Optimized Trie)
+  version        = speedskater/hot commit 96bf6fb7103b27e50e16a6026db8974c090ee84a
+  support        = bulk_load=1 find=2 insert=1 update=2 erase=1 scan=2 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = HOT's value type must fit in a pointer (its interface static-asserts this), so the trie stores pointers to adapter-owned records and PairPointerKeyExtractor supplies the key. HOT's key type is a NUL-terminated const char*, so stored keys are copied into an arena that carries a terminator after each one and find() copies the queried key into a reusable scratch buffer to add one: one memcpy per lookup, no allocation after warm-up. That per-lookup copy is the cost of addressing by terminator and it is not zero. A key containing a NUL cannot be represented and is declared unsupported. update is adapted: HOT has no update primitive, so this adapter looks up first and then removes and re-inserts, which keeps update from inserting. scan uses HOT's native lower_bound, so its cost is the returned rows rather than the keys below the bound; the only adaptation there is a NUL-terminated copy of the bound, because the key type is a C string.
+  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)
+  key domain     = min_bytes=0 max_bytes=none nul=no high_bit=yes prefix_pairs=yes
+  memory         = index_owned=unavailable adapter_owned=1259 retained_input=0
+
+99/99 checks passed

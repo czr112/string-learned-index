@@ -2,6 +2,9 @@
 
 ## 当前阅读入口（2026-10-11）
 
+- **最新一轮（10月18日）**：[E2 全库无放回泛化与空间账本](RESULTS_E2_GENERALIZATION_20261018.md)、
+  [E1 正式只读接口外部复测](RESULTS_REFINED_EXTERNAL_20261018.md)、
+  [当前状态与采用决策](STRUCTURE_OPTIMIZATION_STATE.md)。
 - [下一阶段详细计划](../docs/NEXT_ACTION_PLAN_20261011_POST_TRUNCDIR.md)：目录字节序修复、有限读路径诊断及 M4；
   前置发现见 [最小反例核查](AUDIT_DEPTH_DIR_ORDER_20261011.md)。
 - [读路径入口诊断（P1）](RESULTS_DEPTH_DIR_READ_PATH_ENTRY_20261011.md)：目录额外工作来源；目录读路径收口、转 M4。

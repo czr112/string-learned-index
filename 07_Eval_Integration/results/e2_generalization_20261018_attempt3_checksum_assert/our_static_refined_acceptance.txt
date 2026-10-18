@@ -1,0 +1,12 @@
+adapter under acceptance: make_our_static_refined_index
+
+descriptor:
+  implementation = StaticPhysicalIndex local-prefix refinement
+  version        = c9a104e043826c4968920a195974f010229ad37aef75ad585c55caecf07dfdf5
+  support        = bulk_load=1 find=1 insert=0 update=0 erase=0 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = Explicit immutable package; one successful build; owning scan; 32-bit key/suffix-arena/block limits. Insert/update/erase/range_sum unsupported. One local prefix level, certified physical ranges and exact parent correction. Lookup=refined
+  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)
+  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=644 adapter_owned=16 retained_input=0
+
+128/128 checks passed

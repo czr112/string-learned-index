@@ -1,0 +1,198 @@
+{
+  "base_commit": "c240526e71cc587d2a681ba9680b8333bed6944b",
+  "cpu": 0,
+  "sources": {},
+  "inputs": {
+    "skew_full_norepl": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "rows": 131072,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/skew_full_norepl_queries.bin",
+      "queries": {
+        "kind": "hit",
+        "seed": 20261034,
+        "count": 131072,
+        "hit": 131072,
+        "miss": 0,
+        "generator": "hit: every row key once, shuffled; miss: key + \"~e2/\" + 64-bit decimal, proved absent",
+        "sha256": "a406e61f654641f5e4be0408adc9741fc3b49f90e6a0d0e5091c60b12dbdead4"
+      }
+    },
+    "mixed_full_norepl": {
+      "rows_path": "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "rows_sha256": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+      "rows": 131072,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/mixed_full_norepl_queries.bin",
+      "queries": {
+        "kind": "hit",
+        "seed": 20261035,
+        "count": 131072,
+        "hit": 131072,
+        "miss": 0,
+        "generator": "hit: every row key once, shuffled; miss: key + \"~e2/\" + 64-bit decimal, proved absent",
+        "sha256": "17caca13ad8781c69336cf1d55e105446d128ad7a9a863463f44d70a9b93ea06"
+      }
+    },
+    "tranco64_norepl": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin",
+      "queries": {
+        "kind": "hit",
+        "seed": 20261033,
+        "count": 65536,
+        "hit": 65536,
+        "miss": 0,
+        "generator": "hit: every row key once, shuffled; miss: key + \"~e2/\" + 64-bit decimal, proved absent",
+        "sha256": "43295a93e51334401edc11903e2a757523ef9c30ab26c5043de517c25c384977"
+      }
+    },
+    "skew_miss": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "rows": 131072,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/skew_miss_queries.bin",
+      "queries": {
+        "kind": "miss",
+        "seed": 20261027,
+        "count": 131072,
+        "hit": 0,
+        "miss": 131072,
+        "generator": "hit: every row key once, shuffled; miss: key + \"~e2/\" + 64-bit decimal, proved absent",
+        "sha256": "5484a5f3912c6e0850b362a4d244ea26e37d16c297e404423dc5035f40296fb2"
+      }
+    },
+    "tranco64_miss": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/tranco64_miss_queries.bin",
+      "queries": {
+        "kind": "miss",
+        "seed": 20261031,
+        "count": 65536,
+        "hit": 0,
+        "miss": 65536,
+        "generator": "hit: every row key once, shuffled; miss: key + \"~e2/\" + 64-bit decimal, proved absent",
+        "sha256": "8da9c3d3dad9676f32f2dd69dc12cccc6834b4dab2181d7b86f664d2321fb2eb"
+      }
+    }
+  },
+  "artifacts": {
+    "build/our_static_refined/libour_static_refined_adapter.a": "10effd1a71e3732cc795a99fc2d0c87213741680ab40e0b2e2956d32d9ac2e12",
+    "build/our_static_refined/our_static_refined_acceptance": "7e4f71da84641c4c15a50b765147a8ccdb25a1b1d4a092ca12e445a239dd26f9",
+    "build/our_static_refined/compile_commands.json": "d54a35d127b410f7fcee629f99bc9d10409fb08bfc07da69f32ba0d2df7bd3fd",
+    "build/art/libart_adapter.a": "82a28e31a7125879d819a764e9031b491494b9022daea94c8e05328c1e7ffef6",
+    "build/art/art_adapter_acceptance": "5562bebf681e9d1c73a02ef83038ddf47fd96ca3336bcb327d67c0126bef2d19",
+    "build/art/compile_commands.json": "ad1ba6a30fdce783813dd1a3b45d10c4af3f9debe48baa804c2cea9aad79f7c9",
+    "build/hot/libhot_adapter.a": "eeddd8c1e51100b206009621fe78f32247d61284166a5435a1539fde3f59194e",
+    "build/hot/hot_adapter_acceptance": "35dd5241973bcc2f889b634db7a9f4d12b826b40845a0e513cc7efd2023ac4ca",
+    "build/hot/compile_commands.json": "8fdb554d40985083642637809175fda038cb70bce69c6cd0bdbffe96743f03d9"
+  },
+  "commands": [
+    [
+      "g++",
+      "--version"
+    ],
+    [
+      "gcc",
+      "--version"
+    ],
+    [
+      "cmake",
+      "--version"
+    ],
+    [
+      "cmake",
+      "-S",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_static_refined",
+      "-B",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/our_static_refined",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "-DCMAKE_CXX_STANDARD=17",
+      "-DCMAKE_CXX_EXTENSIONS=OFF",
+      "-DCMAKE_C_STANDARD=99",
+      "-DCMAKE_C_EXTENSIONS=OFF",
+      "-DREFINED_BUILD_ACCEPTANCE=ON"
+    ],
+    [
+      "cmake",
+      "--build",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/our_static_refined",
+      "--parallel",
+      "2"
+    ],
+    [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/our_static_refined/our_static_refined_acceptance"
+    ],
+    [
+      "cmake",
+      "-S",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/art",
+      "-B",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/art",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "-DCMAKE_CXX_STANDARD=17",
+      "-DCMAKE_CXX_EXTENSIONS=OFF",
+      "-DCMAKE_C_STANDARD=99",
+      "-DCMAKE_C_EXTENSIONS=OFF",
+      "-DART_BUILD_ACCEPTANCE=ON"
+    ],
+    [
+      "cmake",
+      "--build",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/art",
+      "--parallel",
+      "2"
+    ],
+    [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/art/art_adapter_acceptance"
+    ],
+    [
+      "cmake",
+      "-S",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/hot",
+      "-B",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/hot",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "-DCMAKE_CXX_STANDARD=17",
+      "-DCMAKE_CXX_EXTENSIONS=OFF",
+      "-DCMAKE_C_STANDARD=99",
+      "-DCMAKE_C_EXTENSIONS=OFF",
+      "-DHOT_BUILD_ACCEPTANCE=ON"
+    ],
+    [
+      "cmake",
+      "--build",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/hot",
+      "--parallel",
+      "2"
+    ],
+    [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/build/hot/hot_adapter_acceptance"
+    ]
+  ],
+  "descriptor": {
+    "core_bundle": "c9a104e043826c4968920a195974f010229ad37aef75ad585c55caecf07dfdf5",
+    "adapter": "107aae7a894758df23735050231a6ecfc2a95b6d94c5fb965e02b173c6cda19f",
+    "prototype_bundle": "16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932",
+    "prototype_adapter": "a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84"
+  },
+  "HOT_commit": "96bf6fb7103b27e50e16a6026db8974c090ee84a",
+  "protocol": "5 processes; warm=1 untimed pass + 6 timed passes per arm, first=rebuild then one timed pass, evicted=256 MiB write sweep then one timed pass; same deterministic permutation for all arms per repeat",
+  "limits": [
+    "one query per row, hit or miss pass, no mixed ratio",
+    "eviction sweep is not a cold cache",
+    "million-key scale not covered",
+    "in-range perturbation and region-boundary misses not covered",
+    "wrapped allocation bytes attribute libart only",
+    "not production default"
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "C_compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "cmake": "cmake version 3.30.5"
+}
