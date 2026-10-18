@@ -1,0 +1,31 @@
+{
+  "fence_reduction": {
+    "english_words": -0.08292407417626109,
+    "memetracker_urls": -0.07525625406551313,
+    "memetracker_phrases": -0.0855675780743813,
+    "tranco64_norepl": -0.08776526931107856
+  },
+  "block_growth_per_query": {
+    "english_words": 0.91641,
+    "memetracker_urls": 0.9228400000000001,
+    "memetracker_phrases": 0.9128400000000001,
+    "tranco64_norepl": 0.9103399999999999
+  },
+  "probe_hit_rate": {
+    "english_words": 0.0835876,
+    "memetracker_urls": 0.0771637,
+    "memetracker_phrases": 0.0871582,
+    "tranco64_norepl": 0.0896606
+  },
+  "main_cell_fence_reduction": 0.08292407417626109,
+  "never_amplifies_blocks": false,
+  "entry_gate_25_percent": false,
+  "entry_passes": false,
+  "timing_round_allowed": false,
+  "location_mismatches": 0,
+  "candidate_closed": true,
+  "prediction_family_failures": 2,
+  "stop_prediction_family": true,
+  "production_adopted": false,
+  "status": "entry-only; counts are not timings; second failure in the predicted-block family"
+}

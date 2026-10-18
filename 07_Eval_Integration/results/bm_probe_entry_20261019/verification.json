@@ -1,0 +1,23 @@
+{
+  "status": "verified",
+  "cells": 4,
+  "sanitized_cells": 2,
+  "editable_sources": {
+    "07_Eval_Integration/diagnostics/BM_PROBE_SPEC_20261018.md": {
+      "current": "f890ec762f23d31a076adc2d9bac08613a2b925559a3bd9355d9b33c7b1c6b09",
+      "recorded_at_run": "f890ec762f23d31a076adc2d9bac08613a2b925559a3bd9355d9b33c7b1c6b09"
+    },
+    "07_Eval_Integration/diagnostics/verify_bm_probe.py": {
+      "current": "8789cfaab47627d9b13f5be93381774459bc2439749f311d77988e3428cf526f",
+      "recorded_at_run": "04a00f0406285679b4a127a18727c85d3d12a02aa5b695b8ef512a3bfc225c5d"
+    }
+  },
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "counters",
+    "sanitized",
+    "decision"
+  ]
+}

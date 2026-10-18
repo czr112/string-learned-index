@@ -1,0 +1,86 @@
+[
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "keys_checked": 131072,
+    "mismatch": 0,
+    "current": {
+      "fence_compares": 403803,
+      "fence_per_query": 6.16154,
+      "blocks": 65536,
+      "blocks_per_query": 1,
+      "key_compares": 59166,
+      "key_per_query": 0.902802,
+      "bm_calls": 65536
+    },
+    "probe": {
+      "calls": 65536,
+      "hits": 5478,
+      "misses": 60058,
+      "hit_rate": 0.0835876,
+      "fallbacks": 60058,
+      "probe_block_loads": 65536,
+      "probe_tag_candidates": 9114,
+      "probe_length_rejects": 3279,
+      "probe_key_compares": 5835,
+      "probe_key_bytes": 54403,
+      "skipped_block_scans": 628,
+      "fence_compares": 370318,
+      "fence_per_query": 5.6506,
+      "blocks": 125594,
+      "blocks_per_query": 1.91641,
+      "key_compares": 59500,
+      "key_per_query": 0.907898,
+      "bm_calls": 65536
+    },
+    "delta": {
+      "fence_per_query": -0.510941,
+      "blocks_per_query": 0.916412,
+      "key_per_query": 0.00509644
+    },
+    "cell": "english_words"
+  },
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "keys_checked": 131072,
+    "mismatch": 0,
+    "current": {
+      "fence_compares": 404593,
+      "fence_per_query": 6.1736,
+      "blocks": 65536,
+      "blocks_per_query": 1,
+      "key_compares": 59010,
+      "key_per_query": 0.900421,
+      "bm_calls": 65536
+    },
+    "probe": {
+      "calls": 65536,
+      "hits": 5712,
+      "misses": 59824,
+      "hit_rate": 0.0871582,
+      "fallbacks": 59824,
+      "probe_block_loads": 65536,
+      "probe_tag_candidates": 9435,
+      "probe_length_rejects": 3684,
+      "probe_key_compares": 5751,
+      "probe_key_bytes": 498646,
+      "skipped_block_scans": 694,
+      "fence_compares": 369973,
+      "fence_per_query": 5.64534,
+      "blocks": 125360,
+      "blocks_per_query": 1.91284,
+      "key_compares": 59047,
+      "key_per_query": 0.900986,
+      "bm_calls": 65536
+    },
+    "delta": {
+      "fence_per_query": -0.528259,
+      "blocks_per_query": 0.912842,
+      "key_per_query": 0.000564575
+    },
+    "cell": "memetracker_phrases"
+  }
+]

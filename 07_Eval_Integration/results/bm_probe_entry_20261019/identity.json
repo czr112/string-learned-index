@@ -1,0 +1,153 @@
+{
+  "base_commit": "ed11b478d18020157e6e19ae1184c72739bbb655",
+  "cpu": 0,
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/diagnostics/BM_PROBE_SPEC_20261018.md": "f890ec762f23d31a076adc2d9bac08613a2b925559a3bd9355d9b33c7b1c6b09",
+    "07_Eval_Integration/diagnostics/audit_bm_probe.cpp": "0c95179605c385ebc9c5ba06ec28ce2bf07a099fce308e0846b053a5b2e33e30",
+    "07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "07_Eval_Integration/diagnostics/bm_probe_page.hpp": "c576ec3e3f3bc6ee342191f2d0c1e981ec149584796713e105f1c0e645e41d0e",
+    "07_Eval_Integration/diagnostics/run_bm_probe_entry.py": "a5666703a0b2618a5d32a93cb689e414d9aa6c5e7c09442c88ef6fc519f746e6",
+    "07_Eval_Integration/diagnostics/static_input.hpp": "1e764ea7e7d9b9cce608707921902f350ecdc8ee0c89977459b65e90cc4e825f",
+    "07_Eval_Integration/diagnostics/verify_bm_probe.py": "04a00f0406285679b4a127a18727c85d3d12a02aa5b695b8ef512a3bfc225c5d",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h": "3587addd4e4fda743975534a95173ccb8d09d38029f5239ff3998574b45c3a39",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp": "fbbb922511bc590b1f1c68b77309d25001c3e98047975c5d9358c7b70092aa5b",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.h": "9f3b0b658da7caf143dc14822a6de5772fa5d497dbb7b4fcabe2fe9f1adc64f7",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "inputs": {
+    "english_words": {
+      "rows_path": "07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_real_20261018/interchange/english_words_queries.bin",
+      "queries_sha256": "c1663a904cf572fa200320c093457c8cdd1644c515ea62b7d152554f0070032a",
+      "queries": 65536
+    },
+    "memetracker_urls": {
+      "rows_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_queries.bin",
+      "queries_sha256": "fd9d8b7a7ffd1e5aab4b9dec5a3a8a8154b02c89243e237071010ee25f22ac9f",
+      "queries": 65536
+    },
+    "memetracker_phrases": {
+      "rows_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_rows.bin",
+      "rows_sha256": "0939a1f6b2c14824187d18aadfb2517534d5a1ff746833ce587d342a57d37baa",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_queries.bin",
+      "queries_sha256": "ee9a87e42e822606ac8638ffb2897ee91d69a98a321813eb508c0761c935f150",
+      "queries": 65536
+    },
+    "tranco64_norepl": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin",
+      "queries_sha256": "43295a93e51334401edc11903e2a757523ef9c30ab26c5043de517c25c384977",
+      "queries": 65536
+    }
+  },
+  "artifacts": {
+    "build/audit_bm_probe": "5f1aea0f0d249b2fb969cd02f445612bab6ee182dc2e82a70bbe0a28bf513f6e",
+    "build/audit_bm_probe_san": "abed6ff3326c4638f6fb719410f51cc4be3d9059e0bd628b041fb5faed638215"
+  },
+  "commands": [
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O2",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/audit_bm_probe.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe"
+    ],
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/audit_bm_probe.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe_san"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe_san",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_probe_entry_20261019/build/audit_bm_probe_san",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_phrases_queries.bin"
+    ]
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "upstream_commit": "e8e05411135b222edb82e3861799a2ae07ae5470",
+  "benchmark_commit": "003a55bf674b43350fbb70242070fb74f33a56ce",
+  "protocol": "counts only; every page key and every query checked against the frozen BM page and the full byte directory; no timing in this round",
+  "limits": [
+    "counts are not timings",
+    "no hash of the 003a55bf benchmark tree beyond the contract/runner",
+    "not a candidate round",
+    "no default change"
+  ]
+}
