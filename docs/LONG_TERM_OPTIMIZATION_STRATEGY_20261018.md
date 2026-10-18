@@ -246,4 +246,4 @@ flowchart LR
 
 - A阶段完成一次冻结的反事实归因；三格已记录工作量逐查询相同，同包装规范化机器码相同；状态检查解释未获支持。
   原S3回归仍未解释，按A停止条件收口，不改核心/默认，不追加重复。见[执行结果](../07_Eval_Integration/RESULTS_INTEGRATION_ATTRIBUTION_20261018.md)。
-- B阶段[契约v0](PHYSICAL_LOCATOR_CONTRACT_20261018.md)已落盘，存储/模型接缝待实现；C–G未启动。
+- B首版接缝已实现及验收：[执行结果](../07_Eval_Integration/RESULTS_LOCATOR_SEAM_20261018.md)。共用128/128、四份普通/ASan/UBSan门通过，逐请求已记录工作零差分；六格无优化A/B均未分辨，对象新增8B。原S3/默认不改，队友模型尚未迁移；下一步C入口诊断，D–G未启动。

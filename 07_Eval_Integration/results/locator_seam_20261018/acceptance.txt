@@ -1,0 +1,12 @@
+adapter under acceptance: make_locator_seam_index
+
+descriptor:
+  implementation = B-stage physical locator (experimental)
+  version        = 72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d
+  support        = bulk_load=1 find=1 insert=0 update=0 erase=0 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = Owning immutable diagnostic interface; one successful build; owning scan; 32-bit aggregate suffix arena and block limits; updates/range_sum unsupported.
+  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)
+  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=596 adapter_owned=16 retained_input=0
+
+128/128 checks passed

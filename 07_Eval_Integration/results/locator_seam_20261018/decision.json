@@ -1,0 +1,19 @@
+{
+  "stage": "B",
+  "status": "experimental_seam_completed",
+  "correctness_passed": true,
+  "common_acceptance": "128/128",
+  "normal_gate_checks": 33016056,
+  "sanitizer_gate_checks": 33016056,
+  "work_comparisons": 1200000,
+  "work_mismatches": 0,
+  "clear_regression_detected": false,
+  "clear_gain_detected": false,
+  "zero_cost_proven": false,
+  "original_S3_failure_preserved": true,
+  "production_adoption_eligible": false,
+  "production_defaults_changed": false,
+  "new_owned_bytes": 8,
+  "teammate_model_migrated": false,
+  "next_stage": "C: short-key navigation entry; candidate pending"
+}

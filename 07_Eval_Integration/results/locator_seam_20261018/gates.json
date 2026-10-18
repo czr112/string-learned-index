@@ -1,0 +1,126 @@
+[
+  {
+    "cell": "tranco_full_100000",
+    "normal": {
+      "checks": 11229931,
+      "domain_checks": 2902190,
+      "probes": 636150,
+      "scans": 72797,
+      "rejections": 138,
+      "work_checks": 300000,
+      "rows": 262144,
+      "queries": 100000,
+      "core_bytes": 8118693,
+      "object_bytes": 144,
+      "storage_bytes": 8118549
+    },
+    "sanitized": {
+      "checks": 11229931,
+      "domain_checks": 2902190,
+      "probes": 636150,
+      "scans": 72797,
+      "rejections": 138,
+      "work_checks": 300000,
+      "rows": 262144,
+      "queries": 100000,
+      "core_bytes": 8118693,
+      "object_bytes": 144,
+      "storage_bytes": 8118549
+    },
+    "sanitizer_rc": 0,
+    "sanitizer_stderr_bytes": 0
+  },
+  {
+    "cell": "tranco_64k_100000",
+    "normal": {
+      "checks": 6182154,
+      "domain_checks": 2902190,
+      "probes": 402678,
+      "scans": 35168,
+      "rejections": 132,
+      "work_checks": 300000,
+      "rows": 65536,
+      "queries": 100000,
+      "core_bytes": 2065041,
+      "object_bytes": 144,
+      "storage_bytes": 2064897
+    },
+    "sanitized": {
+      "checks": 6182154,
+      "domain_checks": 2902190,
+      "probes": 402678,
+      "scans": 35168,
+      "rejections": 132,
+      "work_checks": 300000,
+      "rows": 65536,
+      "queries": 100000,
+      "core_bytes": 2065041,
+      "object_bytes": 144,
+      "storage_bytes": 2064897
+    },
+    "sanitizer_rc": 0,
+    "sanitizer_stderr_bytes": 0
+  },
+  {
+    "cell": "mixed_full_100000",
+    "normal": {
+      "checks": 7736392,
+      "domain_checks": 2902190,
+      "probes": 480502,
+      "scans": 47711,
+      "rejections": 144,
+      "work_checks": 300000,
+      "rows": 131072,
+      "queries": 100000,
+      "core_bytes": 13107625,
+      "object_bytes": 144,
+      "storage_bytes": 13107481
+    },
+    "sanitized": {
+      "checks": 7736392,
+      "domain_checks": 2902190,
+      "probes": 480502,
+      "scans": 47711,
+      "rejections": 144,
+      "work_checks": 300000,
+      "rows": 131072,
+      "queries": 100000,
+      "core_bytes": 13107625,
+      "object_bytes": 144,
+      "storage_bytes": 13107481
+    },
+    "sanitizer_rc": 0,
+    "sanitizer_stderr_bytes": 0
+  },
+  {
+    "cell": "skew_full_100000",
+    "normal": {
+      "checks": 7867579,
+      "domain_checks": 2902190,
+      "probes": 480502,
+      "scans": 47711,
+      "rejections": 144,
+      "work_checks": 300000,
+      "rows": 131072,
+      "queries": 100000,
+      "core_bytes": 12920890,
+      "object_bytes": 144,
+      "storage_bytes": 12920746
+    },
+    "sanitized": {
+      "checks": 7867579,
+      "domain_checks": 2902190,
+      "probes": 480502,
+      "scans": 47711,
+      "rejections": 144,
+      "work_checks": 300000,
+      "rows": 131072,
+      "queries": 100000,
+      "core_bytes": 12920890,
+      "object_bytes": 144,
+      "storage_bytes": 12920746
+    },
+    "sanitizer_rc": 0,
+    "sanitizer_stderr_bytes": 0
+  }
+]

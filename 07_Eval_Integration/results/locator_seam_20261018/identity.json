@@ -1,0 +1,459 @@
+{
+  "base_commit": "3a8d71c351faefda856564d72027e3e8695296b7",
+  "cpu": 0,
+  "commands": [
+    [
+      "g++",
+      "--version"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DLOCATOR_OLD_SHA256=\"bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089\"",
+      "-DLOCATOR_NEW_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DLOCATOR_ADAPTER_SHA256=\"7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38\"",
+      "-O2",
+      "-DACCEPTANCE_FACTORY_HEADER=\"locator_seam_adapter.hpp\"",
+      "-DACCEPTANCE_FACTORY_SYMBOL=make_locator_seam_index",
+      "-DACCEPTANCE_SAMPLE_PARAMETER=lookup",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/acceptance_0.d",
+      "-c",
+      "adapters/common/contract_acceptance.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/acceptance_0.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O2",
+      "-DACCEPTANCE_FACTORY_HEADER=\"locator_seam_adapter.hpp\"",
+      "-DACCEPTANCE_FACTORY_SYMBOL=make_locator_seam_index",
+      "-DACCEPTANCE_SAMPLE_PARAMETER=lookup",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/acceptance_0.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/acceptance"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DLOCATOR_OLD_SHA256=\"bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089\"",
+      "-DLOCATOR_NEW_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DLOCATOR_ADAPTER_SHA256=\"7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38\"",
+      "-O2",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check_0.d",
+      "-c",
+      "diagnostics/check_locator_seam.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check_0.o"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DLOCATOR_OLD_SHA256=\"bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089\"",
+      "-DLOCATOR_NEW_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DLOCATOR_ADAPTER_SHA256=\"7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38\"",
+      "-O2",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check_1.d",
+      "-c",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check_1.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O2",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check_0.o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check_1.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DLOCATOR_OLD_SHA256=\"bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089\"",
+      "-DLOCATOR_NEW_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DLOCATOR_ADAPTER_SHA256=\"7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38\"",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check_0.d",
+      "-c",
+      "diagnostics/check_locator_seam.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check_0.o"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DLOCATOR_OLD_SHA256=\"bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089\"",
+      "-DLOCATOR_NEW_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DLOCATOR_ADAPTER_SHA256=\"7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38\"",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check_1.d",
+      "-c",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check_1.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check_0.o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check_1.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DLOCATOR_OLD_SHA256=\"bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089\"",
+      "-DLOCATOR_NEW_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DLOCATOR_ADAPTER_SHA256=\"7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38\"",
+      "-O3",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench_0.d",
+      "-c",
+      "diagnostics/bench_locator_seam.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench_0.o"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DLOCATOR_OLD_SHA256=\"bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089\"",
+      "-DLOCATOR_NEW_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DLOCATOR_ADAPTER_SHA256=\"7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38\"",
+      "-O3",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench_1.d",
+      "-c",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench_1.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O3",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench_0.o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench_1.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench"
+    ],
+    [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/acceptance"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/locator_seam_20261018/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "4"
+    ]
+  ],
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/physical_locator_index.hpp": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d",
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/adapters/common/contract_acceptance.cpp": "758bab219b971b452e053c524f8c396f255c488a2482b4c15132366872fce153",
+    "07_Eval_Integration/diagnostics/LOCATOR_SEAM_SPEC_20261018.md": "ecc77ac02348ee5a0d03fa49b96523e458896ea98a8766bc5f723a8cca56971b",
+    "07_Eval_Integration/diagnostics/bench_locator_seam.cpp": "ce9531ae047e2e9f8d181ec5831f791c77b18fc6307a0f57b882be49f93e4901",
+    "07_Eval_Integration/diagnostics/check_locator_seam.cpp": "e22a2aa6e49733c086f7982227bf487efb9c859c02e149a7e9d09fed44fbac26",
+    "07_Eval_Integration/diagnostics/locator_seam_adapter.hpp": "7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38",
+    "07_Eval_Integration/diagnostics/run_locator_seam.py": "64223da077fb94aede7a49ac7c8c706a3ebdab844a9416a4b7bc3acdb08f4411",
+    "07_Eval_Integration/diagnostics/static_input.hpp": "1e764ea7e7d9b9cce608707921902f350ecdc8ee0c89977459b65e90cc4e825f",
+    "07_Eval_Integration/diagnostics/verify_locator_seam.py": "f1f3b06704e3fb64cbadb900875baf0625fad322d019b2ce39a55dad455e3d9c",
+    "07_Eval_Integration/learned-index/src/index_contract.h": "c58ffdd4bbec6541c37ac7fe36a4155b596eeab9e3dd19824aca165fe1234795",
+    "07_Eval_Integration/learned-index/src/unified/runner.cpp": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+    "07_Eval_Integration/learned-index/src/unified/runner.h": "d935232df2487b8baba03a86fe7fa668c1ca8311d40e7aa4a0f8e96c345518d1",
+    "docs/PHYSICAL_LOCATOR_CONTRACT_20261018.md": "7c0bfe898fed482f21c1020086d65041de2df9278432587c7b836eb4b6db7504"
+  },
+  "inputs": {
+    "tranco_full_100000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin",
+      "rows_sha256": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+      "queries_sha256": "e101b8be5fa1d27783e1c45453cd00c524eb8f56d85892e0be000d375bb9313c",
+      "rows": 262144,
+      "queries": 100000
+    },
+    "tranco_64k_100000": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "queries_sha256": "eb9918aeb7e50c05b95160572482c17cec63183fa1eb7ff0f7959268667a7f88",
+      "rows": 65536,
+      "queries": 100000
+    },
+    "mixed_full_100000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "rows_sha256": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+      "queries_sha256": "577fe0acabd1de7b79e3263a2c1fa163cfa2ae52ec4f9b2731a445b8c1c7a2f7",
+      "rows": 131072,
+      "queries": 100000
+    },
+    "skew_full_100000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "queries_sha256": "df27c3313e992a27954c91174283c9c7dd70e03805139f53bc3505198c4773ac",
+      "rows": 131072,
+      "queries": 100000
+    }
+  },
+  "binaries": {
+    "acceptance": "03ba56c62640bf3557196a07024c4019a6991308db98f53a597b67f396479442",
+    "check": "918fa4da1ba1af0922f03b0b9736f7fe923cbca362a05fa8c136a91489d4fe28",
+    "san_check": "2034cd081d41c3ee67ecaa492e28df11a0a6dc4e1563a16ee3513714795c6fb5",
+    "bench": "b41101fb3c19dd250c45475834d7dd26a4f9807972c0f9c7186501b201347f1c"
+  },
+  "protocol": "5 processes x 6 even Williams rows; immediate warm-up; 200k operations; separate same-instance A/A for model/directory",
+  "scope": "B-stage experimental seam; unchanged layout/trainer/scan; no ART/HOT ranking; no production/default change",
+  "descriptor": {
+    "old_core": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "new_core": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d",
+    "adapter": "7d59acc78698fbd00a59d582ec0a5d1f722b4b4b6f0f50e7fbff13415aac7e38"
+  },
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+}

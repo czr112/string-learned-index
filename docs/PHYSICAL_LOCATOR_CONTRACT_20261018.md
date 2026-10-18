@@ -1,6 +1,6 @@
 # B阶段：物理块定位契约 v0
 
-状态：内部设计定义已落盘，存储/模型接缝实现尚未开始。它不改变现有v1外部接口、S3源码或默认配置。
+本文件保留B阶段开始前的设计定义v0；执行进度见[当前状态](../07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。契约不改变现有v1外部接口、S3源码或默认配置。
 依据：长期路线B阶段；A阶段结果见`07_Eval_Integration/RESULTS_INTEGRATION_ATTRIBUTION_20261018.md`。
 
 ## 1. 参与者与责任
