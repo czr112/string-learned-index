@@ -1,0 +1,31 @@
+{
+  "status": "verified",
+  "cells": 3,
+  "timing_rows": 810,
+  "gate_rows": 135,
+  "native_delta_over_ART": {
+    "english_words": 1.7043392565715174,
+    "memetracker_urls": 1.3724050844881792,
+    "memetracker_phrases": 1.3524480979703881
+  },
+  "editable_sources": {
+    "07_Eval_Integration/diagnostics/BM_NATIVE_SPEC_20261018.md": {
+      "current": "f69896b1024b8621938f0945a93a5bb58f9cad4908eb102e3d2a2b36add295e7",
+      "recorded_at_run": "f69896b1024b8621938f0945a93a5bb58f9cad4908eb102e3d2a2b36add295e7"
+    },
+    "07_Eval_Integration/diagnostics/verify_bm_native.py": {
+      "current": "13534bea310c859c673689aa40d67824f55a3b3fa928e95b7b52ea0f31cdd167",
+      "recorded_at_run": "13534bea310c859c673689aa40d67824f55a3b3fa928e95b7b52ea0f31cdd167"
+    }
+  },
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "structure",
+    "checksums",
+    "gate_identity",
+    "ratios",
+    "decision"
+  ]
+}

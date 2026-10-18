@@ -1,0 +1,446 @@
+[
+  {
+    "cell": "english_words",
+    "ratios": {
+      "native-delta/ART": {
+        "process_medians": [
+          1.694817933825711,
+          1.8501445738646183,
+          1.7464260802894291,
+          1.7043392565715174,
+          1.484474530080425
+        ],
+        "median": 1.7043392565715174,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "native-shortdir-first/ART": {
+        "process_medians": [
+          1.3938815863723677,
+          1.6394163227227256,
+          1.7109705353700337,
+          1.4053704014019468,
+          1.491718005745061
+        ],
+        "median": 1.491718005745061,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "native-delta/bm-page-window": {
+        "process_medians": [
+          1.0748294361698116,
+          1.0377283793251626,
+          1.1685667674807463,
+          0.9417976499213245,
+          0.9519481116937561
+        ],
+        "median": 1.0377283793251626,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-shortdir-first/native-delta": {
+        "process_medians": [
+          0.8458633124246004,
+          0.8559144216328476,
+          0.8141542010664508,
+          0.8394274883398474,
+          1.0038424238883432
+        ],
+        "median": 0.8458633124246004,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "bm-page-window/ART": {
+        "process_medians": [
+          1.5617825431418613,
+          1.863563144121413,
+          1.6250358739138648,
+          1.850745015354893,
+          1.4817339908490168
+        ],
+        "median": 1.6250358739138648,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "F5/ART": {
+        "process_medians": [
+          1.140054387485948,
+          1.1449378336184646,
+          1.1723698494144836,
+          1.1435889316757892,
+          1.1596738068950863
+        ],
+        "median": 1.1449378336184646,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "native-delta_AA/native-delta": {
+        "process_medians": [
+          0.9525119965809736,
+          1.0168601571757785,
+          1.0496382918573044,
+          1.0035595382330846,
+          1.0305802352137534
+        ],
+        "median": 1.0168601571757785,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-shortdir-first_AA/native-shortdir-first": {
+        "process_medians": [
+          0.9872278995626779,
+          1.0353056054433996,
+          1.0159793602005964,
+          1.1223118287038156,
+          0.9208819615661596
+        ],
+        "median": 1.0159793602005964,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "bm-page-window_AA/bm-page-window": {
+        "process_medians": [
+          0.9679393166341688,
+          0.9443948133425046,
+          1.106717590814273,
+          0.9068197996738885,
+          0.9763876513552521
+        ],
+        "median": 0.9679393166341688,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "native-delta_AA/native-delta": 1.0498555436461523,
+      "native-shortdir-first_AA/native-shortdir-first": 1.1223118287038156,
+      "bm-page-window_AA/bm-page-window": 1.106717590814273
+    },
+    "observed_band": 1.1223118287038156,
+    "ns_per_op": {
+      "native-delta": 315.6131896972656,
+      "native-delta_AA": 308.2674560546875,
+      "native-shortdir-first": 268.2330627441406,
+      "native-shortdir-first_AA": 273.3885192871094,
+      "bm-page-window": 304.50511169433594,
+      "bm-page-window_AA": 298.8718948364258,
+      "bm-page-base": 263.5293426513672,
+      "F5": 206.16620635986328,
+      "ART": 179.27027893066406
+    }
+  },
+  {
+    "cell": "memetracker_urls",
+    "ratios": {
+      "native-delta/ART": {
+        "process_medians": [
+          1.3724050844881792,
+          1.3512407235258146,
+          1.3561801922666106,
+          1.538035746996841,
+          1.42872876882674
+        ],
+        "median": 1.3724050844881792,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "native-shortdir-first/ART": {
+        "process_medians": [
+          1.3151460506081607,
+          1.225052927556118,
+          1.2718726215412457,
+          1.3213250874777018,
+          1.36942774944483
+        ],
+        "median": 1.3151460506081607,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "native-delta/bm-page-window": {
+        "process_medians": [
+          1.1578774436124062,
+          1.0619356261696027,
+          1.1038360999710635,
+          1.1239495334562877,
+          1.098434833133362
+        ],
+        "median": 1.1038360999710635,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-shortdir-first/native-delta": {
+        "process_medians": [
+          0.9971243271258496,
+          0.9299954579000602,
+          0.9442472095975452,
+          0.8278561430716911,
+          0.9896310980838621
+        ],
+        "median": 0.9442472095975452,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "bm-page-window/ART": {
+        "process_medians": [
+          1.1951473644827026,
+          1.1875485113653896,
+          1.2812545027230011,
+          1.2774408827634662,
+          1.2724852459399891
+        ],
+        "median": 1.2724852459399891,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "F5/ART": {
+        "process_medians": [
+          0.9939224104306095,
+          0.9005423309212004,
+          0.905952182560345,
+          0.9489437735864215,
+          0.9946723425793104
+        ],
+        "median": 0.9489437735864215,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-delta_AA/native-delta": {
+        "process_medians": [
+          0.9967570156143486,
+          1.0621350931008715,
+          0.9691600471347457,
+          0.9401086915412322,
+          0.93883875710837
+        ],
+        "median": 0.9691600471347457,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-shortdir-first_AA/native-shortdir-first": {
+        "process_medians": [
+          1.0311677952307359,
+          1.178765460390833,
+          1.0017905439652524,
+          1.0601949843396672,
+          1.0479541463633781
+        ],
+        "median": 1.0479541463633781,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "bm-page-window_AA/bm-page-window": {
+        "process_medians": [
+          1.0067616160051736,
+          1.0628257202292315,
+          0.9980742561880207,
+          0.9592965059903942,
+          0.9808142511312119
+        ],
+        "median": 0.9980742561880207,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "native-delta_AA/native-delta": 1.0651456306299147,
+      "native-shortdir-first_AA/native-shortdir-first": 1.178765460390833,
+      "bm-page-window_AA/bm-page-window": 1.0628257202292315
+    },
+    "observed_band": 1.178765460390833,
+    "ns_per_op": {
+      "native-delta": 479.3614807128906,
+      "native-delta_AA": 467.4469909667969,
+      "native-shortdir-first": 445.68953704833984,
+      "native-shortdir-first_AA": 471.97681427001953,
+      "bm-page-window": 432.0876770019531,
+      "bm-page-window_AA": 447.51832580566406,
+      "bm-page-base": 383.60408782958984,
+      "F5": 330.14864349365234,
+      "ART": 348.99051666259766
+    }
+  },
+  {
+    "cell": "memetracker_phrases",
+    "ratios": {
+      "native-delta/ART": {
+        "process_medians": [
+          1.2711123946394154,
+          1.3524480979703881,
+          1.4176197611187937,
+          1.4067154612203068,
+          1.2458471907716027
+        ],
+        "median": 1.3524480979703881,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "native-shortdir-first/ART": {
+        "process_medians": [
+          1.1943364038014956,
+          1.1168372132981268,
+          1.3312734611347739,
+          1.2147905887097612,
+          1.1486473589330224
+        ],
+        "median": 1.1943364038014956,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "native-delta/bm-page-window": {
+        "process_medians": [
+          0.9620293392120577,
+          0.9759115304626599,
+          1.0002301438789474,
+          1.081714901131162,
+          0.9869915427636955
+        ],
+        "median": 0.9869915427636955,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-shortdir-first/native-delta": {
+        "process_medians": [
+          0.9097975928576028,
+          0.8885445783960966,
+          0.9000409116035427,
+          0.7918276056507942,
+          0.9412240843325743
+        ],
+        "median": 0.9000409116035427,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "bm-page-window/ART": {
+        "process_medians": [
+          1.3139784563364547,
+          1.4179839140879456,
+          1.4224021599833148,
+          1.171186142339582,
+          1.2539512502032624
+        ],
+        "median": 1.3139784563364547,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "F5/ART": {
+        "process_medians": [
+          0.9380867975130385,
+          0.9037873027372693,
+          0.9660327592940712,
+          0.9419491992665945,
+          0.8503763745855583
+        ],
+        "median": 0.9380867975130385,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-delta_AA/native-delta": {
+        "process_medians": [
+          1.018777774905241,
+          1.0317443512165791,
+          1.022774277542211,
+          0.9997549437891335,
+          1.0448831189469974
+        ],
+        "median": 1.022774277542211,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "native-shortdir-first_AA/native-shortdir-first": {
+        "process_medians": [
+          0.968878110738653,
+          1.0612583297463,
+          0.8933596128917791,
+          0.9854895024811003,
+          0.997683467823848
+        ],
+        "median": 0.9854895024811003,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "bm-page-window_AA/bm-page-window": {
+        "process_medians": [
+          0.9852491846219582,
+          0.9023448817069051,
+          0.9378228484831446,
+          1.0870375459299586,
+          0.9346414763317008
+        ],
+        "median": 0.9378228484831446,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "native-delta_AA/native-delta": 1.0448831189469974,
+      "native-shortdir-first_AA/native-shortdir-first": 1.1193700560998376,
+      "bm-page-window_AA/bm-page-window": 1.1082237183064276
+    },
+    "observed_band": 1.1193700560998376,
+    "ns_per_op": {
+      "native-delta": 442.22052001953125,
+      "native-delta_AA": 457.8376159667969,
+      "native-shortdir-first": 396.8078155517578,
+      "native-shortdir-first_AA": 387.8929901123047,
+      "bm-page-window": 442.8527297973633,
+      "bm-page-window_AA": 437.5899353027344,
+      "bm-page-base": 377.79427337646484,
+      "F5": 299.4531478881836,
+      "ART": 330.87618255615234
+    }
+  }
+]

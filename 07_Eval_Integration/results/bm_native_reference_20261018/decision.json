@@ -1,0 +1,35 @@
+{
+  "native_delta_over_ART": {
+    "english_words": 1.7043392565715174,
+    "memetracker_urls": 1.3724050844881792,
+    "memetracker_phrases": 1.3524480979703881
+  },
+  "native_shortdir_first_over_ART": {
+    "english_words": 1.491718005745061,
+    "memetracker_urls": 1.3151460506081607,
+    "memetracker_phrases": 1.1943364038014956
+  },
+  "native_delta_over_bm_page_window": {
+    "english_words": 1.0377283793251626,
+    "memetracker_urls": 1.1038360999710635,
+    "memetracker_phrases": 0.9869915427636955
+  },
+  "native_shortdir_first_over_native_delta": {
+    "english_words": 0.8458633124246004,
+    "memetracker_urls": 0.9442472095975452,
+    "memetracker_phrases": 0.9000409116035427
+  },
+  "ART_gate_all_cells": false,
+  "clear_gain_cells": [],
+  "clear_regression_cells": [
+    "english_words",
+    "memetracker_urls",
+    "memetracker_phrases"
+  ],
+  "complete_factory_beats_bm_page": false,
+  "shortdir_first_changes_delta": true,
+  "production_adopted": false,
+  "default_changed": false,
+  "hot_included": false,
+  "status": "phase-1 reference connection; upstream native vs this project; not an adoption decision"
+}

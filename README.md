@@ -7,14 +7,16 @@
 
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
+- **最新真实数据与长期计划**：[词表、MemeTracker URL/短语补测](07_Eval_Integration/RESULTS_BM_REAL_20261018.md)完成，各65,536键、3000行独立复核；原BM路径/ART为词表1.478–1.496、URL1.062–1.069（未分辨）、短语1.114–1.118。窗口纠正六格均数值更慢。[新详细长期计划](docs/LONG_TERM_BM_PLAN_20261018.md)优先完整BlockLearn原生参照及短目录正式集成，再做完整读门、静态收口和动态成本。
 - **最新上游（10月18日核对）**：[benchmark 003a55bf、模型 e8e05411](07_Eval_Integration/UPSTREAM_UPDATE_20261018.md)。两仓库均有更新，本轮由独立 snapshot 编译，原依赖与旧结果保留。
 - **原 BM 已接入，首轮整体优化未过**：[最新模型同轮结果](07_Eval_Integration/RESULTS_BM_LATEST_20261018.md)。普通/ASan各1315万项、接口各99/99、3000计时行复核通过；窗口纠正仅skew少约22%耗时，mixed未分辨，tranco更新后慢19%。BM六格均慢于自研F5，尚未满足通用ART目标；HOT预检泄漏故本轮无排名。
 - **BM定位：括号已否决，短目录在适用格有清晰收益（10月18日）**：[predicted-first括号入口](07_Eval_Integration/RESULTS_BM_BRACKET_ENTRY_20261018.md) 五格零失配但主格多11.8%比较，已关闭；[短目录消融](07_Eval_Integration/RESULTS_BM_SHORTDIR_20261018.md) 让tranco/64k的fence比较降到0.114、页级定位0.611(5/5)，mixed 0.874(5/5)，skew因上游构建期拒绝而不变；登记的五格结构门未通过，仅作场景候选。
-- **当前优先任务**：[用新版预测中心减少BM定位开销](docs/NEXT_ACTION_PLAN_20261018_UPSTREAM_MODEL.md)。predicted-first已否决、短目录已做场景消融；D1/F5/F6A保留为自研控制，下一步是cost/adaptive planner消融与短目录的完整读门（须重新登记），再扩F6动态矩阵。
+- **上游完整工厂参照已建立（10月18日）**：[三真实键类型九臂同轮](07_Eval_Integration/RESULTS_BM_NATIVE_20261018.md)：`block-residual-delta/ART`=1.704/1.372/1.352（三格清晰更慢），`-shortdir-first/ART`=1.492/1.315/1.194；完整工厂与本项目BM页接入为0.987–1.104未分辨，说明瓶颈是共有的预测/验证工作而非接入方式；F5在URL/短语反超ART。
+- **当前优先任务**：[完整上游参照与短目录完整读门](docs/LONG_TERM_BM_PLAN_20261018.md)。完整原生参照已完成；下一步给短目录登记完整读门（原生`-shortdir-first`作参照、正式集成计入fence视图空间），再做预测块payload探测与cost/adaptive，F6动态矩阵后移。
 - **最新推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前先补原BlockModel接入，再执行[F6B动态轨迹与完整分配账本](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)，动态吞吐、采用及G未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。
-- **当前长期策略与详细步骤**：[物理叶页、可替换模型与局部维护](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)。A归因、B接缝、C1/C2入口、D1、E1/E2已执行；F3读门失败保留，F4归因收口，F4M按需维护、F5整体必要读门与F6A接口通过，下一步F6B/F6C动态验证。
+- **当前长期策略与详细步骤**：[基于最新BM的6–8周路线](docs/LONG_TERM_BM_PLAN_20261018.md)。真实键补测已完成，下一阶段为完整上游参照及短目录正式收口；[旧A–G策略及执行](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)保留历史，F6B/F6C仍以后续读路径与静态收口为前提。
 - **最新结构结果（10月18日）**：[D1簇内前缀辨识](07_Eval_Integration/RESULTS_COLLISION_REFINEMENT_20261018.md)：skew相对B模型耗时下降32%–38%，相对旧宽回退下降20%–25%，风险格无清晰回归；空间+1.18%。四份完整sanitizer门通过；后续E1正式接入与外部复测已完成，生产默认不改。
 - **前版近期计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)，其失败判定继续保留。
 - **上一阶段静态原型**：[物理块预测与 ART 对照](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)；[S0–S2 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)、[S3 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC_S3.md)均已执行。
