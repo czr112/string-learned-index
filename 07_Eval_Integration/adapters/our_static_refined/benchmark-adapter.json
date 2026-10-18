@@ -1,0 +1,40 @@
+{
+  "contract": "string-index/v1",
+  "id": "ours-static-physical-refined",
+  "source_dir": ".",
+  "cmake_target": "our_static_refined_adapter",
+  "factory_header": "our_static_refined_adapter.h",
+  "factory_symbol": "make_our_static_refined_index",
+  "source_identity": {
+    "core_sources": [
+      {
+        "path": "07_Eval_Integration/diagnostics/collision_refined_index.hpp",
+        "sha256": "d773acd6933333ac4ec905e1886ed9043c800dca1b3a4fc579e264eabfda1db5"
+      },
+      {
+        "path": "07_Eval_Integration/diagnostics/collision_refinement.hpp",
+        "sha256": "d0a77db51a9abef05bf42a19e7c8442be2626fa0c5c1f4072d605288d86ab41a"
+      },
+      {
+        "path": "02_Code_and_Experiments/validation_e25_20260918/physical_locator_index.hpp",
+        "sha256": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d"
+      },
+      {
+        "path": "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp",
+        "sha256": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089"
+      }
+    ],
+    "core_bundle_sha256": "c9a104e043826c4968920a195974f010229ad37aef75ad585c55caecf07dfdf5",
+    "core_bundle_rule": "SHA256(concat(core_sources ordered sha256 hex))",
+    "adapter_digest": "107aae7a894758df23735050231a6ecfc2a95b6d94c5fb965e02b173c6cda19f",
+    "adapter_digest_rule": "SHA256(concat(cpp_sha256_hex,header_sha256_hex))",
+    "default_lookup": "refined",
+    "region_keys": 2048,
+    "block_entries": 16,
+    "coordinate_symbols": 7,
+    "local_levels": 1,
+    "readonly": true,
+    "isa": "x86-64-v3",
+    "status": "candidate pending E validation; production Context16 unchanged"
+  }
+}

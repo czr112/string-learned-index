@@ -1,0 +1,16 @@
+{
+  "integration_regression_cells": [],
+  "ART_within_10_percent_all_cells": false,
+  "advanced_target_met": true,
+  "ART_at_or_below_one_cells": [
+    "skew_full_10000",
+    "skew_full_100000",
+    "mixed_full_10000",
+    "mixed_full_100000",
+    "tranco_full_100000"
+  ],
+  "ART_HOT_retested": true,
+  "production_adopted": false,
+  "generalization_pending": true,
+  "original_S3_failure_preserved": true
+}

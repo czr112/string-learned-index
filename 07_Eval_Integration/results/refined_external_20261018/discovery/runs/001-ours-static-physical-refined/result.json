@@ -1,0 +1,30 @@
+{
+  "schema": "string-index-static-run/v1",
+  "status": "passed",
+  "stage": "complete",
+  "reason": "",
+  "descriptor": {
+    "implementation": "StaticPhysicalIndex local-prefix refinement",
+    "implementation_version": "c9a104e043826c4968920a195974f010229ad37aef75ad585c55caecf07dfdf5",
+    "adapter_version": "107aae7a894758df23735050231a6ecfc2a95b6d94c5fb965e02b173c6cda19f",
+    "adaptation_notes": "Explicit immutable package; one successful build; owning scan; 32-bit key/suffix-arena/block limits. Insert/update/erase/range_sum unsupported. One local prefix level, certified physical ranges and exact parent correction. Lookup=refined",
+    "capabilities": {
+      "keys": {"min_bytes": 0, "max_bytes": 4294967295, "fixed_bytes": null, "allows_nul": true, "allows_high_bit": true, "allows_prefix_pairs": true},
+      "max_value": 18446744073709551615,
+      "bulk_load": "native",
+      "find": "native",
+      "insert": "unsupported",
+      "update": "unsupported",
+      "erase": "unsupported",
+      "scan": "native",
+      "range_sum": "unsupported"
+    }
+  },
+  "validation": {"descriptor_checked": true, "capability_domain_checked": true, "empty_build_checked": true, "represented_boundaries_checked": true, "absent_key_checked": true, "finite_domain_full": false, "rows_checked": 5, "queries_checked": 100},
+  "memory": {"index_owned_bytes": 658, "adapter_owned_bytes": 16, "retained_input_bytes": 0, "accounting_notes": "Object and vector/string capacities including refinement; adapter separate. Excludes allocator/RSS/build peak and returned scan rows."},
+  "samples": [
+    {"repeat": 0, "build_ns": 691, "latency_build_ns": null, "lookup_ns": 2089, "operations": 100, "throughput_ops_per_second": 47869794.159885116}
+  ],
+  "latency_samples": [  ],
+  "checksum": 10170361809996309271
+}

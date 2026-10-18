@@ -1,0 +1,2 @@
+sample_kind,repeat,sample,query_index,build_ns,lookup_ns,latency_ns,operations,throughput_ops_per_second
+throughput,0,,,691,2089,,100,47869794.159885116

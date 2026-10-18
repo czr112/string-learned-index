@@ -1,0 +1,1858 @@
+[
+  {
+    "cell": "skew_full_10000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9657510483036194,
+          1.0536917484038415,
+          0.9701219473546425,
+          1.0318112262142924,
+          0.9721050784240448
+        ],
+        "median": 0.9721050784240448,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.661925895121533,
+          0.6481037479083438,
+          0.716570387339834,
+          0.6961721942887888,
+          0.6523333635062738
+        ],
+        "median": 0.661925895121533,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.6462714680151966,
+          0.6461825177106073,
+          0.6854057861882488,
+          0.7123605021965564,
+          0.6342176137636264
+        ],
+        "median": 0.6462714680151966,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.7042815415267765,
+          0.6471076057709992,
+          0.7555582783098085,
+          0.6696594213489122,
+          0.6903989704929302
+        ],
+        "median": 0.6903989704929302,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.6652261528330761,
+          0.6176325966389975,
+          0.7105958623076996,
+          0.6882401303324716,
+          0.6382781114980023
+        ],
+        "median": 0.6652261528330761,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9712208491997785,
+          1.0704584394626062,
+          0.952153387488388,
+          0.9987019028649604,
+          1.0708246556834564
+        ],
+        "median": 0.9987019028649604,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.07605917183272,
+          1.1055652525289221,
+          0.9870260454629018,
+          0.9864024501735151,
+          0.9882180622181889
+        ],
+        "median": 0.9882180622181889,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0708246556834564,
+      "integrated_AA/integrated": 1.1055652525289221
+    },
+    "observed_band": 1.1055652525289221,
+    "ns_per_op": {
+      "prototype": 129.1023225,
+      "prototype_AA": 129.80703,
+      "integrated": 129.00907999999998,
+      "integrated_AA": 131.11793749999998,
+      "ART": 186.80861,
+      "HOT": 192.06139000000002
+    },
+    "build_ms_descriptive": {
+      "prototype": 7.183569,
+      "integrated": 5.909835,
+      "ART": 29.003082,
+      "HOT": 35.481579
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "skew_full_100000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.1025849750143473,
+          0.9435247694236981,
+          1.146019293227365,
+          0.8639876324573754,
+          1.0108271507901723
+        ],
+        "median": 1.0108271507901723,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.5942855203649158,
+          0.525647021617945,
+          0.5204086601352661,
+          0.5629675601299506,
+          0.5601443604354339
+        ],
+        "median": 0.5601443604354339,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.6834169585285956,
+          0.5952831437137175,
+          0.6261141467416922,
+          0.5539134130055148,
+          0.6119821695307155
+        ],
+        "median": 0.6119821695307155,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.5592449032265863,
+          0.5695914191418319,
+          0.4885193707957616,
+          0.6501354400766478,
+          0.5163280611454147
+        ],
+        "median": 0.5592449032265863,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.6186803590923557,
+          0.6206548562186287,
+          0.5736642067586661,
+          0.5923505891849199,
+          0.5416294372494339
+        ],
+        "median": 0.5923505891849199,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.0406407651622178,
+          0.965673737838736,
+          1.1822023063064788,
+          0.8807436349004143,
+          1.0012456674381356
+        ],
+        "median": 1.0012456674381356,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          0.9385136473590192,
+          1.0857286379844209,
+          1.0148511643147937,
+          1.1049805260111696,
+          1.0723174934206345
+        ],
+        "median": 1.0723174934206345,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.1822023063064788,
+      "integrated_AA/integrated": 1.1049805260111696
+    },
+    "observed_band": 1.1822023063064788,
+    "ns_per_op": {
+      "prototype": 168.8370675,
+      "prototype_AA": 160.06854750000002,
+      "integrated": 167.77837,
+      "integrated_AA": 174.72001,
+      "ART": 309.2031025,
+      "HOT": 285.55726000000004
+    },
+    "build_ms_descriptive": {
+      "prototype": 7.17109,
+      "integrated": 6.920057,
+      "ART": 28.714894,
+      "HOT": 35.917673
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13073458,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 34014272,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "mixed_full_10000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.1132465129310178,
+          1.0225256460764518,
+          0.9978148401840821,
+          0.9883691379233335,
+          0.9971588192918903
+        ],
+        "median": 0.9978148401840821,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.0425151522035043,
+          0.9553582341043528,
+          0.9743718048748111,
+          1.0057321155072811,
+          0.9453806014924651
+        ],
+        "median": 0.9743718048748111,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.6488934650707423,
+          0.6028124390976861,
+          0.6344697927073149,
+          0.619055370642481,
+          0.6130238581371361
+        ],
+        "median": 0.619055370642481,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.9590189372693119,
+          0.9436515584014773,
+          0.9792250004692273,
+          0.9562544465343413,
+          0.9696588819731697
+        ],
+        "median": 0.9590189372693119,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.5742087035207784,
+          0.6028021917122914,
+          0.6560960937448985,
+          0.6189540173922934,
+          0.624827555872016
+        ],
+        "median": 0.6189540173922934,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.1132828421790575,
+          1.107353993221531,
+          0.9934749964261547,
+          1.017135522326286,
+          1.034172121799291
+        ],
+        "median": 1.034172121799291,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          0.9892917163048996,
+          1.0395782865136018,
+          0.9655785949061004,
+          0.9950505789101438,
+          0.9695354407721681
+        ],
+        "median": 0.9892917163048996,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.1132828421790575,
+      "integrated_AA/integrated": 1.0395782865136018
+    },
+    "observed_band": 1.1132828421790575,
+    "ns_per_op": {
+      "prototype": 103.3356425,
+      "prototype_AA": 107.1292525,
+      "integrated": 103.702995,
+      "integrated_AA": 102.1133425,
+      "ART": 107.57798,
+      "HOT": 169.28613
+    },
+    "build_ms_descriptive": {
+      "prototype": 4.761164,
+      "integrated": 4.23146,
+      "ART": 18.090888,
+      "HOT": 28.586295
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "mixed_full_100000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9644190650891786,
+          1.033173238854745,
+          1.0057031676542996,
+          1.014884861170482,
+          0.9584041435559301
+        ],
+        "median": 1.0057031676542996,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.8280119581132849,
+          0.8589184077544092,
+          0.8403760742219132,
+          0.8167516358163127,
+          0.9354426064454606
+        ],
+        "median": 0.8403760742219132,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.6073999338429796,
+          0.5940167006458783,
+          0.6195240805500697,
+          0.5568239265921389,
+          0.5888467655131703
+        ],
+        "median": 0.5940167006458783,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.8691164961730258,
+          0.845289283199279,
+          0.8230558836785877,
+          0.8567652246068322,
+          0.9484786287167362
+        ],
+        "median": 0.8567652246068322,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.6205053522548774,
+          0.5955107830127048,
+          0.6170598212625369,
+          0.5638643136641796,
+          0.6683251199603378
+        ],
+        "median": 0.6170598212625369,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9741922460339937,
+          0.9745719736534408,
+          0.9993338488611182,
+          0.9789230745284558,
+          0.8638483066747817
+        ],
+        "median": 0.9745719736534408,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.082593442079368,
+          0.9167101621873857,
+          0.9573148374349936,
+          0.9778404111607493,
+          1.0149423699984599
+        ],
+        "median": 0.9778404111607493,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.1576106502417167,
+      "integrated_AA/integrated": 1.0908573301007969
+    },
+    "observed_band": 1.1576106502417167,
+    "ns_per_op": {
+      "prototype": 138.26278000000002,
+      "prototype_AA": 127.29063500000001,
+      "integrated": 133.540305,
+      "integrated_AA": 135.8080675,
+      "ART": 157.93550249999998,
+      "HOT": 233.19072
+    },
+    "build_ms_descriptive": {
+      "prototype": 6.663033,
+      "integrated": 6.536565,
+      "ART": 18.363973,
+      "HOT": 28.079455
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 13142853,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 1048576,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 26608644,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco_full_10000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9863014886281432,
+          0.9950906549575873,
+          0.9883724452564323,
+          0.9834129123546561,
+          1.0267581139977797
+        ],
+        "median": 0.9883724452564323,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.1000337140730516,
+          1.0535512925442805,
+          1.0592342933294188,
+          1.074219827623803,
+          1.112903323974093
+        ],
+        "median": 1.074219827623803,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.6510857311269083,
+          0.6573138627633881,
+          0.6351631613842159,
+          0.6412710464874991,
+          0.6493335906442251
+        ],
+        "median": 0.6493335906442251,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.0920320631643623,
+          1.1013594766507593,
+          1.06688560625542,
+          1.0722935668765565,
+          1.0949283106826464
+        ],
+        "median": 1.0920320631643623,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.6570730321174278,
+          0.642283765978284,
+          0.6454711614734288,
+          0.6576371947052222,
+          0.6355073702000288
+        ],
+        "median": 0.6454711614734288,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          0.9845163990992689,
+          0.9863625881028977,
+          1.053260799496209,
+          1.0097381690630254,
+          1.0018469028488284
+        ],
+        "median": 1.0018469028488284,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0098727082078356,
+          0.9700987326815709,
+          0.9801136118987488,
+          1.0164897125810246,
+          0.9675321236091512
+        ],
+        "median": 0.9801136118987488,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.053260799496209,
+      "integrated_AA/integrated": 1.033557414372698
+    },
+    "observed_band": 1.053260799496209,
+    "ns_per_op": {
+      "prototype": 100.96311499999999,
+      "prototype_AA": 99.062455,
+      "integrated": 99.86439,
+      "integrated_AA": 97.870555,
+      "ART": 92.3703725,
+      "HOT": 154.9690375
+    },
+    "build_ms_descriptive": {
+      "prototype": 9.068751,
+      "integrated": 7.838935,
+      "ART": 22.456086,
+      "HOT": 46.116791
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco_full_100000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9904929454516946,
+          0.9773986499955518,
+          1.0128475953409704,
+          1.0289901860584654,
+          1.0281060504230202
+        ],
+        "median": 1.0128475953409704,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          0.821719339715173,
+          0.9619018339648839,
+          0.8579970588065784,
+          1.00096661692697,
+          0.9115080920397726
+        ],
+        "median": 0.9115080920397726,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.45274576920507414,
+          0.4682710464430436,
+          0.5546885009904772,
+          0.5877634267130061,
+          0.5916445197667414
+        ],
+        "median": 0.5546885009904772,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          0.8733957129902243,
+          0.9849051595119082,
+          0.8605173230642411,
+          0.9271613830004194,
+          0.9107534006946649
+        ],
+        "median": 0.9107534006946649,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.4522438248114311,
+          0.5020814206287295,
+          0.5474467330160577,
+          0.5912446948190933,
+          0.5811469324320685
+        ],
+        "median": 0.5474467330160577,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.0197489259206627,
+          0.9262179897204791,
+          1.0316645858474813,
+          1.0330820970177488,
+          0.9716781660792315
+        ],
+        "median": 1.0197489259206627,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.0561641005439288,
+          0.9929030922050928,
+          0.9754716805055412,
+          0.9693257813251341,
+          1.0102098713319698
+        ],
+        "median": 0.9929030922050928,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0796594442111704,
+      "integrated_AA/integrated": 1.0561641005439288
+    },
+    "observed_band": 1.0796594442111704,
+    "ns_per_op": {
+      "prototype": 99.56799749999999,
+      "prototype_AA": 99.93947,
+      "integrated": 99.40818,
+      "integrated_AA": 100.29463,
+      "ART": 113.3928775,
+      "HOT": 189.341805
+    },
+    "build_ms_descriptive": {
+      "prototype": 8.056107,
+      "integrated": 7.64535,
+      "ART": 22.603477,
+      "HOT": 43.926364
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 8126109,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2097152,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 11799291,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco_64k_10000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          0.9905508759190156,
+          1.008483280497455,
+          0.9851936681487031,
+          1.0362661238377195,
+          1.0220436694533175
+        ],
+        "median": 1.008483280497455,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.3066350544400054,
+          1.405790189348691,
+          1.4044559463611264,
+          1.4196995717900753,
+          1.4487374181734927
+        ],
+        "median": 1.405790189348691,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.7464429237252685,
+          0.7747467238099703,
+          0.8349447232557801,
+          0.8226687549985101,
+          0.8226476608413208
+        ],
+        "median": 0.8226476608413208,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.311061569026508,
+          1.3693849198445438,
+          1.4401310250807222,
+          1.3625324520804407,
+          1.4095654966800906
+        ],
+        "median": 1.3693849198445438,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.7785176251482469,
+          0.7681182330401475,
+          0.829432073856594,
+          0.805250195962979,
+          0.7873084879621897
+        ],
+        "median": 0.7873084879621897,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.034189335005212,
+          1.050469167284312,
+          0.9943108377954017,
+          1.0161618387670552,
+          1.0041937602166626
+        ],
+        "median": 1.0161618387670552,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          1.033135140101706,
+          1.0115112794491423,
+          1.0288158704477144,
+          0.9584243797319227,
+          0.953950810857979
+        ],
+        "median": 1.0115112794491423,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.050469167284312,
+      "integrated_AA/integrated": 1.0482720792496676
+    },
+    "observed_band": 1.050469167284312,
+    "ns_per_op": {
+      "prototype": 74.4793025,
+      "prototype_AA": 75.59026,
+      "integrated": 74.87016,
+      "integrated_AA": 73.963075,
+      "ART": 53.5513375,
+      "HOT": 93.46528749999999
+    },
+    "build_ms_descriptive": {
+      "prototype": 1.66408,
+      "integrated": 1.974935,
+      "ART": 4.923815,
+      "HOT": 11.53504
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  },
+  {
+    "cell": "tranco_64k_100000",
+    "ratios": {
+      "integrated/prototype": {
+        "process_medians": [
+          1.0727564958444997,
+          1.0233833197237667,
+          0.9755059260164491,
+          1.0297925439888957,
+          1.0131985863957955
+        ],
+        "median": 1.0233833197237667,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated/ART": {
+        "process_medians": [
+          1.405079405989122,
+          1.4332765738048,
+          1.3361702457074238,
+          1.4269177376309155,
+          1.4846003583152112
+        ],
+        "median": 1.4269177376309155,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "integrated/HOT": {
+        "process_medians": [
+          0.8171137367523458,
+          0.8237373104838749,
+          0.7920213871640611,
+          0.8758540545386646,
+          0.8096456373808969
+        ],
+        "median": 0.8171137367523458,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype/ART": {
+        "process_medians": [
+          1.337340301242623,
+          1.4026465325045872,
+          1.4152906028852268,
+          1.3891335758395789,
+          1.3948880336070613
+        ],
+        "median": 1.3948880336070613,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": true
+      },
+      "prototype/HOT": {
+        "process_medians": [
+          0.7865075858818605,
+          0.8181857446624159,
+          0.8100305488613717,
+          0.8330944400195068,
+          0.8358740398270015
+        ],
+        "median": 0.8181857446624159,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "prototype_AA/prototype": {
+        "process_medians": [
+          1.0231333534351745,
+          1.0002203360379958,
+          1.0061021051855743,
+          0.9799609834753484,
+          0.9955751521771545
+        ],
+        "median": 1.0002203360379958,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "integrated_AA/integrated": {
+        "process_medians": [
+          0.9809695919311124,
+          0.9933167453238547,
+          1.0880682758193045,
+          0.9766620788995745,
+          0.9891768083375694
+        ],
+        "median": 0.9891768083375694,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "prototype_AA/prototype": 1.0231333534351745,
+      "integrated_AA/integrated": 1.0880682758193045
+    },
+    "observed_band": 1.0880682758193045,
+    "ns_per_op": {
+      "prototype": 77.13176250000001,
+      "prototype_AA": 79.28524999999999,
+      "integrated": 79.36903,
+      "integrated_AA": 79.96407500000001,
+      "ART": 56.4246025,
+      "HOT": 98.1596175
+    },
+    "build_ms_descriptive": {
+      "prototype": 1.898655,
+      "integrated": 1.599729,
+      "ART": 5.089158,
+      "HOT": 11.748836
+    },
+    "memory_by_process": {
+      "prototype": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "integrated": [
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": 2066217,
+          "adapter_bytes": 16,
+          "retained_input_bytes": 0
+        }
+      ],
+      "ART": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 524288,
+          "retained_input_bytes": 0
+        }
+      ],
+      "HOT": [
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        },
+        {
+          "index_bytes": null,
+          "adapter_bytes": 2951912,
+          "retained_input_bytes": 0
+        }
+      ]
+    }
+  }
+]

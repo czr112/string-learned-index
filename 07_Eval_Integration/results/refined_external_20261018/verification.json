@@ -1,0 +1,10 @@
+{
+  "verified": true,
+  "cells": 8,
+  "gates": 4,
+  "process_gates": 240,
+  "timing_rows": 1440,
+  "paired_ratios": 1680,
+  "sources": 81,
+  "verification_source_sha256": "dc1a71a5e77944679e25e9b8df02b4a0896c13c3b587737aaf6410f6ee2f2e29"
+}

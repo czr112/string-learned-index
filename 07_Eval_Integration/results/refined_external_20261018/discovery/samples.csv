@@ -1,0 +1,2 @@
+implementation_id,status,stage,sample_type,repeat,sample_index,build_ns,latency_build_ns,lookup_ns,operations,throughput_ops_per_second,latency_ns
+ours-static-physical-refined,passed,complete,throughput,0,,691,,2089,100,47869794.159885116,

@@ -1,0 +1,231 @@
+{
+  "config": {
+    "build_timeout_seconds": 120,
+    "dataset": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/refined_external_20261018/smoke_keys.txt",
+    "implementations": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_static_refined"
+    ],
+    "jobs": 2,
+    "key": null,
+    "memory_budget_mib": 1024,
+    "network_downloads": "not performed by the benchmark",
+    "output": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/refined_external_20261018/discovery",
+    "reader": "auto",
+    "run_timeout_seconds": 120,
+    "workload": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/refined_external_20261018/smoke_workload.json"
+  },
+  "dataset": {
+    "duplicate_records": 0,
+    "empty_keys": 0,
+    "estimated_preparation_memory_bytes": 466,
+    "high_bit_keys": 0,
+    "key_field": null,
+    "logical_hash_format": "string-dataset/v1 with unsigned LEB128 lengths",
+    "logical_sha256": "01430e37ac15a1d0b74ec8bf04a7d987e39c2649ffc0ffc77d3aeee5b4ea8952",
+    "max_key_bytes": 7,
+    "min_key_bytes": 4,
+    "normalization": "unsigned-byte lexicographic sort and exact deduplication",
+    "nul_keys": 0,
+    "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/refined_external_20261018/smoke_keys.txt",
+    "prefix_adjacent_pairs": 0,
+    "reader": "raw-lines",
+    "rows_sha256": "f312acdac137f3b991ece131b08c98aa7330a72b538be3fa2ff32b52bec5e24f",
+    "source_records": 5,
+    "source_sha256": "a2864ba64313730ebb5c1eccf08318e2280461430cc54ba8dd92162f8fbe2c6b",
+    "total_unique_key_bytes": 26,
+    "unique_keys": 5
+  },
+  "environment": {
+    "cpu_count": 24,
+    "machine": "x86_64",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "threading": "single-threaded benchmark runner"
+  },
+  "generated_at": "2026-10-18T04:52:41+00:00",
+  "limitations": [
+    "Only bulk_load and find are accredited in this first slice.",
+    "Latency includes timer overhead; the process is not CPU-pinned.",
+    "Memory fields retain the adapter's accounting scope and are not ranked."
+  ],
+  "results": [
+    {
+      "build_identity": {
+        "adapter_declared_source_identity": {
+          "adapter_digest": "107aae7a894758df23735050231a6ecfc2a95b6d94c5fb965e02b173c6cda19f",
+          "adapter_digest_rule": "SHA256(concat(cpp_sha256_hex,header_sha256_hex))",
+          "block_entries": 16,
+          "coordinate_symbols": 7,
+          "core_bundle_rule": "SHA256(concat(core_sources ordered sha256 hex))",
+          "core_bundle_sha256": "c9a104e043826c4968920a195974f010229ad37aef75ad585c55caecf07dfdf5",
+          "core_sources": [
+            {
+              "path": "07_Eval_Integration/diagnostics/collision_refined_index.hpp",
+              "sha256": "d773acd6933333ac4ec905e1886ed9043c800dca1b3a4fc579e264eabfda1db5"
+            },
+            {
+              "path": "07_Eval_Integration/diagnostics/collision_refinement.hpp",
+              "sha256": "d0a77db51a9abef05bf42a19e7c8442be2626fa0c5c1f4072d605288d86ab41a"
+            },
+            {
+              "path": "02_Code_and_Experiments/validation_e25_20260918/physical_locator_index.hpp",
+              "sha256": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d"
+            },
+            {
+              "path": "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp",
+              "sha256": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089"
+            }
+          ],
+          "default_lookup": "refined",
+          "isa": "x86-64-v3",
+          "local_levels": 1,
+          "readonly": true,
+          "region_keys": 2048,
+          "status": "candidate pending E validation; production Context16 unchanged"
+        },
+        "adapter_manifest_sha256": "987b7ed18d54fcb39432696495159ddfe66bcb9b45345918683dbc152fddcaf5",
+        "compiler": {
+          "id": "GNU",
+          "path": "/usr/bin/c++",
+          "version": "13.3.0"
+        },
+        "configuration": {
+          "build_type": "Release",
+          "cmake_arguments": [
+            "-DCMAKE_BUILD_TYPE=Release"
+          ],
+          "cxx_extensions": false,
+          "cxx_flags": "",
+          "cxx_release_flags": "-O3 -DNDEBUG",
+          "cxx_standard": "17",
+          "exe_linker_flags": "",
+          "generator": "Unix Makefiles"
+        },
+        "external_source_identity_note": "External source trees are not recursively hashed; provide immutable source_identity in the adapter manifest when available.",
+        "external_source_tree_sha256": null,
+        "runner_binary_sha256": "e1eb9be73c71cc1fef5f1374363574cea22d2489ef0b730abe64d226f98e16c0",
+        "runner_harness_sha256": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+        "schema": "string-index-build-identity/v1"
+      },
+      "implementation_id": "ours-static-physical-refined",
+      "manifest": {
+        "cmake_target": "our_static_refined_adapter",
+        "contract": "string-index/v1",
+        "factory_header": "our_static_refined_adapter.h",
+        "factory_symbol": "make_our_static_refined_index",
+        "id": "ours-static-physical-refined",
+        "source_dir": ".",
+        "source_identity": {
+          "adapter_digest": "107aae7a894758df23735050231a6ecfc2a95b6d94c5fb965e02b173c6cda19f",
+          "adapter_digest_rule": "SHA256(concat(cpp_sha256_hex,header_sha256_hex))",
+          "block_entries": 16,
+          "coordinate_symbols": 7,
+          "core_bundle_rule": "SHA256(concat(core_sources ordered sha256 hex))",
+          "core_bundle_sha256": "c9a104e043826c4968920a195974f010229ad37aef75ad585c55caecf07dfdf5",
+          "core_sources": [
+            {
+              "path": "07_Eval_Integration/diagnostics/collision_refined_index.hpp",
+              "sha256": "d773acd6933333ac4ec905e1886ed9043c800dca1b3a4fc579e264eabfda1db5"
+            },
+            {
+              "path": "07_Eval_Integration/diagnostics/collision_refinement.hpp",
+              "sha256": "d0a77db51a9abef05bf42a19e7c8442be2626fa0c5c1f4072d605288d86ab41a"
+            },
+            {
+              "path": "02_Code_and_Experiments/validation_e25_20260918/physical_locator_index.hpp",
+              "sha256": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d"
+            },
+            {
+              "path": "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp",
+              "sha256": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089"
+            }
+          ],
+          "default_lookup": "refined",
+          "isa": "x86-64-v3",
+          "local_levels": 1,
+          "readonly": true,
+          "region_keys": 2048,
+          "status": "candidate pending E validation; production Context16 unchanged"
+        }
+      },
+      "manifest_path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_static_refined/benchmark-adapter.json",
+      "reason": "",
+      "requested_path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_static_refined",
+      "runner_result": {
+        "checksum": 10170361809996309271,
+        "descriptor": {
+          "adaptation_notes": "Explicit immutable package; one successful build; owning scan; 32-bit key/suffix-arena/block limits. Insert/update/erase/range_sum unsupported. One local prefix level, certified physical ranges and exact parent correction. Lookup=refined",
+          "adapter_version": "107aae7a894758df23735050231a6ecfc2a95b6d94c5fb965e02b173c6cda19f",
+          "capabilities": {
+            "bulk_load": "native",
+            "erase": "unsupported",
+            "find": "native",
+            "insert": "unsupported",
+            "keys": {
+              "allows_high_bit": true,
+              "allows_nul": true,
+              "allows_prefix_pairs": true,
+              "fixed_bytes": null,
+              "max_bytes": 4294967295,
+              "min_bytes": 0
+            },
+            "max_value": 18446744073709551615,
+            "range_sum": "unsupported",
+            "scan": "native",
+            "update": "unsupported"
+          },
+          "implementation": "StaticPhysicalIndex local-prefix refinement",
+          "implementation_version": "c9a104e043826c4968920a195974f010229ad37aef75ad585c55caecf07dfdf5"
+        },
+        "latency_samples": [],
+        "memory": {
+          "accounting_notes": "Object and vector/string capacities including refinement; adapter separate. Excludes allocator/RSS/build peak and returned scan rows.",
+          "adapter_owned_bytes": 16,
+          "index_owned_bytes": 658,
+          "retained_input_bytes": 0
+        },
+        "reason": "",
+        "samples": [
+          {
+            "build_ns": 691,
+            "latency_build_ns": null,
+            "lookup_ns": 2089,
+            "operations": 100,
+            "repeat": 0,
+            "throughput_ops_per_second": 47869794.159885116
+          }
+        ],
+        "schema": "string-index-static-run/v1",
+        "stage": "complete",
+        "status": "passed",
+        "validation": {
+          "absent_key_checked": true,
+          "capability_domain_checked": true,
+          "descriptor_checked": true,
+          "empty_build_checked": true,
+          "finite_domain_full": false,
+          "queries_checked": 100,
+          "represented_boundaries_checked": true,
+          "rows_checked": 5
+        }
+      },
+      "stage": "complete",
+      "status": "passed"
+    }
+  ],
+  "schema": "string-index-benchmark-report/v1",
+  "scope": "single-threaded static unique-key point lookup",
+  "workload": {
+    "actual_operations": 100,
+    "controlled_misses": 10,
+    "latency_samples": 0,
+    "miss_key_strategy": "source key plus deterministic ASCII suffix and counter",
+    "miss_ratio_decimal": "0.1",
+    "operations": 100,
+    "queries_sha256": "7af8bb0ad952d941e58fac257698d0b3482ae9dce2a06d88b1d489ea9093c928",
+    "repeats": 1,
+    "schema": "static-uniform-point/v1",
+    "seed": 42,
+    "source": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/refined_external_20261018/smoke_workload.json"
+  }
+}
