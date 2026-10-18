@@ -1,0 +1,59 @@
+{
+  "compares_per_query": {
+    "tranco64_norepl": {
+      "base": 1.89764,
+      "current": 6.0679,
+      "bracket": 6.78284
+    },
+    "tranco64_miss": {
+      "base": 1.89558,
+      "current": 6.06516,
+      "bracket": 6.77667
+    },
+    "mixed_full_norepl": {
+      "base": 1.8199,
+      "current": 6.29186,
+      "bracket": 6.92527
+    },
+    "skew_full_norepl": {
+      "base": 1.228,
+      "current": 7.48193,
+      "bracket": 7.38192
+    },
+    "skew_miss": {
+      "base": 1.22705,
+      "current": 7.48119,
+      "bracket": 7.38058
+    }
+  },
+  "bracket_over_current": {
+    "tranco64_norepl": 1.1178232996588606,
+    "tranco64_miss": 1.117311002512712,
+    "mixed_full_norepl": 1.100671343609044,
+    "skew_full_norepl": 0.9866331280832619,
+    "skew_miss": 0.9865516047580666
+  },
+  "bracket_hit_rate": {
+    "tranco64_norepl": 0.0988922,
+    "tranco64_miss": 0.099823,
+    "mixed_full_norepl": 0.0734482,
+    "skew_full_norepl": 0.0175095,
+    "skew_miss": 0.017334
+  },
+  "window_blocks_per_query": {
+    "tranco64_norepl": 18.355117797851562,
+    "tranco64_miss": 18.3406982421875,
+    "mixed_full_norepl": 23.98503875732422,
+    "skew_full_norepl": 77.5668716430664,
+    "skew_miss": 77.5783920288086
+  },
+  "location_mismatches": 0,
+  "memory_equal_everywhere": true,
+  "main_cell_removes_work": false,
+  "no_cell_regresses_over_5_percent": false,
+  "timing_round_allowed": false,
+  "candidate_closed": true,
+  "model_parameters_searched": false,
+  "production_adopted": false,
+  "status": "entry-only; counts are not timings"
+}

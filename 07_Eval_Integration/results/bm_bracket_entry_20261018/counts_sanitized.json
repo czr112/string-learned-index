@@ -1,0 +1,100 @@
+[
+  {
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "keys_checked": 131072,
+    "mismatch": {
+      "exact": 0,
+      "current": 0,
+      "bracket": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 2180021,
+      "copy": 2180021
+    },
+    "base": {
+      "boundary_compares": 124343,
+      "directory_steps": 21,
+      "total_compares": 124364,
+      "compares_per_query": 1.89764,
+      "blocks": 610203,
+      "outside": 3
+    },
+    "current": {
+      "boundary_compares": 124343,
+      "directory_steps": 273323,
+      "total_compares": 397666,
+      "compares_per_query": 6.0679,
+      "blocks": 65536,
+      "outside": 3,
+      "local_searches": 65533,
+      "proposal_blocks": 1202921
+    },
+    "bracket": {
+      "boundary_compares": 96000,
+      "search_steps": 348520,
+      "total_compares": 444520,
+      "compares_per_query": 6.78284,
+      "blocks": 65536,
+      "checks": 65536,
+      "hits": 6481,
+      "left": 34819,
+      "right": 24236,
+      "out_of_range": 0,
+      "search_calls": 59055,
+      "hit_rate": 0.0988922
+    },
+    "cell": "tranco64_norepl"
+  },
+  {
+    "rows": 131072,
+    "queries": 131072,
+    "pages": 64,
+    "keys_checked": 262144,
+    "mismatch": {
+      "exact": 0,
+      "current": 0,
+      "bracket": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 13500970,
+      "copy": 13500970
+    },
+    "base": {
+      "boundary_compares": 160956,
+      "directory_steps": 0,
+      "total_compares": 160956,
+      "compares_per_query": 1.228,
+      "blocks": 4838338,
+      "outside": 0
+    },
+    "current": {
+      "boundary_compares": 160956,
+      "directory_steps": 819716,
+      "total_compares": 980672,
+      "compares_per_query": 7.48193,
+      "blocks": 131072,
+      "outside": 0,
+      "local_searches": 131072,
+      "proposal_blocks": 10166845
+    },
+    "bracket": {
+      "boundary_compares": 190824,
+      "search_steps": 776739,
+      "total_compares": 967563,
+      "compares_per_query": 7.38192,
+      "blocks": 131072,
+      "checks": 131072,
+      "hits": 2295,
+      "left": 71312,
+      "right": 57465,
+      "out_of_range": 0,
+      "search_calls": 128777,
+      "hit_rate": 0.0175095
+    },
+    "cell": "skew_full_norepl"
+  }
+]

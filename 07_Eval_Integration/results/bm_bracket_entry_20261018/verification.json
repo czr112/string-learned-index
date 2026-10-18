@@ -1,0 +1,14 @@
+{
+  "status": "verified",
+  "cells": 5,
+  "sanitized_cells": 2,
+  "main_ratio": 1.1178232996588606,
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "counters",
+    "sanitized",
+    "decision"
+  ]
+}

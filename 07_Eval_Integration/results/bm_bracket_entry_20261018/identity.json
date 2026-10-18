@@ -1,0 +1,176 @@
+{
+  "base_commit": "49183a4f65f401dd7ad7ac3cce448ff389d6b93e",
+  "cpu": 0,
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/diagnostics/BM_BRACKET_ENTRY_SPEC_20261018.md": "e099bfac9c16dde8d89aee7c24db03848009c15491d0a7a52d529476f784c0fc",
+    "07_Eval_Integration/diagnostics/audit_bm_bracket.cpp": "df59242aacdf55016bc87fdbe3d3e23f9136e9a2055ade49890f95d6883d4e93",
+    "07_Eval_Integration/diagnostics/bm_bracket_core.hpp": "4a73697dadb9c3e9fe647f17e1ab3ffa2fa3af0c89d6c3aa0e8d55f9381b4b33",
+    "07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "07_Eval_Integration/diagnostics/run_bm_bracket_entry.py": "f11616d798438b3f31537287fe8a0c8e96025a11d775fc2f351effabf9b39bfe",
+    "07_Eval_Integration/diagnostics/static_input.hpp": "1e764ea7e7d9b9cce608707921902f350ecdc8ee0c89977459b65e90cc4e825f",
+    "07_Eval_Integration/diagnostics/verify_bm_bracket_entry.py": "9dddd659f840ee6ba35dbb65204392ae7b649a5e0608d8bff8bcd663228645ae",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h": "3587addd4e4fda743975534a95173ccb8d09d38029f5239ff3998574b45c3a39",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp": "fbbb922511bc590b1f1c68b77309d25001c3e98047975c5d9358c7b70092aa5b",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.h": "9f3b0b658da7caf143dc14822a6de5772fa5d497dbb7b4fcabe2fe9f1adc64f7",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_e8e05411/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "inputs": {
+    "tranco64_norepl": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin",
+      "queries_sha256": "43295a93e51334401edc11903e2a757523ef9c30ab26c5043de517c25c384977",
+      "queries": 65536,
+      "kind": "hit"
+    },
+    "tranco64_miss": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/tranco64_miss_queries.bin",
+      "queries_sha256": "8da9c3d3dad9676f32f2dd69dc12cccc6834b4dab2181d7b86f664d2321fb2eb",
+      "queries": 65536,
+      "kind": "miss"
+    },
+    "mixed_full_norepl": {
+      "rows_path": "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "rows_sha256": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+      "rows": 131072,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/mixed_full_norepl_queries.bin",
+      "queries_sha256": "17caca13ad8781c69336cf1d55e105446d128ad7a9a863463f44d70a9b93ea06",
+      "queries": 131072,
+      "kind": "hit"
+    },
+    "skew_full_norepl": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "rows": 131072,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/skew_full_norepl_queries.bin",
+      "queries_sha256": "a406e61f654641f5e4be0408adc9741fc3b49f90e6a0d0e5091c60b12dbdead4",
+      "queries": 131072,
+      "kind": "hit"
+    },
+    "skew_miss": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "rows": 131072,
+      "queries_path": "07_Eval_Integration/results/e2_generalization_20261018/skew_miss_queries.bin",
+      "queries_sha256": "5484a5f3912c6e0850b362a4d244ea26e37d16c297e404423dc5035f40296fb2",
+      "queries": 131072,
+      "kind": "miss"
+    }
+  },
+  "artifacts": {
+    "build/audit_bm_bracket": "9b38f3b9674a0dd08924ebe6817993b1f3dc9f71961fafbfe38c125308629dea",
+    "build/audit_bm_bracket_san": "1d36a6e27af5bccdd6111437d4d3de6f4e2144e9805e45fb13efabc5718dd4fc"
+  },
+  "commands": [
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/learned-index/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O2",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/audit_bm_bracket.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket"
+    ],
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/learned-index/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/audit_bm_bracket.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_e8e05411/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket_san"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/tranco64_miss_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/mixed_full_norepl_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/skew_full_norepl_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/skew_miss_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket_san",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/tranco64_norepl_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_bracket_entry_20261018/build/audit_bm_bracket_san",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/e2_generalization_20261018/skew_full_norepl_queries.bin"
+    ]
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "upstream_commit": "e8e05411135b222edb82e3861799a2ae07ae5470",
+  "benchmark_commit": "003a55bf674b43350fbb70242070fb74f33a56ce",
+  "protocol": "counts only; every page key and every frozen query checked against the full byte directory; no timing in this round",
+  "limits": [
+    "counts are not timings",
+    "spec registered after the first smoke run",
+    "model parameters not searched",
+    "not an external ranking"
+  ]
+}
