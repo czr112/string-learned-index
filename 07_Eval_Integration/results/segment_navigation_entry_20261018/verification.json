@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "cells": 8,
+  "domain_checks_per_build": 924214,
+  "frozen_queries": 440000,
+  "sources": 11,
+  "entry_passed": false,
+  "verification_source_sha256": "b9ec69b84e78f9e44b1c56b990fc71a4bb6c23f5beb37909f17a1aebb3fd6113"
+}

@@ -1,0 +1,15 @@
+{
+  "mechanism": "C1: fused full-key segment-cut navigation",
+  "entry_passed": false,
+  "timing_performed": false,
+  "production_changed": false,
+  "original_S3_failure_preserved": true,
+  "main_cells": [
+    "mixed_full_10000",
+    "tranco_64k_10000",
+    "tranco_64k_100000"
+  ],
+  "failed_main_cells": [
+    "mixed_full_10000"
+  ]
+}

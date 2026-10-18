@@ -1,0 +1,426 @@
+[
+  {
+    "cell": "tranco_64k_10000",
+    "main": true,
+    "data": {
+      "checks": 323101,
+      "rows": 65536,
+      "queries": 10000,
+      "regions": 32,
+      "segments": 913,
+      "core_bytes": 2065041,
+      "navigation_bytes": 44025,
+      "model_search_queries": 9925,
+      "old": {
+        "route_steps": 50300,
+        "route_full_compares": 4,
+        "route_full_bytes": 45,
+        "route_prefix_compares": 10000,
+        "route_prefix_bytes": 0,
+        "digest_bytes": 79256,
+        "region_prefix_compares": 10000,
+        "region_prefix_bytes": 3137,
+        "coordinate_bytes": 69622,
+        "model_steps": 49007,
+        "directory_steps": 0,
+        "crc_bytes": 156749,
+        "blocks": 22293,
+        "exact": 9089,
+        "exact_bytes": 114168,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 98829,
+        "full_compares": 9,
+        "full_bytes": 80,
+        "prefix_bytes": 0,
+        "digest_bytes": 79256
+      },
+      "distribution": {
+        "route_p50": 5,
+        "model_p50": 5,
+        "flat_p50": 10,
+        "segments_per_region_p50": 28,
+        "segments_per_region_max": 31
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": true,
+      "space_budget": true
+    },
+    "passed": true
+  },
+  {
+    "cell": "tranco_64k_100000",
+    "main": true,
+    "data": {
+      "checks": 773101,
+      "rows": 65536,
+      "queries": 100000,
+      "regions": 32,
+      "segments": 913,
+      "core_bytes": 2065041,
+      "navigation_bytes": 44025,
+      "model_search_queries": 99308,
+      "old": {
+        "route_steps": 503120,
+        "route_full_compares": 64,
+        "route_full_bytes": 831,
+        "route_prefix_compares": 100000,
+        "route_prefix_bytes": 0,
+        "digest_bytes": 792453,
+        "region_prefix_compares": 100000,
+        "region_prefix_bytes": 31381,
+        "coordinate_bytes": 696182,
+        "model_steps": 490305,
+        "directory_steps": 0,
+        "crc_bytes": 1572924,
+        "blocks": 222571,
+        "exact": 90785,
+        "exact_bytes": 1145290,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 987879,
+        "full_compares": 95,
+        "full_bytes": 1047,
+        "prefix_bytes": 0,
+        "digest_bytes": 792453
+      },
+      "distribution": {
+        "route_p50": 5,
+        "model_p50": 5,
+        "flat_p50": 10,
+        "segments_per_region_p50": 28,
+        "segments_per_region_max": 31
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": true,
+      "space_budget": true
+    },
+    "passed": true
+  },
+  {
+    "cell": "mixed_full_10000",
+    "main": true,
+    "data": {
+      "checks": 587968,
+      "rows": 131072,
+      "queries": 10000,
+      "regions": 64,
+      "segments": 1140,
+      "core_bytes": 13107625,
+      "navigation_bytes": 107063,
+      "model_search_queries": 9958,
+      "old": {
+        "route_steps": 60150,
+        "route_full_compares": 35797,
+        "route_full_bytes": 1708939,
+        "route_prefix_compares": 10000,
+        "route_prefix_bytes": 0,
+        "digest_bytes": 80000,
+        "region_prefix_compares": 10000,
+        "region_prefix_bytes": 370846,
+        "coordinate_bytes": 70000,
+        "model_steps": 40525,
+        "directory_steps": 0,
+        "crc_bytes": 844727,
+        "blocks": 75854,
+        "exact": 12648,
+        "exact_bytes": 796111,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 102004,
+        "full_compares": 73643,
+        "full_bytes": 3019102,
+        "prefix_bytes": 0,
+        "digest_bytes": 80000
+      },
+      "distribution": {
+        "route_p50": 6,
+        "model_p50": 5,
+        "flat_p50": 10,
+        "segments_per_region_p50": 24,
+        "segments_per_region_max": 27
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": false,
+      "space_budget": true
+    },
+    "passed": false
+  },
+  {
+    "cell": "mixed_full_100000",
+    "main": false,
+    "data": {
+      "checks": 1037968,
+      "rows": 131072,
+      "queries": 100000,
+      "regions": 64,
+      "segments": 1140,
+      "core_bytes": 13107625,
+      "navigation_bytes": 107063,
+      "model_search_queries": 99553,
+      "old": {
+        "route_steps": 601571,
+        "route_full_compares": 356544,
+        "route_full_bytes": 17018017,
+        "route_prefix_compares": 100000,
+        "route_prefix_bytes": 0,
+        "digest_bytes": 800000,
+        "region_prefix_compares": 100000,
+        "region_prefix_bytes": 3692849,
+        "coordinate_bytes": 700000,
+        "model_steps": 404710,
+        "directory_steps": 0,
+        "crc_bytes": 8410279,
+        "blocks": 764708,
+        "exact": 126509,
+        "exact_bytes": 7951022,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 1019653,
+        "full_compares": 735014,
+        "full_bytes": 30079578,
+        "prefix_bytes": 0,
+        "digest_bytes": 800000
+      },
+      "distribution": {
+        "route_p50": 6,
+        "model_p50": 4,
+        "flat_p50": 10,
+        "segments_per_region_p50": 24,
+        "segments_per_region_max": 27
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": false,
+      "space_budget": true
+    },
+    "passed": false
+  },
+  {
+    "cell": "tranco_full_10000",
+    "main": false,
+    "data": {
+      "checks": 1142953,
+      "rows": 262144,
+      "queries": 10000,
+      "regions": 128,
+      "segments": 3698,
+      "core_bytes": 8118693,
+      "navigation_bytes": 178224,
+      "model_search_queries": 9928,
+      "old": {
+        "route_steps": 70075,
+        "route_full_compares": 21,
+        "route_full_bytes": 209,
+        "route_prefix_compares": 10000,
+        "route_prefix_bytes": 0,
+        "digest_bytes": 79280,
+        "region_prefix_compares": 10000,
+        "region_prefix_bytes": 8728,
+        "coordinate_bytes": 69382,
+        "model_steps": 49191,
+        "directory_steps": 0,
+        "crc_bytes": 152312,
+        "blocks": 22859,
+        "exact": 9079,
+        "exact_bytes": 110062,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 118970,
+        "full_compares": 68,
+        "full_bytes": 612,
+        "prefix_bytes": 0,
+        "digest_bytes": 79280
+      },
+      "distribution": {
+        "route_p50": 7,
+        "model_p50": 5,
+        "flat_p50": 12,
+        "segments_per_region_p50": 29,
+        "segments_per_region_max": 34
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": true,
+      "space_budget": true
+    },
+    "passed": true
+  },
+  {
+    "cell": "tranco_full_100000",
+    "main": false,
+    "data": {
+      "checks": 1592953,
+      "rows": 262144,
+      "queries": 100000,
+      "regions": 128,
+      "segments": 3698,
+      "core_bytes": 8118693,
+      "navigation_bytes": 178224,
+      "model_search_queries": 99305,
+      "old": {
+        "route_steps": 700793,
+        "route_full_compares": 183,
+        "route_full_bytes": 1985,
+        "route_prefix_compares": 100000,
+        "route_prefix_bytes": 0,
+        "digest_bytes": 792382,
+        "region_prefix_compares": 100000,
+        "region_prefix_bytes": 86663,
+        "coordinate_bytes": 693708,
+        "model_steps": 491455,
+        "directory_steps": 0,
+        "crc_bytes": 1517533,
+        "blocks": 229402,
+        "exact": 90844,
+        "exact_bytes": 1095425,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 1189433,
+        "full_compares": 606,
+        "full_bytes": 5584,
+        "prefix_bytes": 0,
+        "digest_bytes": 792382
+      },
+      "distribution": {
+        "route_p50": 7,
+        "model_p50": 5,
+        "flat_p50": 12,
+        "segments_per_region_p50": 29,
+        "segments_per_region_max": 34
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": true,
+      "space_budget": true
+    },
+    "passed": true
+  },
+  {
+    "cell": "skew_full_10000",
+    "main": false,
+    "data": {
+      "checks": 576185,
+      "rows": 131072,
+      "queries": 10000,
+      "regions": 64,
+      "segments": 158,
+      "core_bytes": 12920890,
+      "navigation_bytes": 31972,
+      "model_search_queries": 10000,
+      "old": {
+        "route_steps": 59448,
+        "route_full_compares": 54363,
+        "route_full_bytes": 4307160,
+        "route_prefix_compares": 10000,
+        "route_prefix_bytes": 300000,
+        "digest_bytes": 79064,
+        "region_prefix_compares": 10000,
+        "region_prefix_bytes": 755489,
+        "coordinate_bytes": 70000,
+        "model_steps": 20000,
+        "directory_steps": 0,
+        "crc_bytes": 834926,
+        "blocks": 382432,
+        "exact": 28300,
+        "exact_bytes": 1002775,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 73613,
+        "full_compares": 67789,
+        "full_bytes": 5407783,
+        "prefix_bytes": 300000,
+        "digest_bytes": 79064
+      },
+      "distribution": {
+        "route_p50": 6,
+        "model_p50": 2,
+        "flat_p50": 7,
+        "segments_per_region_p50": 2,
+        "segments_per_region_max": 3
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": false,
+      "space_budget": true
+    },
+    "passed": false
+  },
+  {
+    "cell": "skew_full_100000",
+    "main": false,
+    "data": {
+      "checks": 1026185,
+      "rows": 131072,
+      "queries": 100000,
+      "regions": 64,
+      "segments": 158,
+      "core_bytes": 12920890,
+      "navigation_bytes": 31972,
+      "model_search_queries": 99998,
+      "old": {
+        "route_steps": 594647,
+        "route_full_compares": 544540,
+        "route_full_bytes": 43212823,
+        "route_prefix_compares": 100000,
+        "route_prefix_bytes": 3000000,
+        "digest_bytes": 790768,
+        "region_prefix_compares": 100000,
+        "region_prefix_bytes": 7573017,
+        "coordinate_bytes": 700000,
+        "model_steps": 199996,
+        "directory_steps": 0,
+        "crc_bytes": 8330891,
+        "blocks": 3806530,
+        "exact": 281442,
+        "exact_bytes": 9960938,
+        "rejected": 0
+      },
+      "flat": {
+        "steps": 735575,
+        "full_compares": 677936,
+        "full_bytes": 54171434,
+        "prefix_bytes": 3000000,
+        "digest_bytes": 790768
+      },
+      "distribution": {
+        "route_p50": 6,
+        "model_p50": 2,
+        "flat_p50": 7,
+        "segments_per_region_p50": 2,
+        "segments_per_region_max": 3
+      }
+    },
+    "entry_tests": {
+      "model_search_coverage": true,
+      "navigation_comparisons": true,
+      "full_compare_growth": false,
+      "space_budget": true
+    },
+    "passed": false
+  }
+]
