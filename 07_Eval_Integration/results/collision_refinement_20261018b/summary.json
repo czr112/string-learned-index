@@ -1,0 +1,722 @@
+[
+  {
+    "cell": "skew_full_10000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          0.6623692408273116,
+          0.6241359467026283,
+          0.6136692168915578,
+          0.6175828010515894,
+          0.646534259544809
+        ],
+        "median": 0.6241359467026283,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          0.7522779923612288,
+          0.7231416394533994,
+          0.7561007205406703,
+          0.7975157976067611,
+          0.7080228819496848
+        ],
+        "median": 0.7522779923612288,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.7466450085011929,
+          0.7630910529945841,
+          0.7784931168172846,
+          0.7739401320807116,
+          0.73697131652932
+        ],
+        "median": 0.7630910529945841,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          1.0093686303255942,
+          1.010162933571944,
+          0.947824781887018,
+          1.0492190938101302,
+          1.0263978642858076
+        ],
+        "median": 1.010162933571944,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          0.975512773597675,
+          0.994808259603285,
+          0.9812560668327899,
+          0.9711741205245702,
+          0.9852035817685587
+        ],
+        "median": 0.9812560668327899,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.0550473242629368,
+      "D1_AA/D1": 1.0296814740696136
+    },
+    "observed_band": 1.0550473242629368,
+    "target_gain": true,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 217.95299,
+      "B_AA": 223.164395,
+      "B_wide": 189.9123425,
+      "B_directory": 184.23630500000002,
+      "D1": 142.14529499999998,
+      "D1_AA": 141.28172999999998
+    }
+  },
+  {
+    "cell": "skew_full_100000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          0.706539341081639,
+          0.6259449422556386,
+          0.7812448355927454,
+          0.6794119138818027,
+          0.6465705218178753
+        ],
+        "median": 0.6794119138818027,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          0.9011657564142685,
+          0.7751913184786756,
+          0.8659106073815164,
+          0.7970074807661582,
+          0.799222544500058
+        ],
+        "median": 0.799222544500058,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.9144946245512616,
+          0.7900273629697852,
+          0.8731018092028401,
+          0.7636980120829573,
+          0.8109190225321301
+        ],
+        "median": 0.8109190225321301,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          1.0022368736894727,
+          0.94022742073203,
+          0.9899257514039049,
+          0.992272280131016,
+          0.926929610224314
+        ],
+        "median": 0.9899257514039049,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          1.078756693432482,
+          1.034100253962765,
+          0.9548795530384997,
+          0.9917777480024321,
+          1.1184604339322373
+        ],
+        "median": 1.034100253962765,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.0788305702716772,
+      "D1_AA/D1": 1.1184604339322373
+    },
+    "observed_band": 1.1184604339322373,
+    "target_gain": true,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 236.5941575,
+      "B_AA": 229.13065749999998,
+      "B_wide": 193.9601825,
+      "B_directory": 195.346655,
+      "D1": 160.5732275,
+      "D1_AA": 161.95418999999998
+    }
+  },
+  {
+    "cell": "mixed_full_10000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          0.8768698614269925,
+          0.8873255996886027,
+          0.8821886270423742,
+          0.8562305523012431,
+          0.8523776194159032
+        ],
+        "median": 0.8768698614269925,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          0.8398138977403711,
+          0.8481264813081882,
+          0.8538142371189703,
+          0.8699577246704343,
+          0.8553876613767413
+        ],
+        "median": 0.8538142371189703,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.6688124602623693,
+          0.6473611088562172,
+          0.6407288017920507,
+          0.6493043902296354,
+          0.6173457453871598
+        ],
+        "median": 0.6473611088562172,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          0.9866038701897459,
+          1.0018041669629472,
+          0.9842678968822293,
+          0.9637485794653937,
+          0.9802541865609604
+        ],
+        "median": 0.9842678968822293,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          1.0182471311711756,
+          1.0246968646879475,
+          0.9892892098620925,
+          1.066909502543989,
+          1.019276795543923
+        ],
+        "median": 1.019276795543923,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.037615018384479,
+      "D1_AA/D1": 1.066909502543989
+    },
+    "observed_band": 1.066909502543989,
+    "target_gain": true,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 125.7803325,
+      "B_AA": 126.7466625,
+      "B_wide": 129.927365,
+      "B_directory": 170.6399475,
+      "D1": 107.7338225,
+      "D1_AA": 110.2490375
+    }
+  },
+  {
+    "cell": "mixed_full_100000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          0.9869782591424827,
+          0.8324761078844967,
+          0.9027973507842616,
+          0.912274295037913,
+          0.8439400680887975
+        ],
+        "median": 0.9027973507842616,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          0.8505225504594822,
+          0.8584843558047768,
+          0.9124558041180374,
+          0.8764339133067492,
+          0.8073282799777528
+        ],
+        "median": 0.8584843558047768,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.8147572435712616,
+          0.6571506945172059,
+          0.7296569227141294,
+          0.7228405347275212,
+          0.6875929610392553
+        ],
+        "median": 0.7228405347275212,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          0.970452458103148,
+          1.0211471509576358,
+          1.0414104325761588,
+          1.0149948409970004,
+          0.9474574118872051
+        ],
+        "median": 1.0149948409970004,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          0.9094511406292427,
+          1.0088816153333209,
+          1.073999677683366,
+          1.093002380253942,
+          1.0509929745805535
+        ],
+        "median": 1.0509929745805535,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.055456411500478,
+      "D1_AA/D1": 1.0995642924897617
+    },
+    "observed_band": 1.0995642924897617,
+    "target_gain": false,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 142.1024175,
+      "B_AA": 143.183225,
+      "B_wide": 145.313085,
+      "B_directory": 178.206055,
+      "D1": 130.7823625,
+      "D1_AA": 134.69380999999998
+    }
+  },
+  {
+    "cell": "tranco_full_10000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          1.066400094839222,
+          0.9455406394875824,
+          0.9327389542215713,
+          1.0304303236084427,
+          1.021824335809915
+        ],
+        "median": 1.021824335809915,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          1.0236580973201908,
+          1.0188417041686635,
+          0.9448188274305018,
+          1.016979728624966,
+          1.0160069549532462
+        ],
+        "median": 1.016979728624966,
+        "faster": 1,
+        "slower": 4,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.5946979008760513,
+          0.5239133075468928,
+          0.5364504959242874,
+          0.5603311510180251,
+          0.5472903781303475
+        ],
+        "median": 0.5472903781303475,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          1.0647751117057993,
+          0.9156054464340524,
+          0.9402561807621732,
+          1.0003951557435036,
+          1.0808533784653096
+        ],
+        "median": 1.0003951557435036,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          0.9038108544918342,
+          1.0520276170954403,
+          0.9925571098807879,
+          0.9790748519202257,
+          0.9956576573737824
+        ],
+        "median": 0.9925571098807879,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.0921734944834955,
+      "D1_AA/D1": 1.1064261897609626
+    },
+    "observed_band": 1.1064261897609626,
+    "target_gain": false,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 98.147265,
+      "B_AA": 96.0298,
+      "B_wide": 96.52353500000001,
+      "B_directory": 172.27353499999998,
+      "D1": 96.80417,
+      "D1_AA": 93.322805
+    }
+  },
+  {
+    "cell": "tranco_full_100000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          0.9393149944546119,
+          1.0842992835588676,
+          0.9355517020928497,
+          0.9616572484285849,
+          1.0015040840830545
+        ],
+        "median": 0.9616572484285849,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          1.0063717401878114,
+          1.0860034021339695,
+          0.9931171835209587,
+          0.9798791000048546,
+          1.005698975679505
+        ],
+        "median": 1.005698975679505,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.5622380267601992,
+          0.639200632086995,
+          0.5621476389955236,
+          0.5589464529747861,
+          0.598810699218682
+        ],
+        "median": 0.5622380267601992,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          0.9289398364823445,
+          0.9948923544006314,
+          0.9787290047748638,
+          1.078443930631006,
+          0.9589408792895566
+        ],
+        "median": 0.9787290047748638,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          0.9891414271344452,
+          1.0405925749616558,
+          0.9614152631149167,
+          1.076099355533949,
+          0.9864608399818957
+        ],
+        "median": 0.9891414271344452,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.078443930631006,
+      "D1_AA/D1": 1.076099355533949
+    },
+    "observed_band": 1.078443930631006,
+    "target_gain": false,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 100.56121,
+      "B_AA": 96.62478,
+      "B_wide": 100.2651625,
+      "B_directory": 167.02839,
+      "D1": 100.35508,
+      "D1_AA": 104.31859
+    }
+  },
+  {
+    "cell": "tranco_64k_10000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          1.005251833732923,
+          0.9789287890652747,
+          1.0274766651781353,
+          1.006665519869772,
+          0.9955404396713748
+        ],
+        "median": 1.005251833732923,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          0.9747129864828885,
+          1.006137371854786,
+          1.017598390722823,
+          0.9937611607572636,
+          0.9730229248219837
+        ],
+        "median": 0.9937611607572636,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.5479063959931173,
+          0.5633166679704429,
+          0.5564533723978444,
+          0.5432573919156904,
+          0.5604708319679332
+        ],
+        "median": 0.5564533723978444,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          0.9808724983411248,
+          0.993253205203461,
+          1.0011843603355728,
+          1.0329369846912453,
+          1.0587614485315837
+        ],
+        "median": 1.0011843603355728,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          0.9976279217532489,
+          1.0241182950974028,
+          0.9874695882224368,
+          1.0860159711840107,
+          1.0465383658741447
+        ],
+        "median": 1.0241182950974028,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.0587614485315837,
+      "D1_AA/D1": 1.0860159711840107
+    },
+    "observed_band": 1.0860159711840107,
+    "target_gain": false,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 74.9923575,
+      "B_AA": 74.1607875,
+      "B_wide": 74.20253249999999,
+      "B_directory": 134.96642250000002,
+      "D1": 72.00091,
+      "D1_AA": 75.6603475
+    }
+  },
+  {
+    "cell": "tranco_64k_100000",
+    "ratios": {
+      "D1/B_learned": {
+        "process_medians": [
+          1.0684471505714286,
+          1.0022513769758306,
+          1.0002621235666838,
+          1.0015564453601198,
+          1.013485034259288
+        ],
+        "median": 1.0022513769758306,
+        "faster": 0,
+        "slower": 5,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_wide": {
+        "process_medians": [
+          0.9736137453453213,
+          0.9748751048656882,
+          0.9829225390522105,
+          0.9423749182317263,
+          0.9922105189271391
+        ],
+        "median": 0.9748751048656882,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1/B_directory": {
+        "process_medians": [
+          0.5841504683557588,
+          0.5676614650156806,
+          0.584747236772894,
+          0.5589854497186469,
+          0.5922094348454594
+        ],
+        "median": 0.5841504683557588,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "B_AA/B_learned": {
+        "process_medians": [
+          0.9775399586330589,
+          0.9935380780758643,
+          0.9861436774136785,
+          1.0092771345146994,
+          1.0049126657111116
+        ],
+        "median": 0.9935380780758643,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "D1_AA/D1": {
+        "process_medians": [
+          0.9907683403062233,
+          0.9850775614193539,
+          1.0022280808660722,
+          1.0251646723608938,
+          1.020582460340934
+        ],
+        "median": 1.0022280808660722,
+        "faster": 2,
+        "slower": 3,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "B_AA/B_learned": 1.0229760851907763,
+      "D1_AA/D1": 1.0251646723608938
+    },
+    "observed_band": 1.0251646723608938,
+    "target_gain": false,
+    "risk_regression": false,
+    "ns_per_op": {
+      "B_learned": 79.47261499999999,
+      "B_AA": 79.16794,
+      "B_wide": 83.10780249999999,
+      "B_directory": 139.1877425,
+      "D1": 80.5772075,
+      "D1_AA": 80.1735625
+    }
+  }
+]

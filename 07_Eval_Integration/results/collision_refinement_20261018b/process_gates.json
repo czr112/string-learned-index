@@ -1,0 +1,322 @@
+[
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_10000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_10000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_10000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_10000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_10000",
+    "process": 4
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_100000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_100000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_100000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_100000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 12920890,
+    "D1_bytes": 13073458,
+    "cell": "skew_full_100000",
+    "process": 4
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_10000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_10000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_10000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_10000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 846432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_10000",
+    "process": 4
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_100000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_100000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_100000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_100000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1386432,
+    "base_bytes": 13107625,
+    "D1_bytes": 13142853,
+    "cell": "mixed_full_100000",
+    "process": 4
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1632864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_10000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1632864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_10000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1632864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_10000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1632864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_10000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 1632864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_10000",
+    "process": 4
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 2172864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_100000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 2172864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_100000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 2172864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_100000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 2172864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_100000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 2172864,
+    "base_bytes": 8118693,
+    "D1_bytes": 8126109,
+    "cell": "tranco_full_100000",
+    "process": 4
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 453216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_10000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 453216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_10000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 453216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_10000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 453216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_10000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 453216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_10000",
+    "process": 4
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 993216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_100000",
+    "process": 0
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 993216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_100000",
+    "process": 1
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 993216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_100000",
+    "process": 2
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 993216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_100000",
+    "process": 3
+  },
+  {
+    "phase": "gate",
+    "verified_answers": 993216,
+    "base_bytes": 2065041,
+    "D1_bytes": 2066217,
+    "cell": "tranco_64k_100000",
+    "process": 4
+  }
+]

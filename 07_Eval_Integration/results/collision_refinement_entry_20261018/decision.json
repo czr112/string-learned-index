@@ -1,0 +1,12 @@
+{
+  "mechanism": "D1: local prefix collision refinement",
+  "entry_passed": true,
+  "timing_performed": false,
+  "production_changed": false,
+  "original_S3_failure_preserved": true,
+  "main_cells": [
+    "skew_full_10000",
+    "skew_full_100000"
+  ],
+  "failed_main_cells": []
+}

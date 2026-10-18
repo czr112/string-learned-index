@@ -1,0 +1,9 @@
+{
+  "target_gain": true,
+  "risk_regressions": [],
+  "matrix_eligible": true,
+  "external_validation_pending": true,
+  "production_adopted": false,
+  "original_S3_failure_preserved": true,
+  "ART_HOT_retested": false
+}

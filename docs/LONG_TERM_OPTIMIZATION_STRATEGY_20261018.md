@@ -247,4 +247,5 @@ flowchart LR
 - A阶段完成一次冻结的反事实归因；三格已记录工作量逐查询相同，同包装规范化机器码相同；状态检查解释未获支持。
   原S3回归仍未解释，按A停止条件收口，不改核心/默认，不追加重复。见[执行结果](../07_Eval_Integration/RESULTS_INTEGRATION_ATTRIBUTION_20261018.md)。
 - B首版接缝已实现及验收：[执行结果](../07_Eval_Integration/RESULTS_LOCATOR_SEAM_20261018.md)。共用128/128、四份普通/ASan/UBSan门通过，逐请求已记录工作零差分；六格无优化A/B均未分辨，对象新增8B。原S3/默认不改，队友模型尚未迁移。
-- C1完整段切点融合导航[入口失败](../07_Eval_Integration/RESULTS_SEGMENT_NAV_ENTRY_20261018.md)：tranco比较总量近乎不变，mixed主格完整fence比较3.580→7.364次/请求；未进入完整查值原型/计时，关闭C1。8格440k请求及域门通过，短键目标尚未达成；下一步D长前缀辨识入口，D–G未执行。
+- C1完整段切点融合导航[入口失败](../07_Eval_Integration/RESULTS_SEGMENT_NAV_ENTRY_20261018.md)：tranco比较总量近乎不变，mixed主格完整fence比较3.580→7.364次/请求；未进入完整查值原型/计时，关闭C1。8格440k请求及域门通过，短键问题仍保留。
+- D1一层簇内前缀辨识[内部收益门通过](../07_Eval_Integration/RESULTS_COLLISION_REFINEMENT_20261018.md)：skew相对B模型0.624/0.679、相对旧宽回退0.752/0.799，六风险格无清晰回归，空间+1.18%；四份完整sanitizer及1440行/1200配对比值复核通过。首轮错误跨构建计数要求在计时前停止，候选不变，b轮只修脚本。下一步E正式只读集成、同接口ART/HOT与集成前控制复测；外部采用及F/G尚未完成，默认和原S3失败保留。

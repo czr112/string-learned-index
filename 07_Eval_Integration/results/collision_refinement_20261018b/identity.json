@@ -1,0 +1,723 @@
+{
+  "base_commit": "9e83148425862cfc9522a01485bf96590a04175a",
+  "cpu": 0,
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/physical_locator_index.hpp": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d",
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/adapters/common/contract_acceptance.cpp": "758bab219b971b452e053c524f8c396f255c488a2482b4c15132366872fce153",
+    "07_Eval_Integration/diagnostics/COLLISION_REFINEMENT_SPEC_20261018.md": "158797908f3f5fe207b524c9ff996159f4bbfde909488904e701682366f668ae",
+    "07_Eval_Integration/diagnostics/bench_collision_refinement.cpp": "4283df9840caa946f17321ee8139eed4422428f820a80bc37ecaf7e8b62bab35",
+    "07_Eval_Integration/diagnostics/check_collision_refinement.cpp": "8b9aeeceb4fb68fbd0e79aa45ddaf01305743276ad97d98e27cce68fb9d42c16",
+    "07_Eval_Integration/diagnostics/collision_refined_index.hpp": "d773acd6933333ac4ec905e1886ed9043c800dca1b3a4fc579e264eabfda1db5",
+    "07_Eval_Integration/diagnostics/collision_refinement.hpp": "d0a77db51a9abef05bf42a19e7c8442be2626fa0c5c1f4072d605288d86ab41a",
+    "07_Eval_Integration/diagnostics/collision_refinement_adapter.hpp": "a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84",
+    "07_Eval_Integration/diagnostics/run_collision_refinement.py": "30bc03e0abc15a05f44aab3d00594160331a4b775d2abde67b5749c96ce1caec",
+    "07_Eval_Integration/diagnostics/static_input.hpp": "1e764ea7e7d9b9cce608707921902f350ecdc8ee0c89977459b65e90cc4e825f",
+    "07_Eval_Integration/diagnostics/verify_collision_refinement.py": "775196080e58b0b25fe51b69c83ae05f4c7c13d84086c628a718827fe1516b9a",
+    "07_Eval_Integration/learned-index/src/index_contract.h": "c58ffdd4bbec6541c37ac7fe36a4155b596eeab9e3dd19824aca165fe1234795",
+    "07_Eval_Integration/learned-index/src/unified/runner.cpp": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376",
+    "07_Eval_Integration/learned-index/src/unified/runner.h": "d935232df2487b8baba03a86fe7fa668c1ca8311d40e7aa4a0f8e96c345518d1"
+  },
+  "inputs": {
+    "skew_full_10000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/skew_full_10000_queries.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "queries_sha256": "2b61bcf411a09dd561b2f34703a0f0b6d4633f2da1402fbc8da954a1d9151997",
+      "rows": 131072,
+      "queries": 10000
+    },
+    "skew_full_100000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "queries_sha256": "df27c3313e992a27954c91174283c9c7dd70e03805139f53bc3505198c4773ac",
+      "rows": 131072,
+      "queries": 100000
+    },
+    "mixed_full_10000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/mixed_full_10000_queries.bin",
+      "rows_sha256": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+      "queries_sha256": "da566e00e8b00085ab12689606ec20ded701fc17fa268b4e90c36174ed501076",
+      "rows": 131072,
+      "queries": 10000
+    },
+    "mixed_full_100000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "rows_sha256": "42bdafaec11e5242a4a795fa01cce40f8c424059513cd8f4bd1de11d96715032",
+      "queries_sha256": "577fe0acabd1de7b79e3263a2c1fa163cfa2ae52ec4f9b2731a445b8c1c7a2f7",
+      "rows": 131072,
+      "queries": 100000
+    },
+    "tranco_full_10000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_full_10000_queries.bin",
+      "rows_sha256": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+      "queries_sha256": "0615c906512c3fcdf94e06b4214030f99a14458fec12dcf47d5ea9ff7609bff4",
+      "rows": 262144,
+      "queries": 10000
+    },
+    "tranco_full_100000": {
+      "rows_path": "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin",
+      "rows_sha256": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+      "queries_sha256": "e101b8be5fa1d27783e1c45453cd00c524eb8f56d85892e0be000d375bb9313c",
+      "rows": 262144,
+      "queries": 100000
+    },
+    "tranco_64k_10000": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_10000_queries.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "queries_sha256": "9f9b3b8f7dff6a28ff2b0190797f491cd0e9eea734ad42b470c5b1549052a10d",
+      "rows": 65536,
+      "queries": 10000
+    },
+    "tranco_64k_100000": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "queries_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "queries_sha256": "eb9918aeb7e50c05b95160572482c17cec63183fa1eb7ff0f7959268667a7f88",
+      "rows": 65536,
+      "queries": 100000
+    }
+  },
+  "binaries": {
+    "acceptance": "0520e1b97e420955697d87e5dc9f0a35a0ad7761d93ad4f122e9364cd7702505",
+    "check": "bc75af5c0de39915a70eff01178fa531a62e463f69024d464de4158190eb8a7c",
+    "san_check": "cf1c78fb40502c3ad38e3916b1e3291f24361edfb5f4907dfe5deb780fc0870e",
+    "bench": "e3f576163450748e61704066849ba7b67eb27bff9a5476d29cd93dbb6ac6f9fc"
+  },
+  "commands": [
+    [
+      "g++",
+      "--version"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DREFINEMENT_BASE_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DREFINEMENT_CORE_SHA256=\"16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932\"",
+      "-DREFINEMENT_ADAPTER_SHA256=\"a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84\"",
+      "-O2",
+      "-DACCEPTANCE_FACTORY_HEADER=\"collision_refinement_adapter.hpp\"",
+      "-DACCEPTANCE_FACTORY_SYMBOL=make_collision_refined_index",
+      "-DACCEPTANCE_SAMPLE_PARAMETER=lookup",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/acceptance0.d",
+      "-c",
+      "adapters/common/contract_acceptance.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/acceptance0.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O2",
+      "-DACCEPTANCE_FACTORY_HEADER=\"collision_refinement_adapter.hpp\"",
+      "-DACCEPTANCE_FACTORY_SYMBOL=make_collision_refined_index",
+      "-DACCEPTANCE_SAMPLE_PARAMETER=lookup",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/acceptance0.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/acceptance"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DREFINEMENT_BASE_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DREFINEMENT_CORE_SHA256=\"16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932\"",
+      "-DREFINEMENT_ADAPTER_SHA256=\"a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84\"",
+      "-O2",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check0.d",
+      "-c",
+      "diagnostics/check_collision_refinement.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check0.o"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DREFINEMENT_BASE_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DREFINEMENT_CORE_SHA256=\"16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932\"",
+      "-DREFINEMENT_ADAPTER_SHA256=\"a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84\"",
+      "-O2",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check1.d",
+      "-c",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check1.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O2",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check0.o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check1.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DREFINEMENT_BASE_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DREFINEMENT_CORE_SHA256=\"16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932\"",
+      "-DREFINEMENT_ADAPTER_SHA256=\"a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84\"",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check0.d",
+      "-c",
+      "diagnostics/check_collision_refinement.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check0.o"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DREFINEMENT_BASE_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DREFINEMENT_CORE_SHA256=\"16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932\"",
+      "-DREFINEMENT_ADAPTER_SHA256=\"a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84\"",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check1.d",
+      "-c",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check1.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check0.o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check1.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DREFINEMENT_BASE_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DREFINEMENT_CORE_SHA256=\"16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932\"",
+      "-DREFINEMENT_ADAPTER_SHA256=\"a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84\"",
+      "-O3",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench0.d",
+      "-c",
+      "diagnostics/bench_collision_refinement.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench0.o"
+    ],
+    [
+      "g++",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-Ilearned-index/src",
+      "-Idiagnostics",
+      "-DREFINEMENT_BASE_SHA256=\"72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d\"",
+      "-DREFINEMENT_CORE_SHA256=\"16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932\"",
+      "-DREFINEMENT_ADAPTER_SHA256=\"a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84\"",
+      "-O3",
+      "-MMD",
+      "-MF",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench1.d",
+      "-c",
+      "learned-index/src/unified/runner.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench1.o"
+    ],
+    [
+      "g++",
+      "-march=x86-64-v3",
+      "-O3",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench0.o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench1.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench"
+    ],
+    [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/acceptance"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/san_check",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_10000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_10000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_10000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_10000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_10000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/skew_full_100000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_10000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_10000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_10000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_10000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_10000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_mixed/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/mixed_full_100000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_10000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_10000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_10000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_10000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_10000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_full_100000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_10000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_10000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_10000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_10000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_10000_queries.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/collision_refinement_20261018b/build/bench",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_100000_queries.bin",
+      "4"
+    ]
+  ],
+  "entry_evidence": {
+    "07_Eval_Integration/results/collision_refinement_entry_20261018/identity.json": "11a2e51424b935e5450f0188ef01e43c4fd66a7a5b4bb0c6749d85e03f60e6c1",
+    "07_Eval_Integration/results/collision_refinement_entry_20261018/results.json": "a08cb1bfed9aa8b4e9c39967e4cace697e78a2ec5ceca96ab686bc8d04881c54",
+    "07_Eval_Integration/results/collision_refinement_entry_20261018/decision.json": "e3e13cb459fd9b6c376e7b25aee7cb24f3d4b1019486528fa6fcb939d0107c2e",
+    "07_Eval_Integration/results/collision_refinement_entry_20261018/domain.json": "b566ad6cd1fee2b4000d64139c3e5ddf39193931967b8c59c1e24573a2f8a35c"
+  },
+  "descriptor": {
+    "B_core": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d",
+    "D1_bundle": "16d7f69578b4ae5518bd64985973845ed72cd7b2eaea250eb24d8b0de08a1932",
+    "adapter": "a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84"
+  },
+  "scope": "D1 one local prefix level; complete v1 queries; B controls same layout; no ART/HOT ranking; production untouched",
+  "protocol": "5 processes x 6 even Williams rows; 200k immediate warm-up and 200k timed finds; B and D1 same-instance A/A; max symmetric AA band",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+}

@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "archived_sources": 15,
+  "changed_sources": [
+    "07_Eval_Integration/diagnostics/run_collision_refinement.py",
+    "07_Eval_Integration/diagnostics/verify_collision_refinement.py"
+  ],
+  "candidate_bundle_unchanged": true,
+  "timing_in_failed_run": false,
+  "benchmark_binary_unchanged": true
+}

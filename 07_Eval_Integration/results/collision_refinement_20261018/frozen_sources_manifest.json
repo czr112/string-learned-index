@@ -1,0 +1,62 @@
+{
+  "02_Code_and_Experiments/validation_e25_20260918/physical_locator_index.hpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/02_Code_and_Experiments/validation_e25_20260918/physical_locator_index.hpp",
+    "sha256": "72250315fdbce45ed94cb0b4590c581a9a0d4046b13bb796f315d8e64926377d"
+  },
+  "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp",
+    "sha256": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089"
+  },
+  "07_Eval_Integration/adapters/common/contract_acceptance.cpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/adapters/common/contract_acceptance.cpp",
+    "sha256": "758bab219b971b452e053c524f8c396f255c488a2482b4c15132366872fce153"
+  },
+  "07_Eval_Integration/diagnostics/COLLISION_REFINEMENT_SPEC_20261018.md": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/COLLISION_REFINEMENT_SPEC_20261018.md",
+    "sha256": "158797908f3f5fe207b524c9ff996159f4bbfde909488904e701682366f668ae"
+  },
+  "07_Eval_Integration/diagnostics/bench_collision_refinement.cpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/bench_collision_refinement.cpp",
+    "sha256": "4283df9840caa946f17321ee8139eed4422428f820a80bc37ecaf7e8b62bab35"
+  },
+  "07_Eval_Integration/diagnostics/check_collision_refinement.cpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/check_collision_refinement.cpp",
+    "sha256": "8b9aeeceb4fb68fbd0e79aa45ddaf01305743276ad97d98e27cce68fb9d42c16"
+  },
+  "07_Eval_Integration/diagnostics/collision_refined_index.hpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/collision_refined_index.hpp",
+    "sha256": "d773acd6933333ac4ec905e1886ed9043c800dca1b3a4fc579e264eabfda1db5"
+  },
+  "07_Eval_Integration/diagnostics/collision_refinement.hpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/collision_refinement.hpp",
+    "sha256": "d0a77db51a9abef05bf42a19e7c8442be2626fa0c5c1f4072d605288d86ab41a"
+  },
+  "07_Eval_Integration/diagnostics/collision_refinement_adapter.hpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/collision_refinement_adapter.hpp",
+    "sha256": "a83b8b34dcbf8faa663ef8090e148da2f94c8466cda9f2623aa1d0c7187c7d84"
+  },
+  "07_Eval_Integration/diagnostics/run_collision_refinement.py": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/run_collision_refinement.py",
+    "sha256": "f7d83d4b29264c4e1780b5de9876253e8ec1bdf96588fd9ee0f80784e01b4818"
+  },
+  "07_Eval_Integration/diagnostics/static_input.hpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/static_input.hpp",
+    "sha256": "1e764ea7e7d9b9cce608707921902f350ecdc8ee0c89977459b65e90cc4e825f"
+  },
+  "07_Eval_Integration/diagnostics/verify_collision_refinement.py": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/diagnostics/verify_collision_refinement.py",
+    "sha256": "3d8bf8dc3608026294b18caaed1f1afce88e8557745d285910a415bdc4885f49"
+  },
+  "07_Eval_Integration/learned-index/src/index_contract.h": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/learned-index/src/index_contract.h",
+    "sha256": "c58ffdd4bbec6541c37ac7fe36a4155b596eeab9e3dd19824aca165fe1234795"
+  },
+  "07_Eval_Integration/learned-index/src/unified/runner.cpp": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/learned-index/src/unified/runner.cpp",
+    "sha256": "ecac6e6107734e5f13693a033feb292d574694ddceb660daf7ecf99b6eee1376"
+  },
+  "07_Eval_Integration/learned-index/src/unified/runner.h": {
+    "archive": "07_Eval_Integration/results/collision_refinement_20261018/frozen_sources/07_Eval_Integration/learned-index/src/unified/runner.h",
+    "sha256": "d935232df2487b8baba03a86fe7fa668c1ca8311d40e7aa4a0f8e96c345518d1"
+  }
+}
