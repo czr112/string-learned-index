@@ -1,0 +1,66 @@
+{
+  "timing_short_over_current": {
+    "tranco64_norepl": 0.6111636044893385,
+    "mixed_full_norepl": 0.8742254762173701,
+    "skew_full_norepl": 0.9901919068916192
+  },
+  "short_fence_over_current_fence": {
+    "tranco64_norepl": 0.11404749250058306,
+    "tranco64_miss": 0.11144201365451502,
+    "mixed_full_norepl": 0.3814922104627615,
+    "skew_full_norepl": 1.0000025845572702,
+    "skew_miss": 0.9999993633107839
+  },
+  "short_hit_rate": {
+    "tranco64_norepl": 1,
+    "tranco64_miss": 1,
+    "mixed_full_norepl": 0.640625,
+    "skew_full_norepl": 0,
+    "skew_miss": 0
+  },
+  "useful_pages": {
+    "tranco64_norepl": [
+      32,
+      32
+    ],
+    "tranco64_miss": [
+      32,
+      32
+    ],
+    "mixed_full_norepl": [
+      41,
+      64
+    ],
+    "skew_full_norepl": [
+      0,
+      64
+    ],
+    "skew_miss": [
+      0,
+      64
+    ]
+  },
+  "short_directory_bytes": {
+    "tranco64_norepl": 35072,
+    "tranco64_miss": 35072,
+    "mixed_full_norepl": 70144,
+    "skew_full_norepl": 70144,
+    "skew_miss": 70144
+  },
+  "structural_gate_registered_all_cells": false,
+  "structural_gate_on_applicable_pages": false,
+  "location_mismatches": 0,
+  "timing_gate": true,
+  "clear_gain_cells": [
+    "tranco64_norepl",
+    "mixed_full_norepl"
+  ],
+  "clear_regression_cells": [],
+  "scoped_candidate": true,
+  "candidate_for_full_read_gate": false,
+  "full_read_gate_needs_new_registration": true,
+  "model_parameters_searched": false,
+  "upstream_modified": false,
+  "production_adopted": false,
+  "status": "page-level positioning ablation; root routing excluded from timing"
+}

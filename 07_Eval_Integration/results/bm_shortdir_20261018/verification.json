@@ -1,0 +1,23 @@
+{
+  "status": "verified",
+  "entry_cells": 5,
+  "sanitized_cells": 2,
+  "timing_rows": 540,
+  "main_ratio": 0.6111636044893385,
+  "structural_gate_registered_all_cells": false,
+  "structural_gate_on_applicable_pages": false,
+  "timing_gate": true,
+  "verifier_sha256": "bcf8867de470947f18bea214ea18fcbf428c67a5419a71403260cb0397f60a75",
+  "verifier_sha256_recorded_at_run": "582be340ddf880530e5c59b126eed00ba17b5c0707075838d0c832ad44bfffa1",
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "entry_partition",
+    "sanitized",
+    "pairing",
+    "checksums",
+    "ratios",
+    "decision"
+  ]
+}

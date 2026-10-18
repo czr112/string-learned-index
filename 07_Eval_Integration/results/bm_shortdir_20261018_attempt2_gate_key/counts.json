@@ -1,0 +1,227 @@
+[
+  {
+    "mode": "entry",
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "keys_checked": 131072,
+    "useful_pages": 32,
+    "mismatch": {
+      "bm": 0,
+      "short": 0,
+      "counted": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 2180021,
+      "copy": 2184373,
+      "short_directory": 35072
+    },
+    "current": {
+      "fence_compares": 124343,
+      "fence_per_query": 1.89732,
+      "directory_steps": 273323,
+      "total_compares": 397666,
+      "total_per_query": 6.0679,
+      "blocks": 65536
+    },
+    "short": {
+      "fence_compares": 14181,
+      "fence_per_query": 0.216385,
+      "numeric_compares": 663720,
+      "numeric_per_query": 10.1276,
+      "search_steps": 467851,
+      "bracket_compares": 130333,
+      "prefix_compares": 65536,
+      "fallback_steps": 0,
+      "total_compares": 677901,
+      "total_per_query": 10.3439,
+      "hits": 65536,
+      "fallbacks": 0,
+      "hit_rate": 1,
+      "blocks": 65536
+    },
+    "build_ns": 8565359,
+    "cell": "tranco64_norepl"
+  },
+  {
+    "mode": "entry",
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "keys_checked": 131072,
+    "useful_pages": 32,
+    "mismatch": {
+      "bm": 0,
+      "short": 0,
+      "counted": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 2180021,
+      "copy": 2184373,
+      "short_directory": 35072
+    },
+    "current": {
+      "fence_compares": 124208,
+      "fence_per_query": 1.89526,
+      "directory_steps": 273278,
+      "total_compares": 397486,
+      "total_per_query": 6.06516,
+      "blocks": 65536
+    },
+    "short": {
+      "fence_compares": 13842,
+      "fence_per_query": 0.211212,
+      "numeric_compares": 663646,
+      "numeric_per_query": 10.1264,
+      "search_steps": 467816,
+      "bracket_compares": 130294,
+      "prefix_compares": 65536,
+      "fallback_steps": 0,
+      "total_compares": 677488,
+      "total_per_query": 10.3376,
+      "hits": 65536,
+      "fallbacks": 0,
+      "hit_rate": 1,
+      "blocks": 65536
+    },
+    "build_ns": 9893440,
+    "cell": "tranco64_miss"
+  },
+  {
+    "mode": "entry",
+    "rows": 131072,
+    "queries": 131072,
+    "pages": 64,
+    "keys_checked": 262144,
+    "useful_pages": 41,
+    "mismatch": {
+      "bm": 0,
+      "short": 0,
+      "counted": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 13644910,
+      "copy": 13653614,
+      "short_directory": 70144
+    },
+    "current": {
+      "fence_compares": 238503,
+      "fence_per_query": 1.81963,
+      "directory_steps": 586184,
+      "total_compares": 824687,
+      "total_per_query": 6.29186,
+      "blocks": 131072
+    },
+    "short": {
+      "fence_compares": 90987,
+      "fence_per_query": 0.694176,
+      "numeric_compares": 850390,
+      "numeric_per_query": 6.48796,
+      "search_steps": 599433,
+      "bracket_compares": 166989,
+      "prefix_compares": 83968,
+      "fallback_steps": 242722,
+      "total_compares": 1184099,
+      "total_per_query": 9.03396,
+      "hits": 83968,
+      "fallbacks": 47104,
+      "hit_rate": 0.640625,
+      "blocks": 131072
+    },
+    "build_ns": 40398056,
+    "cell": "mixed_full_norepl"
+  },
+  {
+    "mode": "entry",
+    "rows": 131072,
+    "queries": 131072,
+    "pages": 64,
+    "keys_checked": 262144,
+    "useful_pages": 0,
+    "mismatch": {
+      "bm": 0,
+      "short": 0,
+      "counted": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 13500970,
+      "copy": 13509674,
+      "short_directory": 70144
+    },
+    "current": {
+      "fence_compares": 160956,
+      "fence_per_query": 1.228,
+      "directory_steps": 819716,
+      "total_compares": 980672,
+      "total_per_query": 7.48193,
+      "blocks": 131072
+    },
+    "short": {
+      "fence_compares": 160956,
+      "fence_per_query": 1.228,
+      "numeric_compares": 0,
+      "numeric_per_query": 0,
+      "search_steps": 0,
+      "bracket_compares": 0,
+      "prefix_compares": 0,
+      "fallback_steps": 819716,
+      "total_compares": 980672,
+      "total_per_query": 7.48193,
+      "hits": 0,
+      "fallbacks": 131072,
+      "hit_rate": 0,
+      "blocks": 131072
+    },
+    "build_ns": 37995693,
+    "cell": "skew_full_norepl"
+  },
+  {
+    "mode": "entry",
+    "rows": 131072,
+    "queries": 131072,
+    "pages": 64,
+    "keys_checked": 262144,
+    "useful_pages": 0,
+    "mismatch": {
+      "bm": 0,
+      "short": 0,
+      "counted": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 13500970,
+      "copy": 13509674,
+      "short_directory": 70144
+    },
+    "current": {
+      "fence_compares": 160832,
+      "fence_per_query": 1.22705,
+      "directory_steps": 819743,
+      "total_compares": 980575,
+      "total_per_query": 7.48119,
+      "blocks": 131072
+    },
+    "short": {
+      "fence_compares": 160832,
+      "fence_per_query": 1.22705,
+      "numeric_compares": 0,
+      "numeric_per_query": 0,
+      "search_steps": 0,
+      "bracket_compares": 0,
+      "prefix_compares": 0,
+      "fallback_steps": 819743,
+      "total_compares": 980575,
+      "total_per_query": 7.48119,
+      "hits": 0,
+      "fallbacks": 131072,
+      "hit_rate": 0,
+      "blocks": 131072
+    },
+    "build_ns": 23137942,
+    "cell": "skew_miss"
+  }
+]

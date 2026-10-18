@@ -1,0 +1,224 @@
+[
+  {
+    "cell": "tranco64_norepl",
+    "ratios": {
+      "short/current": {
+        "process_medians": [
+          0.546117601396108,
+          0.7043832664244574,
+          0.589564331151119,
+          0.6111636044893385,
+          0.7049312227423932
+        ],
+        "median": 0.6111636044893385,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "directory/current": {
+        "process_medians": [
+          0.8883318859004588,
+          1.096276243876281,
+          0.9891069303765615,
+          0.9581929615431499,
+          1.000277419251126
+        ],
+        "median": 0.9891069303765615,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "current_AA/current": {
+        "process_medians": [
+          0.9987777002661824,
+          1.0424705663012772,
+          0.9568899084502605,
+          1.0206461271177079,
+          0.9682057302702274
+        ],
+        "median": 0.9987777002661824,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "short_AA/short": {
+        "process_medians": [
+          0.9917527372220478,
+          0.9402259640209069,
+          1.0658983535211424,
+          1.0252945504810889,
+          0.8548671105495189
+        ],
+        "median": 0.9917527372220478,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "current_AA/current": 1.04505230034201,
+      "short_AA/short": 1.1697724566303502
+    },
+    "observed_band": 1.1697724566303502,
+    "ns_per_op": {
+      "current": 247.75929260253906,
+      "current_AA": 249.77359771728516,
+      "short": 152.0193099975586,
+      "short_AA": 148.18911743164062,
+      "directory": 250.71344757080078,
+      "directory_AA": 238.1226348876953
+    }
+  },
+  {
+    "cell": "mixed_full_norepl",
+    "ratios": {
+      "short/current": {
+        "process_medians": [
+          0.8530661778136485,
+          0.8633595073714632,
+          0.9103081303066844,
+          0.8742254762173701,
+          0.9436413729666409
+        ],
+        "median": 0.8742254762173701,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "directory/current": {
+        "process_medians": [
+          0.8862519782117289,
+          0.9499049121685683,
+          1.0556060136021044,
+          0.8873441780201043,
+          0.9393516154091075
+        ],
+        "median": 0.9393516154091075,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "current_AA/current": {
+        "process_medians": [
+          1.0012055668005195,
+          0.9937937414997741,
+          1.0291965090113504,
+          0.9808291183678699,
+          0.973429689401462
+        ],
+        "median": 0.9937937414997741,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "short_AA/short": {
+        "process_medians": [
+          1.1256187437587302,
+          0.9876033383177363,
+          0.9732458538031319,
+          0.9441092614382953,
+          0.9245611760469435
+        ],
+        "median": 0.9732458538031319,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "current_AA/current": 1.0291965090113504,
+      "short_AA/short": 1.1256187437587302
+    },
+    "observed_band": 1.1256187437587302,
+    "ns_per_op": {
+      "current": 480.13751220703125,
+      "current_AA": 480.93228912353516,
+      "short": 434.7031898498535,
+      "short_AA": 432.56615447998047,
+      "directory": 455.4092483520508,
+      "directory_AA": 448.7494773864746
+    }
+  },
+  {
+    "cell": "skew_full_norepl",
+    "ratios": {
+      "short/current": {
+        "process_medians": [
+          0.9594025971685823,
+          0.9901919068916192,
+          0.9954577087270198,
+          1.0026896909893557,
+          0.9840017101399693
+        ],
+        "median": 0.9901919068916192,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "directory/current": {
+        "process_medians": [
+          0.862662328286231,
+          0.9435410251288845,
+          0.9169239851834856,
+          0.8646645337586547,
+          0.905815111457389
+        ],
+        "median": 0.905815111457389,
+        "faster": 5,
+        "slower": 0,
+        "clear_gain": true,
+        "clear_regression": false
+      },
+      "current_AA/current": {
+        "process_medians": [
+          0.9383795306742926,
+          1.01220800012621,
+          0.9432013524058818,
+          0.9817732521861677,
+          0.9991294662088014
+        ],
+        "median": 0.9817732521861677,
+        "faster": 4,
+        "slower": 1,
+        "clear_gain": false,
+        "clear_regression": false
+      },
+      "short_AA/short": {
+        "process_medians": [
+          1.0108596278112545,
+          0.9877807545509687,
+          1.0173703929870312,
+          0.9683201766847171,
+          0.9858911461675384
+        ],
+        "median": 0.9877807545509687,
+        "faster": 3,
+        "slower": 2,
+        "clear_gain": false,
+        "clear_regression": false
+      }
+    },
+    "aa_bands": {
+      "current_AA/current": 1.0656668941632057,
+      "short_AA/short": 1.0327162689346685
+    },
+    "observed_band": 1.0656668941632057,
+    "ns_per_op": {
+      "current": 555.7531471252441,
+      "current_AA": 543.7710762023926,
+      "short": 545.1339302062988,
+      "short_AA": 545.9407196044922,
+      "directory": 483.5336227416992,
+      "directory_AA": 480.6341323852539
+    }
+  }
+]

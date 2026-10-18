@@ -1,0 +1,92 @@
+[
+  {
+    "mode": "entry",
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "keys_checked": 131072,
+    "useful_pages": 32,
+    "mismatch": {
+      "bm": 0,
+      "short": 0,
+      "counted": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 2180021,
+      "copy": 2184373,
+      "short_directory": 35072
+    },
+    "current": {
+      "fence_compares": 124343,
+      "fence_per_query": 1.89732,
+      "directory_steps": 273323,
+      "total_compares": 397666,
+      "total_per_query": 6.0679,
+      "blocks": 65536
+    },
+    "short": {
+      "fence_compares": 14181,
+      "fence_per_query": 0.216385,
+      "numeric_compares": 663720,
+      "numeric_per_query": 10.1276,
+      "search_steps": 467851,
+      "bracket_compares": 130333,
+      "prefix_compares": 65536,
+      "fallback_steps": 0,
+      "total_compares": 677901,
+      "total_per_query": 10.3439,
+      "hits": 65536,
+      "fallbacks": 0,
+      "hit_rate": 1,
+      "blocks": 65536
+    },
+    "build_ns": 53245390,
+    "cell": "tranco64_norepl"
+  },
+  {
+    "mode": "entry",
+    "rows": 131072,
+    "queries": 131072,
+    "pages": 64,
+    "keys_checked": 262144,
+    "useful_pages": 0,
+    "mismatch": {
+      "bm": 0,
+      "short": 0,
+      "counted": 0,
+      "answer": 0
+    },
+    "memory": {
+      "frozen": 13500970,
+      "copy": 13509674,
+      "short_directory": 70144
+    },
+    "current": {
+      "fence_compares": 160956,
+      "fence_per_query": 1.228,
+      "directory_steps": 819716,
+      "total_compares": 980672,
+      "total_per_query": 7.48193,
+      "blocks": 131072
+    },
+    "short": {
+      "fence_compares": 160956,
+      "fence_per_query": 1.228,
+      "numeric_compares": 0,
+      "numeric_per_query": 0,
+      "search_steps": 0,
+      "bracket_compares": 0,
+      "prefix_compares": 0,
+      "fallback_steps": 819716,
+      "total_compares": 980672,
+      "total_per_query": 7.48193,
+      "hits": 0,
+      "fallbacks": 131072,
+      "hit_rate": 0,
+      "blocks": 131072
+    },
+    "build_ns": 287475425,
+    "cell": "skew_full_norepl"
+  }
+]

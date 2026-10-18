@@ -9,8 +9,8 @@
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
 - **最新上游（10月18日核对）**：[benchmark 003a55bf、模型 e8e05411](07_Eval_Integration/UPSTREAM_UPDATE_20261018.md)。两仓库均有更新，本轮由独立 snapshot 编译，原依赖与旧结果保留。
 - **原 BM 已接入，首轮整体优化未过**：[最新模型同轮结果](07_Eval_Integration/RESULTS_BM_LATEST_20261018.md)。普通/ASan各1315万项、接口各99/99、3000计时行复核通过；窗口纠正仅skew少约22%耗时，mixed未分辨，tranco更新后慢19%。BM六格均慢于自研F5，尚未满足通用ART目标；HOT预检泄漏故本轮无排名。
-- **BM定位候选已否决（10月18日）**：[predicted-first括号入口](07_Eval_Integration/RESULTS_BM_BRACKET_ENTRY_20261018.md)：五格零失配、常驻字节不变，但主格多11.8%的fence比较、mixed多10.1%，skew仅少1.3%；模型窗口宽18–78块决定定位开销，按预登记关闭、不计时。
-- **当前优先任务**：[用新版预测中心减少BM定位开销](docs/NEXT_ACTION_PLAN_20261018_UPSTREAM_MODEL.md)。predicted-first已否决；D1/F5/F6A保留为自研控制，下一步是短目录与cost planner各自消融，再扩F6动态矩阵。
+- **BM定位：括号已否决，短目录在适用格有清晰收益（10月18日）**：[predicted-first括号入口](07_Eval_Integration/RESULTS_BM_BRACKET_ENTRY_20261018.md) 五格零失配但主格多11.8%比较，已关闭；[短目录消融](07_Eval_Integration/RESULTS_BM_SHORTDIR_20261018.md) 让tranco/64k的fence比较降到0.114、页级定位0.611(5/5)，mixed 0.874(5/5)，skew因上游构建期拒绝而不变；登记的五格结构门未通过，仅作场景候选。
+- **当前优先任务**：[用新版预测中心减少BM定位开销](docs/NEXT_ACTION_PLAN_20261018_UPSTREAM_MODEL.md)。predicted-first已否决、短目录已做场景消融；D1/F5/F6A保留为自研控制，下一步是cost/adaptive planner消融与短目录的完整读门（须重新登记），再扩F6动态矩阵。
 - **最新推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前先补原BlockModel接入，再执行[F6B动态轨迹与完整分配账本](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)，动态吞吐、采用及G未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。
