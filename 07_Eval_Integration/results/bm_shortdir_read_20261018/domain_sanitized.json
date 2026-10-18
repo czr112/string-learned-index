@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "domain",
+    "rows": 65536,
+    "queries": 65536,
+    "probes": 1545,
+    "find_checks": 132617,
+    "scans": 1547,
+    "checks": 134164,
+    "mismatches": 0,
+    "pages": 32,
+    "memory": {
+      "total": 2111286,
+      "short_directory": 35072,
+      "fence_views": 131072
+    },
+    "build_ns": 46777492,
+    "cell": "english_words"
+  },
+  {
+    "mode": "domain",
+    "rows": 65536,
+    "queries": 65536,
+    "probes": 1545,
+    "find_checks": 132617,
+    "scans": 1547,
+    "checks": 134164,
+    "mismatches": 0,
+    "pages": 32,
+    "memory": {
+      "total": 7202713,
+      "short_directory": 35072,
+      "fence_views": 131072
+    },
+    "build_ns": 83222415,
+    "cell": "memetracker_phrases"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "shortdir_over_ART": {
+    "english_words": 1.362101675607485,
+    "memetracker_urls": 1.0323186531029291,
+    "memetracker_phrases": 0.9752155950806424,
+    "tranco64_norepl": 1.573052678725052
+  },
+  "shortdir_over_bm_page_window": {
+    "english_words": 0.8557262668922456,
+    "memetracker_urls": 0.8865640173025618,
+    "memetracker_phrases": 0.8319547595275687,
+    "tranco64_norepl": 0.8408372231706508
+  },
+  "shortdir_over_native_shortdir_first": {
+    "english_words": 0.8828810593564782,
+    "memetracker_urls": 0.7251581828698075,
+    "memetracker_phrases": 0.816229639521024,
+    "tranco64_norepl": 0.7927739816861337
+  },
+  "real_cells_within_1_10": false,
+  "all_cells_within_1_10": false,
+  "metadata_added_share": {
+    "english_words": 0.07869327035749775,
+    "memetracker_urls": 0.026202611618640216,
+    "memetracker_phrases": 0.023066863833113994,
+    "tranco64_norepl": 0.07069000875626191
+  },
+  "metadata_within_5_percent": false,
+  "clear_gain_cells": [],
+  "clear_regression_cells": [
+    "english_words",
+    "tranco64_norepl"
+  ],
+  "beats_replaced_page_path": true,
+  "production_adopted": false,
+  "default_changed": false,
+  "status": "static read-only candidate gate; no dynamic operations measured"
+}

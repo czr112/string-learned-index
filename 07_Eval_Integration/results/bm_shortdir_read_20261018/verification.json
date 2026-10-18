@@ -1,0 +1,34 @@
+{
+  "status": "verified",
+  "cells": 4,
+  "timing_rows": 960,
+  "domain_cells": 4,
+  "sanitized_domains": 2,
+  "shortdir_over_ART": {
+    "english_words": 1.362101675607485,
+    "memetracker_urls": 1.0323186531029291,
+    "memetracker_phrases": 0.9752155950806424,
+    "tranco64_norepl": 1.573052678725052
+  },
+  "editable_sources": {
+    "07_Eval_Integration/diagnostics/BM_SHORTDIR_READ_SPEC_20261018.md": {
+      "current": "1b40d837bd06d1f732eaf10ee5c46b2a47b673258b2ea85a9b06c7bc6a5c08bd",
+      "recorded_at_run": "1b40d837bd06d1f732eaf10ee5c46b2a47b673258b2ea85a9b06c7bc6a5c08bd"
+    },
+    "07_Eval_Integration/diagnostics/verify_bm_shortdir_read.py": {
+      "current": "066d520f08ec55d0b892558ffcef7e8b0969bbccd32b8e113b9d894aec65890b",
+      "recorded_at_run": "066d520f08ec55d0b892558ffcef7e8b0969bbccd32b8e113b9d894aec65890b"
+    }
+  },
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "domain",
+    "sanitized_domain",
+    "structure",
+    "checksums",
+    "ratios",
+    "decision"
+  ]
+}

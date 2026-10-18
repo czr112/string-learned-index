@@ -79,7 +79,10 @@ mixed未分辨，tranco dirty慢19%，整体门失败。BM六格均明显慢于�
   完整工厂与本项目BM页接入为0.987–1.104且均未分辨，**“接入方式拖慢”的假设未获支持**，差距在共有的预测/验证工作。
   上游自带`-shortdir-first`比`delta`快0.846/0.944/0.900；自研F5在URL/短语为0.949/0.938（清晰更快）。窗口纠正再次被真实数据否定（`bm-page-base`三格均快于window）。
   上游快照`related_works`未初始化，其自带ART/HOT基线不可用；HOT继续缺席。
-- 原BM接入、真实键泛化及页内短目录消融已完成，预测前驱括号关闭，完整上游参照已建立。下一步按新长期计划补**短目录完整读门**（原生`-shortdir-first`作参照、正式集成去掉计数副本并计入fence视图空间），再做预测块payload探测与cost/adaptive独立消融。之后再接回[F6B真实动态轨迹、完整分配及F6C同能力矩阵](../docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)，覆盖95/5、80/20、均匀/集中写、替换/增长及Context16/ART/HOT。E剩余项、F完整动态比较与G仍未完成。
+- **短目录完整读门：机制有效，通用门未过**：[四格完整find与全域门](RESULTS_BM_SHORTDIR_READ_20261018.md)。只读候选自持有页与路由向量，去掉计数副本、计入fence视图空间；四格全域门各134,164项、失配0。
+  shortdir/ART=1.362/1.032/0.975/1.573；shortdir/bm-page-window=**0.832–0.887**（四格5/5更清晰更快）；shortdir/原生sdf=0.725–0.883。
+  登记门（三类真实键≤1.10）与元数据5%门（words 7.87%、tranco 7.07%）均**未通过**，故不进入采用、不改门；短目录保留为组件级证据，剩余差距在模型/预测侧。
+- 原BM接入、真实键泛化、页内短目录、完整上游参照与短目录完整读门均已完成，预测前驱括号关闭。下一步按新长期计划补**短目录完整读门**（原生`-shortdir-first`作参照、正式集成去掉计数副本并计入fence视图空间），再做预测块payload探测与cost/adaptive独立消融。之后再接回[F6B真实动态轨迹、完整分配及F6C同能力矩阵](../docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)，覆盖95/5、80/20、均匀/集中写、替换/增长及Context16/ART/HOT。E剩余项、F完整动态比较与G仍未完成。
   相对ART的通用短键优势仍未建立；HOT固定适配器的sanitizer泄漏待独立处理，本轮不排名。生产Index、B核心、原S3只读核心、原正式工厂、全部默认与既有实验记录均未改；原7.8%失败继续保留。
 
 审计：`diagnostics/audit_static_strategy.py`与`results/strategy_audit_20261018/summary.json`。

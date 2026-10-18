@@ -12,7 +12,8 @@
 - **原 BM 已接入，首轮整体优化未过**：[最新模型同轮结果](07_Eval_Integration/RESULTS_BM_LATEST_20261018.md)。普通/ASan各1315万项、接口各99/99、3000计时行复核通过；窗口纠正仅skew少约22%耗时，mixed未分辨，tranco更新后慢19%。BM六格均慢于自研F5，尚未满足通用ART目标；HOT预检泄漏故本轮无排名。
 - **BM定位：括号已否决，短目录在适用格有清晰收益（10月18日）**：[predicted-first括号入口](07_Eval_Integration/RESULTS_BM_BRACKET_ENTRY_20261018.md) 五格零失配但主格多11.8%比较，已关闭；[短目录消融](07_Eval_Integration/RESULTS_BM_SHORTDIR_20261018.md) 让tranco/64k的fence比较降到0.114、页级定位0.611(5/5)，mixed 0.874(5/5)，skew因上游构建期拒绝而不变；登记的五格结构门未通过，仅作场景候选。
 - **上游完整工厂参照已建立（10月18日）**：[三真实键类型九臂同轮](07_Eval_Integration/RESULTS_BM_NATIVE_20261018.md)：`block-residual-delta/ART`=1.704/1.372/1.352（三格清晰更慢），`-shortdir-first/ART`=1.492/1.315/1.194；完整工厂与本项目BM页接入为0.987–1.104未分辨，说明瓶颈是共有的预测/验证工作而非接入方式；F5在URL/短语反超ART。
-- **当前优先任务**：[完整上游参照与短目录完整读门](docs/LONG_TERM_BM_PLAN_20261018.md)。完整原生参照已完成；下一步给短目录登记完整读门（原生`-shortdir-first`作参照、正式集成计入fence视图空间），再做预测块payload探测与cost/adaptive，F6动态矩阵后移。
+- **短目录完整读门已做（10月18日）**：[四格完整find+全域门](07_Eval_Integration/RESULTS_BM_SHORTDIR_READ_20261018.md)：shortdir/ART=1.362/1.032/0.975/1.573，但相对被替换的BM页路径**0.832–0.887（四格清晰更快）**；三类真实键≤1.10门与元数据5%门（7.87%/7.07%）均未过，只保留组件级证据。
+- **当前优先任务**：[阶段2必要查询步骤](docs/LONG_TERM_BM_PLAN_20261018.md)。完整原生参照与短目录完整读门已完成；下一步做预测块payload探测（命中即返回、未命中仍走安全纠错），cost/adaptive另开一组，F6动态矩阵后移。
 - **最新推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前先补原BlockModel接入，再执行[F6B动态轨迹与完整分配账本](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)，动态吞吐、采用及G未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。
