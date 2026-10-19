@@ -1,0 +1,1010 @@
+[
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 2685021,
+    "output_heap_bytes": 2685021,
+    "retains_input": false,
+    "build_ns": 7679388,
+    "self_report": {
+      "owned": 1943999,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 5800960,
+      "rss_kib": 17844,
+      "hwm_kib": 17844
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 7752352,
+      "rss_kib": 18192,
+      "hwm_kib": 20724
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 10472288,
+      "rss_kib": 24528,
+      "hwm_kib": 24528
+    },
+    "cell": "english_words_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 7887702,
+    "output_heap_bytes": 7887702,
+    "retains_input": false,
+    "build_ns": 14064777,
+    "self_report": {
+      "owned": 6183832,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 30499840,
+      "rss_kib": 39764,
+      "hwm_kib": 39764
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 36732672,
+      "rss_kib": 48596,
+      "hwm_kib": 48596
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 45612960,
+      "rss_kib": 51092,
+      "hwm_kib": 51092
+    },
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 8336944,
+    "output_heap_bytes": 8336944,
+    "retains_input": false,
+    "build_ns": 21007537,
+    "self_report": {
+      "owned": 7064526,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 31438528,
+      "rss_kib": 37404,
+      "hwm_kib": 37404
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 38693008,
+      "rss_kib": 50460,
+      "hwm_kib": 50460
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 47784000,
+      "rss_kib": 52956,
+      "hwm_kib": 52956
+    },
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 100000,
+    "queries": 100000,
+    "hits": 90000,
+    "semantic_checks": 400000,
+    "checksum": 15428266463597597133,
+    "input_heap_bytes": 5341429,
+    "output_heap_bytes": 4098549,
+    "retains_input": false,
+    "build_ns": 9697176,
+    "self_report": {
+      "owned": 2947855,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 8812336,
+      "rss_kib": 25808,
+      "hwm_kib": 25808
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 11771936,
+      "rss_kib": 27920,
+      "hwm_kib": 27920
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 15924688,
+      "rss_kib": 30512,
+      "hwm_kib": 34256
+    },
+    "cell": "english_words_100000_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 2685021,
+    "output_heap_bytes": 2658440,
+    "retains_input": true,
+    "build_ns": 264273380,
+    "self_report": {
+      "owned": 513344,
+      "adapter": 0,
+      "retained": 2685021
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 5800960,
+      "rss_kib": 17844,
+      "hwm_kib": 17844
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 6326384,
+      "rss_kib": 18036,
+      "hwm_kib": 18036
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 6393536,
+      "rss_kib": 20916,
+      "hwm_kib": 20916
+    },
+    "cell": "english_words_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 7887702,
+    "output_heap_bytes": 7885269,
+    "retains_input": true,
+    "build_ns": 423476861,
+    "self_report": {
+      "owned": 724576,
+      "adapter": 0,
+      "retained": 7887702
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 30499840,
+      "rss_kib": 39772,
+      "hwm_kib": 39772
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 31250768,
+      "rss_kib": 40732,
+      "hwm_kib": 40732
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 40157696,
+      "rss_kib": 42844,
+      "hwm_kib": 42844
+    },
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 8336944,
+    "output_heap_bytes": 8202826,
+    "retains_input": true,
+    "build_ns": 333234559,
+    "self_report": {
+      "owned": 635504,
+      "adapter": 0,
+      "retained": 8336944
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 31438528,
+      "rss_kib": 37404,
+      "hwm_kib": 37404
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 32088064,
+      "rss_kib": 37596,
+      "hwm_kib": 37596
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 41170752,
+      "rss_kib": 43932,
+      "hwm_kib": 43932
+    },
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 100000,
+    "queries": 100000,
+    "hits": 90000,
+    "semantic_checks": 400000,
+    "checksum": 15428266463597597133,
+    "input_heap_bytes": 5341429,
+    "output_heap_bytes": 5300238,
+    "retains_input": true,
+    "build_ns": 412188244,
+    "self_report": {
+      "owned": 792976,
+      "adapter": 0,
+      "retained": 5341429
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 8812336,
+      "rss_kib": 25812,
+      "hwm_kib": 25812
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 9618416,
+      "rss_kib": 26004,
+      "hwm_kib": 26004
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 9722080,
+      "rss_kib": 30804,
+      "hwm_kib": 30804
+    },
+    "cell": "english_words_100000_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 2685021,
+    "output_heap_bytes": 2658440,
+    "retains_input": false,
+    "build_ns": 7473150,
+    "self_report": {
+      "owned": null,
+      "adapter": 524288,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 5800960,
+      "rss_kib": 17844,
+      "hwm_kib": 17844
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 11678576,
+      "rss_kib": 20724,
+      "hwm_kib": 20724
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 11745024,
+      "rss_kib": 25908,
+      "hwm_kib": 25908
+    },
+    "cell": "english_words_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 7887702,
+    "output_heap_bytes": 7885269,
+    "retains_input": false,
+    "build_ns": 15464321,
+    "self_report": {
+      "owned": null,
+      "adapter": 524288,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 30499840,
+      "rss_kib": 39764,
+      "hwm_kib": 39764
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 41111072,
+      "rss_kib": 43796,
+      "hwm_kib": 43796
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 50024320,
+      "rss_kib": 52628,
+      "hwm_kib": 52628
+    },
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 8336944,
+    "output_heap_bytes": 8202826,
+    "retains_input": false,
+    "build_ns": 16848840,
+    "self_report": {
+      "owned": null,
+      "adapter": 524288,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 31438528,
+      "rss_kib": 37400,
+      "hwm_kib": 37400
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 42467744,
+      "rss_kib": 45080,
+      "hwm_kib": 45080
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 51551776,
+      "rss_kib": 54104,
+      "hwm_kib": 54104
+    },
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 100000,
+    "queries": 100000,
+    "hits": 90000,
+    "semantic_checks": 400000,
+    "checksum": 15428266463597597133,
+    "input_heap_bytes": 5341429,
+    "output_heap_bytes": 5300238,
+    "retains_input": false,
+    "build_ns": 13862921,
+    "self_report": {
+      "owned": null,
+      "adapter": 800000,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 8812336,
+      "rss_kib": 25812,
+      "hwm_kib": 25812
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 17792384,
+      "rss_kib": 29652,
+      "hwm_kib": 29652
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 17894912,
+      "rss_kib": 38676,
+      "hwm_kib": 38676
+    },
+    "cell": "english_words_100000_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 2685021,
+    "output_heap_bytes": 2685021,
+    "retains_input": false,
+    "build_ns": 41569544,
+    "self_report": {
+      "owned": 1943999,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 71040,
+      "hwm_kib": 71040
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 80640,
+      "hwm_kib": 80640
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 95808,
+      "hwm_kib": 95808
+    },
+    "cell": "english_words_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 7887702,
+    "output_heap_bytes": 7887702,
+    "retains_input": false,
+    "build_ns": 121058341,
+    "self_report": {
+      "owned": 6183832,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 142272,
+      "hwm_kib": 142272
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 175872,
+      "hwm_kib": 175872
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 199680,
+      "hwm_kib": 199680
+    },
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 8336944,
+    "output_heap_bytes": 8336944,
+    "retains_input": false,
+    "build_ns": 124332604,
+    "self_report": {
+      "owned": 7064526,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 144960,
+      "hwm_kib": 144960
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 179904,
+      "hwm_kib": 179904
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 204096,
+      "hwm_kib": 204096
+    },
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "bm_base",
+    "tracking_enabled": false,
+    "rows": 100000,
+    "queries": 100000,
+    "hits": 90000,
+    "semantic_checks": 400000,
+    "checksum": 15428266463597597133,
+    "input_heap_bytes": 5341429,
+    "output_heap_bytes": 4098549,
+    "retains_input": false,
+    "build_ns": 56578731,
+    "self_report": {
+      "owned": 2947855,
+      "adapter": 16,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 98112,
+      "hwm_kib": 98112
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 112704,
+      "hwm_kib": 112704
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 137088,
+      "hwm_kib": 137088
+    },
+    "cell": "english_words_100000_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 2685021,
+    "output_heap_bytes": 2658440,
+    "retains_input": true,
+    "build_ns": 1409865631,
+    "self_report": {
+      "owned": 513344,
+      "adapter": 0,
+      "retained": 2685021
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 71232,
+      "hwm_kib": 71232
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 142656,
+      "hwm_kib": 142656
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 148800,
+      "hwm_kib": 148800
+    },
+    "cell": "english_words_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 7887702,
+    "output_heap_bytes": 7885269,
+    "retains_input": true,
+    "build_ns": 2968995221,
+    "self_report": {
+      "owned": 724576,
+      "adapter": 0,
+      "retained": 7887702
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 142272,
+      "hwm_kib": 142272
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 268608,
+      "hwm_kib": 268608
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 283776,
+      "hwm_kib": 283776
+    },
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 8336944,
+    "output_heap_bytes": 8202826,
+    "retains_input": true,
+    "build_ns": 2133380359,
+    "self_report": {
+      "owned": 635504,
+      "adapter": 0,
+      "retained": 8336944
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 144960,
+      "hwm_kib": 144960
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 252096,
+      "hwm_kib": 252096
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 267456,
+      "hwm_kib": 267456
+    },
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "native",
+    "tracking_enabled": false,
+    "rows": 100000,
+    "queries": 100000,
+    "hits": 90000,
+    "semantic_checks": 400000,
+    "checksum": 15428266463597597133,
+    "input_heap_bytes": 5341429,
+    "output_heap_bytes": 5300238,
+    "retains_input": true,
+    "build_ns": 2224611058,
+    "self_report": {
+      "owned": 792976,
+      "adapter": 0,
+      "retained": 5341429
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 97920,
+      "hwm_kib": 97920
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 207168,
+      "hwm_kib": 207168
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 217920,
+      "hwm_kib": 217920
+    },
+    "cell": "english_words_100000_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 2685021,
+    "output_heap_bytes": 2658440,
+    "retains_input": false,
+    "build_ns": 37958982,
+    "self_report": {
+      "owned": null,
+      "adapter": 524288,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 71040,
+      "hwm_kib": 71040
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 80448,
+      "hwm_kib": 80448
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 87360,
+      "hwm_kib": 87360
+    },
+    "cell": "english_words_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 7887702,
+    "output_heap_bytes": 7885269,
+    "retains_input": false,
+    "build_ns": 51742405,
+    "self_report": {
+      "owned": null,
+      "adapter": 524288,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 142464,
+      "hwm_kib": 142464
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 159360,
+      "hwm_kib": 159360
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 177024,
+      "hwm_kib": 177024
+    },
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 65536,
+    "queries": 65536,
+    "hits": 58983,
+    "semantic_checks": 262144,
+    "checksum": 4748332496146796791,
+    "input_heap_bytes": 8336944,
+    "output_heap_bytes": 8202826,
+    "retains_input": false,
+    "build_ns": 78834863,
+    "self_report": {
+      "owned": null,
+      "adapter": 524288,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 145152,
+      "hwm_kib": 145152
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 162240,
+      "hwm_kib": 162240
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 180864,
+      "hwm_kib": 180864
+    },
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "san"
+  },
+  {
+    "arm": "ART",
+    "tracking_enabled": false,
+    "rows": 100000,
+    "queries": 100000,
+    "hits": 90000,
+    "semantic_checks": 400000,
+    "checksum": 15428266463597597133,
+    "input_heap_bytes": 5341429,
+    "output_heap_bytes": 5300238,
+    "retains_input": false,
+    "build_ns": 56984478,
+    "self_report": {
+      "owned": null,
+      "adapter": 800000,
+      "retained": 0
+    },
+    "input_loaded": null,
+    "built": null,
+    "found": null,
+    "scanned": null,
+    "index_destroyed": null,
+    "input_destroyed": null,
+    "released": null,
+    "system_before": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 98304,
+      "hwm_kib": 98304
+    },
+    "system_built": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 112320,
+      "hwm_kib": 112320
+    },
+    "system_scanned": {
+      "mallinfo2_uordblks": 0,
+      "rss_kib": 123840,
+      "hwm_kib": 123840
+    },
+    "cell": "english_words_100000_s20261019",
+    "flavor": "san"
+  }
+]

@@ -1,0 +1,1479 @@
+{
+  "model": "3894c767338a865d2920ba5e21283827fea1d803",
+  "benchmark": "003a55bf674b43350fbb70242070fb74f33a56ce",
+  "inputs": {
+    "english_words_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "rows_sha256": "276ada50cc0702cc88153a478f5669702f938b61c87d8b4bb51bf8d2c4ae6dbf",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin",
+      "queries": 65536,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_65536_s20261019_string",
+      "dataset_sha256": "6de4f0fdee9a434e8d85fccca3e9f98b25e57af2fb35a5c530998fcae9e7ccda",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_65536_s20261019_string.json",
+      "sidecar_sha256": "f00f40dfbd0006eb81787f38ec4002ae335ec7b8b0e2aa8f4c2cb1bce5ba1669",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 65536,
+        "key_bytes": {
+          "min": 1,
+          "median": 9,
+          "p95": 15,
+          "max": 24,
+          "mean": 9.4132080078125
+        },
+        "adjacent_lcp_bytes": {
+          "min": 0,
+          "median": 4,
+          "p95": 9,
+          "max": 20,
+          "mean": 4.78789959563592
+        },
+        "non_ascii_keys": 0
+      },
+      "queries_sha256": "0c75743c71d636968ce75f341e7feb62b19a434a1253dd7b7bdd54bafb571d48"
+    },
+    "memetracker_urls_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "rows_sha256": "6139623b14bea03999ec601e79be3d50b107d7ce9e6ec6718138f2b507b3ae83",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin",
+      "queries": 65536,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_urls_65536_s20261019_string",
+      "dataset_sha256": "a3e619e846aade0bcd6a8e3a0142536152b9b5073b4e65cfe8d4770fb16aa22b",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_urls_65536_s20261019_string.json",
+      "sidecar_sha256": "5ab2fe8f2af2649cc4c0bf75e936b99f4aaa9da23eddfa57fdc93471ae84a1c7",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 65536,
+        "key_bytes": {
+          "min": 19,
+          "median": 75,
+          "p95": 137,
+          "max": 471,
+          "mean": 79.31965637207031
+        },
+        "adjacent_lcp_bytes": {
+          "min": 7,
+          "median": 32,
+          "p95": 67,
+          "max": 197,
+          "mean": 32.30666056305791
+        },
+        "non_ascii_keys": 19
+      },
+      "queries_sha256": "603d691789512a9851af3969e100efca1c1327388be9a91a701bd063ccd251a9"
+    },
+    "memetracker_phrases_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "rows_sha256": "20b64e9c368316acdde62dc866ac022b29346da39948fe7d4536c085252614e4",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin",
+      "queries": 65536,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_phrases_65536_s20261019_string",
+      "dataset_sha256": "2cd728e59b0f14d3ccae3754899579b4e4f0288d7cbf3a9c9ae8b7894c1820ce",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_phrases_65536_s20261019_string.json",
+      "sidecar_sha256": "b918cde84ddd77ce45f2fc1018669504283590eb5012e269c7e3f676edef6bc8",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 65536,
+        "key_bytes": {
+          "min": 5,
+          "median": 48,
+          "p95": 255,
+          "max": 3893,
+          "mean": 85.56210327148438
+        },
+        "adjacent_lcp_bytes": {
+          "min": 0,
+          "median": 9,
+          "p95": 26,
+          "max": 479,
+          "mean": 12.209628442816815
+        },
+        "non_ascii_keys": 0
+      },
+      "queries_sha256": "b8c699d5fb2748775a4566cf68141e37ea5e385f85333b31b569a1cd6e2d8b6f"
+    },
+    "english_words_100000_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "rows_sha256": "ff39c698f162acef2681a903a12f966bbcb01aa694c063fd745dac398ee98089",
+      "rows": 100000,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin",
+      "queries": 100000,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_100000_s20261019_string",
+      "dataset_sha256": "66b485920de858cf14a2d43bf762f21ac75a049b6b8685bf98f50cdd63291ac8",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_100000_s20261019_string.json",
+      "sidecar_sha256": "575c46b2679795d4bd61182bd9f77a4c99ead0c52a9744525e6921ad1c2c1c65",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 100000,
+        "key_bytes": {
+          "min": 1,
+          "median": 9,
+          "p95": 15,
+          "max": 24,
+          "mean": 9.41127
+        },
+        "adjacent_lcp_bytes": {
+          "min": 0,
+          "median": 5,
+          "p95": 9,
+          "max": 20,
+          "mean": 5.112631126311263
+        },
+        "non_ascii_keys": 0
+      },
+      "queries_sha256": "00618bb2a48a721dde66a30b213f57f66051fa46052c7ad53f8bbfc704e470ef"
+    }
+  },
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src/art.c": "b65f20fdc160a6e4c0b1b390086f682d381e3638d8690594158ad75cda33396e",
+    "02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src/art.h": "4443de6fd42581982167f7826f63bd956d21a958f204575e52512e007deab5af",
+    "07_Eval_Integration/adapters/art/art_adapter.cpp": "9e293d54a29455305a4fdbdebba626ce81d10aede221aff2de381796da871a94",
+    "07_Eval_Integration/adapters/art/art_adapter.h": "7dc60a0aebf183a5b539b15526fee8a85f2833bdedca1796e4c871c6e176782d",
+    "07_Eval_Integration/adapters/common/contract_acceptance.cpp": "758bab219b971b452e053c524f8c396f255c488a2482b4c15132366872fce153",
+    "07_Eval_Integration/diagnostics/BM_SPACE_SPEC_20261019.md": "5112dda35fde1b0d8a123e487b6c8b8a1011794421f90f475f25523c76211f08",
+    "07_Eval_Integration/diagnostics/allocation_shared_fixture.c": "978c153667f030954d3e03d4213729e73dc6780806fba9dd1afa6bbd9ff26471",
+    "07_Eval_Integration/diagnostics/allocation_trace.cpp": "48c8926eb50813e745e28bef38d86b5db540359da0402d94c8d8c4446732bf1a",
+    "07_Eval_Integration/diagnostics/allocation_trace.hpp": "f0fa76a4cf730f162d0a9ccecbc71489ddeb8ef868821c698862d610b93e5046",
+    "07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "07_Eval_Integration/diagnostics/bm_page_index.hpp": "c3e54dc2638e0ba1f5f71a205b1f29dab950d57dc4bec2974ab88f70da87f082",
+    "07_Eval_Integration/diagnostics/bm_page_root.hpp": "c7b9f57d8b3fc47e0702d5239408ea334b243afe84b7e1f6bba1fdaa10fac5c6",
+    "07_Eval_Integration/diagnostics/bm_space_adapter.hpp": "a733ed1af97ea9c378a46e542d57d56458b573099bbb76f317c9840aede571ab",
+    "07_Eval_Integration/diagnostics/borrowed_contract_acceptance.cpp": "a914458b40b79833577ee49bd7352f08a00828f65b3bc319793ce4371288956e",
+    "07_Eval_Integration/diagnostics/check_allocation_trace.cpp": "5ae09e873af79da0f0d131e75699a949f4c9be956d7fd7d7450149cdbb890f90",
+    "07_Eval_Integration/diagnostics/generate_borrowed_contract_acceptance.py": "4d475f6db9fdfd07e01f2d04e9b814f59ed712d8e54458a64d255a90798cb7ae",
+    "07_Eval_Integration/diagnostics/ledger_bm_space.cpp": "ef76abff033c6529771620c0565a60623763903220c70a9f4e3a837abd93043e",
+    "07_Eval_Integration/diagnostics/run_allocation_fixture.py": "92d1745a0ccc79c5196f7e2f0d4b9a03764a09768d82cc8d563dff95ea40ca57",
+    "07_Eval_Integration/diagnostics/run_bm_space_gen.py": "04df1fc67e7473559fdf16282986722bd6473b8cabc92e6eada32a8ea427881e",
+    "07_Eval_Integration/diagnostics/static_input.hpp": "1e764ea7e7d9b9cce608707921902f350ecdc8ee0c89977459b65e90cc4e825f",
+    "07_Eval_Integration/diagnostics/verify_bm_space_gen.py": "1fb8b29c1e164b3b64b5670836ad24796feab84f11a32539c1e3b4c3fce52e80",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h": "3587addd4e4fda743975534a95173ccb8d09d38029f5239ff3998574b45c3a39",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp": "fbbb922511bc590b1f1c68b77309d25001c3e98047975c5d9358c7b70092aa5b",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.h": "9f3b0b658da7caf143dc14822a6de5772fa5d497dbb7b4fcabe2fe9f1adc64f7",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/benchmark/factories.h": "9a90e1543d60daeaf11e9a4bfa18e9b277d6457cd5a59ed0d1d33e1ccdb29335",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/benchmark/model_factories.cpp": "84752850f9de5c205264fb10bb2b9162ba8f1a793bb12e1a47d4bb80b9caa28c",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/learned_index.cpp": "eda97e1f322d70b1844a5a7245ca3739c34dc814ab9b3400949ab57c1e5222bd",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/learned_index.h": "8759ff7392dc4d9566c06ed8396cb9dfbfded5c70bff4313b40fa198d5359640",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/lookup_profile.h": "4f4750fe6f84db48900b56f434fd94b8913b3cad4886a0f2f675306653c31140",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.cpp": "b3c5b675d53aef1cb4a4479ec0bcc873b39bf6dd6830b02ed43086fea68ce35e",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.h": "2ec2b0188b68960f7cbe8114fc5b265b425a9c7fd64a9b6d1eea3e7fda9b94ef",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/region_planner.cpp": "6510939f0c01f257df53c04d9f218908a1a2ec8593bf7f9bfab03ba46725cb5e",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/region_planner.h": "aee20f2880f534a4f66295c2e83afd0814d8b511cf21cfae7359d7267d81dca9",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/residual_tags.cpp": "958f03e61ce20c18edfb2844628ef8358ca81fa3a05ab21f5e13318f0480a7ca",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/residual_tags.h": "c517de7a6729b860e63793dc119672017b958da97ecfb15b6c510ef89b181679",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/short_directory.h": "70cd061c6e0807b5ffda049cf754e618aea85892608c16516bdc832639988537",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/tag_probe.h": "598f7e7f903c5b2c8cee73649dda88435020c890012c05360fe6638e817124fc"
+  },
+  "artifacts": {
+    "build/art_clean.o": "aa9a89c5bc5d0d0428c471a1456de91a1b4389de578379b82ca9c04adad4d3f0",
+    "build/art_san.o": "720985067a1313703b5791bf5070e6070912015a347659feea6fa3a0db5742bf",
+    "build/art_trace.o": "aa9a89c5bc5d0d0428c471a1456de91a1b4389de578379b82ca9c04adad4d3f0",
+    "build/clean": "1e130797de5ec5f2d210ecdcee681e7a43008446e3eeaf543ba44dd82ba20553",
+    "build/san": "5b3e50e90f82780ea929509dd6f7c97318b473582414f4a2a15aab662e6ef2a8",
+    "build/trace": "bf662e234c51c52ba60c3692d4d31f7a227a40fa18099a65ff09be108929bdaa"
+  },
+  "libraries": {
+    "07_Eval_Integration/results/upstream_update_audit_20261019c/build/src/libblocklearn_adapter.a": "2fb7c4eed1bed0e264c503b5d26274d7b35bdc2b23fbc70dc92b765106e7892d",
+    "07_Eval_Integration/results/upstream_update_audit_20261019c/build/src/libblocklearn_core.a": "0619f1c2321fe952cad4d7fcd8ba7a1f4208a9a92d4d59e70be1ac7499eed00b"
+  },
+  "cpu": 0,
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "libc": "glibc 2.39",
+  "fixture_identity_sha256": "20590a462fc397f690963b36660e713e7ba39d1422715a77337d5da301ac7734",
+  "fixture_verification_sha256": "660ef253653bd9f065d1e395bf2f7f26ab0412429dba9272f396bd194cfe9659",
+  "commands": [
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-DBM_ALLOCATION_TRACE=1",
+      "-MM",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/residual_tags.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/region_planner.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/learned_index.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/benchmark/model_factories.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/ledger_bm_space.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/art/art_adapter.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/allocation_trace.cpp"
+    ],
+    [
+      "gcc",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-MM",
+      "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src/art.c"
+    ],
+    [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/allocation_trace_fixture_20261019/build/check_trace"
+    ],
+    [
+      "gcc",
+      "-std=c11",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-O3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-c",
+      "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src/art.c",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/art_clean.o"
+    ],
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-O3",
+      "-DBM_ALLOCATION_TRACE=0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/ledger_bm_space.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/art/art_adapter.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/upstream_update_audit_20261019c/build/src/libblocklearn_adapter.a",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/upstream_update_audit_20261019c/build/src/libblocklearn_core.a",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/art_clean.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean"
+    ],
+    [
+      "gcc",
+      "-std=c11",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-O3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-c",
+      "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src/art.c",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/art_trace.o"
+    ],
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-O3",
+      "-DBM_ALLOCATION_TRACE=1",
+      "-rdynamic",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/allocation_trace.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/ledger_bm_space.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/art/art_adapter.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/upstream_update_audit_20261019c/build/src/libblocklearn_adapter.a",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/upstream_update_audit_20261019c/build/src/libblocklearn_core.a",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/art_trace.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace"
+    ],
+    [
+      "gcc",
+      "-std=c11",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-c",
+      "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src/art.c",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/art_san.o"
+    ],
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-DBM_ALLOCATION_TRACE=0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/ledger_bm_space.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/art/art_adapter.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/residual_tags.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/region_planner.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/learned_index.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/benchmark/model_factories.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/art_san.o",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "--contract"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "--contract"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "--contract"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "bm_base",
+      "--contract"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "native",
+      "--contract"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "ART",
+      "--contract"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/san",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/trace",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "native",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "ART",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_20261019/build/clean",
+      "bm_base",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin"
+    ]
+  ],
+  "limits": [
+    "Linux glibc C/C++ replaceable allocation entry points; hidden libc and direct mmap are outside coverage",
+    "requested and usable bytes are not whole-process physical RAM",
+    "RSS/HWM include common input, oracle, queries and static tracker",
+    "independent sampler seed (three real types at 65536) plus one 100000-key scale cell; the unchanged sampler caps count at 100000",
+    "no query or scan throughput measurement or adoption"
+  ],
+  "direct_bypass_calls": []
+}

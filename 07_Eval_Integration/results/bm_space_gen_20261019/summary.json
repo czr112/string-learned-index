@@ -1,0 +1,394 @@
+[
+  {
+    "cell": "english_words_s20261019",
+    "arms": {
+      "bm_base": {
+        "owned_requested": 1945039,
+        "retained_requested": 0,
+        "resident_requested": 1945039,
+        "resident_usable": 1947144,
+        "build_peak_requested": 4690296,
+        "build_peak_usable": 4709088,
+        "find_peak_requested": 1945039,
+        "find_allocations": 0,
+        "scan_peak_requested": 7251500,
+        "scan_output_requested": 2685021,
+        "clean_build_ns": [
+          5382795,
+          5932669,
+          8710595,
+          5539905,
+          9010096
+        ],
+        "clean_build_median_ns": 5932669,
+        "self_report": {
+          "owned": 1943999,
+          "adapter": 16,
+          "retained": 0
+        },
+        "resident_over_ART": 0.4304836990490153,
+        "build_peak_over_ART": 1.038074800410069,
+        "build_time_over_ART": 0.8352071050483928,
+        "space_necessary": true,
+        "space_target": true,
+        "scoped_entry_gate": false
+      },
+      "native": {
+        "owned_requested": 513888,
+        "retained_requested": 2685021,
+        "resident_requested": 3198909,
+        "resident_usable": 3223680,
+        "build_peak_requested": 3215333,
+        "build_peak_usable": 3240024,
+        "find_peak_requested": 3198909,
+        "find_allocations": 0,
+        "scan_peak_requested": 7145809,
+        "scan_output_requested": 2658440,
+        "clean_build_ns": [
+          216736160,
+          210455017,
+          214786166,
+          200524043,
+          233848036
+        ],
+        "clean_build_median_ns": 214786166,
+        "self_report": {
+          "owned": 513344,
+          "adapter": 0,
+          "retained": 2685021
+        },
+        "resident_over_ART": 0.7079951503497803,
+        "build_peak_over_ART": 0.7116301747750906,
+        "build_time_over_ART": 30.237812342017317,
+        "space_necessary": true,
+        "space_target": false,
+        "scoped_entry_gate": false
+      },
+      "ART": {
+        "owned_requested": 4518264,
+        "retained_requested": 0,
+        "resident_requested": 4518264,
+        "resident_usable": 5084072,
+        "build_peak_requested": 4518264,
+        "build_peak_usable": 5084072,
+        "find_peak_requested": 4518264,
+        "find_allocations": 0,
+        "scan_peak_requested": 8463116,
+        "scan_output_requested": 2658440,
+        "clean_build_ns": [
+          6984249,
+          8353081,
+          7103231,
+          6860687,
+          8105907
+        ],
+        "clean_build_median_ns": 7103231,
+        "self_report": {
+          "owned": null,
+          "adapter": 524288,
+          "retained": 0
+        },
+        "resident_over_ART": 1.0,
+        "build_peak_over_ART": 1.0,
+        "build_time_over_ART": 1.0,
+        "space_necessary": false,
+        "space_target": false,
+        "scoped_entry_gate": false
+      }
+    }
+  },
+  {
+    "cell": "memetracker_urls_s20261019",
+    "arms": {
+      "bm_base": {
+        "owned_requested": 6184872,
+        "retained_requested": 0,
+        "resident_requested": 6184872,
+        "resident_usable": 6187720,
+        "build_peak_requested": 14306375,
+        "build_peak_usable": 14833248,
+        "find_peak_requested": 6184872,
+        "find_allocations": 0,
+        "scan_peak_requested": 16694014,
+        "scan_output_requested": 7887702,
+        "clean_build_ns": [
+          19657544,
+          29385204,
+          16680256,
+          17103271,
+          16955382
+        ],
+        "clean_build_median_ns": 17103271,
+        "self_report": {
+          "owned": 6183832,
+          "adapter": 16,
+          "retained": 0
+        },
+        "resident_over_ART": 0.6698034549144719,
+        "build_peak_over_ART": 1.549338353696249,
+        "build_time_over_ART": 1.3279318582909603,
+        "space_necessary": true,
+        "space_target": true,
+        "scoped_entry_gate": false
+      },
+      "native": {
+        "owned_requested": 725120,
+        "retained_requested": 7887702,
+        "resident_requested": 8612822,
+        "resident_usable": 9124328,
+        "build_peak_requested": 8623310,
+        "build_peak_usable": 9134648,
+        "find_peak_requested": 8612822,
+        "find_allocations": 0,
+        "scan_peak_requested": 16499115,
+        "scan_output_requested": 7885269,
+        "clean_build_ns": [
+          473277139,
+          462053807,
+          416035962,
+          429750777,
+          394406401
+        ],
+        "clean_build_median_ns": 429750777,
+        "self_report": {
+          "owned": 724576,
+          "adapter": 0,
+          "retained": 7887702
+        },
+        "resident_over_ART": 0.932743302070499,
+        "build_peak_over_ART": 0.9338791216372003,
+        "build_time_over_ART": 33.36670207141044,
+        "space_necessary": true,
+        "space_target": false,
+        "scoped_entry_gate": false
+      },
+      "ART": {
+        "owned_requested": 9233861,
+        "retained_requested": 0,
+        "resident_requested": 9233861,
+        "resident_usable": 9786936,
+        "build_peak_requested": 9233861,
+        "build_peak_usable": 9786936,
+        "find_peak_requested": 9233861,
+        "find_allocations": 0,
+        "scan_peak_requested": 17119130,
+        "scan_output_requested": 7885269,
+        "clean_build_ns": [
+          12879630,
+          9860290,
+          13138473,
+          10116012,
+          14032308
+        ],
+        "clean_build_median_ns": 12879630,
+        "self_report": {
+          "owned": null,
+          "adapter": 524288,
+          "retained": 0
+        },
+        "resident_over_ART": 1.0,
+        "build_peak_over_ART": 1.0,
+        "build_time_over_ART": 1.0,
+        "space_necessary": false,
+        "space_target": false,
+        "scoped_entry_gate": false
+      }
+    }
+  },
+  {
+    "cell": "memetracker_phrases_s20261019",
+    "arms": {
+      "bm_base": {
+        "owned_requested": 7065566,
+        "retained_requested": 0,
+        "resident_requested": 7065566,
+        "resident_usable": 7068240,
+        "build_peak_requested": 15515468,
+        "build_peak_usable": 15956976,
+        "find_peak_requested": 7065566,
+        "find_allocations": 0,
+        "scan_peak_requested": 18023950,
+        "scan_output_requested": 8336944,
+        "clean_build_ns": [
+          21665469,
+          17764434,
+          24349693,
+          23108995,
+          23034731
+        ],
+        "clean_build_median_ns": 23034731,
+        "self_report": {
+          "owned": 7064526,
+          "adapter": 16,
+          "retained": 0
+        },
+        "resident_over_ART": 0.7305872209902556,
+        "build_peak_over_ART": 1.6043162923512766,
+        "build_time_over_ART": 1.5468986050014935,
+        "space_necessary": true,
+        "space_target": false,
+        "scoped_entry_gate": false
+      },
+      "native": {
+        "owned_requested": 636048,
+        "retained_requested": 8336944,
+        "resident_requested": 8972992,
+        "resident_usable": 9435456,
+        "build_peak_requested": 8988856,
+        "build_peak_usable": 9451224,
+        "find_peak_requested": 8972992,
+        "find_allocations": 0,
+        "scan_peak_requested": 17177866,
+        "scan_output_requested": 8202826,
+        "clean_build_ns": [
+          336381862,
+          384328438,
+          359862552,
+          338392415,
+          364384220
+        ],
+        "clean_build_median_ns": 359862552,
+        "self_report": {
+          "owned": 635504,
+          "adapter": 0,
+          "retained": 8336944
+        },
+        "resident_over_ART": 0.927817147168082,
+        "build_peak_over_ART": 0.9294575020488925,
+        "build_time_over_ART": 24.166589124964272,
+        "space_necessary": true,
+        "space_target": false,
+        "scoped_entry_gate": false
+      },
+      "ART": {
+        "owned_requested": 9671078,
+        "retained_requested": 0,
+        "resident_requested": 9671078,
+        "resident_usable": 10203984,
+        "build_peak_requested": 9671078,
+        "build_peak_usable": 10203984,
+        "find_peak_requested": 9671078,
+        "find_allocations": 0,
+        "scan_peak_requested": 17873904,
+        "scan_output_requested": 8202826,
+        "clean_build_ns": [
+          15704645,
+          14398406,
+          14890912,
+          19644865,
+          13347830
+        ],
+        "clean_build_median_ns": 14890912,
+        "self_report": {
+          "owned": null,
+          "adapter": 524288,
+          "retained": 0
+        },
+        "resident_over_ART": 1.0,
+        "build_peak_over_ART": 1.0,
+        "build_time_over_ART": 1.0,
+        "space_necessary": false,
+        "space_target": false,
+        "scoped_entry_gate": false
+      }
+    }
+  },
+  {
+    "cell": "english_words_100000_s20261019",
+    "arms": {
+      "bm_base": {
+        "owned_requested": 2949439,
+        "retained_requested": 0,
+        "resident_requested": 2949439,
+        "resident_usable": 2952768,
+        "build_peak_requested": 7075998,
+        "build_peak_usable": 7098672,
+        "find_peak_requested": 2949439,
+        "find_allocations": 0,
+        "scan_peak_requested": 12290868,
+        "scan_output_requested": 4098549,
+        "clean_build_ns": [
+          9048077,
+          9361515,
+          11177572,
+          11138488,
+          9068871
+        ],
+        "clean_build_median_ns": 9361515,
+        "self_report": {
+          "owned": 2947855,
+          "adapter": 16,
+          "retained": 0
+        },
+        "resident_over_ART": 0.42726228797421917,
+        "build_peak_over_ART": 1.0250447950206798,
+        "build_time_over_ART": 0.6832972251673698,
+        "space_necessary": true,
+        "space_target": true,
+        "scoped_entry_gate": false
+      },
+      "native": {
+        "owned_requested": 793520,
+        "retained_requested": 5341429,
+        "resident_requested": 6134949,
+        "resident_usable": 6171152,
+        "build_peak_requested": 6149053,
+        "build_peak_usable": 6185152,
+        "find_peak_requested": 6134949,
+        "find_allocations": 0,
+        "scan_peak_requested": 14035085,
+        "scan_output_requested": 5300238,
+        "clean_build_ns": [
+          415771474,
+          344319797,
+          364584166,
+          341101406,
+          415862264
+        ],
+        "clean_build_median_ns": 364584166,
+        "self_report": {
+          "owned": 792976,
+          "adapter": 0,
+          "retained": 5341429
+        },
+        "resident_over_ART": 0.8887223456206919,
+        "build_peak_over_ART": 0.8907654824035134,
+        "build_time_over_ART": 26.611007830224032,
+        "space_necessary": true,
+        "space_target": false,
+        "scoped_entry_gate": false
+      },
+      "ART": {
+        "owned_requested": 6903111,
+        "retained_requested": 0,
+        "resident_requested": 6903111,
+        "resident_usable": 7764424,
+        "build_peak_requested": 6903111,
+        "build_peak_usable": 7764424,
+        "find_peak_requested": 6903111,
+        "find_allocations": 0,
+        "scan_peak_requested": 14799151,
+        "scan_output_requested": 5300238,
+        "clean_build_ns": [
+          13438130,
+          11456049,
+          13700502,
+          15054897,
+          15533967
+        ],
+        "clean_build_median_ns": 13700502,
+        "self_report": {
+          "owned": null,
+          "adapter": 800000,
+          "retained": 0
+        },
+        "resident_over_ART": 1.0,
+        "build_peak_over_ART": 1.0,
+        "build_time_over_ART": 1.0,
+        "space_necessary": false,
+        "space_target": false,
+        "scoped_entry_gate": false
+      }
+    }
+  }
+]

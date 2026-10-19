@@ -1,0 +1,38 @@
+[
+  {
+    "arm": "bm_base",
+    "acceptance_checks": 99,
+    "rc": 0,
+    "flavor": "clean"
+  },
+  {
+    "arm": "native",
+    "acceptance_checks": 113,
+    "rc": 0,
+    "flavor": "clean"
+  },
+  {
+    "arm": "ART",
+    "acceptance_checks": 99,
+    "rc": 0,
+    "flavor": "clean"
+  },
+  {
+    "arm": "bm_base",
+    "acceptance_checks": 99,
+    "rc": 0,
+    "flavor": "san"
+  },
+  {
+    "arm": "native",
+    "acceptance_checks": 113,
+    "rc": 0,
+    "flavor": "san"
+  },
+  {
+    "arm": "ART",
+    "acceptance_checks": 99,
+    "rc": 0,
+    "flavor": "san"
+  }
+]

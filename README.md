@@ -1,25 +1,30 @@
 # 字符串学习型索引课题总资料包
 
-## 最新入口（2026-10-18）
+## 最新入口（2026-10-19）
 
 本项目唯一主仓库为 [czr112/string-learned-index](https://github.com/czr112/string-learned-index)。
 工作区现直接关联该仓库；下列模型、评测器和 HOT 仓库只是固定版本的外部依赖。
 
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
-- **最新真实数据与长期计划**：[词表、MemeTracker URL/短语补测](07_Eval_Integration/RESULTS_BM_REAL_20261018.md)完成，各65,536键、3000行独立复核；原BM路径/ART为词表1.478–1.496、URL1.062–1.069（未分辨）、短语1.114–1.118。窗口纠正六格均数值更慢。[新详细长期计划](docs/LONG_TERM_BM_PLAN_20261018.md)优先完整BlockLearn原生参照及短目录正式集成，再做完整读门、静态收口和动态成本。
-- **最新上游（10月18日核对）**：[benchmark 003a55bf、模型 e8e05411](07_Eval_Integration/UPSTREAM_UPDATE_20261018.md)。两仓库均有更新，本轮由独立 snapshot 编译，原依赖与旧结果保留。
+- **真实数据查询证据与长期计划**：[词表、MemeTracker URL/短语补测](07_Eval_Integration/RESULTS_BM_REAL_20261018.md)完成，各65,536键、3000行独立复核；原BM路径/ART为词表1.478–1.496、URL1.062–1.069（未分辨）、短语1.114–1.118。窗口纠正六格均数值更慢。后续原生参照和查询机制已收口，[详细长期计划](docs/LONG_TERM_BM_PLAN_20261018.md)当前推进空间场景确认。
+- **10月18日上游快照**：[benchmark 003a55bf、模型 e8e05411](07_Eval_Integration/UPSTREAM_UPDATE_20261018.md)。两仓库均有更新，当轮由独立 snapshot 编译，原依赖与旧结果保留。
+- **10月19日再次核对上游**：[模型3894c767、benchmark仍003a55bf](07_Eval_Integration/UPSTREAM_UPDATE_20261019.md)。模型清理九个旧入口、保留旧目标/cost/adaptive三工厂；14份核心/校准文件逐字节相同。新快照CTest 11/11、四格普通兼容计数通过；已有性能继续绑定e8，后续工作使用独立3894快照。
 - **原 BM 已接入，首轮整体优化未过**：[最新模型同轮结果](07_Eval_Integration/RESULTS_BM_LATEST_20261018.md)。普通/ASan各1315万项、接口各99/99、3000计时行复核通过；窗口纠正仅skew少约22%耗时，mixed未分辨，tranco更新后慢19%。BM六格均慢于自研F5，尚未满足通用ART目标；HOT预检泄漏故本轮无排名。
 - **BM定位：括号已否决，短目录在适用格有清晰收益（10月18日）**：[predicted-first括号入口](07_Eval_Integration/RESULTS_BM_BRACKET_ENTRY_20261018.md) 五格零失配但主格多11.8%比较，已关闭；[短目录消融](07_Eval_Integration/RESULTS_BM_SHORTDIR_20261018.md) 让tranco/64k的fence比较降到0.114、页级定位0.611(5/5)，mixed 0.874(5/5)，skew因上游构建期拒绝而不变；登记的五格结构门未通过，仅作场景候选。
 - **上游完整工厂参照已建立（10月18日）**：[三真实键类型九臂同轮](07_Eval_Integration/RESULTS_BM_NATIVE_20261018.md)：`block-residual-delta/ART`=1.704/1.372/1.352（三格清晰更慢），`-shortdir-first/ART`=1.492/1.315/1.194；完整工厂与本项目BM页接入为0.987–1.104未分辨，说明瓶颈是共有的预测/验证工作而非接入方式；F5在URL/短语反超ART。
 - **短目录完整读门已做（10月18日）**：[四格完整find+全域门](07_Eval_Integration/RESULTS_BM_SHORTDIR_READ_20261018.md)：shortdir/ART=1.362/1.032/0.975/1.573，但相对被替换的BM页路径**0.832–0.887（四格清晰更快）**；三类真实键≤1.10门与元数据5%门（7.87%/7.07%）均未过，只保留组件级证据。
 - **预测块payload探测已否决（10月19日）**：[四格计数与判定](07_Eval_Integration/RESULTS_BM_PROBE_20261019.md)：命中率仅7.7%–9.0%，fence比较只降7.5%–8.8%，块访问从1.00升到1.92/查询；入口门两条都不过，未计时。预测块族（括号→payload）累计两次失败，按计划停止。
 - **阶段3失辨审计完成（10月19日）**：[四格窗口/簇/回退](07_Eval_Integration/RESULTS_BM_ENCODING_AUDIT_20261019.md)：窗口均值17–26块、覆盖98%以上、缺席窗外仅1.3%–1.9%；同坐标簇仅URL显著（44.3%，簇内额外前缀中位11字节），故局部前缀细分只对URL类键有登记依据。
-- **当前优先任务**：[URL类键的一层簇内前缀细分](docs/LONG_TERM_BM_PLAN_20261018.md)。完整原生参照、短目录完整读门、预测块族、阶段3审计均已完成；下一步登记URL专用候选的工作入口，words/tranco作阴性对照，cost/adaptive与F6动态矩阵后移。
-- **最新推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前先补原BlockModel接入，再执行[F6B动态轨迹与完整分配账本](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)，动态吞吐、采用及G未完成。
+- **原BM簇内前缀细分已收口（10月19日）**：[四格入口](07_Eval_Integration/RESULTS_BM_LOCAL_REFINE_20261019.md)：普通与sanitizer各626,900项零失配，URL fence比较仅少10.39%，新增容量0.678%；未达25%工作门，局部BM也未优于同簇直接目录，关闭该形态、不计时。
+- **原生cost/adaptive已收口（10月19日）**：[四格2000行计时](07_Eval_Integration/RESULTS_BM_COST_20261019.md)：cost/legacy=1.004–1.034、adaptive/cost=0.993–1.061，均未超过AA形成明确收益；三真实格构建为旧目标1.22–2.26倍、2.48–3.88倍。普通/sanitizer各1,583,448项通过；输入生命周期验收缺陷已单独修复并保留原失败，校准与计时二进制复用。
+- **最新实质优化（10月19日）**：[完整空间账本与BM按页构建](07_Eval_Integration/RESULTS_BM_SPACE_20261019.md)。消除整批输入转换，常驻保持ART的43%–73%，构建峰值下降53%–57%、降至ART的45%–75%；同轮构建中位耗时为ART的70%–93%。四格通过空间场景入口，三格达到≤70%常驻目标；普通/sanitizer、布局、容量及释放复核通过。
+- **空间/构建优化已泛化（10月19日）**：[独立种子+100k规模](07_Eval_Integration/RESULTS_BM_SPACE_GEN_20261019.md)：常驻/ART=0.427–0.731、峰值/ART=0.437–0.756、峰值相对旧BM降53%–57%，四格过组合门；空间≤0.70在词表/URL/100k达成，短语0.731未达。
+- **当前优先任务**：[有限动态入口准备](docs/LONG_TERM_BM_PLAN_20261018.md)。空间/构建已在独立样本与规模变化上确认；下一步冻结两数据×两读写比的`SIBOPS1`轨迹并登记入口，完整24格动态矩阵与默认采用未开始。
+- **历史自研F5推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前主线已接入原BlockModel，阶段5有限动态入口仍以BM空间场景确认为前提，历史[F6B矩阵](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)、动态吞吐及采用未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。
-- **当前长期策略与详细步骤**：[基于最新BM的6–8周路线](docs/LONG_TERM_BM_PLAN_20261018.md)。真实键补测已完成，下一阶段为完整上游参照及短目录正式收口；[旧A–G策略及执行](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)保留历史，F6B/F6C仍以后续读路径与静态收口为前提。
+- **当前长期策略与详细步骤**：[基于最新BM的路线与最新状态](docs/LONG_TERM_BM_PLAN_20261018.md)。原生参照、查询机制收口、空间账本及按页构建已完成，当前在阶段4泛化确认前；[旧A–G策略及执行](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)保留历史，F6B/F6C仍以后续读路径与静态收口为前提。
 - **最新结构结果（10月18日）**：[D1簇内前缀辨识](07_Eval_Integration/RESULTS_COLLISION_REFINEMENT_20261018.md)：skew相对B模型耗时下降32%–38%，相对旧宽回退下降20%–25%，风险格无清晰回归；空间+1.18%。四份完整sanitizer门通过；后续E1正式接入与外部复测已完成，生产默认不改。
 - **前版近期计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)，其失败判定继续保留。
 - **上一阶段静态原型**：[物理块预测与 ART 对照](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)；[S0–S2 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)、[S3 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC_S3.md)均已执行。

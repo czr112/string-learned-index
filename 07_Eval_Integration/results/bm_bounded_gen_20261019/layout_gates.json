@@ -1,0 +1,90 @@
+[
+  {
+    "layout_checks": 428394,
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "logical_bytes": 1943999,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "english_words_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "layout_checks": 428394,
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "logical_bytes": 6183832,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "layout_checks": 428394,
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "logical_bytes": 7064526,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "layout_checks": 653677,
+    "rows": 100000,
+    "queries": 100000,
+    "pages": 49,
+    "logical_bytes": 2947855,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "english_words_100000_s20261019",
+    "flavor": "clean"
+  },
+  {
+    "layout_checks": 428394,
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "logical_bytes": 1943999,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "english_words_s20261019",
+    "flavor": "san"
+  },
+  {
+    "layout_checks": 428394,
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "logical_bytes": 6183832,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "memetracker_urls_s20261019",
+    "flavor": "san"
+  },
+  {
+    "layout_checks": 428394,
+    "rows": 65536,
+    "queries": 65536,
+    "pages": 32,
+    "logical_bytes": 7064526,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "memetracker_phrases_s20261019",
+    "flavor": "san"
+  },
+  {
+    "layout_checks": 653677,
+    "rows": 100000,
+    "queries": 100000,
+    "pages": 49,
+    "logical_bytes": 2947855,
+    "same_fences": true,
+    "same_models": true,
+    "cell": "english_words_100000_s20261019",
+    "flavor": "san"
+  }
+]

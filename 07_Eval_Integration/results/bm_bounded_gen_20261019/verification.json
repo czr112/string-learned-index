@@ -1,0 +1,17 @@
+{
+  "status": "verified",
+  "source_files": 47,
+  "common_contract_runs": 6,
+  "corpus_gates": 24,
+  "capacity_processes": 36,
+  "clean_build_processes": 60,
+  "semantic_checks_total": 35592960,
+  "all_tracked_allocations_released": true,
+  "BM_find_allocations": 0,
+  "capacity_requested_stable_3_of_3": true,
+  "layout_gate_runs": 8,
+  "layout_checks_total": 3877718,
+  "same_resident_requested": true,
+  "reduced_build_peak_all_cells": true,
+  "reused_library_source_matches": 19
+}

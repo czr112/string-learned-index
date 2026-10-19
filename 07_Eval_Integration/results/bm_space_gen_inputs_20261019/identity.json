@@ -1,0 +1,152 @@
+{
+  "inputs": {
+    "english_words_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "rows_sha256": "276ada50cc0702cc88153a478f5669702f938b61c87d8b4bb51bf8d2c4ae6dbf",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_queries.bin",
+      "queries": 65536,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_65536_s20261019_string",
+      "dataset_sha256": "6de4f0fdee9a434e8d85fccca3e9f98b25e57af2fb35a5c530998fcae9e7ccda",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_65536_s20261019_string.json",
+      "sidecar_sha256": "f00f40dfbd0006eb81787f38ec4002ae335ec7b8b0e2aa8f4c2cb1bce5ba1669",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 65536,
+        "key_bytes": {
+          "min": 1,
+          "median": 9,
+          "p95": 15,
+          "max": 24,
+          "mean": 9.4132080078125
+        },
+        "adjacent_lcp_bytes": {
+          "min": 0,
+          "median": 4,
+          "p95": 9,
+          "max": 20,
+          "mean": 4.78789959563592
+        },
+        "non_ascii_keys": 0
+      },
+      "queries_sha256": "0c75743c71d636968ce75f341e7feb62b19a434a1253dd7b7bdd54bafb571d48"
+    },
+    "memetracker_urls_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_rows.bin",
+      "rows_sha256": "6139623b14bea03999ec601e79be3d50b107d7ce9e6ec6718138f2b507b3ae83",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_urls_s20261019_queries.bin",
+      "queries": 65536,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_urls_65536_s20261019_string",
+      "dataset_sha256": "a3e619e846aade0bcd6a8e3a0142536152b9b5073b4e65cfe8d4770fb16aa22b",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_urls_65536_s20261019_string.json",
+      "sidecar_sha256": "5ab2fe8f2af2649cc4c0bf75e936b99f4aaa9da23eddfa57fdc93471ae84a1c7",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 65536,
+        "key_bytes": {
+          "min": 19,
+          "median": 75,
+          "p95": 137,
+          "max": 471,
+          "mean": 79.31965637207031
+        },
+        "adjacent_lcp_bytes": {
+          "min": 7,
+          "median": 32,
+          "p95": 67,
+          "max": 197,
+          "mean": 32.30666056305791
+        },
+        "non_ascii_keys": 19
+      },
+      "queries_sha256": "603d691789512a9851af3969e100efca1c1327388be9a91a701bd063ccd251a9"
+    },
+    "memetracker_phrases_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_rows.bin",
+      "rows_sha256": "20b64e9c368316acdde62dc866ac022b29346da39948fe7d4536c085252614e4",
+      "rows": 65536,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/memetracker_phrases_s20261019_queries.bin",
+      "queries": 65536,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_phrases_65536_s20261019_string",
+      "dataset_sha256": "2cd728e59b0f14d3ccae3754899579b4e4f0288d7cbf3a9c9ae8b7894c1820ce",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/memetracker_phrases_65536_s20261019_string.json",
+      "sidecar_sha256": "b918cde84ddd77ce45f2fc1018669504283590eb5012e269c7e3f676edef6bc8",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 65536,
+        "key_bytes": {
+          "min": 5,
+          "median": 48,
+          "p95": 255,
+          "max": 3893,
+          "mean": 85.56210327148438
+        },
+        "adjacent_lcp_bytes": {
+          "min": 0,
+          "median": 9,
+          "p95": 26,
+          "max": 479,
+          "mean": 12.209628442816815
+        },
+        "non_ascii_keys": 0
+      },
+      "queries_sha256": "b8c699d5fb2748775a4566cf68141e37ea5e385f85333b31b569a1cd6e2d8b6f"
+    },
+    "english_words_100000_s20261019": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "rows_sha256": "ff39c698f162acef2681a903a12f966bbcb01aa694c063fd745dac398ee98089",
+      "rows": 100000,
+      "queries_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_queries.bin",
+      "queries": 100000,
+      "dataset_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_100000_s20261019_string",
+      "dataset_sha256": "66b485920de858cf14a2d43bf762f21ac75a049b6b8685bf98f50cdd63291ac8",
+      "sidecar_path": "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/real/english_words_100000_s20261019_string.json",
+      "sidecar_sha256": "575c46b2679795d4bd61182bd9f77a4c99ead0c52a9744525e6921ad1c2c1c65",
+      "seed": 20261019,
+      "sampler": "unchanged upstream prepare_real_datasets.py --offline",
+      "statistics": {
+        "keys": 100000,
+        "key_bytes": {
+          "min": 1,
+          "median": 9,
+          "p95": 15,
+          "max": 24,
+          "mean": 9.41127
+        },
+        "adjacent_lcp_bytes": {
+          "min": 0,
+          "median": 5,
+          "p95": 9,
+          "max": 20,
+          "mean": 5.112631126311263
+        },
+        "non_ascii_keys": 0
+      },
+      "queries_sha256": "00618bb2a48a721dde66a30b213f57f66051fa46052c7ad53f8bbfc704e470ef"
+    }
+  },
+  "raw_sources": {
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/raw/english-words.txt": {
+      "sha256": "39a4ead879cc8283de87f2ec58e7b4b340d6caa724db1b52a91dccf2f273c5e7",
+      "bytes": 4862985
+    },
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/data/raw/memetracker-clusters.txt.gz": {
+      "sha256": "07875c309cf31551fce87c3394f271a49b925b08624260c91049c938e6205f7f",
+      "bytes": 230078770
+    }
+  },
+  "sources": {
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/datasets.lock.json": "93f1a19ba37e5774045a0e2f6eb769a4d0edfb565aca1c7f8692905b9aae4c16",
+    "07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/scripts/prepare_real_datasets.py": "d9309b2e3b4ae39e59da38d1738f7ed05f41b5ec4cab0f8066d5c35119799888",
+    "07_Eval_Integration/diagnostics/prepare_bm_space_gen.py": "f16fbc1a4ccd9797b334b9af66529d503b9ad8962f696f8a41f120c165b03fde"
+  },
+  "seed": 20261019,
+  "query_seed": 20261019,
+  "model_after": "3894c767338a865d2920ba5e21283827fea1d803",
+  "benchmark": "003a55bf674b43350fbb70242070fb74f33a56ce",
+  "note": "independent sample: new sampler seed, same sources; the 100000 cell is the one scale change; the unchanged sampler caps count at 100000 and the limit was not raised"
+}

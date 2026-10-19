@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_files": 41,
+  "common_contract_runs": 6,
+  "corpus_gates": 24,
+  "capacity_processes": 36,
+  "clean_build_processes": 60,
+  "semantic_checks_total": 35592960,
+  "all_tracked_allocations_released": true,
+  "BM_find_allocations": 0,
+  "capacity_requested_stable_3_of_3": true
+}

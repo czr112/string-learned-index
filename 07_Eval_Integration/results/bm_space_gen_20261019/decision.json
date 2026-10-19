@@ -1,0 +1,19 @@
+{
+  "status": "stage4 ledger complete",
+  "production_adopted": false,
+  "default_changed": false,
+  "scoped_entry_cells": {
+    "bm_base": [],
+    "native": []
+  },
+  "space_target_cells": {
+    "bm_base": [
+      "english_words_s20261019",
+      "memetracker_urls_s20261019",
+      "english_words_100000_s20261019"
+    ],
+    "native": []
+  },
+  "query_speed_claim": "none; prior query entry failures remain closed",
+  "dynamic_stage_started": false
+}
