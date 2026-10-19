@@ -1,0 +1,46 @@
+{
+  "rebuild_dir": "builds/rebuild_20261019/clean",
+  "rebuilt_sha256": "1e130797de5ec5f2d210ecdcee681e7a43008446e3eeaf543ba44dd82ba20553",
+  "recorded_sha256": "1e130797de5ec5f2d210ecdcee681e7a43008446e3eeaf543ba44dd82ba20553",
+  "binary_identical": true,
+  "single_cell": "bm_base x english_words",
+  "fields": {
+    "checksum": [
+      507521454403758928,
+      507521454403758900
+    ],
+    "hits": [
+      58983,
+      58983
+    ],
+    "semantic_checks": [
+      262144,
+      262144
+    ],
+    "self_report_owned": [
+      1944569,
+      1944569
+    ],
+    "input_heap_bytes": [
+      2688276,
+      2688276
+    ]
+  },
+  "field_equal": {
+    "checksum": false,
+    "hits": true,
+    "semantic_checks": true,
+    "self_report_owned": true,
+    "input_heap_bytes": true
+  },
+  "checksum_delta": -28,
+  "all_but_checksum_equal": true,
+  "checksum_explained": false,
+  "build_ns": [
+    5474124,
+    10324511
+  ],
+  "scope": "build and one-cell semantics only; the full round was not re-run",
+  "recorded_round": "07_Eval_Integration/results/bm_space_20261019b",
+  "recorded_round_identity_sha256": "0d31a1dfeceaa231b4cee2f709576bd431725f4b10e87e7edcfdd8e99f288ea3"
+}
