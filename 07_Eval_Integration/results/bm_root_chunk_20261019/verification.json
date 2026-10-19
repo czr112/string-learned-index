@@ -1,0 +1,18 @@
+{
+  "status": "verified",
+  "cells": 3,
+  "timing_rows": 360,
+  "routing_within_5_percent": true,
+  "publication_cut_at_least_25_percent": true,
+  "checks": [
+    "sources",
+    "artifacts",
+    "inputs",
+    "gate",
+    "publication arithmetic",
+    "pairing",
+    "checksums",
+    "ratios",
+    "decision"
+  ]
+}

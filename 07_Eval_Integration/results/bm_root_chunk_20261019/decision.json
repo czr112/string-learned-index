@@ -1,0 +1,23 @@
+{
+  "routing_ratio": {
+    "tranco64": 1.0267399796175551,
+    "skew131k": 1.02272913075898,
+    "tranco262k": 1.0054024645638246
+  },
+  "publication_entry_reduction": {
+    "tranco64": 0.4375,
+    "skew131k": 0.6875,
+    "tranco262k": 0.8125
+  },
+  "publication_byte_reduction": {
+    "tranco64": 0.460784,
+    "skew131k": 0.714286,
+    "tranco262k": 0.824356
+  },
+  "routing_within_5_percent": true,
+  "publication_cut_at_least_25_percent": true,
+  "entry_gate_passed": true,
+  "integration_attempted": false,
+  "production_adopted": false,
+  "status": "stage-5 root entry: routing and publication-work comparison only"
+}

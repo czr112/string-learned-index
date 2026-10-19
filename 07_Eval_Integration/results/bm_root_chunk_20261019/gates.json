@@ -1,0 +1,53 @@
+[
+  {
+    "phase": "gate",
+    "pages": 32,
+    "chunks": 2,
+    "chunk_size": 16,
+    "checked": 131104,
+    "mismatches": 0,
+    "publication": {
+      "flat_entries": 32,
+      "flat_key_bytes": 408,
+      "chunked_entries": 18,
+      "chunked_key_bytes": 220,
+      "entry_reduction": 0.4375,
+      "byte_reduction": 0.460784
+    },
+    "cell": "tranco64"
+  },
+  {
+    "phase": "gate",
+    "pages": 64,
+    "chunks": 4,
+    "chunk_size": 16,
+    "checked": 262208,
+    "mismatches": 0,
+    "publication": {
+      "flat_entries": 64,
+      "flat_key_bytes": 9828,
+      "chunked_entries": 20,
+      "chunked_key_bytes": 2808,
+      "entry_reduction": 0.6875,
+      "byte_reduction": 0.714286
+    },
+    "cell": "skew131k"
+  },
+  {
+    "phase": "gate",
+    "pages": 128,
+    "chunks": 8,
+    "chunk_size": 16,
+    "checked": 327808,
+    "mismatches": 0,
+    "publication": {
+      "flat_entries": 128,
+      "flat_key_bytes": 1708,
+      "chunked_entries": 24,
+      "chunked_key_bytes": 300,
+      "entry_reduction": 0.8125,
+      "byte_reduction": 0.824356
+    },
+    "cell": "tranco262k"
+  }
+]

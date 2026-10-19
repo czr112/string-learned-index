@@ -1,0 +1,176 @@
+[
+  {
+    "cell": "tranco64",
+    "ratios": {
+      "chunked/flat": {
+        "process_medians": [
+          0.8322735615229155,
+          0.9644403677028859,
+          1.0685108899983462,
+          1.0642012987936738,
+          1.0267399796175551
+        ],
+        "median": 1.0267399796175551,
+        "faster": 2,
+        "slower": 3
+      },
+      "flat_AA/flat": {
+        "process_medians": [
+          1.5069794327197785,
+          2.063318162258992,
+          2.112227094342581,
+          2.5419668276650436,
+          1.947584520015715
+        ],
+        "median": 2.063318162258992,
+        "faster": 0,
+        "slower": 5
+      },
+      "chunked_AA/chunked": {
+        "process_medians": [
+          1.9109526360426212,
+          2.049221546357405,
+          2.121517853377597,
+          1.96491951558558,
+          1.9162191352660198
+        ],
+        "median": 1.96491951558558,
+        "faster": 0,
+        "slower": 5
+      }
+    },
+    "observed_band": 2.5419668276650436,
+    "pages": 32,
+    "chunks": 2,
+    "publication": {
+      "flat_entries": 32,
+      "flat_key_bytes": 408,
+      "chunked_entries": 18,
+      "chunked_key_bytes": 220,
+      "entry_reduction": 0.4375,
+      "byte_reduction": 0.460784
+    },
+    "ns_per_op": {
+      "flat": 46.916343688964844,
+      "chunked": 48.17881774902344,
+      "flat_AA": 99.02020263671875,
+      "chunked_AA": 92.33354187011719
+    }
+  },
+  {
+    "cell": "skew131k",
+    "ratios": {
+      "chunked/flat": {
+        "process_medians": [
+          1.0742335548500201,
+          0.9074092787050152,
+          1.02272913075898,
+          1.0611081184687112,
+          0.9385110627457325
+        ],
+        "median": 1.02272913075898,
+        "faster": 2,
+        "slower": 3
+      },
+      "flat_AA/flat": {
+        "process_medians": [
+          0.933033301927187,
+          0.864432801210725,
+          0.8707964161811734,
+          0.9503575150884205,
+          0.873251846062399
+        ],
+        "median": 0.873251846062399,
+        "faster": 5,
+        "slower": 0
+      },
+      "chunked_AA/chunked": {
+        "process_medians": [
+          0.8907966057691792,
+          0.9119240735911132,
+          0.9339895452539733,
+          0.8408679169498767,
+          0.983161542834107
+        ],
+        "median": 0.9119240735911132,
+        "faster": 5,
+        "slower": 0
+      }
+    },
+    "observed_band": 1.189247419056433,
+    "pages": 64,
+    "chunks": 4,
+    "publication": {
+      "flat_entries": 64,
+      "flat_key_bytes": 9828,
+      "chunked_entries": 20,
+      "chunked_key_bytes": 2808,
+      "entry_reduction": 0.6875,
+      "byte_reduction": 0.714286
+    },
+    "ns_per_op": {
+      "flat": 214.52842712402344,
+      "chunked": 214.13459396362305,
+      "flat_AA": 204.24678802490234,
+      "chunked_AA": 196.42146682739258
+    }
+  },
+  {
+    "cell": "tranco262k",
+    "ratios": {
+      "chunked/flat": {
+        "process_medians": [
+          1.0054024645638246,
+          1.027731528796933,
+          0.9778480459887937,
+          1.003586170585245,
+          1.0078719842131623
+        ],
+        "median": 1.0054024645638246,
+        "faster": 1,
+        "slower": 4
+      },
+      "flat_AA/flat": {
+        "process_medians": [
+          1.9920821565670175,
+          2.062246062384226,
+          1.948143337496447,
+          2.0292752364660016,
+          1.9124948922672322
+        ],
+        "median": 1.9920821565670175,
+        "faster": 0,
+        "slower": 5
+      },
+      "chunked_AA/chunked": {
+        "process_medians": [
+          1.9830811370022934,
+          2.018441111230378,
+          2.127888121530826,
+          2.03717933491722,
+          2.0253220277359727
+        ],
+        "median": 2.0253220277359727,
+        "faster": 0,
+        "slower": 5
+      }
+    },
+    "observed_band": 2.127888121530826,
+    "pages": 128,
+    "chunks": 8,
+    "publication": {
+      "flat_entries": 128,
+      "flat_key_bytes": 1708,
+      "chunked_entries": 24,
+      "chunked_key_bytes": 300,
+      "entry_reduction": 0.8125,
+      "byte_reduction": 0.824356
+    },
+    "ns_per_op": {
+      "flat": 86.14315032958984,
+      "chunked": 86.02088928222656,
+      "flat_AA": 170.65663146972656,
+      "chunked_AA": 172.56459045410156
+    }
+  }
+]
