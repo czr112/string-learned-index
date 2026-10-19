@@ -1,0 +1,24 @@
+{
+  "status": "verified",
+  "cells": 4,
+  "timing_rows": 480,
+  "gate_rows": 4,
+  "sanitized_cells": 2,
+  "read_budget_1_15": {
+    "english_words": true,
+    "english_words_80_20": true,
+    "memetracker_urls": true,
+    "memetracker_urls_80_20": true
+  },
+  "checks": [
+    "sources",
+    "artifacts",
+    "traces",
+    "gate",
+    "sanitized",
+    "pairing",
+    "checksums",
+    "ratios",
+    "decision"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "snapshot_over_dynamic": {
+    "english_words": 1.0204692043448047,
+    "english_words_80_20": 1.031145046881139,
+    "memetracker_urls": 1.0547532721449175,
+    "memetracker_urls_80_20": 0.9970096959872579
+  },
+  "observed_band": {
+    "english_words": 1.0827712403096303,
+    "english_words_80_20": 1.1687154357303684,
+    "memetracker_urls": 1.2094846032506736,
+    "memetracker_urls_80_20": 1.2501890295865663
+  },
+  "read_budget_1_15": {
+    "english_words": true,
+    "english_words_80_20": true,
+    "memetracker_urls": true,
+    "memetracker_urls_80_20": true
+  },
+  "all_within_budget": true,
+  "root": {
+    "english_words": {
+      "pages": 51,
+      "publications": 103,
+      "entries_copied": 4926,
+      "key_bytes_copied": 49065,
+      "largest_root": 51,
+      "rebuilds": 102
+    },
+    "english_words_80_20": {
+      "pages": 51,
+      "publications": 382,
+      "entries_copied": 19155,
+      "key_bytes_copied": 188567,
+      "largest_root": 51,
+      "rebuilds": 381
+    },
+    "memetracker_urls": {
+      "pages": 51,
+      "publications": 103,
+      "entries_copied": 4926,
+      "key_bytes_copied": 393839,
+      "largest_root": 51,
+      "rebuilds": 102
+    },
+    "memetracker_urls_80_20": {
+      "pages": 51,
+      "publications": 382,
+      "entries_copied": 19155,
+      "key_bytes_copied": 1507051,
+      "largest_root": 51,
+      "rebuilds": 381
+    }
+  },
+  "pause_ns": {
+    "english_words": {
+      "p50": 699,
+      "p95": 1743,
+      "p99": 2748,
+      "max": 608039
+    },
+    "english_words_80_20": {
+      "p50": 548,
+      "p95": 1751,
+      "p99": 83940,
+      "max": 776504
+    },
+    "memetracker_urls": {
+      "p50": 769,
+      "p95": 1703,
+      "p99": 3219,
+      "max": 1272980.0
+    },
+    "memetracker_urls_80_20": {
+      "p50": 1415,
+      "p95": 3265,
+      "p99": 228832,
+      "max": 1598690.0
+    }
+  },
+  "mismatches": 0,
+  "paired_timing_done": true,
+  "throughput_claim": "query-only paired comparison; no mixed throughput",
+  "production_adopted": false,
+  "status": "stage-5 read budget against the same final map"
+}

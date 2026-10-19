@@ -1,0 +1,130 @@
+[
+  {
+    "phase": "gate",
+    "initial_rows": 52428,
+    "operations": 20000,
+    "final_rows": 53427,
+    "insert_ops": 1000,
+    "mismatches": 0,
+    "checked": 55427,
+    "replay_ns": 36455731,
+    "snapshot_build_ns": 5526653,
+    "pause_ns": {
+      "p50": 699,
+      "p95": 1743,
+      "p99": 2748,
+      "max": 608039
+    },
+    "maintenance": {
+      "pages": 51,
+      "root_publications": 103,
+      "root_entries_copied": 4926,
+      "root_key_bytes_copied": 49065,
+      "largest_root_entries": 51,
+      "rebuilds": 102,
+      "rows_rebuilt": 131655,
+      "inplace_inserts": 897
+    },
+    "memory": {
+      "dynamic": 1586704,
+      "snapshot": 1591384
+    },
+    "cell": "english_words"
+  },
+  {
+    "phase": "gate",
+    "initial_rows": 52428,
+    "operations": 20000,
+    "final_rows": 56427,
+    "insert_ops": 4000,
+    "mismatches": 0,
+    "checked": 58427,
+    "replay_ns": 52653328,
+    "snapshot_build_ns": 4116337,
+    "pause_ns": {
+      "p50": 548,
+      "p95": 1751,
+      "p99": 83940,
+      "max": 776504
+    },
+    "maintenance": {
+      "pages": 51,
+      "root_publications": 382,
+      "root_entries_copied": 19155,
+      "root_key_bytes_copied": 188567,
+      "largest_root_entries": 51,
+      "rebuilds": 381,
+      "rows_rebuilt": 432299,
+      "inplace_inserts": 3618
+    },
+    "memory": {
+      "dynamic": 1675955,
+      "snapshot": 1676755
+    },
+    "cell": "english_words_80_20"
+  },
+  {
+    "phase": "gate",
+    "initial_rows": 52428,
+    "operations": 20000,
+    "final_rows": 53427,
+    "insert_ops": 1000,
+    "mismatches": 0,
+    "checked": 55427,
+    "replay_ns": 46700349,
+    "snapshot_build_ns": 7567264,
+    "pause_ns": {
+      "p50": 769,
+      "p95": 1703,
+      "p99": 3219,
+      "max": 1272980.0
+    },
+    "maintenance": {
+      "pages": 51,
+      "root_publications": 103,
+      "root_entries_copied": 4926,
+      "root_key_bytes_copied": 393839,
+      "largest_root_entries": 51,
+      "rebuilds": 102,
+      "rows_rebuilt": 131655,
+      "inplace_inserts": 897
+    },
+    "memory": {
+      "dynamic": 5013148,
+      "snapshot": 5036331
+    },
+    "cell": "memetracker_urls"
+  },
+  {
+    "phase": "gate",
+    "initial_rows": 52428,
+    "operations": 20000,
+    "final_rows": 56427,
+    "insert_ops": 4000,
+    "mismatches": 0,
+    "checked": 58427,
+    "replay_ns": 151116427,
+    "snapshot_build_ns": 10175910,
+    "pause_ns": {
+      "p50": 1415,
+      "p95": 3265,
+      "p99": 228832,
+      "max": 1598690.0
+    },
+    "maintenance": {
+      "pages": 51,
+      "root_publications": 382,
+      "root_entries_copied": 19155,
+      "root_key_bytes_copied": 1507051,
+      "largest_root_entries": 51,
+      "rebuilds": 381,
+      "rows_rebuilt": 432299,
+      "inplace_inserts": 3618
+    },
+    "memory": {
+      "dynamic": 5304931,
+      "snapshot": 5331046
+    },
+    "cell": "memetracker_urls_80_20"
+  }
+]

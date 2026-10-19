@@ -1,0 +1,337 @@
+{
+  "base_commit": "eacc31d78681f884bdff5704780a223483e8c65b",
+  "cpu": 0,
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/diagnostics/BM_DYNAMIC_READ_SPEC_20261019.md": "f055fdf57daf5d45dab77596cfe15c538429a738d500731bbaf53c260e21d1a9",
+    "07_Eval_Integration/diagnostics/bench_bm_dynamic_read.cpp": "46ffd75ee0dee8d2885c78b012558f27a362d003cc2049b04187e968e0053951",
+    "07_Eval_Integration/diagnostics/bm_bounded_index.hpp": "2cb28beb92810180dc32b414f0865746d224602e5ad6fb565f84818752f582d0",
+    "07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "07_Eval_Integration/diagnostics/bm_page_index.hpp": "c3e54dc2638e0ba1f5f71a205b1f29dab950d57dc4bec2974ab88f70da87f082",
+    "07_Eval_Integration/diagnostics/bm_page_root.hpp": "c7b9f57d8b3fc47e0702d5239408ea334b243afe84b7e1f6bba1fdaa10fac5c6",
+    "07_Eval_Integration/diagnostics/run_bm_dynamic_read.py": "33d738a3ada5b0095c60ca0f00b5293e23a7346b5767e3e0a5743751f8ab8653",
+    "07_Eval_Integration/diagnostics/verify_bm_dynamic_read.py": "9b5a719b9135cd59e3dd8e0edf27d6565ee474b5bbb1b5b8b6e749dcc9ec9cfe",
+    "07_Eval_Integration/results/bm_dynamic_inputs_20261019/identity.json": "8ec19f453d7cc3e303d2f55bbd5629e9a5ff455c6bfde7339e206b5249417663",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "traces": {
+    "english_words": {
+      "dataset": "english_words",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_initial_rows.bin",
+      "rows_sha256": "ac1a179f8cb370873e3690e5f2266106809996c578cce15c5c6b5f6a487f0d1d",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_operations.bin",
+      "operations_sha256": "294f4bedd97f263e41f5d5cbc4743bd956689b03dc5d62b27d0f23d999f3007b",
+      "operations": 20000,
+      "find_weight": "19/20",
+      "seed": 20261019,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    },
+    "english_words_80_20": {
+      "dataset": "english_words",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "rows_sha256": "ac1a179f8cb370873e3690e5f2266106809996c578cce15c5c6b5f6a487f0d1d",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "operations_sha256": "c4356c552c36c4d51c3521efdc95992ef9946014905e2d62e742d3dbc806e044",
+      "operations": 20000,
+      "find_weight": "4/5",
+      "seed": 20261019,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    },
+    "memetracker_urls": {
+      "dataset": "memetracker_urls",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "rows_sha256": "454ce6a6b3e81d448e5d4aa5ddf75fc5de0e8a58ad54a9302515e3070c21fbfd",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "operations_sha256": "8b6a3f4302160b0c899a49328ee5fe1ce8e535520ec07c435e5c5994fc2bc8a4",
+      "operations": 20000,
+      "find_weight": "19/20",
+      "seed": 20261019,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    },
+    "memetracker_urls_80_20": {
+      "dataset": "memetracker_urls",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_initial_rows.bin",
+      "rows_sha256": "454ce6a6b3e81d448e5d4aa5ddf75fc5de0e8a58ad54a9302515e3070c21fbfd",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_operations.bin",
+      "operations_sha256": "6e3d7d913364900e4119f3bd01507edb48dc4d861554b1dd494d6a43ae19c27b",
+      "operations": 20000,
+      "find_weight": "4/5",
+      "seed": 20261019,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    }
+  },
+  "artifacts": {
+    "build/dynread": "4bf591b0dd544b01e191966c706277e9cea512b6d4cb7ce0af6d39f92a0900bd",
+    "build/dynread_san": "f5d1815e41691c4d20ee76cd02a690290b6bc6a6d4607bcad9f3ffe8da41c4ba"
+  },
+  "commands": [
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O3",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bench_bm_dynamic_read.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread"
+    ],
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bench_bm_dynamic_read.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread_san"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_operations.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_operations.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_operations.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_operations.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_operations.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_operations.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_operations.bin",
+      "1"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_operations.bin",
+      "2"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_operations.bin",
+      "3"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_operations.bin",
+      "4"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread_san",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "0"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_read_20261019/build/dynread_san",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "0"
+    ]
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "upstream_commit": "3894c767338a865d2920ba5e21283827fea1d803",
+  "benchmark_commit": "003a55bf674b43350fbb70242070fb74f33a56ce",
+  "protocol": "5 processes x 6 Williams rows x 4 arms on complete find over every key of the final map; snapshot rebuilt from that same map through the same constructor",
+  "limits": [
+    "query-only read budget; no write throughput",
+    "uniform insert targets",
+    "HOT absent",
+    "pause distribution is single-process and includes the verify step",
+    "no adoption decision"
+  ]
+}
