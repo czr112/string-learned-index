@@ -1,0 +1,62 @@
+{
+  "cells": {
+    "english_words": {
+      "find_ops": 19000,
+      "insert_ops": 1000,
+      "insert_new": 999,
+      "insert_dup": 1,
+      "rebuilds": 102,
+      "inplace_inserts": 897,
+      "root_publications": 103,
+      "rows_rebuilt": 131655,
+      "final_size": 53427,
+      "find_ns_per_op": 767.3382631578947,
+      "write_ns_per_op": 17171.078
+    },
+    "english_words_80_20": {
+      "find_ops": 16000,
+      "insert_ops": 4000,
+      "insert_new": 3999,
+      "insert_dup": 1,
+      "rebuilds": 381,
+      "inplace_inserts": 3618,
+      "root_publications": 382,
+      "rows_rebuilt": 432299,
+      "final_size": 56427,
+      "find_ns_per_op": 945.0610625,
+      "write_ns_per_op": 15650.726
+    },
+    "memetracker_urls": {
+      "find_ops": 19000,
+      "insert_ops": 1000,
+      "insert_new": 999,
+      "insert_dup": 1,
+      "rebuilds": 102,
+      "inplace_inserts": 897,
+      "root_publications": 103,
+      "rows_rebuilt": 131655,
+      "final_size": 53427,
+      "find_ns_per_op": 1196.0535263157894,
+      "write_ns_per_op": 34246.731
+    },
+    "memetracker_urls_80_20": {
+      "find_ops": 16000,
+      "insert_ops": 4000,
+      "insert_new": 3999,
+      "insert_dup": 1,
+      "rebuilds": 381,
+      "inplace_inserts": 3618,
+      "root_publications": 382,
+      "rows_rebuilt": 432299,
+      "final_size": 56427,
+      "find_ns_per_op": 1313.53975,
+      "write_ns_per_op": 25933.3705
+    }
+  },
+  "entry_passed": true,
+  "paired_timing_done": false,
+  "throughput_claim": "none",
+  "read_budget_vs_snapshot": "not measured yet",
+  "production_adopted": false,
+  "status": "stage-5 entry: correctness of frozen traces; single-process observations only"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "verified",
+  "cells": 4,
+  "sanitized_cells": 2,
+  "checks": [
+    "sources",
+    "artifacts",
+    "traces",
+    "per-op counts",
+    "final map",
+    "sanitized",
+    "decision"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "traces": {
+    "english_words": {
+      "dataset": "english_words",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_initial_rows.bin",
+      "rows_sha256": "ac1a179f8cb370873e3690e5f2266106809996c578cce15c5c6b5f6a487f0d1d",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_operations.bin",
+      "operations_sha256": "294f4bedd97f263e41f5d5cbc4743bd956689b03dc5d62b27d0f23d999f3007b",
+      "operations": 20000,
+      "find_weight": "19/20",
+      "seed": 20261019,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    },
+    "english_words_80_20": {
+      "dataset": "english_words",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_initial_rows.bin",
+      "rows_sha256": "ac1a179f8cb370873e3690e5f2266106809996c578cce15c5c6b5f6a487f0d1d",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/english_words_80_20_operations.bin",
+      "operations_sha256": "c4356c552c36c4d51c3521efdc95992ef9946014905e2d62e742d3dbc806e044",
+      "operations": 20000,
+      "find_weight": "4/5",
+      "seed": 20261019,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    },
+    "memetracker_urls": {
+      "dataset": "memetracker_urls",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_initial_rows.bin",
+      "rows_sha256": "454ce6a6b3e81d448e5d4aa5ddf75fc5de0e8a58ad54a9302515e3070c21fbfd",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_operations.bin",
+      "operations_sha256": "8b6a3f4302160b0c899a49328ee5fe1ce8e535520ec07c435e5c5994fc2bc8a4",
+      "operations": 20000,
+      "find_weight": "19/20",
+      "seed": 20261019,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    },
+    "memetracker_urls_80_20": {
+      "dataset": "memetracker_urls",
+      "rows_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_initial_rows.bin",
+      "rows_sha256": "454ce6a6b3e81d448e5d4aa5ddf75fc5de0e8a58ad54a9302515e3070c21fbfd",
+      "initial_rows": 52428,
+      "operations_path": "07_Eval_Integration/results/bm_dynamic_inputs_20261019/memetracker_urls_80_20_operations.bin",
+      "operations_sha256": "6e3d7d913364900e4119f3bd01507edb48dc4d861554b1dd494d6a43ae19c27b",
+      "operations": 20000,
+      "find_weight": "4/5",
+      "seed": 20261019,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "read_miss_ratio": "1/10",
+      "sampler": "unchanged benchmark_lib.workload.generate_mixed_operations"
+    }
+  },
+  "seed": 20261019,
+  "operations": 20000,
+  "source_identity": "07_Eval_Integration/results/bm_real_20261018/identity.json",
+  "source_identity_sha256": "8c6abdcb365f821be3c8d258c8f84ac4c7702fbf162388f0028218c7fc5b43da",
+  "note": "traces frozen before any replay or timing"
+}

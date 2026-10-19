@@ -20,7 +20,8 @@
 - **原生cost/adaptive已收口（10月19日）**：[四格2000行计时](07_Eval_Integration/RESULTS_BM_COST_20261019.md)：cost/legacy=1.004–1.034、adaptive/cost=0.993–1.061，均未超过AA形成明确收益；三真实格构建为旧目标1.22–2.26倍、2.48–3.88倍。普通/sanitizer各1,583,448项通过；输入生命周期验收缺陷已单独修复并保留原失败，校准与计时二进制复用。
 - **最新实质优化（10月19日）**：[完整空间账本与BM按页构建](07_Eval_Integration/RESULTS_BM_SPACE_20261019.md)。消除整批输入转换，常驻保持ART的43%–73%，构建峰值下降53%–57%、降至ART的45%–75%；同轮构建中位耗时为ART的70%–93%。四格通过空间场景入口，三格达到≤70%常驻目标；普通/sanitizer、布局、容量及释放复核通过。
 - **空间/构建优化已泛化（10月19日）**：[独立种子+100k规模](07_Eval_Integration/RESULTS_BM_SPACE_GEN_20261019.md)：常驻/ART=0.427–0.731、峰值/ART=0.437–0.756、峰值相对旧BM降53%–57%，四格过组合门；空间≤0.70在词表/URL/100k达成，短语0.731未达。
-- **当前优先任务**：[有限动态入口准备](docs/LONG_TERM_BM_PLAN_20261018.md)。空间/构建已在独立样本与规模变化上确认；下一步冻结两数据×两读写比的`SIBOPS1`轨迹并登记入口，完整24格动态矩阵与默认采用未开始。
+- **阶段5入口完成（10月19日）**：[动态轨迹与逐操作正确性](07_Eval_Integration/RESULTS_BM_DYNAMIC_ENTRY_20261019.md)：2数据×2读写比各2万操作，逐操作对照std::map与终态全量scan，四轨迹失配0、两格sanitizer一致；多数插入页内完成，重建约10%并各伴随一次根发布。
+- **当前优先任务**：[动态配对计时与读预算](docs/LONG_TERM_BM_PLAN_20261018.md)。轨迹已冻结且正确；下一步登记配对协议（进程/重复/顺序/指标），再做最终map快照的读预算与根复制成本，通过后才扩24格并接ART/Context16同能力对照。
 - **历史自研F5推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前主线已接入原BlockModel，阶段5有限动态入口仍以BM空间场景确认为前提，历史[F6B矩阵](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)、动态吞吐及采用未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。
