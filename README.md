@@ -22,7 +22,8 @@
 - **空间/构建优化已泛化（10月19日）**：[独立种子+100k规模](07_Eval_Integration/RESULTS_BM_SPACE_GEN_20261019.md)：常驻/ART=0.427–0.731、峰值/ART=0.437–0.756、峰值相对旧BM降53%–57%，四格过组合门；空间≤0.70在词表/URL/100k达成，短语0.731未达。
 - **阶段5入口完成（10月19日）**：[动态轨迹与逐操作正确性](07_Eval_Integration/RESULTS_BM_DYNAMIC_ENTRY_20261019.md)：2数据×2读写比各2万操作，逐操作对照std::map与终态全量scan，四轨迹失配0、两格sanitizer一致；多数插入页内完成，重建约10%并各伴随一次根发布。
 - **阶段5读预算通过（10月19日）**：[动态实例 vs 同map快照](07_Eval_Integration/RESULTS_BM_DYNAMIC_READ_20261019.md)：四格snapshot/dynamic=0.997–1.055，均在1.15预算内且未分辨；根每次发布复制整根，暂停p99跳至84–229µs。
-- **当前优先任务**：[根复制随页数增长的量化与24格动态矩阵](docs/LONG_TERM_BM_PLAN_20261018.md)。读预算与根账本已完成；下一步量化根复制随页数是否线性，再决定是否研究路径复制，之后扩24格并接ART/Context16同能力对照。
+- **阶段5根成本已量化（10月19日）**：[四档页数](07_Eval_Integration/RESULTS_BM_ROOT_SCALE_20261019.md)：每次根发布复制整根（条目/页=1.50–1.52），1,000次插入累计复制1,552→24,640项（32→128页），skew键字节是tranco/64k的48倍；已达`path_copy_justified`门槛。
+- **当前优先任务**：[根复制入口（路径复制/分块发布）](docs/LONG_TERM_BM_PLAN_20261018.md)。读预算与根成本已完成；下一步登记一个根机制入口（工作量+正确性+15%读预算），通过后再扩24格与ART/Context16同能力对照，最后进入阶段6收口。
 - **历史自研F5推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前主线已接入原BlockModel，阶段5有限动态入口仍以BM空间场景确认为前提，历史[F6B矩阵](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)、动态吞吐及采用未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。

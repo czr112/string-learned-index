@@ -1,0 +1,50 @@
+{
+  "root_work": {
+    "tranco64": {
+      "pages": 32,
+      "entries_per_publication": 48.5,
+      "ratio_to_pages": 1.515625,
+      "within_expected_band": true
+    },
+    "words100k": {
+      "pages": 49,
+      "entries_per_publication": 73.5,
+      "ratio_to_pages": 1.5,
+      "within_expected_band": true
+    },
+    "skew131k": {
+      "pages": 64,
+      "entries_per_publication": 96.5,
+      "ratio_to_pages": 1.5078125,
+      "within_expected_band": true
+    },
+    "tranco262k": {
+      "pages": 128,
+      "entries_per_publication": 192.5,
+      "ratio_to_pages": 1.50390625,
+      "within_expected_band": true
+    }
+  },
+  "root_work_grows_with_pages": true,
+  "total_entries_copied": {
+    "tranco64": 1552,
+    "words100k": 3528,
+    "skew131k": 6176,
+    "tranco262k": 24640
+  },
+  "publications": {
+    "tranco64": 32,
+    "words100k": 48,
+    "skew131k": 64,
+    "tranco262k": 128
+  },
+  "p99_ns": {
+    "tranco64": 548153,
+    "words100k": 374100,
+    "skew131k": 679952,
+    "tranco262k": 563303
+  },
+  "path_copy_justified": true,
+  "production_adopted": false,
+  "status": "stage-5 root cost scaling; synthetic growth batch, unpaired"
+}

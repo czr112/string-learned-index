@@ -1,0 +1,98 @@
+[
+  {
+    "label": "tranco64",
+    "rows": 65536,
+    "pages": 32,
+    "inserts": 1000,
+    "inserted": 1000,
+    "mismatches": 0,
+    "publications": 32,
+    "rebuilds": 32,
+    "entries_copied": 1552,
+    "key_bytes_copied": 19626,
+    "entries_per_publication": 48.5,
+    "largest_root_entries": 64,
+    "pages_after": 64,
+    "build_ns": 11727843,
+    "batch_ns": 18962443,
+    "pause_ns": {
+      "p50": 957,
+      "p95": 2625,
+      "p99": 548153,
+      "max": 865387
+    },
+    "memory": 2203638
+  },
+  {
+    "label": "words100k",
+    "rows": 100000,
+    "pages": 49,
+    "inserts": 1000,
+    "inserted": 1000,
+    "mismatches": 0,
+    "publications": 48,
+    "rebuilds": 48,
+    "entries_copied": 3528,
+    "key_bytes_copied": 34939,
+    "entries_per_publication": 73.5,
+    "largest_root_entries": 97,
+    "pages_after": 97,
+    "build_ns": 14789172,
+    "batch_ns": 19488167,
+    "pause_ns": {
+      "p50": 970,
+      "p95": 3190,
+      "p99": 374100,
+      "max": 814878
+    },
+    "memory": 2973088
+  },
+  {
+    "label": "skew131k",
+    "rows": 131072,
+    "pages": 64,
+    "inserts": 1000,
+    "inserted": 1000,
+    "mismatches": 0,
+    "publications": 64,
+    "rebuilds": 64,
+    "entries_copied": 6176,
+    "key_bytes_copied": 953472,
+    "entries_per_publication": 96.5,
+    "largest_root_entries": 128,
+    "pages_after": 128,
+    "build_ns": 47523918,
+    "batch_ns": 38274592,
+    "pause_ns": {
+      "p50": 1030,
+      "p95": 451024,
+      "p99": 679952,
+      "max": 1671990.0
+    },
+    "memory": 13155190
+  },
+  {
+    "label": "tranco262k",
+    "rows": 262144,
+    "pages": 128,
+    "inserts": 1000,
+    "inserted": 1000,
+    "mismatches": 0,
+    "publications": 128,
+    "rebuilds": 128,
+    "entries_copied": 24640,
+    "key_bytes_copied": 326520,
+    "entries_per_publication": 192.5,
+    "largest_root_entries": 256,
+    "pages_after": 256,
+    "build_ns": 40248967,
+    "batch_ns": 61928151,
+    "pause_ns": {
+      "p50": 1398,
+      "p95": 462268,
+      "p99": 563303,
+      "max": 758236
+    },
+    "memory": 8652892
+  }
+]

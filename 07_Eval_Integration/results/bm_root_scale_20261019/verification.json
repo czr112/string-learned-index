@@ -1,0 +1,11 @@
+{
+  "status": "verified",
+  "checks": [
+    "sources",
+    "inputs",
+    "pages",
+    "zero mismatches",
+    "linear band"
+  ],
+  "cells": 4
+}

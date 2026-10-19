@@ -1,0 +1,104 @@
+{
+  "base_commit": "0eb7d66ad92ddc75ae7d396f8817a178741a66ac",
+  "cpu": 0,
+  "inputs": {
+    "tranco64": {
+      "rows_path": "07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "rows_sha256": "9a322a9b1f38957d24b9c2226050f6467e69f3470d8712bd7fe8d85cf40e48f5",
+      "expected_pages": 32
+    },
+    "words100k": {
+      "rows_path": "07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "rows_sha256": "ff39c698f162acef2681a903a12f966bbcb01aa694c063fd745dac398ee98089",
+      "expected_pages": 49
+    },
+    "skew131k": {
+      "rows_path": "07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "rows_sha256": "fd9c2363791ee6fcc4b3bcaef570170c7ae96a9f0a2304833a583aa517bee872",
+      "expected_pages": 64
+    },
+    "tranco262k": {
+      "rows_path": "07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "rows_sha256": "69e5077ad71dd0f3e288dbdb9ecea7a607ef63fdb08d47f7db5c573d31b4f6c2",
+      "expected_pages": 128
+    }
+  },
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/diagnostics/BM_ROOT_SCALE_SPEC_20261019.md": "84b285d26b7b8a4b1ba867f136ee193f9922e92e16ae0136950108d9a22b4815",
+    "07_Eval_Integration/diagnostics/bench_bm_root_scale.cpp": "236e6b84b1bee0837aa9d844f636d36421592d287b2d2619d7c229c4d7da74e8",
+    "07_Eval_Integration/diagnostics/bm_bounded_index.hpp": "2cb28beb92810180dc32b414f0865746d224602e5ad6fb565f84818752f582d0",
+    "07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "07_Eval_Integration/diagnostics/bm_page_index.hpp": "c3e54dc2638e0ba1f5f71a205b1f29dab950d57dc4bec2974ab88f70da87f082",
+    "07_Eval_Integration/diagnostics/bm_page_root.hpp": "c7b9f57d8b3fc47e0702d5239408ea334b243afe84b7e1f6bba1fdaa10fac5c6",
+    "07_Eval_Integration/diagnostics/run_bm_root_scale.py": "553ea4bf5f859c856d725e30ab30374153dc24a066d8b846bc68e19c81a9502e",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "artifacts": {
+    "build/rootscale": "98d76bf12cacf963732c4f280d911045df4e86fc1689084d3c8a60b5c25d7d83"
+  },
+  "commands": [
+    [
+      "g++",
+      "-pthread",
+      "-std=c++17",
+      "-march=x86-64-v3",
+      "-I/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src",
+      "-I/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics",
+      "-O2",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bench_bm_root_scale.cpp",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp",
+      "-o",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_root_scale_20261019/build/rootscale"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_root_scale_20261019/build/rootscale",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/static_interface_20261012c/tranco_64k_rows.bin",
+      "1000",
+      "tranco64"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_root_scale_20261019/build/rootscale",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "1000",
+      "words100k"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_root_scale_20261019/build/rootscale",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_skew/interchange/rows.bin",
+      "1000",
+      "skew131k"
+    ],
+    [
+      "taskset",
+      "-c",
+      "0",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_root_scale_20261019/build/rootscale",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/matrix2_tranco/interchange/rows.bin",
+      "1000",
+      "tranco262k"
+    ]
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "upstream_commit": "3894c767338a865d2920ba5e21283827fea1d803",
+  "protocol": "one process per page count; 1,000 synthetic inserts spread evenly over the row set; root ledger taken as the delta of the maintenance counters",
+  "limits": [
+    "single process, unpaired",
+    "evenly spread inserts make every page split once",
+    "the batch is synthetic growth, not a mixed workload",
+    "no adoption decision"
+  ]
+}
