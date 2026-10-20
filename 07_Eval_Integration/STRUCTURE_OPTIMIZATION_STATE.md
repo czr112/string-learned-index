@@ -35,6 +35,7 @@
 
 **以下采用的是[10月18日计划](../docs/LONG_TERM_BM_PLAN_20261018.md)，已由上方新计划接替。**
 **当前汇总入口：[BM 主线当前配置、总账与证据索引](RESULTS_BM_FINAL_TABLE_20261019.md)**
+**R1 已完成（2026-10-20）**：[四格三臂增长对照](RESULTS_BM_R1_20261020.md)。三臂共享轨迹、12 次运行零失配；查询 BM 0.76–1.29µs（ART 0.69–1.15），**增长插入 BM 14.4–32.7µs vs ART 1.25–2.41/Context16 1.67–2.69（6–13 倍）**，构建更快（5.7–14.3ms）、常驻最省（1.59–5.30MB vs 7.82–14.00MB）。R3 的 ≥15% 目标有了基线。
 **R0 收尾门通过（2026-10-20）**：差分（196,713 项/格零失配）、**find 零分配**、包装开销（均在AA带内）english_words=1.087 / memetracker_urls=1.038 / memetracker_phrases=1.035（≤5%）。记录在 `results/bm_r0_closing_20261020`。
 **R0 已交付（2026-10-20）**：[统一实验入口](RESULTS_BM_R0_20261020.md)：`make_bm_experiment_index`（有界构建、`find_base`、真实 model/core/adapter 哈希），公共 contract **100/100**，三类真实语料各 263,121 项零失配，words 格 sanitizer 一致；差分门与分配账本仍待补。
 **P5 收口完成（2026-10-20）**：[全依赖重建与正式复验](RESULTS_BM_P5_20261020.md)：新目录重建上游两库、libart 与正式 adapter（libart 目标文件逐字节等于旧记录），正式 contract 验收 **100/100**。最终配置：Context16 仍为默认，BM 页只读/动态均为实验场景，预测括号、payload、局部细分、cost/adaptive 与分块根全部关闭。

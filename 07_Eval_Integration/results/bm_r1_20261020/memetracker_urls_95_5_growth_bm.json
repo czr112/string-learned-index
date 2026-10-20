@@ -1,0 +1,1 @@
+{"arm":"bm","initial_rows":52428,"operations":20000,"find_ops":19000,"insert_ops":1000,"find_hits":17100,"insert_new":999,"insert_dup":1,"hit_rate":0.9,"net_growth":999,"scan_rows":53427,"final_read_checked":53427,"mismatches":0,"build_ns":14333003,"find_us":1.15808,"write_us":32.7234,"index_bytes":5013148}
