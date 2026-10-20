@@ -1,0 +1,149 @@
+{
+  "phase": "P3",
+  "base_commit": "f9e9ead5824bb42ec91d8a8a0de25c7a28273b45",
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/diagnostics/bm_bounded_index.hpp": "2cb28beb92810180dc32b414f0865746d224602e5ad6fb565f84818752f582d0",
+    "07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "07_Eval_Integration/diagnostics/bm_page_index.hpp": "c3e54dc2638e0ba1f5f71a205b1f29dab950d57dc4bec2974ab88f70da87f082",
+    "07_Eval_Integration/diagnostics/bm_page_root.hpp": "c7b9f57d8b3fc47e0702d5239408ea334b243afe84b7e1f6bba1fdaa10fac5c6",
+    "07_Eval_Integration/diagnostics/replay_bm_dynamic.cpp": "85941a2661e23edec14345317d297a40456a893f02ce3b6efa122a7da8afac57",
+    "07_Eval_Integration/diagnostics/run_bm_p3_dynamic.py": "243028fa4e36c292c725b5b26b8b16006e2f8833261f715e5e2edb6e759a682f",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "inputs": {
+    "english_words_95_5_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_95_5_growth_rows.bin",
+      "rows_sha256": "ac1a179f8cb370873e3690e5f2266106809996c578cce15c5c6b5f6a487f0d1d",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_95_5_growth_ops.bin",
+      "operations_sha256": "294f4bedd97f263e41f5d5cbc4743bd956689b03dc5d62b27d0f23d999f3007b",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "mode": "growth",
+      "ratio": "95_5",
+      "data": "english_words"
+    },
+    "english_words_95_5_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_95_5_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_95_5_replacement_ops.bin",
+      "operations_sha256": "3f41befdbe7edf48bd9c4f451042203c130872b6de73c8363aaa72483da7bc04",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "3": 1000
+      },
+      "mode": "replacement",
+      "ratio": "95_5",
+      "data": "english_words"
+    },
+    "english_words_80_20_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_80_20_growth_rows.bin",
+      "rows_sha256": "ac1a179f8cb370873e3690e5f2266106809996c578cce15c5c6b5f6a487f0d1d",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_80_20_growth_ops.bin",
+      "operations_sha256": "c4356c552c36c4d51c3521efdc95992ef9946014905e2d62e742d3dbc806e044",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "mode": "growth",
+      "ratio": "80_20",
+      "data": "english_words"
+    },
+    "english_words_80_20_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_80_20_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/english_words_80_20_replacement_ops.bin",
+      "operations_sha256": "7b24e050304ecae8eee111d2aa69739731dabb7d028ff113e26ead3307733510",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "3": 4000
+      },
+      "mode": "replacement",
+      "ratio": "80_20",
+      "data": "english_words"
+    },
+    "memetracker_urls_95_5_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_95_5_growth_rows.bin",
+      "rows_sha256": "454ce6a6b3e81d448e5d4aa5ddf75fc5de0e8a58ad54a9302515e3070c21fbfd",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_95_5_growth_ops.bin",
+      "operations_sha256": "8b6a3f4302160b0c899a49328ee5fe1ce8e535520ec07c435e5c5994fc2bc8a4",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "mode": "growth",
+      "ratio": "95_5",
+      "data": "memetracker_urls"
+    },
+    "memetracker_urls_95_5_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_95_5_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_95_5_replacement_ops.bin",
+      "operations_sha256": "5fa40d70bd7d9cae3889db791b0744bc9c90e85c3a0c4c74ee36f46d87ba191e",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "3": 1000
+      },
+      "mode": "replacement",
+      "ratio": "95_5",
+      "data": "memetracker_urls"
+    },
+    "memetracker_urls_80_20_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_80_20_growth_rows.bin",
+      "rows_sha256": "454ce6a6b3e81d448e5d4aa5ddf75fc5de0e8a58ad54a9302515e3070c21fbfd",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_80_20_growth_ops.bin",
+      "operations_sha256": "6e3d7d913364900e4119f3bd01507edb48dc4d861554b1dd494d6a43ae19c27b",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "mode": "growth",
+      "ratio": "80_20",
+      "data": "memetracker_urls"
+    },
+    "memetracker_urls_80_20_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_80_20_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_p3_dynamic_20261020/traces/memetracker_urls_80_20_replacement_ops.bin",
+      "operations_sha256": "e38d9706ba9205fe8f6cd2a645c8fd9876703d440bcead99b8386bcb8fce7363",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "3": 4000
+      },
+      "mode": "replacement",
+      "ratio": "80_20",
+      "data": "memetracker_urls"
+    }
+  },
+  "artifacts": {
+    "build/replay": "d8a88c514ff0b79789686fd9d860b8675a93f1bf60f587b61e504deeb6949cc6"
+  },
+  "protocol": "eight frozen traces; every operation checked against std::map; final map by full read and full ordered scan; single process per cell",
+  "limits": [
+    "single process per cell; no pairing",
+    "uniform targets; no concentrated writes",
+    "scan weight is zero in these cells",
+    "HOT absent",
+    "no adoption decision"
+  ]
+}

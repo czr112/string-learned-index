@@ -1,0 +1,105 @@
+{
+  "cells": {
+    "english_words_95_5_growth": {
+      "find_ops": 19000,
+      "insert_ops": 1000,
+      "update_ops": 0,
+      "erase_ops": 0,
+      "find_us": 0.7090218947368421,
+      "write_us": 15.741952,
+      "rebuilds": 102,
+      "inplace_inserts": 897,
+      "root_publications": 103,
+      "final_size": 53427
+    },
+    "english_words_95_5_replacement": {
+      "find_ops": 19000,
+      "insert_ops": 0,
+      "update_ops": 1000,
+      "erase_ops": 0,
+      "find_us": 0.6926919473684211,
+      "write_us": 1.164869,
+      "rebuilds": 0,
+      "inplace_inserts": 0,
+      "root_publications": 1,
+      "final_size": 65536
+    },
+    "english_words_80_20_growth": {
+      "find_ops": 16000,
+      "insert_ops": 4000,
+      "update_ops": 0,
+      "erase_ops": 0,
+      "find_us": 0.8576826875000001,
+      "write_us": 13.4179625,
+      "rebuilds": 381,
+      "inplace_inserts": 3618,
+      "root_publications": 382,
+      "final_size": 56427
+    },
+    "english_words_80_20_replacement": {
+      "find_ops": 16000,
+      "insert_ops": 0,
+      "update_ops": 4000,
+      "erase_ops": 0,
+      "find_us": 0.705779375,
+      "write_us": 1.17126725,
+      "rebuilds": 0,
+      "inplace_inserts": 0,
+      "root_publications": 1,
+      "final_size": 65536
+    },
+    "memetracker_urls_95_5_growth": {
+      "find_ops": 19000,
+      "insert_ops": 1000,
+      "update_ops": 0,
+      "erase_ops": 0,
+      "find_us": 1.2372861052631579,
+      "write_us": 32.146214,
+      "rebuilds": 102,
+      "inplace_inserts": 897,
+      "root_publications": 103,
+      "final_size": 53427
+    },
+    "memetracker_urls_95_5_replacement": {
+      "find_ops": 19000,
+      "insert_ops": 0,
+      "update_ops": 1000,
+      "erase_ops": 0,
+      "find_us": 1.0324701052631577,
+      "write_us": 1.4685229999999998,
+      "rebuilds": 0,
+      "inplace_inserts": 0,
+      "root_publications": 1,
+      "final_size": 65536
+    },
+    "memetracker_urls_80_20_growth": {
+      "find_ops": 16000,
+      "insert_ops": 4000,
+      "update_ops": 0,
+      "erase_ops": 0,
+      "find_us": 2.226627375,
+      "write_us": 38.35016975,
+      "rebuilds": 381,
+      "inplace_inserts": 3618,
+      "root_publications": 382,
+      "final_size": 56427
+    },
+    "memetracker_urls_80_20_replacement": {
+      "find_ops": 16000,
+      "insert_ops": 0,
+      "update_ops": 4000,
+      "erase_ops": 0,
+      "find_us": 0.9132271875,
+      "write_us": 1.26724375,
+      "rebuilds": 0,
+      "inplace_inserts": 0,
+      "root_publications": 1,
+      "final_size": 65536
+    }
+  },
+  "all_cells_zero_mismatch": true,
+  "full_operation_cells": 8,
+  "throughput_claim": "read and write micro-costs per cell; no mixed throughput",
+  "production_adopted": false,
+  "status": "P3 eight-cell full-operation dynamic correctness and per-op cost"
+}

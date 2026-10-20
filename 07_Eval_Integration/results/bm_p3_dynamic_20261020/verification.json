@@ -1,0 +1,10 @@
+{
+  "status": "verified",
+  "cells": 8,
+  "checks": [
+    "trace identity",
+    "per-kind counts",
+    "zero mismatches",
+    "final map by read and scan"
+  ]
+}
