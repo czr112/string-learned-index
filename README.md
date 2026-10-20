@@ -29,7 +29,8 @@
 - **P0 修正（10月20日）**：[臂身份/校验和/预算方向](07_Eval_Integration/RESULTS_BM_P0_20261020.md)：分块根修正后`chunked/flat`=1.968/0.884/1.924（短键约慢2倍），入口判定撤回、FlatRoot 保留；读预算按`dynamic/snapshot`重算0.948–1.003；"校验和差28"为 Number 往返误差，精确比较一致。
 - **P1/P3 完成（10月20日）**：[根非主要成本＋八格全操作](07_Eval_Integration/RESULTS_BM_P1_P3_20261020.md)：根复制仅占维护 2.8%–7.4%，P2 新根机制不做、FlatRoot 保留；八格零失配，替换1.16–1.47µs/次零重建，增长13.4–38.4µs/次。
 - **P4 完成（10月20日）**：[24格全操作动态](07_Eval_Integration/RESULTS_BM_P4_20261020.md)：24格零失配，替换0.84–1.67µs/次零重建、增长10.6–35.9µs/次；集中写六组增长格一致更便宜。
-- **当前优先任务**：[P5 全依赖复现与配置收口](docs/LONG_TERM_BM_PLAN_20261019.md)。P0–P4 已完成；剩余 P5：新目录从固定源码重建BM库/benchmark/ART/最终adapter、正式包装重过contract与sanitizer、最终配置表（默认仍Context16）。
+- **P5 收口（10月20日）**：[全依赖重建+正式验收100/100](07_Eval_Integration/RESULTS_BM_P5_20261020.md)：新目录重建上游两库、libart 与 adapter，libart 目标文件逐字节一致；最终配置为 Context16 默认 + BM 实验场景，五个候选关闭。
+- **当前状态**：P0–P5 全部执行完毕；剩余为多进程配对吞吐、规模边界、真实热点日志、短语0.70空间目标与 HOT 泄漏，均需另立登记。
 - **历史自研F5推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前主线已接入原BlockModel，阶段5有限动态入口仍以BM空间场景确认为前提，历史[F6B矩阵](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)、动态吞吐及采用未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。

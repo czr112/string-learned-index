@@ -1,0 +1,12 @@
+adapter under acceptance: make_bm_page_index
+
+descriptor:
+  implementation = BM physical page (experimental dynamic)
+  version        = p5-fresh-core
+  support        = bulk_load=1 find=1 insert=1 update=1 erase=1 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = Owning Original upstream BlockModel page core, fixed 15/16 occupancy, original BM fit(block_size=1,bytes=7,segments=8,max_error=1), byte-fence correction; full-key unsigned-byte semantics; root/leaf replacement has single-threaded strong exception safety; root copying is O(page count). bulk_load copies contract rows into a temporary core-row vector; scan moves owning keys into contract rows. Per-page suffix arena/offsets are 32-bit; range_sum unsupported. Explicit dirty compaction is outside v1 and must be included separately in maintenance measurements.
+  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)
+  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=1213 adapter_owned=16 retained_input=0
+
+100/100 checks passed

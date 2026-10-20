@@ -1,0 +1,24 @@
+{
+  "phase": "P5",
+  "fresh_dir": "builds/p5_20261020",
+  "artifacts": {
+    "lib/libblocklearn_core.a": "0619f1c2321fe952cad4d7fcd8ba7a1f4208a9a92d4d59e70be1ac7499eed00b",
+    "lib/libblocklearn_adapter.a": "2fb7c4eed1bed0e264c503b5d26274d7b35bdc2b23fbc70dc92b765106e7892d",
+    "art/art.o": "aa9a89c5bc5d0d0428c471a1456de91a1b4389de578379b82ca9c04adad4d3f0",
+    "acc/bm_page_acceptance": "20ddad7aca2a748545d47b799c890b6ed77bfdd453d2fd37618ef18c9f231e67"
+  },
+  "toolchain": {
+    "g++": "13.3.0",
+    "cmake": "3.30.5",
+    "flags": "-O3 -march=x86-64-v3 (no LTO)"
+  },
+  "acceptance": "100/100 checks passed for bm_page_adapter through adapters/common/contract_acceptance.cpp",
+  "art_object_matches_frozen_round": true,
+  "upstream_libraries_rebuilt_from_source": true,
+  "historical_objects_reused": false,
+  "base_commit": "1bd55f158e730fd310fddc6ee323ddf6e5ed7df2",
+  "limits": [
+    "interface acceptance only, not a performance round",
+    "cross-build library ELF hashes differ from the old round by construction"
+  ]
+}
