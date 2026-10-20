@@ -1,0 +1,545 @@
+{
+  "phase": "P4",
+  "base_commit": "d0f5153c76aaffdd0de0d69c507a142c9f92f66d",
+  "sources": {
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "07_Eval_Integration/diagnostics/bm_bounded_index.hpp": "2cb28beb92810180dc32b414f0865746d224602e5ad6fb565f84818752f582d0",
+    "07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "07_Eval_Integration/diagnostics/bm_page_index.hpp": "c3e54dc2638e0ba1f5f71a205b1f29dab950d57dc4bec2974ab88f70da87f082",
+    "07_Eval_Integration/diagnostics/bm_page_root.hpp": "c7b9f57d8b3fc47e0702d5239408ea334b243afe84b7e1f6bba1fdaa10fac5c6",
+    "07_Eval_Integration/diagnostics/replay_bm_dynamic.cpp": "85941a2661e23edec14345317d297a40456a893f02ce3b6efa122a7da8afac57",
+    "07_Eval_Integration/diagnostics/run_bm_p4_dynamic.py": "a3d43df17b66ab40d9c9bcaa0eab52b7043aeb1b90d2c47451add4f21e92c10a",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "inputs": {
+    "english_words_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "cea7249583315d5e23044bb44040a10f7f566a838e752afc1a437cb08dd8dc70",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "1397ed3cc918d80ce71221b0abcb0fb8f0750f6b0ca83080cf184a71b32764fc",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "2": 1000,
+        "1": 19000
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "mode": "growth",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "english_words_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "4c415993fe2e930db6d6f4bf8b7bcd1c6fbf8a49d60fd0b7710752d3dfb7861f",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "3": 1000,
+        "1": 19000
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "mode": "replacement",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "english_words_95_5_concentrated_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_concentrated_growth_rows.bin",
+      "rows_sha256": "36384ceebc9555e1845752b8273fc95a1063ba3299eaf91bf292057b40248751",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_concentrated_growth_ops.bin",
+      "operations_sha256": "c9e6caea06240b9f23342f94c21c9ed51270e38b3bb590edbeade056a70e5333",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "concentrated",
+      "mode": "growth",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 0,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 13108
+      }
+    },
+    "english_words_95_5_concentrated_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_concentrated_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_95_5_concentrated_replacement_ops.bin",
+      "operations_sha256": "ffe0e8fe796f08b4aa79538d43d26c315d58ae50efac8c93cdf895c47a172998",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "3": 1000
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "concentrated",
+      "mode": "replacement",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 19,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 0
+      }
+    },
+    "english_words_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "cea7249583315d5e23044bb44040a10f7f566a838e752afc1a437cb08dd8dc70",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "e2b81efc5be45ff15ac120b305b3113e6aee97cae460ca8f0f27b19f0e696e53",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "2": 4000,
+        "1": 16000
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "mode": "growth",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "english_words_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "609cca79168c3a4b190cd3c2320d093730c24f16578acef614421ceae392774e",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "3": 4000,
+        "1": 16000
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "mode": "replacement",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "english_words_80_20_concentrated_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_concentrated_growth_rows.bin",
+      "rows_sha256": "b7186990556a1f59a8498d8506e741327687b12fdb2f132acb8450b05b11b68a",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_concentrated_growth_ops.bin",
+      "operations_sha256": "6b14424e7378d2c318af56879d2c675df194407da835ab0f6a7bedce38ad1d5b",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "2": 4000,
+        "1": 16000
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "concentrated",
+      "mode": "growth",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 11,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 13108
+      }
+    },
+    "english_words_80_20_concentrated_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_concentrated_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/english_words_80_20_concentrated_replacement_ops.bin",
+      "operations_sha256": "ec7d839d2744ec20fccb58d7551f38132b22db77c9d7bc8fa98c8742a2d1c6f2",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "3": 4000
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "concentrated",
+      "mode": "replacement",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 1,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 0
+      }
+    },
+    "memetracker_urls_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "630f0d027fc79979aaa95c3fb0efbc2fa52abd2b03df0844eb31af0a3c0c9488",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "e6a1e7356199042950d12ce2d1d7fdbc56618c38716748e52462b3117c65d7fe",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "2": 1000,
+        "1": 19000
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "mode": "growth",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_urls_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "cb59e01e821b0fafdb53bf7392b7b53f28786484a6642b958f24093da531813b",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "3": 1000,
+        "1": 19000
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "mode": "replacement",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_urls_95_5_concentrated_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_concentrated_growth_rows.bin",
+      "rows_sha256": "9d839cf98162b6273100cf550e72dfd7183b93ae79a8aa26e23355df8a350eb4",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_concentrated_growth_ops.bin",
+      "operations_sha256": "f6054eb22449117650450dcf9bfc7832bdcd836103459dc68f0c2b96420527a9",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "concentrated",
+      "mode": "growth",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 3,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 13108
+      }
+    },
+    "memetracker_urls_95_5_concentrated_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_concentrated_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_95_5_concentrated_replacement_ops.bin",
+      "operations_sha256": "0d7c3da9a506ff24956ac4d963b5ca8ff64f61fc34021216c2f777daf87d2129",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "3": 1000
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "concentrated",
+      "mode": "replacement",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 5,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 0
+      }
+    },
+    "memetracker_urls_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "630f0d027fc79979aaa95c3fb0efbc2fa52abd2b03df0844eb31af0a3c0c9488",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "23c2d6932fdc2f249383137b190e06b813e1d18f9c747399bd3a643d96a23f98",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "2": 4000,
+        "1": 16000
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "mode": "growth",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_urls_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "e434077fc11092c49126b16dbc630194fb42c23752c76aee6cd9459f0e425a3c",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "3": 4000,
+        "1": 16000
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "mode": "replacement",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_urls_80_20_concentrated_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_concentrated_growth_rows.bin",
+      "rows_sha256": "fc2295b8418462f6d3ad85e981aeba3267495eae13e8d9f5deb33a0be79ef4f0",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_concentrated_growth_ops.bin",
+      "operations_sha256": "91799d0ffb5d0e43b1af10afda0ac544a191d92362832156fd924eb426950e0b",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "concentrated",
+      "mode": "growth",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 11,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 13108
+      }
+    },
+    "memetracker_urls_80_20_concentrated_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_concentrated_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_urls_80_20_concentrated_replacement_ops.bin",
+      "operations_sha256": "63cb8bc2057e8aa98f8d222f832b32950599149699f63a163d0dcf389fcefbeb",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "3": 4000,
+        "1": 16000
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "concentrated",
+      "mode": "replacement",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 5,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 0
+      }
+    },
+    "memetracker_phrases_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "957dd9406a729b20a79c80bc177fdea7c1b433375e8b32ff3801458bdd5f03f8",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "13fab878fd3dc7bbf701aec740f4e9e9184d85cbbcd4aed791d81227968efe4c",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "2": 1000,
+        "1": 19000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "mode": "growth",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_phrases_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "0939a1f6b2c14824187d18aadfb2517534d5a1ff746833ce587d342a57d37baa",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "c7ae5150b2cc10338ab1a6106b643088fbdd634b58a5d3de76594ecfce2a3e67",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "3": 1000,
+        "1": 19000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "mode": "replacement",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_phrases_95_5_concentrated_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_concentrated_growth_rows.bin",
+      "rows_sha256": "66d7967b582196ae02bf659449d12ae8a307fd5c217f9c3826827daa06ca62be",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_concentrated_growth_ops.bin",
+      "operations_sha256": "ba45d0b61b5470d2a512c37ddd7b006e05f70d99741ad90b0b58f31f350eb542",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "2": 1000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "95_5",
+      "locality": "concentrated",
+      "mode": "growth",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 1,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 13108
+      }
+    },
+    "memetracker_phrases_95_5_concentrated_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_concentrated_replacement_rows.bin",
+      "rows_sha256": "0939a1f6b2c14824187d18aadfb2517534d5a1ff746833ce587d342a57d37baa",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_95_5_concentrated_replacement_ops.bin",
+      "operations_sha256": "4484b5a59daecad91d5a2eebea9c89b47cd1f81deb927f6dabbb1afca97bed00",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 19000,
+        "3": 1000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "95_5",
+      "locality": "concentrated",
+      "mode": "replacement",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 26,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 0
+      }
+    },
+    "memetracker_phrases_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "957dd9406a729b20a79c80bc177fdea7c1b433375e8b32ff3801458bdd5f03f8",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "97b97383462c05156c4147eead3f11d26dc1ce69bd7ca76e140f8b5da9bff919",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "2": 4000,
+        "1": 16000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "mode": "growth",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_phrases_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "0939a1f6b2c14824187d18aadfb2517534d5a1ff746833ce587d342a57d37baa",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "5c14b61645340a25a293d394d646a23593dbb83bd395786365a03f26cc73ddc3",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "3": 4000,
+        "1": 16000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "mode": "replacement",
+      "generation": {
+        "generator": "unchanged upstream generate_mixed_operations"
+      }
+    },
+    "memetracker_phrases_80_20_concentrated_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_concentrated_growth_rows.bin",
+      "rows_sha256": "41e9306782c586479186f25c6ad25556240d509c7579be9c68b39b5d477b7e84",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_concentrated_growth_ops.bin",
+      "operations_sha256": "39bf06efe2382cf6f0dc647b7182e48d78a205b855713fac01568af86a75947b",
+      "initial_rows": 52428,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "2": 4000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "80_20",
+      "locality": "concentrated",
+      "mode": "growth",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 12,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 13108
+      }
+    },
+    "memetracker_phrases_80_20_concentrated_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_concentrated_replacement_rows.bin",
+      "rows_sha256": "0939a1f6b2c14824187d18aadfb2517534d5a1ff746833ce587d342a57d37baa",
+      "operations_path": "07_Eval_Integration/results/bm_p4_dynamic_20261020/traces/memetracker_phrases_80_20_concentrated_replacement_ops.bin",
+      "operations_sha256": "78042ea515480b34945aee942c48df7bbd8d21cd95b63346ff4b1a1af8da4db8",
+      "initial_rows": 65536,
+      "operations": 20000,
+      "kinds": {
+        "1": 16000,
+        "3": 4000
+      },
+      "data": "memetracker_phrases",
+      "ratio": "80_20",
+      "locality": "concentrated",
+      "mode": "replacement",
+      "generation": {
+        "generator": "project-side concentrated rule: 80% of targets in 10% of ordered pages",
+        "pages": 32,
+        "hot_page_start": 6,
+        "hot_pages": 3,
+        "hot_keys": 6144,
+        "held_out": 0
+      }
+    }
+  },
+  "artifacts": {
+    "build/replay": "d8a88c514ff0b79789686fd9d860b8675a93f1bf60f587b61e504deeb6949cc6"
+  },
+  "protocol": "24 frozen traces; every operation checked against std::map; final map by full read and scan",
+  "limits": [
+    "single process per cell",
+    "concentrated traces are project-side synthetic",
+    "no scan weight",
+    "HOT absent",
+    "no throughput or adoption claim"
+  ]
+}

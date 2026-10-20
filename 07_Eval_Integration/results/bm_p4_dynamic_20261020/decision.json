@@ -1,0 +1,187 @@
+{
+  "cells": 24,
+  "all_zero_mismatch": true,
+  "find_us": {
+    "min": 0.5287407500000001,
+    "median": 0.84077,
+    "max": 1.3536480625
+  },
+  "write_us": {
+    "min": 0.83677075,
+    "median": 10.5970095,
+    "max": 35.931976999999996
+  },
+  "rebuilds_total": 2526,
+  "growth": {
+    "english_words_95_5_uniform_growth": {
+      "write_us": 15.63,
+      "rebuilds": 98,
+      "rows_rebuilt": 126854
+    },
+    "english_words_95_5_concentrated_growth": {
+      "write_us": 13.6,
+      "rebuilds": 79,
+      "rows_rebuilt": 107343
+    },
+    "english_words_80_20_uniform_growth": {
+      "write_us": 13.19,
+      "rebuilds": 377,
+      "rows_rebuilt": 428706
+    },
+    "english_words_80_20_concentrated_growth": {
+      "write_us": 10.6,
+      "rebuilds": 280,
+      "rows_rebuilt": 321787
+    },
+    "memetracker_urls_95_5_uniform_growth": {
+      "write_us": 28.13,
+      "rebuilds": 98,
+      "rows_rebuilt": 126854
+    },
+    "memetracker_urls_95_5_concentrated_growth": {
+      "write_us": 24.26,
+      "rebuilds": 79,
+      "rows_rebuilt": 107344
+    },
+    "memetracker_urls_80_20_uniform_growth": {
+      "write_us": 25.29,
+      "rebuilds": 377,
+      "rows_rebuilt": 428706
+    },
+    "memetracker_urls_80_20_concentrated_growth": {
+      "write_us": 20.79,
+      "rebuilds": 291,
+      "rows_rebuilt": 333138
+    },
+    "memetracker_phrases_95_5_uniform_growth": {
+      "write_us": 35.93,
+      "rebuilds": 98,
+      "rows_rebuilt": 126853
+    },
+    "memetracker_phrases_95_5_concentrated_growth": {
+      "write_us": 31.26,
+      "rebuilds": 84,
+      "rows_rebuilt": 112501
+    },
+    "memetracker_phrases_80_20_uniform_growth": {
+      "write_us": 30.11,
+      "rebuilds": 378,
+      "rows_rebuilt": 429742
+    },
+    "memetracker_phrases_80_20_concentrated_growth": {
+      "write_us": 22.38,
+      "rebuilds": 287,
+      "rows_rebuilt": 328818
+    }
+  },
+  "replacement": {
+    "english_words_95_5_uniform_replacement": {
+      "write_us": 1.27,
+      "rebuilds": 0
+    },
+    "english_words_95_5_concentrated_replacement": {
+      "write_us": 0.97,
+      "rebuilds": 0
+    },
+    "english_words_80_20_uniform_replacement": {
+      "write_us": 1.17,
+      "rebuilds": 0
+    },
+    "english_words_80_20_concentrated_replacement": {
+      "write_us": 0.84,
+      "rebuilds": 0
+    },
+    "memetracker_urls_95_5_uniform_replacement": {
+      "write_us": 1.58,
+      "rebuilds": 0
+    },
+    "memetracker_urls_95_5_concentrated_replacement": {
+      "write_us": 1.3,
+      "rebuilds": 0
+    },
+    "memetracker_urls_80_20_uniform_replacement": {
+      "write_us": 1.49,
+      "rebuilds": 0
+    },
+    "memetracker_urls_80_20_concentrated_replacement": {
+      "write_us": 1.04,
+      "rebuilds": 0
+    },
+    "memetracker_phrases_95_5_uniform_replacement": {
+      "write_us": 1.67,
+      "rebuilds": 0
+    },
+    "memetracker_phrases_95_5_concentrated_replacement": {
+      "write_us": 1.26,
+      "rebuilds": 0
+    },
+    "memetracker_phrases_80_20_uniform_replacement": {
+      "write_us": 1.47,
+      "rebuilds": 0
+    },
+    "memetracker_phrases_80_20_concentrated_replacement": {
+      "write_us": 1.13,
+      "rebuilds": 0
+    }
+  },
+  "concentrated_vs_uniform_write_us": {
+    "english_words_95_5_growth": {
+      "uniform": 15.63,
+      "concentrated": 13.6
+    },
+    "english_words_95_5_replacement": {
+      "uniform": 1.27,
+      "concentrated": 0.97
+    },
+    "english_words_80_20_growth": {
+      "uniform": 13.19,
+      "concentrated": 10.6
+    },
+    "english_words_80_20_replacement": {
+      "uniform": 1.17,
+      "concentrated": 0.84
+    },
+    "memetracker_urls_95_5_growth": {
+      "uniform": 28.13,
+      "concentrated": 24.26
+    },
+    "memetracker_urls_95_5_replacement": {
+      "uniform": 1.58,
+      "concentrated": 1.3
+    },
+    "memetracker_urls_80_20_growth": {
+      "uniform": 25.29,
+      "concentrated": 20.79
+    },
+    "memetracker_urls_80_20_replacement": {
+      "uniform": 1.49,
+      "concentrated": 1.04
+    },
+    "memetracker_phrases_95_5_growth": {
+      "uniform": 35.93,
+      "concentrated": 31.26
+    },
+    "memetracker_phrases_95_5_replacement": {
+      "uniform": 1.67,
+      "concentrated": 1.26
+    },
+    "memetracker_phrases_80_20_growth": {
+      "uniform": 30.11,
+      "concentrated": 22.38
+    },
+    "memetracker_phrases_80_20_replacement": {
+      "uniform": 1.47,
+      "concentrated": 1.13
+    }
+  },
+  "phrases_space_target_still_failed": true,
+  "production_adopted": false,
+  "status": "P4 24-cell full-operation dynamic; single process per cell, no pairing",
+  "limits": [
+    "single process per cell",
+    "concentrated traces are project-side synthetic",
+    "no scan weight",
+    "HOT absent",
+    "no throughput or adoption claim"
+  ]
+}
