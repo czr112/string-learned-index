@@ -1,0 +1,148 @@
+{
+  "records": {
+    "english_words_80_20_growth": {
+      "label": "english_words_80_20_growth",
+      "initial_rows": 52428,
+      "pages_before": 26,
+      "pages_after": 51,
+      "inserted": 3999,
+      "inplace": 3618,
+      "rebuilds": 381,
+      "rows_rebuilt": 432299,
+      "rows_per_rebuild": 1134.64,
+      "page_rows": 2048,
+      "slots": 16,
+      "occupancy": 15,
+      "mismatches": 0,
+      "batch_ns": 71698194,
+      "find_ns": 13423563,
+      "page_ns": 26197863,
+      "root_ns": 1748658,
+      "reclaim_ns": 88973,
+      "write_ns": 58274631,
+      "page_share_of_write": 0.449559,
+      "root_share_of_write": 0.0300072,
+      "reclaim_share_of_write": 0.00152679
+    },
+    "english_words_95_5_growth": {
+      "label": "english_words_95_5_growth",
+      "initial_rows": 52428,
+      "pages_before": 26,
+      "pages_after": 51,
+      "inserted": 999,
+      "inplace": 897,
+      "rebuilds": 102,
+      "rows_rebuilt": 131655,
+      "rows_per_rebuild": 1290.74,
+      "page_rows": 2048,
+      "slots": 16,
+      "occupancy": 15,
+      "mismatches": 0,
+      "batch_ns": 30426929,
+      "find_ns": 13095714,
+      "page_ns": 8077032,
+      "root_ns": 555831,
+      "reclaim_ns": 25124,
+      "write_ns": 17331215,
+      "page_share_of_write": 0.46604,
+      "root_share_of_write": 0.0320711,
+      "reclaim_share_of_write": 0.00144964
+    },
+    "memetracker_urls_80_20_growth": {
+      "label": "memetracker_urls_80_20_growth",
+      "initial_rows": 52428,
+      "pages_before": 26,
+      "pages_after": 51,
+      "inserted": 3999,
+      "inplace": 3618,
+      "rebuilds": 381,
+      "rows_rebuilt": 432299,
+      "rows_per_rebuild": 1134.64,
+      "page_rows": 2048,
+      "slots": 16,
+      "occupancy": 15,
+      "mismatches": 0,
+      "batch_ns": 127499744,
+      "find_ns": 21333002,
+      "page_ns": 44596760,
+      "root_ns": 8508446,
+      "reclaim_ns": 352157,
+      "write_ns": 106166742,
+      "page_share_of_write": 0.420063,
+      "root_share_of_write": 0.0801423,
+      "reclaim_share_of_write": 0.00331702
+    },
+    "memetracker_urls_95_5_growth": {
+      "label": "memetracker_urls_95_5_growth",
+      "initial_rows": 52428,
+      "pages_before": 26,
+      "pages_after": 51,
+      "inserted": 999,
+      "inplace": 897,
+      "rebuilds": 102,
+      "rows_rebuilt": 131655,
+      "rows_per_rebuild": 1290.74,
+      "page_rows": 2048,
+      "slots": 16,
+      "occupancy": 15,
+      "mismatches": 0,
+      "batch_ns": 56273755,
+      "find_ns": 22208866,
+      "page_ns": 16048258,
+      "root_ns": 2474592,
+      "reclaim_ns": 90015,
+      "write_ns": 34064889,
+      "page_share_of_write": 0.471108,
+      "root_share_of_write": 0.0726435,
+      "reclaim_share_of_write": 0.00264246
+    }
+  },
+  "all_zero_mismatch": true,
+  "page_share_of_write": {
+    "english_words_80_20_growth": 0.45,
+    "english_words_95_5_growth": 0.466,
+    "memetracker_urls_80_20_growth": 0.42,
+    "memetracker_urls_95_5_growth": 0.471
+  },
+  "root_share_of_write": {
+    "english_words_80_20_growth": 0.03,
+    "english_words_95_5_growth": 0.032,
+    "memetracker_urls_80_20_growth": 0.08,
+    "memetracker_urls_95_5_growth": 0.073
+  },
+  "reclaim_share_of_write": {
+    "english_words_80_20_growth": 0.0015,
+    "english_words_95_5_growth": 0.0014,
+    "memetracker_urls_80_20_growth": 0.0033,
+    "memetracker_urls_95_5_growth": 0.0026
+  },
+  "pages_before_after": {
+    "english_words_80_20_growth": [
+      26,
+      51
+    ],
+    "english_words_95_5_growth": [
+      26,
+      51
+    ],
+    "memetracker_urls_80_20_growth": [
+      26,
+      51
+    ],
+    "memetracker_urls_95_5_growth": [
+      26,
+      51
+    ]
+  },
+  "rows_per_rebuild": {
+    "english_words_80_20_growth": 1134.6,
+    "english_words_95_5_growth": 1290.7,
+    "memetracker_urls_80_20_growth": 1134.6,
+    "memetracker_urls_95_5_growth": 1290.7
+  },
+  "gaps": [
+    "trigger reason inferred from page growth, not counted at the decision point",
+    "page_ns not split into copy / model fit / allocation"
+  ],
+  "artifact_sha256": "0f230522f6cd9065e03bd277ac927e25a2542e4db86d6b3d074cc9d2051bf82a"
+}
