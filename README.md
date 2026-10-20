@@ -34,6 +34,7 @@
 - **R0 统一入口（10月20日）**：[make_bm_experiment_index](07_Eval_Integration/RESULTS_BM_R0_20261020.md)：有界构建+find_base，公共验收100/100、三类真实语料各263,121项零失配、words格sanitizer一致；差分门与分配账本待补。
 - **R1 四格增长对照（10月20日）**：[BM/ART/Context16 同轨迹](07_Eval_Integration/RESULTS_BM_R1_20261020.md)：查询持平（0.76–1.29µs），**增长插入慢6–13倍**（14.4–32.7µs vs 1.25–2.69），构建更快、常驻最省。
 - **R2 成本归因（10月20日）**：[页构建占写入42%–47%](07_Eval_Integration/RESULTS_BM_R2_20261020.md)：重建＝满页分裂（页数26→51、每次重写1,135–1,291行），根3%–8%、回收<0.5%；R3 需把页构建压到约0.7×。
+- **R3 候选登记（10月20日）**：[分裂直接搬 arena 字节](07_Eval_Integration/DIAGNOSTIC_BM_R3_CANDIDATE_20261020.md)：现路径每次分裂搬三次字符串，候选按源页块边界整块搬运；判据≥15%、查询不回退、常驻不变。尚未实现。
 - **当前状态**：旧P0–P5的实际记录已交付；统一候选、真正键替换/扫描、公平成功率/热点和外部配对吞吐仍缺。下一轮按R0–R5推进，先4格公平增长对照，再选择一个叶页候选。
 - **历史自研F5推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前主线已接入原BlockModel，阶段5有限动态入口仍以BM空间场景确认为前提，历史[F6B矩阵](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)、动态吞吐及采用未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
