@@ -1,0 +1,53 @@
+{
+  "records": {
+    "english_words_80_20_growth": {
+      "label": "english_words_80_20_growth",
+      "rebuilds": 381,
+      "rows_per_page": 1135,
+      "copy_ns": 6304636,
+      "copy_ns_per_rebuild": 16547.6,
+      "batch_ns": 70912199,
+      "copy_share_of_batch": 0.0889076
+    },
+    "english_words_95_5_growth": {
+      "label": "english_words_95_5_growth",
+      "rebuilds": 102,
+      "rows_per_page": 1291,
+      "copy_ns": 2214471,
+      "copy_ns_per_rebuild": 21710.5,
+      "batch_ns": 29205261,
+      "copy_share_of_batch": 0.0758244
+    },
+    "memetracker_urls_80_20_growth": {
+      "label": "memetracker_urls_80_20_growth",
+      "rebuilds": 381,
+      "rows_per_page": 1135,
+      "copy_ns": 9560359,
+      "copy_ns_per_rebuild": 25092.8,
+      "batch_ns": 128830046,
+      "copy_share_of_batch": 0.0742091
+    },
+    "memetracker_urls_95_5_growth": {
+      "label": "memetracker_urls_95_5_growth",
+      "rebuilds": 102,
+      "rows_per_page": 1291,
+      "copy_ns": 3639832,
+      "copy_ns_per_rebuild": 35684.6,
+      "batch_ns": 53877467,
+      "copy_share_of_batch": 0.0675576
+    }
+  },
+  "copy_share_of_batch": {
+    "english_words_80_20_growth": 0.0889,
+    "english_words_95_5_growth": 0.0758,
+    "memetracker_urls_80_20_growth": 0.0742,
+    "memetracker_urls_95_5_growth": 0.0676
+  },
+  "verdict": "eliminating both temporary row copies caps at 9-13% of write time, below the 15% gate; the registered split_from candidate is not implemented and the branch stops per plan",
+  "remaining_hypotheses": [
+    "fewer rebuilds (split earlier or by block headroom)",
+    "narrower rebuild (rebuild only the affected half)",
+    "reuse of model fit when prefix and block boundaries are unchanged"
+  ],
+  "artifact_sha256": "31c494c20ab164134a74a02cbc9adb3c54189cdd547a2e419a5158ff6340e7f3"
+}
