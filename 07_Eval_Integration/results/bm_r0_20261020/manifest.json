@@ -1,0 +1,43 @@
+{
+  "factory": "make_bm_experiment_index",
+  "parameters": {
+    "lookup": [
+      "base",
+      "window",
+      "directory"
+    ],
+    "default": "base"
+  },
+  "model_commit": "3894c767338a865d2920ba5e21283827fea1d803",
+  "build_mode": "bounded-per-page",
+  "root_mode": "flat",
+  "lookup_default": "base",
+  "core_bundle_sha256": "2b1d18c4e2e1f1ab2bf495b5a354b3e29aceb8b2bb7a99d85860fae6564282f7",
+  "core_source_sha256": "2cb28beb92810180dc32b414f0865746d224602e5ad6fb565f84818752f582d0",
+  "adapter_sha256": "0428cacd3e6435e859fa2e36b943320fdfc395e716ea7aab99b8abf4cd20afff",
+  "capabilities": {
+    "bulk_load": "native",
+    "find": "native",
+    "insert": "native",
+    "update": "native",
+    "erase": "native",
+    "scan": "native",
+    "range_sum": "unsupported"
+  },
+  "artifacts": {
+    "acceptance": "080642b65650bd55ab4822b7069c7cbaab6cdd9f7d836aedd1c321b0f43c1c23",
+    "check": "50c00f86ae06f4865898c90e56f23fc2b5416610ef583e26cdb1c8e638822d45",
+    "check_san": "6bbee7bc84838a72e0627ebdb0e617888a84efe206c6f0abfe7ef01eaee43c44"
+  },
+  "gates": {
+    "contract_acceptance": "100/100",
+    "corpus": "three real key types, 263121 checks each, zero mismatches",
+    "sanitizer": "words cell under ASan/UBSan/LSan, identical counts"
+  },
+  "open_r0_items": [
+    "differential vs bm_page/bm_bounded_page (pages, fences, model params, maintenance counts)",
+    "allocation ledger for the zero-allocation find claim",
+    "wrapper overhead check (three lookups, paired)"
+  ],
+  "base_commit": "35f566e8067a7ba1fbcc262803ede7e4b5b3fdf5"
+}
