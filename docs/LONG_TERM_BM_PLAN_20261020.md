@@ -217,3 +217,5 @@ HOT原适配器泄漏仍独立处理，未普通/sanitizer重新验收前不排�
 
 
 **R0 执行结果（2026-10-20）**：[统一入口与门](../07_Eval_Integration/RESULTS_BM_R0_20261020.md)。新 factory `make_bm_experiment_index`（有界构建、默认`find_base`、真实 model/core/adapter 哈希）公共 contract **100/100**；三类真实语料各 263,121 项零失配（全行/全查询/缺席/边界/owning scan 跨销毁/200 insert+100 update+100 erase）；words 格 ASan/UBSan/LSan 一致。**未完成**：与 bm_page/bm_bounded_page 的逐字段差分门、find 零分配的分配账本、三种 lookup 的包装回归对照。这三项应在 R1 计时前补齐。
+
+**R0 收尾（2026-10-20）**：三项补齐并通过。差分门（统一 factory vs `bm_bounded_page::Index`：自计常驻、全行/全查询答案、插入一致性与插入后答案）每格 **196,713 项、零失配**；**find 零分配**（计数 0）；包装开销 adapter/core = english_words 1.087 / memetracker_urls 1.038 / memetracker_phrases 1.035（≤5% 门）。记录：`results/bm_r0_closing_20261020/summary.json`。注意：三格 `answers_checksum` 相同是因为行值是 0..N−1 的序号，键→值映射由逐行 oracle 覆盖。

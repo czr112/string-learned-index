@@ -1,0 +1,83 @@
+{
+  "gates": {
+    "english_words": {
+      "phase": "gate",
+      "rows": 65536,
+      "queries": 65536,
+      "checks": 196713,
+      "mismatches": 0,
+      "find_allocations": 0,
+      "index_bytes": 1960275,
+      "rebuilds_before": 0,
+      "rebuilds_after": 32,
+      "root_publications_after": 33,
+      "answers_checksum": 8771181707232509952
+    },
+    "memetracker_urls": {
+      "phase": "gate",
+      "rows": 65536,
+      "queries": 65536,
+      "checks": 196713,
+      "mismatches": 0,
+      "find_allocations": 0,
+      "index_bytes": 6120494,
+      "rebuilds_before": 0,
+      "rebuilds_after": 32,
+      "root_publications_after": 33,
+      "answers_checksum": 8771181707232509952
+    },
+    "memetracker_phrases": {
+      "phase": "gate",
+      "rows": 65536,
+      "queries": 65536,
+      "checks": 196713,
+      "mismatches": 0,
+      "find_allocations": 0,
+      "index_bytes": 7060340,
+      "rebuilds_before": 0,
+      "rebuilds_after": 32,
+      "root_publications_after": 33,
+      "answers_checksum": 8771181707232509952
+    }
+  },
+  "wrapper_ratio_adapter_over_core": {
+    "english_words": {
+      "process_medians": [
+        1.0620852734066202,
+        1.0005882231378789,
+        1.1242831739533554,
+        1.1156220864140103,
+        1.0868713926876048
+      ],
+      "median": 1.0868713926876048,
+      "within_5_percent": false
+    },
+    "memetracker_urls": {
+      "process_medians": [
+        1.0378731319267345,
+        1.0658833248579076,
+        1.0325350209290378,
+        1.0038898131181628,
+        1.0949648294281453
+      ],
+      "median": 1.0378731319267345,
+      "within_5_percent": true
+    },
+    "memetracker_phrases": {
+      "process_medians": [
+        1.0138356868040463,
+        1.0566874114114477,
+        1.0710495786384222,
+        1.031840586217988,
+        1.0347621412661088
+      ],
+      "median": 1.0347621412661088,
+      "within_5_percent": true
+    }
+  },
+  "all_zero_mismatch": true,
+  "all_zero_find_allocations": true,
+  "wrapper_within_5_percent": false,
+  "note": "answer checksums repeat across corpora because row values are ordinals 0..N-1 in every cell; the per-corpus key->value mapping is covered by the row oracle check",
+  "artifact_sha256": "3a293174b43c3bc7b8c4c749f7d8a30d1305d273fbe39a151ea6d4b2ebfa4831"
+}
