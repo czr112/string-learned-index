@@ -7,6 +7,7 @@
 
 - **直接看比较结果与已做优化**：[简版性能对比](07_Eval_Integration/BASELINE_COMPARISON_SIMPLE.md)。
 - **当前结构优化与采用决策**：[状态文档](07_Eval_Integration/STRUCTURE_OPTIMIZATION_STATE.md)。
+- **最新结果复核与下一长期计划（10月19日）**：[审计结论](07_Eval_Integration/AUDIT_BM_NEXT_PLAN_20261019.md)、[详细计划](docs/LONG_TERM_BM_PLAN_20261019.md)。空间收益保留；分块根计时臂错位，真实短键路由约2倍，撤回原集成入口。下一步先修评测身份，再测真实根成本及有限全操作动态对照，预算约3–5开发周、逐阶段过门。
 - **真实数据查询证据与长期计划**：[词表、MemeTracker URL/短语补测](07_Eval_Integration/RESULTS_BM_REAL_20261018.md)完成，各65,536键、3000行独立复核；原BM路径/ART为词表1.478–1.496、URL1.062–1.069（未分辨）、短语1.114–1.118。窗口纠正六格均数值更慢。后续原生参照和查询机制已收口，[详细长期计划](docs/LONG_TERM_BM_PLAN_20261018.md)当前推进空间场景确认。
 - **10月18日上游快照**：[benchmark 003a55bf、模型 e8e05411](07_Eval_Integration/UPSTREAM_UPDATE_20261018.md)。两仓库均有更新，当轮由独立 snapshot 编译，原依赖与旧结果保留。
 - **10月19日再次核对上游**：[模型3894c767、benchmark仍003a55bf](07_Eval_Integration/UPSTREAM_UPDATE_20261019.md)。模型清理九个旧入口、保留旧目标/cost/adaptive三工厂；14份核心/校准文件逐字节相同。新快照CTest 11/11、四格普通兼容计数通过；已有性能继续绑定e8，后续工作使用独立3894快照。
@@ -21,15 +22,16 @@
 - **最新实质优化（10月19日）**：[完整空间账本与BM按页构建](07_Eval_Integration/RESULTS_BM_SPACE_20261019.md)。消除整批输入转换，常驻保持ART的43%–73%，构建峰值下降53%–57%、降至ART的45%–75%；同轮构建中位耗时为ART的70%–93%。四格通过空间场景入口，三格达到≤70%常驻目标；普通/sanitizer、布局、容量及释放复核通过。
 - **空间/构建优化已泛化（10月19日）**：[独立种子+100k规模](07_Eval_Integration/RESULTS_BM_SPACE_GEN_20261019.md)：常驻/ART=0.427–0.731、峰值/ART=0.437–0.756、峰值相对旧BM降53%–57%，四格过组合门；空间≤0.70在词表/URL/100k达成，短语0.731未达。
 - **阶段5入口完成（10月19日）**：[动态轨迹与逐操作正确性](07_Eval_Integration/RESULTS_BM_DYNAMIC_ENTRY_20261019.md)：2数据×2读写比各2万操作，逐操作对照std::map与终态全量scan，四轨迹失配0、两格sanitizer一致；多数插入页内完成，重建约10%并各伴随一次根发布。
-- **阶段5读预算通过（10月19日）**：[动态实例 vs 同map快照](07_Eval_Integration/RESULTS_BM_DYNAMIC_READ_20261019.md)：四格snapshot/dynamic=0.997–1.055，均在1.15预算内且未分辨；根每次发布复制整根，暂停p99跳至84–229µs。
+- **阶段5读预算复核（10月19日）**：[动态实例 vs 同map快照](07_Eval_Integration/RESULTS_BM_DYNAMIC_READ_20261019.md)：正确方向dynamic/snapshot=0.981/0.970/0.948/1.003，观察中位数在1.15内；全命中计时、sanitizer两格，不能证明等价或全场景无读放大。
 - **阶段5根成本已量化（10月19日）**：[四档页数](07_Eval_Integration/RESULTS_BM_ROOT_SCALE_20261019.md)：每次根发布复制整根（条目/页=1.50–1.52），1,000次插入累计复制1,552→24,640项（32→128页），skew键字节是tranco/64k的48倍；已达`path_copy_justified`门槛。
-- **阶段5根机制入口通过（10月19日）**：[16键分块COW](07_Eval_Integration/RESULTS_BM_ROOT_CHUNK_20261019.md)：发布条目降43.8%/68.8%/81.3%（32/64/128页），键字节降46.1%/71.4%/82.4%，路由仅慢0.5%–2.7%且三格零失配；允许进入集成。
+- **阶段5根机制入口撤回（10月19日复核）**：[分块根更正](07_Eval_Integration/RESULTS_BM_ROOT_CHUNK_20261019.md)：计时标签错位，真实路由/flat=2.063/0.873/1.992；复制条目降幅只是算式估计，未实现COW发布。路由正确性保留，旧原型不能直接集成。
 - **BM 主线总账（10月19日）**：[当前配置、总账与证据索引](07_Eval_Integration/RESULTS_BM_FINAL_TABLE_20261019.md)：能力、身份、最终读数、可用/不可用判定、逐阶段证据入口与复现命令；生产默认仍为 Context16，无已采用 BM 配置。
-- **当前优先任务**：[阶段5根机制集成](docs/LONG_TERM_BM_PLAN_20261018.md)。分块 COW 入口已通过；下一步接进 Index（页指针/发布回滚/根内存）并重过 15% 读预算，随后 24 格与 ART/Context16 同能力对照，最后阶段6 干净复现。
+- **P0 修正（10月20日）**：[臂身份/校验和/预算方向](07_Eval_Integration/RESULTS_BM_P0_20261020.md)：分块根修正后`chunked/flat`=1.968/0.884/1.924（短键约慢2倍），入口判定撤回、FlatRoot 保留；读预算按`dynamic/snapshot`重算0.948–1.003；"校验和差28"为 Number 往返误差，精确比较一致。
+- **当前优先任务**：[P1 分离根复制/页重建/回收真实成本](docs/LONG_TERM_BM_PLAN_20261019.md)。P0已完成；下一步在固定页数上分段计时与计数，确认根是否主要成本，再决定是否做新根机制（P2）或直接推进有限全操作动态对照（P3）。
 - **历史自研F5推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前主线已接入原BlockModel，阶段5有限动态入口仍以BM空间场景确认为前提，历史[F6B矩阵](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)、动态吞吐及采用未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
 - **最近ART/HOT静态点查对照（10月18日）**：[D1正式只读接口八格简表](07_Eval_Integration/RESULTS_REFINED_EXTERNAL_20261018.md)：skew比ART少34%–44%耗时，mixed/100k少16%；tranco/64k仍多41%–43%，通用采用未通过。
-- **当前长期策略与详细步骤**：[基于最新BM的路线与最新状态](docs/LONG_TERM_BM_PLAN_20261018.md)。原生参照、查询机制收口、空间账本及按页构建已完成，当前在阶段4泛化确认前；[旧A–G策略及执行](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)保留历史，F6B/F6C仍以后续读路径与静态收口为前提。
+- **当前长期策略与详细步骤**：[10月19日剩余路线](docs/LONG_TERM_BM_PLAN_20261019.md)。新样本空间确认及有限动态读已做，根原型结论经复核撤回；按P0–P5条件推进。[10月18日计划](docs/LONG_TERM_BM_PLAN_20261018.md)及[旧A–G策略](docs/LONG_TERM_OPTIMIZATION_STRATEGY_20261018.md)保留历史。
 - **最新结构结果（10月18日）**：[D1簇内前缀辨识](07_Eval_Integration/RESULTS_COLLISION_REFINEMENT_20261018.md)：skew相对B模型耗时下降32%–38%，相对旧宽回退下降20%–25%，风险格无清晰回归；空间+1.18%。四份完整sanitizer门通过；后续E1正式接入与外部复测已完成，生产默认不改。
 - **前版近期计划**：[先定位集成回归，再减少固定导航成本](docs/NEXT_ACTION_PLAN_20261012_AFTER_STATIC_S3.md)，其失败判定继续保留。
 - **上一阶段静态原型**：[物理块预测与 ART 对照](07_Eval_Integration/RESULTS_STATIC_PHYSICAL_20261012.md)；[S0–S2 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC.md)、[S3 计划](docs/NEXT_ACTION_PLAN_20261012_STATIC_S3.md)均已执行。

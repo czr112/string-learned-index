@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "checks": [
+    "arm labels",
+    "pairing",
+    "checksums",
+    "budget direction",
+    "exact decimal comparison",
+    "source drift disclosure"
+  ],
+  "root_entry_gate_passed": false
+}

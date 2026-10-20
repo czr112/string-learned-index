@@ -1,0 +1,13 @@
+{
+  "phase": "P0",
+  "sources": {
+    "07_Eval_Integration/diagnostics/bench_bm_root_chunk_v2.cpp": "d2fcb42fb5a92040c2b77485a0a5bb6202385c7489fe4782a1c8a866ae5e7a41",
+    "07_Eval_Integration/diagnostics/run_bm_p0_audit.py": "0d3ab54cd4d14a82e95588482a17cbe76a9d2c6e299adf6968869ebc7e4e37b3"
+  },
+  "artifacts": {
+    "build/rootchunk_v2": "c1539e41e8b6a04df3086a9029896252ab905b948d4cacab888ec43ddde0f56c"
+  },
+  "base_commit": "70b229dde2c694df7fb41bf0624801affda7cc97",
+  "protocol": "corrected arm labels; 3 cells x 5 processes x 6 Williams rows",
+  "note": "the old bm_root_chunk_20261019 round stays frozen and its pass verdict is withdrawn"
+}

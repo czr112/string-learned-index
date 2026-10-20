@@ -1,0 +1,109 @@
+{
+  "root_chunk": {
+    "ratios": {
+      "tranco64": {
+        "process_medians": [
+          1.9923431921545671,
+          1.9679121450459125,
+          1.9387819302871874,
+          2.2711017719343234,
+          1.8542458110053874
+        ],
+        "median": 1.9679121450459125
+      },
+      "skew131k": {
+        "process_medians": [
+          0.9548172183539838,
+          0.8561468257600184,
+          0.8038228028318558,
+          0.924686280910902,
+          0.8840397578183974
+        ],
+        "median": 0.8840397578183974
+      },
+      "tranco262k": {
+        "process_medians": [
+          1.8628993056928072,
+          2.0039700651841836,
+          1.9804832699681745,
+          1.9236847054350816,
+          1.7957149913009252
+        ],
+        "median": 1.9236847054350816
+      }
+    },
+    "aa_bands": {
+      "tranco64": 1.084926105886054,
+      "skew131k": 1.1685024630087368,
+      "tranco262k": 1.093461237629533
+    },
+    "entry_gate_passed": false,
+    "old_verdict": "withdrawn: arms chunked/chunked_AA ran the flat path"
+  },
+  "dynamic_read_budget": {
+    "english_words": {
+      "process_medians": [
+        0.9436675369315405,
+        1.005939563293696,
+        0.9808924827010254,
+        0.9925395204625582,
+        0.9806707200206781
+      ],
+      "median": 0.9808924827010254,
+      "within_1_15": true
+    },
+    "english_words_80_20": {
+      "process_medians": [
+        0.9174704602709647,
+        0.9952891400814583,
+        0.971681553938202,
+        0.9365218763593777,
+        0.9701927137636519
+      ],
+      "median": 0.9701927137636519,
+      "within_1_15": true
+    },
+    "memetracker_urls": {
+      "process_medians": [
+        0.959792777485939,
+        0.9425555743645979,
+        0.9481571049309108,
+        0.9721068804013893,
+        0.935874275882107
+      ],
+      "median": 0.9481571049309108,
+      "within_1_15": true
+    },
+    "memetracker_urls_80_20": {
+      "process_medians": [
+        0.9763992823909105,
+        1.0033701191391469,
+        0.9304512555819624,
+        1.0943737023712479,
+        1.0904420444046832
+      ],
+      "median": 1.0033701191391469,
+      "within_1_15": true
+    }
+  },
+  "clean_checksum": {
+    "recorded": "507521454403758928",
+    "run0": "507521454403758928",
+    "run1": "507521454403758928",
+    "all_equal_as_decimal_strings": true,
+    "old_comparison_value": "507521454403758900",
+    "old_value_equals_v8_round_trip": true,
+    "note": "the old 28 difference came from a Number round trip, not from the index"
+  },
+  "source_drift": {
+    "files": [
+      "verify_bm_dynamic_entry.py",
+      "BM_DYNAMIC_READ_SPEC_20261019.md",
+      "BM_ROOT_SCALE_SPEC_20261019.md",
+      "BM_ROOT_CHUNK_SPEC_20261019.md",
+      "verify_bm_root_chunk.py"
+    ],
+    "action": "disclosed as irrecoverable in place; new verifier identities issued here, old hashes are not rewritten"
+  },
+  "production_adopted": false
+}
