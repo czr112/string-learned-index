@@ -35,7 +35,7 @@
 
 **以下采用的是[10月18日计划](../docs/LONG_TERM_BM_PLAN_20261018.md)，已由上方新计划接替。**
 **当前汇总入口：[BM 主线当前配置、总账与证据索引](RESULTS_BM_FINAL_TABLE_20261019.md)**
-**R0 收尾门通过（2026-10-20）**：差分（197k 项/格零失配）、**find 零分配**、包装开销 english_words=1.087 / memetracker_urls=1.038 / memetracker_phrases=1.035（≤5%）。记录在 `results/bm_r0_closing_20261020`。
+**R0 收尾门通过（2026-10-20）**：差分（196,713 项/格零失配）、**find 零分配**、包装开销（均在AA带内）english_words=1.087 / memetracker_urls=1.038 / memetracker_phrases=1.035（≤5%）。记录在 `results/bm_r0_closing_20261020`。
 **R0 已交付（2026-10-20）**：[统一实验入口](RESULTS_BM_R0_20261020.md)：`make_bm_experiment_index`（有界构建、`find_base`、真实 model/core/adapter 哈希），公共 contract **100/100**，三类真实语料各 263,121 项零失配，words 格 sanitizer 一致；差分门与分配账本仍待补。
 **P5 收口完成（2026-10-20）**：[全依赖重建与正式复验](RESULTS_BM_P5_20261020.md)：新目录重建上游两库、libart 与正式 adapter（libart 目标文件逐字节等于旧记录），正式 contract 验收 **100/100**。最终配置：Context16 仍为默认，BM 页只读/动态均为实验场景，预测括号、payload、局部细分、cost/adaptive 与分块根全部关闭。
 **P4 已完成（2026-10-20）**：[24格全操作动态](RESULTS_BM_P4_20261020.md)。3数据×2比例×均匀/集中写×增长/替换共24格零失配；替换0.84–1.67µs/次且**零页重建**，增长10.6–35.9µs/次、79–378次重建；集中写与均匀写的差异**不作因果结论**（热点比例8.3%–10.1%、重复插入16%–25%，见审计更正）。

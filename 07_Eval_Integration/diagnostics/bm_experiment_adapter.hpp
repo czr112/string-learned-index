@@ -17,8 +17,14 @@
 namespace bm_experiment {
 namespace sib=string_index_bench::v1;
 class Adapter final:public sib::Index {
+public:
+    enum class Lookup {base,window,directory};
+private:
     std::unique_ptr<bm_bounded_page::Index> index_;
-    std::string lookup_;
+    Lookup lookup_;
+    const char* lookup_name()const {
+        return lookup_==Lookup::base?"base":lookup_==Lookup::window?"window":"directory";
+    }
     const bm_bounded_page::Index& built()const {
         if(!index_)throw std::logic_error("bulk_load required before data operations");
         return *index_;
@@ -28,19 +34,19 @@ class Adapter final:public sib::Index {
         return *index_;
     }
 public:
-    explicit Adapter(std::string lookup):lookup_(std::move(lookup)) {}
+    explicit Adapter(Lookup lookup):lookup_(lookup) {}
     sib::Descriptor descriptor()const override {
         sib::Descriptor d;
-        d.implementation=lookup_=="base"?"BM page (bounded build, base lookup)":
-                         lookup_=="window"?"BM page (bounded build, window lookup)":
-                                           "BM page (bounded build, directory lookup)";
+        d.implementation=lookup_==Lookup::base?"BM page (bounded build, base lookup)":
+                         lookup_==Lookup::window?"BM page (bounded build, window lookup)":
+                                                 "BM page (bounded build, directory lookup)";
         d.implementation_version=BM_CORE_BUNDLE_SHA256;
         d.adapter_version=BM_EXPERIMENT_ADAPTER_SHA256;
         auto& c=d.capabilities;
         c.bulk_load=c.find=c.insert=c.update=c.erase=c.scan=sib::Support::native;
         c.keys.max_bytes=UINT32_MAX;
         d.adaptation_notes="model_commit=" BM_MODEL_COMMIT "; build_mode=bounded-per-page; lookup_mode=";
-        d.adaptation_notes+=lookup_;d.adaptation_notes+="; root_mode=flat; single-threaded; "
+        d.adaptation_notes+=lookup_name();d.adaptation_notes+="; root_mode=flat; single-threaded; "
             "range_sum unsupported; 2048 rows/page, 15/16 slots, full-key verification.";
         return d;
     }
@@ -50,9 +56,11 @@ public:
         index_=std::move(next);
     }
     std::optional<sib::Value> find(std::string_view key)const override {
-        if(lookup_=="window")return built().find(key);
-        if(lookup_=="directory")return built().find_exact(key);
-        return built().find_base(key);
+        switch(lookup_) {
+            case Lookup::window:return built().find(key);
+            case Lookup::directory:return built().find_exact(key);
+            default:return built().find_base(key);
+        }
     }
     sib::InsertResult insert(std::string_view key,sib::Value value)override {
         return mutable_built().insert(key,value)?sib::InsertResult::inserted:sib::InsertResult::already_exists;
@@ -83,12 +91,14 @@ public:
 
 inline std::unique_ptr<string_index_bench::v1::Index> make_bm_experiment_index(
     const string_index_bench::v1::Parameters& parameters) {
-    std::string lookup="base";bool seen=false;
+    bm_experiment::Adapter::Lookup lookup=bm_experiment::Adapter::Lookup::base;bool seen=false;
     for(const auto& parameter:parameters) {
         if(parameter.first!="lookup"||seen)throw std::invalid_argument("unknown or duplicate parameter");
-        seen=true;lookup=parameter.second;
+        seen=true;
+        if(parameter.second=="base")lookup=bm_experiment::Adapter::Lookup::base;
+        else if(parameter.second=="window")lookup=bm_experiment::Adapter::Lookup::window;
+        else if(parameter.second=="directory")lookup=bm_experiment::Adapter::Lookup::directory;
+        else throw std::invalid_argument("lookup must be base, window or directory");
     }
-    if(lookup!="base"&&lookup!="window"&&lookup!="directory")
-        throw std::invalid_argument("lookup must be base, window or directory");
     return std::make_unique<bm_experiment::Adapter>(lookup);
 }
