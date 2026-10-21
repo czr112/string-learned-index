@@ -59,19 +59,27 @@ int main(int argc,char** argv) {
         for(const auto& [key,value]:initial){physical.push_back({key,value});oracle.emplace(key,value);}
         bm_n1_page::Index index(physical);
         std::uint64_t mismatches=0,splits=0,inplace_rebuilds=0,inplace_inserts=0,inserts=0;
+        std::uint64_t write_ns=0,find_ns=0,find_ops=0;
         std::uint64_t rows_at_rebuild=0,page_full_rebuilds=0;
         auto pages=index.page_count();
         auto maintenance=index.maintenance();
         for(const auto& op:operations) {
             if(op.kind==1) {
+                const auto t0=std::chrono::steady_clock::now();
                 const auto want=oracle.find(op.key);
                 const auto got=index.find_base(op.key);
                 if((want==oracle.end())!=!got||(got&&want!=oracle.end()&&*got!=want->second))++mismatches;
+                find_ns+=std::uint64_t(std::chrono::duration_cast<std::chrono::nanoseconds>(
+                    std::chrono::steady_clock::now()-t0).count());
+                ++find_ops;
                 continue;
             }
             if(op.kind!=2)throw std::invalid_argument("growth only");
             const bool present=oracle.find(op.key)!=oracle.end();
+            const auto t0=std::chrono::steady_clock::now();
             const bool ok=index.insert(op.key,op.value);
+            write_ns+=std::uint64_t(std::chrono::duration_cast<std::chrono::nanoseconds>(
+                std::chrono::steady_clock::now()-t0).count());
             if(ok==present)++mismatches;
             if(!ok)continue;
             oracle.emplace(op.key,op.value);
@@ -90,7 +98,7 @@ int main(int argc,char** argv) {
             <<",\"split_share\":"<<((splits+inplace_rebuilds)?double(splits)/(splits+inplace_rebuilds):0.0)
             <<",\"inplace_rebuild_share\":"<<((splits+inplace_rebuilds)?double(inplace_rebuilds)/(splits+inplace_rebuilds):0.0)
             <<",\"rows_per_inplace_rebuild\":"<<(inplace_rebuilds?double(rows_at_rebuild)/inplace_rebuilds:0.0)
-            <<",\"pages_after\":"<<index.page_count()<<",\"mismatches\":"<<mismatches<<",\"page_full\":"<<bm_n1_leaf::reasons().page_full<<",\"prefix_change\":"<<bm_n1_leaf::reasons().prefix_change<<",\"slot_full\":"<<bm_n1_leaf::reasons().slot_full<<",\"arena_short\":"<<bm_n1_leaf::reasons().arena_short<<",\"duplicates\":"<<bm_n1_leaf::reasons().duplicates<<",\"reasons_inserted\":"<<bm_n1_leaf::reasons().inserted<<"}\n";
+            <<",\"pages_after\":"<<index.page_count()<<",\"mismatches\":"<<mismatches<<",\"page_full\":"<<bm_n1_leaf::reasons().page_full<<",\"prefix_change\":"<<bm_n1_leaf::reasons().prefix_change<<",\"slot_full\":"<<bm_n1_leaf::reasons().slot_full<<",\"arena_short\":"<<bm_n1_leaf::reasons().arena_short<<",\"duplicates\":"<<bm_n1_leaf::reasons().duplicates<<",\"reasons_inserted\":"<<bm_n1_leaf::reasons().inserted<<",\"block_splits\":"<<bm_n1_leaf::reasons().block_splits<<",\"write_us\":"<<(inserts?double(write_ns)/inserts/1000:0.0)<<",\"find_us\":"<<(find_ops?double(find_ns)/find_ops/1000:0.0)<<"}\n";
         return mismatches?1:0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}
 }

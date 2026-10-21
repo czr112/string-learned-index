@@ -5,7 +5,7 @@
 
 namespace bm_n1_leaf {
 struct RebuildReasons {
-    std::uint64_t page_full=0,prefix_change=0,slot_full=0,arena_short=0,duplicates=0,inserted=0;
+    std::uint64_t page_full=0,prefix_change=0,slot_full=0,arena_short=0,duplicates=0,inserted=0,block_splits=0;
 };
 inline RebuildReasons& reasons() { static RebuildReasons r; return r; }
 
@@ -370,14 +370,31 @@ public:
             {++reasons().prefix_change;return Insert::rebuild;}
         const auto s=key.substr(r.prefix.size());
         const auto b=directory_block(r,s,nullptr);auto& block=blocks_[b];
-        if(block.count==16){++reasons().slot_full;return Insert::rebuild;}
         if(s.size()>arena_.capacity()-arena_.size()){++reasons().arena_short;return Insert::rebuild;}
-        std::uint32_t at=0;while(at<block.count&&compare(suffix(block.entries[at]),s)<0)++at;
+        std::size_t target=b;
+        if(block.count==16) {
+            Block tail;tail.count=8;
+            for(std::uint32_t i=8;i<16;++i){tail.entries[i-8]=block.entries[i];tail.tags[i-8]=block.tags[i];}
+            block.count=8;
+            const auto first=tail.entries[0];
+            const auto at_fence=std::size_t(r.first)+std::size_t(b)+1;
+            stable_fences_.insert(stable_fences_.begin()+std::ptrdiff_t(at_fence),Fence{first.offset,first.length});
+            blocks_.insert(blocks_.begin()+std::ptrdiff_t(std::size_t(r.first)+b)+1,tail);
+            fences_.push_back(r.prefix+std::string(suffix(first)));
+            ++regions_[0].count;
+            ++reasons().block_splits;
+            // Head keeps the lower half: route by the tail fence, not the head first key.
+            target=compare(s,suffix(blocks_[b+1].entries[0]))<0?std::size_t(b):std::size_t(b)+1;
+        }
+        {
+        auto& dest=blocks_[target];
+        std::uint32_t at=0;while(at<dest.count&&compare(suffix(dest.entries[at]),s)<0)++at;
         const auto tag=fingerprint(s);const auto offset=std::uint32_t(arena_.size());
         arena_.insert(arena_.end(),s.begin(),s.end()); // reserved, char construction cannot throw
-        for(auto i=block.count;i>at;--i){block.entries[i]=block.entries[i-1];block.tags[i]=block.tags[i-1];}
-        block.entries[at]={offset,std::uint32_t(s.size()),value};block.tags[at]=tag;
-        ++block.count;++size_;++reasons().inserted;return Insert::inserted;
+        for(auto i=dest.count;i>at;--i){dest.entries[i]=dest.entries[i-1];dest.tags[i]=dest.tags[i-1];}
+        dest.entries[at]={offset,std::uint32_t(s.size()),value};dest.tags[at]=tag;
+        ++dest.count;++size_;++reasons().inserted;return Insert::inserted;
+        }
     }
     std::vector<std::string> fence_keys()const {
         std::vector<std::string> out;
