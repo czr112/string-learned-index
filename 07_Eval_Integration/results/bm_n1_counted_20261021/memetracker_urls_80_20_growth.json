@@ -1,0 +1,1 @@
+{"label":"memetracker_urls_80_20_growth","initial_rows":52428,"inserts":3999,"inplace_inserts":3618,"rebuilds":381,"splits":25,"inplace_rebuilds":356,"split_share":0.0656168,"inplace_rebuild_share":0.934383,"rows_per_inplace_rebuild":1070.43,"pages_after":51,"mismatches":0,"page_full":25,"prefix_change":0,"slot_full":356,"arena_short":0,"duplicates":0,"reasons_inserted":3618}
