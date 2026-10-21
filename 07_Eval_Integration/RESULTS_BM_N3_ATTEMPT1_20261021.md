@@ -42,3 +42,25 @@
 
 - 本轮没有改任何生产文件；`bm_n1_page_core.hpp` 已回滚到计数版本，N1 结果仍然有效。
 - 未测性能、未做语料门；失败发生在语义阶段。
+
+---
+
+## 尝试 2（进行中）：段错误已消除，改为 `verify()` 明确失败
+
+同一机制的第二版做了三处修正：
+
+1. `fences_` 是**每个 region 一条**（构造时 `fences_.push_back(rows[first].key)`），不是每块一条；
+   `digests_` 也按 `fences_` 生成。第一版对二者做了 per-block 插入，索引越界→段错误。
+   第二版**只插 `blocks_` 与 `stable_fences_`**，崩溃消失。
+2. 用逐次 `verify()` 的探针定位：插入 64 次均通过（每次约 119,062 项检查、`splits=0`）；
+   **第 65 次插入触发第一次块分裂后立即抛 `exception: size/memory`**。
+3. 探针 `probe_bm_n3_split.cpp` 保留，可复现该点。
+
+当前状态：机制在**第一次块分裂**处被 `Page` 自身的不变量检查拒绝（`size/memory`），
+说明分裂后 `size_`、块总数、`stable_fences_` 长度或 region 计数之间仍有不一致。
+这比第一次的段错误前进了一步：现在有确定的失败点与确定的异常信息。
+
+代码已 `git checkout` 回滚，`bm_n1_page_core.hpp` 回到计数版本；探针与本文保留。
+下一次尝试应从 `size/memory` 这条断言反查具体是哪个量不匹配，并在 `verify()` 里
+分别断言 `blocks_.size()==stable_fences_.size()`、`regions_[0].count==blocks_.size()`、
+`sum(block.count)==size_` 三项，逐项定位。
