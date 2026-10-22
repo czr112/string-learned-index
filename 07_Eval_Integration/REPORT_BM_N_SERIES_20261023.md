@@ -149,3 +149,10 @@ bash tools/n3_paired.sh         # 四臂 × 5 次配对
 python3 -B 07_Eval_Integration/diagnostics/run_bm_n4.py --output bm_n4_new   # 16 格
 python3 -B 07_Eval_Integration/diagnostics/run_bm_n5.py --output bm_n5_new   # 100k
 ```
+
+
+---
+
+## 10. 后续：可信验收计划（仅规划，未执行）
+
+本报告的结论是"实验观察"。下一步必须先补齐三类证据才能谈采用：**异常安全**（块分裂分配失败会丢键，需先分配后改写、三类注入、sanitizer）、**增量空间**（在实际增长轨迹上测常驻请求字节，门为 ≤1.05× BM 基线，不得用重建后空间替代）、**公平性能**（计时与校验分离、四臂+AA、五进程轮转）。详见[可信验收计划](../docs/LONG_TERM_BM_PLAN_20261023.md)。

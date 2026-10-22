@@ -37,6 +37,7 @@
 - **R3 停止（10月20日）**：[候选登记](07_Eval_Integration/DIAGNOSTIC_BM_R3_CANDIDATE_20261020.md)、[复制小实验](07_Eval_Integration/RESULTS_BM_R3_SIZING_20261020.md)：split_from未实施、支线保持停止。9%–13%仅为独立微实验量级，不能作为严格收益上限；新机制必须另立登记。
 - **R 系列收口（10月20日）**：[配置与历史停止记录](07_Eval_Integration/RESULTS_BM_R_CLOSEOUT_20261020.md)，因果结论受[收口复核](07_Eval_Integration/AUDIT_BM_R_CLOSEOUT_20261020.md)限定。空间/构建收益保留；尚未证明差距主要来自页编码。
 - **N 系列收口（10月23日）**：[块内再平衡与取舍表](07_Eval_Integration/RESULTS_BM_N5_N6_20261023.md)：增长插入 −40.8%～−58.8%（65k）、−35.9%～−52.7%（100k），五门全过；相对 ART 从11–13倍缩到3.7–4.8倍；替换语义无稳定收益；默认仍 Context16。
+- **下一轮计划（10月23日，仅规划）**：[可信验收六阶段](docs/LONG_TERM_BM_PLAN_20261023.md)：异常安全→统一入口与增量空间→无校验公平计时→合规负载→泛化收口；预登记五项判据，250k/百万与 HOT 后置。
 - **当前状态**：按N0–N6推进；复用已交付factory和验收设施，先补干净外部对照及单页重建原因，再按门决定一个结构候选。真正键替换、合规热点/扫描和更大规模仍待执行。10月20日直接核对两上游HEAD仍为003a55bf/3894c767，无新默认分支提交。
 - **历史自研F5推进（10月18日）**：[F5同步换根与最终读门](07_Eval_Integration/RESULTS_COUPLED_PAGE_20261018.md) 完成，普通/sanitizer各1253万项通过，六格完整点查为同状态D1的0.985–1.046倍，均在15%预算内；[F6A统一动态接口](07_Eval_Integration/RESULTS_COUPLED_ADAPTER_20261018.md) 各99/99共用验收及651万项三语料检查通过。这些使用自研模型；当前主线已接入原BlockModel，阶段5有限动态入口仍以BM空间场景确认为前提，历史[F6B矩阵](docs/NEXT_ACTION_PLAN_20261018_DYNAMIC_MATRIX.md)、动态吞吐及采用未完成。
 - **最新泛化与空间结果（10月18日）**：[E2 全库无放回遍读与分配账本](07_Eval_Integration/RESULTS_E2_GENERALIZATION_20261018.md)：全库读下 skew 仍少18%耗时、mixed 未分辨、tranco/64k 仍多36%；空间为ART的34%–53%，通用采用仍未通过。
