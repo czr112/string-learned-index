@@ -1,0 +1,234 @@
+{
+  "english_words_95_5_growth": {
+    "bm": {
+      "runs": 5,
+      "write_median": 16.207,
+      "write_values": [
+        16.23,
+        16.63,
+        16.21,
+        16.11,
+        16.1
+      ],
+      "find_median": 0.787112,
+      "mismatches": 0,
+      "index_bytes": 1586704
+    },
+    "bm_split": {
+      "runs": 5,
+      "write_median": 8.28235,
+      "write_values": [
+        8.47,
+        8.58,
+        7.75,
+        7.94,
+        8.28
+      ],
+      "find_median": 0.713997,
+      "mismatches": 0,
+      "index_bytes": 2520741
+    },
+    "art": {
+      "runs": 5,
+      "write_median": 1.41329,
+      "write_values": [
+        1.46,
+        1.41,
+        1.27,
+        1.32,
+        1.41
+      ],
+      "find_median": 0.714984,
+      "mismatches": 0,
+      "index_bytes": 0
+    },
+    "ctx16": {
+      "runs": 5,
+      "write_median": 1.87873,
+      "write_values": [
+        1.9,
+        1.84,
+        2.07,
+        1.88,
+        1.78
+      ],
+      "find_median": 0.782184,
+      "mismatches": 0,
+      "index_bytes": 7816981
+    }
+  },
+  "english_words_80_20_growth": {
+    "bm": {
+      "runs": 5,
+      "write_median": 11.0981,
+      "write_values": [
+        13.77,
+        13.67,
+        9.19,
+        11.07,
+        11.1
+      ],
+      "find_median": 0.707431,
+      "mismatches": 0,
+      "index_bytes": 1675955
+    },
+    "bm_split": {
+      "runs": 5,
+      "write_median": 6.57006,
+      "write_values": [
+        6.87,
+        6.57,
+        7.03,
+        6.52,
+        6.55
+      ],
+      "find_median": 0.828842,
+      "mismatches": 0,
+      "index_bytes": 2402829
+    },
+    "art": {
+      "runs": 5,
+      "write_median": 1.24321,
+      "write_values": [
+        1.24,
+        1.4,
+        1.35,
+        1.22,
+        1.22
+      ],
+      "find_median": 0.684726,
+      "mismatches": 0,
+      "index_bytes": 0
+    },
+    "ctx16": {
+      "runs": 5,
+      "write_median": 1.59946,
+      "write_values": [
+        1.72,
+        1.38,
+        1.58,
+        1.6,
+        1.95
+      ],
+      "find_median": 0.785184,
+      "mismatches": 0,
+      "index_bytes": 8005915
+    }
+  },
+  "memetracker_urls_95_5_growth": {
+    "bm": {
+      "runs": 5,
+      "write_median": 33.0729,
+      "write_values": [
+        33.09,
+        33.07,
+        32.02,
+        32.88,
+        33.59
+      ],
+      "find_median": 1.14536,
+      "mismatches": 0,
+      "index_bytes": 5013148
+    },
+    "bm_split": {
+      "runs": 5,
+      "write_median": 14.066,
+      "write_values": [
+        12.92,
+        16.27,
+        15.11,
+        13.1,
+        14.07
+      ],
+      "find_median": 1.05709,
+      "mismatches": 0,
+      "index_bytes": 5923257
+    },
+    "art": {
+      "runs": 5,
+      "write_median": 2.27824,
+      "write_values": [
+        2.28,
+        2.17,
+        2.42,
+        2.2,
+        2.36
+      ],
+      "find_median": 1.08639,
+      "mismatches": 0,
+      "index_bytes": 0
+    },
+    "ctx16": {
+      "runs": 5,
+      "write_median": 2.691,
+      "write_values": [
+        2.69,
+        2.68,
+        2.77,
+        2.65,
+        2.88
+      ],
+      "find_median": 1.17659,
+      "mismatches": 0,
+      "index_bytes": 13649938
+    }
+  },
+  "memetracker_urls_80_20_growth": {
+    "bm": {
+      "runs": 5,
+      "write_median": 26.9201,
+      "write_values": [
+        26.92,
+        26.25,
+        27.58,
+        27.42,
+        26.7
+      ],
+      "find_median": 1.28306,
+      "mismatches": 0,
+      "index_bytes": 5304931
+    },
+    "bm_split": {
+      "runs": 5,
+      "write_median": 11.0846,
+      "write_values": [
+        11.08,
+        11.68,
+        10.92,
+        11.91,
+        11.08
+      ],
+      "find_median": 1.19672,
+      "mismatches": 0,
+      "index_bytes": 6029454
+    },
+    "art": {
+      "runs": 5,
+      "write_median": 2.03711,
+      "write_values": [
+        1.9,
+        2.04,
+        2.04,
+        1.75,
+        2.13
+      ],
+      "find_median": 1.05819,
+      "mismatches": 0,
+      "index_bytes": 0
+    },
+    "ctx16": {
+      "runs": 5,
+      "write_median": 2.47117,
+      "write_values": [
+        2.47,
+        2.45,
+        2.64,
+        1.69,
+        2.57
+      ],
+      "find_median": 1.23034,
+      "mismatches": 0,
+      "index_bytes": 13995444
+    }
+  }
+}

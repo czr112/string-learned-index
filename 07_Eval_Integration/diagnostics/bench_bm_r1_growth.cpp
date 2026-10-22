@@ -3,6 +3,7 @@
 #include "bm_experiment_adapter.hpp"
 #include "art_adapter.h"
 #include "our_index_adapter.h"
+#include "bm_n1_index.hpp"
 #include <chrono>
 #include <cstdint>
 #include <cstring>
@@ -49,11 +50,60 @@ std::vector<Operation> read_operations(const char* path) {
     }
     return operations;
 }
+namespace {
+class SplitAdapter final:public sib::Index {
+    std::unique_ptr<bm_n1_page::Index> index_;
+    const bm_n1_page::Index& built()const {
+        if(!index_)throw std::logic_error("bulk_load first");
+        return *index_;
+    }
+    bm_n1_page::Index& mut() {
+        if(!index_)throw std::logic_error("bulk_load first");
+        return *index_;
+    }
+public:
+    sib::Descriptor descriptor()const override {
+        sib::Descriptor d;d.implementation="BM page (bounded build, block rebalance)";
+        d.implementation_version="n3-block-rebalance";d.adapter_version="n3-block-rebalance";
+        auto& c=d.capabilities;
+        c.bulk_load=c.find=c.insert=c.update=c.erase=c.scan=sib::Support::native;
+        d.adaptation_notes="block split on slot exhaustion; flat root; single-threaded";
+        return d;
+    }
+    void bulk_load(const std::vector<sib::Row>& rows) override {
+        std::vector<static_physical::Row> physical;physical.reserve(rows.size());
+        for(const auto& r:rows)physical.push_back({r.key,r.value});
+        index_=std::make_unique<bm_n1_page::Index>(physical);
+    }
+    std::optional<sib::Value> find(std::string_view key)const override {return built().find_base(key);}
+    sib::InsertResult insert(std::string_view key,sib::Value value)override {
+        return mut().insert(key,value)?sib::InsertResult::inserted:sib::InsertResult::already_exists;
+    }
+    sib::UpdateResult update(std::string_view key,sib::Value value)override {
+        return mut().update(key,value)?sib::UpdateResult::updated:sib::UpdateResult::not_found;
+    }
+    sib::EraseResult erase(std::string_view key)override {
+        return mut().erase(key)?sib::EraseResult::erased:sib::EraseResult::not_found;
+    }
+    sib::Value range_sum(std::string_view,std::string_view)const override {
+        throw sib::UnsupportedOperation("range_sum unsupported");
+    }
+    std::vector<sib::Row> scan(std::string_view lower,std::size_t limit)const override {
+        auto rows=built().scan(lower,limit);std::vector<sib::Row> out;out.reserve(rows.size());
+        for(auto& row:rows)out.push_back({std::move(row.key),row.value});return out;
+    }
+    sib::MemoryUsage memory_usage()const override {
+        sib::MemoryUsage m;m.index_owned_bytes=index_?index_->memory_bytes():0;
+        m.adapter_owned_bytes=sizeof(*this);m.retained_input_bytes=0;return m;
+    }
+};
+} // namespace
 std::unique_ptr<sib::Index> make_arm(const std::string& arm) {
     if(arm=="bm")return make_bm_experiment_index({{"lookup","base"}});
     if(arm=="art")return make_art_index({});
     if(arm=="ctx16")return make_our_index_index({});
-    throw std::invalid_argument("arm must be bm, art or ctx16");
+    if(arm=="bm_split")return std::make_unique<SplitAdapter>();
+    throw std::invalid_argument("arm must be bm, art, ctx16 or bm_split");
 }
 } // namespace
 
