@@ -373,14 +373,18 @@ public:
         if(s.size()>arena_.capacity()-arena_.size()){++reasons().arena_short;return Insert::rebuild;}
         std::size_t target=b;
         if(block.count==16) {
+            // Strong guarantee: prepare the tail and reserve both containers before mutating,
+            // so a failed allocation leaves the old block and the old directory untouched.
             Block tail;tail.count=8;
             for(std::uint32_t i=8;i<16;++i){tail.entries[i-8]=block.entries[i];tail.tags[i-8]=block.tags[i];}
-            block.count=8;
-            const auto first=tail.entries[0];
+            const Fence split_fence{tail.entries[0].offset,tail.entries[0].length};
             const auto at_fence=std::size_t(r.first)+std::size_t(b)+1;
-            stable_fences_.insert(stable_fences_.begin()+std::ptrdiff_t(at_fence),Fence{first.offset,first.length});
+            blocks_.reserve(blocks_.size()+1);
+            stable_fences_.reserve(stable_fences_.size()+1);
+            // From here the operations are no-throw moves of trivially copyable elements.
+            stable_fences_.insert(stable_fences_.begin()+std::ptrdiff_t(at_fence),split_fence);
             blocks_.insert(blocks_.begin()+std::ptrdiff_t(std::size_t(r.first)+b)+1,tail);
-            fences_.push_back(r.prefix+std::string(suffix(first)));
+            block.count=8;
             ++regions_[0].count;
             ++reasons().block_splits;
             // Head keeps the lower half: route by the tail fence, not the head first key.
