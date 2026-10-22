@@ -1,0 +1,30 @@
+{
+  "candidate": "BM page with in-page block rebalance (split a full 16-slot block instead of rebuilding the page)",
+  "status": "experimental; passed five gates; not adopted; not a replacement for ART",
+  "sources": {
+    "07_Eval_Integration/diagnostics/bm_n1_page_core.hpp": "0dca179c1a83f84572437e6b7c3d13f5ca98e0991022b82aceb3f7a46d12c6a5",
+    "07_Eval_Integration/diagnostics/bm_n1_page_root.hpp": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b",
+    "07_Eval_Integration/diagnostics/bm_n1_index.hpp": "ec5c1be2198f0ebc82ba75503268c1be0efe52436b3791bcb1473933ac14d8b5",
+    "07_Eval_Integration/diagnostics/bench_bm_n4.cpp": "073486e2674308dfd77db31658f3efa094e19fd3457d534cdfbc037ddc44a6a4"
+  },
+  "gates": {
+    "semantics": "three corpora, 263,469 checks each, zero mismatches (rows, queries, absent, boundary, scan, 400 insert, 150 update, 150 erase, verify twice)",
+    "sanitizer": "ASan/UBSan/LSan clean on words",
+    "invariants": "verify() after every insert in a 1,200-insert probe",
+    "space": "memory_bytes delta = 0 across nine comparisons on identical content",
+    "performance": "growth inserts -40.8% to -58.8% at 65k (five runs per arm); -35.9% to -52.7% at 100k"
+  },
+  "scope_limits": [
+    "gain holds for growth semantics only: replacement cells range -22.6% to +23.6%",
+    "still 3.7-4.8x ART on the best growth cells",
+    "250k and million-scale not tested",
+    "long scans, range deletes and concurrency not covered",
+    "HOT absent from rankings"
+  ],
+  "open_items": [
+    "publish the candidate as a formal factory and re-run the R0 contract/corpus/differential gates",
+    "scale to 250k with a registered data source",
+    "delete and scan heavier workloads"
+  ],
+  "base_commit": "c365d697a596baddd4f2b83549902645bb6d4f07"
+}

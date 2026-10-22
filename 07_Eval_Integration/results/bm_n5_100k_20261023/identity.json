@@ -1,0 +1,109 @@
+{
+  "phase": "N4",
+  "seed": 20261022,
+  "operations": 20000,
+  "inputs": {
+    "english_words_100k_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "ce538789986b79f60c218d17716eaedf90a456ec1f43a158ba39af6c018d06f5",
+      "operations_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "e283f590ed1ce0fe63950e21ec8cf0457bb51d699f0f0d9e459f13dc04c98bf3",
+      "initial_rows": 80000,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 1000,
+        "5": 400
+      },
+      "data": "english_words_100k",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        52254,
+        62254
+      ],
+      "hot_keys": 10000,
+      "hot_write_fraction": 0.11
+    },
+    "english_words_100k_95_5_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_95_5_hotspot_growth_rows.bin",
+      "rows_sha256": "4f45b87f5fdf789e9bc0b0c837aa1d0973a2ea07a05ebe7fcdecd4666c16c24f",
+      "operations_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_95_5_hotspot_growth_ops.bin",
+      "operations_sha256": "ba620891a3e3de96cdabf35b7afe2028dbced97b51fb5e31a6a7998f66694fa0",
+      "initial_rows": 80000,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 1000,
+        "5": 400
+      },
+      "data": "english_words_100k",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        71989,
+        81989
+      ],
+      "hot_keys": 10000,
+      "hot_write_fraction": 0.82
+    },
+    "english_words_100k_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "eab47b042eb07e854f8e8d2af02873a5db05511cc30912674fd9e8a51637badf",
+      "operations_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "19cb4b5c50aefbe85ea62dff1626d6d657b72c8ecf24f85b96f107a6659e292b",
+      "initial_rows": 80000,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "data": "english_words_100k",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        73630,
+        83630
+      ],
+      "hot_keys": 10000,
+      "hot_write_fraction": 0.104
+    },
+    "english_words_100k_80_20_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_80_20_hotspot_growth_rows.bin",
+      "rows_sha256": "d41024e466cc188ef7f5792c07a1eb79ac023d41e4591b2bdd04fe6cfc0b16c6",
+      "operations_path": "07_Eval_Integration/results/bm_n5_100k_20261023/traces/english_words_100k_80_20_hotspot_growth_ops.bin",
+      "operations_sha256": "d2425b80279e14a8a4fd410a15afa27a86e345b058de5b829d5334cfeba36c69",
+      "initial_rows": 80000,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "data": "english_words_100k",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        66456,
+        76456
+      ],
+      "hot_keys": 10000,
+      "hot_write_fraction": 0.825
+    }
+  },
+  "base_commit": "c365d697a596baddd4f2b83549902645bb6d4f07",
+  "artifacts": {
+    "build/n4": "10bd406720ab3a330843d94f2088882eef7254ab7bfdc8ce2242f615d04c6f84"
+  },
+  "limits": [
+    "single run per cell-arm",
+    "hotspot is synthetic over the source key order",
+    "no million-scale",
+    "scan limit fixed at 16"
+  ]
+}
