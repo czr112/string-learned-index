@@ -373,18 +373,31 @@ public:
         if(s.size()>arena_.capacity()-arena_.size()){++reasons().arena_short;return Insert::rebuild;}
         std::size_t target=b;
         if(block.count==16) {
+            // Strong guarantee with exact capacity: build the new directory at exactly
+            // size+1 slots, so the swap cannot leave a doubling growth factor behind.
             Block tail;tail.count=8;
             for(std::uint32_t i=8;i<16;++i){tail.entries[i-8]=block.entries[i];tail.tags[i-8]=block.tags[i];}
-            block.count=8;
-            const auto first=tail.entries[0];
-            const auto at_fence=std::size_t(r.first)+std::size_t(b)+1;
-            stable_fences_.insert(stable_fences_.begin()+std::ptrdiff_t(at_fence),Fence{first.offset,first.length});
-            blocks_.insert(blocks_.begin()+std::ptrdiff_t(std::size_t(r.first)+b)+1,tail);
-            fences_.push_back(r.prefix+std::string(suffix(first)));
+            const Fence split_fence{tail.entries[0].offset,tail.entries[0].length};
+            const auto at_block=std::size_t(r.first)+std::size_t(b)+1;
+            std::vector<Block> next_blocks;
+            next_blocks.reserve(blocks_.size()+1);
+            next_blocks.insert(next_blocks.end(),blocks_.begin(),blocks_.begin()+std::ptrdiff_t(at_block-1));
+            next_blocks.push_back(block);next_blocks.back().count=8;
+            next_blocks.push_back(tail);
+            next_blocks.insert(next_blocks.end(),blocks_.begin()+std::ptrdiff_t(at_block),blocks_.end());
+            std::vector<Fence> next_fences;
+            next_fences.reserve(stable_fences_.size()+1);
+            next_fences.insert(next_fences.end(),stable_fences_.begin(),
+                               stable_fences_.begin()+std::ptrdiff_t(at_block));
+            next_fences.push_back(split_fence);
+            next_fences.insert(next_fences.end(),stable_fences_.begin()+std::ptrdiff_t(at_block),
+                               stable_fences_.end());
+            blocks_.swap(next_blocks);
+            stable_fences_.swap(next_fences);
             ++regions_[0].count;
             ++reasons().block_splits;
-            // Head keeps the lower half: route by the tail fence, not the head first key.
-            target=compare(s,suffix(blocks_[b+1].entries[0]))<0?std::size_t(b):std::size_t(b)+1;
+            target=compare(s,suffix(blocks_[at_block].entries[0]))<0
+                ?std::size_t(b):std::size_t(b)+1;
         }
         {
         auto& dest=blocks_[target];
