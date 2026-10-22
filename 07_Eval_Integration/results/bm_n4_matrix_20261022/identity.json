@@ -1,0 +1,401 @@
+{
+  "phase": "N4",
+  "seed": 20261022,
+  "operations": 20000,
+  "inputs": {
+    "english_words_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "7b2f7ed509412e059419ae114fa2b86590a946abe2c9d81a43adc940a8adab1c",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "769b8b83635d9c36615856c00bb84b9ef671cb3703fa11a568730d1ac5b96037",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 1000,
+        "5": 400
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        51937,
+        58490
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.087
+    },
+    "english_words_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "685ba0d5fce35e7c1ca98db4dc0a1d5936e85c2cf47b5405d5f284b03f5a1dbc",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "3": 500,
+        "1": 19000,
+        "5": 400,
+        "2": 250,
+        "4": 250
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        51626,
+        58179
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.078
+    },
+    "english_words_95_5_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_hotspot_growth_rows.bin",
+      "rows_sha256": "a7abe533e165ee34e0e4afa41518fef69e327a6fdd1e17dd1c6afc595cc99730",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_hotspot_growth_ops.bin",
+      "operations_sha256": "44088a47ccad832208b110c92715af22f028552d5e3c55f3a9a5e046337abed2",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "5": 400,
+        "2": 1000
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        542,
+        7095
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.832
+    },
+    "english_words_95_5_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_hotspot_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_95_5_hotspot_replacement_ops.bin",
+      "operations_sha256": "0b0f4cc4621f84d6f6655c189a1f8be4a33012c193e74d7e719dbd76ab15fc2f",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "3": 500,
+        "5": 400,
+        "4": 250,
+        "2": 250
+      },
+      "data": "english_words",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        23661,
+        30214
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.608
+    },
+    "english_words_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "f53eeab37546dee2348c31466c16208eaae6b6f9a2d29184e8cfe65f6261972c",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "776e83ba07555441eb03ada34177fc77cc756981d36343196e60a984e5dad6d1",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        40406,
+        46959
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.098
+    },
+    "english_words_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "9a51e01f11dc21c467447389708a9a35e740e8d630b68a000a4f38c77145bab2",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "4": 1000,
+        "3": 2000,
+        "5": 400,
+        "2": 1000
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        49811,
+        56364
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.082
+    },
+    "english_words_80_20_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_hotspot_growth_rows.bin",
+      "rows_sha256": "ab25fbae34d69b2b35391b88e1efbab2150a2ae5e518bceba884825b6a3dd5b1",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_hotspot_growth_ops.bin",
+      "operations_sha256": "8d589d0fde2c01838f4b180c635fba26ab91ba068582ae1617e76bf63bc17068",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        57654,
+        64207
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.819
+    },
+    "english_words_80_20_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_hotspot_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/english_words_80_20_hotspot_replacement_ops.bin",
+      "operations_sha256": "6df6448daa7cb3b7f0c6e8483fd5050939d07d7cb7d2879ac3a2227502cf1450",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 1000,
+        "3": 2000,
+        "4": 1000,
+        "5": 400
+      },
+      "data": "english_words",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        47151,
+        53704
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.62
+    },
+    "memetracker_urls_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "3f99ac73e7865159fe7d12e92d3783e2368933d96d602ec6715831301464a6ac",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "25fcd5009ab1fb95856a17b4b0e2ebe013a60c43c30e86fd139c8df673a88968",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "5": 400,
+        "2": 1000
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        54395,
+        60948
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.103
+    },
+    "memetracker_urls_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "2318dd8eb129f5fbeaa7d41b49d38bd89976c3da95e350ba32c026a9da68fc5b",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "3": 500,
+        "5": 400,
+        "4": 250,
+        "2": 250
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        27625,
+        34178
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.078
+    },
+    "memetracker_urls_95_5_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_hotspot_growth_rows.bin",
+      "rows_sha256": "0323f7bb3c2e7b2c2300fcaa6b5a28385131f86d10b61074491a0bc69aa21e97",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_hotspot_growth_ops.bin",
+      "operations_sha256": "9fe894349b5b15434bcd173cb98bd05a89be61a5208b574d3ed10850f93b3fa1",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 1000,
+        "5": 400
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        12252,
+        18805
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.84
+    },
+    "memetracker_urls_95_5_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_hotspot_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_95_5_hotspot_replacement_ops.bin",
+      "operations_sha256": "39cab44405c1ca6f07322337e0d59b9fd094d0abdb9f3f3bc4d85c594e3e68f8",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "3": 500,
+        "5": 400,
+        "2": 250,
+        "4": 250
+      },
+      "data": "memetracker_urls",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        3855,
+        10408
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.61
+    },
+    "memetracker_urls_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "b01c044d4314b9370c0eb17fb50c6ceb8c1dc1c924237cd06e3cef10c81b4ca0",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "45955fbd220dc839eb4de56ff0747c4d07b2b23a6071a16b33564c7991f3c539",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        34355,
+        40908
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.093
+    },
+    "memetracker_urls_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "686b6942bbcec2d69b9a503c4c98a7eea7655493f8796c26286fc3db66e309c0",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 1000,
+        "5": 400,
+        "3": 2000,
+        "4": 1000
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        57771,
+        64324
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.074
+    },
+    "memetracker_urls_80_20_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_hotspot_growth_rows.bin",
+      "rows_sha256": "36ed39fa762c0821b113eef383ed6ee21e2fdacf727d90fa2cbadbc1638b2207",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_hotspot_growth_ops.bin",
+      "operations_sha256": "a50ed74269c580d6e7187e3ccb7021e4c47da6a0152ea0c14ca3fefc65b07f1b",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        50272,
+        56825
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.817
+    },
+    "memetracker_urls_80_20_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_hotspot_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_n4_matrix_20261022/traces/memetracker_urls_80_20_hotspot_replacement_ops.bin",
+      "operations_sha256": "6ef507578daa61aece3924f8b5d23a829d39a7e969bc9ab7222cd2addfaac6b7",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "3": 2000,
+        "2": 1000,
+        "4": 1000,
+        "5": 400
+      },
+      "data": "memetracker_urls",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        6259,
+        12812
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.615
+    }
+  },
+  "base_commit": "bab7a4f48aa5df74d3ff394a47d6664f3e3693a1",
+  "artifacts": {
+    "build/n4": "10bd406720ab3a330843d94f2088882eef7254ab7bfdc8ce2242f615d04c6f84"
+  },
+  "limits": [
+    "single run per cell-arm",
+    "hotspot is synthetic over the source key order",
+    "no million-scale",
+    "scan limit fixed at 16"
+  ]
+}
