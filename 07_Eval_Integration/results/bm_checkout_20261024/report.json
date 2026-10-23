@@ -1,0 +1,42 @@
+{
+  "purpose": "build/correctness smoke; no performance claim",
+  "validated_commit": "bb55734442f1f66ef4d9b1786ac25b845f6e2658",
+  "source_bundle_sha256": "0248ec8fca801da27a7effc9b1684d0606ef0e61d4b7b7f40d28ccf60b56b4f1",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "clean_native_linux_clone": true,
+  "dependency_commits": {
+    "benchmark": "003a55bf674b43350fbb70242070fb74f33a56ce",
+    "model": "3894c767338a865d2920ba5e21283827fea1d803"
+  },
+  "contracts": {
+    "baseline": "100/100 checks passed",
+    "candidate": "99/99 checks passed"
+  },
+  "header_closure": "passed",
+  "bounded_split_verify": {
+    "rows": 8192,
+    "dense": 2048,
+    "inserted": 2048,
+    "verify_checks": 41826,
+    "mismatches": 0,
+    "rebuilds": 65,
+    "inplace": 1983,
+    "bytes_before": 201848,
+    "bytes_after": 258854,
+    "final_rows": 10240
+  },
+  "replay_arms": ["art", "bm", "bm_split", "ctx16"],
+  "reference_checksum": 2345148669961859445,
+  "verification_output_sha256": {
+    "report.json": "339571afd990873227338005bb6b44a41527242b3e365e6d249da6824361f250",
+    "identity.json": "5da08cbb8fd9a64304c584a31c3f9396b6844692a623a4e6139aeaab7b1eb09e",
+    "baseline_contract.log": "9093d1bee72367d111d1456a3181f3a7589be09126b15837602e9866f0243113",
+    "candidate_contract.log": "531ad0e278677ce6af52b67aecac4bdbe0c17642de9443530a29b47177902ce0",
+    "header_closure.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "split_verify.log": "02ed2800aaf539d4066c5eb0cd9331d7b84c7a84cc73089e26e02b02dc77ddfd",
+    "replay.jsonl": "383f4e5f68b7ffa94f1dc47f326be96cb3480abbdd48b483c032e7adf0c92b7d",
+    "rows.bin": "0d978b724835abd73883fdb8d4720078010e6b8353b51d7229078ea5cc49b488",
+    "operations.bin": "b64084099534d52520cdc352c88668ce691a703a310f78ea10136907fc0d7f8b"
+  },
+  "passed": true
+}

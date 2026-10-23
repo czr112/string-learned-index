@@ -49,3 +49,26 @@ This check does not download corpus data or reproduce historical timings. It
 validates source completeness, contracts, structural checks, and answer replay.
 The corpus-specific performance, space, and adoption gates retain the boundaries
 described in `07_Eval_Integration/CORRECTION_BM_TOTAL_20261024.md`.
+
+## Recorded clean rebuild
+
+Commit `bb55734442f1f66ef4d9b1786ac25b845f6e2658` was cloned with
+`--no-local --no-hardlinks` into the WSL native filesystem and checked with
+GCC 13.3.0. The dependencies were fetched at the exact commits above.
+
+| Check | Result |
+|---|---|
+| Baseline public factory contract | 100/100 |
+| Candidate public factory contract | 99/99 |
+| Restored header closure | Compiled |
+| Bounded dense-insert verification | 8,192 initial rows, 2,048 inserts, 41,826 checks, zero mismatches |
+| BM / BM split / ART / Context16 replay | Both repetitions matched the independent reference checksum |
+
+The machine-readable record and artifact hashes are in
+[`results/bm_checkout_20261024/report.json`](../07_Eval_Integration/results/bm_checkout_20261024/report.json).
+The hashes refer to the verifier's generated output files, including its original
+unaugmented `report.json`.
+The validation used only committed project files and freshly fetched upstream
+dependencies. It did not use local corpus binaries, untracked project headers,
+or previous build objects. This is a source-completeness check and does not
+change any performance or adoption conclusion.
