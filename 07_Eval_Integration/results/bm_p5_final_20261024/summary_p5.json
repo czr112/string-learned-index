@@ -1,0 +1,93 @@
+{
+  "words_indep_95_5_uniform_growth": {
+    "bm_write_us": 6.343,
+    "split_write_us": 2.657,
+    "drop_median": 0.5782,
+    "interval": [
+      0.5507,
+      0.6687
+    ],
+    "throughput_ratio": 1.4259,
+    "find_ratio": 1.0623,
+    "aa_band": 1.143,
+    "blocks": 8
+  },
+  "words_indep_80_20_uniform_growth": {
+    "bm_write_us": 6.578,
+    "split_write_us": 2.609,
+    "drop_median": 0.5998,
+    "interval": [
+      0.5629,
+      0.6936
+    ],
+    "throughput_ratio": 2.0786,
+    "find_ratio": 0.8252,
+    "aa_band": 1.161,
+    "blocks": 8
+  },
+  "words_indep_95_5_hotspot_growth": {
+    "bm_write_us": 6.846,
+    "split_write_us": 2.758,
+    "drop_median": 0.6063,
+    "interval": [
+      0.5577,
+      0.6338
+    ],
+    "throughput_ratio": 1.6587,
+    "find_ratio": 0.9253,
+    "aa_band": 1.13,
+    "blocks": 8
+  },
+  "words_indep_80_20_hotspot_growth": {
+    "bm_write_us": 6.901,
+    "split_write_us": 2.648,
+    "drop_median": 0.6148,
+    "interval": [
+      0.5957,
+      0.6544
+    ],
+    "throughput_ratio": 2.1465,
+    "find_ratio": 0.8803,
+    "aa_band": 1.059,
+    "blocks": 8
+  },
+  "words_indep_95_5_uniform_replacement": {
+    "bm_write_us": 2.073,
+    "split_write_us": 1.028,
+    "drop_median": 0.4884,
+    "interval": [
+      0.3285,
+      0.586
+    ],
+    "throughput_ratio": 1.1373,
+    "find_ratio": 1.0005,
+    "aa_band": 1.336,
+    "blocks": 8
+  },
+  "words_indep_80_20_uniform_replacement": {
+    "bm_write_us": 1.893,
+    "split_write_us": 0.978,
+    "drop_median": 0.4753,
+    "interval": [
+      0.3937,
+      0.521
+    ],
+    "throughput_ratio": 1.4148,
+    "find_ratio": 1.0479,
+    "aa_band": 1.083,
+    "blocks": 8
+  },
+  "words_80_20_uniform_replacement": {
+    "bm_write_us": 1.979,
+    "split_write_us": 1.11,
+    "drop_median": 0.4394,
+    "interval": [
+      0.297,
+      0.5185
+    ],
+    "throughput_ratio": 1.3206,
+    "find_ratio": 1.1062,
+    "aa_band": 1.397,
+    "blocks": 8
+  }
+}
