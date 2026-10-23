@@ -54,12 +54,13 @@ std::unique_ptr<sib::Index> make_arm(const std::string& arm) {
     if(arm=="ctx16")return make_our_index_index({});
     throw std::invalid_argument("unknown arm");
 }
-struct Result {std::uint64_t write_ns=0,find_ns=0,scan_ns=0,writes=0,finds=0,scans=0,checksum=0;};
+struct Result {std::uint64_t write_ns=0,find_ns=0,scan_ns=0,seg_ns=0,writes=0,finds=0,scans=0,checksum=0;};
 Result run_once(const std::string& arm,const std::vector<sib::Row>& rows,const std::vector<Operation>& ops) {
     auto index=make_arm(arm);
     index->bulk_load(rows);
     Result r;
     std::uint64_t acc=0;
+    const auto seg_start=Clock::now();
     for(const auto& op:ops) {
         if(op.kind==1) {
             const auto t=Clock::now();
@@ -89,6 +90,8 @@ Result run_once(const std::string& arm,const std::vector<sib::Row>& rows,const s
             ++r.scans;acc=acc*131+rows_out.size();
         }
     }
+    r.seg_ns=std::uint64_t(std::chrono::duration_cast<std::chrono::nanoseconds>(
+        Clock::now()-seg_start).count());
     r.checksum=acc;
     return r;
 }
@@ -103,9 +106,12 @@ int main(int argc,char** argv) {
         std::vector<sib::Row> rows;rows.reserve(initial.size());
         for(const auto& [k,v]:initial)rows.push_back({std::string(k),v});
         const char* arms[]={"bm","bm_split","art","ctx16"};
-        constexpr int williams[]={0,1,3,2};
+        // 8 blocks, full balanced cycle: each arm appears in every position twice.
+        constexpr int order8[8][4]={{0,1,2,3},{1,2,3,0},{2,3,0,1},{3,0,1,2},
+                                    {3,2,1,0},{2,1,0,3},{1,0,3,2},{0,3,2,1}};
+        if(process<0||process>7)throw std::invalid_argument("process must be 0..7");
         for(int position=0;position<4;++position) {
-            const auto arm=(williams[position]+process)%4;
+            const auto arm=order8[process][position];
             (void)run_once(arms[arm],rows,operations);   // warm-up, not measured
             const auto first=run_once(arms[arm],rows,operations);
             const auto second=run_once(arms[arm],rows,operations);   // A/A control
@@ -115,6 +121,7 @@ int main(int argc,char** argv) {
                 <<",\"find_us\":"<<(first.finds?double(first.find_ns)/first.finds/1000:0.0)
                 <<",\"find_us_aa\":"<<(second.finds?double(second.find_ns)/second.finds/1000:0.0)
                 <<",\"scan_us\":"<<(first.scans?double(first.scan_ns)/first.scans/1000:0.0)
+                <<",\"seg_us\":"<<double(first.seg_ns)/1000.0<<",\"seg_us_aa\":"<<double(second.seg_ns)/1000.0<<",\"ops\":"<<operations.size()
                 <<",\"writes\":"<<first.writes<<",\"finds\":"<<first.finds<<",\"scans\":"<<first.scans
                 <<",\"checksum\":"<<first.checksum<<",\"checksum_aa\":"<<second.checksum<<"}\n";
             if(first.checksum!=second.checksum)throw std::logic_error("A/A checksum differs");
