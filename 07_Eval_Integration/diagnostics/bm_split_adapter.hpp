@@ -2,7 +2,7 @@
 // Formal experiment factory for the block-rebalance candidate (N3), independent of the
 // production make_bm_page_index and of the baseline make_bm_experiment_index.
 #include "index_contract.h"
-#include "bm_n1_index.hpp"
+#include "bm_split_index.hpp"
 
 #ifndef BM_MODEL_COMMIT
 #error "bind the frozen BlockModel commit"
@@ -17,12 +17,12 @@
 namespace bm_split_experiment {
 namespace sib=string_index_bench::v1;
 class Adapter final:public sib::Index {
-    std::unique_ptr<bm_n1_page::Index> index_;
-    const bm_n1_page::Index& built()const {
+    std::unique_ptr<bm_split_page::Index> index_;
+    const bm_split_page::Index& built()const {
         if(!index_)throw std::logic_error("bulk_load required before data operations");
         return *index_;
     }
-    bm_n1_page::Index& mut() {
+    bm_split_page::Index& mut() {
         if(!index_)throw std::logic_error("bulk_load required before data operations");
         return *index_;
     }
@@ -42,9 +42,9 @@ public:
     }
     void bulk_load(const std::vector<sib::Row>& rows)override {
         if(index_)throw std::logic_error("second bulk_load is not allowed");
-        std::vector<static_physical::Row> physical;physical.reserve(rows.size());
-        for(const auto& r:rows)physical.push_back({r.key,r.value});
-        index_=std::make_unique<bm_n1_page::Index>(physical);
+        // Bounded build: the page constructor converts page by page from these rows, so no
+        // whole-input copy is materialised here.
+        index_=std::make_unique<bm_split_page::Index>(rows);
     }
     std::optional<sib::Value> find(std::string_view key)const override {return built().find_base(key);}
     sib::InsertResult insert(std::string_view key,sib::Value value)override {

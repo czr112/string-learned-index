@@ -1,0 +1,13 @@
+adapter under acceptance: make_bm_split_experiment_index
+
+descriptor:
+  implementation = BM page (bounded build, block rebalance)
+  version        = c19086b3513e329bae228c9c5f9d147c0cc64175a00048bb09ddd48b4f1721d4
+  support        = bulk_load=1 find=1 insert=1 update=1 erase=1 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)
+  notes          = model_commit=3894c767338a865d2920ba5e21283827fea1d803; build_mode=bounded-per-page; mutate_mode=block-rebalance; lookup_mode=base; root_mode=flat; single-threaded; 2048 rows/page, 15/16 slots, strong exception guarantee on block split.
+  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)
+  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)
+  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes
+  memory         = index_owned=1213 adapter_owned=16 retained_input=0
+
+99/99 checks passed
