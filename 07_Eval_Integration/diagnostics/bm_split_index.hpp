@@ -182,9 +182,17 @@ public:
         if(it->second.core->find(key))return false;
         const bool marked=mark_dirty(it);
         try {
+            const auto before_bytes=it->second.core->memory().total();
             const auto result=it->second.core->try_insert(key,value);
             if(result==Page::Insert::duplicate){if(marked)clear_dirty(it);return false;}
-            if(result==Page::Insert::inserted){++maintenance_.inplace_inserts;it->second.version=++generation_;}
+            if(result==Page::Insert::inserted){
+                ++maintenance_.inplace_inserts;
+                // A block split grows the page directory; keep the resident ledger exact so that
+                // verify()'s resident/memory equality keeps holding in this build too.
+                const auto after_bytes=it->second.core->memory().total();
+                if(after_bytes>before_bytes)resident_+=after_bytes-before_bytes;
+                it->second.version=++generation_;
+            }
             else {
                 auto rows=it->second.core->scan("",SIZE_MAX);
                 const auto at=std::lower_bound(rows.begin(),rows.end(),key,[](const Row& r,std::string_view k){return compare(r.key,k)<0;});
