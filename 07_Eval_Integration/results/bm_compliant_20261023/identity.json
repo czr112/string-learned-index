@@ -1,0 +1,688 @@
+{
+  "phase": "stage5/6",
+  "seed": 20261023,
+  "operations": 20000,
+  "inputs": {
+    "words_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "e51893408ad83ad2f8530c1916fb70d53406ad0a457caee5553393edb03ae36f",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "141c2784402cebcb9f294aa1daa2b40154ff65640d5a9a72af954fc8c1605fbe",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "5": 400,
+        "2": 1000
+      },
+      "dataset": "words",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        8513,
+        15066
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.085,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "6e57477341cdbee9efaa55aec2d387aa66fdf461a1900ec25bfbc74da6d13f38",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "3": 500,
+        "2": 250,
+        "5": 400,
+        "4": 250
+      },
+      "dataset": "words",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        28085,
+        34638
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.081,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_95_5_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_hotspot_growth_rows.bin",
+      "rows_sha256": "e51893408ad83ad2f8530c1916fb70d53406ad0a457caee5553393edb03ae36f",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_hotspot_growth_ops.bin",
+      "operations_sha256": "a9fc250920a03159a34a0bf19cc8e5c0dae74e22e9a47086be33c3137b744bf5",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 1000,
+        "5": 400
+      },
+      "dataset": "words",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        8513,
+        15066
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.832,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_95_5_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_hotspot_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_95_5_hotspot_replacement_ops.bin",
+      "operations_sha256": "8251288e40a1b8551aebc3409feccbe45c183d945eefccc78a24fb10c3cfedb3",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "3": 500,
+        "4": 250,
+        "5": 400,
+        "2": 250
+      },
+      "dataset": "words",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        28085,
+        34638
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.629,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "590e930b64c9299b81cac3953d92767fafdfceaf0961273eb3ed111b647a5541",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "74d071d2a6d737487a815b6f635d47733771b1f6f1205781f8b9282e713446e5",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "dataset": "words",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        9911,
+        16464
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.101,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "5aaaeb62b45f06023de29d0018ac9e79fe448a24c783319f8514b8eb9e1c9d2c",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "3": 2000,
+        "2": 1000,
+        "4": 1000,
+        "5": 400
+      },
+      "dataset": "words",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        24106,
+        30659
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.075,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_80_20_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_hotspot_growth_rows.bin",
+      "rows_sha256": "590e930b64c9299b81cac3953d92767fafdfceaf0961273eb3ed111b647a5541",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_hotspot_growth_ops.bin",
+      "operations_sha256": "f62c8ea0d9e53b5b1274cc9670020476ea7e0c1b9de5a3887b4c5bbc804cda19",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "dataset": "words",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        9911,
+        16464
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.397,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_80_20_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_hotspot_replacement_rows.bin",
+      "rows_sha256": "5a65e5896140b4032b38a5bd743c5fe11fcb4d124e2cfa1853b80fe5c886ddce",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_80_20_hotspot_replacement_ops.bin",
+      "operations_sha256": "a259f4bd2f52e17783fd974946319c02d65fc28d037516d01f6e185073635c19",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 1000,
+        "3": 2000,
+        "4": 1000,
+        "5": 400
+      },
+      "dataset": "words",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        24106,
+        30659
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.612,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "7b79b1b9558ec449090cc00a2032ad9881153cb0a14ac75f4d821ce2c5b63bbd",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "0fb5520bf3342c1be56eda8e336a435b5f15395f71869dd9c55d7affcbb46ae8",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 1000,
+        "5": 400
+      },
+      "dataset": "urls",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        45540,
+        52093
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.095,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "de289c89d2695ebe68db816a5f3ef57d8d85e70d1d5abfbc2fa85754e8fc53ed",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "5": 400,
+        "1": 19000,
+        "4": 250,
+        "3": 500,
+        "2": 250
+      },
+      "dataset": "urls",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        49084,
+        55637
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.076,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_95_5_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_hotspot_growth_rows.bin",
+      "rows_sha256": "7b79b1b9558ec449090cc00a2032ad9881153cb0a14ac75f4d821ce2c5b63bbd",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_hotspot_growth_ops.bin",
+      "operations_sha256": "9c30eadeb35a62dbcc62582b95597e5812db58f6c72699e851cbadc8d239c4f4",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "5": 400,
+        "1": 19000,
+        "2": 1000
+      },
+      "dataset": "urls",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        45540,
+        52093
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.824,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_95_5_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_hotspot_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_95_5_hotspot_replacement_ops.bin",
+      "operations_sha256": "32b18b7604a672b5500cdbd32d72d1b705e6bea34685909a38938614aed88c7e",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "3": 500,
+        "2": 250,
+        "5": 400,
+        "4": 250
+      },
+      "dataset": "urls",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        49084,
+        55637
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.605,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "7c761b0ba48ca4155e319e311885c88792eaa3fbc592205396b58510d1d6a650",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "419c13c36aa7ad3688bafa2871c2371d72af863ce17f270b3365c10b2c0ca983",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "dataset": "urls",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        8513,
+        15066
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.099,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "7a517c9375168966d3d8ec87c19456ef9436b3077cb60cae0ac38d04a3b55bc4",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "3": 2000,
+        "4": 1000,
+        "2": 1000,
+        "5": 400
+      },
+      "dataset": "urls",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        28085,
+        34638
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.075,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_80_20_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_hotspot_growth_rows.bin",
+      "rows_sha256": "7c761b0ba48ca4155e319e311885c88792eaa3fbc592205396b58510d1d6a650",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_hotspot_growth_ops.bin",
+      "operations_sha256": "3d97b034afd838dcb97df3232c1c73c189a6746dc65da39afb15bf738e9a943f",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "dataset": "urls",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        8513,
+        15066
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.389,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "urls_80_20_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_hotspot_replacement_rows.bin",
+      "rows_sha256": "f21fa28f97c0938e2594a6b9c949af179819c9c911fff6d6bb7a4793cde9d7c3",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/urls_80_20_hotspot_replacement_ops.bin",
+      "operations_sha256": "ee7c0bdbf8bec959db8c41be3773eac12a10d86e185494cc92ff06a21fbaa6a3",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 1000,
+        "5": 400,
+        "4": 1000,
+        "3": 2000
+      },
+      "dataset": "urls",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        28085,
+        34638
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.613,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_95_5_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_uniform_growth_rows.bin",
+      "rows_sha256": "f8aae51622ed886087c793cabfd4e863ac647b1fa19db9e91b3c1c3bbf134150",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_uniform_growth_ops.bin",
+      "operations_sha256": "3a09c01b98636dc12a10eb4cbca5f234b49778c6286cc7826ea4e52b7eb1404d",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 1000,
+        "5": 400
+      },
+      "dataset": "words_indep",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        24106,
+        30659
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.092,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_95_5_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_uniform_replacement_rows.bin",
+      "rows_sha256": "276ada50cc0702cc88153a478f5669702f938b61c87d8b4bb51bf8d2c4ae6dbf",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_uniform_replacement_ops.bin",
+      "operations_sha256": "ed6bf561ea7479a96fea06b178fd092af8c1fb1e6fa06c39a30fd882262115fd",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "2": 250,
+        "4": 250,
+        "3": 500,
+        "5": 400
+      },
+      "dataset": "words_indep",
+      "ratio": "95_5",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        24420,
+        30973
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.066,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_95_5_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_hotspot_growth_rows.bin",
+      "rows_sha256": "f8aae51622ed886087c793cabfd4e863ac647b1fa19db9e91b3c1c3bbf134150",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_hotspot_growth_ops.bin",
+      "operations_sha256": "31b42766b253e84fa9fc869acfe77fa3e784c43ae6d36cb16b4e662fd0f2bc6b",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "5": 400,
+        "2": 1000
+      },
+      "dataset": "words_indep",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        24106,
+        30659
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.812,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_95_5_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_hotspot_replacement_rows.bin",
+      "rows_sha256": "276ada50cc0702cc88153a478f5669702f938b61c87d8b4bb51bf8d2c4ae6dbf",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_95_5_hotspot_replacement_ops.bin",
+      "operations_sha256": "bd0fb289a7cdafbe646efc60412f5b9872023887017868b5d62bd1bc6fcbcb4c",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 19000,
+        "5": 400,
+        "4": 250,
+        "2": 250,
+        "3": 500
+      },
+      "dataset": "words_indep",
+      "ratio": "95_5",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        24420,
+        30973
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.619,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_80_20_uniform_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_uniform_growth_rows.bin",
+      "rows_sha256": "e889df2405bd6bf9aa944d1fe8c0ccc6eaeaead0aae7331cac52e792b0995af5",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_uniform_growth_ops.bin",
+      "operations_sha256": "e3c41d791f02946cc8f4d38fafa36704a03261f42173199aef049ddc6fe2a7d4",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "dataset": "words_indep",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "growth",
+      "hot_range": [
+        33257,
+        39810
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.102,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_80_20_uniform_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_uniform_replacement_rows.bin",
+      "rows_sha256": "276ada50cc0702cc88153a478f5669702f938b61c87d8b4bb51bf8d2c4ae6dbf",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_uniform_replacement_ops.bin",
+      "operations_sha256": "36613171e5ee842716ff8fe76809adea4a67ef4b455273f7314e2f839c64e56a",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "4": 1000,
+        "2": 1000,
+        "3": 2000,
+        "5": 400
+      },
+      "dataset": "words_indep",
+      "ratio": "80_20",
+      "locality": "uniform",
+      "semantics": "replacement",
+      "hot_range": [
+        22064,
+        28617
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.075,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_80_20_hotspot_growth": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_hotspot_growth_rows.bin",
+      "rows_sha256": "e889df2405bd6bf9aa944d1fe8c0ccc6eaeaead0aae7331cac52e792b0995af5",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_hotspot_growth_ops.bin",
+      "operations_sha256": "063dd0ccba5ce7eba9df284571aaa99d281d743ec94336f48b1580ee071ba947",
+      "initial_rows": 52428,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "2": 4000,
+        "5": 400
+      },
+      "dataset": "words_indep",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "growth",
+      "hot_range": [
+        33257,
+        39810
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.381,
+      "scan_limits": [
+        16,
+        128
+      ]
+    },
+    "words_indep_80_20_hotspot_replacement": {
+      "rows_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_hotspot_replacement_rows.bin",
+      "rows_sha256": "276ada50cc0702cc88153a478f5669702f938b61c87d8b4bb51bf8d2c4ae6dbf",
+      "operations_path": "07_Eval_Integration/results/bm_compliant_20261023/traces/words_indep_80_20_hotspot_replacement_ops.bin",
+      "operations_sha256": "19322ab557b8b8f6e4d8280107dac97ffe6b93b6777968789ea71a3b68cc019d",
+      "initial_rows": 65536,
+      "operations": 20400,
+      "kinds": {
+        "1": 16000,
+        "3": 2000,
+        "4": 1000,
+        "2": 1000,
+        "5": 400
+      },
+      "dataset": "words_indep",
+      "ratio": "80_20",
+      "locality": "hotspot",
+      "semantics": "replacement",
+      "hot_range": [
+        22064,
+        28617
+      ],
+      "hot_keys": 6553,
+      "hot_write_fraction": 0.612,
+      "scan_limits": [
+        16,
+        128
+      ]
+    }
+  },
+  "base_commit": "2668cbafdd5407fcfbc587cb5eae616946040e44",
+  "artifacts": {
+    "build/pure": "1abc1010a0fc6f19f25e2eb6226b8258eb50f8f98ae79aa3bca0fd1a324cdd86"
+  },
+  "protocol": "pure timing without oracle in the loop; each arm run twice per process for A/A; arm order rotated by process index",
+  "limits": [
+    "no oracle inside the timed loop; correctness covered by the separate gates",
+    "hotspot is synthetic over the source key order"
+  ]
+}
