@@ -1,0 +1,114 @@
+{
+  "words_100k_95_5_uniform_growth": {
+    "find_median": 1.0201,
+    "find_interval": [
+      0.8504,
+      1.2217
+    ],
+    "write_drop": 0.5475,
+    "write_interval": [
+      0.3861,
+      0.6316
+    ],
+    "pure_throughput_ratio": 1.5214,
+    "write_gate": "pass"
+  },
+  "words_100k_95_5_hotspot_growth": {
+    "find_median": 0.9849,
+    "find_interval": [
+      0.746,
+      1.2794
+    ],
+    "write_drop": 0.4554,
+    "write_interval": [
+      0.211,
+      0.5182
+    ],
+    "pure_throughput_ratio": 1.5306,
+    "write_gate": "pass"
+  },
+  "words_100k_80_20_uniform_growth": {
+    "find_median": 0.9354,
+    "find_interval": [
+      0.8146,
+      1.185
+    ],
+    "write_drop": 0.5545,
+    "write_interval": [
+      0.4829,
+      0.6095
+    ],
+    "pure_throughput_ratio": 1.9643,
+    "write_gate": "pass"
+  },
+  "words_100k_80_20_hotspot_growth": {
+    "find_median": 0.8592,
+    "find_interval": [
+      0.7208,
+      1.5349
+    ],
+    "write_drop": 0.6182,
+    "write_interval": [
+      0.5043,
+      0.7115
+    ],
+    "pure_throughput_ratio": 2.2418,
+    "write_gate": "pass"
+  },
+  "words_100k_95_5_uniform_replacement": {
+    "find_median": 1.0033,
+    "find_interval": [
+      0.8429,
+      1.2124
+    ],
+    "write_drop": 0.0511,
+    "write_interval": [
+      -0.043,
+      0.1286
+    ],
+    "pure_throughput_ratio": 1.0684,
+    "write_gate": "FAIL"
+  },
+  "words_100k_95_5_hotspot_replacement": {
+    "find_median": 1.0042,
+    "find_interval": [
+      0.895,
+      1.1114
+    ],
+    "write_drop": 0.4757,
+    "write_interval": [
+      0.3365,
+      0.505
+    ],
+    "pure_throughput_ratio": 1.2461,
+    "write_gate": "pass"
+  },
+  "words_100k_80_20_uniform_replacement": {
+    "find_median": 0.9494,
+    "find_interval": [
+      0.7571,
+      1.1023
+    ],
+    "write_drop": 0.4212,
+    "write_interval": [
+      0.3902,
+      0.5451
+    ],
+    "pure_throughput_ratio": 1.4343,
+    "write_gate": "pass"
+  },
+  "words_100k_80_20_hotspot_replacement": {
+    "find_median": 0.9663,
+    "find_interval": [
+      0.624,
+      1.1335
+    ],
+    "write_drop": 0.5157,
+    "write_interval": [
+      0.458,
+      0.6383
+    ],
+    "pure_throughput_ratio": 1.4715,
+    "write_gate": "pass"
+  }
+}
