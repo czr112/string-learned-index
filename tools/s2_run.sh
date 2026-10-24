@@ -26,10 +26,10 @@ g++ -pthread -std=c++17 -march=x86-64-v3 -O3 \
   "$R/adapters/art/art_adapter.cpp" "$R/adapters/our_index/our_index_adapter.cpp" "$F/art.o" \
   "$R/upstream_snapshots/benchmark_003a55bf/src/unified/runner.cpp" -o "$F/pure" 2>"$F/build.err" \
   || { echo BUILD FAILED; tail -12 "$F/build.err"; exit 1; }
-T="$R/results/bm_audited_v2_20261025/traces"
-for cell in words_indep_95_5_uniform_growth words_80_20_uniform_replacement \
-            words_indep_80_20_uniform_replacement words_95_5_uniform_growth \
-            words_80_20_uniform_growth urls_95_5_uniform_growth; do
+T="$R/results/bm_audited_v3_20261025/traces"
+for cell in words_95_5_uniform_growth words_95_5_hotspot_growth words_80_20_uniform_growth words_80_20_hotspot_growth \
+            words_95_5_uniform_replacement words_95_5_hotspot_replacement \
+            words_80_20_uniform_replacement words_80_20_hotspot_replacement; do
   : >"$F/${cell}.jsonl"
   for process in $(seq 0 15); do
     taskset -c 0 "$F/pure" "$T/${cell}_rows.bin" "$T/${cell}_ops.bin" "$process" >>"$F/${cell}.jsonl" 2>>"$F/${cell}.err" \

@@ -1,0 +1,914 @@
+{
+  "words_95_5_uniform_growth": {
+    "hot_range": [
+      5142,
+      11694
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3241,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 19000,
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 17122
+    },
+    "duplicate_inserts": 0,
+    "live_after": 33768,
+    "live_before": 32768,
+    "net_growth": 1000,
+    "writes": 1000,
+    "writes_in_hot": 76,
+    "hot_write_fraction_measured": 0.076,
+    "find_hit_rate_measured": 0.9012,
+    "dataset": "words",
+    "ratio": "95_5",
+    "locality": "uniform",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_growth_rows.bin",
+    "rows_sha256": "2ecd44e88fd5071b982a9189bd01298bbf9c2282c225eb694eafa3132bf074c0",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_growth_ops.bin",
+    "operations_sha256": "f4ce9c81c3c3ff21b7cd132496c0c9626929a482f0c1121f7d81988bf5b91637"
+  },
+  "words_95_5_uniform_replacement": {
+    "hot_range": [
+      33257,
+      39809
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1602,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 19000,
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "find_hit": 17005
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 1000,
+    "writes_in_hot": 92,
+    "hot_write_fraction_measured": 0.092,
+    "find_hit_rate_measured": 0.895,
+    "dataset": "words",
+    "ratio": "95_5",
+    "locality": "uniform",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_replacement_rows.bin",
+    "rows_sha256": "6ad4a635aa6a8cd3e2cf1bce2d5ef9a0280aaadb594db047d7e4d5e77aff39a6",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_replacement_ops.bin",
+    "operations_sha256": "5e9e828065ef00cec8247a9a2766db9508c3db7eebdab4a58b19342736c58f29"
+  },
+  "words_95_5_hotspot_growth": {
+    "hot_range": [
+      5142,
+      11694
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3241,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 19000,
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 17122
+    },
+    "duplicate_inserts": 0,
+    "live_after": 33768,
+    "live_before": 32768,
+    "net_growth": 1000,
+    "writes": 1000,
+    "writes_in_hot": 800,
+    "hot_write_fraction_measured": 0.8,
+    "find_hit_rate_measured": 0.9012,
+    "dataset": "words",
+    "ratio": "95_5",
+    "locality": "hotspot",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_growth_rows.bin",
+    "rows_sha256": "2ecd44e88fd5071b982a9189bd01298bbf9c2282c225eb694eafa3132bf074c0",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_growth_ops.bin",
+    "operations_sha256": "f04f9398be2e30f46743c4832a063660c615fa960e6b32096ac92cf421f21d8e"
+  },
+  "words_95_5_hotspot_replacement": {
+    "hot_range": [
+      33257,
+      39809
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1602,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 19000,
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "find_hit": 16989
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 1000,
+    "writes_in_hot": 863,
+    "hot_write_fraction_measured": 0.863,
+    "find_hit_rate_measured": 0.8942,
+    "dataset": "words",
+    "ratio": "95_5",
+    "locality": "hotspot",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_replacement_rows.bin",
+    "rows_sha256": "6ad4a635aa6a8cd3e2cf1bce2d5ef9a0280aaadb594db047d7e4d5e77aff39a6",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_replacement_ops.bin",
+    "operations_sha256": "8454c317b9a8f90fc0c6c5944eb23f054a8de004dcdaa45004940ea316d01dd5"
+  },
+  "words_80_20_uniform_growth": {
+    "hot_range": [
+      44597,
+      51149
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3249,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 16000,
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 14421
+    },
+    "duplicate_inserts": 0,
+    "live_after": 36768,
+    "live_before": 32768,
+    "net_growth": 4000,
+    "writes": 4000,
+    "writes_in_hot": 412,
+    "hot_write_fraction_measured": 0.103,
+    "find_hit_rate_measured": 0.9013,
+    "dataset": "words",
+    "ratio": "80_20",
+    "locality": "uniform",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_growth_rows.bin",
+    "rows_sha256": "5a62130df88becce218d60841df8de3ac46ae37f612e66a28a18bf050ffbdc04",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_growth_ops.bin",
+    "operations_sha256": "13053b1b06935fdac387e81a25b7ce70fef7446b6286bfab0b1c3c6fd9517783"
+  },
+  "words_80_20_uniform_replacement": {
+    "hot_range": [
+      17236,
+      23788
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1685,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 16000,
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "find_hit": 14190
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 4000,
+    "writes_in_hot": 403,
+    "hot_write_fraction_measured": 0.1008,
+    "find_hit_rate_measured": 0.8869,
+    "dataset": "words",
+    "ratio": "80_20",
+    "locality": "uniform",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_replacement_rows.bin",
+    "rows_sha256": "65ea00025f1bfae0ef82d3e9f2f66588626a14983fdfcd09efbc78742cb46ea5",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_replacement_ops.bin",
+    "operations_sha256": "4fe3210147632119819847725f77ca291a6ff2fa937e045413333aac0ff76371"
+  },
+  "words_80_20_hotspot_growth": {
+    "hot_range": [
+      44597,
+      51149
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3249,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 16000,
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 14421
+    },
+    "duplicate_inserts": 0,
+    "live_after": 36768,
+    "live_before": 32768,
+    "net_growth": 4000,
+    "writes": 4000,
+    "writes_in_hot": 3200,
+    "hot_write_fraction_measured": 0.8,
+    "find_hit_rate_measured": 0.9013,
+    "dataset": "words",
+    "ratio": "80_20",
+    "locality": "hotspot",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_growth_rows.bin",
+    "rows_sha256": "5a62130df88becce218d60841df8de3ac46ae37f612e66a28a18bf050ffbdc04",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_growth_ops.bin",
+    "operations_sha256": "2b5b3c185da8562452957a130020aee5054775e1990481cd455c7ebc617bc8c5"
+  },
+  "words_80_20_hotspot_replacement": {
+    "hot_range": [
+      17236,
+      23788
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1685,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 16000,
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "find_hit": 14184
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 4000,
+    "writes_in_hot": 3444,
+    "hot_write_fraction_measured": 0.861,
+    "find_hit_rate_measured": 0.8865,
+    "dataset": "words",
+    "ratio": "80_20",
+    "locality": "hotspot",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_replacement_rows.bin",
+    "rows_sha256": "65ea00025f1bfae0ef82d3e9f2f66588626a14983fdfcd09efbc78742cb46ea5",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_replacement_ops.bin",
+    "operations_sha256": "7aebbff1f99b7593544bb15268c15fddc7d616d2173d585eb24058489d9c5093"
+  },
+  "urls_95_5_uniform_growth": {
+    "hot_range": [
+      9911,
+      16463
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3263,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 19000,
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 17000
+    },
+    "duplicate_inserts": 0,
+    "live_after": 33768,
+    "live_before": 32768,
+    "net_growth": 1000,
+    "writes": 1000,
+    "writes_in_hot": 105,
+    "hot_write_fraction_measured": 0.105,
+    "find_hit_rate_measured": 0.8947,
+    "dataset": "urls",
+    "ratio": "95_5",
+    "locality": "uniform",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_growth_rows.bin",
+    "rows_sha256": "8bdd022d91071b1522b352948814c0b3c4c3c7057fcd8b269577ca0cd734d56b",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_growth_ops.bin",
+    "operations_sha256": "44978ebac28f3cb641c5a43c7329f519159fb62697845ed71bc99a3dec95aee3"
+  },
+  "urls_95_5_uniform_replacement": {
+    "hot_range": [
+      24106,
+      30658
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1629,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 19000,
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "find_hit": 17060
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 1000,
+    "writes_in_hot": 99,
+    "hot_write_fraction_measured": 0.099,
+    "find_hit_rate_measured": 0.8979,
+    "dataset": "urls",
+    "ratio": "95_5",
+    "locality": "uniform",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_replacement_rows.bin",
+    "rows_sha256": "803e9968ef2ef9f0ed55e8808ef63b4cfe3f633b8c19402572b2274851d40db4",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_replacement_ops.bin",
+    "operations_sha256": "2bc0c908fa5643cc5c0896646d7adb358d83386e55070298a118cc80838c7f55"
+  },
+  "urls_95_5_hotspot_growth": {
+    "hot_range": [
+      9911,
+      16463
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3263,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 19000,
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 17000
+    },
+    "duplicate_inserts": 0,
+    "live_after": 33768,
+    "live_before": 32768,
+    "net_growth": 1000,
+    "writes": 1000,
+    "writes_in_hot": 800,
+    "hot_write_fraction_measured": 0.8,
+    "find_hit_rate_measured": 0.8947,
+    "dataset": "urls",
+    "ratio": "95_5",
+    "locality": "hotspot",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_growth_rows.bin",
+    "rows_sha256": "8bdd022d91071b1522b352948814c0b3c4c3c7057fcd8b269577ca0cd734d56b",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_growth_ops.bin",
+    "operations_sha256": "e610b70520db79365e25a7737f230c0c5bd81f127d6e175d064c4cf2a65e8822"
+  },
+  "urls_95_5_hotspot_replacement": {
+    "hot_range": [
+      24106,
+      30658
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1629,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 19000,
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "find_hit": 17066
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 1000,
+    "writes_in_hot": 860,
+    "hot_write_fraction_measured": 0.86,
+    "find_hit_rate_measured": 0.8982,
+    "dataset": "urls",
+    "ratio": "95_5",
+    "locality": "hotspot",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_replacement_rows.bin",
+    "rows_sha256": "803e9968ef2ef9f0ed55e8808ef63b4cfe3f633b8c19402572b2274851d40db4",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_replacement_ops.bin",
+    "operations_sha256": "b0416c5f0b4683139200790191b227a9f8029e565a8fd76fdf353438ebc66612"
+  },
+  "urls_80_20_uniform_growth": {
+    "hot_range": [
+      5142,
+      11694
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3241,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 16000,
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 14421
+    },
+    "duplicate_inserts": 0,
+    "live_after": 36768,
+    "live_before": 32768,
+    "net_growth": 4000,
+    "writes": 4000,
+    "writes_in_hot": 376,
+    "hot_write_fraction_measured": 0.094,
+    "find_hit_rate_measured": 0.9013,
+    "dataset": "urls",
+    "ratio": "80_20",
+    "locality": "uniform",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_growth_rows.bin",
+    "rows_sha256": "c45609d952340a42e6a45c14a2501080df3e8a54786986a607bfea435c321501",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_growth_ops.bin",
+    "operations_sha256": "6ddb309c97d8c7842d40f92242c396b871a59a2a453bcc678920fa30c84cf79c"
+  },
+  "urls_80_20_uniform_replacement": {
+    "hot_range": [
+      33257,
+      39809
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1602,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 16000,
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "find_hit": 14194
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 4000,
+    "writes_in_hot": 392,
+    "hot_write_fraction_measured": 0.098,
+    "find_hit_rate_measured": 0.8871,
+    "dataset": "urls",
+    "ratio": "80_20",
+    "locality": "uniform",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_replacement_rows.bin",
+    "rows_sha256": "57998934bc327fbe54fe4d25c2a0fca3900b7168b7c7c552fb01208791328c10",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_replacement_ops.bin",
+    "operations_sha256": "6459314deb9fcfe160c4faa7e6b51dfbfc12349aba57e5a28dbaf1d3f0b1858f"
+  },
+  "urls_80_20_hotspot_growth": {
+    "hot_range": [
+      5142,
+      11694
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3241,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 16000,
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 14421
+    },
+    "duplicate_inserts": 0,
+    "live_after": 36768,
+    "live_before": 32768,
+    "net_growth": 4000,
+    "writes": 4000,
+    "writes_in_hot": 3200,
+    "hot_write_fraction_measured": 0.8,
+    "find_hit_rate_measured": 0.9013,
+    "dataset": "urls",
+    "ratio": "80_20",
+    "locality": "hotspot",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_growth_rows.bin",
+    "rows_sha256": "c45609d952340a42e6a45c14a2501080df3e8a54786986a607bfea435c321501",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_growth_ops.bin",
+    "operations_sha256": "4581db0e64f4ed240f9a82634a328d9034a302204f17831d177260a8653bfd07"
+  },
+  "urls_80_20_hotspot_replacement": {
+    "hot_range": [
+      33257,
+      39809
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1602,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 16000,
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "find_hit": 14175
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 4000,
+    "writes_in_hot": 3454,
+    "hot_write_fraction_measured": 0.8635,
+    "find_hit_rate_measured": 0.8859,
+    "dataset": "urls",
+    "ratio": "80_20",
+    "locality": "hotspot",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_replacement_rows.bin",
+    "rows_sha256": "57998934bc327fbe54fe4d25c2a0fca3900b7168b7c7c552fb01208791328c10",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_replacement_ops.bin",
+    "operations_sha256": "66bde86931f64203fb60b580bb81e17cfa730f68e58e70b37acb86f059092988"
+  },
+  "words_indep_95_5_uniform_growth": {
+    "hot_range": [
+      17236,
+      23788
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3298,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 19000,
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 17155
+    },
+    "duplicate_inserts": 0,
+    "live_after": 33768,
+    "live_before": 32768,
+    "net_growth": 1000,
+    "writes": 1000,
+    "writes_in_hot": 102,
+    "hot_write_fraction_measured": 0.102,
+    "find_hit_rate_measured": 0.9029,
+    "dataset": "words_indep",
+    "ratio": "95_5",
+    "locality": "uniform",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_growth_rows.bin",
+    "rows_sha256": "5fb3263bfd30ab002a1ba6c79efa79eb35dfaadc74c72a7ef129237e7b24d9e3",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_growth_ops.bin",
+    "operations_sha256": "18e82dae49536064a936f5942aa27745205ac1b3a0abaacac5915dcd9d0af955"
+  },
+  "words_indep_95_5_uniform_replacement": {
+    "hot_range": [
+      8002,
+      14554
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1626,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 19000,
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "find_hit": 17040
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 1000,
+    "writes_in_hot": 99,
+    "hot_write_fraction_measured": 0.099,
+    "find_hit_rate_measured": 0.8968,
+    "dataset": "words_indep",
+    "ratio": "95_5",
+    "locality": "uniform",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_replacement_rows.bin",
+    "rows_sha256": "7846819a968a3626a39126647cd2eebf799b7928fca77bac84355746d707d3e8",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_replacement_ops.bin",
+    "operations_sha256": "a9f7f7bff41b78b015d1ed3192b9c828c850bfdc7675959d79f72b62217c4f19"
+  },
+  "words_indep_95_5_hotspot_growth": {
+    "hot_range": [
+      17236,
+      23788
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3298,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 19000,
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 17155
+    },
+    "duplicate_inserts": 0,
+    "live_after": 33768,
+    "live_before": 32768,
+    "net_growth": 1000,
+    "writes": 1000,
+    "writes_in_hot": 800,
+    "hot_write_fraction_measured": 0.8,
+    "find_hit_rate_measured": 0.9029,
+    "dataset": "words_indep",
+    "ratio": "95_5",
+    "locality": "hotspot",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_growth_rows.bin",
+    "rows_sha256": "5fb3263bfd30ab002a1ba6c79efa79eb35dfaadc74c72a7ef129237e7b24d9e3",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_growth_ops.bin",
+    "operations_sha256": "5546a6d6122d390c5860d746890e94d00bf6cb43e2fa1e0012160e172fe59c77"
+  },
+  "words_indep_95_5_hotspot_replacement": {
+    "hot_range": [
+      8002,
+      14554
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1626,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 19000,
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250,
+      "find_hit": 17036
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 1000,
+    "writes_in_hot": 865,
+    "hot_write_fraction_measured": 0.865,
+    "find_hit_rate_measured": 0.8966,
+    "dataset": "words_indep",
+    "ratio": "95_5",
+    "locality": "hotspot",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_replacement_rows.bin",
+    "rows_sha256": "7846819a968a3626a39126647cd2eebf799b7928fca77bac84355746d707d3e8",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_replacement_ops.bin",
+    "operations_sha256": "0ca5b7b628850c6a0ad34d830ea1ac51c78a7e3b521796191466e05169508f70"
+  },
+  "words_indep_80_20_uniform_growth": {
+    "hot_range": [
+      52247,
+      58799
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3284,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 16000,
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 14400
+    },
+    "duplicate_inserts": 0,
+    "live_after": 36768,
+    "live_before": 32768,
+    "net_growth": 4000,
+    "writes": 4000,
+    "writes_in_hot": 416,
+    "hot_write_fraction_measured": 0.104,
+    "find_hit_rate_measured": 0.9,
+    "dataset": "words_indep",
+    "ratio": "80_20",
+    "locality": "uniform",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_growth_rows.bin",
+    "rows_sha256": "cfe67da1a4bd62eacb4e28049509bf2261fb533d965bf3a49e886b2883decbb8",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_growth_ops.bin",
+    "operations_sha256": "82c3a448830d84c110eac721f0cc593d07b474d23e50845d58bd11d6790fd3f9"
+  },
+  "words_indep_80_20_uniform_replacement": {
+    "hot_range": [
+      24457,
+      31009
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1621,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 16000,
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "find_hit": 14278
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 4000,
+    "writes_in_hot": 416,
+    "hot_write_fraction_measured": 0.104,
+    "find_hit_rate_measured": 0.8924,
+    "dataset": "words_indep",
+    "ratio": "80_20",
+    "locality": "uniform",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_replacement_rows.bin",
+    "rows_sha256": "51756318472c30835bc8361b1319cb8e49189e70269554056ddf01ceb34e5c10",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_replacement_ops.bin",
+    "operations_sha256": "9057b2acf4d90c2578cc6d32fbd9eaf495f752611ab97ca4293664f093ef17f6"
+  },
+  "words_indep_80_20_hotspot_growth": {
+    "hot_range": [
+      52247,
+      58799
+    ],
+    "held_out": 32768,
+    "held_out_in_hot": 3284,
+    "keep_fraction": 0.5,
+    "kinds": {
+      "find": 16000,
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0,
+      "find_hit": 14400
+    },
+    "duplicate_inserts": 0,
+    "live_after": 36768,
+    "live_before": 32768,
+    "net_growth": 4000,
+    "writes": 4000,
+    "writes_in_hot": 3200,
+    "hot_write_fraction_measured": 0.8,
+    "find_hit_rate_measured": 0.9,
+    "dataset": "words_indep",
+    "ratio": "80_20",
+    "locality": "hotspot",
+    "semantics": "growth",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_growth_rows.bin",
+    "rows_sha256": "cfe67da1a4bd62eacb4e28049509bf2261fb533d965bf3a49e886b2883decbb8",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_growth_ops.bin",
+    "operations_sha256": "f1e4469c3ea3f604c7becd27a42d6223152800324fe014fbdee9b4878397e7ed"
+  },
+  "words_indep_80_20_hotspot_replacement": {
+    "hot_range": [
+      24457,
+      31009
+    ],
+    "held_out": 16384,
+    "held_out_in_hot": 1621,
+    "keep_fraction": 0.75,
+    "kinds": {
+      "find": 16000,
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "scan": 400
+    },
+    "successful": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000,
+      "find_hit": 14272
+    },
+    "duplicate_inserts": 0,
+    "live_after": 49152,
+    "live_before": 49152,
+    "net_growth": 0,
+    "writes": 4000,
+    "writes_in_hot": 3454,
+    "hot_write_fraction_measured": 0.8635,
+    "find_hit_rate_measured": 0.892,
+    "dataset": "words_indep",
+    "ratio": "80_20",
+    "locality": "hotspot",
+    "semantics": "replacement",
+    "rows_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_replacement_rows.bin",
+    "rows_sha256": "51756318472c30835bc8361b1319cb8e49189e70269554056ddf01ceb34e5c10",
+    "operations_path": "07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_replacement_ops.bin",
+    "operations_sha256": "0ac56105a574360df5a2d08e0fc410a4633fa11b7e4e7f392872d5b5639476c9"
+  }
+}

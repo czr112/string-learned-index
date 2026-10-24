@@ -22,8 +22,10 @@ sys.path.insert(0, str(BENCH / 'scripts'))
 from benchmark_lib.interchange import write_operations, write_rows  # noqa: E402
 
 DATASETS = {
-    'words_100k': '07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/'
-                  'english_words_100000_s20261019_rows.bin',
+    'words': '07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin',
+    'urls': '07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin',
+    'words_indep': '07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/'
+                   'english_words_s20261019_rows.bin',
 }
 SEED = 20261025
 OPS = 20000
@@ -53,14 +55,10 @@ def build(keys, ratio, locality, semantics, seed):
     def in_hot(key): return lo <= rank[key] <= hi
 
     # Reserve more keys for hotspot growth so the hot slice can actually supply 80% of inserts.
-    if locality == 'hotspot' and semantics == 'growth':
-        keep_fraction = 1 / 2
-    elif locality == 'hotspot':
-        keep_fraction = 3 / 4
-    elif semantics == 'growth':
-        keep_fraction = 4 / 5
-    else:
-        keep_fraction = 9 / 10
+    # The reserve is chosen by semantics only, so the uniform and hotspot cells of a family
+    # share the exact same initial map (the pairing requirement). Growth needs a larger reserve
+    # so the hot slice can still supply 80% of its writes.
+    keep_fraction = 1 / 2 if semantics == 'growth' else 3 / 4
     order = list(range(len(ordered))); rng.shuffle(order)
     live_idx = set(order[:int(len(ordered) * keep_fraction)])
     initial = [(ordered[i], i) for i in sorted(live_idx)]
@@ -112,7 +110,7 @@ def build(keys, ratio, locality, semantics, seed):
         hot_upd_quota = int(round(updates * HOT_SHARE)) if locality == 'hotspot' else 0
         for i in range(updates):
             use_hot = locality == 'hotspot' and i < hot_upd_quota and hot_upd
-            key = rng.choice(hot_upd) if use_hot else rng.choice(cold_upd or upd_pool)
+            key = rng.choice(hot_upd) if use_hot else rng.choice(upd_pool)
             ops.append((3, key, len(ordered) + 10_000 + i, 0))
         # Hotspot replacement must also insert inside the slice, otherwise the achievable
         # ratio caps at 3/4 by construction.
@@ -127,7 +125,7 @@ def build(keys, ratio, locality, semantics, seed):
             avail_hot = [k for k in hot_era if k not in already]
             avail_cold = [k for k in cold_era if k not in already]
             use_hot = locality == 'hotspot' and i < hot_pair_quota and avail_hot
-            key = rng.choice(avail_hot) if use_hot else rng.choice(avail_cold or era_pool)
+            key = rng.choice(avail_hot) if use_hot else rng.choice([k for k in era_pool if k not in already])
             already.add(key)
             while cursor < len(held_rest) and held_rest[cursor] in used_new:
                 cursor += 1
@@ -187,7 +185,7 @@ def replay_audit(initial, ops, hot_range, rank):
 
 
 def main():
-    out = ROOT / 'results' / 'bm_audited_100k_20261025'
+    out = ROOT / 'results' / 'bm_audited_v3_20261025'
     out.mkdir(exist_ok=False)
     traces = out / 'traces'; traces.mkdir()
     manifest = {}
@@ -238,6 +236,14 @@ def main():
             h = groups.get(f'hotspot_{semantics}')
             if u is not None and h is not None and abs(u - h) > 0.01:
                 raise SystemExit(f'{ratio_name} {semantics}: hit rate differs {u} vs {h}')
+    for name in DATASETS:
+        for ratio_name in ('95_5', '80_20'):
+            for semantics in ('growth', 'replacement'):
+                u = manifest[f'{name}_{ratio_name}_uniform_{semantics}']
+                h = manifest[f'{name}_{ratio_name}_hotspot_{semantics}']
+                if u['live_before'] != h['live_before']:
+                    raise SystemExit(f'{name} {ratio_name} {semantics}: initial maps differ '
+                                     f"{u['live_before']} vs {h['live_before']}")
     (out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     print('traces', len(manifest), 'hit-rate parity ok')
 
