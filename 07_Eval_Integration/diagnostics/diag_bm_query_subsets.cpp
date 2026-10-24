@@ -1,3 +1,5 @@
+// Historical diagnostic: its hot/hit grouping is invalid; retained for provenance.
+// Use bm_query_recheck.cpp and the registered query-recheck runner for new evidence.
 // Targeted query diagnosis: split complete-find cost by hit/miss and by key region, on the
 // audited growth trace, after the same insert replay on both implementations.
 #include "bm_split_index.hpp"

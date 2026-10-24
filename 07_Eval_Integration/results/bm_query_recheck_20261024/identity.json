@@ -1,0 +1,90 @@
+{
+  "base_commit": "09bd9f850391f857b6031c43731c8fdfdaa7f6bf",
+  "dependency_pins": {
+    "benchmark": "003a55bf674b43350fbb70242070fb74f33a56ce",
+    "model": "3894c767338a865d2920ba5e21283827fea1d803"
+  },
+  "source_bundle_sha256": "fa1e413f2b20634d691cf68bed488a37da8bb87de1866e5e9c62e80e62c9cd5e",
+  "closure": {
+    "project/07_Eval_Integration/diagnostics/bm_query_recheck.cpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_query_recheck.cpp",
+      "sha256": "a6f6e0c10b1b6b1e551ae10469ffba4e5621fa09e2bd484b0494ba54edb8e40f"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_experiment_adapter.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_experiment_adapter.hpp",
+      "sha256": "f5723259c85795e07d03ad5079b0520f13ecce8784ab1fe06a84881ee9065db0"
+    },
+    "benchmark/src/index_contract.h": {
+      "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h",
+      "sha256": "3587addd4e4fda743975534a95173ccb8d09d38029f5239ff3998574b45c3a39"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_bounded_index.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_bounded_index.hpp",
+      "sha256": "2cb28beb92810180dc32b414f0865746d224602e5ad6fb565f84818752f582d0"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_page_index.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_page_index.hpp",
+      "sha256": "c3e54dc2638e0ba1f5f71a205b1f29dab950d57dc4bec2974ab88f70da87f082"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_page_root.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_page_root.hpp",
+      "sha256": "c7b9f57d8b3fc47e0702d5239408ea334b243afe84b7e1f6bba1fdaa10fac5c6"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_page_core.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_page_core.hpp",
+      "sha256": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea"
+    },
+    "project/02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp",
+      "sha256": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089"
+    },
+    "model/src/block_model.h": {
+      "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h",
+      "sha256": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_split_adapter.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_split_adapter.hpp",
+      "sha256": "db529b4ba047130bbf9f408ba93d61a54498abd5ed5255eb376cdb32cddb87f9"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_split_index.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_split_index.hpp",
+      "sha256": "02382f336285df9178e7487d49be372004beefea48be3345622bb517e251647e"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_n1_index.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_index.hpp",
+      "sha256": "ec5c1be2198f0ebc82ba75503268c1be0efe52436b3791bcb1473933ac14d8b5"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_n1_page_root.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_page_root.hpp",
+      "sha256": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b"
+    },
+    "project/07_Eval_Integration/diagnostics/bm_n1_page_core.hpp": {
+      "path": "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_page_core.hpp",
+      "sha256": "bb45fa46cd2cd872bbaac854fd0318d8f09162ba5894c96f808b88bcc992d982"
+    },
+    "model/src/block_model.cpp": {
+      "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp",
+      "sha256": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97"
+    },
+    "model/src/key_bytes.h": {
+      "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h",
+      "sha256": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+    },
+    "model/src/query_cost.h": {
+      "path": "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.h",
+      "sha256": "2ec2b0188b68960f7cbe8114fc5b265b425a9c7fd64a9b6d1eea3e7fda9b94ef"
+    }
+  },
+  "definitions": {
+    "BM_MODEL_COMMIT": "3894c767338a865d2920ba5e21283827fea1d803",
+    "BM_CORE_BUNDLE_SHA256": "fa1e413f2b20634d691cf68bed488a37da8bb87de1866e5e9c62e80e62c9cd5e",
+    "BM_SPLIT_CORE_SHA256": "fa1e413f2b20634d691cf68bed488a37da8bb87de1866e5e9c62e80e62c9cd5e",
+    "BM_EXPERIMENT_ADAPTER_SHA256": "f5723259c85795e07d03ad5079b0520f13ecce8784ab1fe06a84881ee9065db0",
+    "BM_SPLIT_ADAPTER_SHA256": "db529b4ba047130bbf9f408ba93d61a54498abd5ed5255eb376cdb32cddb87f9"
+  },
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "uname": "Linux MSI 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+  "cpu_affinity": 0,
+  "runner_sha256": "230068d9ebba6515b5232a7dbea07a7f097159ef83d0b19f0e5f877b1a303b6a",
+  "protocol_sha256": "e6cd8ee5b06e78352f928efd41653fee5495382852e90516d77db923604caf88"
+}

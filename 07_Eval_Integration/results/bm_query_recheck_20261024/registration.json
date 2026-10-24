@@ -1,0 +1,17 @@
+{
+  "registered_at_utc": "2026-10-24T12:26:25.462047+00:00",
+  "protocol_sha256": "e6cd8ee5b06e78352f928efd41653fee5495382852e90516d77db923604caf88",
+  "blocks_per_cell": 16,
+  "query_count_max": 2000,
+  "min_calibration_batch_ms": 40,
+  "max_lookups_per_batch": 8192000,
+  "seed": 20261024,
+  "cpu": 0,
+  "aa_quality_gate": [
+    0.9523809523809523,
+    1.05
+  ],
+  "primary_group": "mixed90",
+  "runner_sha256": "230068d9ebba6515b5232a7dbea07a7f097159ef83d0b19f0e5f877b1a303b6a",
+  "selftest_only": false
+}

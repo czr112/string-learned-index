@@ -1,0 +1,418 @@
+[
+  {
+    "cell": "words_80_20_hotspot_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.37456452672945106,
+    "ci95": [
+      0.35502152244711527,
+      0.39410753101178686
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "a7c9cc45a4c73be0662a8d822942184e00311cad3a11254d14d1dc05e5fff56a",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_80_20_hotspot_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.5208356747450562,
+    "ci95": [
+      0.48745915770004494,
+      0.5542121917900675
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "5dc679e3e00844d9bc3b291bc593188555f01ed84ca85ad4b5623c04fd1188df",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_80_20_uniform_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.4354031692759528,
+    "ci95": [
+      0.40374679841579353,
+      0.46705954013611206
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "3d82b21e27ee0955b4ccc04522bd189a1849d894f794b37ee9f8d554d23b4a60",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_80_20_uniform_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.5108033169231769,
+    "ci95": [
+      0.4887349041368687,
+      0.5328717297094852
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "140df5183b4a7b672b021b78b70109d99935e078cafc23a7dbe8ba2aaeb6db22",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_95_5_hotspot_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.5160889507416562,
+    "ci95": [
+      0.474151800467556,
+      0.5580261010157563
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "7f94ffac66c2ab35334dfe8cb08d622f71ca87036a85ddfdaa5a185f0b9ee64b",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_95_5_hotspot_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.5267321238216851,
+    "ci95": [
+      0.4882562447035207,
+      0.5652080029398495
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "b8056752960fb2835ba1bbfc446c892b5f54331091fb1b43201b2ee5d6e49bcd",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_95_5_uniform_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.46534007882176476,
+    "ci95": [
+      0.41927807528457606,
+      0.5114020823589535
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "d8c64267674012dd55d32dfcd3487218c8296449c66021b60175dfc88e29972b",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_95_5_uniform_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.8593929061366656,
+    "ci95": [
+      0.7944453064541176,
+      0.9243405058192137
+    ],
+    "gain_ge_15": false,
+    "raw_sha256": "28fda4fbb4fe4c4fadc4678d5391e1455145ad118e11fa5c284e20a7e3b37faf",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_80_20_hotspot_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.33294872819843047,
+    "ci95": [
+      0.3242431934639208,
+      0.34165426293294016
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "37c273c59dd7050a570ca683b61ac45dc9128417c0fda92accc04ae0fe14a963",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_80_20_hotspot_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.44105039083259245,
+    "ci95": [
+      0.4261146018762455,
+      0.4559861797889394
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "973c44945c3ff82144752caa6648dbe51a402b72351820e3fbca7ceb5957ed41",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_80_20_uniform_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.38455656080138717,
+    "ci95": [
+      0.3708237418791336,
+      0.39828937972364076
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "29859fdf00ec83cfa3c04677ff1f1b6786cc8af86178a145cabc4f9969397639",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_80_20_uniform_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.4780874651678794,
+    "ci95": [
+      0.4679877042229922,
+      0.48818722611276666
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "97f1188cd5b962a8ed200c2565cc94524f3197748c2c7187fd5be39c4583625a",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_95_5_hotspot_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.45846158634544165,
+    "ci95": [
+      0.44021037148989756,
+      0.47671280120098575
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "60266a8da5c487e652067dfcffa30924a7d9960ef265426aa764d04dbc969c48",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_95_5_hotspot_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.5519320198104317,
+    "ci95": [
+      0.5094710617559656,
+      0.5943929778648979
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "06db3bf1f503d512f054b44d8ab5a8f0dbff592307f76b0cff13d9f0f2d60f4b",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_95_5_uniform_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.45795026254545634,
+    "ci95": [
+      0.4464381272943253,
+      0.4694623977965874
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "7b4e0a59a869407c25abc347c104c5c0ee3c9295ba899c65380bc5a4cf856231",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "urls_95_5_uniform_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.7777346859967829,
+    "ci95": [
+      0.7497896972063472,
+      0.8056796747872185
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "369544918274ca975ea75ca9b6f0a9c356d3ac763a0a4bb87aa49c62cf762c5c",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_80_20_hotspot_growth",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.38347695149070365,
+    "ci95": [
+      0.3345804380890305,
+      0.4323734648923768
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "771dfed6a38fcd56ddc219c599855534333f3fdc8a7cbdb2efe4a6fbea0b215b",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_80_20_hotspot_replacement",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.47921430116824015,
+    "ci95": [
+      0.43412743847683505,
+      0.5243011638596453
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "64f72f25a4ef7762f75f44de6ddfc71537cfe3097eadf2c876db75d82681a95e",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_80_20_uniform_growth",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.45287743441162104,
+    "ci95": [
+      0.41443522653028697,
+      0.4913196422929551
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "3491dd2b2767226cf81f485a465e9c6ba58adf5ba768f9627ea0534d28ae5116",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_80_20_uniform_replacement",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.5597777146134488,
+    "ci95": [
+      0.5137993261584134,
+      0.6057561030684843
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "3d1687b93b6088ae65badb52607b3596bad6c7e94f2a8ccea0254401c3191ddf",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_95_5_hotspot_growth",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.5676400810942308,
+    "ci95": [
+      0.487680605941066,
+      0.6475995562473956
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "1eaf18d882c224f75dfb58d6b85515aaf846894a4d64f92dbe7f2b45cc5e5968",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_95_5_hotspot_replacement",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.5455872237844978,
+    "ci95": [
+      0.4957868583215742,
+      0.5953875892474213
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "c95ddded34ccb1c9e2256df0d6d432bf8a90081b004170f8046b7587a64e085a",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_95_5_uniform_growth",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.4744664457422825,
+    "ci95": [
+      0.41352309228284734,
+      0.5354097992017177
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "3882ef3ca5426965b3032e9800d36f13767d3ba23a464201550ede2f46a6c3ad",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_100k_95_5_uniform_replacement",
+    "blocks": 8,
+    "df": 7,
+    "mean_ratio": 0.9584613355893439,
+    "ci95": [
+      0.9034356502832281,
+      1.0134870208954596
+    ],
+    "gain_ge_15": false,
+    "raw_sha256": "47c229cb3f5966c8efe831b1988420f4425b2a3ed520f2088a51198eaea75c1d",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_80_20_hotspot_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.37115642246702973,
+    "ci95": [
+      0.3610318756650058,
+      0.3812809692690537
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "9ab4399efc985e07a321003168d1deed1ffcbc0dacf7a71dbbdea8f346affe76",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_80_20_hotspot_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.4761905321127932,
+    "ci95": [
+      0.4621746579609024,
+      0.49020640626468404
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "b2f00b4ddc47b511476591444f3ec43dc467d4ccfc1f093d2b67a5ba87be9d30",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_80_20_uniform_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.4317557758980046,
+    "ci95": [
+      0.4130681148399455,
+      0.45044343695606376
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "82e5512eb668ae31f0ea0d84366e46c31b018e5a25a909a55101b7df30bb4087",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_80_20_uniform_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.5310801393727971,
+    "ci95": [
+      0.5089283511814338,
+      0.5532319275641604
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "bfe59c90cd30a92b13897491a316433c4290b58e17cd96b7fb89259e85fcdd2f",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_95_5_hotspot_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.49410632617475975,
+    "ci95": [
+      0.4740798813472497,
+      0.5141327710022698
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "1197411fb178e84ab08a68ec0a5f49fd1e33cbe5161d5543b015faa4071734c2",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_95_5_hotspot_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.6158842132873612,
+    "ci95": [
+      0.5572905214417117,
+      0.6744779051330108
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "eadb2886220e8754696fbd2a94a1ab1e8973e6ba04787aea0b5d92e77847ed7d",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_95_5_uniform_growth",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.46009631754990027,
+    "ci95": [
+      0.4390417056247837,
+      0.48115092947501686
+    ],
+    "gain_ge_15": true,
+    "raw_sha256": "f5011b1757b3f8ad54258b17768592a1b7bf6e20caa7a61b4ab8e8754dafe631",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  },
+  {
+    "cell": "words_indep_95_5_uniform_replacement",
+    "blocks": 16,
+    "df": 15,
+    "mean_ratio": 0.8472248901818148,
+    "ci95": [
+      0.8061683077703005,
+      0.8882814725933291
+    ],
+    "gain_ge_15": false,
+    "raw_sha256": "db8f020671f36c6c9c618f16108af920bd649f4ded9d3b048df3e40ce51afce9",
+    "method": "paired arithmetic-mean write ratio, t CI95"
+  }
+]

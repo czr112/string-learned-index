@@ -1,0 +1,16 @@
+{
+  "first_run": {
+    "status": "failed",
+    "error": "calibrate_words_80_20_hotspot_growth: exit 1; logs retained",
+    "completed_cells": 6,
+    "raw_archive": "preliminary_run1.tar.gz",
+    "source_commit": "6e587f0",
+    "retained_directory": "C:\\Users\\Noctis\\.codex\\worktrees\\bm-next-acceptance\\StringLearnedIndex_Workspace\\builds\\bm_query_recheck_20261024_run1"
+  },
+  "canonical_run": {
+    "status": "complete",
+    "source_commit": "09bd9f8",
+    "directory": "C:\\Users\\Noctis\\.codex\\worktrees\\bm-next-acceptance\\StringLearnedIndex_Workspace\\builds\\bm_query_recheck_20261024_run2"
+  },
+  "selection_policy": "All original 32 cells rerun after calibration amendment; no pooling and no picking faster repeats"
+}

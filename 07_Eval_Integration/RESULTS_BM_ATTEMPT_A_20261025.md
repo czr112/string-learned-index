@@ -1,3 +1,5 @@
+> 后续查询诊断见[正确分组复验](RESULTS_BM_QUERY_RECHECK_20261024.md)。本轮未追加尝试 A；其机制仍未验证，“9%–21% 已接受代价”保持撤回。
+
 > **更正**：本尝试在 reserve 后仍使用旧 block 引用（悬空），属**实现失败**，机制未验证。
 > 见[CORRECTION_BM_THREE](CORRECTION_BM_THREE_20261025.md)。
 

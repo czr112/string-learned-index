@@ -1,0 +1,108 @@
+{
+  "primary_counts": {
+    "measurement_unresolved": 12,
+    "pass": 10,
+    "regression": 5,
+    "undecided": 5
+  },
+  "primary_by_family": {
+    "words": {
+      "measurement_unresolved": 5,
+      "pass": 2,
+      "regression": 1
+    },
+    "urls": {
+      "regression": 2,
+      "pass": 3,
+      "undecided": 2,
+      "measurement_unresolved": 1
+    },
+    "words_indep": {
+      "measurement_unresolved": 3,
+      "pass": 2,
+      "regression": 2,
+      "undecided": 1
+    },
+    "words_100k": {
+      "measurement_unresolved": 3,
+      "pass": 3,
+      "undecided": 2
+    }
+  },
+  "per_subset_counts": {
+    "live_hot": {
+      "regression": 6,
+      "pass": 2,
+      "undecided": 9,
+      "measurement_unresolved": 15
+    },
+    "live_nonhot": {
+      "measurement_unresolved": 16,
+      "pass": 9,
+      "regression": 5,
+      "undecided": 2
+    },
+    "absent_hot": {
+      "regression": 3,
+      "measurement_unresolved": 18,
+      "undecided": 6,
+      "pass": 5
+    },
+    "absent_nonhot": {
+      "regression": 2,
+      "measurement_unresolved": 18,
+      "undecided": 2,
+      "pass": 10
+    },
+    "synthetic_absent": {
+      "pass": 16,
+      "measurement_unresolved": 12,
+      "undecided": 4
+    },
+    "mixed90": {
+      "measurement_unresolved": 12,
+      "pass": 10,
+      "regression": 5,
+      "undecided": 5
+    }
+  },
+  "primary_interval_only": {
+    "regression": 8,
+    "pass": 15,
+    "undecided": 9
+  },
+  "candidate_dynamic_snapshot": {
+    "pass": 20,
+    "measurement_unresolved": 12
+  },
+  "existing_mixed_final_verdict": {
+    "measurement_unresolved": 32
+  },
+  "existing_mixed_interval_only": {
+    "pass": 26,
+    "undecided": 6
+  },
+  "combined_write_and_finalquery_pass_cells": [
+    "words_95_5_hotspot_growth",
+    "urls_95_5_uniform_replacement",
+    "urls_95_5_hotspot_growth",
+    "urls_95_5_hotspot_replacement",
+    "words_indep_95_5_hotspot_replacement",
+    "words_100k_95_5_hotspot_growth",
+    "words_100k_95_5_hotspot_replacement"
+  ],
+  "combined_plus_dynamic_snapshot_pass_cells": [
+    "urls_95_5_uniform_replacement",
+    "urls_95_5_hotspot_replacement",
+    "words_100k_95_5_hotspot_growth",
+    "words_100k_95_5_hotspot_replacement"
+  ],
+  "write_gate_passes": 29,
+  "timed_batches": 25600,
+  "total_timed_lookups": 17992679424,
+  "batch_ms": {
+    "min": 34.294747,
+    "median": 54.418308,
+    "max": 142.354167
+  }
+}

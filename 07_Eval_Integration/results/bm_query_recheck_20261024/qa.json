@@ -1,0 +1,8 @@
+{
+  "evidence_integrity_pass": true,
+  "original_cells": 32,
+  "control_cells": 1,
+  "process_blocks": 528,
+  "timed_batches": 25600,
+  "query_entries": 338816
+}

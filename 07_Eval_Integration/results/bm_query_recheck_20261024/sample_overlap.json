@@ -1,0 +1,12 @@
+{
+  "words65_indep65": {
+    "left_keys": 65536,
+    "right_keys": 65536,
+    "intersection": 9230,
+    "same_keyset": false
+  },
+  "words65_words100k": {
+    "intersection": 14224
+  },
+  "all_final_and_query_files_equal_across_runs": true
+}

@@ -1,0 +1,16 @@
+{
+  "legacy_bug": "rank-correct non-hot key falsely labelled hot",
+  "expected_failure": true,
+  "exit_code": 1,
+  "stderr": "live_hot grouping mismatch",
+  "query_sha256": "25ca8a0e265500e908271ed16639c71ac6f786c4bf6f911457e88239dcc2a63c",
+  "command": [
+    "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/builds/bm_query_recheck_20261024_run2/opt_query",
+    "check",
+    "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/builds/bm_query_recheck_20261024_run2/fixture/initial.bin",
+    "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/builds/bm_query_recheck_20261024_run2/fixture/ops.bin",
+    "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/builds/bm_query_recheck_20261024_run2/fixture/pool.bin",
+    "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/builds/bm_query_recheck_20261024_run2/fixture/prepared/final.bin",
+    "/mnt/c/Users/Noctis/.codex/worktrees/bm-next-acceptance/StringLearnedIndex_Workspace/builds/bm_query_recheck_20261024_run2/fixture/wrong_hot_label.bin"
+  ]
+}
