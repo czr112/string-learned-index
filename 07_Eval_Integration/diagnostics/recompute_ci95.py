@@ -9,11 +9,11 @@ dirs = {
     'urls65': pathlib.Path('/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_s4_urls_20261025'),
     'words100': pathlib.Path('/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_s4_100k_20261025'),
 }
-T95 = {7: 2.365, 8: 2.306, 15: 2.131, 16: 2.120}
+T95 = {7: 2.365, 8: 2.306, 15: 2.131, 16: 2.120}  # keyed by degrees of freedom
 
 
 def tcrit(n):
-    return T95.get(n, 2.131)
+    return T95.get(n - 1, 2.131)   # t(0.975, n-1)
 
 
 rows = []

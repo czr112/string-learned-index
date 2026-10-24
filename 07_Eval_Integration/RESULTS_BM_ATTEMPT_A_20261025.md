@@ -1,3 +1,6 @@
+> **更正**：本尝试在 reserve 后仍使用旧 block 引用（悬空），属**实现失败**，机制未验证。
+> 见[CORRECTION_BM_THREE](CORRECTION_BM_THREE_20261025.md)。
+
 # 尝试 A（预留容量 + 原地插入）：不可用，已回滚；支线按预算停止
 
 日期：2026-10-25。执行[机制更正](CORRECTION_BM_MECHANISM_20261025.md) 里的尝试 A。
