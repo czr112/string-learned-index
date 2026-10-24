@@ -1,0 +1,16 @@
+{
+  "observed_at_utc": "2026-10-24T07:30:33Z",
+  "timestamp_basis": "clock captured immediately after both read-only ls-remote calls",
+  "benchmark": {
+    "url": "https://github.com/zsh20070718/learned-index.git",
+    "branch": "main",
+    "head": "003a55bf674b43350fbb70242070fb74f33a56ce",
+    "changed_from_pin": false
+  },
+  "model": {
+    "url": "https://github.com/Zephyr761/Learned-Index-Model.git",
+    "branch": "main",
+    "head": "3894c767338a865d2920ba5e21283827fea1d803",
+    "changed_from_pin": false
+  }
+}

@@ -1,5 +1,11 @@
 # 字符串学习型索引课题总资料包
 
+## 后续执行（2026-10-24）
+
+[长期执行策略](docs/LONG_TERM_BM_EXECUTION_STRATEGY_20261024.md) 已开始执行：[S0 当前有界 factory 验收](07_Eval_Integration/RESULTS_BM_FOLLOWUP_S0_20261024.md) 通过 22,739 次分配故障注入、10 组密集分裂差分与 24 条轨迹复验；请求字节终态 0.999–1.004× BM、维护峰值 0.999–1.002×。下一步是公平负载、独立吞吐和查询回退诊断，有稳定证据才登记一个新机制。Context16 继续默认，尚无新的性能或采用结论。
+
+以下保留早期阶段入口，其阶段状态以文档日期为准；本轮进度以上述策略与 S0 报告为准。
+
 ## 最新入口（2026-10-20）
 
 本项目唯一主仓库为 [czr112/string-learned-index](https://github.com/czr112/string-learned-index)。
