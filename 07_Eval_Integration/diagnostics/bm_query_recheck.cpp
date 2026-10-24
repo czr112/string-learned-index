@@ -160,6 +160,11 @@ static std::uint64_t lookup(const sib::Index& index,const Group& group,std::size
     return checksum;
 }
 struct Measurement {std::size_t group;int state,repeat,position;std::uint64_t ns,lookups,checksum;};
+static std::size_t max_loops(const Group& group) {
+    need(!group.queries.empty(),"empty group has no loop budget");
+    const auto budget=std::size_t(8192000)/group.queries.size();
+    std::size_t cap=1;while(cap<=budget/2)cap*=2;return cap;
+}
 static Measurement timed(const sib::Index& index,const Group& group,std::size_t loops) {
     const auto start=Clock::now();const auto sum=lookup(index,group,loops);
     const auto elapsed=std::chrono::duration_cast<std::chrono::nanoseconds>(Clock::now()-start).count();
@@ -189,7 +194,7 @@ int main(int argc,char** argv) {
                     need(lookup(*test.states[0],group,4)==expected(group,4),"calibration warmup checksum");
                     n=1;while(true){const auto r=timed(*test.states[0],group,n);
                         if(double(r.ns)>=min_ms*1000000)break;
-                        need(n<4096,"calibration exceeds loop budget");n*=2;}
+                        need(n<max_loops(group),"calibration exceeds total-lookup budget");n*=2;}
                 }
                 if(!first)std::cout<<',';first=false;std::cout<<n;
             }
@@ -202,7 +207,7 @@ int main(int argc,char** argv) {
         for(std::size_t k=0;k<test.query.groups.size();++k) {
             const auto group_id=(k+std::size_t(process))%test.query.groups.size();const auto& group=test.query.groups[group_id];
             if(group.queries.empty()){need(loops[group_id]==0,"empty group loops");continue;}
-            need(loops[group_id]>0&&loops[group_id]<=4096,"invalid group loops");
+            need(loops[group_id]>0&&loops[group_id]<=max_loops(group),"invalid group loops");
             for(int pos=0;pos<4;++pos){const auto state=order[process%4][pos];
                 need(lookup(*test.states[state],group,4)==expected(group,4),"warmup checksum mismatch");}
             for(int repeat=0;repeat<2;++repeat)for(int pos=0;pos<4;++pos) {

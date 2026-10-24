@@ -310,7 +310,7 @@ def main():
     try:
         registration = {"registered_at_utc": datetime.now(timezone.utc).isoformat(), "protocol_sha256": sha(PROTOCOL),
                         "blocks_per_cell": 16, "query_count_max": 2000, "min_calibration_batch_ms": 40,
-                        "max_group_loops": 4096, "seed": 20261024, "cpu": cpu, "aa_quality_gate": [1 / 1.05, 1.05],
+                        "max_lookups_per_batch": 8192000, "seed": 20261024, "cpu": cpu, "aa_quality_gate": [1 / 1.05, 1.05],
                         "primary_group": "mixed90", "runner_sha256": sha(Path(__file__)), "selftest_only": args.selftest_only}
         save(output / "registration.json", registration)
         deps = {name: data_root / "07_Eval_Integration/upstream_snapshots" / f"{name}_{pin[:8]}" for name, pin in PINS.items()}
