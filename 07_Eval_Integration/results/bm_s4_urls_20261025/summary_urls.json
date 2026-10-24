@@ -1,0 +1,114 @@
+{
+  "urls_95_5_uniform_growth": {
+    "find_median": 0.9746,
+    "find_interval": [
+      0.8499,
+      1.1277
+    ],
+    "write_drop": 0.5388,
+    "write_interval": [
+      0.4985,
+      0.58
+    ],
+    "pure_throughput_ratio": 1.7327,
+    "write_gate": "pass"
+  },
+  "urls_95_5_hotspot_growth": {
+    "find_median": 0.9462,
+    "find_interval": [
+      0.7352,
+      1.1057
+    ],
+    "write_drop": 0.5408,
+    "write_interval": [
+      0.48,
+      0.6099
+    ],
+    "pure_throughput_ratio": 1.7264,
+    "write_gate": "pass"
+  },
+  "urls_80_20_uniform_growth": {
+    "find_median": 0.9416,
+    "find_interval": [
+      0.7334,
+      1.2348
+    ],
+    "write_drop": 0.6179,
+    "write_interval": [
+      0.5429,
+      0.6514
+    ],
+    "pure_throughput_ratio": 2.3854,
+    "write_gate": "pass"
+  },
+  "urls_80_20_hotspot_growth": {
+    "find_median": 0.8541,
+    "find_interval": [
+      0.7735,
+      0.939
+    ],
+    "write_drop": 0.667,
+    "write_interval": [
+      0.6433,
+      0.7112
+    ],
+    "pure_throughput_ratio": 2.5682,
+    "write_gate": "pass"
+  },
+  "urls_95_5_uniform_replacement": {
+    "find_median": 0.9598,
+    "find_interval": [
+      0.8248,
+      1.241
+    ],
+    "write_drop": 0.2125,
+    "write_interval": [
+      0.1509,
+      0.3133
+    ],
+    "pure_throughput_ratio": 1.161,
+    "write_gate": "pass"
+  },
+  "urls_95_5_hotspot_replacement": {
+    "find_median": 0.9668,
+    "find_interval": [
+      0.7225,
+      1.1948
+    ],
+    "write_drop": 0.4493,
+    "write_interval": [
+      0.2931,
+      0.6542
+    ],
+    "pure_throughput_ratio": 1.3024,
+    "write_gate": "pass"
+  },
+  "urls_80_20_uniform_replacement": {
+    "find_median": 0.9547,
+    "find_interval": [
+      0.8471,
+      1.1933
+    ],
+    "write_drop": 0.5222,
+    "write_interval": [
+      0.4966,
+      0.5494
+    ],
+    "pure_throughput_ratio": 1.8003,
+    "write_gate": "pass"
+  },
+  "urls_80_20_hotspot_replacement": {
+    "find_median": 0.9261,
+    "find_interval": [
+      0.7263,
+      1.2003
+    ],
+    "write_drop": 0.5634,
+    "write_interval": [
+      0.5087,
+      0.6101
+    ],
+    "pure_throughput_ratio": 1.7062,
+    "write_gate": "pass"
+  }
+}
