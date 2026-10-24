@@ -22,10 +22,8 @@ sys.path.insert(0, str(BENCH / 'scripts'))
 from benchmark_lib.interchange import write_operations, write_rows  # noqa: E402
 
 DATASETS = {
-    'words': '07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin',
-    'urls': '07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin',
-    'words_indep': '07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/'
-                   'english_words_s20261019_rows.bin',
+    'words_100k': '07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/'
+                  'english_words_100000_s20261019_rows.bin',
 }
 SEED = 20261025
 OPS = 20000
@@ -189,7 +187,7 @@ def replay_audit(initial, ops, hot_range, rank):
 
 
 def main():
-    out = ROOT / 'results' / 'bm_audited_v2_20261025'
+    out = ROOT / 'results' / 'bm_audited_100k_20261025'
     out.mkdir(exist_ok=False)
     traces = out / 'traces'; traces.mkdir()
     manifest = {}

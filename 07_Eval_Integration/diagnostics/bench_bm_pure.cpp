@@ -54,7 +54,7 @@ std::unique_ptr<sib::Index> make_arm(const std::string& arm) {
     if(arm=="ctx16")return make_our_index_index({});
     throw std::invalid_argument("unknown arm");
 }
-struct Result {std::uint64_t write_ns=0,find_ns=0,scan_ns=0,seg_ns=0,writes=0,finds=0,scans=0,checksum=0;};
+struct Result {std::uint64_t write_ns=0,find_ns=0,scan_ns=0,seg_ns=0,pure_ns=0,writes=0,finds=0,scans=0,checksum=0;};
 Result run_once(const std::string& arm,const std::vector<sib::Row>& rows,const std::vector<Operation>& ops) {
     auto index=make_arm(arm);
     index->bulk_load(rows);
@@ -92,6 +92,23 @@ Result run_once(const std::string& arm,const std::vector<sib::Row>& rows,const s
     }
     r.seg_ns=std::uint64_t(std::chrono::duration_cast<std::chrono::nanoseconds>(
         Clock::now()-seg_start).count());
+    {
+        // Whole-segment throughput pass: no per-operation timers at all.
+        auto fresh=make_arm(arm);
+        fresh->bulk_load(rows);
+        std::uint64_t acc2=0;
+        const auto pure_start=Clock::now();
+        for(const auto& op:ops) {
+            if(op.kind==1)acc2=acc2*131+(fresh->find(op.key).value_or(0xffffffffffffffffULL));
+            else if(op.kind==2)(void)fresh->insert(op.key,op.value);
+            else if(op.kind==3)(void)fresh->update(op.key,op.value);
+            else if(op.kind==4)(void)fresh->erase(op.key);
+            else (void)fresh->scan(op.key,op.limit);
+        }
+        r.pure_ns=std::uint64_t(std::chrono::duration_cast<std::chrono::nanoseconds>(
+            Clock::now()-pure_start).count());
+        if(acc2==0)r.pure_ns+=1;   // keep the pass observable
+    }
     r.checksum=acc;
     return r;
 }
@@ -107,11 +124,15 @@ int main(int argc,char** argv) {
         for(const auto& [k,v]:initial)rows.push_back({std::string(k),v});
         const char* arms[]={"bm","bm_split","art","ctx16"};
         // 8 blocks, full balanced cycle: each arm appears in every position twice.
-        constexpr int order8[8][4]={{0,1,2,3},{1,2,3,0},{2,3,0,1},{3,0,1,2},
-                                    {3,2,1,0},{2,1,0,3},{1,0,3,2},{0,3,2,1}};
-        if(process<0||process>7)throw std::invalid_argument("process must be 0..7");
+        // 16 blocks: a full cycle repeated four times with reversal, so every arm
+        // occupies every position exactly four times.
+        int order16[16][4];
+        for(int block=0;block<16;++block)
+            for(int pos=0;pos<4;++pos)
+                order16[block][pos]=(block/4)%2?(3-((pos+block)%4)):((pos+block)%4);
+        if(process<0||process>15)throw std::invalid_argument("process must be 0..15");
         for(int position=0;position<4;++position) {
-            const auto arm=order8[process][position];
+            const auto arm=order16[process][position];
             (void)run_once(arms[arm],rows,operations);   // warm-up, not measured
             const auto first=run_once(arms[arm],rows,operations);
             const auto second=run_once(arms[arm],rows,operations);   // A/A control
@@ -121,7 +142,7 @@ int main(int argc,char** argv) {
                 <<",\"find_us\":"<<(first.finds?double(first.find_ns)/first.finds/1000:0.0)
                 <<",\"find_us_aa\":"<<(second.finds?double(second.find_ns)/second.finds/1000:0.0)
                 <<",\"scan_us\":"<<(first.scans?double(first.scan_ns)/first.scans/1000:0.0)
-                <<",\"seg_us\":"<<double(first.seg_ns)/1000.0<<",\"seg_us_aa\":"<<double(second.seg_ns)/1000.0<<",\"ops\":"<<operations.size()
+                <<",\"pure_seg_us\":"<<double(first.pure_ns)/1000.0<<",\"seg_us\":"<<double(first.seg_ns)/1000.0<<",\"seg_us_aa\":"<<double(second.seg_ns)/1000.0<<",\"ops\":"<<operations.size()
                 <<",\"writes\":"<<first.writes<<",\"finds\":"<<first.finds<<",\"scans\":"<<first.scans
                 <<",\"checksum\":"<<first.checksum<<",\"checksum_aa\":"<<second.checksum<<"}\n";
             if(first.checksum!=second.checksum)throw std::logic_error("A/A checksum differs");

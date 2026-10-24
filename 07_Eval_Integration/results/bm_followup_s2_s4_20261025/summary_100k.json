@@ -1,0 +1,50 @@
+{
+  "words_100k_95_5_uniform_growth": {
+    "bm_write_us": 7.858,
+    "split_write_us": 4.299,
+    "write_drop": 0.4453,
+    "interval": [
+      0.4025,
+      0.5139
+    ],
+    "find_ratio": 0.9748,
+    "pure_throughput_ratio": 1.445,
+    "blocks": 8
+  },
+  "words_100k_80_20_uniform_growth": {
+    "bm_write_us": 6.501,
+    "split_write_us": 2.942,
+    "write_drop": 0.5365,
+    "interval": [
+      0.5027,
+      0.5607
+    ],
+    "find_ratio": 1.0746,
+    "pure_throughput_ratio": 1.8716,
+    "blocks": 8
+  },
+  "words_100k_95_5_uniform_replacement": {
+    "bm_write_us": 4.003,
+    "split_write_us": 3.774,
+    "write_drop": 0.0451,
+    "interval": [
+      -0.0737,
+      0.1466
+    ],
+    "find_ratio": 1.1066,
+    "pure_throughput_ratio": 1.0381,
+    "blocks": 8
+  },
+  "words_100k_80_20_uniform_replacement": {
+    "bm_write_us": 2.322,
+    "split_write_us": 1.318,
+    "write_drop": 0.4325,
+    "interval": [
+      0.3317,
+      0.4759
+    ],
+    "find_ratio": 0.991,
+    "pure_throughput_ratio": 1.4405,
+    "blocks": 8
+  }
+}
