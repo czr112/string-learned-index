@@ -1,0 +1,22 @@
+{
+  "run1": {
+    "status": "failed",
+    "error_or_reason": "project_commit.log: exit 128; see retained log",
+    "retained_local_path": "C:\\Users\\Noctis\\.codex\\worktrees\\bm-next-acceptance\\StringLearnedIndex_Workspace\\builds\\bm_followup_s0_20261024_run1"
+  },
+  "run2": {
+    "status": "superseded",
+    "error_or_reason": "Development run; replaced by run3 after faster bounded parser and ASan wrapper boundary validation were added. No index algorithm changed.",
+    "retained_local_path": "C:\\Users\\Noctis\\.codex\\worktrees\\bm-next-acceptance\\StringLearnedIndex_Workspace\\builds\\bm_followup_s0_20261024_run2"
+  },
+  "run3": {
+    "status": "complete",
+    "error_or_reason": "Complete preliminary run; run4 adds explicit public-factory dense coverage.",
+    "retained_local_path": "C:\\Users\\Noctis\\.codex\\worktrees\\bm-next-acceptance\\StringLearnedIndex_Workspace\\builds\\bm_followup_s0_20261024_run3"
+  },
+  "run4": {
+    "status": "complete",
+    "error_or_reason": "Complete preliminary run; canonical run5 adds hard failure for exceeded space budgets and runtime supporting-source hash checks. Functional, space and sanitizer results match run5.",
+    "retained_local_path": "C:\\Users\\Noctis\\.codex\\worktrees\\bm-next-acceptance\\StringLearnedIndex_Workspace\\builds\\bm_followup_s0_20261024_run4"
+  }
+}
