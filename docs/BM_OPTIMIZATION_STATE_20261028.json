@@ -1,0 +1,617 @@
+{
+  "checked_at": "2026-10-28T20:29:10.807980+08:00",
+  "purpose": "Read-only evidence analysis for a prospective plan; no new benchmark measurements",
+  "head": "64523e41dddf3a9aa1144a9599e9738019a3533d",
+  "working_tree_note": "Latest acceptance-gap tools and results are uncommitted. Four inspected candidate core/adapter headers equal HEAD. origin/main comparison was local cached ref only.",
+  "upstream_remote_main_checked": {
+    "zsh20070718/learned-index": "003a55bf674b43350fbb70242070fb74f33a56ce",
+    "Zephyr761/Learned-Index-Model": "3894c767338a865d2920ba5e21283827fea1d803"
+  },
+  "sha256": {
+    "07_Eval_Integration/diagnostics/bm_n1_page_core.hpp": "bb45fa46cd2cd872bbaac854fd0318d8f09162ba5894c96f808b88bcc992d982",
+    "07_Eval_Integration/diagnostics/bm_split_index.hpp": "02382f336285df9178e7487d49be372004beefea48be3345622bb517e251647e",
+    "07_Eval_Integration/diagnostics/bm_split_adapter.hpp": "db529b4ba047130bbf9f408ba93d61a54498abd5ed5255eb376cdb32cddb87f9",
+    "07_Eval_Integration/diagnostics/bm_n1_page_root.hpp": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b",
+    "07_Eval_Integration/diagnostics/bench_bm_pure.cpp": "60b5ae7e058cc88de681d41ca72691e1b4ee7b081c5f878302a61dd326ef30b3",
+    "07_Eval_Integration/results/bm_query_recheck_20261024/previous_mixed_raw.tar.gz": "9e76f0cff110c5b5bc2f49ba7e7af049db36846cb42d69d26aa5a550fd036ea3",
+    "07_Eval_Integration/results/bm_query_recheck_20261024/write_ci32.json": "84f4bfee541b50d27b0a04a65e9be81fd19c0b973cd8c549b91c77fea6074641",
+    "07_Eval_Integration/results/bm_query_recheck_20261024/primary_summary.json": "4602ba9f9307a1299625a4bd2d96e15fbcf959b3bec2f9adce082d5cede3c29b",
+    "07_Eval_Integration/results/bm_wrapper_gate_20261025/report.json": "e86af0ca4c8b41107562639021168f51d10fe34ed2aebc37082d21f2546b6bd9",
+    "07_Eval_Integration/results/bm_fault_literal_20261025/report.json": "122a5dc5394ddfb0fbc4a35a1c87850d3e4d0d5fdd69ddfaf3412a3101328038",
+    "07_Eval_Integration/results/bm_audited_100k_v3_repro_20261025/verification.json": "074b1bed6e2c45ed0c7851b10c91032a44fb916079f370faaa9c07f9c2d85011",
+    "07_Eval_Integration/RESULTS_BM_ACCEPTANCE_GAPS_20261025.md": "dea82e840725cdeab7bc7ec9ce9f58db37050dc1ce8c2f3b17a10d7e5ffbf0dd",
+    "tools/run_bm_followup.py": "7e8113f3bde4e6122d0c27de29e31c375d625517b7b836316ff412d639625d3d",
+    "tools/run_bm_query_recheck.py": "7262e96018fcc1153e295aef21a22f0fc537ae90a0b7387c65105e22b6593218",
+    "tools/run_bm_wrapper_gate.py": "1c37b1f9fc1143d0ce3ac2a9146e4dade88a4110623b20d33a1998d3077638b6",
+    "07_Eval_Integration/diagnostics/prepare_bm_audited_v2.py": "8905d8ad34b076519675b809829190885eddc421c27ad958f7130b6d31272179",
+    "README.md": "f576dafe6d12ce310b1ac4f81cffc1dcd4d5422d5ffbc8e15f6d54f1299706bc"
+  },
+  "descriptive_ratio_method": "Within each cell: median of paired per-process ratios, first recorded metric only. Across cells: unweighted median of these 32 medians. No CI, no adoption claim, no pooling as independent repetitions. Throughput ratio = baseline pure_seg_us / candidate pure_seg_us (same operation counts).",
+  "limitations": [
+    "pure_seg_us_aa not emitted by historical driver; throughput AA is unavailable",
+    "ART scan iterates from beginning; scan-inclusive throughput not a general ART model comparison",
+    "instrumented operation-time shares are not pure-throughput component profiles",
+    "65k and 100k refer to source-pool size, not necessarily active keys"
+  ],
+  "descriptive_summary": {
+    "throughput_vs_bm0": {
+      "min": 1.0470426441760645,
+      "median_of_cell_medians": 1.5316072663783398,
+      "max": 2.590777231178489,
+      "cells_ratio_above_1": 32
+    },
+    "throughput_vs_context16": {
+      "min": 0.30279629509025086,
+      "median_of_cell_medians": 0.5838599169810184,
+      "max": 1.627581591046022,
+      "cells_ratio_above_1": 2
+    },
+    "write_time_vs_art": {
+      "min": 3.8664771716075386,
+      "median_of_cell_medians": 11.718896990769588,
+      "max": 16.837809098039635,
+      "cells_ratio_above_1": 32
+    },
+    "write_time_vs_context16": {
+      "min": 0.4931871059713946,
+      "median_of_cell_medians": 7.681344615371938,
+      "max": 13.635462510271065,
+      "cells_ratio_above_1": 30
+    }
+  },
+  "descriptive_cells": [
+    {
+      "cell": "words_80_20_hotspot_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 2.3206599726806525,
+      "throughput_vs_context16": 0.3190112497543298,
+      "write_time_vs_art": 12.340415864734958,
+      "write_time_vs_context16": 6.452373916789613,
+      "instrumented_cost_share_medians": {
+        "write": 0.7228546389480236,
+        "find": 0.17963573761484491,
+        "scan": 0.09552479883998743
+      }
+    },
+    {
+      "cell": "words_80_20_hotspot_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.4043047086592266,
+      "throughput_vs_context16": 0.6202653977849085,
+      "write_time_vs_art": 4.849932975288237,
+      "write_time_vs_context16": 2.9713078332084235,
+      "instrumented_cost_share_medians": {
+        "write": 0.4601067342782623,
+        "find": 0.35439658930526896,
+        "scan": 0.18149555173666734
+      }
+    },
+    {
+      "cell": "words_80_20_uniform_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 2.074878895268111,
+      "throughput_vs_context16": 0.30279629509025086,
+      "write_time_vs_art": 12.876063971045603,
+      "write_time_vs_context16": 8.099569036581032,
+      "instrumented_cost_share_medians": {
+        "write": 0.7348351973717029,
+        "find": 0.17604100895366057,
+        "scan": 0.09055716116341223
+      }
+    },
+    {
+      "cell": "words_80_20_uniform_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.4886713949290975,
+      "throughput_vs_context16": 0.6744033515386207,
+      "write_time_vs_art": 5.04797815920295,
+      "write_time_vs_context16": 2.4803965826055108,
+      "instrumented_cost_share_medians": {
+        "write": 0.5100327609735281,
+        "find": 0.3270462306951294,
+        "scan": 0.1624067779579093
+      }
+    },
+    {
+      "cell": "words_95_5_hotspot_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 1.4752703177086528,
+      "throughput_vs_context16": 0.4668971278472488,
+      "write_time_vs_art": 16.83085597248391,
+      "write_time_vs_context16": 11.751182452873271,
+      "instrumented_cost_share_medians": {
+        "write": 0.4810283663536239,
+        "find": 0.3538008528011277,
+        "scan": 0.1629359058376882
+      }
+    },
+    {
+      "cell": "words_95_5_hotspot_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.1998571235512978,
+      "throughput_vs_context16": 0.8799040839060384,
+      "write_time_vs_art": 4.337338363073085,
+      "write_time_vs_context16": 2.047881826078063,
+      "instrumented_cost_share_medians": {
+        "write": 0.18926964460470386,
+        "find": 0.5618085010880096,
+        "scan": 0.24961653348285934
+      }
+    },
+    {
+      "cell": "words_95_5_uniform_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 1.6653016055067047,
+      "throughput_vs_context16": 0.514798356165256,
+      "write_time_vs_art": 13.383904751125172,
+      "write_time_vs_context16": 9.661852572533686,
+      "instrumented_cost_share_medians": {
+        "write": 0.4469148751109593,
+        "find": 0.38577347472962165,
+        "scan": 0.17072890526429182
+      }
+    },
+    {
+      "cell": "words_95_5_uniform_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.0892420616868266,
+      "throughput_vs_context16": 0.5964851896540259,
+      "write_time_vs_art": 11.927291518803965,
+      "write_time_vs_context16": 9.185144640258741,
+      "instrumented_cost_share_medians": {
+        "write": 0.3901238152453004,
+        "find": 0.4181386779765891,
+        "scan": 0.18755719336179938
+      }
+    },
+    {
+      "cell": "urls_80_20_hotspot_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 2.590777231178489,
+      "throughput_vs_context16": 0.39090659497386626,
+      "write_time_vs_art": 12.621030629498183,
+      "write_time_vs_context16": 4.6348108480063175,
+      "instrumented_cost_share_medians": {
+        "write": 0.7817991339177233,
+        "find": 0.1503597757986969,
+        "scan": 0.06860378222963757
+      }
+    },
+    {
+      "cell": "urls_80_20_hotspot_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.6955494645444777,
+      "throughput_vs_context16": 1.627581591046022,
+      "write_time_vs_art": 4.688704869728181,
+      "write_time_vs_context16": 0.4931871059713946,
+      "instrumented_cost_share_medians": {
+        "write": 0.5015888255767839,
+        "find": 0.3455575897083423,
+        "scan": 0.15131308319459816
+      }
+    },
+    {
+      "cell": "urls_80_20_uniform_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 2.358436631170156,
+      "throughput_vs_context16": 0.3030400092159095,
+      "write_time_vs_art": 13.14288427325193,
+      "write_time_vs_context16": 7.751062660272668,
+      "instrumented_cost_share_medians": {
+        "write": 0.8022895320849017,
+        "find": 0.1312634298385087,
+        "scan": 0.06456347145067454
+      }
+    },
+    {
+      "cell": "urls_80_20_uniform_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.7527482616147818,
+      "throughput_vs_context16": 1.5091909262817171,
+      "write_time_vs_art": 5.253925604970442,
+      "write_time_vs_context16": 0.6059625523874479,
+      "instrumented_cost_share_medians": {
+        "write": 0.5822537380531607,
+        "find": 0.28315793954245916,
+        "scan": 0.13320818044950883
+      }
+    },
+    {
+      "cell": "urls_95_5_hotspot_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 1.712226213651868,
+      "throughput_vs_context16": 0.5050526424815841,
+      "write_time_vs_art": 16.837809098039635,
+      "write_time_vs_context16": 12.859435344253423,
+      "instrumented_cost_share_medians": {
+        "write": 0.568755980577562,
+        "find": 0.3001142524642818,
+        "scan": 0.13056445156102564
+      }
+    },
+    {
+      "cell": "urls_95_5_hotspot_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.3116636675300537,
+      "throughput_vs_context16": 0.9285174360858297,
+      "write_time_vs_art": 6.165233127801035,
+      "write_time_vs_context16": 2.685486383878154,
+      "instrumented_cost_share_medians": {
+        "write": 0.25923877495414216,
+        "find": 0.5316792661927932,
+        "scan": 0.20740165352818193
+      }
+    },
+    {
+      "cell": "urls_95_5_uniform_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 1.729718037142577,
+      "throughput_vs_context16": 0.5485146505483294,
+      "write_time_vs_art": 14.389765755290203,
+      "write_time_vs_context16": 9.401670897172679,
+      "instrumented_cost_share_medians": {
+        "write": 0.5510538120544387,
+        "find": 0.3143866097764499,
+        "scan": 0.13615294914171328
+      }
+    },
+    {
+      "cell": "urls_95_5_uniform_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.1771460086385965,
+      "throughput_vs_context16": 0.667421180499453,
+      "write_time_vs_art": 14.225261550414357,
+      "write_time_vs_context16": 4.10981729308718,
+      "instrumented_cost_share_medians": {
+        "write": 0.47970521894247553,
+        "find": 0.3644233141443908,
+        "scan": 0.15248622100463563
+      }
+    },
+    {
+      "cell": "words_100k_80_20_hotspot_growth",
+      "processes": 8,
+      "throughput_vs_bm0": 2.2353305025165815,
+      "throughput_vs_context16": 0.3200515365672967,
+      "write_time_vs_art": 11.462509001751604,
+      "write_time_vs_context16": 8.032692095898645,
+      "instrumented_cost_share_medians": {
+        "write": 0.7218066793193073,
+        "find": 0.18854672827515834,
+        "scan": 0.09126233763916967
+      }
+    },
+    {
+      "cell": "words_100k_80_20_hotspot_replacement",
+      "processes": 8,
+      "throughput_vs_bm0": 1.478600421950643,
+      "throughput_vs_context16": 0.7283848834981719,
+      "write_time_vs_art": 4.082196659481781,
+      "write_time_vs_context16": 2.3423352451917365,
+      "instrumented_cost_share_medians": {
+        "write": 0.4633849873552842,
+        "find": 0.3675343698879036,
+        "scan": 0.17133205561669895
+      }
+    },
+    {
+      "cell": "words_100k_80_20_uniform_growth",
+      "processes": 8,
+      "throughput_vs_bm0": 1.9477530099207945,
+      "throughput_vs_context16": 0.304335305391595,
+      "write_time_vs_art": 11.51050246273521,
+      "write_time_vs_context16": 7.744012135767889,
+      "instrumented_cost_share_medians": {
+        "write": 0.7385845640026747,
+        "find": 0.1720722058980883,
+        "scan": 0.08896615075100386
+      }
+    },
+    {
+      "cell": "words_100k_80_20_uniform_replacement",
+      "processes": 8,
+      "throughput_vs_bm0": 1.4342853737112495,
+      "throughput_vs_context16": 0.6166388347255534,
+      "write_time_vs_art": 5.554760428057634,
+      "write_time_vs_context16": 3.2569001322161237,
+      "instrumented_cost_share_medians": {
+        "write": 0.5711560414951096,
+        "find": 0.28693608326301534,
+        "scan": 0.1373350148580036
+      }
+    },
+    {
+      "cell": "words_100k_95_5_hotspot_growth",
+      "processes": 8,
+      "throughput_vs_bm0": 1.5096796591112125,
+      "throughput_vs_context16": 0.5425731853425064,
+      "write_time_vs_art": 15.640746413257126,
+      "write_time_vs_context16": 13.635462510271065,
+      "instrumented_cost_share_medians": {
+        "write": 0.5159947249063014,
+        "find": 0.32822405030440627,
+        "scan": 0.14614274304710323
+      }
+    },
+    {
+      "cell": "words_100k_95_5_hotspot_replacement",
+      "processes": 8,
+      "throughput_vs_bm0": 1.2138978229983366,
+      "throughput_vs_context16": 0.9068432929507865,
+      "write_time_vs_art": 3.8664771716075386,
+      "write_time_vs_context16": 2.820438469664494,
+      "instrumented_cost_share_medians": {
+        "write": 0.19689377791707496,
+        "find": 0.5844887801868137,
+        "scan": 0.2155214727254869
+      }
+    },
+    {
+      "cell": "words_100k_95_5_uniform_growth",
+      "processes": 8,
+      "throughput_vs_bm0": 1.4901071437429592,
+      "throughput_vs_context16": 0.5712346443080107,
+      "write_time_vs_art": 10.90821309113716,
+      "write_time_vs_context16": 7.721451018217302,
+      "instrumented_cost_share_medians": {
+        "write": 0.45146297406684444,
+        "find": 0.38194806982893403,
+        "scan": 0.16528352444700892
+      }
+    },
+    {
+      "cell": "words_100k_95_5_uniform_replacement",
+      "processes": 8,
+      "throughput_vs_bm0": 1.0797270570847086,
+      "throughput_vs_context16": 0.6310451633424858,
+      "write_time_vs_art": 11.471023166605118,
+      "write_time_vs_context16": 9.803215802337172,
+      "instrumented_cost_share_medians": {
+        "write": 0.4417778235430271,
+        "find": 0.39956273921399543,
+        "scan": 0.155972256698517
+      }
+    },
+    {
+      "cell": "words_indep_80_20_hotspot_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 2.326584901234159,
+      "throughput_vs_context16": 0.31013480786272885,
+      "write_time_vs_art": 12.51722960491596,
+      "write_time_vs_context16": 7.641238212526574,
+      "instrumented_cost_share_medians": {
+        "write": 0.7257857180046599,
+        "find": 0.18028596450351947,
+        "scan": 0.09427526161328778
+      }
+    },
+    {
+      "cell": "words_indep_80_20_hotspot_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.5318068967431726,
+      "throughput_vs_context16": 0.6782140605600735,
+      "write_time_vs_art": 4.909517621619543,
+      "write_time_vs_context16": 2.4276087940237754,
+      "instrumented_cost_share_medians": {
+        "write": 0.4685844854230252,
+        "find": 0.35184921565712735,
+        "scan": 0.17975329065570603
+      }
+    },
+    {
+      "cell": "words_indep_80_20_uniform_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 2.0783127938197534,
+      "throughput_vs_context16": 0.3134018062010444,
+      "write_time_vs_art": 12.549928569247072,
+      "write_time_vs_context16": 8.051803256156568,
+      "instrumented_cost_share_medians": {
+        "write": 0.733775179616816,
+        "find": 0.17218785775940434,
+        "scan": 0.09191880435118352
+      }
+    },
+    {
+      "cell": "words_indep_80_20_uniform_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.5723832927842496,
+      "throughput_vs_context16": 0.6026799292025853,
+      "write_time_vs_art": 5.76821299344603,
+      "write_time_vs_context16": 2.7955423350170694,
+      "instrumented_cost_share_medians": {
+        "write": 0.5337721696854988,
+        "find": 0.30156009182478904,
+        "scan": 0.16143348913227634
+      }
+    },
+    {
+      "cell": "words_indep_95_5_hotspot_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 1.531407636013507,
+      "throughput_vs_context16": 0.4630368882740822,
+      "write_time_vs_art": 15.352336556805305,
+      "write_time_vs_context16": 11.526051852033001,
+      "instrumented_cost_share_medians": {
+        "write": 0.48952364614540783,
+        "find": 0.3475986667398192,
+        "scan": 0.16271817213169476
+      }
+    },
+    {
+      "cell": "words_indep_95_5_hotspot_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.1310299533802433,
+      "throughput_vs_context16": 0.7996327445428445,
+      "write_time_vs_art": 5.904304802030127,
+      "write_time_vs_context16": 2.9701055992839773,
+      "instrumented_cost_share_medians": {
+        "write": 0.21738085714131047,
+        "find": 0.5422380924212719,
+        "scan": 0.22723526070907624
+      }
+    },
+    {
+      "cell": "words_indep_95_5_uniform_growth",
+      "processes": 16,
+      "throughput_vs_bm0": 1.591036527756566,
+      "throughput_vs_context16": 0.5283030906083706,
+      "write_time_vs_art": 13.131492094328273,
+      "write_time_vs_context16": 9.853718774060264,
+      "instrumented_cost_share_medians": {
+        "write": 0.43927976901136984,
+        "find": 0.38595409473269104,
+        "scan": 0.17153749464867787
+      }
+    },
+    {
+      "cell": "words_indep_95_5_uniform_replacement",
+      "processes": 16,
+      "throughput_vs_bm0": 1.0470426441760645,
+      "throughput_vs_context16": 0.6189672319267542,
+      "write_time_vs_art": 12.293120399012466,
+      "write_time_vs_context16": 7.939151894926301,
+      "instrumented_cost_share_medians": {
+        "write": 0.39733712445341035,
+        "find": 0.4167538479049807,
+        "scan": 0.18280234860608685
+      }
+    }
+  ],
+  "write_pass_15pct": {
+    "passed": 29,
+    "total": 32,
+    "not_passed": [
+      "words_95_5_uniform_replacement",
+      "words_100k_95_5_uniform_replacement",
+      "words_indep_95_5_uniform_replacement"
+    ]
+  },
+  "query_verdicts": {
+    "measurement_unresolved": 12,
+    "pass": 10,
+    "regression": 5,
+    "undecided": 5
+  },
+  "query_regressions": {
+    "words_80_20_uniform_growth": {
+      "n": 16,
+      "df": 15,
+      "ratio": 1.077840576324254,
+      "ci95": [
+        1.0655942094509023,
+        1.090227684861052
+      ],
+      "limit": 1.05,
+      "aa_quality_pass": true,
+      "performance_interval_verdict": "regression",
+      "verdict": "regression"
+    },
+    "urls_95_5_uniform_growth": {
+      "n": 16,
+      "df": 15,
+      "ratio": 1.0848677226323666,
+      "ci95": [
+        1.079938046859123,
+        1.0898199012735292
+      ],
+      "limit": 1.05,
+      "aa_quality_pass": true,
+      "performance_interval_verdict": "regression",
+      "verdict": "regression"
+    },
+    "urls_80_20_hotspot_growth": {
+      "n": 16,
+      "df": 15,
+      "ratio": 1.0870805064936457,
+      "ci95": [
+        1.0680611112891818,
+        1.1064385877434308
+      ],
+      "limit": 1.05,
+      "aa_quality_pass": true,
+      "performance_interval_verdict": "regression",
+      "verdict": "regression"
+    },
+    "words_indep_80_20_uniform_growth": {
+      "n": 16,
+      "df": 15,
+      "ratio": 1.084733802682134,
+      "ci95": [
+        1.0620995267129218,
+        1.1078504349990943
+      ],
+      "limit": 1.05,
+      "aa_quality_pass": true,
+      "performance_interval_verdict": "regression",
+      "verdict": "regression"
+    },
+    "words_indep_80_20_hotspot_growth": {
+      "n": 16,
+      "df": 15,
+      "ratio": 1.0849308707441878,
+      "ci95": [
+        1.0701797482720705,
+        1.099885319446818
+      ],
+      "limit": 1.05,
+      "aa_quality_pass": true,
+      "performance_interval_verdict": "regression",
+      "verdict": "regression"
+    }
+  },
+  "wrapper": {
+    "words": {
+      "n": 16,
+      "ratio": 1.0072678999119522,
+      "ci95": [
+        0.9854455651977996,
+        1.0295734823154696
+      ],
+      "aa_quality_pass": true,
+      "verdict": "pass"
+    },
+    "urls": {
+      "n": 16,
+      "ratio": 1.0038272687242618,
+      "ci95": [
+        0.9808653005614723,
+        1.0273267744894186
+      ],
+      "aa_quality_pass": true,
+      "verdict": "pass"
+    },
+    "phrases": {
+      "n": 16,
+      "ratio": 0.9932553053393905,
+      "ci95": [
+        0.9698490598998695,
+        1.0172264348915299
+      ],
+      "aa_quality_pass": true,
+      "verdict": "pass"
+    }
+  },
+  "fault_literal": {
+    "opt": {
+      "paths": 28,
+      "allocation_ordinals": 22739,
+      "positive_controls": 28,
+      "checks": 271808717,
+      "mismatches": 0,
+      "after_destroy": 0
+    },
+    "sanitizer": {
+      "paths": 28,
+      "allocation_ordinals": 22739,
+      "positive_controls": 28,
+      "checks": 271808717,
+      "mismatches": 0,
+      "after_destroy": 0
+    }
+  },
+  "100k_reproduction": {
+    "cells": 8,
+    "all_match": true,
+    "mismatches": []
+  }
+}
