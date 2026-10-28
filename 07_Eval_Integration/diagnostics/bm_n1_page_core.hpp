@@ -5,7 +5,7 @@
 
 namespace bm_n1_leaf {
 struct RebuildReasons {
-    std::uint64_t page_full=0,prefix_change=0,slot_full=0,arena_short=0,duplicates=0,inserted=0,block_splits=0,duplicates_skipped=0;
+    std::uint64_t page_full=0,prefix_change=0,slot_full=0,arena_short=0,duplicates=0,inserted=0,block_splits=0;
 };
 inline RebuildReasons& reasons() { static RebuildReasons r; return r; }
 
@@ -362,18 +362,8 @@ public:
         --block.count;--size_;return true;
     }
     Insert try_insert(std::string_view key,std::uint64_t value) {
-        return try_insert_impl(key,value,true);
-    }
-    // The caller has already established that the key is absent in this page; skipping
-    // the second full lookup is the whole point of this entry point.
-    Insert try_insert_known_absent(std::string_view key,std::uint64_t value) {
-        return try_insert_impl(key,value,false);
-    }
-private:
-    Insert try_insert_impl(std::string_view key,std::uint64_t value,bool check_duplicate) {
         if(key.size()>UINT32_MAX)throw std::length_error("key exceeds page limit");
-        if(check_duplicate&&find(key)){++reasons().duplicates;return Insert::duplicate;}
-        if(!check_duplicate)++reasons().duplicates_skipped;
+        if(find(key)){++reasons().duplicates;return Insert::duplicate;}
         if(size_>=2048||regions_.empty()){++reasons().page_full;return Insert::rebuild;}
         const auto& r=regions_[0];
         if(key.size()<r.prefix.size()||compare(key.substr(0,r.prefix.size()),r.prefix)!=0)
@@ -419,7 +409,6 @@ private:
         ++dest.count;++size_;++reasons().inserted;return Insert::inserted;
         }
     }
-public:
     std::vector<std::string> fence_keys()const {
         std::vector<std::string> out;
         if(!regions_.empty())for(std::uint32_t b=0;b<regions_[0].count;++b)out.push_back(regions_[0].prefix+std::string(boundary(regions_[0],b)));

@@ -175,7 +175,7 @@ public:
         const bool marked=mark_dirty(it);
         try {
             const auto before_bytes=it->second.core->memory().total();
-            const auto result=it->second.core->try_insert_known_absent(key,value);
+            const auto result=it->second.core->try_insert(key,value);
             if(result==Page::Insert::duplicate){if(marked)clear_dirty(it);return false;}
             if(result==Page::Insert::inserted){
                 ++maintenance_.inplace_inserts;
