@@ -1,4 +1,10 @@
 #!/bin/bash
+# RETIRED (2026-10-25): historical stage-2 deep-replay runner from the P3 round (2026-10-23).
+# Its first step executed tools/_st2d.py and then deleted it; that helper was never committed,
+# so this script cannot run from a clean checkout. The fault-injection coverage it pioneered
+# is superseded by diagnostics/gate_bm_followup.cpp via tools/run_bm_followup.py.
+# Kept verbatim below for the record; do not execute. See tools/RETIRED.md.
+exit 9
 set -eu
 export PATH="/home/noctis/.local/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
 W=/mnt/d/StringLearnedIndex_Workspace; R="$W/07_Eval_Integration"; D="$R/diagnostics"

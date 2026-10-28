@@ -1,5 +1,7 @@
 # R0：统一 BM 正式实验入口（有界构建 + base 定位）
 
+> **后续收尾**：答案差分196,713项/语料、find普通new计数及包装配对已补至`results/bm_r0_closing_20261020`；它们不是完整结构差分/全分配追踪，AA内也不代表已证明≤5%。当前adapter与初版manifest有版本差异，准确边界见[R收口复核](AUDIT_BM_R_CLOSEOUT_20261020.md)。下文保留初版记录。
+
 日期：2026-10-20；执行入口[新详细长期计划](../docs/LONG_TERM_BM_PLAN_20261020.md)第 3 节。
 **结论：新 factory `make_bm_experiment_index` 已建立并通过公共 contract 验收（100/100）、
 三类真实语料的全行/缺席/owning scan/边界/增删改门（各 263,121 项、零失配）以及 words 格的

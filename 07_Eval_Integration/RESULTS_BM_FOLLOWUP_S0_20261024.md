@@ -104,3 +104,6 @@ python3 -B tools/run_bm_followup.py \
 输出目录必须是新目录；工具不覆盖旧结果、不改输入、不更新依赖。三语料二进制和 24 条旧轨迹仍为本地输入，未纳入本次 Git 提交；完整回放需要这些哈希匹配的文件，不能宣称仅凭远程检出即可无输入运行。旧轨迹的分布问题仍保留，本轮只使用其功能/空间覆盖。
 
 证据包：[汇总](results/bm_followup_s0_20261024/report.json)、[身份](results/bm_followup_s0_20261024/identity.json)、[命令](results/bm_followup_s0_20261024/commands.json)、[输入清单](results/bm_followup_s0_20261024/trace_manifest.json)、[原始日志归档](results/bm_followup_s0_20261024/raw_logs.tar.gz)、[SHA256 索引](results/bm_followup_s0_20261024/evidence_index.json)、[开发运行记录](results/bm_followup_s0_20261024/development_runs.json)。本轮新成果在隔离分支，原 main 的 24 个已跟踪修改及 1,628 个未跟踪文件保留。
+
+> **2026-10-25 补篇**：本轮登记的三处覆盖缺口（注入×sanitizer 仅字节夹具、每故障点仅 5 次继续、新 factory 包装成本未单独测量）已由补充轮关闭，判定与证据见
+> [验收缺口收口记录](RESULTS_BM_ACCEPTANCE_GAPS_20261025.md)。上文的覆盖范围描述保持原样，不回写。

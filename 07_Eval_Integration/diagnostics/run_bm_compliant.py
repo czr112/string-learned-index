@@ -1,4 +1,17 @@
-"""Stages 5-6: compliant workload generator (successful-op 2:1:1, >=80% hotspot, scan 16/128)."""
+"""DEPRECATED (2026-10-25): historical stages-5/6 compliant-workload driver (2026-10-23).
+
+Known defects, registered in the 2026-10-24 audit and superseded by
+diagnostics/prepare_bm_audited.py and prepare_bm_audited_v2.py:
+  * replacement inserts use synthetic keys ("~r/"/"~s/" suffixes on the erased key),
+    not held-out real keys;
+  * in hotspot cells, finds are biased 80% into the hot slice of the full pool, so the
+    measured hit rate differs between uniform and hotspot cells;
+  * binary identity was compiled with the placeholder bundle string "acceptance"
+    instead of the real source-closure SHA-256.
+Do not use this driver to generate new loads; its committed outputs remain bound to
+their recorded verification only. See tools/RETIRED.md.
+---
+Stages 5-6: compliant workload generator (successful-op 2:1:1, >=80% hotspot, scan 16/128)."""
 import hashlib
 import json
 import random

@@ -21,12 +21,13 @@ BENCH = ROOT / 'upstream_snapshots/benchmark_003a55bf'
 sys.path.insert(0, str(BENCH / 'scripts'))
 from benchmark_lib.interchange import write_operations, write_rows  # noqa: E402
 
-DATASETS = {
+DEFAULT_DATASETS = {
     'words': '07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin',
     'urls': '07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin',
     'words_indep': '07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/'
                    'english_words_s20261019_rows.bin',
 }
+DEFAULT_OUT = 'bm_audited_v3_20261025'
 SEED = 20261025
 OPS = 20000
 HOT_SHARE = 0.8
@@ -185,12 +186,29 @@ def replay_audit(initial, ops, hot_range, rank):
 
 
 def main():
-    out = ROOT / 'results' / 'bm_audited_v3_20261025'
+    import argparse
+    parser = argparse.ArgumentParser(
+        description='Audited trace generator (S1 semantics). Default behaviour is unchanged: '
+                    'words/urls/words_indep into results/<DEFAULT_OUT>. Override with --dataset/--out.')
+    parser.add_argument('--dataset', action='append', default=[], metavar='NAME=RELATIVE_PATH',
+                        help='dataset to generate, as NAME=repository-relative rows.bin path; repeatable')
+    parser.add_argument('--out', default=DEFAULT_OUT,
+                        help='output directory name under 07_Eval_Integration/results/')
+    options = parser.parse_args()
+    datasets = {}
+    for item in options.dataset:
+        name, sep, relative = item.partition('=')
+        if not sep or not name:
+            raise SystemExit(f'--dataset expects NAME=RELATIVE_PATH, got {item!r}')
+        datasets[name] = relative
+    if not datasets:
+        datasets = dict(DEFAULT_DATASETS)
+    out = ROOT / 'results' / options.out
     out.mkdir(exist_ok=False)
     traces = out / 'traces'; traces.mkdir()
     manifest = {}
     hit_by_ratio = {}
-    for name, rel in DATASETS.items():
+    for name, rel in datasets.items():
         keys = read_rows(WS / rel)
         ordered = sorted(k for k, _ in keys)
         rank = {k: i for i, k in enumerate(ordered)}
@@ -236,7 +254,7 @@ def main():
             h = groups.get(f'hotspot_{semantics}')
             if u is not None and h is not None and abs(u - h) > 0.01:
                 raise SystemExit(f'{ratio_name} {semantics}: hit rate differs {u} vs {h}')
-    for name in DATASETS:
+    for name in datasets:
         for ratio_name in ('95_5', '80_20'):
             for semantics in ('growth', 'replacement'):
                 u = manifest[f'{name}_{ratio_name}_uniform_{semantics}']

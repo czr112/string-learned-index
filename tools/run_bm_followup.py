@@ -2,6 +2,11 @@
 
 Uses pinned, already available dependencies and corpus/legacy traces. Does not time
 operations, change defaults, fetch updates, stage files, or modify input directories.
+
+Suites: "full" runs the complete S0 acceptance. "fault" runs the fault-coverage
+supplement only (exhaustive allocation-ordinal faults on bytes + three real corpora,
+both optimized and sanitizer builds, with a configurable per-fault continuation count);
+it is never a substitute for a full S0 acceptance.
 """
 from __future__ import annotations
 
@@ -32,19 +37,37 @@ def save(path, value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dependency-root", required=True, type=Path)
-    parser.add_argument("--trace-root", required=True, type=Path)
+    parser.add_argument("--trace-root", required=False, type=Path, default=None,
+                        help="legacy trace root; required for the full suite only")
     parser.add_argument("--corpus-root", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--suite", choices=("full", "fault"), default="full",
+                        help="full: complete S0 acceptance; fault: fault-coverage supplement only")
+    parser.add_argument("--fault-continuations", type=int, default=5,
+                        help="literal insert/delete operations continued after every injected failure "
+                             "(plan 2.3 wording); a 5-op mixed continuation always also runs")
     args = parser.parse_args()
     if os.name == "nt":
         parser.error("Run with Linux Python inside WSL.")
+    if args.suite == "full" and args.trace_root is None:
+        parser.error("--trace-root is required for the full suite")
+    if not 1 <= args.fault_continuations <= 1000000:
+        parser.error("--fault-continuations must be within 1..1000000")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    commands, report = [], {"status": "running", "purpose": "S0 functional/space acceptance; no performance claim",
+    full = args.suite == "full"
+    commands, report = [], {"status": "running", "suite": args.suite,
+                            "purpose": ("S0 functional/space acceptance; no performance claim" if full else
+                                        "Fault-coverage supplement (sanitizer fault corpora, per-fault continuation); not a full S0 acceptance"),
+                            "fault_continuations": args.fault_continuations, "binaries": {},
                             "contracts": {}, "fault": {}, "dense_factory": {}, "differential": {}, "space": {}, "sanitizers": {}}
+    binaries = {}
 
     def execute(command, name, *, environment=None, expect_failure=False):
         command = [str(x) for x in command]
+        for token in command:
+            if token in binaries and sha(Path(token)) != binaries[token]:
+                raise RuntimeError(f"built binary changed before run: {token}")
         commands.append(command)
         with (output / name).open("w", encoding="utf-8") as stream:
             result = subprocess.run(command, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT,
@@ -134,7 +157,11 @@ def main():
                 execute(["g++", *flags, "-MMD", "-MF", output / f"{prefix}_{name}.d", "-c", source, "-o", obj], f"{prefix}_{name}_build.log")
                 objects.append(obj)
             executable = output / (prefix + "_gate")
-            execute(["g++", *flags, *objects, "-o", executable], prefix + "_link.log")
+            staged = output / (prefix + "_gate.partial")
+            execute(["g++", *flags, *objects, "-o", staged], prefix + "_link.log")
+            os.replace(staged, executable)  # publish only a completed build, atomically
+            binaries[str(executable)] = sha(executable)
+            report["binaries"][prefix + "_gate"] = binaries[str(executable)]
             return executable, objects[1]
 
         gate, model_object = build()
@@ -144,8 +171,12 @@ def main():
             extra = [f'-DACCEPTANCE_FACTORY_HEADER="{header}"', "-DACCEPTANCE_FACTORY_SYMBOL=" + factory]
             if name == "baseline":
                 extra.append("-DACCEPTANCE_SAMPLE_PARAMETER=lookup")
+            staged = output / (name + "_contract.partial")
             execute(["g++", *common, *macros(), "-O2", *extra, ROOT / "07_Eval_Integration/adapters/common/contract_acceptance.cpp",
-                     model_object, "-o", executable], name + "_contract_build.log")
+                     model_object, "-o", staged], name + "_contract_build.log")
+            os.replace(staged, executable)
+            binaries[str(executable)] = sha(executable)
+            report["binaries"][name + "_contract"] = binaries[str(executable)]
             text = execute([executable], name + "_contract.log")
             match = re.search(r"(\d+)/(\d+) checks passed", text)
             if not match or match[1] != match[2]:
@@ -158,44 +189,51 @@ def main():
                    "phrases": args.corpus_root / "memetracker_phrases_rows.bin"}
         report["inputs"] = {key: {"path": str(path), "sha256": sha(path)} for key, path in corpora.items()}
         for name, path in {"bytes": "--bytes", **corpora}.items():
-            report["fault"][name] = records([gate, "fault", path], f"fault_{name}.jsonl")
-            checkpoint(f"Exhaustive allocation-ordinal fault gate passed: {name}")
-        for name, path in corpora.items():
-            for count in (100, 1000, 3000):
-                report["dense_factory"][f"{name}_{count}"] = records([gate, "dense", path, count], f"dense_{name}_{count}.jsonl")
-            checkpoint(f"Public-factory dense 100/1000/3000 gates passed: {name}")
-        report["dense_factory"]["bytes_3000"] = records([gate, "dense", "--bytes", "3000"], "dense_bytes_3000.jsonl")
+            report["fault"][name] = records([gate, "fault", path, str(args.fault_continuations)], f"fault_{name}.jsonl")
+            checkpoint(f"Exhaustive allocation-ordinal fault gate passed: {name} "
+                       f"(continuation per fault: {args.fault_continuations})")
+        if full:
+            for name, path in corpora.items():
+                for count in (100, 1000, 3000):
+                    report["dense_factory"][f"{name}_{count}"] = records([gate, "dense", path, count], f"dense_{name}_{count}.jsonl")
+                checkpoint(f"Public-factory dense 100/1000/3000 gates passed: {name}")
+            report["dense_factory"]["bytes_3000"] = records([gate, "dense", "--bytes", "3000"], "dense_bytes_3000.jsonl")
 
-        manifest_path = args.trace_root / "manifest.json"
-        manifest = json.loads(manifest_path.read_text())
-        if len(manifest) != 24:
-            raise RuntimeError("S0 preregistration expects exactly 24 legacy traces")
-        report["legacy_trace_manifest_sha256"] = sha(manifest_path)
-        report["trace_scope"] = "Legacy distributions: functional/space coverage only; no fairness or performance acceptance"
-        for cell, metadata in manifest.items():
-            paths = [args.trace_root / "traces" / Path(metadata[key]).name for key in ("rows_path", "operations_path")]
-            for path, hash_key in zip(paths, ("rows_sha256", "operations_sha256")):
-                if sha(path) != metadata[hash_key]:
-                    raise RuntimeError(f"Trace hash mismatch: {cell}/{hash_key}")
-            report["differential"][cell] = records([gate, "differential", *paths], "diff_" + cell + ".jsonl")
-            arms = records([gate, "space", *paths], "space_" + cell + ".jsonl")
-            baseline, candidate = arms
-            ratios = {key: candidate[key] / baseline[key] for key in (
-                "terminal_requested", "build_peak_requested", "maintenance_peak_requested", "overall_peak_requested")}
-            report["space"][cell] = {"arms": arms, "candidate_over_baseline": ratios,
-                                     "resident_pass": ratios["terminal_requested"] <= 1.05,
-                                     "new_maintenance_peak_pass": ratios["maintenance_peak_requested"] <= 1.10}
-            checkpoint(f"Differential and space measured: {cell}")
+        if full:
+            manifest_path = args.trace_root / "manifest.json"
+            manifest = json.loads(manifest_path.read_text())
+            if len(manifest) != 24:
+                raise RuntimeError("S0 preregistration expects exactly 24 legacy traces")
+            report["legacy_trace_manifest_sha256"] = sha(manifest_path)
+            report["trace_scope"] = "Legacy distributions: functional/space coverage only; no fairness or performance acceptance"
+            for cell, metadata in manifest.items():
+                paths = [args.trace_root / "traces" / Path(metadata[key]).name for key in ("rows_path", "operations_path")]
+                for path, hash_key in zip(paths, ("rows_sha256", "operations_sha256")):
+                    if sha(path) != metadata[hash_key]:
+                        raise RuntimeError(f"Trace hash mismatch: {cell}/{hash_key}")
+                report["differential"][cell] = records([gate, "differential", *paths], "diff_" + cell + ".jsonl")
+                arms = records([gate, "space", *paths], "space_" + cell + ".jsonl")
+                baseline, candidate = arms
+                ratios = {key: candidate[key] / baseline[key] for key in (
+                    "terminal_requested", "build_peak_requested", "maintenance_peak_requested", "overall_peak_requested")}
+                report["space"][cell] = {"arms": arms, "candidate_over_baseline": ratios,
+                                         "resident_pass": ratios["terminal_requested"] <= 1.05,
+                                         "new_maintenance_peak_pass": ratios["maintenance_peak_requested"] <= 1.10}
+                checkpoint(f"Differential and space measured: {cell}")
 
-        # Supplemental internal invariant test uses the bounded class directly, not the factory.
-        verify = output / "bounded_verify"
-        execute(["g++", *common, *macros(), "-O2", DIAG / "gate_bm_split_verify.cpp", model_object, "-o", verify], "verify_build.log")
-        report["supplemental_bounded_verify"] = {}
-        for name, path in corpora.items():
-            report["supplemental_bounded_verify"][name] = records([verify, path, "3000"], "verify_" + name + ".jsonl")
-            item = report["supplemental_bounded_verify"][name][0]
-            if item["mismatches"] or item["inserted"] != 3000:
-                raise RuntimeError(f"Direct bounded verify failed: {name}")
+            # Supplemental internal invariant test uses the bounded class directly, not the factory.
+            verify = output / "bounded_verify"
+            staged = output / "bounded_verify.partial"
+            execute(["g++", *common, *macros(), "-O2", DIAG / "gate_bm_split_verify.cpp", model_object, "-o", staged], "verify_build.log")
+            os.replace(staged, verify)
+            binaries[str(verify)] = sha(verify)
+            report["binaries"]["bounded_verify"] = binaries[str(verify)]
+            report["supplemental_bounded_verify"] = {}
+            for name, path in corpora.items():
+                report["supplemental_bounded_verify"][name] = records([verify, path, "3000"], "verify_" + name + ".jsonl")
+                item = report["supplemental_bounded_verify"][name][0]
+                if item["mismatches"] or item["inserted"] != 3000:
+                    raise RuntimeError(f"Direct bounded verify failed: {name}")
 
         sanitizer, _ = build(sanitizer=True)
         environment = dict(os.environ, ASAN_OPTIONS="detect_leaks=1:halt_on_error=1", UBSAN_OPTIONS="halt_on_error=1:print_stacktrace=1")
@@ -210,15 +248,21 @@ def main():
         if "ERROR: AddressSanitizer: use-after-poison" not in probe_log:
             raise RuntimeError("Accounting wrapper did not preserve ASan buffer boundary")
         report["sanitizers"]["allocator_redzone_negative_control"] = "expected use-after-poison detected"
-        report["sanitizers"]["byte_fault"] = records([sanitizer, "fault", "--bytes"], "san_fault_bytes.jsonl", environment=environment)
+        report["sanitizers"]["byte_fault"] = records([sanitizer, "fault", "--bytes", str(args.fault_continuations)],
+                                                     "san_fault_bytes.jsonl", environment=environment)
         for name, path in corpora.items():
-            report["sanitizers"]["dense_" + name] = records([sanitizer, "dense", path, "3000"], "san_dense_" + name + ".jsonl", environment=environment)
-        for dataset in ("words", "urls", "words_indep"):
-            for semantics in ("growth", "replacement"):
-                cell = dataset + "_95_5_uniform_" + semantics
-                meta = manifest[cell]
-                paths = [args.trace_root / "traces" / Path(meta[key]).name for key in ("rows_path", "operations_path")]
-                report["sanitizers"][cell] = records([sanitizer, "differential", *paths], "san_" + cell + ".jsonl", environment=environment)
+            report["sanitizers"]["fault_" + name] = records([sanitizer, "fault", path, str(args.fault_continuations)],
+                                                            "san_fault_" + name + ".jsonl", environment=environment)
+            checkpoint(f"Sanitizer fault gate passed: {name}")
+        if full:
+            for name, path in corpora.items():
+                report["sanitizers"]["dense_" + name] = records([sanitizer, "dense", path, "3000"], "san_dense_" + name + ".jsonl", environment=environment)
+            for dataset in ("words", "urls", "words_indep"):
+                for semantics in ("growth", "replacement"):
+                    cell = dataset + "_95_5_uniform_" + semantics
+                    meta = manifest[cell]
+                    paths = [args.trace_root / "traces" / Path(meta[key]).name for key in ("rows_path", "operations_path")]
+                    report["sanitizers"][cell] = records([sanitizer, "differential", *paths], "san_" + cell + ".jsonl", environment=environment)
         for item in closure.values():
             if sha(Path(item["path"])) != item["sha256"]:
                 raise RuntimeError("Source changed during acceptance run")
@@ -227,15 +271,29 @@ def main():
         for relative, digest in identity["supporting_sources"].items():
             if sha(ROOT / relative) != digest:
                 raise RuntimeError("Supporting test source changed during acceptance run")
-        all_space = list(report["space"].values())
-        report.update(status="complete", correctness_pass=True,
-                      resident_budget_pass=all(item["resident_pass"] for item in all_space),
-                      new_maintenance_peak_budget_pass=all(item["new_maintenance_peak_pass"] for item in all_space),
-                      finished_at=datetime.now(timezone.utc).isoformat())
-        report["acceptance_pass"] = report["resident_budget_pass"] and report["new_maintenance_peak_budget_pass"]
-        checkpoint("S0 acceptance finished; inspect resident and NEW maintenance-peak budgets separately")
-        if not report["acceptance_pass"]:
-            raise RuntimeError("Requested-byte budget failed; functional results retained separately")
+        for executable, digest in binaries.items():
+            if sha(Path(executable)) != digest:
+                raise RuntimeError("Built binary changed during acceptance run")
+        if full:
+            all_space = list(report["space"].values())
+            report.update(status="complete", correctness_pass=True,
+                          resident_budget_pass=all(item["resident_pass"] for item in all_space),
+                          new_maintenance_peak_budget_pass=all(item["new_maintenance_peak_pass"] for item in all_space),
+                          finished_at=datetime.now(timezone.utc).isoformat())
+            report["acceptance_pass"] = report["resident_budget_pass"] and report["new_maintenance_peak_budget_pass"]
+            checkpoint("S0 acceptance finished; inspect resident and NEW maintenance-peak budgets separately")
+            if not report["acceptance_pass"]:
+                raise RuntimeError("Requested-byte budget failed; functional results retained separately")
+        else:
+            fault_records = [item for group in report["fault"].values() for item in group if item.get("mode") == "fault"]
+            fault_records += [item for group in report["sanitizers"].values() if isinstance(group, list)
+                              for item in group if item.get("mode") == "fault"]
+            report.update(status="complete",
+                          fault_supplement_pass=bool(fault_records) and all(item["mismatches"] == 0 for item in fault_records),
+                          finished_at=datetime.now(timezone.utc).isoformat())
+            checkpoint("Fault supplement finished; coverage only - not a full S0 acceptance")
+            if not report["fault_supplement_pass"]:
+                raise RuntimeError("Fault supplement observed mismatches")
     except Exception as error:
         report.update(status="failed", error=str(error), finished_at=datetime.now(timezone.utc).isoformat())
         checkpoint("S0 stopped: " + str(error))

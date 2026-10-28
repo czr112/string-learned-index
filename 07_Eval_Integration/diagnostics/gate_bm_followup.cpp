@@ -172,14 +172,24 @@ static std::uint64_t continue_ops(sib::Index& index,Ref& reference,const Case& t
         case 1:op.kind=3;break;
         case 2:op.kind=4;break;
         case 3:break;
-        case 4:op.kind=5;op.limit=(i%2)?16:128;break;
+        case 4:op.kind=5;op.limit=(i%2)?16U:128U;break;
         }
         // Oracle and returned scan storage are not part of the fault operation ledger.
         checks+=checked_op(index,reference,op);
     }
     return checks+full_check(index,reference);
 }
-static void fault(const char* fixture) {
+// Literal plan-2.3 continuation: pure insert/delete churn, nothing else.
+static std::uint64_t continue_writes(sib::Index& index,Ref& reference,const Case& test,std::size_t count) {
+    std::uint64_t checks=0;
+    for(std::size_t i=0;i<count;i+=2) {
+        const std::string key=test.rows[(i*13)%test.rows.size()].key+"~writes/"+std::to_string(i);
+        checks+=checked_op(index,reference,Op{2,700000+i,0,key});
+        if(i+1<count)checks+=checked_op(index,reference,Op{4,0,0,key});
+    }
+    return checks+full_check(index,reference);
+}
+static void fault(const char* fixture,std::size_t per_fault_mixed,std::size_t per_fault_writes) {
     const auto source=std::string(fixture)=="--bytes"?byte_rows():read_rows(fixture);
     for(const auto& test:cases(source)) {
         std::uint64_t allocations=0,checks=0,throws=0;
@@ -229,12 +239,16 @@ static void fault(const char* fixture) {
             else if(test.operation.kind==2)reference.emplace(test.operation.key,test.operation.value);
             else if(test.operation.kind==4)reference.erase(test.operation.key);
             checks+=full_check(*index,reference);
-            // Short continuation after EVERY fault; the positive control gets a longer churn.
-            checks+=continue_ops(*index,reference,test,ordinal==allocations+1?1000:5);
+            // Mixed continuation after EVERY fault (S0 continuity); the positive control
+            // gets a longer churn, and the literal insert/delete churn runs on request.
+            checks+=continue_ops(*index,reference,test,ordinal==allocations+1?1000:per_fault_mixed);
+            if(per_fault_writes)checks+=continue_writes(*index,reference,test,per_fault_writes);
             index.reset();require(mem::live==0,"fault trial leaked tracked requested bytes");
         }
         std::cout<<"{\"mode\":\"fault\",\"case\":\""<<test.name<<"\",\"allocation_ordinals\":"<<allocations
-            <<",\"bad_alloc_caught\":"<<throws<<",\"positive_controls\":1,\"continuation_per_fault\":5"
+            <<",\"bad_alloc_caught\":"<<throws<<",\"positive_controls\":1"
+            <<",\"continuation_per_fault_mixed\":"<<per_fault_mixed
+            <<",\"continuation_per_fault_writes\":"<<per_fault_writes
             <<",\"continuation_per_path\":1000,\"checks\":"<<checks<<",\"mismatches\":0,\"after_destroy\":0}"<<std::endl;
     }
 }
@@ -275,10 +289,17 @@ static void dense(const char* fixture,std::size_t count) {
 int main(int argc,char** argv) {
     try {
         allocator_self_check();
-        if(argc==3&&std::string(argv[1])=="fault")fault(argv[2]);
+        if(argc==3&&std::string(argv[1])=="fault")fault(argv[2],5,0);
+        else if(argc==4&&std::string(argv[1])=="fault") {
+            // The count is the literal plan-2.3 insert/delete continuation; the mixed
+            // continuation stays at 5 so the S0 profile is preserved.
+            const auto writes=std::stoull(argv[3]);
+            if(!writes||writes>1000000)throw std::invalid_argument("write continuations must be 1..1000000");
+            fault(argv[2],5,static_cast<std::size_t>(writes));
+        }
         else if(argc==4&&std::string(argv[1])=="dense")dense(argv[2],std::stoull(argv[3]));
         else if(argc==4&&(std::string(argv[1])=="differential"||std::string(argv[1])=="space"))replay(argv[2],argv[3],std::string(argv[1])=="space");
-        else throw std::invalid_argument("fault rows.bin|--bytes OR dense rows.bin|--bytes count OR differential|space rows.bin ops.bin");
+        else throw std::invalid_argument("fault rows.bin|--bytes [insert_delete_continuations] OR dense rows.bin|--bytes count OR differential|space rows.bin ops.bin");
         return 0;
     }catch(const std::exception& e){mem::disarm();mem::tracking=false;std::cerr<<e.what()<<std::endl;return 1;}
 }

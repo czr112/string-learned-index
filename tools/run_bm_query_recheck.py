@@ -276,7 +276,8 @@ def main():
     data_root = args.data_root.resolve()
     cpu = min(os.sched_getaffinity(0))
     commands = []
-    report = {"status": "running", "purpose": "correctly grouped fixed final-state query recheck", "semantic": {}, "calibration": {}, "results": {}}
+    report = {"status": "running", "purpose": "correctly grouped fixed final-state query recheck", "semantic": {}, "calibration": {}, "results": {}, "binaries": {}}
+    binaries = {}
 
     def checkpoint(message):
         save(output / "report.json", report); save(output / "commands.json", commands)
@@ -284,6 +285,9 @@ def main():
 
     def execute(command, log, *, env=None, expected_error=None):
         command = [str(x) for x in command]; commands.append(command)
+        for token in command:
+            if token in binaries and sha(Path(token)) != binaries[token]:
+                raise RuntimeError(f"built binary changed before run: {token}")
         result = subprocess.run(command, cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
         (output / "logs" / (log + ".stdout")).write_bytes(result.stdout)
         (output / "logs" / (log + ".stderr")).write_bytes(result.stderr)
@@ -361,7 +365,11 @@ def main():
                 execute(["g++", *flags, "-MMD", "-MF", output / f"{prefix}_{name}.d", "-c", source, "-o", obj], f"{prefix}_{name}_build")
                 objects.append(obj)
             binary = output / (prefix + "_query")
-            execute(["g++", *flags, *objects, "-o", binary], prefix + "_link")
+            staged = output / (prefix + "_query.partial")
+            execute(["g++", *flags, *objects, "-o", staged], prefix + "_link")
+            os.replace(staged, binary)  # publish only a completed build, atomically
+            binaries[str(binary)] = sha(binary)
+            report.setdefault("binaries", {})[prefix + "_query"] = binaries[str(binary)]
             return binary
 
         binary, sanitizer = build(), build(True)
@@ -480,6 +488,9 @@ def main():
         for item in closure.values():
             if sha(Path(item["path"])) != item["sha256"]:
                 raise ValueError("Source changed during query recheck")
+        for executable, digest_value in binaries.items():
+            if sha(Path(executable)) != digest_value:
+                raise ValueError("Built binary changed during query recheck")
         if sha(Path(__file__)) != registration["runner_sha256"] or sha(PROTOCOL) != registration["protocol_sha256"]:
             raise ValueError("Runner/protocol changed during query recheck")
         primary_counts = {}

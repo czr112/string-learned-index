@@ -1,4 +1,10 @@
 #!/bin/bash
+# RETIRED (2026-10-25): historical P5 runner (2026-10-23). It reuses the P4 build directory
+# builds/p4_20261024 and truncates cells/*.jsonl there, so re-running it would overwrite the
+# working copies again. The committed evidence is intact and separate
+# (results/bm_p4_perf_20261024/, results/bm_p5_final_20261024/); new runs must use their own
+# fresh output directories. Superseded by the followup rounds. See tools/RETIRED.md.
+exit 9
 # Priority 5: independent sample cells plus a re-check of the one cell that exceeded the query gate.
 set -eu
 export PATH="/home/noctis/.local/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
