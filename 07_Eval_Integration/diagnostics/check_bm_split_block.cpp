@@ -23,7 +23,9 @@ int main(int argc,char** argv) {
         }
         bm_n1_leaf::Page page(rows,15);
         const auto before=page.scan("",SIZE_MAX);
-        auto upper=page.split_at_block(split);
+        auto split_result=bm_n1_leaf::Page::extract_split(page,split);
+        page.apply_drop(split,std::move(split_result.lower_model));
+        auto& upper=split_result.upper;
         const auto lower_scan=page.scan("",SIZE_MAX);
         const auto upper_scan=upper->scan("",SIZE_MAX);
         std::uint64_t mismatches=0;
