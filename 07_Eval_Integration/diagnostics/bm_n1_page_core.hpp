@@ -421,50 +421,73 @@ public:
         const auto& r=regions_[0];
         return directory_block(r,key.substr(r.prefix.size()),nullptr);
     }
+    bool matches_prefix(std::string_view key)const {
+        if(regions_.empty())return false;
+        const auto& prefix=regions_[0].prefix;
+        return key.size()>=prefix.size()&&compare(key.substr(0,prefix.size()),prefix)==0;
+    }
     struct SplitResult {
         std::unique_ptr<Page> lower;
         std::unique_ptr<Page> upper;
+        std::string separator;
     };
-    // Phase 1 (may throw): build BOTH halves as fresh pages; the source is untouched. Everything
-    // that can fail (arena growth, model fitting) happens here.
-    static SplitResult extract_split(const Page& src,std::uint32_t b_split) {
+    // Preserve encoded records AND stable routing boundaries, including deleted fence keys.
+    // All allocations, model fitting and arena relocation occur on detached pages.
+    static SplitResult extract_split(const Page& src,std::uint32_t b_split,
+                                     std::size_t pending_bytes=0,std::size_t occupancy=15) {
         if(src.regions_.empty())throw std::logic_error("split on an empty page");
         const auto& r=src.regions_[0];
-        if(b_split==0||b_split>=r.count)throw std::invalid_argument("split point");
+        if(b_split==0||b_split>=r.count||(occupancy!=15&&occupancy!=16))
+            throw std::invalid_argument("split point/occupancy");
         auto build=[&](std::uint32_t lo,std::uint32_t hi) {
-            auto out=std::make_unique<Page>(std::vector<Row>{{std::string(),0}},15);
-            out->blocks_.clear();out->stable_fences_.clear();out->regions_.clear();
-            out->fences_.clear();out->digests_.clear();out->arena_.clear();
-            std::uint32_t rows=0;
-            for(std::uint32_t i=lo;i<hi;++i) {
-                Block block=src.blocks_[std::size_t(r.first)+i];
-                for(std::uint32_t e=0;e<block.count;++e) {
-                    const auto view=src.suffix(block.entries[e]);
-                    const auto at=std::uint32_t(out->arena_.size());
-                    out->arena_.insert(out->arena_.end(),view.begin(),view.end());
-                    block.entries[e].offset=at;
-                    block.entries[e].length=std::uint32_t(view.size());
-                }
-                rows+=block.count;
-                out->blocks_.push_back(block);
-                out->stable_fences_.push_back({out->blocks_.back().entries[0].offset,
-                                               out->blocks_.back().entries[0].length});
+            auto out=std::make_unique<Page>(std::vector<Row>{},occupancy);
+            std::size_t bytes=0;
+            for(auto i=lo;i<hi;++i) {
+                const auto& block=src.blocks_[std::size_t(r.first)+i];
+                for(std::uint32_t e=0;e<block.count;++e)bytes+=block.entries[e].length;
+                if(!block.count||compare(src.boundary(r,i),src.suffix(block.entries[0]))!=0)
+                    bytes+=src.boundary(r,i).size();
             }
-            Region nr=r;nr.first=0;nr.count=hi-lo;
-            out->regions_.push_back(nr);
+            const auto slack=occupancy==15?(bytes/32+(bytes%32!=0)):0;
+            if(bytes>UINT32_MAX||pending_bytes>UINT32_MAX-bytes||slack>UINT32_MAX-bytes-pending_bytes)
+                throw std::length_error("split arena exceeds 32-bit limit");
+            out->arena_.reserve(bytes+slack+pending_bytes);
+            out->blocks_.reserve(hi-lo);out->stable_fences_.reserve(hi-lo);
+            out->regions_.reserve(1);out->fences_.reserve(1);out->digests_.reserve(1);
+            std::size_t rows=0;
+            for(auto i=lo;i<hi;++i) {
+                const auto& original=src.blocks_[std::size_t(r.first)+i];
+                Block block=original;
+                for(std::uint32_t e=0;e<block.count;++e) {
+                    const auto view=src.suffix(original.entries[e]);
+                    block.entries[e].offset=std::uint32_t(out->arena_.size());
+                    out->arena_.insert(out->arena_.end(),view.begin(),view.end());
+                }
+                const auto fence=src.boundary(r,i);
+                Fence next;
+                if(block.count&&compare(fence,src.suffix(original.entries[0]))==0)
+                    next={block.entries[0].offset,block.entries[0].length};
+                else {
+                    next={std::uint32_t(out->arena_.size()),std::uint32_t(fence.size())};
+                    out->arena_.insert(out->arena_.end(),fence.begin(),fence.end());
+                }
+                rows+=block.count;out->blocks_.push_back(block);out->stable_fences_.push_back(next);
+            }
+            Region nr;nr.first=0;nr.count=hi-lo;nr.prefix=r.prefix;
+            out->regions_.push_back(std::move(nr));
             out->size_=rows;out->region_keys_=src.region_keys_;
-            out->fences_.push_back(r.prefix+std::string(out->boundary(out->regions_[0],0)));
+            out->fences_.push_back(r.prefix+std::string(src.boundary(r,lo)));
             out->fence_prefix_=out->fences_[0].size();
             out->digests_.push_back(static_physical::digest8(std::string_view()));
-            out->arena_.reserve(out->arena_.size()+out->arena_.size()/32+64);
-            std::vector<std::string_view> train;
-            for(std::uint32_t b=0;b<out->regions_[0].count;++b)train.push_back(out->boundary(out->regions_[0],b));
-            out->bm_=blocklearn::BlockModel::fit(train,16,1,7,3);
+            std::vector<std::string_view> train;train.reserve(hi-lo);
+            for(std::uint32_t i=0;i<hi-lo;++i)train.push_back(out->boundary(out->regions_[0],i));
+            // Each training item denotes ONE physical block, exactly as in the constructor.
+            out->bm_=blocklearn::BlockModel::fit(train,1,7,8,1);
             return out;
         };
         SplitResult result;
-        result.lower=build(0,b_split);
-        result.upper=build(b_split,std::uint32_t(r.count));
+        result.separator=r.prefix+std::string(src.boundary(r,b_split));
+        result.lower=build(0,b_split);result.upper=build(b_split,r.count);
         return result;
     }
     std::vector<std::string> fence_keys()const {
