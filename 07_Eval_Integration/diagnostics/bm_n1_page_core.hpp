@@ -412,6 +412,7 @@ public:
         }
     }
 public:
+    std::uint32_t block_count()const{return regions_.empty()?0:regions_[0].count;}
     // Move blocks [b_split, count) out of this page into a new page that shares the region prefix.
     // The upper half gets a compacted arena with rewritten entry offsets; nothing is re-encoded
     // from keys, so no per-row std::string is materialised.
