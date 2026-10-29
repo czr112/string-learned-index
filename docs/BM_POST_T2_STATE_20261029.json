@@ -1,0 +1,284 @@
+{
+  "checked_at": "2026-10-29T01:40:58.177856+08:00",
+  "head": "f4e79bfa244a2adbddb802fa9f46ac63b1d07d8f",
+  "purpose": "Read-only evidence review and prospective long-term planning. No new index implementation or benchmark run.",
+  "core_equals_64523e4": [
+    "bm_n1_page_core.hpp",
+    "bm_n1_index.hpp",
+    "bm_split_index.hpp",
+    "bm_split_adapter.hpp"
+  ],
+  "initial_worktree_status_counts": {
+    "tracked_modified": 7,
+    "untracked_status_entries": 862
+  },
+  "scope_note": "Core rollback verified; whole working tree is not clean. Untracked count is porcelain normal entries, not recursive file count.",
+  "sha256": {
+    "07_Eval_Integration/RESULTS_BM_T0_FREEZE_20261028.md": "6a224b34fd829f2f55399996e4c67217b5cb1fcd8a9c8b0bf3d206db27277333",
+    "07_Eval_Integration/RESULTS_BM_T1_COST_20261028.md": "2d262b500f5ba170381dfd52a49fb3e2f5e136fc2bc8ebb008c8f77f68b09590",
+    "07_Eval_Integration/RESULTS_BM_T2_VERDICT_20261029.md": "90e7629cde5a8a1857bf56cae2fcb968490d4f7480e010fb55cbf94a4212bdda",
+    "07_Eval_Integration/RESULTS_BM_T2_SINGLE_LOOKUP_20261029.md": "99b9fdc265980998d6b25a8ec66318d6907f2bbf30cecc6364b7dd5947896578",
+    "07_Eval_Integration/RESULTS_BM_T3_ATTEMPT1_20261028.md": "01b9c9a58516d8a91cc49c4049c85751cf6bf3b782a97fc26977c6201b98c734",
+    "07_Eval_Integration/RESULTS_BM_T3_ATTEMPT2_20261028.md": "7c37709aec5a5b10c1a58e4cffd71fd231a36b301f79ada2f3882340879f755b",
+    "07_Eval_Integration/RESULTS_BM_T4_SCAN_20261029.md": "21ae68fa52289adbbd635bf24426335376df7e048c96fd72a5ba84a81b5561ad",
+    "07_Eval_Integration/diagnostics/diag_bm_cost_t1.cpp": "4129e57b18a52f371b98445c1cfb83e8169416607c319b4e6a2224d267bf45ff",
+    "07_Eval_Integration/diagnostics/bm_n1_page_core.hpp": "bb45fa46cd2cd872bbaac854fd0318d8f09162ba5894c96f808b88bcc992d982",
+    "07_Eval_Integration/diagnostics/bm_n1_index.hpp": "ec5c1be2198f0ebc82ba75503268c1be0efe52436b3791bcb1473933ac14d8b5",
+    "07_Eval_Integration/diagnostics/bm_split_index.hpp": "02382f336285df9178e7487d49be372004beefea48be3345622bb517e251647e",
+    "07_Eval_Integration/diagnostics/bm_split_adapter.hpp": "db529b4ba047130bbf9f408ba93d61a54498abd5ed5255eb376cdb32cddb87f9",
+    "07_Eval_Integration/diagnostics/bench_bm_pure.cpp": "60b5ae7e058cc88de681d41ca72691e1b4ee7b081c5f878302a61dd326ef30b3",
+    "02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "tools/t1_cost.sh": "9d2be431a21428c995b302dc4e322a74cd92bd3941c8f82c2baf1ddb247a7911",
+    "tools/t2_measure.sh": "c3540021369afc908d8753596898832cd64b9d2f1b31c84b6606dd868b59ad28",
+    "tools/t2_confirm.sh": "f3a587d1a791f6302888269f508e2fff5f1c877d8f38c789f43d29961e2def8f",
+    "tools/t3b_arena.sh": "40f5f61a30dc23795d3ed583f8bd6cf8f76ed9c6b1350e1fa82d9bc09dd2e7a3",
+    "07_Eval_Integration/results/bm_audited_v3_20261025/manifest.json": "4c4ed9970d3b5d69a111633102f9205bf2a1d115453ad20dd7295c3ed324fc33"
+  },
+  "t2_existing_records": [
+    {
+      "cell": "urls_80_20_hotspot_growth",
+      "raw_path": "builds/t2_20261029/urls_80_20_hotspot_growth.jsonl",
+      "raw_sha256": "fce4e2ac8fe8fc08958a1599c57e12fb208dcbb9fdd348119d9e7e1da0814b6c",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.35092028773126005,
+      "ci95_candidate_over_original_bm": [
+        0.3133213391396931,
+        0.388519236322827
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 16000,
+        "insert": 4000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 4000
+    },
+    {
+      "cell": "urls_80_20_uniform_growth",
+      "raw_path": "builds/t2_20261029/urls_80_20_uniform_growth.jsonl",
+      "raw_sha256": "2f0bf56c7060bfa8b92d86818f3a9f7ddc78a3020bb2c81c583be18af0337115",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.371447778437472,
+      "ci95_candidate_over_original_bm": [
+        0.3384346192932088,
+        0.40446093758173524
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 16000,
+        "insert": 4000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 4000
+    },
+    {
+      "cell": "urls_95_5_hotspot_growth",
+      "raw_path": "builds/t2_20261029/urls_95_5_hotspot_growth.jsonl",
+      "raw_sha256": "19a3e388d3ae3f272d29d0ce4d010b6811312730602b8fec96780134697863ea",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.4869546967614457,
+      "ci95_candidate_over_original_bm": [
+        0.4446988634459589,
+        0.5292105300769325
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 19000,
+        "insert": 1000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 1000
+    },
+    {
+      "cell": "urls_95_5_uniform_growth",
+      "raw_path": "builds/t2_20261029/urls_95_5_uniform_growth.jsonl",
+      "raw_sha256": "2f40364f6e21e54ffd75485dde428394b2b712bae068298e65b43a2e2c7ae5af",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.47751311312085115,
+      "ci95_candidate_over_original_bm": [
+        0.42492572205309087,
+        0.5301005041886114
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 19000,
+        "insert": 1000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 1000
+    },
+    {
+      "cell": "words_80_20_hotspot_growth",
+      "raw_path": "builds/t2_20261029/words_80_20_hotspot_growth.jsonl",
+      "raw_sha256": "fbca74f1f778f9380bdf5a469c0d62421fc4b78f3f3be42d559c57df103baa04",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.39755925877687287,
+      "ci95_candidate_over_original_bm": [
+        0.35490656242901486,
+        0.4402119551247309
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 16000,
+        "insert": 4000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 4000
+    },
+    {
+      "cell": "words_80_20_uniform_growth",
+      "raw_path": "builds/t2_20261029/words_80_20_uniform_growth.jsonl",
+      "raw_sha256": "984c0df24080c8a051eba6dc711ecd13a82a3a56d2834560aa129200d3593dff",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.4263182438984609,
+      "ci95_candidate_over_original_bm": [
+        0.38793146191288713,
+        0.4647050258840347
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 16000,
+        "insert": 4000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 4000
+    },
+    {
+      "cell": "words_95_5_hotspot_growth",
+      "raw_path": "builds/t2_20261029/words_95_5_hotspot_growth.jsonl",
+      "raw_sha256": "e03b171067f4ec0e959baa530f265d24207c631b6d7a09cbe48db56cfb0d004a",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.5272350433232396,
+      "ci95_candidate_over_original_bm": [
+        0.447428485447923,
+        0.6070416011985561
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 19000,
+        "insert": 1000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 1000
+    },
+    {
+      "cell": "words_95_5_uniform_growth",
+      "raw_path": "builds/t2_20261029/words_95_5_uniform_growth.jsonl",
+      "raw_sha256": "ad5a1a8f0e963d0d7bca7908ba717b687726b88169d98e56a0157c6bd25012cd",
+      "processes": 16,
+      "arms": [
+        "art",
+        "bm",
+        "bm_split",
+        "ctx16"
+      ],
+      "mean_candidate_over_original_bm": 0.4643119967822469,
+      "ci95_candidate_over_original_bm": [
+        0.40417036463175227,
+        0.5244536289327415
+      ],
+      "direct_candidate_over_unmodified_bm1": "not measured as simultaneous arms",
+      "manifest_kinds": {
+        "find": 19000,
+        "insert": 1000,
+        "update": 0,
+        "erase": 0,
+        "scan": 400
+      },
+      "manifest_writes": 1000
+    }
+  ],
+  "findings_for_planning": [
+    {
+      "finding": "T1 bytes_per_split is net resident growth divided by page rebuild count, not block split bytes moved",
+      "source": "diag_bm_cost_t1.cpp memory_bytes delta and maintenance().rebuilds"
+    },
+    {
+      "finding": "T1 insert(existing) returns after first Index::insert find and cannot measure the second duplicate lookup",
+      "source": "bm_split_index.hpp:180-186"
+    },
+    {
+      "finding": "T2 CI estimates modified candidate/original BM; historical old ratio subtractions have no simultaneous candidate/unmodified BM1 CI",
+      "source": "tools/t2_confirm.sh"
+    },
+    {
+      "finding": "All eight T2 growth manifests have update=erase=0; insertion share does not dilute write_us there",
+      "source": "bm_audited_v3_20261025/manifest.json"
+    },
+    {
+      "finding": "T4 allocation-count fraction is not a bound on scan time or mixed-throughput gain; owning-key contract is shared by baselines",
+      "source": "RESULTS_BM_T4_SCAN_20261029.md and bm_split_adapter.hpp"
+    },
+    {
+      "finding": "T1 exact-query regression groups and same-layout query counters remain absent from its cost fixture",
+      "source": "diag_bm_cost_t1.cpp"
+    }
+  ],
+  "decision": "Keep T2 rollback and free-list stop; do not reopen based on evidence limitations. First perform bounded event-cost attribution and public-query diagnosis under a preregistered protocol.",
+  "historical_status_inherited": {
+    "write_gate": "29/32; growth16/16 replacement13/16",
+    "query_gate": {
+      "pass": 10,
+      "regression": 5,
+      "undecided_or_measurement_unresolved": 17
+    },
+    "default": "Context16",
+    "external_comparison": "Descriptive historical mixed ratios, not remeasured in T2"
+  }
+}
