@@ -86,6 +86,42 @@ class Index {
     void fault(std::size_t count) {
         if(fail_after_pages_&&count==*fail_after_pages_){fail_after_pages_.reset();throw std::bad_alloc();}
     }
+    // G2: page-full insert via the two-phase split. Both halves are staged so prepare_root
+    // replaces the target binding with the lower half and inserts the upper one.
+    Pages::iterator rebuild_by_split(Pages::iterator target,std::string_view key,std::uint64_t value) {
+        try {
+            auto* core=target->second.core.get();
+            const auto total=std::uint32_t(core->block_count());
+            auto b=core->block_for(key);
+            if(b==0)b=1;
+            if(b>=total)b=total-1;
+            auto split=Page::extract_split(*core,b);              // may throw; core untouched
+            const auto upper_key=split.upper->fence_keys().front();
+            if(split.upper->try_insert(key,value)!=Page::Insert::inserted)
+                throw std::logic_error("split insert into the upper half was rejected");
+            const auto lower_key=target->first;
+            Pages staged;
+            staged.emplace(lower_key,Node{std::move(split.lower),++generation_});
+            staged.emplace(upper_key,Node{std::move(split.upper),++generation_});
+            const auto added=route_bytes(staged);
+            auto next_root=prepare_root(target,pages_.end(),staged,added);   // may throw
+            {
+                auto lower=staged.find(lower_key);
+                std::swap(target->second,lower->second);
+                staged.erase(lower);
+            }
+            while(!staged.empty()) {
+                auto node=staged.extract(staged.begin());
+                pages_.insert(std::move(node));
+            }
+            // Contract: the root must bind exactly the pages that exist, in the same order.
+            if(next_root->bindings().size()!=pages_.size())
+                throw std::logic_error("root/pages binding count mismatch");
+            root_.swap(next_root);
+            ++maintenance_.rebuilds;++maintenance_.inplace_inserts;++size_;
+            return target;
+        }catch(...){++maintenance_.failed_rebuilds;throw;}
+    }
     Pages::iterator rebuild(Pages::iterator target,std::vector<Row> rows,bool coalesce) {
         try {
             auto first=target,neighbor=pages_.end();
@@ -183,6 +219,10 @@ public:
                 const auto after_bytes=it->second.core->memory().total();
                 if(after_bytes>before_bytes)resident_+=after_bytes-before_bytes;
                 it->second.version=++generation_;
+            }
+            else if(it->second.core->size()>=2048) {
+                rebuild_by_split(it,key,value);
+                return true;
             }
             else {
                 auto rows=it->second.core->scan("",SIZE_MAX);
