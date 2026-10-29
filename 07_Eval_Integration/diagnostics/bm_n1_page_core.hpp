@@ -415,6 +415,12 @@ public:
     // Move blocks [b_split, count) out of this page into a new page that shares the region prefix.
     // The upper half gets a compacted arena with rewritten entry offsets; nothing is re-encoded
     // from keys, so no per-row std::string is materialised.
+    // Block that would hold this key (the caller guarantees the region prefix matches).
+    std::uint32_t block_for(std::string_view key)const {
+        if(regions_.empty())throw std::logic_error("empty page");
+        const auto& r=regions_[0];
+        return directory_block(r,key.substr(r.prefix.size()),nullptr);
+    }
     struct SplitResult {std::unique_ptr<Page> upper;blocklearn::BlockModel lower_model;};
     // Phase 1 (may throw): build the upper page from a const source; the source is untouched.
     static SplitResult extract_split(const Page& src,std::uint32_t b_split) {
