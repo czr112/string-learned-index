@@ -1,0 +1,624 @@
+{
+  "status": "complete",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_query_stability_calibration_20261030/stability": "f2575889d3ce4a0cf53aeabfbda38633c6e748b7e2a0401046700c5941a276e5"
+  },
+  "phase": "calibrate",
+  "results": {
+    "250": {
+      "words_95_5_uniform_growth": {
+        "aa": {
+          "bm_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9298654131052678,
+                "ci95": [
+                  0.8513200470154741,
+                  1.015657612575537
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9732610448897147,
+                "ci95": [
+                  0.8662211387848999,
+                  1.093527990818332
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.042594564829178,
+                "ci95": [
+                  0.8960313963216944,
+                  1.2131309584391898
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0018741868043037,
+                "ci95": [
+                  0.8913361418157089,
+                  1.126120482605
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "bm_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0770784016004316,
+                "ci95": [
+                  1.0553152051734143,
+                  1.0992904086921669
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0392077900141792,
+                "ci95": [
+                  0.9218317173724698,
+                  1.171529261223928
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.035225798461398,
+                "ci95": [
+                  0.9259631063354135,
+                  1.1573813756374842
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9766756434066427,
+                "ci95": [
+                  0.7532455936534013,
+                  1.2663802091389402
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          }
+        },
+        "diagnostics": {
+          "bm_dynamic": {
+            "wall_cpu_ratio_range": [
+              0.9734106889511578,
+              1.0839680737197095
+            ],
+            "involuntary_switches": 41,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_dynamic": {
+            "wall_cpu_ratio_range": [
+              0.9727694874136965,
+              1.0836740462668375
+            ],
+            "involuntary_switches": 42,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "bm_snapshot": {
+            "wall_cpu_ratio_range": [
+              0.9689989946463405,
+              1.0833071784636363
+            ],
+            "involuntary_switches": 42,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_snapshot": {
+            "wall_cpu_ratio_range": [
+              0.9723509998793752,
+              1.0836307150883142
+            ],
+            "involuntary_switches": 53,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          }
+        },
+        "all_aa_pass": false
+      },
+      "urls_80_20_hotspot_replacement": {
+        "aa": {
+          "bm_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9295742668721361,
+                "ci95": [
+                  0.7526854796894689,
+                  1.1480337284935662
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0257573746199504,
+                "ci95": [
+                  0.8092305283797597,
+                  1.300220585713546
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9731051221346046,
+                "ci95": [
+                  0.7974031332485539,
+                  1.1875217681511674
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0573409071981499,
+                "ci95": [
+                  0.869575809153864,
+                  1.2856496032501654
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "bm_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9129756292909996,
+                "ci95": [
+                  0.7666898232204277,
+                  1.0871730319546105
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9808588305682294,
+                "ci95": [
+                  0.7927173843500076,
+                  1.213653269749521
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9424792783527968,
+                "ci95": [
+                  0.8595652584144803,
+                  1.0333912189085803
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0282456294511477,
+                "ci95": [
+                  0.8581645248323672,
+                  1.2320354010111485
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          }
+        },
+        "diagnostics": {
+          "bm_dynamic": {
+            "wall_cpu_ratio_range": [
+              1.0000120849906264,
+              1.0341999596448934
+            ],
+            "involuntary_switches": 52,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_dynamic": {
+            "wall_cpu_ratio_range": [
+              0.9999399556690153,
+              1.0341961064772314
+            ],
+            "involuntary_switches": 56,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "bm_snapshot": {
+            "wall_cpu_ratio_range": [
+              1.0000218523676134,
+              1.0341857582228813
+            ],
+            "involuntary_switches": 32,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_snapshot": {
+            "wall_cpu_ratio_range": [
+              0.9999691303029857,
+              1.034083146315587
+            ],
+            "involuntary_switches": 40,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          }
+        },
+        "all_aa_pass": false
+      }
+    },
+    "1000": {
+      "words_95_5_uniform_growth": {
+        "aa": {
+          "bm_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.00275334863389,
+                "ci95": [
+                  0.9126510999370837,
+                  1.1017510177391971
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9710300021026453,
+                "ci95": [
+                  0.860074442707909,
+                  1.0962995970613703
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9832501969529011,
+                "ci95": [
+                  0.8703979094169052,
+                  1.1107344575948974
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9418237857973292,
+                "ci95": [
+                  0.8486216656985495,
+                  1.0452620753718869
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "bm_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9999125806714655,
+                "ci95": [
+                  0.8830386653122028,
+                  1.132255254792922
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9661267565852936,
+                "ci95": [
+                  0.8221032271480344,
+                  1.1353816393934963
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9744358737913865,
+                "ci95": [
+                  0.8384560818386174,
+                  1.132468703726743
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9172105694223541,
+                "ci95": [
+                  0.8730636242573786,
+                  0.9635898292929813
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          }
+        },
+        "diagnostics": {
+          "bm_dynamic": {
+            "wall_cpu_ratio_range": [
+              1.000030105530604,
+              1.0653074572798091
+            ],
+            "involuntary_switches": 181,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_dynamic": {
+            "wall_cpu_ratio_range": [
+              1.0000510389390809,
+              1.0475574181773695
+            ],
+            "involuntary_switches": 187,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "bm_snapshot": {
+            "wall_cpu_ratio_range": [
+              1.0000440733202445,
+              1.0573089619429823
+            ],
+            "involuntary_switches": 170,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_snapshot": {
+            "wall_cpu_ratio_range": [
+              1.0000323695974969,
+              1.0652402840375905
+            ],
+            "involuntary_switches": 161,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          }
+        },
+        "all_aa_pass": false
+      },
+      "urls_80_20_hotspot_replacement": {
+        "aa": {
+          "bm_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0144540230318941,
+                "ci95": [
+                  0.8321941824096479,
+                  1.2366308087683937
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.978887932551977,
+                "ci95": [
+                  0.8536064699548955,
+                  1.1225566091907857
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_dynamic": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0418951036228539,
+                "ci95": [
+                  0.9444586584279442,
+                  1.149383720786861
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9912047654429245,
+                "ci95": [
+                  0.953564683310623,
+                  1.0303306154604286
+                ],
+                "pass": true
+              }
+            },
+            "pass": false
+          },
+          "bm_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0515766197980576,
+                "ci95": [
+                  0.7780085990258607,
+                  1.4213382585880026
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9498793827903015,
+                "ci95": [
+                  0.9002776271847693,
+                  1.0022139999985868
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          },
+          "candidate_snapshot": {
+            "checks": {
+              "parity": {
+                "n": 4,
+                "df": 3,
+                "ratio": 1.0180329524641285,
+                "ci95": [
+                  0.8801383032727327,
+                  1.1775320860926999
+                ],
+                "pass": false
+              },
+              "halves": {
+                "n": 4,
+                "df": 3,
+                "ratio": 0.9498114614665571,
+                "ci95": [
+                  0.8592396695822391,
+                  1.049930356185553
+                ],
+                "pass": false
+              }
+            },
+            "pass": false
+          }
+        },
+        "diagnostics": {
+          "bm_dynamic": {
+            "wall_cpu_ratio_range": [
+              1.0197876030437507,
+              1.05030486875206
+            ],
+            "involuntary_switches": 232,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_dynamic": {
+            "wall_cpu_ratio_range": [
+              1.0198206163228376,
+              1.0400296241359237
+            ],
+            "involuntary_switches": 250,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "bm_snapshot": {
+            "wall_cpu_ratio_range": [
+              1.0197901624731358,
+              1.0498154923566125
+            ],
+            "involuntary_switches": 209,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          },
+          "candidate_snapshot": {
+            "wall_cpu_ratio_range": [
+              1.0198008377359675,
+              1.039155710559084
+            ],
+            "involuntary_switches": 239,
+            "voluntary_switches": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "migrations": 0
+          }
+        },
+        "all_aa_pass": false
+      }
+    }
+  },
+  "selection": {
+    "selected_ms": null,
+    "protocol_sha256": "7881e1aee47faa10dae4676387107363672124d881dae6975c0c621828598d8f",
+    "runner_sha256": "3d3500a4160d05f7ef1cf3f378966286ada275b8dc179ca0c5585262a12bb20d",
+    "source_closure_sha256": "961cfa127997e6695a31b3f467b099ed1ab6631db89d70a47632a2bb0bfc4803",
+    "decision_basis": "AA only; no performance contrasts calculated"
+  }
+}

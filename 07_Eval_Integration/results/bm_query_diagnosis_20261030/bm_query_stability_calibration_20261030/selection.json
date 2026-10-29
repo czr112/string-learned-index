@@ -1,0 +1,8 @@
+{
+  "selected_ms": null,
+  "protocol_sha256": "7881e1aee47faa10dae4676387107363672124d881dae6975c0c621828598d8f",
+  "runner_sha256": "3d3500a4160d05f7ef1cf3f378966286ada275b8dc179ca0c5585262a12bb20d",
+  "source_closure_sha256": "961cfa127997e6695a31b3f467b099ed1ab6631db89d70a47632a2bb0bfc4803",
+  "decision_basis": "AA only; no performance contrasts calculated",
+  "calibration_report_sha256": "89c03f2e1762f8306ae1cd2d52a6e80aea7ac025b2a69f94742ff19f6dfc7339"
+}

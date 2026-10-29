@@ -1,0 +1,263 @@
+{
+  "calibration": "both floors failed; no performance contrasts or confirmation",
+  "cells": [
+    {
+      "cell": "urls_80_20_hotspot_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 8.678,
+      "bm1_blocks_per_query": 8.7705,
+      "blocks_ratio": 0.9894532808847842,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "urls_80_20_hotspot_replacement",
+      "pages": 27,
+      "tx_blocks_per_query": 11.4625,
+      "bm1_blocks_per_query": 11.5305,
+      "blocks_ratio": 0.9941025974589133,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "urls_80_20_uniform_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 8.13,
+      "bm1_blocks_per_query": 7.79,
+      "blocks_ratio": 1.0436456996148908,
+      "exact_ratio": 0.9994731296101159
+    },
+    {
+      "cell": "urls_80_20_uniform_replacement",
+      "pages": 45,
+      "tx_blocks_per_query": 7.646,
+      "bm1_blocks_per_query": 7.664,
+      "blocks_ratio": 0.997651356993737,
+      "exact_ratio": 1.0010816657652786
+    },
+    {
+      "cell": "urls_95_5_hotspot_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 7.341,
+      "bm1_blocks_per_query": 7.3805,
+      "blocks_ratio": 0.9946480590745884,
+      "exact_ratio": 0.997872340425532
+    },
+    {
+      "cell": "urls_95_5_hotspot_replacement",
+      "pages": 28,
+      "tx_blocks_per_query": 11.899,
+      "bm1_blocks_per_query": 11.8945,
+      "blocks_ratio": 1.0003783261171129,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "urls_95_5_uniform_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 6.6115,
+      "bm1_blocks_per_query": 6.633,
+      "blocks_ratio": 0.9967586310869893,
+      "exact_ratio": 0.9989350372736954
+    },
+    {
+      "cell": "urls_95_5_uniform_replacement",
+      "pages": 44,
+      "tx_blocks_per_query": 7.808,
+      "bm1_blocks_per_query": 7.7675,
+      "blocks_ratio": 1.0052140328290955,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "words_100k_80_20_hotspot_growth",
+      "pages": 49,
+      "tx_blocks_per_query": 6.2175,
+      "bm1_blocks_per_query": 6.329,
+      "blocks_ratio": 0.982382682888292,
+      "exact_ratio": 0.9994652406417113
+    },
+    {
+      "cell": "words_100k_80_20_hotspot_replacement",
+      "pages": 42,
+      "tx_blocks_per_query": 11.238,
+      "bm1_blocks_per_query": 11.211,
+      "blocks_ratio": 1.0024083489430025,
+      "exact_ratio": 0.9994802494802495
+    },
+    {
+      "cell": "words_100k_80_20_uniform_growth",
+      "pages": 49,
+      "tx_blocks_per_query": 6.4345,
+      "bm1_blocks_per_query": 6.2905,
+      "blocks_ratio": 1.0228916620300452,
+      "exact_ratio": 1.0005405405405405
+    },
+    {
+      "cell": "words_100k_80_20_uniform_replacement",
+      "pages": 69,
+      "tx_blocks_per_query": 6.309,
+      "bm1_blocks_per_query": 6.293,
+      "blocks_ratio": 1.0025425075480692,
+      "exact_ratio": 1.0010770059235325
+    },
+    {
+      "cell": "words_100k_95_5_hotspot_growth",
+      "pages": 49,
+      "tx_blocks_per_query": 6.0155,
+      "bm1_blocks_per_query": 6.0195,
+      "blocks_ratio": 0.9993354929811447,
+      "exact_ratio": 0.9994632313472893
+    },
+    {
+      "cell": "words_100k_95_5_hotspot_replacement",
+      "pages": 41,
+      "tx_blocks_per_query": 11.6045,
+      "bm1_blocks_per_query": 11.602,
+      "blocks_ratio": 1.0002154800896397,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "words_100k_95_5_uniform_growth",
+      "pages": 49,
+      "tx_blocks_per_query": 6.1775,
+      "bm1_blocks_per_query": 6.135,
+      "blocks_ratio": 1.0069274653626732,
+      "exact_ratio": 1.000537634408602
+    },
+    {
+      "cell": "words_100k_95_5_uniform_replacement",
+      "pages": 65,
+      "tx_blocks_per_query": 6.8835,
+      "bm1_blocks_per_query": 6.9155,
+      "blocks_ratio": 0.9953727134697419,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "words_80_20_hotspot_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 6.688,
+      "bm1_blocks_per_query": 6.6985,
+      "blocks_ratio": 0.9984324848846756,
+      "exact_ratio": 1.0026968716289104
+    },
+    {
+      "cell": "words_80_20_hotspot_replacement",
+      "pages": 27,
+      "tx_blocks_per_query": 11.2745,
+      "bm1_blocks_per_query": 11.3035,
+      "blocks_ratio": 0.9974344229663379,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "words_80_20_uniform_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 6.6775,
+      "bm1_blocks_per_query": 6.621,
+      "blocks_ratio": 1.008533454161003,
+      "exact_ratio": 0.9994609164420485
+    },
+    {
+      "cell": "words_80_20_uniform_replacement",
+      "pages": 45,
+      "tx_blocks_per_query": 8.4075,
+      "bm1_blocks_per_query": 8.457,
+      "blocks_ratio": 0.9941468605888613,
+      "exact_ratio": 1.0005367686527107
+    },
+    {
+      "cell": "words_95_5_hotspot_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 5.987,
+      "bm1_blocks_per_query": 6.0025,
+      "blocks_ratio": 0.997417742607247,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "words_95_5_hotspot_replacement",
+      "pages": 27,
+      "tx_blocks_per_query": 11.22,
+      "bm1_blocks_per_query": 11.225,
+      "blocks_ratio": 0.999554565701559,
+      "exact_ratio": 1.0010570824524312
+    },
+    {
+      "cell": "words_95_5_uniform_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 5.94,
+      "bm1_blocks_per_query": 5.88,
+      "blocks_ratio": 1.010204081632653,
+      "exact_ratio": 1.0016172506738545
+    },
+    {
+      "cell": "words_95_5_uniform_replacement",
+      "pages": 44,
+      "tx_blocks_per_query": 6.396,
+      "bm1_blocks_per_query": 6.4425,
+      "blocks_ratio": 0.9927823050058208,
+      "exact_ratio": 1.0005359056806002
+    },
+    {
+      "cell": "words_indep_80_20_hotspot_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 6.569,
+      "bm1_blocks_per_query": 6.799,
+      "blocks_ratio": 0.966171495808207,
+      "exact_ratio": 1.0010706638115632
+    },
+    {
+      "cell": "words_indep_80_20_hotspot_replacement",
+      "pages": 28,
+      "tx_blocks_per_query": 11.0575,
+      "bm1_blocks_per_query": 11.0045,
+      "blocks_ratio": 1.0048162115498205,
+      "exact_ratio": 1.0010476689366161
+    },
+    {
+      "cell": "words_indep_80_20_uniform_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 6.807,
+      "bm1_blocks_per_query": 6.7845,
+      "blocks_ratio": 1.0033163829316825,
+      "exact_ratio": 1.002691065662002
+    },
+    {
+      "cell": "words_indep_80_20_uniform_replacement",
+      "pages": 48,
+      "tx_blocks_per_query": 6.1735,
+      "bm1_blocks_per_query": 6.132,
+      "blocks_ratio": 1.0067677756033921,
+      "exact_ratio": 0.9983870967741936
+    },
+    {
+      "cell": "words_indep_95_5_hotspot_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 6.1165,
+      "bm1_blocks_per_query": 6.221,
+      "blocks_ratio": 0.9832020575470182,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "words_indep_95_5_hotspot_replacement",
+      "pages": 28,
+      "tx_blocks_per_query": 11.3935,
+      "bm1_blocks_per_query": 11.3855,
+      "blocks_ratio": 1.0007026481050458,
+      "exact_ratio": 1.0
+    },
+    {
+      "cell": "words_indep_95_5_uniform_growth",
+      "pages": 32,
+      "tx_blocks_per_query": 5.9825,
+      "bm1_blocks_per_query": 6.061,
+      "blocks_ratio": 0.9870483418577792,
+      "exact_ratio": 0.9989258861439313
+    },
+    {
+      "cell": "words_indep_95_5_uniform_replacement",
+      "pages": 45,
+      "tx_blocks_per_query": 6.593,
+      "bm1_blocks_per_query": 6.608,
+      "blocks_ratio": 0.9977300242130751,
+      "exact_ratio": 1.0005361930294907
+    }
+  ],
+  "counter_equality": "opt == sanitizer all32",
+  "profile_queries_per_build": 972972
+}
