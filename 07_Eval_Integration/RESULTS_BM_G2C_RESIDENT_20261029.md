@@ -61,3 +61,37 @@ sizeof(std::string)+string_heap(item.first)+sizeof(Node)+item.second.core->memor
 | 接线 | ⛔ 回滚，索引恢复 S0 版本 |
 | G4 性能观察 | 🟡 0.137/0.134 保留为**上界观察**，非验收结论 |
 | Context16 默认 | ✅ 不变 |
+
+---
+
+## 补充：已读到 `memory_bytes()` 与 `payload()` 的实际口径（下一步的起点）
+
+```cpp
+std::size_t memory_bytes()const{
+    return sizeof(*this)+route_bytes(pages_)+dirty_.size()*sizeof(Iterator)+root_->memory_bytes();
+}
+static std::size_t payload(const Pages::value_type& item){
+    return sizeof(std::string)+string_heap(item.first)+sizeof(Node)+item.second.core->memory().total();
+}
+```
+
+据此，一次分裂对 `memory_bytes()` 的精确变化是：
+
+```
+Δ = -payload(旧 target 节点) + payload(lower) + payload(upper) + Δroot
+```
+
+与我写进 `rebuild_by_split` 的公式**一致**。所以 `resident_` 的公式本身没错，
+`size/memory` 更可能来自**另外两处**，下一步按这个顺序查：
+
+1. **`dirty_`**：`insert` 里先 `mark_dirty(it)`（`resident_ += sizeof(Iterator)`），
+   我在分裂路径调了 `clear_dirty(target)`（`-=` 同一值）。若分裂后 `target` 的迭代器失效
+   （`pages_.insert` 可能改变 `std::map` 之外的结构？对 `std::map` 不会），此消彼长就错位；
+2. **`size_`**：`verify()` 的第一条判据是 `live==size_`（`live` = 各页 size 之和）。
+   分裂里 `lower` 复制 `[0,b)`、`upper` 复制 `[b,count)`，再加上新键——三者之和必须等于
+   原 2,048 + 1。若 `block_for` 选的 `b` 与实际插入位置不一致，`size_` 就对不上。
+   **这条最可疑**：`compare(key,upper_key)>=0` 决定插 upper，但 `b` 是 `block_for(key)`，
+   两者必须自洽（`upper_key` 必须等于第 `b` 块的首键）。
+
+**下一步**：写一个最小用例——一次分裂后立即 `verify()`，并在失败时分别打印
+`live`、`size_`、`resident_`、`memory_bytes()` 四个数，即可定位到上面哪一条。
