@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-29",
+  "head": "969743e15fd0b342afafa2040106b2fe3619bd52",
+  "purpose": "Read-only code and report verification for a prospective plan; no compilation, new benchmark or algorithm edits",
+  "source_sha256": {
+    "07_Eval_Integration/RESULTS_BM_U3_SENTINEL_BLOCKED_20261029.md": "82b0f45963f879aca433f166c14428a5cca62f8adc42c806bff91aac36560251",
+    "07_Eval_Integration/RESULTS_BM_U1B_20261029.md": "c677c2474989c79a5d4a2b1c03a81c30f6bae89e336bc9359a390e9619107398",
+    "07_Eval_Integration/RESULTS_BM_U2_STEPS_20261029.md": "28ddbb716b08cfcad6b286334aef4b2b134c6cd4b526afca385b7173a305d62c",
+    "07_Eval_Integration/RESULTS_BM_U3_SPLITCOST_20261029.md": "c3f77358e00402c6f59ef24b1b23789be845ea0712255b6af1b8655d8a107fc0",
+    "tools/u3_wire3.sh": "3ea78ce97afc2cd50221adf6202f0c850b2416f0ea100f9a124a799ce579f403",
+    "07_Eval_Integration/diagnostics/bm_n1_page_core.hpp": "c0ab7b95e9df2c68a9427313310b8ba2253748c0b6bccedae4323d738545a1f7",
+    "07_Eval_Integration/diagnostics/bm_n1_page_root.hpp": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b",
+    "07_Eval_Integration/diagnostics/bm_split_index.hpp": "02382f336285df9178e7487d49be372004beefea48be3345622bb517e251647e",
+    "07_Eval_Integration/diagnostics/diag_bm_u1_reasons.cpp": "9c85fb39bb463f8850bd88a380195613fa0561a7666ba0a2a36c6b10c71fc14f",
+    "07_Eval_Integration/diagnostics/diag_bm_u2_steps.cpp": "825c46f0da0ee293b4a5faa7b5e7aa961405e2e9329929d3aab8ce9acd4044a5",
+    "07_Eval_Integration/diagnostics/diag_bm_u3_splitcost.cpp": "f2934fef3ca25aa9afb8a4fc7da05cffc02ee01fe390dc83b085bb7f4c33e6ea",
+    "07_Eval_Integration/diagnostics/check_bm_split_block.cpp": "29330b0c5e5843609c8737b6c9f8c6c34841b96cac8522df5d5b2edca021de7d",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97"
+  },
+  "verified_facts": [
+    "Failed wire3 supplies only upper in staged, then calls prepare_root(target,end,staged); prepare_root excludes target, omitting retained lower page from next root",
+    "root sentinel rejects empty binding vector or nonempty first lower; duplicate/non-increasing separators raise root bounds; std::map enforces unique keys",
+    "Current Page retains extract_split/apply_drop/block_for and scan reserve; index wiring rolled back; core not byte-identical to S0",
+    "Original fit(fences,1,7,8,1) differs from extracted-page/lower fit(fences,16,1,7,3); fit divides target rank by block_size",
+    "apply_drop erases vector elements but retains capacities and original arena; whole-index space effect must be measured",
+    "Failed wire3 does not update resident accounting for staged page and new root; map insertion success not checked; b==0 is coerced to1",
+    "U1 reasons diagnostic replays only insert records, so replacement delete/update semantics are not preserved",
+    "U2 diagnostic calls find_counted rather than public find_base and samples initial rows; directory-step ratio is not latency ratio",
+    "Microbenchmark uses old split_at_block removed from current Page; current two-phase method and complete insertion/root path were not timed there",
+    "Unit test covers standalone Page split and reads; does not validate integrated root/map, allocation faults or long-run maintenance"
+  ],
+  "decisions": [
+    "Keep Context16 default and stopped T2/free-list decisions",
+    "Do not treat sentinel fallback as sufficient fix",
+    "Register a finite integration cycle centered on route/ownership/publication invariants before an implementation attempt",
+    "Use actual eligible-operation time and fallback frequency to estimate end-to-end gains"
+  ]
+}
