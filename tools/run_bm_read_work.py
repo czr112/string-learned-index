@@ -16,10 +16,18 @@ def main():
     if calibration['status']!='complete' or calibration['phase']!='calibrate':raise ValueError('calibration not complete')
     hashes=json.loads((args.calibration/'input_hashes.json').read_text())
     cases=json.loads((ROOT/'builds/bm_tx_query_bm1_20261030/cases.json').read_text())
-    if len(cases)!=32:raise ValueError('cell coverage')
-    for meta in cases.values():
-        for p in meta['paths']:
-            if sha(p)!=hashes[p]:raise ValueError('input drift')
+    manifests={}
+    for name in ('bm_audited_v3_20261025','bm_audited_100k_v3_20261025'):
+        manifests.update(json.loads((ROOT/'07_Eval_Integration/results'/name/'manifest.json').read_text()))
+    historical=json.loads((ROOT/'07_Eval_Integration/results/bm_query_recheck_20261024/cases.json').read_text())
+    if len(cases)!=32 or set(cases)!=set(manifests):raise ValueError('cell coverage')
+    for cell,meta in cases.items():
+        canonical=manifests[cell];old=historical[cell]
+        expected=(canonical['rows_sha256'],canonical['operations_sha256'],old['input_sha256']['pool'],
+                  old['final_sha256'],old['query_sha256'])
+        if len(meta['paths'])!=5:raise ValueError('input arity')
+        for p,h in zip(meta['paths'],expected):
+            if sha(p)!=h or hashes[p]!=h:raise ValueError('cell identity or input drift')
     run=Run(args.output)
     run.sources.update({str(Path(__file__).resolve()):sha(Path(__file__)),str(PROTOCOL):sha(PROTOCOL)})
     try:
