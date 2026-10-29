@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_red_20261030/check": "4c5db49ead8d79c81f959fb5c43821c5ba7bb50324c8a898bbca0659de417a9b"
+  },
+  "error": "regression.log: exit 1; output retained"
+}

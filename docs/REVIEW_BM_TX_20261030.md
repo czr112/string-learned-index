@@ -29,3 +29,18 @@ docstring was subsequently corrected. No reviewer ran compilers or benchmarks.
 
 Final empirical results and adoption limitations belong to the result report, not
 this static review. Pointwise confidence intervals do not imply universal acceptance.
+
+## Supplementary diagnostics and final evidence
+
+Both reviewers inspected the new allocation-only public-factory gate, the clean-source
+rebuild helper, the aggregation tool and final reporting. They found one additional
+source-identity gap: the read wrapper registered the shared Run module and C++ closure,
+but not its own Python source. The wrapper now adds its own hash before building, so
+finish() also checks its drift. The initial run is retained with this limitation;
+the corrected driver reruns both builds in a fresh v2 directory. No timing samples or
+candidate algorithm code changed for this correction.
+
+Both reviewers confirmed the self-hash fix and reported no remaining actionable
+finding. The corrected v2 opt and sanitizer gates each completed 32 cells and
+324,324 probes with zero allocations/mismatches and zero tracked bytes after
+destruction. The report retains the unresolved query-quality gates.

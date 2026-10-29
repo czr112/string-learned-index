@@ -1,0 +1,4634 @@
+{
+  "status": "complete",
+  "record_integrity": "passed",
+  "comparison_intervals": "pointwise, not simultaneous",
+  "cells": {
+    "urls_80_20_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.8252020955912521,
+        "ci95": [
+          0.8005829989836115,
+          0.8505782653799944
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.8600359861776508,
+        "ci95": [
+          0.8208147107541616,
+          0.9011313854754938
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.002663931976569,
+        "ci95": [
+          0.9733416690616632,
+          1.0328695384590831
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.1191606279929114,
+        "ci95": [
+          1.039426975897708,
+          1.2050105878460005
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0094435368775554,
+        "ci95": [
+          0.9806169165303383,
+          1.0391175564758304
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 2.2019494680078306,
+        "ci95": [
+          2.13102993646727,
+          2.2752291634615602
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0330443973472276,
+        "ci95": [
+          0.9099408590215715,
+          1.1728022940282072
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.2806101171529872,
+        "ci95": [
+          0.27047888346258725,
+          0.2911208329485168
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.32433790244804583,
+        "ci95": [
+          0.3121954622700502,
+          0.33695260718877457
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0029765388587104,
+      "maintenance_peak_ratio": 1.0033682339772567,
+      "jointly_passed": false
+    },
+    "urls_80_20_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.9117285132932231,
+        "ci95": [
+          0.8831327985655122,
+          0.9412501532069502
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.9633839586503516,
+        "ci95": [
+          0.9361020425545467,
+          0.9914609835185159
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0500050061126476,
+        "ci95": [
+          1.01099249863434,
+          1.090522940922811
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9575399496169924,
+        "ci95": [
+          0.9006062733490238,
+          1.0180728052259311
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.001603120731594,
+        "ci95": [
+          0.9658996179495869,
+          1.0386263673950729
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 0.5643196289290788,
+        "ci95": [
+          0.5456174920373588,
+          0.5836628191767141
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0762976636833046,
+        "ci95": [
+          0.9709735845711621,
+          1.1930465249080524
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.38892545908573584,
+        "ci95": [
+          0.3753265525523213,
+          0.40301708391378466
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.5294854610499427,
+        "ci95": [
+          0.5133028314004092,
+          0.5461782719927673
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0001332043189086,
+      "maintenance_peak_ratio": 0.9663110723459577,
+      "jointly_passed": false
+    },
+    "urls_80_20_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.8497048393236153,
+        "ci95": [
+          0.8156531513646352,
+          0.8851781088101306
+        ],
+        "verdict": "undecided"
+      },
+      "pure_bm1": {
+        "ratio": 0.8620846831535129,
+        "ci95": [
+          0.8212056853632541,
+          0.9049986065295546
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0348744546532758,
+        "ci95": [
+          0.9890630857381569,
+          1.0828077120021447
+        ],
+        "verdict": "undecided"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0891716112346208,
+        "ci95": [
+          1.0414789399918911,
+          1.1390482833274154
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9764436404449263,
+        "ci95": [
+          0.9358308685104035,
+          1.018818907398267
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 2.9318347127959754,
+        "ci95": [
+          2.7890156497719913,
+          3.081967210853828
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0053247810287418,
+        "ci95": [
+          0.9362628721380247,
+          1.0794809293703282
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.31369168558371086,
+        "ci95": [
+          0.30040044696058593,
+          0.3275709959821085
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.36035111051158747,
+        "ci95": [
+          0.3461031176463392,
+          0.3751856490920801
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 0.9990976591893832,
+      "maintenance_peak_ratio": 1.001475098907371,
+      "jointly_passed": false
+    },
+    "urls_80_20_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.379359472440191,
+        "ci95": [
+          0.3695950536599588,
+          0.38938185970017314
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.6094039160262958,
+        "ci95": [
+          0.5879970935402301,
+          0.6315900825839299
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9979807472120628,
+        "ci95": [
+          0.9612450817757806,
+          1.0361203304843178
+        ],
+        "verdict": "pass"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0677564211327417,
+        "ci95": [
+          1.0038514363783877,
+          1.1357295846319382
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0464183236946845,
+        "ci95": [
+          1.0063409803438323,
+          1.0880917398294483
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 0.4067196323865625,
+        "ci95": [
+          0.39262622662441937,
+          0.4213189240842532
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0793759848145654,
+        "ci95": [
+          0.9423933961184092,
+          1.2362698225529873
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.1729777599995934,
+        "ci95": [
+          0.16585761259697784,
+          0.1804035701827179
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.34371743641654157,
+        "ci95": [
+          0.3302579488981978,
+          0.35772545820896057
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.016247009721311,
+      "maintenance_peak_ratio": 0.9127327563719771,
+      "jointly_passed": false
+    },
+    "urls_95_5_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.550648820592185,
+        "ci95": [
+          0.5277225699005254,
+          0.5745710737305013
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.7109806940708969,
+        "ci95": [
+          0.6866498705489015,
+          0.7361736585451439
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9832717352363504,
+        "ci95": [
+          0.9499878825483559,
+          1.0177217236931344
+        ],
+        "verdict": "pass"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0590542664613634,
+        "ci95": [
+          1.0064776325021492,
+          1.1143774119666008
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9819566506814508,
+        "ci95": [
+          0.9188357732598963,
+          1.0494137166607618
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.5039463104898219,
+        "ci95": [
+          1.4537796317216205,
+          1.5558441289739176
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0096456809245868,
+        "ci95": [
+          0.862321191517163,
+          1.182140032087317
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.25179138477317276,
+        "ci95": [
+          0.23959602244112532,
+          0.26460748721974553
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.39671793566276675,
+        "ci95": [
+          0.3782777118901268,
+          0.4160570806303298
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0027893301206152,
+      "maintenance_peak_ratio": 0.9498284465088592,
+      "jointly_passed": false
+    },
+    "urls_95_5_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.5947526941682642,
+        "ci95": [
+          0.5787667407146764,
+          0.611180191148532
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.8717944920847757,
+        "ci95": [
+          0.847554276165835,
+          0.8967279828585789
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0062117635322563,
+        "ci95": [
+          0.9781578666819853,
+          1.03507025558673
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9868269399816422,
+        "ci95": [
+          0.9229081418869428,
+          1.0551726279957627
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0185297671313172,
+        "ci95": [
+          0.9738168029801629,
+          1.0652957346369667
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 0.9729511330319012,
+        "ci95": [
+          0.9422932302397596,
+          1.004606503463042
+        ],
+        "verdict": "target_not_met"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.1335450435991754,
+        "ci95": [
+          0.9943197841543852,
+          1.292264708341306
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.30502544986342045,
+        "ci95": [
+          0.296435855179942,
+          0.31386393865176904
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.6480372789874264,
+        "ci95": [
+          0.63000298881878,
+          0.6665878137257957
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0004674688934376,
+      "maintenance_peak_ratio": 0.9536042606914944,
+      "jointly_passed": false
+    },
+    "urls_95_5_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.4455658518077222,
+        "ci95": [
+          0.4302778313894,
+          0.46139706444107514
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.6655566946783579,
+        "ci95": [
+          0.6473788326594223,
+          0.6842449760235202
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0068568775828395,
+        "ci95": [
+          0.9671583734502534,
+          1.0481848679232975
+        ],
+        "verdict": "pass"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0330281959838938,
+        "ci95": [
+          0.9819894866228824,
+          1.0867196321701145
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9696197167572956,
+        "ci95": [
+          0.9153202242596216,
+          1.0271404151317325
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.242253372304502,
+        "ci95": [
+          1.1988929230904481,
+          1.2871820420992548
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9699361641797822,
+        "ci95": [
+          0.8861468546438331,
+          1.0616481429163493
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.19298360641223877,
+        "ci95": [
+          0.18609571025993826,
+          0.20012644188226247
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.37528149503789954,
+        "ci95": [
+          0.3650624762765373,
+          0.38578656988892124
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0019286919887092,
+      "maintenance_peak_ratio": 0.9278690425311775,
+      "jointly_passed": false
+    },
+    "urls_95_5_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.21809066699524052,
+        "ci95": [
+          0.2102094611070878,
+          0.22626735628325703
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.5600132127363178,
+        "ci95": [
+          0.5340870539730529,
+          0.5871979036119374
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9475307902508835,
+        "ci95": [
+          0.9024233775225659,
+          0.9948928860179191
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9659218458071037,
+        "ci95": [
+          0.9129903782803422,
+          1.0219220644633282
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0053436391938633,
+        "ci95": [
+          0.9526677127439667,
+          1.0609321795491509
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 0.8391732568521582,
+        "ci95": [
+          0.8041386743990303,
+          0.8757342202725766
+        ],
+        "verdict": "pass"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9228312555989452,
+        "ci95": [
+          0.8457339865276807,
+          1.006956726200399
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.1683184940056374,
+        "ci95": [
+          0.1642355930868686,
+          0.17250289594254214
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.482937143796951,
+        "ci95": [
+          0.4624920952947653,
+          0.5042859915478359
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0155025369328403,
+      "maintenance_peak_ratio": 0.9147236090537803,
+      "jointly_passed": false
+    },
+    "words_100k_80_20_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.8041508929828735,
+        "ci95": [
+          0.77600719591936,
+          0.8333152863602458
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.8455946456225916,
+        "ci95": [
+          0.816993610162627,
+          0.8751969364402565
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9902072281207016,
+        "ci95": [
+          0.9538697373189552,
+          1.0279289888977996
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9766036098768,
+        "ci95": [
+          0.9132176534541173,
+          1.0443891521555178
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0003422051863349,
+        "ci95": [
+          0.9531081972095351,
+          1.0499170297840432
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 2.6788604064590786,
+        "ci95": [
+          2.5718166309842445,
+          2.7903595422927583
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0584335951137764,
+        "ci95": [
+          0.9263223912090105,
+          1.209386371199894
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.30097787853956626,
+        "ci95": [
+          0.2925988615210637,
+          0.30959684155728207
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.3657987212817493,
+        "ci95": [
+          0.3524285020918528,
+          0.37967617175437346
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.004416428992919,
+      "maintenance_peak_ratio": 1.0040427461105452,
+      "jointly_passed": false
+    },
+    "words_100k_80_20_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.8948354168335105,
+        "ci95": [
+          0.8410983477495483,
+          0.9520057022606754
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.9535756325624718,
+        "ci95": [
+          0.9155204071058414,
+          0.9932126907923695
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0289179596280968,
+        "ci95": [
+          0.9701652752360743,
+          1.0912286748127888
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9895349947350812,
+        "ci95": [
+          0.9376460959393631,
+          1.044295401053619
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0243416230822169,
+        "ci95": [
+          0.9609433351387968,
+          1.091922616464326
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.3394502515294857,
+        "ci95": [
+          1.2742108918599622,
+          1.4080298542288556
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9501368674924604,
+        "ci95": [
+          0.8548601088694366,
+          1.0560325105850323
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.4408389153714528,
+        "ci95": [
+          0.41681153916829883,
+          0.46625136552999646
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.6086556762267447,
+        "ci95": [
+          0.5887342977399062,
+          0.629251147122229
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0000116421211944,
+      "maintenance_peak_ratio": 0.9625925731351328,
+      "jointly_passed": false
+    },
+    "words_100k_80_20_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.8176955805723161,
+        "ci95": [
+          0.782597160258779,
+          0.8543681173931227
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.868095004220582,
+        "ci95": [
+          0.8264863697522499,
+          0.9117983840176702
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0071590571381277,
+        "ci95": [
+          0.9612592268049719,
+          1.0552505901523752
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0757071353364958,
+        "ci95": [
+          1.0207673747073644,
+          1.1336038647841606
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0129314005242416,
+        "ci95": [
+          0.9484202853753196,
+          1.0818305322961006
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 2.708022175546046,
+        "ci95": [
+          2.571737571532318,
+          2.8515289368657046
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9996634011992573,
+        "ci95": [
+          0.8986528383913297,
+          1.1120277742472313
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.336301470168997,
+        "ci95": [
+          0.31856721773418933,
+          0.35502296702794345
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.4083922376560867,
+        "ci95": [
+          0.38639313420850535,
+          0.43164384926090726
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0023125553644052,
+      "maintenance_peak_ratio": 1.001864734752362,
+      "jointly_passed": false
+    },
+    "words_100k_80_20_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.4745391292493295,
+        "ci95": [
+          0.4587151884895926,
+          0.4909089361749376
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.6616215141050605,
+        "ci95": [
+          0.6359770221751232,
+          0.6883000684985999
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9866155008569613,
+        "ci95": [
+          0.9507107762728864,
+          1.023876210120743
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0259186682261243,
+        "ci95": [
+          0.9800904108268429,
+          1.073889818926936
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9930302488486988,
+        "ci95": [
+          0.934889425029441,
+          1.0547868536404237
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.1544223051912001,
+        "ci95": [
+          1.1238262435346047,
+          1.1858513416909082
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.019317555274199,
+        "ci95": [
+          0.8607485525548862,
+          1.207098490501286
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.2672938083263428,
+        "ci95": [
+          0.2577662701324342,
+          0.2771735026964251
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.44097919132553737,
+        "ci95": [
+          0.42849980896772366,
+          0.4538220160484893
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0056856915765258,
+      "maintenance_peak_ratio": 0.9237898766988097,
+      "jointly_passed": false
+    },
+    "words_100k_95_5_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.5507523197759466,
+        "ci95": [
+          0.5370022744689604,
+          0.5648544376065198
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.7522194256534558,
+        "ci95": [
+          0.7284108238741671,
+          0.7768062277286569
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0046685098673032,
+        "ci95": [
+          0.9694431158659192,
+          1.0411738432093716
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.972152169456174,
+        "ci95": [
+          0.9181026109921754,
+          1.02938367592378
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0321776748915985,
+        "ci95": [
+          0.958751019247407,
+          1.111227765244963
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.6388382993330957,
+        "ci95": [
+          1.5694210643701338,
+          1.711325935617475
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9670067876172427,
+        "ci95": [
+          0.8912105371529989,
+          1.049249406638563
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.28456949663133146,
+        "ci95": [
+          0.2775572094637707,
+          0.2917589442892118
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.4790689128015222,
+        "ci95": [
+          0.46105393239428843,
+          0.49778780113854554
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0034680612723388,
+      "maintenance_peak_ratio": 0.9614142605914374,
+      "jointly_passed": false
+    },
+    "words_100k_95_5_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.7366888356853681,
+        "ci95": [
+          0.7104763272653887,
+          0.7638684355780672
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.9871489130849408,
+        "ci95": [
+          0.9400819434796898,
+          1.0365723789969092
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.093715404351514,
+        "ci95": [
+          1.0513885634028395,
+          1.137746240879992
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0293482963789948,
+        "ci95": [
+          0.9750887827667971,
+          1.0866271194832764
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9633715207726271,
+        "ci95": [
+          0.9212016953619013,
+          1.0074717531551642
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.056695717425693,
+        "ci95": [
+          1.014083227474855,
+          1.1010988141537792
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9279059766406299,
+        "ci95": [
+          0.7375878922629131,
+          1.1673313926613298
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.3764316334133348,
+        "ci95": [
+          0.3598716353422365,
+          0.3937536630234122
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.7744969091384767,
+        "ci95": [
+          0.7369552095798578,
+          0.8139510440628123
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0010392580164442,
+      "maintenance_peak_ratio": 0.9595985080209493,
+      "jointly_passed": false
+    },
+    "words_100k_95_5_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.3840720919721999,
+        "ci95": [
+          0.3686931660950826,
+          0.40009250346088626
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.7100433279842289,
+        "ci95": [
+          0.6834704196480017,
+          0.7376493746058105
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0276032342732258,
+        "ci95": [
+          0.9959226435990397,
+          1.060291593805682
+        ],
+        "verdict": "undecided"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.052478880792316,
+        "ci95": [
+          0.9484321595778461,
+          1.1679399346885246
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0049792362442025,
+        "ci95": [
+          0.9361573271658303,
+          1.0788606102562424
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.2523880565756476,
+        "ci95": [
+          1.2220519302921398,
+          1.2834772446031588
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9927911996157905,
+        "ci95": [
+          0.884601296710943,
+          1.114213114653201
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.1656217157269752,
+        "ci95": [
+          0.15866993667460835,
+          0.17287807189713617
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.4235131870854656,
+        "ci95": [
+          0.4119396679507372,
+          0.4354118663239253
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0053950766276067,
+      "maintenance_peak_ratio": 0.8873253627838382,
+      "jointly_passed": false
+    },
+    "words_100k_95_5_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.3323575837505024,
+        "ci95": [
+          0.3209654297219244,
+          0.34415408404628833
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.6653385833895271,
+        "ci95": [
+          0.6351936467308781,
+          0.6969141344928119
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0323598873936215,
+        "ci95": [
+          0.992830695918472,
+          1.0734629191872693
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9954110859996345,
+        "ci95": [
+          0.9405101220144462,
+          1.0535168170319305
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0066139484650163,
+        "ci95": [
+          0.9612779228521067,
+          1.054088122858329
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.1629402669333393,
+        "ci95": [
+          1.1064653472536077,
+          1.222297713897589
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0392260611777087,
+        "ci95": [
+          0.9498598991963716,
+          1.1370001061679307
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.2900929677890868,
+        "ci95": [
+          0.2773958406284578,
+          0.3033712753948441
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.6174421723604117,
+        "ci95": [
+          0.5875161796355137,
+          0.6488924891322257
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0038982477064342,
+      "maintenance_peak_ratio": 0.9203055965166516,
+      "jointly_passed": false
+    },
+    "words_80_20_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.8605290299058522,
+        "ci95": [
+          0.816721546508144,
+          0.9066862683820758
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.9025722165603648,
+        "ci95": [
+          0.8610923727307743,
+          0.9460501938058521
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9992519930474104,
+        "ci95": [
+          0.9433865860371754,
+          1.0584256341862748
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.1009732145150317,
+        "ci95": [
+          1.0283325132561845,
+          1.1787452049350753
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9608438688977201,
+        "ci95": [
+          0.9275169706335102,
+          0.9953682462195416
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 2.8545188259460463,
+        "ci95": [
+          2.705728301774574,
+          3.011491479885944
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9627487462004786,
+        "ci95": [
+          0.7830203604013385,
+          1.1837305837558512
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.32441300192817996,
+        "ci95": [
+          0.3078453877232695,
+          0.3418722515169198
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.3930015684989476,
+        "ci95": [
+          0.37349753601508323,
+          0.41352410109713733
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 1.0027397627624675,
+      "maintenance_peak_ratio": 1.0039441853697166,
+      "jointly_passed": false
+    },
+    "words_80_20_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.9145558663693264,
+        "ci95": [
+          0.8856148465539277,
+          0.9444426501714225
+        ],
+        "verdict": "target_not_met"
+      },
+      "pure_bm1": {
+        "ratio": 0.965696121813817,
+        "ci95": [
+          0.9478493587269415,
+          0.9838789160956779
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9999854161052477,
+        "ci95": [
+          0.9664002899866008,
+          1.034737719746597
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0335156111122332,
+        "ci95": [
+          0.9627128532559892,
+          1.1095255608150338
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0004830203475703,
+        "ci95": [
+          0.9502858609807654,
+          1.0533317553212096
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.4962712940413934,
+        "ci95": [
+          1.439806806258844,
+          1.554950133337414
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.8890824202992018,
+        "ci95": [
+          0.7731384265436149,
+          1.0224139985111633
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.45457785603341117,
+        "ci95": [
+          0.4333429976054361,
+          0.47685327405262884
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.6289051992832527,
+        "ci95": [
+          0.606878336994543,
+          0.6517315342713648
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 0.9994024531938606,
+      "maintenance_peak_ratio": 0.9441541171594363,
+      "jointly_passed": false
+    },
+    "words_80_20_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.8636150094087466,
+        "ci95": [
+          0.8325371517843864,
+          0.8958529753026897
+        ],
+        "verdict": "undecided"
+      },
+      "pure_bm1": {
+        "ratio": 0.8874609208418969,
+        "ci95": [
+          0.8571781188103521,
+          0.9188135683101806
+        ],
+        "verdict": "undecided"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9820856806316042,
+        "ci95": [
+          0.9461064987767903,
+          1.0194331033013955
+        ],
+        "verdict": "pass"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0752247530281083,
+        "ci95": [
+          0.9879933873832026,
+          1.1701579021560282
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9799963072982857,
+        "ci95": [
+          0.9046328211535949,
+          1.0616382026616895
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 2.9047004832413945,
+        "ci95": [
+          2.8062384580754136,
+          3.0066172292176785
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9664324939470633,
+        "ci95": [
+          0.8949238276930688,
+          1.0436550424234217
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.3416451630433308,
+        "ci95": [
+          0.3313974330295201,
+          0.35220978136094017
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.4126985762870103,
+        "ci95": [
+          0.4001073461998489,
+          0.4256860477244333
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0025155735642972,
+      "maintenance_peak_ratio": 1.002665802612781,
+      "jointly_passed": false
+    },
+    "words_80_20_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.5043461562068478,
+        "ci95": [
+          0.47894777147817,
+          0.5310914058448978
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.6982185511547466,
+        "ci95": [
+          0.6650760635042288,
+          0.7330126160427269
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9449424430949473,
+        "ci95": [
+          0.9006297877200905,
+          0.9914353632724394
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.073891902448866,
+        "ci95": [
+          0.9943262436336803,
+          1.1598243790999758
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0295224515574464,
+        "ci95": [
+          0.9743554466185327,
+          1.0878129556716272
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.1244031964092838,
+        "ci95": [
+          1.0818858277933336,
+          1.168591468356791
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9687993986574687,
+        "ci95": [
+          0.8614233862189935,
+          1.0895597796093108
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.2513248262493529,
+        "ci95": [
+          0.24046724546803125,
+          0.2626726486858051
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.4467193300864561,
+        "ci95": [
+          0.4241024764407711,
+          0.4705423121969481
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0050132878331743,
+      "maintenance_peak_ratio": 0.8855273322949553,
+      "jointly_passed": false
+    },
+    "words_95_5_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.6401569454528664,
+        "ci95": [
+          0.6209902621755737,
+          0.6599152028179154
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.8099182192428165,
+        "ci95": [
+          0.7743110066988911,
+          0.8471628534095514
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0048257894621833,
+        "ci95": [
+          0.9682384287517791,
+          1.042795696995769
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9387716644234755,
+        "ci95": [
+          0.8796054985300202,
+          1.001917608970409
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0194624360751114,
+        "ci95": [
+          0.9615477100380171,
+          1.080865408672347
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.7310244581952972,
+        "ci95": [
+          1.6545949314712027,
+          1.8109844396815582
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0295233663178665,
+        "ci95": [
+          0.8965861342256448,
+          1.1821712620058442
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.3099874925082293,
+        "ci95": [
+          0.298872937444511,
+          0.32151537818435
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.5245160643728553,
+        "ci95": [
+          0.495493121229507,
+          0.555238993232679
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0041046137191763,
+      "maintenance_peak_ratio": 0.9514553457111284,
+      "jointly_passed": false
+    },
+    "words_95_5_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.731692814123144,
+        "ci95": [
+          0.6980267023674172,
+          0.7669826561414884
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.9283665762788964,
+        "ci95": [
+          0.8879707570260628,
+          0.9706000936768501
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0121143021404804,
+        "ci95": [
+          0.9642883610702387,
+          1.0623122729184284
+        ],
+        "verdict": "undecided"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9857638542114641,
+        "ci95": [
+          0.9277102824921174,
+          1.0474502596429907
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9936123402960387,
+        "ci95": [
+          0.9527810356904743,
+          1.036193465031665
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.162744607981488,
+        "ci95": [
+          1.1210211241986596,
+          1.2060210054975167
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0293561567733671,
+        "ci95": [
+          0.8957068462437502,
+          1.1829474140235534
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.37746144236778556,
+        "ci95": [
+          0.3565675401010568,
+          0.3995796713127304
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.7759299944911415,
+        "ci95": [
+          0.7391481035376273,
+          0.814542245957848
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0016429678320249,
+      "maintenance_peak_ratio": 0.9337620560389568,
+      "jointly_passed": false
+    },
+    "words_95_5_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.530012511748834,
+        "ci95": [
+          0.5131155345940748,
+          0.5474659090813498
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.774259217671225,
+        "ci95": [
+          0.7449011620938016,
+          0.8047743333676907
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9987559691270599,
+        "ci95": [
+          0.958595942084005,
+          1.0405984858420327
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.1676408608766686,
+        "ci95": [
+          1.1268648499680762,
+          1.2098923664425527
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0414692136294628,
+        "ci95": [
+          0.9869118529271321,
+          1.0990425535177524
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.5790041295193187,
+        "ci95": [
+          1.5362732970024597,
+          1.6229235031968854
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.05011785959868,
+        "ci95": [
+          0.951789763365751,
+          1.158604096716212
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.21688501138528066,
+        "ci95": [
+          0.20668130163795326,
+          0.22759247106926214
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.4636107394877606,
+        "ci95": [
+          0.4489990845171167,
+          0.47869789756819536
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0043484363731408,
+      "maintenance_peak_ratio": 0.9492455971108547,
+      "jointly_passed": false
+    },
+    "words_95_5_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.33257589034613805,
+        "ci95": [
+          0.3208527549710443,
+          0.3447273589703421
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.6958973704970541,
+        "ci95": [
+          0.6710075223657311,
+          0.7217104639264569
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9499924433506173,
+        "ci95": [
+          0.9207660797295121,
+          0.980146491374219
+        ],
+        "verdict": "pass"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9482733717137803,
+        "ci95": [
+          0.8910745309506861,
+          1.009143855275543
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.080368919490332,
+        "ci95": [
+          1.0308704793192556,
+          1.1322440846026327
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.2614771115722025,
+        "ci95": [
+          1.1994031704681483,
+          1.326763628946741
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0291226820276402,
+        "ci95": [
+          0.964398202026858,
+          1.0981910713208365
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.2641404579664488,
+        "ci95": [
+          0.25286809018777134,
+          0.2759153259824769
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.6211005913668062,
+        "ci95": [
+          0.600529211739941,
+          0.6423766522172983
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.004479123662057,
+      "maintenance_peak_ratio": 0.8848050222190228,
+      "jointly_passed": false
+    },
+    "words_indep_80_20_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.856436186588602,
+        "ci95": [
+          0.8308205414952186,
+          0.8828416066583832
+        ],
+        "verdict": "undecided"
+      },
+      "pure_bm1": {
+        "ratio": 0.8774598730175539,
+        "ci95": [
+          0.852489195423349,
+          0.9031619789311571
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9977235374631681,
+        "ci95": [
+          0.9730536218168514,
+          1.0230189116909554
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0879591453745967,
+        "ci95": [
+          1.059320937015073,
+          1.1173715732830651
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9637656684311715,
+        "ci95": [
+          0.9070100739509537,
+          1.0240727091381896
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 2.8428709176303473,
+        "ci95": [
+          2.7730837581856234,
+          2.9144143340251136
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9202148362832537,
+        "ci95": [
+          0.8489426670294346,
+          0.9974705923061532
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.30248806810930834,
+        "ci95": [
+          0.29074627787301394,
+          0.3147040506171659
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.3748644730275705,
+        "ci95": [
+          0.35985715088968356,
+          0.39049765383519197
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0034084679658741,
+      "maintenance_peak_ratio": 1.0016235993114475,
+      "jointly_passed": false
+    },
+    "words_indep_80_20_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.94059874686941,
+        "ci95": [
+          0.9056228126337801,
+          0.9769254818562904
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.9887155357097864,
+        "ci95": [
+          0.9623098832722399,
+          1.0158457556621978
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0278842768902392,
+        "ci95": [
+          0.9853838989348837,
+          1.0722177293745174
+        ],
+        "verdict": "undecided"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9983190784451241,
+        "ci95": [
+          0.9666012794018146,
+          1.031077656967615
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0155686819672596,
+        "ci95": [
+          0.9350085846252569,
+          1.103069816418942
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.487870297726218,
+        "ci95": [
+          1.4439375490194684,
+          1.5331397291795594
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 0.9236204259584563,
+        "ci95": [
+          0.830229474335736,
+          1.0275167500289275
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.4211563811449468,
+        "ci95": [
+          0.40115992299496367,
+          0.44214959474238036
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.5943063647715207,
+        "ci95": [
+          0.5764203339164118,
+          0.6127473901001527
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.00035379408643,
+      "maintenance_peak_ratio": 0.9440884475497483,
+      "jointly_passed": false
+    },
+    "words_indep_80_20_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.8541262792227013,
+        "ci95": [
+          0.8285204424438188,
+          0.8805234771359124
+        ],
+        "verdict": "undecided"
+      },
+      "pure_bm1": {
+        "ratio": 0.8936612759183044,
+        "ci95": [
+          0.8615469380334458,
+          0.9269726822996709
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.989210678100324,
+        "ci95": [
+          0.955837767489051,
+          1.0237487981232254
+        ],
+        "verdict": "pass"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0484219505689691,
+        "ci95": [
+          0.9808870553916786,
+          1.1206066798342285
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9952241505740362,
+        "ci95": [
+          0.9488834772614657,
+          1.0438279658366174
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 3.0093359973291385,
+        "ci95": [
+          2.8794758844245303,
+          3.1450526096803353
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0296870818053445,
+        "ci95": [
+          0.9167063228298901,
+          1.1565923131890015
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.35911463879743255,
+        "ci95": [
+          0.34764496422723123,
+          0.3709627265428074
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.44062788762876554,
+        "ci95": [
+          0.42383347880333005,
+          0.45808777519031274
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "terminal_ratio": 0.9985171604971557,
+      "maintenance_peak_ratio": 0.9964900440311786,
+      "jointly_passed": false
+    },
+    "words_indep_80_20_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.4860839151615274,
+        "ci95": [
+          0.46896483187300037,
+          0.5038279131402862
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.7007878875028722,
+        "ci95": [
+          0.6760845520763608,
+          0.7263938537901548
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9791624323942628,
+        "ci95": [
+          0.9368227350196323,
+          1.0234156721144874
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9957330534449265,
+        "ci95": [
+          0.9156849279352576,
+          1.082778894219015
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0112194045568716,
+        "ci95": [
+          0.9732613633392052,
+          1.0506578424566162
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.162242802259873,
+        "ci95": [
+          1.1093743302821149,
+          1.2176307802807829
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0327604507989954,
+        "ci95": [
+          0.9420827801249166,
+          1.1321660593277352
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.2548791155435412,
+        "ci95": [
+          0.2432555280390451,
+          0.267058118119439
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.44276329749647825,
+        "ci95": [
+          0.42550741943070647,
+          0.46071896436550797
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.008437088207488,
+      "maintenance_peak_ratio": 0.89661849836085,
+      "jointly_passed": false
+    },
+    "words_indep_95_5_hotspot_growth": {
+      "write_bm1": {
+        "ratio": 0.6363320199255592,
+        "ci95": [
+          0.6171524446608075,
+          0.6561076490673047
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.8080878223338246,
+        "ci95": [
+          0.7774866793249446,
+          0.8398933974935717
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "mixed_find_bm1": {
+        "ratio": 0.9981938640926286,
+        "ci95": [
+          0.9643278852904177,
+          1.0332491733474027
+        ],
+        "verdict": "pass"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.0576667652483935,
+        "ci95": [
+          0.9977387461294527,
+          1.1211942912417066
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9949695174435789,
+        "ci95": [
+          0.9522160189989708,
+          1.0396426030331025
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.7423508959130218,
+        "ci95": [
+          1.6743891911657327,
+          1.8130710951229647
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0485364610874675,
+        "ci95": [
+          0.9444823631916821,
+          1.1640542513833068
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.30729555782443874,
+        "ci95": [
+          0.2952095865525975,
+          0.3198763324774627
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.5137567071155386,
+        "ci95": [
+          0.49286684935343555,
+          0.5355319686289657
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0045186779213493,
+      "maintenance_peak_ratio": 0.9599789673238985,
+      "jointly_passed": false
+    },
+    "words_indep_95_5_hotspot_replacement": {
+      "write_bm1": {
+        "ratio": 0.720077855507386,
+        "ci95": [
+          0.6956465387893553,
+          0.7453672074535018
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.9440363232262117,
+        "ci95": [
+          0.9227530628885905,
+          0.965810481062651
+        ],
+        "verdict": "target_not_met"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0415286836261068,
+        "ci95": [
+          1.0153174704587227,
+          1.0684165597247373
+        ],
+        "verdict": "undecided"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9748010629086671,
+        "ci95": [
+          0.9422077564355028,
+          1.0085218528053095
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.0308004635962824,
+        "ci95": [
+          0.9741445323772946,
+          1.0907514854672267
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.1821402845490183,
+        "ci95": [
+          1.1513804007898405,
+          1.2137219388092653
+        ],
+        "verdict": "regression"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.077304796743242,
+        "ci95": [
+          0.9634560546293475,
+          1.2046067067713726
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.40372849547654815,
+        "ci95": [
+          0.3841128950133971,
+          0.42434581128569543
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.7610957060110328,
+        "ci95": [
+          0.7354282534655808,
+          0.7876589877785313
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0003379938399433,
+      "maintenance_peak_ratio": 0.9407623336716852,
+      "jointly_passed": false
+    },
+    "words_indep_95_5_uniform_growth": {
+      "write_bm1": {
+        "ratio": 0.5528014381370212,
+        "ci95": [
+          0.536936964141015,
+          0.5691346478543101
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm1": {
+        "ratio": 0.7968924665693738,
+        "ci95": [
+          0.7639386403447447,
+          0.831267813588334
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0086970852972401,
+        "ci95": [
+          0.9811337549869449,
+          1.0370347617901359
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 1.1052880187821277,
+        "ci95": [
+          1.0487626192294501,
+          1.1648599807656221
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 0.9983845346526524,
+        "ci95": [
+          0.9386162972155212,
+          1.061958632074251
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.5382470088133502,
+        "ci95": [
+          1.4759046806393912,
+          1.6032226817643347
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0227973347797847,
+        "ci95": [
+          0.9330768411122139,
+          1.1211449496331707
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.23609869541830977,
+        "ci95": [
+          0.22520139139111797,
+          0.24752331073042527
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_bm0": {
+        "ratio": 0.4862646436379352,
+        "ci95": [
+          0.4626254535440815,
+          0.5111117467508682
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.0055819939686124,
+      "maintenance_peak_ratio": 0.949816641375822,
+      "jointly_passed": false
+    },
+    "words_indep_95_5_uniform_replacement": {
+      "write_bm1": {
+        "ratio": 0.3463355411748396,
+        "ci95": [
+          0.33469515450545784,
+          0.35838076968309696
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm1": {
+        "ratio": 0.7183267365427176,
+        "ci95": [
+          0.6894234800185729,
+          0.7484417275985584
+        ],
+        "verdict": "pass"
+      },
+      "mixed_find_bm1": {
+        "ratio": 1.0376299892665644,
+        "ci95": [
+          0.9933756753942503,
+          1.0838558073188373
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm0": {
+        "ratio": 0.9822544696184576,
+        "ci95": [
+          0.9415646386248195,
+          1.024702716634079
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "exact_query_bm1": {
+        "ratio": 1.005855235757562,
+        "ci95": [
+          0.9790609870261057,
+          1.0333827705402416
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "pure_ctx16": {
+        "ratio": 1.2487937985189752,
+        "ci95": [
+          1.196965998056646,
+          1.3028657069218172
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "new_terminal_find_bm1": {
+        "ratio": 1.0823606690406782,
+        "ci95": [
+          0.9967927983664995,
+          1.1752739584455218
+        ],
+        "verdict": "measurement_unresolved"
+      },
+      "write_bm0": {
+        "ratio": 0.28666072338679477,
+        "ci95": [
+          0.27793546265429614,
+          0.29565989725769987
+        ],
+        "verdict": "pass"
+      },
+      "pure_bm0": {
+        "ratio": 0.6489863365764622,
+        "ci95": [
+          0.6196373772806976,
+          0.6797254015103414
+        ],
+        "verdict": "pass"
+      },
+      "terminal_ratio": 1.00459550936096,
+      "maintenance_peak_ratio": 0.8840501012165956,
+      "jointly_passed": false
+    }
+  },
+  "summary": {
+    "write_bm1": {
+      "verdicts": {
+        "measurement_unresolved": 18,
+        "undecided": 4,
+        "pass": 9,
+        "target_not_met": 1
+      },
+      "ratio_range": [
+        0.21809066699524052,
+        0.94059874686941
+      ],
+      "median_ratio": 0.6382444826892129
+    },
+    "pure_bm1": {
+      "verdicts": {
+        "pass": 16,
+        "measurement_unresolved": 14,
+        "undecided": 1,
+        "target_not_met": 1
+      },
+      "ratio_range": [
+        0.5600132127363178,
+        0.9887155357097864
+      ],
+      "median_ratio": 0.827756432432704
+    },
+    "mixed_find_bm1": {
+      "verdicts": {
+        "measurement_unresolved": 20,
+        "undecided": 5,
+        "pass": 7
+      },
+      "ratio_range": [
+        0.9449424430949473,
+        1.093715404351514
+      ],
+      "median_ratio": 1.003666220921936
+    },
+    "exact_query_bm0": {
+      "verdicts": {
+        "measurement_unresolved": 32
+      },
+      "ratio_range": [
+        0.9387716644234755,
+        1.1676408608766686
+      ],
+      "median_ratio": 1.0311882461814443
+    },
+    "exact_query_bm1": {
+      "verdicts": {
+        "measurement_unresolved": 32
+      },
+      "ratio_range": [
+        0.9608438688977201,
+        1.080368919490332
+      ],
+      "median_ratio": 1.0051614377190328
+    },
+    "pure_ctx16": {
+      "verdicts": {
+        "regression": 11,
+        "measurement_unresolved": 19,
+        "target_not_met": 1,
+        "pass": 1
+      },
+      "ratio_range": [
+        0.4067196323865625,
+        3.0093359973291385
+      ],
+      "median_ratio": 1.4136602746278517
+    },
+    "new_terminal_find_bm1": {
+      "verdicts": {
+        "measurement_unresolved": 32
+      },
+      "ratio_range": [
+        0.8890824202992018,
+        1.1335450435991754
+      ],
+      "median_ratio": 1.021057445026992
+    },
+    "write_bm0": {
+      "verdicts": {
+        "measurement_unresolved": 21,
+        "pass": 11
+      },
+      "ratio_range": [
+        0.1656217157269752,
+        0.45457785603341117
+      ],
+      "median_ratio": 0.30173297332443727
+    },
+    "pure_bm0": {
+      "verdicts": {
+        "pass": 21,
+        "measurement_unresolved": 11
+      },
+      "ratio_range": [
+        0.32433790244804583,
+        0.7759299944911415
+      ],
+      "median_ratio": 0.4713398261446414
+    }
+  },
+  "semantic_checks": 37677373,
+  "allocation_faults_final_sanitizer": 438,
+  "clean_source_revision": "10e0494",
+  "clean_source_semantic_checks": 37677373,
+  "read_allocations": {
+    "opt": {
+      "cells": 32,
+      "queries": 324324,
+      "allocations": 0
+    },
+    "sanitizer": {
+      "cells": 32,
+      "queries": 324324,
+      "allocations": 0
+    }
+  },
+  "terminal_space_range": [
+    0.9985171604971557,
+    1.016247009721311
+  ],
+  "maintenance_peak_range": [
+    0.8840501012165956,
+    1.0040427461105452
+  ],
+  "joint_pass_cells": [],
+  "historical_query_identity": "32/32 query and final-state SHA matched for both direct controls",
+  "point_inputs": {
+    "words_95_5_uniform_growth": {
+      "point_operations": 20000,
+      "point_stream_sha256": "51ed416965e68476a6635ebd45f13a17bcb1cc173bf9881276aa25de50181ab9",
+      "original_operations_sha256": "f4ce9c81c3c3ff21b7cd132496c0c9626929a482f0c1121f7d81988bf5b91637"
+    },
+    "urls_80_20_hotspot_growth": {
+      "point_operations": 20000,
+      "point_stream_sha256": "cd1f056ef8f769ea21486c14fb2758ac710f251c3fe3a2daa85571d3193a9331",
+      "original_operations_sha256": "4581db0e64f4ed240f9a82634a328d9034a302204f17831d177260a8653bfd07"
+    },
+    "words_indep_80_20_uniform_growth": {
+      "point_operations": 20000,
+      "point_stream_sha256": "b0c96ae72a0540115185b51107c45e1e1f0144208ae6f80b791d941b941ab54c",
+      "original_operations_sha256": "82c3a448830d84c110eac721f0cc593d07b474d23e50845d58bd11d6790fd3f9"
+    },
+    "words_100k_95_5_uniform_replacement": {
+      "point_operations": 20000,
+      "point_stream_sha256": "1f50f2f8f22e210b11ea1485477c9ec0363b382664d99c900bdc5643163c0ed9",
+      "original_operations_sha256": "94bf726dc57ab9e9c04b2d202aff0c3838940999e80e3b3a7e4714cf1a35335a"
+    }
+  },
+  "point": {
+    "words_95_5_uniform_growth": {
+      "mixed": {
+        "bm0": {
+          "write": {
+            "n": 16,
+            "ratio": 0.22186872855669024,
+            "ci95": [
+              0.21476946454169035,
+              0.22920266070601836
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9851974193491406,
+                "ci95": [
+                  0.9574447308244097,
+                  1.013754552971906
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9861435521055597,
+                "ci95": [
+                  0.9627268825695895,
+                  1.0101297917055687
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 0.989875316083897,
+            "ci95": [
+              0.9510167845206519,
+              1.030321606664469
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.00911387961493,
+                "ci95": [
+                  0.9785922452402332,
+                  1.0405874632508574
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9849669575976361,
+                "ci95": [
+                  0.960679831407293,
+                  1.0098680911599478
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.4037550197920354,
+            "ci95": [
+              0.3897389843129946,
+              0.4182751086464294
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9911441163525782,
+                "ci95": [
+                  0.9713081887952737,
+                  1.0113851306028576
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9840220581523468,
+                "ci95": [
+                  0.9517640353104396,
+                  1.017373398244185
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "bm1": {
+          "write": {
+            "n": 16,
+            "ratio": 0.5574707654530816,
+            "ci95": [
+              0.5321489832727453,
+              0.5839974595527173
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9851974193491406,
+                "ci95": [
+                  0.9574447308244097,
+                  1.013754552971906
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 1.0246395174714407,
+                "ci95": [
+                  0.989984910403161,
+                  1.060507215545893
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.0156434613236103,
+            "ci95": [
+              0.9732535435423812,
+              1.0598796658627168
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.00911387961493,
+                "ci95": [
+                  0.9785922452402332,
+                  1.0405874632508574
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 1.0277142497063954,
+                "ci95": [
+                  0.9920830537463375,
+                  1.0646251592153844
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.7474892363257785,
+            "ci95": [
+              0.7320617910983082,
+              0.7632417990080055
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9911441163525782,
+                "ci95": [
+                  0.9713081887952737,
+                  1.0113851306028576
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 1.0276524360196926,
+                "ci95": [
+                  1.0080882609013362,
+                  1.0475962970870942
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          }
+        },
+        "ctx16": {
+          "write": {
+            "n": 16,
+            "ratio": 4.751354073789013,
+            "ci95": [
+              4.553063091309937,
+              4.95828085000606
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9851974193491406,
+                "ci95": [
+                  0.9574447308244097,
+                  1.013754552971906
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9393404741821225,
+                "ci95": [
+                  0.912748773179533,
+                  0.9667068884278184
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.047772354320058,
+            "ci95": [
+              0.9940538757594155,
+              1.104393769038628
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.00911387961493,
+                "ci95": [
+                  0.9785922452402332,
+                  1.0405874632508574
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.933779939821831,
+                "ci95": [
+                  0.9054447268796262,
+                  0.9630018819796855
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 1.7238527300600062,
+            "ci95": [
+              1.651200804993381,
+              1.799701299774529
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9911441163525782,
+                "ci95": [
+                  0.9713081887952737,
+                  1.0113851306028576
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9647157249864653,
+                "ci95": [
+                  0.9391950851307084,
+                  0.9909298342491204
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "art": {
+          "write": {
+            "n": 16,
+            "ratio": 9.031587919617822,
+            "ci95": [
+              8.614384310620407,
+              9.468997134156412
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9851974193491406,
+                "ci95": [
+                  0.9574447308244097,
+                  1.013754552971906
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.9264629069676524,
+                "ci95": [
+                  0.8900111650154439,
+                  0.9644075846757032
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.3352359419378046,
+            "ci95": [
+              1.2707634592511825,
+              1.4029794511821359
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.00911387961493,
+                "ci95": [
+                  0.9785922452402332,
+                  1.0405874632508574
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.8933982431483939,
+                "ci95": [
+                  0.8632882379091269,
+                  0.9245584334541276
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 2.8241050450403797,
+            "ci95": [
+              2.6795871919627525,
+              2.976417162070608
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9911441163525782,
+                "ci95": [
+                  0.9713081887952737,
+                  1.0113851306028576
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 1.0051381643246,
+                "ci95": [
+                  0.976114028536955,
+                  1.0350253145076866
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          }
+        }
+      },
+      "terminal": {
+        "bm0": {
+          "find": {
+            "n": 16,
+            "ratio": 1.149311718643889,
+            "ci95": [
+              1.0914167127312988,
+              1.2102778079204408
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9533089057796302,
+                "ci95": [
+                  0.8931531207621629,
+                  1.0175163123913655
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9694694761980508,
+                "ci95": [
+                  0.9218547455809867,
+                  1.0195435558422838
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "bm1": {
+          "find": {
+            "n": 16,
+            "ratio": 1.0642543596925744,
+            "ci95": [
+              0.9228669004810166,
+              1.2273030287837805
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9533089057796302,
+                "ci95": [
+                  0.8931531207621629,
+                  1.0175163123913655
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 1.0013154074407244,
+                "ci95": [
+                  0.9468730955624663,
+                  1.0588879860216065
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "ctx16": {
+          "find": {
+            "n": 16,
+            "ratio": 1.3876224991314903,
+            "ci95": [
+              1.2337330391534254,
+              1.5607073321284952
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9533089057796302,
+                "ci95": [
+                  0.8931531207621629,
+                  1.0175163123913655
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 1.04405377604629,
+                "ci95": [
+                  0.9427974250783059,
+                  1.15618504917531
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "art": {
+          "find": {
+            "n": 16,
+            "ratio": 3.122107234756662,
+            "ci95": [
+              2.7241681203852357,
+              3.5781762191466537
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9533089057796302,
+                "ci95": [
+                  0.8931531207621629,
+                  1.0175163123913655
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 1.0232436291747447,
+                "ci95": [
+                  0.9546319826416039,
+                  1.0967865561652637
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          }
+        }
+      }
+    },
+    "urls_80_20_hotspot_growth": {
+      "mixed": {
+        "bm0": {
+          "write": {
+            "n": 16,
+            "ratio": 0.27456391770518007,
+            "ci95": [
+              0.26463082634332447,
+              0.28486985415604643
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9921447120616455,
+                "ci95": [
+                  0.9554643657926295,
+                  1.0302332194830648
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9812665245248062,
+                "ci95": [
+                  0.9428430741070916,
+                  1.0212558363064608
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 0.8872854754605465,
+            "ci95": [
+              0.8502135725631457,
+              0.9259738263055979
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9903442401597312,
+                "ci95": [
+                  0.9542145083688686,
+                  1.0278419636420124
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9731545191591802,
+                "ci95": [
+                  0.9317236040104929,
+                  1.0164277411064386
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.3014901897944505,
+            "ci95": [
+              0.285960800270256,
+              0.31786291847130604
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.000417513506264,
+                "ci95": [
+                  0.9741629508085756,
+                  1.0273796601475573
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9814031851687393,
+                "ci95": [
+                  0.9526601134025614,
+                  1.0110134751200104
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          }
+        },
+        "bm1": {
+          "write": {
+            "n": 16,
+            "ratio": 0.8264664321199432,
+            "ci95": [
+              0.7973967871681054,
+              0.8565958308496048
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9921447120616455,
+                "ci95": [
+                  0.9554643657926295,
+                  1.0302332194830648
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 1.026384424945355,
+                "ci95": [
+                  0.9972614814600888,
+                  1.0563578433090899
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.0030001634770997,
+            "ci95": [
+              0.9617399198324035,
+              1.0460305402633177
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9903442401597312,
+                "ci95": [
+                  0.9542145083688686,
+                  1.0278419636420124
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 1.0168284440744702,
+                "ci95": [
+                  0.9857274273973508,
+                  1.0489107393601238
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.8294271308723269,
+            "ci95": [
+              0.7866516508476319,
+              0.8745285981232248
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.000417513506264,
+                "ci95": [
+                  0.9741629508085756,
+                  1.0273796601475573
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.986440477584568,
+                "ci95": [
+                  0.9560519362376025,
+                  1.0177949324035884
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          }
+        },
+        "ctx16": {
+          "write": {
+            "n": 16,
+            "ratio": 3.8716512863135,
+            "ci95": [
+              3.718599335118126,
+              4.031002625437949
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9921447120616455,
+                "ci95": [
+                  0.9554643657926295,
+                  1.0302332194830648
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9969914999237732,
+                "ci95": [
+                  0.9719942517308742,
+                  1.022631614487646
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 0.8963361735610954,
+            "ci95": [
+              0.862636875685294,
+              0.93135194967859
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9903442401597312,
+                "ci95": [
+                  0.9542145083688686,
+                  1.0278419636420124
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.963858329334334,
+                "ci95": [
+                  0.9397949600905272,
+                  0.9885378390810734
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 2.7000845605950694,
+            "ci95": [
+              2.5782380081529013,
+              2.827689534988622
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.000417513506264,
+                "ci95": [
+                  0.9741629508085756,
+                  1.0273796601475573
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 1.003401746047913,
+                "ci95": [
+                  0.9666772130513711,
+                  1.0415214617441246
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          }
+        },
+        "art": {
+          "write": {
+            "n": 16,
+            "ratio": 13.324848001550283,
+            "ci95": [
+              12.677210244500944,
+              14.005571481425573
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9921447120616455,
+                "ci95": [
+                  0.9554643657926295,
+                  1.0302332194830648
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.9230430895172366,
+                "ci95": [
+                  0.8905416966403462,
+                  0.9567306599116122
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.0577942523777735,
+            "ci95": [
+              1.018878878121469,
+              1.0981959724461536
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9903442401597312,
+                "ci95": [
+                  0.9542145083688686,
+                  1.0278419636420124
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.8126111511216961,
+                "ci95": [
+                  0.7840902153376812,
+                  0.8421695233665725
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 6.206235571103773,
+            "ci95": [
+              5.922314599266529,
+              6.503767964100404
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 1.000417513506264,
+                "ci95": [
+                  0.9741629508085756,
+                  1.0273796601475573
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 1.0111525710642981,
+                "ci95": [
+                  0.9791108888364957,
+                  1.044242826453418
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          }
+        }
+      },
+      "terminal": {
+        "bm0": {
+          "find": {
+            "n": 16,
+            "ratio": 1.083763115973034,
+            "ci95": [
+              0.9524520311687917,
+              1.2331775807147498
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9827024582532238,
+                "ci95": [
+                  0.9334554501903533,
+                  1.0345476275916536
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 1.0558848092058628,
+                "ci95": [
+                  0.9736019663511241,
+                  1.1451216912493594
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "bm1": {
+          "find": {
+            "n": 16,
+            "ratio": 1.0668586979356678,
+            "ci95": [
+              0.927377294281571,
+              1.2273186850479554
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9827024582532238,
+                "ci95": [
+                  0.9334554501903533,
+                  1.0345476275916536
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9944393467668735,
+                "ci95": [
+                  0.9275010845332406,
+                  1.0662085801180372
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "ctx16": {
+          "find": {
+            "n": 16,
+            "ratio": 0.8861109177528516,
+            "ci95": [
+              0.7948933642715359,
+              0.9877960917190131
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9827024582532238,
+                "ci95": [
+                  0.9334554501903533,
+                  1.0345476275916536
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9299623036019734,
+                "ci95": [
+                  0.8563804150527397,
+                  1.0098664926467626
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "art": {
+          "find": {
+            "n": 16,
+            "ratio": 1.6284652926506993,
+            "ci95": [
+              1.4258952888136236,
+              1.8598134310229513
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9827024582532238,
+                "ci95": [
+                  0.9334554501903533,
+                  1.0345476275916536
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 1.0129644719685729,
+                "ci95": [
+                  0.9790577537285177,
+                  1.0480454473323089
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          }
+        }
+      }
+    },
+    "words_indep_80_20_uniform_growth": {
+      "mixed": {
+        "bm0": {
+          "write": {
+            "n": 16,
+            "ratio": 0.36239669121146734,
+            "ci95": [
+              0.34594429176842256,
+              0.3796315329548311
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9867917531529736,
+                "ci95": [
+                  0.9669057054159157,
+                  1.0070867910246284
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9999774776587432,
+                "ci95": [
+                  0.9624256858228726,
+                  1.038994460096711
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.0029461531264332,
+            "ci95": [
+              0.9581613945186712,
+              1.0498241651412195
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9716566907956049,
+                "ci95": [
+                  0.9405159833781933,
+                  1.0038284744260688
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 1.0018307372070487,
+                "ci95": [
+                  0.9672597124291991,
+                  1.0376373719651684
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.40974569655277304,
+            "ci95": [
+              0.39380996626298337,
+              0.4263262746667017
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9940845188968458,
+                "ci95": [
+                  0.9646306339250271,
+                  1.0244377443098893
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 1.0017491378992422,
+                "ci95": [
+                  0.9709425012060042,
+                  1.0335332257424408
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          }
+        },
+        "bm1": {
+          "write": {
+            "n": 16,
+            "ratio": 0.8839765243996643,
+            "ci95": [
+              0.8448646875462256,
+              0.9248989893981767
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9867917531529736,
+                "ci95": [
+                  0.9669057054159157,
+                  1.0070867910246284
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9969925462888988,
+                "ci95": [
+                  0.9630494046103909,
+                  1.0321320303995722
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "undecided",
+            "verdict": "undecided"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.0290198930889363,
+            "ci95": [
+              0.9768471888802588,
+              1.0839791038212865
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9716566907956049,
+                "ci95": [
+                  0.9405159833781933,
+                  1.0038284744260688
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9967676913197911,
+                "ci95": [
+                  0.9563287830688909,
+                  1.0389165818795758
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.8984080898158869,
+            "ci95": [
+              0.8606803111875524,
+              0.9377896593602291
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9940845188968458,
+                "ci95": [
+                  0.9646306339250271,
+                  1.0244377443098893
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9981495038283756,
+                "ci95": [
+                  0.9654262205100265,
+                  1.0319819483113835
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "undecided",
+            "verdict": "undecided"
+          }
+        },
+        "ctx16": {
+          "write": {
+            "n": 16,
+            "ratio": 6.675860405551905,
+            "ci95": [
+              6.422204819395962,
+              6.93953453801671
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9867917531529736,
+                "ci95": [
+                  0.9669057054159157,
+                  1.0070867910246284
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9554952702147145,
+                "ci95": [
+                  0.9304492933243692,
+                  0.9812154385552466
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.1635195755789518,
+            "ci95": [
+              1.112011251705466,
+              1.2174137632862672
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9716566907956049,
+                "ci95": [
+                  0.9405159833781933,
+                  1.0038284744260688
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.948852626071198,
+                "ci95": [
+                  0.9265927285566268,
+                  0.9716472817617059
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 3.7669682559085937,
+            "ci95": [
+              3.6516073399725473,
+              3.8859736329508294
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9940845188968458,
+                "ci95": [
+                  0.9646306339250271,
+                  1.0244377443098893
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9943298478846314,
+                "ci95": [
+                  0.9646909369823915,
+                  1.0248793768986355
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          }
+        },
+        "art": {
+          "write": {
+            "n": 16,
+            "ratio": 13.1085845006131,
+            "ci95": [
+              12.59617086476448,
+              13.641843180326445
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9867917531529736,
+                "ci95": [
+                  0.9669057054159157,
+                  1.0070867910246284
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.94963878291483,
+                "ci95": [
+                  0.9190915975439664,
+                  0.9812012430815632
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 1.5229145509843467,
+            "ci95": [
+              1.4561817933963896,
+              1.5927054850688702
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9716566907956049,
+                "ci95": [
+                  0.9405159833781933,
+                  1.0038284744260688
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.9302745142395937,
+                "ci95": [
+                  0.8872268157795411,
+                  0.9754108605062157
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 6.685324831896841,
+            "ci95": [
+              6.434858565407269,
+              6.945540085098641
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9940845188968458,
+                "ci95": [
+                  0.9646306339250271,
+                  1.0244377443098893
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.9834052101524987,
+                "ci95": [
+                  0.9556872928067615,
+                  1.0119270337003667
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          }
+        }
+      },
+      "terminal": {
+        "bm0": {
+          "find": {
+            "n": 16,
+            "ratio": 1.0788889350105992,
+            "ci95": [
+              0.9770063845637807,
+              1.1913958316741347
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.973342436837612,
+                "ci95": [
+                  0.9091372845789616,
+                  1.0420818895220398
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 1.0424921792682005,
+                "ci95": [
+                  0.9705100833612105,
+                  1.1198131399845266
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "bm1": {
+          "find": {
+            "n": 16,
+            "ratio": 0.9457861625509353,
+            "ci95": [
+              0.8562251020429944,
+              1.044715301079677
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.973342436837612,
+                "ci95": [
+                  0.9091372845789616,
+                  1.0420818895220398
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9834759195734609,
+                "ci95": [
+                  0.9329775020969362,
+                  1.0367076185727468
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "ctx16": {
+          "find": {
+            "n": 16,
+            "ratio": 1.2198708460603083,
+            "ci95": [
+              0.9757314255536662,
+              1.525096806453167
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.973342436837612,
+                "ci95": [
+                  0.9091372845789616,
+                  1.0420818895220398
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.914462828633549,
+                "ci95": [
+                  0.7316359882987633,
+                  1.1429758490925852
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "art": {
+          "find": {
+            "n": 16,
+            "ratio": 2.7790930919214567,
+            "ci95": [
+              2.5271861869478647,
+              3.0561097767368
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.973342436837612,
+                "ci95": [
+                  0.9091372845789616,
+                  1.0420818895220398
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 1.0046663513886007,
+                "ci95": [
+                  0.9034510322370936,
+                  1.1172210131999687
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          }
+        }
+      }
+    },
+    "words_100k_95_5_uniform_replacement": {
+      "mixed": {
+        "bm0": {
+          "write": {
+            "n": 16,
+            "ratio": 0.28220693087898985,
+            "ci95": [
+              0.27232054695352087,
+              0.29245223222077277
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9899669783311956,
+                "ci95": [
+                  0.9559157445971452,
+                  1.0252311709744015
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9977489974547658,
+                "ci95": [
+                  0.9611493261069367,
+                  1.0357423502071221
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 0.9648909857182115,
+            "ci95": [
+              0.9222097478483214,
+              1.0095475747165803
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9873825638284843,
+                "ci95": [
+                  0.9503663188613944,
+                  1.025840571160538
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9815451240699657,
+                "ci95": [
+                  0.9500149849277445,
+                  1.0141217200471846
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.5467701644736696,
+            "ci95": [
+              0.5277271935118923,
+              0.5665002987037216
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9999182241779159,
+                "ci95": [
+                  0.9719255208959343,
+                  1.0287171532664907
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9981552482562482,
+                "ci95": [
+                  0.9663829208967735,
+                  1.030972172704526
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          }
+        },
+        "bm1": {
+          "write": {
+            "n": 16,
+            "ratio": 0.3090700807326159,
+            "ci95": [
+              0.2965472550221081,
+              0.3221217299649063
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9899669783311956,
+                "ci95": [
+                  0.9559157445971452,
+                  1.0252311709744015
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9929389436275351,
+                "ci95": [
+                  0.9639282854679544,
+                  1.0228227147557258
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 0.9726484451883239,
+            "ci95": [
+              0.9279845511892149,
+              1.0194620122877096
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9873825638284843,
+                "ci95": [
+                  0.9503663188613944,
+                  1.025840571160538
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 1.0091711232726168,
+                "ci95": [
+                  0.9699639481922953,
+                  1.04996310218059
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 0.572537272214278,
+            "ci95": [
+              0.5516660197946521,
+              0.5941981494466227
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9999182241779159,
+                "ci95": [
+                  0.9719255208959343,
+                  1.0287171532664907
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9877863939938476,
+                "ci95": [
+                  0.9617996036633882,
+                  1.0144753194355163
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "pass",
+            "verdict": "pass"
+          }
+        },
+        "ctx16": {
+          "write": {
+            "n": 16,
+            "ratio": 3.0812205553343004,
+            "ci95": [
+              2.9747133557079706,
+              3.1915411588808693
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9899669783311956,
+                "ci95": [
+                  0.9559157445971452,
+                  1.0252311709744015
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9487794727295883,
+                "ci95": [
+                  0.9035579807241415,
+                  0.9962642210869516
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 0.7868128410325878,
+            "ci95": [
+              0.7596387304389347,
+              0.8149590351403732
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9873825638284843,
+                "ci95": [
+                  0.9503663188613944,
+                  1.025840571160538
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 0.9208287642241759,
+                "ci95": [
+                  0.8916959517129637,
+                  0.9509133818469658
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 1.131686021918252,
+            "ci95": [
+              1.0901700424661165,
+              1.1747830176180654
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9999182241779159,
+                "ci95": [
+                  0.9719255208959343,
+                  1.0287171532664907
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 1.0003326653655489,
+                "ci95": [
+                  0.9569149800958902,
+                  1.0457203222976703
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          }
+        },
+        "art": {
+          "write": {
+            "n": 16,
+            "ratio": 5.616832556603818,
+            "ci95": [
+              5.453196394137222,
+              5.785379012361076
+            ],
+            "limit": 0.85,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9899669783311956,
+                "ci95": [
+                  0.9559157445971452,
+                  1.0252311709744015
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.8443169506001587,
+                "ci95": [
+                  0.819587281139171,
+                  0.869792796296092
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          },
+          "find": {
+            "n": 16,
+            "ratio": 0.9596990043602609,
+            "ci95": [
+              0.9192493598000108,
+              1.0019285508890112
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9873825638284843,
+                "ci95": [
+                  0.9503663188613944,
+                  1.025840571160538
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.7780929972441883,
+                "ci95": [
+                  0.7554272462213129,
+                  0.8014388088182297
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          },
+          "pure": {
+            "n": 16,
+            "ratio": 2.0652267466137033,
+            "ci95": [
+              1.9961721106166008,
+              2.1366702261014705
+            ],
+            "limit": 0.9090909090909091,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.9999182241779159,
+                "ci95": [
+                  0.9719255208959343,
+                  1.0287171532664907
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.9975764899058239,
+                "ci95": [
+                  0.9628522772130804,
+                  1.0335529932932739
+                ]
+              }
+            },
+            "aa_quality_pass": true,
+            "performance_interval_verdict": "regression",
+            "verdict": "regression"
+          }
+        }
+      },
+      "terminal": {
+        "bm0": {
+          "find": {
+            "n": 16,
+            "ratio": 0.9656382708658141,
+            "ci95": [
+              0.8525621430070822,
+              1.0937117931038294
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.967096302637619,
+                "ci95": [
+                  0.9127774452075929,
+                  1.024647643832439
+                ]
+              },
+              "bm0": {
+                "n": 16,
+                "ratio": 0.9795529781916987,
+                "ci95": [
+                  0.9154147819701489,
+                  1.0481849932761038
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "bm1": {
+          "find": {
+            "n": 16,
+            "ratio": 0.920592860998763,
+            "ci95": [
+              0.8387559197425716,
+              1.010414586381694
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.967096302637619,
+                "ci95": [
+                  0.9127774452075929,
+                  1.024647643832439
+                ]
+              },
+              "bm1": {
+                "n": 16,
+                "ratio": 0.9946185451749963,
+                "ci95": [
+                  0.9592597538850502,
+                  1.0312806790855644
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "pass",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "ctx16": {
+          "find": {
+            "n": 16,
+            "ratio": 1.0691313617744767,
+            "ci95": [
+              0.972032007681629,
+              1.1759302777034983
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.967096302637619,
+                "ci95": [
+                  0.9127774452075929,
+                  1.024647643832439
+                ]
+              },
+              "ctx16": {
+                "n": 16,
+                "ratio": 1.006703614068969,
+                "ci95": [
+                  0.9390413850537602,
+                  1.0792412163192397
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "undecided",
+            "verdict": "measurement_unresolved"
+          }
+        },
+        "art": {
+          "find": {
+            "n": 16,
+            "ratio": 2.21487110956389,
+            "ci95": [
+              1.9895251156210862,
+              2.465741192942588
+            ],
+            "limit": 1.05,
+            "aa": {
+              "tx": {
+                "n": 16,
+                "ratio": 0.967096302637619,
+                "ci95": [
+                  0.9127774452075929,
+                  1.024647643832439
+                ]
+              },
+              "art": {
+                "n": 16,
+                "ratio": 0.9423845622262172,
+                "ci95": [
+                  0.8867159528443238,
+                  1.0015480834348045
+                ]
+              }
+            },
+            "aa_quality_pass": false,
+            "performance_interval_verdict": "regression",
+            "verdict": "measurement_unresolved"
+          }
+        }
+      }
+    }
+  }
+}

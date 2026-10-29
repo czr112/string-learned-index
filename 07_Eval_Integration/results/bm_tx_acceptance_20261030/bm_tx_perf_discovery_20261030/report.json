@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_perf_discovery_20261030/art.o": "aa9a89c5bc5d0d0428c471a1456de91a1b4389de578379b82ca9c04adad4d3f0"
+  },
+  "error": "[Errno 2] No such file or directory: '/mnt/d/StringLearnedIndex_Workspace/not'"
+}

@@ -1,0 +1,3 @@
+{"suite":"fault","position":100,"injections":32,"continuation_writes":1000,"checks":845310,"mismatches":0}
+{"suite":"fault","position":2200,"injections":32,"continuation_writes":1000,"checks":1690619,"mismatches":0}
+{"suite":"fault","position":6044,"injections":32,"continuation_writes":1000,"checks":2535928,"mismatches":0}

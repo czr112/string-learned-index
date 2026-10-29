@@ -1,0 +1,5 @@
+art_adapter.o: \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/art/art_adapter.cpp \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/art/art_adapter.h \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/third_party/vendor/libart/src/art.h

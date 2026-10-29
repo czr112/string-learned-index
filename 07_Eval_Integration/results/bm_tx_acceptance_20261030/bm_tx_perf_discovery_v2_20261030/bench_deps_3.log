@@ -1,0 +1,3 @@
+query_cost.o: \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.cpp \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.h

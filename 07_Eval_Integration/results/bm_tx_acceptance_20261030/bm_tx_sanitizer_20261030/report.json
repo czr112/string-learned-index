@@ -1,0 +1,117 @@
+{
+  "status": "complete",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_sanitizer_20261030/check": "71680ea735b1d92b52532b8ae9e12b7d51cc59e027e1de1e0dc3a3e6fad21e21"
+  },
+  "regression": {
+    "suite": "regression",
+    "checks": 236349,
+    "mismatches": 0
+  },
+  "fault": {
+    "bytes": [
+      {
+        "suite": "fault",
+        "position": 100,
+        "injections": 32,
+        "continuation_writes": 1000,
+        "checks": 845310,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 2200,
+        "injections": 32,
+        "continuation_writes": 1000,
+        "checks": 1690619,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 6044,
+        "injections": 32,
+        "continuation_writes": 1000,
+        "checks": 2535928,
+        "mismatches": 0
+      }
+    ],
+    "english_words": [
+      {
+        "suite": "fault",
+        "position": 100,
+        "injections": 32,
+        "continuation_writes": 1000,
+        "checks": 845310,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 2200,
+        "injections": 32,
+        "continuation_writes": 1000,
+        "checks": 1690619,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 6044,
+        "injections": 32,
+        "continuation_writes": 1000,
+        "checks": 2535928,
+        "mismatches": 0
+      }
+    ],
+    "memetracker_urls": [
+      {
+        "suite": "fault",
+        "position": 100,
+        "injections": 42,
+        "continuation_writes": 1000,
+        "checks": 1101160,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 2200,
+        "injections": 43,
+        "continuation_writes": 1000,
+        "checks": 2227904,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 6044,
+        "injections": 40,
+        "continuation_writes": 1000,
+        "checks": 3277893,
+        "mismatches": 0
+      }
+    ],
+    "memetracker_phrases": [
+      {
+        "suite": "fault",
+        "position": 100,
+        "injections": 38,
+        "continuation_writes": 1000,
+        "checks": 998820,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 2200,
+        "injections": 43,
+        "continuation_writes": 1000,
+        "checks": 2125564,
+        "mismatches": 0
+      },
+      {
+        "suite": "fault",
+        "position": 6044,
+        "injections": 40,
+        "continuation_writes": 1000,
+        "checks": 3175553,
+        "mismatches": 0
+      }
+    ]
+  }
+}

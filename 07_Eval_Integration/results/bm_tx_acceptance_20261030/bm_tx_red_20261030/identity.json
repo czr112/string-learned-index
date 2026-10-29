@@ -1,0 +1,23 @@
+{
+  "pins": {
+    "model": "3894c767338a865d2920ba5e21283827fea1d803",
+    "benchmark": "003a55bf674b43350fbb70242070fb74f33a56ce"
+  },
+  "closure": {
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_page_root.hpp": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_page_core.hpp": "e624faff205c4de177ca04c5d56d15b404a7dee1c4cdff1c08b5129099769dbb",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.h": "2ec2b0188b68960f7cbe8114fc5b265b425a9c7fd64a9b6d1eea3e7fda9b94ef",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/check_bm_tx.cpp": "294a24b39f7d995e256e59166485e1c6a3516414d1b562b18495ff464f5b875e",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_index.hpp": "ec5c1be2198f0ebc82ba75503268c1be0efe52436b3791bcb1473933ac14d8b5",
+    "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_tx_index.hpp": "bc75c1fd0866a37fbb3ddf6880b8bafb777616e3311b149cc820615ff7047480",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b"
+  },
+  "runner_sha256": "a96abdd11a2d629b0b1a0714379c1e37668fc33995aa74ceb2cb0949d9661e6e",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_red_20261030/check": "4c5db49ead8d79c81f959fb5c43821c5ba7bb50324c8a898bbca0659de417a9b"
+  }
+}

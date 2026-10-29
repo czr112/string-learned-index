@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_green_20261030/check": "b9abce1f0e0ad12933e8efa9974df473335ecdd7876bd84c65823f8c667ded04"
+  },
+  "regression": {
+    "suite": "regression",
+    "checks": 159939,
+    "mismatches": 0
+  }
+}

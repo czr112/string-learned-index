@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_regression_v2_20261030/check": "15a4dec3c1b44e6c379ee2afa50c93c9d844b2979c9a6bb3188f19d34993f5be"
+  },
+  "regression": {
+    "suite": "regression",
+    "checks": 236349,
+    "mismatches": 0
+  }
+}

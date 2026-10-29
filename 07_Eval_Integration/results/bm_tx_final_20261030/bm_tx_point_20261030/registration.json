@@ -1,0 +1,15 @@
+{
+  "processes": 16,
+  "repeats": 8,
+  "cells": [
+    "words_95_5_uniform_growth",
+    "urls_80_20_hotspot_growth",
+    "words_indep_80_20_uniform_growth",
+    "words_100k_95_5_uniform_replacement"
+  ],
+  "point_only": true,
+  "protocol_sha256": "4ddce4d49418ba6f4cfb2f54c29a5ec3ad9e7d00cb660bfd59cf560c2572ec93",
+  "runner_sha256": "8b8f1a63ecf21e617cb66bdbb6014e878e702929ba5a2d781505a52ed11effd9",
+  "candidate": "make_bm_tx_experiment_index",
+  "terminal_probe": "mixed90_live_1800_synthetic_absent_200_seed_20261030"
+}

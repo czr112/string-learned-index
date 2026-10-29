@@ -1,0 +1,12 @@
+our_index_adapter.o: \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_index/our_index_adapter.cpp \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/adapters/our_index/our_index_adapter.h \
+ /mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/index.hpp \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/model/lits_hpt_adapter.hpp \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/model/../vendor/lits_model_safe/lits_gpkl.hpp \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/model/../vendor/lits_model_safe/lits_base.hpp \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/model/../vendor/lits_model_safe/lits_model.hpp \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/model/block_linear_rank.hpp \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/model/equal_depth_dir.hpp \
+ /mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/switches.hpp

@@ -1,0 +1,13 @@
+{
+  "processes": 4,
+  "repeats": 8,
+  "cells": [
+    "words_95_5_uniform_growth",
+    "urls_80_20_hotspot_growth"
+  ],
+  "point_only": false,
+  "protocol_sha256": "cece61dea08738e7e0d67d79177ff136b28e0e91c538365cba1dbdd2e2b47cea",
+  "runner_sha256": "0bd2ea3a95dd6840d9ba30c692100b8016a697bcb04d097c80f99f0bae6af9ee",
+  "candidate": "make_bm_tx_experiment_index",
+  "terminal_probe": "mixed90_live_1800_synthetic_absent_200_seed_20261030"
+}

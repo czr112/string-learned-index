@@ -1,0 +1,13 @@
+{
+  "processes": 16,
+  "min_calibration_ms": 40,
+  "groups": "same as 20261024 correct-group protocol",
+  "candidate": "make_bm_tx_experiment_index",
+  "control": "bm0",
+  "timed_groups": [
+    "mixed90"
+  ],
+  "semantic_groups": "all historical groups",
+  "runner_sha256": "6b5c0dc3546337905de08de418122747d3e18296dde958ef5b8bc535cee02655",
+  "analysis_sha256": "7262e96018fcc1153e295aef21a22f0fc537ae90a0b7387c65105e22b6593218"
+}
