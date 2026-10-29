@@ -139,7 +139,7 @@ int main(int argc,char** argv) {
             need(bare.checksum==profile.checksum&&bare.block_splits==profile.block_splits&&bare.terminal_bytes==profile.terminal_bytes,"instrumentation equivalence");
             emit("original",bare,process,0,0,1);emit("instrumented",profile,process,0,1,1);return 0;
         }
-        need(mode=="bench","unknown mode");combined(input,false,1);combined(input,true,1);
+        need(mode=="bench","unknown mode");
         const char* arms[]={"original","instrumented","original_AA","instrumented_AA"};
         constexpr int order[4][4]={{0,1,3,2},{1,2,0,3},{2,3,1,0},{3,0,2,1}};
         for(int round=0;round<2;++round)for(int position=0;position<4;++position) {

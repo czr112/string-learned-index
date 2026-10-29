@@ -40,7 +40,8 @@ historical final-map hashes are verified per cell before and after execution.
 Only after those semantic checks pass, run four fixed cases:
 words/URLs x 80/20 x uniform/hotspot growth. Four fresh process blocks per case;
 four labels (original, instrumented, original_AA, instrumented_AA) in Williams
-order, two rounds, eight fresh trace replays per label observation. Preserve every
+order, two rounds, eight fresh trace replays per label observation. No additional
+warmup trace is discarded: retain every timed replay in those observations. Preserve every
 sample; this pilot is a cost bound, not a formal performance win. Oracle/checksum
 validation and index build/destruction are outside the write timers. Find/scan
 remain in the trace; writes have per-operation timers in both controls. The
@@ -49,8 +50,10 @@ directory branch timer exists only in the diagnostic implementation.
 Aggregate log write durations within process, then pointwise t intervals with
 df=n-1. Both implementations' AA intervals must fit [1/1.05,1.05]. The paired
 instrumented/original write-time interval must also fit this range to qualify the
-instrumentation. Branch share is averaged within process, with a four-process
-pointwise t interval (not a simultaneous or causal estimate).
+instrumentation. Within a process, branch share is the ratio of summed directory
+nanoseconds to summed write nanoseconds across all instrumented observations (a
+write-time-weighted share). Average those four process shares and use a pointwise
+t interval (not a simultaneous or causal estimate).
 
 A bounded-reserve candidate may be separately registered only if at least two
 fixed cases meet the quality checks AND the branch-share CI lower bound >=30%.
