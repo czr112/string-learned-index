@@ -60,6 +60,30 @@ def analyze(blocks,contrasts=False):
             answer['contrasts'][name]=result
     return answer
 
+def validated_selection(path,closure_sha,input_hashes):
+    selection=json.loads(path.read_text());directory=path.resolve().parent
+    report_path=directory/'report.json';report=json.loads(report_path.read_text())
+    if (report.get('status')!='complete' or report.get('phase')!='calibrate'
+            or sha(report_path)!=selection['calibration_report_sha256']
+            or selection['protocol_sha256']!=sha(PROTOCOL)
+            or selection['runner_sha256']!=sha(Path(__file__))
+            or selection['source_closure_sha256']!=closure_sha
+            or json.loads((directory/'input_hashes.json').read_text())!=input_hashes):
+        raise ValueError('incomplete or floating calibration selection')
+    if set(report['results'])!={'250','1000'}:raise ValueError('calibration configurations incomplete')
+    passing=[]
+    for floor in (250,1000):
+        results=report['results'][str(floor)]
+        if set(results)!=set(PILOT):raise ValueError('calibration cells incomplete')
+        for cell in PILOT:
+            blocks=[json.loads((directory/f'{floor}_{cell}_p{p:02d}.json').read_text()) for p in range(4)]
+            if analyze(blocks)!=results[cell]:raise ValueError('calibration analysis drift')
+        if all(v['all_aa_pass'] for v in results.values()):passing.append(floor)
+    chosen=min(passing) if passing else None
+    if chosen is None or selection['selected_ms']!=chosen or report['selection']['selected_ms']!=chosen:
+        raise ValueError('calibration did not select this configuration')
+    return selection
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
@@ -93,10 +117,7 @@ def main():
                       'protocol_sha256':sha(PROTOCOL),'runner_sha256':sha(Path(__file__)),'cpu':cpu}
         if args.phase=='confirm':
             if args.selection is None:raise ValueError('selection required')
-            selection=json.loads(args.selection.read_text())
-            if (selection['selected_ms'] not in (250,1000) or selection['protocol_sha256']!=sha(PROTOCOL)
-                    or selection['runner_sha256']!=sha(Path(__file__)) or selection['source_closure_sha256']!=closure_sha):
-                raise ValueError('invalid/floating selection')
+            selection=validated_selection(args.selection,closure_sha,input_hashes)
             floors=[selection['selected_ms']];save(run.output/'selection.json',selection)
         else:floors=[250,1000]
         registration['batch_floors_ms']=floors
@@ -116,9 +137,13 @@ def main():
             selection={'selected_ms':min(passing) if passing else None,'protocol_sha256':sha(PROTOCOL),
                        'runner_sha256':sha(Path(__file__)),'source_closure_sha256':closure_sha,
                        'decision_basis':'AA only; no performance contrasts calculated'}
-            save(run.output/'selection.json',selection);run.report['selection']=selection
+            run.report['selection']=selection
         if any(sha(p)!=h for p,h in input_hashes.items()):raise ValueError('input drift at completion')
-        run.finish();print(json.dumps({'status':'complete','phase':args.phase,'selection':run.report.get('selection')}),flush=True)
+        run.finish()
+        if args.phase=='calibrate':
+            selection=dict(run.report['selection'],calibration_report_sha256=sha(run.output/'report.json'))
+            save(run.output/'selection.json',selection)
+        print(json.dumps({'status':'complete','phase':args.phase,'selection':run.report.get('selection')}),flush=True)
     except Exception as error:
         run.report.update(status='failed',error=str(error));save(run.output/'report.json',run.report);raise
 

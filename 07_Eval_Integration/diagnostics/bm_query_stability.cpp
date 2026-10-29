@@ -12,6 +12,15 @@ struct StableBatch {
     long voluntary,involuntary,minor_faults,major_faults;
     int cpu_before,cpu_after;
 };
+struct CalibrationSample {int state;std::size_t loops;StableBatch batch;};
+static void emit_batch(const StableBatch& b) {
+    const auto& m=b.measurement;
+    std::cout<<"\"ns\":"<<m.ns<<",\"cpu_ns\":"<<b.cpu_ns
+             <<",\"lookups\":"<<m.lookups<<",\"checksum\":"<<m.checksum
+             <<",\"voluntary\":"<<b.voluntary<<",\"involuntary\":"<<b.involuntary
+             <<",\"minor_faults\":"<<b.minor_faults<<",\"major_faults\":"<<b.major_faults
+             <<",\"cpu_before\":"<<b.cpu_before<<",\"cpu_after\":"<<b.cpu_after;
+}
 static std::uint64_t thread_ns() {
     timespec value{};need(clock_gettime(CLOCK_THREAD_CPUTIME_ID,&value)==0,"thread clock");
     return std::uint64_t(value.tv_sec)*1000000000+std::uint64_t(value.tv_nsec);
@@ -41,13 +50,12 @@ int main(int argc,char** argv) {
         const auto& group=*found;
         const auto limit=std::size_t(32768000)/group.queries.size();
         std::size_t loops=1;
-        std::vector<std::array<std::uint64_t,5>> calibration;
+        std::vector<CalibrationSample> calibration;
         while(true) {
             bool enough=true;
             for(int state=0;state<4;++state) {
                 const auto sample=stable_batch(*test.states[state],group,loops);
-                calibration.push_back({std::uint64_t(state),loops,sample.measurement.ns,
-                                       sample.cpu_ns,sample.measurement.checksum});
+                calibration.push_back({state,loops,sample});
                 enough=enough&&sample.measurement.ns>=minimum_ms*1000000;
             }
             if(enough)break;
@@ -69,18 +77,15 @@ int main(int argc,char** argv) {
         std::cout<<",\"calibration\":[";bool first=true;
         for(const auto& c:calibration) {
             if(!first)std::cout<<',';first=false;
-            std::cout<<"{\"state\":\""<<names[c[0]]<<"\",\"loops\":"<<c[1]
-                     <<",\"ns\":"<<c[2]<<",\"cpu_ns\":"<<c[3]<<",\"checksum\":"<<c[4]<<'}';
+            std::cout<<"{\"state\":\""<<names[c.state]<<"\",\"loops\":"<<c.loops<<',';
+            emit_batch(c.batch);std::cout<<'}';
         }
         std::cout<<"],\"measurements\":[";first=true;
         for(const auto& r:records) {
-            if(!first)std::cout<<',';first=false;const auto& b=r.batch;const auto& m=b.measurement;
+            if(!first)std::cout<<',';first=false;
             std::cout<<"{\"state\":\""<<names[r.state]<<"\",\"round\":"<<r.round
-                     <<",\"position\":"<<r.position<<",\"ns\":"<<m.ns<<",\"cpu_ns\":"<<b.cpu_ns
-                     <<",\"lookups\":"<<m.lookups<<",\"checksum\":"<<m.checksum
-                     <<",\"voluntary\":"<<b.voluntary<<",\"involuntary\":"<<b.involuntary
-                     <<",\"minor_faults\":"<<b.minor_faults<<",\"major_faults\":"<<b.major_faults
-                     <<",\"cpu_before\":"<<b.cpu_before<<",\"cpu_after\":"<<b.cpu_after<<'}';
+                     <<",\"position\":"<<r.position<<',';
+            emit_batch(r.batch);std::cout<<'}';
         }
         std::cout<<"]}\n";
     }catch(const std::exception& error){std::cerr<<error.what()<<'\n';return 1;}
