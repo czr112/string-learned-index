@@ -283,6 +283,7 @@ public:
             if(compare_boundary(start,mid,lower)<=0)lo=mid+1;
             else hi=mid;
         }
+        out.reserve(size_<limit?size_:limit);   // one allocation instead of ~log2(n) regrowths
         std::uint32_t b=lo?lo-1:0;
         bool seek=true;
         for(;ri<regions_.size();++ri,b=0) {
