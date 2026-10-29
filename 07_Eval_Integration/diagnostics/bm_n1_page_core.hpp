@@ -2,6 +2,7 @@
 // BM integration: frozen physical slots and CRC; original upstream BlockModel, byte-fence correction.
 #include "static_physical_index.hpp"
 #include "block_model.h"
+#include <memory>
 
 namespace bm_n1_leaf {
 struct RebuildReasons {
@@ -409,6 +410,51 @@ public:
         dest.entries[at]={offset,std::uint32_t(s.size()),value};dest.tags[at]=tag;
         ++dest.count;++size_;++reasons().inserted;return Insert::inserted;
         }
+    }
+public:
+    // Move blocks [b_split, count) out of this page into a new page that shares the region prefix.
+    // The upper half gets a compacted arena with rewritten entry offsets; nothing is re-encoded
+    // from keys, so no per-row std::string is materialised.
+    std::unique_ptr<Page> split_at_block(std::uint32_t b_split) {
+        if(regions_.empty())throw std::logic_error("split on an empty page");
+        const auto& r=regions_[0];
+        if(b_split==0||b_split>=r.count)throw std::invalid_argument("split point");
+        auto out=std::make_unique<Page>(std::vector<Row>{{std::string(),0}},15);
+        out->blocks_.clear();out->stable_fences_.clear();out->regions_.clear();
+        out->fences_.clear();out->digests_.clear();out->arena_.clear();
+        const auto moved=std::uint32_t(r.count-b_split);
+        std::uint32_t moved_rows=0;
+        for(std::uint32_t i=b_split;i<r.count;++i) {
+            const auto src=std::size_t(r.first)+i;
+            Block block=blocks_[src];
+            for(std::uint32_t e=0;e<block.count;++e) {
+                const auto view=suffix(block.entries[e]);
+                const auto at=std::uint32_t(out->arena_.size());
+                out->arena_.insert(out->arena_.end(),view.begin(),view.end());
+                block.entries[e].offset=at;
+                block.entries[e].length=std::uint32_t(view.size());
+            }
+            moved_rows+=block.count;
+            out->blocks_.push_back(block);
+            out->stable_fences_.push_back({out->blocks_.back().entries[0].offset,
+                                           out->blocks_.back().entries[0].length});
+        }
+        Region nr=r;nr.first=0;nr.count=moved;out->regions_.push_back(nr);
+        out->size_=moved_rows;out->region_keys_=region_keys_;
+        out->fences_.push_back(r.prefix+std::string(out->boundary(out->regions_[0],0)));
+        out->fence_prefix_=out->fences_[0].size();
+        out->digests_.push_back(static_physical::digest8(std::string_view()));
+        std::vector<std::string_view> train_out;
+        for(std::uint32_t b=0;b<out->regions_[0].count;++b)train_out.push_back(out->boundary(out->regions_[0],b));
+        out->bm_=blocklearn::BlockModel::fit(train_out,16,1,7,3);
+        blocks_.erase(blocks_.begin()+std::ptrdiff_t(r.first+b_split),blocks_.end());
+        stable_fences_.erase(stable_fences_.begin()+std::ptrdiff_t(r.first+b_split),stable_fences_.end());
+        regions_[0].count=b_split;
+        size_-=moved_rows;
+        std::vector<std::string_view> train_lo;
+        for(std::uint32_t b=0;b<regions_[0].count;++b)train_lo.push_back(boundary(regions_[0],b));
+        bm_=blocklearn::BlockModel::fit(train_lo,16,1,7,3);
+        return out;
     }
     std::vector<std::string> fence_keys()const {
         std::vector<std::string> out;
