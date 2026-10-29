@@ -442,6 +442,9 @@ public:
         Region nr=r;nr.first=0;nr.count=std::uint32_t(r.count-b_split);
         out->regions_.push_back(nr);
         out->size_=moved_rows;out->region_keys_=src.region_keys_;
+        // Leave the same proportional slack the constructor reserves, otherwise the very next
+        // insert hits arena_short and forces a rebuild - which defeats the whole point.
+        out->arena_.reserve(out->arena_.size()+out->arena_.size()/32+64);
         out->fences_.push_back(r.prefix+std::string(out->boundary(out->regions_[0],0)));
         out->fence_prefix_=out->fences_[0].size();
         out->digests_.push_back(static_physical::digest8(std::string_view()));
