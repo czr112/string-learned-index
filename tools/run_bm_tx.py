@@ -64,7 +64,7 @@ class Run:
                             'BM_TX_ADAPTER_SHA256':sha(DIAG/'bm_tx_adapter.hpp'),'BM_SPLIT_CORE_SHA256':bundle,
                             'BM_CORE_BUNDLE_SHA256':bundle})
         macros=[f'-D{k}="{v}"' for k,v in definitions.items()]
-        flags=['-O1','-g','-fno-omit-frame-pointer','-fsanitize=address,undefined'] if sanitize else ['-O3']
+        flags=['-O1','-g','-fno-omit-frame-pointer','-fsanitize=address,undefined','-fno-sanitize-recover=all'] if sanitize else ['-O3']
         staged=self.output/(name+'.partial');final=self.output/name
         self.execute(['g++',*self.flags,*flags,*macros,*sources,*objects,'-o',staged],name+'_build.log')
         os.replace(staged,final);self.binaries[str(final)]=sha(final)

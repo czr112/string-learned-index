@@ -13,6 +13,7 @@ import argparse
 import json
 import math
 import os
+import shlex
 from pathlib import Path
 import statistics
 from run_bm_tx import ROOT,DIAG,PINS,Run,sha,save
@@ -42,7 +43,10 @@ def summarize(records):
                     quality[arm]=interval([aggregate(p,arm,metric+'_aa')-aggregate(p,arm,metric) for p in groups.values()])
                 aa=all(v['ci95'][0]>=1/1.05 and v['ci95'][1]<=1.05 for v in quality.values())
                 limit=1/1.10 if metric=='pure' else (0.85 if metric=='write' else 1.05)
-                verdict='pass' if result['ci95'][1]<=limit else ('regression' if result['ci95'][0]>limit else 'undecided')
+                if result['ci95'][1]<=limit:verdict='pass'
+                elif result['ci95'][0]>1.05:verdict='regression'
+                elif result['ci95'][0]>limit:verdict='target_not_met'
+                else:verdict='undecided'
                 result.update(limit=limit,aa=quality,aa_quality_pass=aa,performance_interval_verdict=verdict,
                               verdict=verdict if aa else 'measurement_unresolved')
                 summary[control][metric]=result
@@ -63,9 +67,13 @@ def main():
         run.includes.extend([ROOT/'07_Eval_Integration/adapters/our_index',ROOT/'07_Eval_Integration/adapters/art',vendor])
         run.flags.extend(f'-I{x}' for x in run.includes[-3:])
         art_object=run.output/'art.o';partial=run.output/'art.partial'
-        run.execute(['gcc','-std=c11','-DNDEBUG','-O3','-march=x86-64-v3','-I'+str(vendor),'-c',vendor/'art.c','-o',partial],'art_build.log')
+        c_flags=['-std=c11','-DNDEBUG','-O3','-march=x86-64-v3','-I'+str(vendor)]
+        dependency=run.execute(['gcc',*c_flags,'-MM',vendor/'art.c'],'art_dependencies.log')
+        c_paths=[(ROOT/Path(p)).resolve() for p in shlex.split(dependency.replace('\\\n',' ').split(':',1)[1])]
+        c_hashes={str(p):sha(p) for p in c_paths};run.sources.update(c_hashes)
+        run.execute(['gcc',*c_flags,'-c',vendor/'art.c','-o',partial],'art_build.log')
+        if any(sha(p)!=h for p,h in c_hashes.items()):raise RuntimeError('ART source drift during compile')
         os.replace(partial,art_object);run.binaries[str(art_object)]=sha(art_object)
-        for p in (vendor/'art.c',vendor/'art.h'):run.sources[str(p)]=sha(p)
         model=ROOT/'07_Eval_Integration/upstream_snapshots/model_3894c767/src'
         sources=[DIAG/'bench_bm_tx.cpp',*[model/p for p in ('block_model.cpp','residual_tags.cpp','query_cost.cpp','region_planner.cpp','learned_index.cpp','benchmark/model_factories.cpp')],
                  ROOT/'07_Eval_Integration/adapters/our_index/our_index_adapter.cpp',ROOT/'07_Eval_Integration/adapters/art/art_adapter.cpp',

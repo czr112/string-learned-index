@@ -60,6 +60,14 @@ with final-state and interleaved find reported separately. Use the existing corr
 manifest/live-map query grouping; directory-step counts are not elapsed time.
 An unresolved or failed gate blocks adoption and unconditioned scale expansion.
 
+Before formal timing, review tightened UBSan to non-recovering mode and bound ART's
+C dependency closure before compilation. Missing the benefit target is recorded as
+`target_not_met`, distinct from a confirmed >5% regression. Exact historical mixed90
+probes are measured in two direct runs, candidate/BM0 and candidate/BM1. Both validate
+all historical groups semantically but time only the frozen primary mixed90 group;
+no performance claim is made about the untimed hot/cold subgroups. The old driver
+is unchanged unless its explicit experimental compile-time primary-only flag is set.
+
 Every build/run uses `tools/run_bm_tx.py`: fresh directories, pinned dependencies,
 actual source closure and adapter hashes, temporary link output and atomic publication,
 before-run binary verification and final source/binary drift verification. Preserve all

@@ -183,6 +183,13 @@ int main(int argc,char** argv) {
         need((mode=="check"&&argc==7)||(mode=="calibrate"&&argc==8)||(mode=="bench"&&argc==9),"wrong argument count");
         const int process=mode=="bench"?std::stoi(argv[7]):0;need(process>=0&&process<16,"process must be 0..15");
         Case test(argv,process);
+#ifdef BM_QUERY_PRIMARY_ONLY
+        // Preserve the full constructor's semantic/group checks; time only the
+        // preregistered primary set when selected by a new experimental wrapper.
+        auto& groups=test.query.groups;
+        groups.erase(std::remove_if(groups.begin(),groups.end(),[](const auto& g){return g.name!="mixed90";}),groups.end());
+        need(groups.size()==1,"missing primary group");
+#endif
         if(mode=="check"){std::cout<<"{\"mode\":\"check\",";metadata(test);std::cout<<",\"passed\":true}\n";return 0;}
         std::vector<std::size_t> loops;
         if(mode=="calibrate") {
