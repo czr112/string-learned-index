@@ -1,0 +1,32 @@
+{
+  "bm_n1_page_core.hpp": {
+    "revision": "10e0494",
+    "preimage_sha256": "3f1603ab4f8301e51820913af77bce7a05a3a6ef119916a15907ed5031db4431",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_directory_cost_20261030/diagnostic_sources/bm_dir_page_core.hpp",
+    "generated_sha256": "579c0b2f8a1fa695484f8afcf32a553080a6ff46bcb20e3f217f199860584ff9"
+  },
+  "bm_n1_page_root.hpp": {
+    "revision": "10e0494",
+    "preimage_sha256": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_directory_cost_20261030/diagnostic_sources/bm_dir_page_root.hpp",
+    "generated_sha256": "7bc6e3b4de2de49381e50a430cdc0ab92c00293fd6bf795e9bfecad58c68f59a"
+  },
+  "bm_n1_index.hpp": {
+    "revision": "10e0494",
+    "preimage_sha256": "ec5c1be2198f0ebc82ba75503268c1be0efe52436b3791bcb1473933ac14d8b5",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_directory_cost_20261030/diagnostic_sources/bm_dir_index.hpp",
+    "generated_sha256": "54130269aba9b2accc5443552908f153777416eb6c67e6b83bf206ef92628ea2"
+  },
+  "bm_tx_index.hpp": {
+    "revision": "10e0494",
+    "preimage_sha256": "eb117e7f4571ed8ad849f5fc6620cf968d28a911535eb08003c4f46061941d5d",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_directory_cost_20261030/diagnostic_sources/bm_dir_tx_index.hpp",
+    "generated_sha256": "3c2e12055be500cfcfa8590084be4fad69a3c0416a4714539879692a53877c08"
+  },
+  "bm_followup_memory.hpp": {
+    "revision": "10e0494",
+    "preimage_sha256": "9bec14bc28fce26cc3930e932f2058c1b23a90b0e173820c588dbea679ba4697",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_directory_cost_20261030/diagnostic_sources/bm_directory_memory.hpp",
+    "generated_sha256": "5e9dd4911d8d737330047fc19eb46203f6896a9e63b351489e894a914b67d566"
+  }
+}

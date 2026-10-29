@@ -1,3 +1,5 @@
+Current execution update 2026-10-30: directory-cost diagnosis completed; all32 semantic cases and sanitizer passed. Pilot did not qualify (4.6%-6.7% branch-share centers, AA/instrumentation gates failed), so bounded reserve was not implemented. Native Windows qualification is the next registered environment intervention. See REPORT_BM_TX_DIRECTORY_COST_20261030.md. The ordinary execution allowance is available; an older automatic goal usageLimited record is not used as the live account status.
+
 # Continuous BM execution strategy
 
 Starting point: `cf15c2e`; TX algorithm frozen at `10e0494`. User authorization is

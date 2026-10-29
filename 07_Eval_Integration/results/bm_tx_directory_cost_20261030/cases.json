@@ -1,0 +1,162 @@
+{
+  "words_95_5_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_uniform_growth/final.bin"
+  ],
+  "words_95_5_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_uniform_replacement/final.bin"
+  ],
+  "words_95_5_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_hotspot_growth/final.bin"
+  ],
+  "words_95_5_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_hotspot_replacement/final.bin"
+  ],
+  "words_80_20_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_uniform_growth/final.bin"
+  ],
+  "words_80_20_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_uniform_replacement/final.bin"
+  ],
+  "words_80_20_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_hotspot_growth/final.bin"
+  ],
+  "words_80_20_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_hotspot_replacement/final.bin"
+  ],
+  "urls_95_5_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_uniform_growth/final.bin"
+  ],
+  "urls_95_5_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_uniform_replacement/final.bin"
+  ],
+  "urls_95_5_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_hotspot_growth/final.bin"
+  ],
+  "urls_95_5_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_hotspot_replacement/final.bin"
+  ],
+  "urls_80_20_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_uniform_growth/final.bin"
+  ],
+  "urls_80_20_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_uniform_replacement/final.bin"
+  ],
+  "urls_80_20_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_hotspot_growth/final.bin"
+  ],
+  "urls_80_20_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_hotspot_replacement/final.bin"
+  ],
+  "words_indep_95_5_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_uniform_growth/final.bin"
+  ],
+  "words_indep_95_5_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_uniform_replacement/final.bin"
+  ],
+  "words_indep_95_5_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_hotspot_growth/final.bin"
+  ],
+  "words_indep_95_5_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_hotspot_replacement/final.bin"
+  ],
+  "words_indep_80_20_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_uniform_growth/final.bin"
+  ],
+  "words_indep_80_20_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_uniform_replacement/final.bin"
+  ],
+  "words_indep_80_20_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_hotspot_growth/final.bin"
+  ],
+  "words_indep_80_20_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_hotspot_replacement/final.bin"
+  ],
+  "words_100k_95_5_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_uniform_growth/final.bin"
+  ],
+  "words_100k_95_5_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_uniform_replacement/final.bin"
+  ],
+  "words_100k_95_5_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_hotspot_growth/final.bin"
+  ],
+  "words_100k_95_5_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_hotspot_replacement/final.bin"
+  ],
+  "words_100k_80_20_uniform_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_uniform_growth/final.bin"
+  ],
+  "words_100k_80_20_uniform_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_uniform_replacement/final.bin"
+  ],
+  "words_100k_80_20_hotspot_growth": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_growth_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_growth_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_hotspot_growth/final.bin"
+  ],
+  "words_100k_80_20_hotspot_replacement": [
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_replacement_rows.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_replacement_ops.bin",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_hotspot_replacement/final.bin"
+  ]
+}

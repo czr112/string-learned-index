@@ -1,0 +1,16 @@
+{
+  "base": "10e0494",
+  "pilot_cells": [
+    "words_80_20_uniform_growth",
+    "words_80_20_hotspot_growth",
+    "urls_80_20_uniform_growth",
+    "urls_80_20_hotspot_growth"
+  ],
+  "processes": 4,
+  "replays": 8,
+  "rounds": 2,
+  "protocol_sha256": "8778b3228419557f4ef542b5fed6b922680f45ad11489824c5447703826f3b79",
+  "runner_sha256": "eb9da75bc85a51577e358fe6bba67abe8a561047a44032f9e0f126781027138e",
+  "headroom_minimum": 0.3,
+  "required_qualified_cells": 2
+}
