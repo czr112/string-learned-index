@@ -7,8 +7,16 @@
   "structural_gate_registered_all_cells": false,
   "structural_gate_on_applicable_pages": false,
   "timing_gate": true,
-  "verifier_sha256": "bcf8867de470947f18bea214ea18fcbf428c67a5419a71403260cb0397f60a75",
-  "verifier_sha256_recorded_at_run": "582be340ddf880530e5c59b126eed00ba17b5c0707075838d0c832ad44bfffa1",
+  "editable_sources": {
+    "07_Eval_Integration/diagnostics/BM_SHORTDIR_SPEC_20261018.md": {
+      "current": "caee6fbda92331607419d00feb83484a867b254cadb5947eb3b02d0898c72b74",
+      "recorded_at_run": "214316564bf680b2d5c34b98241158dda3b9bf6ab1963ac8c001f4e7f24125b2"
+    },
+    "07_Eval_Integration/diagnostics/verify_bm_shortdir.py": {
+      "current": "f04a826583246fa3d4a7c848e751928ca4d139a9cbdf21005595c7a8e1e22478",
+      "recorded_at_run": "582be340ddf880530e5c59b126eed00ba17b5c0707075838d0c832ad44bfffa1"
+    }
+  },
   "checks": [
     "sources",
     "artifacts",

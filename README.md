@@ -211,6 +211,8 @@ python reproduce.py --full
 
 完整说明见 E4 的 `README.md`、`PROTOCOL.md` 和 `NATIVE_STATUS.md`。第三方源码和 Tranco 固定快照由脚本下载并校验；包内不重复放置原始百万域名 CSV，也不包含编译后二进制。**E9 以后的轮次需要 WSL2 Ubuntu 24.04 + g++ 13.3.0。**
 
+**07_Eval_Integration 轮的正式构建入口（2026-10-25 登记）**：`02_Code` 各轮的 `tools_build.py` 规则（唯一临时产物、成功后原子改名、核对可执行哈希后才运行）在 07_Eval 轮由下列 runner 等价承担——`tools/run_bm_followup.py`（S0 验收与故障注入补充）、`tools/run_bm_query_recheck.py`（查询复验）、`tools/run_bm_wrapper_gate.py`（包装成本门）。三者均：固定依赖 pin 并核对提交、以 `-MM` 扫描源码依赖闭包并记录每个文件的 SHA-256、先链接到 `.partial` 临时产物再 `os.replace` 原子发布、记录二进制哈希并在每次运行前复核、运行后复查源码/二进制漂移。07_Eval 轮的一切新实验应经由这些入口或按同样纪律新建 runner；历史一次性 shell 脚本按 [tools/RETIRED.md](tools/RETIRED.md) 登记，不再用于产生新结果。
+
 ## 5. 清单覆盖范围（**必须与清单一起读**）
 
 根目录与 `02_Code_and_Experiments/` 下的两份 `MANIFEST.sha256` 出自 2026-09-11 的打包脚本（`04_Consolidation_and_Verification/build_package.py`），并在 2026-09-14 改名后按新路径重生成。

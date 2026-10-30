@@ -36,6 +36,7 @@ CMakeCache.txt
 /02_Code_and_Experiments/Learned-Index-Model/
 /07_Eval_Integration/learned-index/
 /07_Eval_Integration/hot-src/
+/07_Eval_Integration/upstream_snapshots/
 
 # Large A2 raw traces are published as lossless gzip archives; see
 # 04_Consolidation_and_Verification/archives/evidence_archives.json.
