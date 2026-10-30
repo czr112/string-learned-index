@@ -47,21 +47,29 @@ class WindowRun(native.NativeRun):
         def integer(x):return ((x.dwHighDateTime<<32)|x.dwLowDateTime)*100
         return {'idle_ns':integer(idle),'kernel_including_idle_ns':integer(kernel),'user_ns':integer(user)}
 
+    def remaining(self):return min((self.end-now()).total_seconds(),self.deadline-time.monotonic())
+
     def execute(self,args,name,env=None):
         args=list(map(str,args))
         if args[0] not in self.binaries:return super().execute(args,name,env)
-        remaining=min((self.end-now()).total_seconds(),self.deadline-time.monotonic())
-        if remaining<=0:raise TimeoutError('confirmed idle window expired before '+name)
+        if self.remaining()<=0:raise TimeoutError('confirmed idle window expired before '+name)
         if sha(args[0])!=self.binaries[args[0]] or any(sha(p)!=h for p,h in self.runtime.items()):
             raise ValueError('idle binary/runtime drift before execution')
         self.commands.append(args);save(self.output/'commands.json',self.commands)
-        record={'start_utc':now().isoformat(),'timeout_seconds':remaining,'system_before':self.system_times()}
+        record={'start_utc':now().isoformat(),'system_before':self.system_times()}
         self.report.setdefault('children',{})[name]=record;save(self.output/'report.json',self.report)
         try:
             with (self.output/name).open('w') as stream:
+                record['launch_utc']=now().isoformat();remaining=self.remaining()
+                if remaining<=0:
+                    record['window_expired_before_launch']=True;raise TimeoutError('idle window expired during launch setup')
+                record['timeout_seconds']=remaining
                 result=subprocess.run(args,cwd=ROOT,env=env,stdout=stream,stderr=subprocess.STDOUT,
                     timeout=remaining,creationflags=subprocess.NORMAL_PRIORITY_CLASS)
             record['returncode']=result.returncode
+            record['returned_utc']=now().isoformat()
+            if self.remaining()<=0:
+                record['window_expired_after_return']=True;raise TimeoutError('test returned outside confirmed idle window')
             if result.returncode:raise RuntimeError(name+': exit '+str(result.returncode))
         except subprocess.TimeoutExpired:
             record['window_timeout']=True;raise TimeoutError('own test child stopped at idle-window end: '+name)
