@@ -106,6 +106,7 @@ def main():
     args=parser.parse_args();run=WindowRun(args.output,parse(args.window_start_utc),parse(args.window_end_utc),args.human_note)
     for p in (Path(__file__).resolve(),PROTOCOL,Path(native.__file__).resolve(),native.PROTOCOL,
               Path(native.old_statistics.__file__).resolve(),native.old_statistics.PROTOCOL):run.sources[str(p)]=sha(p)
+    control_sources=dict(run.sources)
     try:
         prior=ROOT/'07_Eval_Integration/results/bm_native_query_calibration_20261030';metadata={}
         for name in ('report.json','identity.json','environment.json'):
@@ -131,6 +132,10 @@ def main():
         save(run.output/'reused_identity.json',{'frozen_identity_sha256':sha(prior/'identity.json'),
             'binaries':run.binaries,'compiled_source_closure':identity['closure']})
         cases,hashes=native.frozen_inputs();save(run.output/'cases.json',cases);save(run.output/'input_hashes.json',hashes)
+        save(run.output/'identity.json',{'pins':identity['pins'],'current_control_sources':control_sources,
+            'frozen_compiled_source_closure':identity['closure'],'verified_sources':dict(run.sources),
+            'binaries':dict(run.binaries),'staged_runtime':dict(run.runtime),
+            'frozen_identity_sha256':sha(prior/'identity.json')})
         run.report['contract']=run.execute([binaries['contract_native.exe']],'contract.log')
         if '99/99 checks passed' not in run.report['contract']:raise ValueError('idle public contract')
         modules=[x.removeprefix('NATIVE_RUNTIME ') for x in run.report['contract'].splitlines() if x.startswith('NATIVE_RUNTIME ')]
