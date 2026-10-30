@@ -6,6 +6,8 @@ import json
 import shutil
 import subprocess
 import sys
+import tarfile
+import os
 
 ROOT=Path(__file__).resolve().parents[1]
 PROTOCOL=ROOT/'docs/PROTOCOL_BM_MODEL16_BUNDLE_20261030.md'
@@ -111,6 +113,20 @@ See provenance.json and THIRD_PARTY_NOTICES.txt for original evidence and source
         if any(sha(p)!=h for p,h in watched.items()):raise ValueError('export input/source drift')
         if sha(output/'manifest.json')!=report['manifest_sha256'] or any(sha(output/name)!=h for name,h in files.items()):
             raise ValueError('exported bundle drift')
+        source_members={**files,'manifest.json':report['manifest_sha256']}
+        partial=output/'source_bundle.tar.gz.partial';archive_path=output/'source_bundle.tar.gz'
+        with tarfile.open(partial,'w:gz') as archive:
+            for name in sorted(source_members):archive.add(output/name,arcname=name,recursive=False)
+        with tarfile.open(partial,'r:gz') as archive:
+            entries=archive.getmembers()
+            if len(entries)!=len(source_members) or {m.name for m in entries}!=set(source_members):
+                raise ValueError('source archive member coverage')
+            for member in entries:
+                if not member.isfile() or hashlib.sha256(archive.extractfile(member).read()).hexdigest()!=source_members[member.name]:
+                    raise ValueError('source archive member mismatch')
+        os.replace(partial,archive_path);save(output/'source_bundle_members.json',source_members)
+        report['source_archive']={'name':archive_path.name,'sha256':sha(archive_path),'members':len(source_members),
+                                  'binaries_or_datasets':False}
         report.update(status='complete',manifest_files=len(files),compiled_closure_files=len(manifest['expected_closure']));save(output/'export_report.json',report)
         print(json.dumps({'status':'complete','source_files':len(files),'contract_checks_per_build':127}),flush=True)
     except Exception as error:

@@ -40,4 +40,7 @@ evidence remains separately bound to accepted source bytes.
 No original tracked source rewritten, no dependency version upgrade, no binaries
 or datasets delivered. Preserve generated package, both raw build logs and source
 archive with per-member SHA. Any closure/build/contract mismatch stops delivery.
+The exporter must create source_bundle.tar.gz from ONLY manifest-listed source
+files plus manifest.json, stream-verify every archive member, and publish an
+external per-member SHA receipt. Keep opt/san logs outside that delivered archive.
 Context16 remains default; dynamic16 and fixed8 maintenance remain closed.
