@@ -1,0 +1,8 @@
+{
+  "protocol_sha256": "853d33c9770fccf8b9a0091e3fdaabe4b716442f54aaf100634465aab3168d05",
+  "timing_claims": false,
+  "fixed_budget": 8,
+  "minimum_headroom_cells": 8,
+  "maximum_payload_exact_ratio": 1.05,
+  "completed_qualification_report_sha256": "baa6e5acbb433b36ea961b2e8fdb89927fe518bdbf733a7c1e42c896a27d88da"
+}

@@ -1,0 +1,46 @@
+{
+  "pins": {
+    "model": "3894c767338a865d2920ba5e21283827fea1d803",
+    "benchmark": "003a55bf674b43350fbb70242070fb74f33a56ce"
+  },
+  "closure": {
+    "/mnt/d/StringLearnedIndex_Workspace/tools/run_bm_tx.py": "bf39f16fab44ece72adcadfa21ac2d202a8640779e18cda2ade5639815786d12",
+    "/mnt/d/StringLearnedIndex_Workspace/tools/run_bm_fixed8_refit_work.py": "7e47e6c1f95a0faea342cd2bd280bbdc20b837c10df67b9b6ba1dcab4d15635f",
+    "/mnt/d/StringLearnedIndex_Workspace/docs/PROTOCOL_BM_FIXED8_REFIT_DIAGNOSIS_20261030.md": "853d33c9770fccf8b9a0091e3fdaabe4b716442f54aaf100634465aab3168d05",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_model16_work_20261030/cases.json": "55085a83c17061cb02ecd4d2d3e48cfa3a9ee1fc830ac8147b770e32edc9bbec",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_model16_work_20261030/input_hashes.json": "0baf450ce4694763594fe11ae7fab2a6a2a9b5f2d3fad5944ba858d76a13fbab",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_index.hpp": "f79581088016c51136a82c1c9400a1ce3afd35148900c8cb0424f73b84af1bc1",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_page_core.hpp": "3f1603ab4f8301e51820913af77bce7a05a3a6ef119916a15907ed5031db4431",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_page_root.hpp": "0addc42fadc33000c29a2a7a4f055581c420d1aa9835bf0a040a07b0b43fd766",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_page_core.hpp": "52db46e3bcd6c8b3bfc3bc5f4dfe1c20bc7ce0988cbdd41bb1dd7eadbff3a7ea",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_split_index.hpp": "02382f336285df9178e7487d49be372004beefea48be3345622bb517e251647e",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/key_bytes.h": "eca0f2662a09ead7eccbf2963d1d99f845ac9dfcedcfce37320356165e46314b",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_tx_query.cpp": "c61d3d2a7310d737119fc17ccc4e895bd5ce139268883c127a00422e2ea45742",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.h": "10144f30ce011034992f4ef5fc6684034c031956cf035f162b10ee3708a1e72b",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_experiment_adapter.hpp": "f5723259c85795e07d03ad5079b0520f13ecce8784ab1fe06a84881ee9065db0",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_page_core.hpp": "2ff68cabb108e29c92e58dbbf45e7762fe1632009e0c4df0df9af72e831756a3",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_tx_adapter.hpp": "6dcc14bb1d7993408c4cd33b4274a07a34b11e1bf3308b5542ef085e37bb775c",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/query_cost.h": "2ec2b0188b68960f7cbe8114fc5b265b425a9c7fd64a9b6d1eea3e7fda9b94ef",
+    "/mnt/d/StringLearnedIndex_Workspace/02_Code_and_Experiments/validation_e25_20260918/static_physical_index.hpp": "bb4befc3fa1a3ad5b65089d8d52339249d6f31e24e22dedb7a6d2d531d58e089",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp": "4f4cbf19003e05d7974e53ae0c2c24a4804def3efc4747bfcf4cc11288256d97",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_fixed8_refit_work.cpp": "42089b168351edbbe79b60180a2dc603634c325e67e9a23e665cdc7ee62feb48",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_index.hpp": "ec5c1be2198f0ebc82ba75503268c1be0efe52436b3791bcb1473933ac14d8b5",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_page_index.hpp": "c3e54dc2638e0ba1f5f71a205b1f29dab950d57dc4bec2974ab88f70da87f082",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_tx_index.hpp": "eb117e7f4571ed8ad849f5fc6620cf968d28a911535eb08003c4f46061941d5d",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_tx_index.hpp": "3ed9fafa500be15bf140f551eeb522f7802d09aa4644a0d4020eb28830bfa288",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_n1_page_root.hpp": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_core_trace_oracle.hpp": "d8597a5aafce6d8670101f61238671cc97622d2b85167746a4b2064071cc4fde",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_followup_memory.hpp": "9bec14bc28fce26cc3930e932f2058c1b23a90b0e173820c588dbea679ba4697",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_split_adapter.hpp": "db529b4ba047130bbf9f408ba93d61a54498abd5ed5255eb376cdb32cddb87f9",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/upstream_snapshots/benchmark_003a55bf/src/index_contract.h": "3587addd4e4fda743975534a95173ccb8d09d38029f5239ff3998574b45c3a39",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_bounded_index.hpp": "2cb28beb92810180dc32b414f0865746d224602e5ad6fb565f84818752f582d0",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_page_root.hpp": "c7b9f57d8b3fc47e0702d5239408ea334b243afe84b7e1f6bba1fdaa10fac5c6",
+    "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/diagnostics/bm_query_recheck.cpp": "ba85afbb1e8b5db2be4469f6c5c220406537cdc19d9166f9257e33c96c7887db"
+  },
+  "runner_sha256": "bf39f16fab44ece72adcadfa21ac2d202a8640779e18cda2ade5639815786d12",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_opt": "a6fbcc6da046425c876fc8a0358b102d6fe011f5db3f2459376d7a75bb5b19d4",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sanitizer": "8295524622199ad7f0fe7932c183702ef4bc8624a823d3bcba2ac5a62e11a8cb"
+  }
+}

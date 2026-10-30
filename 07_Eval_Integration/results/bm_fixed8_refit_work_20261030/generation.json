@@ -1,0 +1,26 @@
+{
+  "bm_n1_page_core.hpp": {
+    "base": "10e0494",
+    "preimage_sha256": "3f1603ab4f8301e51820913af77bce7a05a3a6ef119916a15907ed5031db4431",
+    "generated_sha256": "2ff68cabb108e29c92e58dbbf45e7762fe1632009e0c4df0df9af72e831756a3",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_page_core.hpp"
+  },
+  "bm_n1_page_root.hpp": {
+    "base": "10e0494",
+    "preimage_sha256": "1cabbb9810cb251eaa7899c95839cf6ca40647f16f53fbe992b34196f09f5b7b",
+    "generated_sha256": "0addc42fadc33000c29a2a7a4f055581c420d1aa9835bf0a040a07b0b43fd766",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_page_root.hpp"
+  },
+  "bm_n1_index.hpp": {
+    "base": "10e0494",
+    "preimage_sha256": "ec5c1be2198f0ebc82ba75503268c1be0efe52436b3791bcb1473933ac14d8b5",
+    "generated_sha256": "f79581088016c51136a82c1c9400a1ce3afd35148900c8cb0424f73b84af1bc1",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_index.hpp"
+  },
+  "bm_tx_index.hpp": {
+    "base": "10e0494",
+    "preimage_sha256": "eb117e7f4571ed8ad849f5fc6620cf968d28a911535eb08003c4f46061941d5d",
+    "generated_sha256": "3ed9fafa500be15bf140f551eeb522f7802d09aa4644a0d4020eb28830bfa288",
+    "generated": "/mnt/d/StringLearnedIndex_Workspace/builds/bm_fixed8_refit_work_20261030/refit_sources/bm_refit_tx_index.hpp"
+  }
+}
