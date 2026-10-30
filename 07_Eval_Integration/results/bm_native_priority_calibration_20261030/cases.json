@@ -1,0 +1,226 @@
+{
+  "words_95_5_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_uniform_growth\\queries.bin"
+  ],
+  "words_95_5_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_uniform_replacement\\queries.bin"
+  ],
+  "words_95_5_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_hotspot_growth\\queries.bin"
+  ],
+  "words_95_5_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_95_5_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_95_5_hotspot_replacement\\queries.bin"
+  ],
+  "words_80_20_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_uniform_growth\\queries.bin"
+  ],
+  "words_80_20_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_uniform_replacement\\queries.bin"
+  ],
+  "words_80_20_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_hotspot_growth\\queries.bin"
+  ],
+  "words_80_20_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_80_20_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\english_words_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_80_20_hotspot_replacement\\queries.bin"
+  ],
+  "urls_95_5_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_uniform_growth\\queries.bin"
+  ],
+  "urls_95_5_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_uniform_replacement\\queries.bin"
+  ],
+  "urls_95_5_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_hotspot_growth\\queries.bin"
+  ],
+  "urls_95_5_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_95_5_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_95_5_hotspot_replacement\\queries.bin"
+  ],
+  "urls_80_20_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_uniform_growth\\queries.bin"
+  ],
+  "urls_80_20_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_uniform_replacement\\queries.bin"
+  ],
+  "urls_80_20_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_hotspot_growth\\queries.bin"
+  ],
+  "urls_80_20_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\urls_80_20_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_real_20261018\\interchange\\memetracker_urls_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\urls_80_20_hotspot_replacement\\queries.bin"
+  ],
+  "words_indep_95_5_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_uniform_growth\\queries.bin"
+  ],
+  "words_indep_95_5_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_uniform_replacement\\queries.bin"
+  ],
+  "words_indep_95_5_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_hotspot_growth\\queries.bin"
+  ],
+  "words_indep_95_5_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_95_5_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_95_5_hotspot_replacement\\queries.bin"
+  ],
+  "words_indep_80_20_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_uniform_growth\\queries.bin"
+  ],
+  "words_indep_80_20_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_uniform_replacement\\queries.bin"
+  ],
+  "words_indep_80_20_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_hotspot_growth\\queries.bin"
+  ],
+  "words_indep_80_20_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_v3_20261025\\traces\\words_indep_80_20_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_indep_80_20_hotspot_replacement\\queries.bin"
+  ],
+  "words_100k_95_5_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_uniform_growth\\queries.bin"
+  ],
+  "words_100k_95_5_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_uniform_replacement\\queries.bin"
+  ],
+  "words_100k_95_5_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_hotspot_growth\\queries.bin"
+  ],
+  "words_100k_95_5_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_95_5_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_95_5_hotspot_replacement\\queries.bin"
+  ],
+  "words_100k_80_20_uniform_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_uniform_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_uniform_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_uniform_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_uniform_growth\\queries.bin"
+  ],
+  "words_100k_80_20_uniform_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_uniform_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_uniform_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_uniform_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_uniform_replacement\\queries.bin"
+  ],
+  "words_100k_80_20_hotspot_growth": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_hotspot_growth_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_hotspot_growth_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_hotspot_growth\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_hotspot_growth\\queries.bin"
+  ],
+  "words_100k_80_20_hotspot_replacement": [
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_hotspot_replacement_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_audited_100k_v3_20261025\\traces\\words_100k_80_20_hotspot_replacement_ops.bin",
+    "D:\\StringLearnedIndex_Workspace\\07_Eval_Integration\\results\\bm_space_gen_inputs_20261019\\interchange\\english_words_100000_s20261019_rows.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_hotspot_replacement\\final.bin",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_tx_query_bm1_20261030\\cases\\words_100k_80_20_hotspot_replacement\\queries.bin"
+  ]
+}

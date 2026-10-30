@@ -1,0 +1,22 @@
+{
+  "selected_ms": null,
+  "affinity": [
+    0,
+    1
+  ],
+  "process_class": 32,
+  "protocol_sha256": "9dca2434a79552c3aadf30c920e97513bef71e7a899a4dac87795d758b25c0e2",
+  "source_closure_sha256": "8a6a571fe39906bc0c9be7b3898c29e11cbf37d7f103513350cf28eea2a16474",
+  "sample_hashes": {
+    "words_95_5_uniform_growth_p00.json": "f0f313c581271074ec90df0d7e2f222d433bb76d511124dfaea130a34be0491b",
+    "words_95_5_uniform_growth_p01.json": "6870730924d1967bc3f6920cb1ac9b73b9af3ff5bc9c742ef38e263fc706475a",
+    "words_95_5_uniform_growth_p02.json": "b51bf681f185f780c5cc683ae5747682b8564c2ef93ba243a7e4fe1ef32bb2ef",
+    "words_95_5_uniform_growth_p03.json": "442deb575aa7ec99cb5269f2e8105c7a8ef37a7008dc8c49332ef7c3853aaac4",
+    "urls_80_20_hotspot_replacement_p00.json": "127e6763f482cd243227c7338e73b0565039f0a9100909879f1885f89a1a809c",
+    "urls_80_20_hotspot_replacement_p01.json": "adc04d8b4879707f5d3c0916f510a724df841dab85f9aad6a4180de2583327a4",
+    "urls_80_20_hotspot_replacement_p02.json": "1a08ee4472d422b9dca760fe319d9f7bb92641d503723421a56222cc182cc5cf",
+    "urls_80_20_hotspot_replacement_p03.json": "3fb6a59afc509c1890093aaa62fe90e0716fee3cc1a1d18cd8ebedbc4e00511f"
+  },
+  "decision": "AA only",
+  "report_sha256": "baa6e5acbb433b36ea961b2e8fdb89927fe518bdbf733a7c1e42c896a27d88da"
+}

@@ -1,0 +1,6 @@
+{
+  "base": "d337576",
+  "source_sha256": "5326004adf1fa2f66ecfd644e543246d321b434c52eef91785aaa76c17563390",
+  "generated_sha256": "20e351379c9ea620c087feb1e3777776a66ceab2fcd42783d7ade9068a27a691",
+  "change": "entry rename plus explicit implicit-main success return"
+}

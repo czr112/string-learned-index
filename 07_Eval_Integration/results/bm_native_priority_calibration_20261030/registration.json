@@ -1,0 +1,19 @@
+{
+  "phase": "calibrate",
+  "floor_ms": 1000,
+  "cells": [
+    "words_95_5_uniform_growth",
+    "urls_80_20_hotspot_replacement"
+  ],
+  "processes": 4,
+  "rounds": 8,
+  "affinity": [
+    0,
+    1
+  ],
+  "process_class": 32,
+  "own_thread_priority": 1,
+  "protocol_sha256": "9dca2434a79552c3aadf30c920e97513bef71e7a899a4dac87795d758b25c0e2",
+  "source_closure_sha256": "8a6a571fe39906bc0c9be7b3898c29e11cbf37d7f103513350cf28eea2a16474",
+  "estimator": "unchanged native parity and halves AA"
+}

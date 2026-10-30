@@ -1,0 +1,1426 @@
+{
+  "status": "complete",
+  "binaries": {
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\query_priority.exe": "6f6f221633f619625c0a7dc9dc88e2bf4a63947b882236dff13e6c26d0e2698b",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\contract_priority.exe": "da87bf742500d944a6dd2ea72789d55f252a604c8220cad72b966493e7b46b31"
+  },
+  "contract": "adapter under acceptance: make_bm_tx_experiment_index\n\ndescriptor:\n  implementation = BM page (transactional encoded split)\n  version        = 0e6231bffcc11deb6f0d8c18773d9c1ed2fa153ef8d1e56441648eedd8da73cb\n  support        = bulk_load=1 find=1 insert=1 update=1 erase=1 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)\n  notes          = model_commit=3894c767338a865d2920ba5e21283827fea1d803; build_mode=bounded-per-page; mutate_mode=encoded-page-split; lookup_mode=base; root_mode=flat; single-threaded; 2048 rows/page, 15/16 slots, strong exception guarantee on block split.\n  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)\n  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)\n  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes\n  memory         = index_owned=1229 adapter_owned=16 retained_input=0\n\n99/99 checks passed\nNATIVE_RUNTIME {\"libstdc++-6.dll\":\"D:\\\\StringLearnedIndex_Workspace\\\\builds\\\\bm_native_priority_calibration_20261030\\\\libstdc++-6.dll\",\"libgcc_s_seh-1.dll\":\"D:\\\\StringLearnedIndex_Workspace\\\\builds\\\\bm_native_priority_calibration_20261030\\\\libgcc_s_seh-1.dll\"}\n",
+  "phase": "calibrate",
+  "semantic": {
+    "urls_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 463970,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1415,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581172,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 282,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 471806,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1302,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581596,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 201,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445072,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 296,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581850,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 61,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445072,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 297,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581890,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 19,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 626416,
+      "initial_rows": 50000,
+      "final_rows": 54000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 1311,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 816100,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 288,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 627136,
+      "initial_rows": 50000,
+      "final_rows": 54000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 1255,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 816100,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 155,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 600184,
+      "initial_rows": 50000,
+      "final_rows": 51000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 321,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 815962,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 68,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 600184,
+      "initial_rows": 50000,
+      "final_rows": 51000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 244,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 815914,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 8,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 463934,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1355,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581468,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 259,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 471736,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1243,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 582112,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 198,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 444694,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 331,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581752,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 56,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 444694,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 328,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581932,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 20,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 464284,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1424,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581076,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 310,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 471948,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1282,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581932,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 215,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445064,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 295,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581860,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 67,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445064,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 338,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 582056,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 17,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_priority_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    }
+  },
+  "results": {
+    "words_95_5_uniform_growth": {
+      "aa": {
+        "bm_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9988509479526927,
+              "ci95": [
+                0.9699401249581684,
+                1.0286235104141317
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9944015072751371,
+              "ci95": [
+                0.9816436190523747,
+                1.0073252028324
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "candidate_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.000644468606844,
+              "ci95": [
+                0.9797625413533277,
+                1.0219714576660697
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9992211119682268,
+              "ci95": [
+                0.9840726417806558,
+                1.0146027724095261
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "bm_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.994517971064101,
+              "ci95": [
+                0.9873231426210759,
+                1.0017652297137019
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9997767469599714,
+              "ci95": [
+                0.9806535850006387,
+                1.0192728187101991
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "candidate_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0052617179088337,
+              "ci95": [
+                0.9903499215195547,
+                1.0203980426862342
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0091834202753325,
+              "ci95": [
+                0.9959376412498091,
+                1.0226053656136112
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      },
+      "diagnostics": {
+        "bm_dynamic": {
+          "cycles_per_lookup_range": [
+            756.8965157470703,
+            832.274622680664
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_dynamic": {
+          "cycles_per_lookup_range": [
+            758.9815812988281,
+            827.7329366455078
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "bm_snapshot": {
+          "cycles_per_lookup_range": [
+            693.4069134521484,
+            749.3972635498047
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_snapshot": {
+          "cycles_per_lookup_range": [
+            695.6977525634766,
+            756.566571899414
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        }
+      },
+      "all_aa_pass": true
+    },
+    "urls_80_20_hotspot_replacement": {
+      "aa": {
+        "bm_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9406467715937208,
+              "ci95": [
+                0.8528001874034994,
+                1.0375423950171363
+              ],
+              "pass": false
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.967021924882986,
+              "ci95": [
+                0.7775027498532536,
+                1.202737100776676
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "candidate_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9291783365396638,
+              "ci95": [
+                0.8063503852641689,
+                1.0707161512817618
+              ],
+              "pass": false
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9148042881812685,
+              "ci95": [
+                0.6499497220721829,
+                1.2875871121334141
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "bm_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0195038132090057,
+              "ci95": [
+                0.7956521131644632,
+                1.3063347761546875
+              ],
+              "pass": false
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.937703981523816,
+              "ci95": [
+                0.6298641348300613,
+                1.3959974990524755
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "candidate_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9812724850493786,
+              "ci95": [
+                0.8397164331932989,
+                1.1466914923330178
+              ],
+              "pass": false
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9233245581479314,
+              "ci95": [
+                0.6251989837376818,
+                1.363611045210484
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        }
+      },
+      "diagnostics": {
+        "bm_dynamic": {
+          "cycles_per_lookup_range": [
+            425.18385314941406,
+            838.1485871582031
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_dynamic": {
+          "cycles_per_lookup_range": [
+            426.3616473388672,
+            854.3546236572265
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "bm_snapshot": {
+          "cycles_per_lookup_range": [
+            423.63135314941405,
+            823.9043272705078
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_snapshot": {
+          "cycles_per_lookup_range": [
+            418.91073889160157,
+            828.9627767333984
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        }
+      },
+      "all_aa_pass": false
+    }
+  },
+  "priority_records": {
+    "urls_80_20_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_80_20_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_80_20_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_80_20_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_95_5_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_95_5_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_95_5_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_95_5_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_80_20_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_80_20_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_80_20_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_80_20_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_95_5_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_95_5_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_95_5_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_100k_95_5_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_80_20_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_80_20_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_80_20_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_80_20_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_80_20_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_80_20_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_80_20_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_80_20_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_95_5_hotspot_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_95_5_hotspot_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_95_5_uniform_growth_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_indep_95_5_uniform_replacement_check.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_uniform_growth_p00.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_uniform_growth_p01.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_uniform_growth_p02.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "words_95_5_uniform_growth_p03.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_80_20_hotspot_replacement_p00.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_80_20_hotspot_replacement_p01.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_80_20_hotspot_replacement_p02.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    },
+    "urls_80_20_hotspot_replacement_p03.json": {
+      "start": {
+        "previous": 0,
+        "requested": 1,
+        "actual": 1,
+        "process_class": 32
+      },
+      "end": {
+        "actual": 1,
+        "process_class": 32,
+        "restored": true,
+        "restored_actual": 0
+      }
+    }
+  },
+  "selection": {
+    "selected_ms": null,
+    "affinity": [
+      0,
+      1
+    ],
+    "process_class": 32,
+    "protocol_sha256": "9dca2434a79552c3aadf30c920e97513bef71e7a899a4dac87795d758b25c0e2",
+    "source_closure_sha256": "8a6a571fe39906bc0c9be7b3898c29e11cbf37d7f103513350cf28eea2a16474",
+    "sample_hashes": {
+      "words_95_5_uniform_growth_p00.json": "f0f313c581271074ec90df0d7e2f222d433bb76d511124dfaea130a34be0491b",
+      "words_95_5_uniform_growth_p01.json": "6870730924d1967bc3f6920cb1ac9b73b9af3ff5bc9c742ef38e263fc706475a",
+      "words_95_5_uniform_growth_p02.json": "b51bf681f185f780c5cc683ae5747682b8564c2ef93ba243a7e4fe1ef32bb2ef",
+      "words_95_5_uniform_growth_p03.json": "442deb575aa7ec99cb5269f2e8105c7a8ef37a7008dc8c49332ef7c3853aaac4",
+      "urls_80_20_hotspot_replacement_p00.json": "127e6763f482cd243227c7338e73b0565039f0a9100909879f1885f89a1a809c",
+      "urls_80_20_hotspot_replacement_p01.json": "adc04d8b4879707f5d3c0916f510a724df841dab85f9aad6a4180de2583327a4",
+      "urls_80_20_hotspot_replacement_p02.json": "1a08ee4472d422b9dca760fe319d9f7bb92641d503723421a56222cc182cc5cf",
+      "urls_80_20_hotspot_replacement_p03.json": "3fb6a59afc509c1890093aaa62fe90e0716fee3cc1a1d18cd8ebedbc4e00511f"
+    },
+    "decision": "AA only"
+  }
+}
