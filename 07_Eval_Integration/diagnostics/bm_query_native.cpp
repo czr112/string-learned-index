@@ -33,6 +33,21 @@ static void emit_batch(const NativeBatch& b) {
              <<",\"cpu_ns\":"<<b.cpu_ns<<",\"cycles\":"<<b.cycles
              <<",\"cpu_before\":"<<b.before<<",\"cpu_after\":"<<b.after;
 }
+static void emit_modules() {
+    std::cout<<'{';bool first=true;
+    for(const auto* name:{"libstdc++-6.dll","libgcc_s_seh-1.dll","libwinpthread-1.dll"}) {
+        const auto module=GetModuleHandleA(name);if(!module)continue;
+        char location[32768];const auto length=GetModuleFileNameA(module,location,sizeof(location));
+        need(length>0&&length<sizeof(location),"runtime module path");
+        if(!first)std::cout<<',';first=false;std::cout<<'"'<<name<<"\":\"";
+        for(DWORD i=0;i<length;++i) {
+            const char c=location[i];need(static_cast<unsigned char>(c)>=32,"runtime path control byte");
+            if(c=='\\'||c=='"')std::cout<<'\\';std::cout<<c;
+        }
+        std::cout<<'"';
+    }
+    std::cout<<'}';
+}
 int main(int argc,char** argv) {
     try {
         need(argc==9,"check|run rows ops pool final queries process min_ms");
@@ -48,7 +63,7 @@ int main(int argc,char** argv) {
         Case test(argv,process);
         if(mode=="check") {
             std::cout<<"{\"passed\":true,\"cpu\":"<<cpu<<",\"affinity\":"<<selected<<',';
-            metadata(test);std::cout<<"}\n";return 0;
+            metadata(test);std::cout<<",\"runtime_modules\":";emit_modules();std::cout<<"}\n";return 0;
         }
         const auto found=std::find_if(test.query.groups.begin(),test.query.groups.end(),[](const auto& g){return g.name=="mixed90";});
         need(found!=test.query.groups.end()&&!found->queries.empty(),"native primary group");const auto& group=*found;
@@ -77,6 +92,7 @@ int main(int argc,char** argv) {
         }
         std::cout<<"{\"process\":"<<process<<",\"minimum_ms\":"<<minimum_ms<<",\"loops\":"<<loops
                  <<",\"cpu\":"<<cpu<<",\"affinity\":"<<selected<<",\"group\":\"mixed90\",";metadata(test);
+        std::cout<<",\"runtime_modules\":";emit_modules();
         std::cout<<",\"calibration\":[";bool first=true;
         for(const auto& t:calibration) {
             if(!first)std::cout<<',';first=false;

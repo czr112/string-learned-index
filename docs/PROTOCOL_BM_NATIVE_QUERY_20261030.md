@@ -55,7 +55,10 @@ retroactively erase WSL-specific failures or close the separate write/space gate
 Reuse Run's source scans, pins, binary hashes, immutable directories and final
 drift checks. The native adapter uses .exe final paths and .partial.exe link outputs,
 with atomic renames before publication. Bind the local compiler and available
-compiler/runtime binaries; record their version and paths. No compiler/benchmark
+cc1plus/collect2/linker/assembler/runtime binaries; record their version and paths.
+Stage registered GCC runtime DLLs beside the executables with atomic publication,
+verify them before launches and at completion, and verify the modules' reported
+loaded paths/hashes for every native semantic and measurement process. No compiler/benchmark
 jobs overlap. Keep native raw data and failures separate from all WSL results.
 
 API sources: [thread affinity](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadaffinitymask),

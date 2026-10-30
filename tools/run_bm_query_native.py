@@ -27,21 +27,29 @@ class NativeRun(Run):
         version=subprocess.check_output([str(self.compiler),'-dumpfullversion'],text=True).strip()
         if version!='15.2.0':raise ValueError('native compiler version drift')
         programs=[self.compiler]
-        for query in ('cc1plus','ld','as'):
+        for query in ('cc1plus','collect2','ld','as'):
             named=subprocess.check_output([str(self.compiler),'-print-prog-name='+query],text=True).strip()
             p=Path(named)
             if not p.is_absolute():p=Path(shutil.which(named) or shutil.which(named+'.exe') or (self.compiler.parent/named))
             p=p.resolve()
             if not p.is_file():raise ValueError('unbound compiler helper: '+query)
             programs.append(p)
-        programs.extend(p for p in (self.compiler.parent/n for n in ('libstdc++-6.dll','libgcc_s_seh-1.dll','libwinpthread-1.dll')) if p.is_file())
+        libraries=[p for p in (self.compiler.parent/n for n in ('libstdc++-6.dll','libgcc_s_seh-1.dll','libwinpthread-1.dll')) if p.is_file()]
+        programs.extend(libraries);self.runtime={}
+        for source in libraries:
+            staged=self.output/source.name;partial=staged.with_name(staged.name+'.partial')
+            shutil.copyfile(source,partial);os.replace(partial,staged)
+            self.runtime[str(staged)]=sha(source)
+            if sha(staged)!=self.runtime[str(staged)]:raise ValueError('runtime staging identity')
+        self.sources.update(self.runtime)
         self.sources.update({str(p):sha(p) for p in programs})
         save(self.output/'environment.json',{'platform':platform.platform(),'python':sys.version,
-             'compiler':str(self.compiler),'version':version,'toolchain':{str(p):sha(p) for p in programs},
+             'compiler':str(self.compiler),'version':version,'toolchain':{str(p):sha(p) for p in programs},'staged_runtime':self.runtime,
              'timing':'native wall; CPU time and cycles diagnostic only'})
 
     def execute(self,args,name,env=None):
         args=list(args)
+        if any(sha(p)!=h for p,h in self.runtime.items()):raise ValueError('native runtime drift before execution')
         if str(args[0])=='g++':args[0]=str(self.compiler)
         if str(args[0])==str(self.compiler) and '-o' in args:
             output_position=args.index('-o')+1;requested=Path(args[output_position])
@@ -54,6 +62,12 @@ class NativeRun(Run):
         return result.replace('\\:',':') if '-MM' in args else result
 
     def build(self,name,*args,**kwargs):return super().build(name+'.exe',*args,**kwargs)
+
+    def verify_modules(self,record):
+        for name,location in record['runtime_modules'].items():
+            expected=(self.output/name).resolve();actual=Path(location).resolve()
+            if actual!=expected or str(expected) not in self.runtime or sha(actual)!=self.runtime[str(expected)]:
+                raise ValueError('unexpected loaded runtime module')
 
 def closure_digest(run):
     normalized={}
@@ -172,6 +186,7 @@ def main():
         affinity=set()
         for cell,paths in sorted(cases.items()):
             check=json.loads(run.execute([binary,'check',*paths,0,250],cell+'_check.json'))
+            run.verify_modules(check)
             if not check['passed']:raise ValueError('native semantic gate')
             run.report['semantic'][cell]=check;affinity.add((check['cpu'],check['affinity']))
         if len(affinity)!=1:raise ValueError('semantic native affinity changed')
@@ -191,6 +206,7 @@ def main():
                 blocks=[]
                 for process in range(processes):
                     block=json.loads(run.execute([binary,'run',*cases[cell],process,floor],f'{floor}_{cell}_p{process:02d}.json'))
+                    run.verify_modules(block)
                     if (block['cpu'],block['affinity'])!=affinity:raise ValueError('measured native affinity changed')
                     blocks.append(block)
                 values[cell]=analyze(blocks,args.phase=='confirm');run.report['results'][str(floor)]=values
