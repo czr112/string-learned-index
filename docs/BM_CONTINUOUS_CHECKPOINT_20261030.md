@@ -1,3 +1,16 @@
+# Current checkpoint after paired qualification (2026-10-30)
+
+The historical NEXT instructions below are superseded. No timing job is pending.
+The all-TX8 paired known-truth calibration completed and qualified=false in both pilots; 68 text records and all eight sample hashes are archived under 07_Eval_Integration/results/bm_snapshot_paired_calibration_20261030. Stop this estimator: no more processes, batches, orderings, floors, candidate timing, or gate relaxation.
+
+Context16 remains default. Model16 read-only functionality/space passed; latency is unknown. Dynamic16 and fixed8 maintenance remain stopped. TX algorithm stays 10e0494.
+
+Continue from STRUCTURE_PERFORMANCE_PLAN_20261030.md and STRUCTURE_PERFORMANCE_JOURNAL_20261030.md: establish valid HOT ownership/key-domain semantics in a lawful Linux execution context, then diagnose confirmed BM1 regressions with matched layouts before choosing one intervention. WSL access and Git transport are blocked; do not retry refused operations without relevant new evidence.
+
+Work is isolated in the authorized C task checkout. Original D main and its working files were not modified; see PUBLICATION_READINESS_20261030.md before synchronization.
+
+## Historical checkpoint, retained as prior evidence only
+
 # Live continuation checkpoint 2026-10-30
 
 User wants continuous implementation/analysis/targeted optimization until real quota. Latest user confirmed: local idle window starts NOW for at least30minutes. Receipt clock2026-10-30 05:47:13UTC; hard end06:17:13UTC (local14:17:13). Do not extend window from later tool time. Don't use stale automaticgoalusageLimited as livequota, don't mark goalcomplete. No new publicpush authorized. Preserve inherited10tracked dirtyfiles and unrelateduntracked evidence.

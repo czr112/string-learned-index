@@ -1,0 +1,19 @@
+{
+  "phase": "calibrate",
+  "scope": "relative snapshots",
+  "fixed_floor_ms": 1000,
+  "quads": 8,
+  "batches": 32,
+  "processes": 4,
+  "cells": [
+    "words_95_5_uniform_growth",
+    "urls_80_20_hotspot_replacement"
+  ],
+  "affinity": [
+    0,
+    1
+  ],
+  "source_closure_sha256": "2abffcd85d4ca27d9814c0c5d971b1133e564820103c530e704fc3af95419923",
+  "protocol_sha256": "2dbcdf1af4cee213742cfdc9bb849e0c683a8bdea7602c24482f4a35d6d0ade9",
+  "old_absolute_gate_reclassified": false
+}

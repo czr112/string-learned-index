@@ -1,0 +1,9 @@
+{
+  "base": "d337576",
+  "preimage_sha256": "5326004adf1fa2f66ecfd644e543246d321b434c52eef91785aaa76c17563390",
+  "generated_sha256": "57a5094b05d1a851eeb1adf0b2bfdca99d76a09a0d1e5512c3c9a51bffc5a0ff",
+  "changes": [
+    "entry rename",
+    "explicit successful main return"
+  ]
+}

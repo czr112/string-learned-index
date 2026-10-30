@@ -1,0 +1,10 @@
+{
+  "scope": "archive of existing completed failed qualification; no new execution",
+  "source_revision": "0b0181b69ba7e1ff573c4ca3806ae24e4f19afe8",
+  "report_sha256": "feaf1cb130430f2bebba0aa59ed264a8db73d379eb148eeaff6cea91e4be96e9",
+  "raw_records_sha256": "0e653156f2df33a2a187c08df713fb9780fcbb7759326a160ccd64246c00fe8c",
+  "archived_files": 68,
+  "sample_hashes_verified": 8,
+  "qualified": false,
+  "binary_or_dataset_files_included": false
+}
