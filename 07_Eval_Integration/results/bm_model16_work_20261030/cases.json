@@ -1,0 +1,2498 @@
+{
+  "words_95_5_uniform_growth": {
+    "name": "words_95_5_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      5142,
+      11694
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 33768,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "44817656374116259e245bca98e7b175c19fe5714ad58df1b6d9e3b0154274fe",
+    "query_sha256": "9608046c3868be1c6c7b1d0b907daeabff12ad68bdf24eaf08f764a7eeeab223",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 5144,
+        "rank_max": 11694,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 28,
+        "rank_max": 65461,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 5143,
+        "rank_max": 11693,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 7,
+        "rank_max": 65522,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 492,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 174,
+        "rank_min": 50,
+        "rank_max": 65520,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_uniform_growth/queries.bin"
+    ]
+  },
+  "words_95_5_uniform_replacement": {
+    "name": "words_95_5_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      33257,
+      39809
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "54e4c61a9b6228a2ca849169d5e984298b7dba04fff24d3e469043719d910fcf",
+    "query_sha256": "0b4e2f7353ff340c3418775d10da513a8e71319503a8fa1763e3083e36cddb7d",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 33257,
+        "rank_max": 39798,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 22,
+        "rank_max": 65480,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1604,
+        "hits": 0,
+        "source_hot_keys": 1604,
+        "rank_min": 33261,
+        "rank_max": 39806,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 15,
+        "rank_max": 65505,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 486,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 190,
+        "rank_min": 64,
+        "rank_max": 65533,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_uniform_replacement/queries.bin"
+    ]
+  },
+  "words_95_5_hotspot_growth": {
+    "name": "words_95_5_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      5142,
+      11694
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 33768,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "4b88575acb8b31947920ad7148101aa67d9fd03d35fa9b7180ba2c5ae219003e",
+    "query_sha256": "183e2cbec45eec5384186a6ea1888640e94d5b20d499bb86bfc7857731f81dcb",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 5142,
+        "rank_max": 11693,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 22,
+        "rank_max": 65511,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 5143,
+        "rank_max": 11691,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 23,
+        "rank_max": 65494,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 492,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 209,
+        "rank_min": 15,
+        "rank_max": 65514,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_hotspot_growth/queries.bin"
+    ]
+  },
+  "words_95_5_hotspot_replacement": {
+    "name": "words_95_5_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      33257,
+      39809
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "74569e180cf7b6cb37a87481f3e76d750b6fc17cf6e5d662ac1f858f09487d24",
+    "query_sha256": "6464409d9f5920f7aaa06766f2c4a2cf40ae7cc5afae6ae395117736237abe06",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 33258,
+        "rank_max": 39807,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 18,
+        "rank_max": 65531,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1559,
+        "hits": 0,
+        "source_hot_keys": 1559,
+        "rank_min": 33261,
+        "rank_max": 39806,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 15,
+        "rank_max": 65508,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 486,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 177,
+        "rank_min": 29,
+        "rank_max": 65270,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_95_5_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_95_5_hotspot_replacement/queries.bin"
+    ]
+  },
+  "words_80_20_uniform_growth": {
+    "name": "words_80_20_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      44597,
+      51149
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 36768,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "9b603793523e37be5dc710a45f324cbb8b900e79b2fccbe28406c70f86298d06",
+    "query_sha256": "df3fc4c8f97c1d7ae71c453c58cb2ccfc248cac829acc4ce5e7727e6a6fe80b9",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 44598,
+        "rank_max": 51144,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 20,
+        "rank_max": 65513,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 44603,
+        "rank_max": 51149,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 37,
+        "rank_max": 65501,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 481,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 190,
+        "rank_min": 6,
+        "rank_max": 65454,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_uniform_growth/queries.bin"
+    ]
+  },
+  "words_80_20_uniform_replacement": {
+    "name": "words_80_20_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      17236,
+      23788
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "91fcae94fb7aa8f57d5f04b3805f5c030b25012615805da3febfcf89056ee5a4",
+    "query_sha256": "16157b54db9bcd81ffca81effc397247e8ca84787483d1d655f7046da0354c13",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 17241,
+        "rank_max": 23788,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 43,
+        "rank_max": 65515,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1656,
+        "hits": 0,
+        "source_hot_keys": 1656,
+        "rank_min": 17236,
+        "rank_max": 23782,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 13,
+        "rank_max": 65506,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 479,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 177,
+        "rank_min": 25,
+        "rank_max": 65530,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_uniform_replacement/queries.bin"
+    ]
+  },
+  "words_80_20_hotspot_growth": {
+    "name": "words_80_20_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      44597,
+      51149
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 36768,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "b82a1b19fd9bf67b0787425119d6c9ad0ed3bfd02b5fc57a7abb4f63b8b58ab2",
+    "query_sha256": "3605f05c148903b7b54c88e046efdcd948f9ccbd4448e19b3afe0cca6438be70",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 44597,
+        "rank_max": 51148,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 112,
+        "rank_max": 65523,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 49,
+        "hits": 0,
+        "source_hot_keys": 49,
+        "rank_min": 44615,
+        "rank_max": 51125,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 130,
+        "rank_max": 65533,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 481,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 301,
+        "rank_min": 20,
+        "rank_max": 65502,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_hotspot_growth/queries.bin"
+    ]
+  },
+  "words_80_20_hotspot_replacement": {
+    "name": "words_80_20_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      17236,
+      23788
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "fff4571efd723e3a866704648d32e903fc0c6dfeba2b09a43a3d90a2cf8f5f19",
+    "query_sha256": "39d0c4de37f5b79cd10e4a8800992078788debe559d8bbe4834e635236b4e8a1",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 17240,
+        "rank_max": 23788,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 130,
+        "rank_max": 65514,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1495,
+        "hits": 0,
+        "source_hot_keys": 1495,
+        "rank_min": 17236,
+        "rank_max": 23781,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 85,
+        "rank_max": 65499,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 479,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 181,
+        "rank_min": 82,
+        "rank_max": 65521,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_80_20_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/english_words_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_80_20_hotspot_replacement/queries.bin"
+    ]
+  },
+  "urls_95_5_uniform_growth": {
+    "name": "urls_95_5_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      9911,
+      16463
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 33768,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "6172477a66c318e12be11b334101036bba671f5f992e9f978cb1804cd10a824c",
+    "query_sha256": "8d3dbd115924ec0f93d6ed812a5fb0ef135c4a71a31e675baa4e18a94b356843",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 9912,
+        "rank_max": 16460,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 14,
+        "rank_max": 65517,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 9913,
+        "rank_max": 16458,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 15,
+        "rank_max": 65530,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 489,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 179,
+        "rank_min": 2,
+        "rank_max": 65532,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_uniform_growth/queries.bin"
+    ]
+  },
+  "urls_95_5_uniform_replacement": {
+    "name": "urls_95_5_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      24106,
+      30658
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "6246bd74be2650cf0ad782fee2cd4c8786fa044af00d8a4f389629c9c77a1e10",
+    "query_sha256": "af2ef5b7eee857a071815a59c3a4d7ef6fac859e9768dfde0cb99b9734a7a4f8",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 24106,
+        "rank_max": 30653,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 123,
+        "rank_max": 65510,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1620,
+        "hits": 0,
+        "source_hot_keys": 1620,
+        "rank_min": 24116,
+        "rank_max": 30657,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 47,
+        "rank_max": 65524,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 492,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 187,
+        "rank_min": 19,
+        "rank_max": 65504,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_uniform_replacement/queries.bin"
+    ]
+  },
+  "urls_95_5_hotspot_growth": {
+    "name": "urls_95_5_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      9911,
+      16463
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 33768,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "55740f6159a5a5f60fe81b195bb068b1dad2aae387246a153fc943ccde303d60",
+    "query_sha256": "e1c831a8e7cfd094710a471eea3acd497c9b702070e317932e145bd52b8c7d63",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 9915,
+        "rank_max": 16463,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 95,
+        "rank_max": 65443,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 9914,
+        "rank_max": 16461,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 32,
+        "rank_max": 65481,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 489,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 230,
+        "rank_min": 138,
+        "rank_max": 65515,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_hotspot_growth/queries.bin"
+    ]
+  },
+  "urls_95_5_hotspot_replacement": {
+    "name": "urls_95_5_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      24106,
+      30658
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "0fec8730d3240e4eb3368d559b11ef31123631645f3c09e1851dabf836821d18",
+    "query_sha256": "4218154be8b07859c4c677540eee9b8140cfdb71755f722f8c9edd54434475d3",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 24107,
+        "rank_max": 30658,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 71,
+        "rank_max": 65490,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1582,
+        "hits": 0,
+        "source_hot_keys": 1582,
+        "rank_min": 24116,
+        "rank_max": 30657,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 0,
+        "rank_max": 65472,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 492,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 176,
+        "rank_min": 3,
+        "rank_max": 65462,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_95_5_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_95_5_hotspot_replacement/queries.bin"
+    ]
+  },
+  "urls_80_20_uniform_growth": {
+    "name": "urls_80_20_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      5142,
+      11694
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 36768,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "701310af1f605712552c10868f0c361b1725769ed99337f1fe09e042e2aca12a",
+    "query_sha256": "9e5f7d5e36b52363b6dc7ef9c0753a628a553b1fbe0b11e660dd81250c3e560f",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 5144,
+        "rank_max": 11694,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 51,
+        "rank_max": 65515,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 5143,
+        "rank_max": 11688,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 21,
+        "rank_max": 65526,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 483,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 181,
+        "rank_min": 13,
+        "rank_max": 65534,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_uniform_growth/queries.bin"
+    ]
+  },
+  "urls_80_20_uniform_replacement": {
+    "name": "urls_80_20_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      33257,
+      39809
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "e07f51a6f3397ffa5465494d624422b3c815fe287db817f14e3951783b8bd582",
+    "query_sha256": "210ab7a2f683aafea64a08365234d53f6a10dd2a8ba4b50e029adfed3b58059d",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 33259,
+        "rank_max": 39809,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 34,
+        "rank_max": 65465,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1627,
+        "hits": 0,
+        "source_hot_keys": 1627,
+        "rank_min": 33261,
+        "rank_max": 39806,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 59,
+        "rank_max": 65527,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 481,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 176,
+        "rank_min": 132,
+        "rank_max": 65480,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_uniform_replacement/queries.bin"
+    ]
+  },
+  "urls_80_20_hotspot_growth": {
+    "name": "urls_80_20_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      5142,
+      11694
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 36768,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "906165fbcbb810f51e1dd38bb57675dcd1d27a55a1ff576792b3596af1c0967a",
+    "query_sha256": "b0fb091adb1a1c651761d5f8ce9a90d5fe9e454c677fa175f5d182569e41b164",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 5142,
+        "rank_max": 11693,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 38,
+        "rank_max": 65510,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 41,
+        "hits": 0,
+        "source_hot_keys": 41,
+        "rank_min": 5589,
+        "rank_max": 11476,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 3,
+        "rank_max": 65521,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 483,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 302,
+        "rank_min": 59,
+        "rank_max": 65530,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_hotspot_growth/queries.bin"
+    ]
+  },
+  "urls_80_20_hotspot_replacement": {
+    "name": "urls_80_20_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      33257,
+      39809
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "2c04b78b22c7f299bebb8d068794ca835be5a4a495a3ce4352c41f25f87772df",
+    "query_sha256": "fcb4a9d90ef5c629847da82250cc48c1f47880c46c5f4f1c5b5fd5599e3989a1",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 33257,
+        "rank_max": 39808,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 1,
+        "rank_max": 65458,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1419,
+        "hits": 0,
+        "source_hot_keys": 1419,
+        "rank_min": 33262,
+        "rank_max": 39793,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 6,
+        "rank_max": 65535,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 481,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 200,
+        "rank_min": 24,
+        "rank_max": 65526,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/urls_80_20_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_real_20261018/interchange/memetracker_urls_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/urls_80_20_hotspot_replacement/queries.bin"
+    ]
+  },
+  "words_indep_95_5_uniform_growth": {
+    "name": "words_indep_95_5_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      17236,
+      23788
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 33768,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "5665af407b0fc5413ab4a61a6db80c977c4f2379c32bb9417517dafec1b5c150",
+    "query_sha256": "f414e2df02b64a8d620a10cb4cdeb210883db76fdae33fac90dd2a1db1d0d123",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 17238,
+        "rank_max": 23786,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 8,
+        "rank_max": 65525,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 17236,
+        "rank_max": 23787,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 14,
+        "rank_max": 65408,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 487,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 161,
+        "rank_min": 22,
+        "rank_max": 65525,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_uniform_growth/queries.bin"
+    ]
+  },
+  "words_indep_95_5_uniform_replacement": {
+    "name": "words_indep_95_5_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      8002,
+      14554
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "44accddd5ac737cde271e8c68f29146b8247d098d2ff2b319bdb50ddc723793b",
+    "query_sha256": "707bdd540f01e44facb701991f7528201c3a1a8b1efa0b782c2e3ffb8102d24b",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 8003,
+        "rank_max": 14553,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 17,
+        "rank_max": 65507,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1631,
+        "hits": 0,
+        "source_hot_keys": 1631,
+        "rank_min": 8002,
+        "rank_max": 14552,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 59,
+        "rank_max": 65493,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 490,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 167,
+        "rank_min": 2,
+        "rank_max": 65481,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_uniform_replacement/queries.bin"
+    ]
+  },
+  "words_indep_95_5_hotspot_growth": {
+    "name": "words_indep_95_5_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      17236,
+      23788
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 33768,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "5621b235515b697d33f135d29b54b4496f9c2f643f13aa8c9eb895d613c04a59",
+    "query_sha256": "06d0626044ccf61e0e481210962445d817eadbb7106c94423c05e733c688a3e3",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 17247,
+        "rank_max": 23788,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 61,
+        "rank_max": 65531,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 17239,
+        "rank_max": 23787,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 7,
+        "rank_max": 65484,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 487,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 216,
+        "rank_min": 8,
+        "rank_max": 65535,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_hotspot_growth/queries.bin"
+    ]
+  },
+  "words_indep_95_5_hotspot_replacement": {
+    "name": "words_indep_95_5_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      8002,
+      14554
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "0cad7d02d019c5750e36dd145128995306f0bbecc9a644d66bedbab7396d64bc",
+    "query_sha256": "8a3fb3a865d1ebb8b800881af4a6fe534fc984a1a165f9a56fa59162cf049c0c",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 8002,
+        "rank_max": 14553,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 18,
+        "rank_max": 65513,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1582,
+        "hits": 0,
+        "source_hot_keys": 1582,
+        "rank_min": 8011,
+        "rank_max": 14551,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 7,
+        "rank_max": 65535,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 490,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 187,
+        "rank_min": 30,
+        "rank_max": 65509,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_95_5_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_95_5_hotspot_replacement/queries.bin"
+    ]
+  },
+  "words_indep_80_20_uniform_growth": {
+    "name": "words_indep_80_20_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      52247,
+      58799
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 36768,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "98b89feefb8a0e8efc87e8012db8c5cde1e0113ba40a350f142f2633d53aef0e",
+    "query_sha256": "92cc0a8d792a36f122e35ef4ef46c7b2436dad05e848de2eb8bba48bbff26439",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 52250,
+        "rank_max": 58796,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 12,
+        "rank_max": 65464,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 52247,
+        "rank_max": 58799,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 17,
+        "rank_max": 65493,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 477,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 214,
+        "rank_min": 36,
+        "rank_max": 65514,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_uniform_growth/queries.bin"
+    ]
+  },
+  "words_indep_80_20_uniform_replacement": {
+    "name": "words_indep_80_20_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      24457,
+      31009
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "38351512fc19cca8f41728b1c57cb00068d2d8f46547f82998f17d942e3ce094",
+    "query_sha256": "b90b689ef53ab64f21e80c630a5cf79106c8336e8e161ccd5b96da10270a413a",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 24457,
+        "rank_max": 31009,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 37,
+        "rank_max": 65485,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1609,
+        "hits": 0,
+        "source_hot_keys": 1609,
+        "rank_min": 24470,
+        "rank_max": 31005,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 9,
+        "rank_max": 65484,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 481,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 203,
+        "rank_min": 21,
+        "rank_max": 65533,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_uniform_replacement/queries.bin"
+    ]
+  },
+  "words_indep_80_20_hotspot_growth": {
+    "name": "words_indep_80_20_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      52247,
+      58799
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 32768,
+    "final_rows": 36768,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 16,
+    "write_touched_initial_pages": 16,
+    "final_sha256": "4d29cc5eb9330d648993fc1035a2825f280534ba13102b8db087ef9038979406",
+    "query_sha256": "891bfcfb256b9aaa8c1ffb739e2c82d851341fcc95f52a5a7ce59362c48079d1",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 52247,
+        "rank_max": 58785,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 75,
+        "rank_max": 65526,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 84,
+        "hits": 0,
+        "source_hot_keys": 84,
+        "rank_min": 52305,
+        "rank_max": 58731,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 37,
+        "rank_max": 65534,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 477,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 322,
+        "rank_min": 31,
+        "rank_max": 65234,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_hotspot_growth/queries.bin"
+    ]
+  },
+  "words_indep_80_20_hotspot_replacement": {
+    "name": "words_indep_80_20_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      24457,
+      31009
+    ],
+    "source_pool_rows": 65536,
+    "initial_rows": 49152,
+    "final_rows": 49152,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 24,
+    "write_touched_initial_pages": 24,
+    "final_sha256": "9cd01621cd4833e295144be83a183d4c18077add88800e64373a2da21a79056f",
+    "query_sha256": "756353c7fecab3d68a37a6b698ff5dc3fdbd482854aa67a4786d788f97817e44",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 24461,
+        "rank_max": 31007,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 13,
+        "rank_max": 65522,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1434,
+        "hits": 0,
+        "source_hot_keys": 1434,
+        "rank_min": 24465,
+        "rank_max": 31008,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 3,
+        "rank_max": 65490,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 481,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 191,
+        "rank_min": 38,
+        "rank_max": 65523,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_v3_20261025/traces/words_indep_80_20_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_indep_80_20_hotspot_replacement/queries.bin"
+    ]
+  },
+  "words_100k_95_5_uniform_growth": {
+    "name": "words_100k_95_5_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      66514,
+      76513
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 50000,
+    "final_rows": 51000,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 25,
+    "write_touched_initial_pages": 25,
+    "final_sha256": "a53053bdee98c353c8882fc9ddb45c9fd6ee776125037b9b0414820b049bd249",
+    "query_sha256": "c43f03195254cfebfd19a56ba1dfdbdce0d57dcf3131c2de7525123c17e11f95",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 66515,
+        "rank_max": 76511,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 7,
+        "rank_max": 99940,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 66520,
+        "rank_max": 76512,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 39,
+        "rank_max": 99897,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 495,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 182,
+        "rank_min": 37,
+        "rank_max": 99954,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_uniform_growth/queries.bin"
+    ]
+  },
+  "words_100k_95_5_uniform_replacement": {
+    "name": "words_100k_95_5_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      44129,
+      54128
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 75000,
+    "final_rows": 75000,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 37,
+    "write_touched_initial_pages": 37,
+    "final_sha256": "6603409e380c68abfd8ad18bfaa97f8acd16ace9f37730719d2aa954dec6b411",
+    "query_sha256": "96c3e4e890a74a73ee65cc328351bb2ab2aede098d8c3f85d8fad832586a05cb",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 44130,
+        "rank_max": 54125,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 19,
+        "rank_max": 99958,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 44129,
+        "rank_max": 54128,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 50,
+        "rank_max": 99929,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 486,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 168,
+        "rank_min": 52,
+        "rank_max": 99939,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_uniform_replacement/queries.bin"
+    ]
+  },
+  "words_100k_95_5_hotspot_growth": {
+    "name": "words_100k_95_5_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      66514,
+      76513
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 50000,
+    "final_rows": 51000,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 25,
+    "write_touched_initial_pages": 25,
+    "final_sha256": "640f8c35f7580ffab7c92c498e01559f966b1d92fcbd0332d764d567157819d3",
+    "query_sha256": "5df16b0ae862a073af853492ccc126fd41c6a183296c0ae74cb2ddf36bb62341",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 66523,
+        "rank_max": 76509,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 167,
+        "rank_max": 99977,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 66519,
+        "rank_max": 76513,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 18,
+        "rank_max": 99967,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 495,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 193,
+        "rank_min": 45,
+        "rank_max": 99986,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_hotspot_growth/queries.bin"
+    ]
+  },
+  "words_100k_95_5_hotspot_replacement": {
+    "name": "words_100k_95_5_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      44129,
+      54128
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 75000,
+    "final_rows": 75000,
+    "successful_mutations": {
+      "insert": 250,
+      "update": 500,
+      "erase": 250
+    },
+    "deleted_initial_rows": 250,
+    "initial_pages": 37,
+    "write_touched_initial_pages": 37,
+    "final_sha256": "d8195be95aa053bf8ca8a3544bce884ca9aa181db4ca0648369c585f51a8fe41",
+    "query_sha256": "04a6e6c8c3bcfce856e2c86fd536ff2733df1c1965504370d19401bbff6e86a2",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 44136,
+        "rank_max": 54124,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 22,
+        "rank_max": 99996,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 44129,
+        "rank_max": 54128,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 29,
+        "rank_max": 99903,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 486,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 186,
+        "rank_min": 40,
+        "rank_max": 99981,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_95_5_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_95_5_hotspot_replacement/queries.bin"
+    ]
+  },
+  "words_100k_80_20_uniform_growth": {
+    "name": "words_100k_80_20_uniform_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      34472,
+      44471
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 50000,
+    "final_rows": 54000,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 25,
+    "write_touched_initial_pages": 25,
+    "final_sha256": "bddf675a8f3040aaf4791cd4aa580542259623d832558689411397d1aadcb47a",
+    "query_sha256": "21ed6bcaf61623b38fe86a23ddebf893c862c377a00170e1ba774b35cbd0d870",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 34479,
+        "rank_max": 44465,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 7,
+        "rank_max": 99984,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 34472,
+        "rank_max": 44463,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 119,
+        "rank_max": 99933,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 483,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 177,
+        "rank_min": 12,
+        "rank_max": 99929,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_uniform_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_uniform_growth/queries.bin"
+    ]
+  },
+  "words_100k_80_20_uniform_replacement": {
+    "name": "words_100k_80_20_uniform_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      16004,
+      26003
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 75000,
+    "final_rows": 75000,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 37,
+    "write_touched_initial_pages": 37,
+    "final_sha256": "0eea657d102f73ffc0be41b8058d9a674c744321e66e95fe4d673f82651572d5",
+    "query_sha256": "c90404bc57806559de2bb26ac53d52222424d92072ae8df3cee098eea77ab5b1",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 16011,
+        "rank_max": 25999,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 34,
+        "rank_max": 99984,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 16004,
+        "rank_max": 25997,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 7,
+        "rank_max": 99996,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 474,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 174,
+        "rank_min": 38,
+        "rank_max": 99993,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_uniform_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_uniform_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_uniform_replacement/queries.bin"
+    ]
+  },
+  "words_100k_80_20_hotspot_growth": {
+    "name": "words_100k_80_20_hotspot_growth",
+    "control_only": false,
+    "hot_range_inclusive": [
+      34472,
+      44471
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 50000,
+    "final_rows": 54000,
+    "successful_mutations": {
+      "insert": 4000,
+      "update": 0,
+      "erase": 0
+    },
+    "deleted_initial_rows": 0,
+    "initial_pages": 25,
+    "write_touched_initial_pages": 25,
+    "final_sha256": "be308714997addc84861532ed80342af9512e776f829f37e9190ab1e3168e3ff",
+    "query_sha256": "c206c632756bd38906a018442e992c056dc0bb50fe89ec6a1a09e3ef3a28d6b9",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 34472,
+        "rank_max": 44470,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 46,
+        "rank_max": 99956,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 1820,
+        "hits": 0,
+        "source_hot_keys": 1820,
+        "rank_min": 34482,
+        "rank_max": 44467,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 53,
+        "rank_max": 99908,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 483,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 268,
+        "rank_min": 17,
+        "rank_max": 99837,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_growth_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_growth_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_hotspot_growth/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_hotspot_growth/queries.bin"
+    ]
+  },
+  "words_100k_80_20_hotspot_replacement": {
+    "name": "words_100k_80_20_hotspot_replacement",
+    "control_only": false,
+    "hot_range_inclusive": [
+      16004,
+      26003
+    ],
+    "source_pool_rows": 100000,
+    "initial_rows": 75000,
+    "final_rows": 75000,
+    "successful_mutations": {
+      "insert": 1000,
+      "update": 2000,
+      "erase": 1000
+    },
+    "deleted_initial_rows": 1000,
+    "initial_pages": 37,
+    "write_touched_initial_pages": 37,
+    "final_sha256": "9ab2f9697b9d2f541df828771301019347bbea11051cc57ccf57717ac444d12c",
+    "query_sha256": "a817a99774a5885d6bd896d3007445eb9e53690ee9d9e6ff7315e1da87423d6f",
+    "groups": {
+      "live_hot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 2000,
+        "rank_min": 16006,
+        "rank_max": 26003,
+        "deleted_initial_in_hits": 0
+      },
+      "live_nonhot": {
+        "keys": 2000,
+        "hits": 2000,
+        "source_hot_keys": 0,
+        "rank_min": 2,
+        "rank_max": 99961,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_hot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 2000,
+        "rank_min": 16004,
+        "rank_max": 25989,
+        "deleted_initial_in_hits": 0
+      },
+      "absent_nonhot": {
+        "keys": 2000,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": 19,
+        "rank_max": 99977,
+        "deleted_initial_in_hits": 0
+      },
+      "synthetic_absent": {
+        "keys": 474,
+        "hits": 0,
+        "source_hot_keys": 0,
+        "rank_min": null,
+        "rank_max": null,
+        "deleted_initial_in_hits": 0
+      },
+      "mixed90": {
+        "keys": 2000,
+        "hits": 1800,
+        "source_hot_keys": 192,
+        "rank_min": 192,
+        "rank_max": 99904,
+        "deleted_initial_in_hits": 0
+      }
+    },
+    "paths": [
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_replacement_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_audited_100k_v3_20261025/traces/words_100k_80_20_hotspot_replacement_ops.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/07_Eval_Integration/results/bm_space_gen_inputs_20261019/interchange/english_words_100000_s20261019_rows.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_hotspot_replacement/final.bin",
+      "/mnt/d/StringLearnedIndex_Workspace/builds/bm_tx_query_bm1_20261030/cases/words_100k_80_20_hotspot_replacement/queries.bin"
+    ]
+  }
+}
