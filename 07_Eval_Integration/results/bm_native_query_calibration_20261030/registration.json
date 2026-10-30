@@ -1,0 +1,19 @@
+{
+  "phase": "calibrate",
+  "floors": [
+    250,
+    1000
+  ],
+  "cells": [
+    "words_95_5_uniform_growth",
+    "urls_80_20_hotspot_replacement"
+  ],
+  "processes": 4,
+  "rounds": 8,
+  "affinity": [
+    0,
+    1
+  ],
+  "protocol_sha256": "6b4cad9155044fefda7a30ea02145531f7354d0c523be524b1e067f410d4acfe",
+  "source_closure_sha256": "93c9e03aa53889608fba81de42de1d49428e521dbcbd2b0741cf941ae2c12ee2"
+}

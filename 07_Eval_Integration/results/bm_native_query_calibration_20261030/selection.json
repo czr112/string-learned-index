@@ -1,0 +1,11 @@
+{
+  "selected_ms": null,
+  "affinity": [
+    0,
+    1
+  ],
+  "protocol_sha256": "6b4cad9155044fefda7a30ea02145531f7354d0c523be524b1e067f410d4acfe",
+  "source_closure_sha256": "93c9e03aa53889608fba81de42de1d49428e521dbcbd2b0741cf941ae2c12ee2",
+  "decision": "AA only",
+  "report_sha256": "171c5a1d4c0ced54e96ed70f52b600b0c9ac3c69f44eb33f4b9f0cba5b307747"
+}

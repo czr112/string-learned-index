@@ -1,0 +1,22 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+  "compiler": "D:\\DevTools\\mingw64\\bin\\g++.exe",
+  "version": "15.2.0",
+  "toolchain": {
+    "D:\\DevTools\\mingw64\\bin\\g++.exe": "623808bccbd6d596d98251c116eb51ba94ec46c9d90d451982cefa6f8246c342",
+    "D:\\DevTools\\mingw64\\libexec\\gcc\\x86_64-w64-mingw32\\15.2.0\\cc1plus.exe": "baabb1338e0b52cb3140ebbd49c10206d56bb78f24194a28dd7a9201856eb42d",
+    "D:\\DevTools\\mingw64\\libexec\\gcc\\x86_64-w64-mingw32\\15.2.0\\collect2.exe": "ba5a63ca69c335086b0ae84aaea07d9f1d081df6f91ee9a01dfe32722d63fc98",
+    "D:\\DevTools\\mingw64\\x86_64-w64-mingw32\\bin\\ld.exe": "d226ef87dd796a71e02256f772e5b00dcb766aacb8fdfe25988c82ef62841d41",
+    "D:\\DevTools\\mingw64\\x86_64-w64-mingw32\\bin\\as.exe": "ec0edbebcfbd1c579d525e5bc09629e1039c282156381fd39e2f21a5fe542a77",
+    "D:\\DevTools\\mingw64\\bin\\libstdc++-6.dll": "426b20a326d8a03e90fa991769703a517e8ae07685edca755e0b739a9bf66da6",
+    "D:\\DevTools\\mingw64\\bin\\libgcc_s_seh-1.dll": "11074b8c2e7f0a66c520153fcde36bb1a28c7f20f359f37d1308347ce8094fa5",
+    "D:\\DevTools\\mingw64\\bin\\libwinpthread-1.dll": "8ce9f4c1ed09819dfc00618a81c2b47f7caf3ea5209912913607e8a3dbdeb4d0"
+  },
+  "staged_runtime": {
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_query_calibration_20261030\\libstdc++-6.dll": "426b20a326d8a03e90fa991769703a517e8ae07685edca755e0b739a9bf66da6",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_query_calibration_20261030\\libgcc_s_seh-1.dll": "11074b8c2e7f0a66c520153fcde36bb1a28c7f20f359f37d1308347ce8094fa5",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_query_calibration_20261030\\libwinpthread-1.dll": "8ce9f4c1ed09819dfc00618a81c2b47f7caf3ea5209912913607e8a3dbdeb4d0"
+  },
+  "timing": "native wall; CPU time and cycles diagnostic only"
+}
