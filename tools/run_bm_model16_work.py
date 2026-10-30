@@ -23,9 +23,12 @@ def generate(run):
         for before,after in (('bm_n1_leaf','bm_m16_leaf'),('bm_n1_page','bm_m16_page'),('bm_tx_page','bm_m16_tx')):
             text=text.replace(before,after)
         if original=='bm_n1_page_core.hpp':
-            training='BlockModel::fit(training,1,7,8,1)'
-            if text.count(training)!=2 or text.count('BlockModel-fence-1-7-8-1')!=1:raise ValueError('unexpected model training sites')
-            text=text.replace(training,'BlockModel::fit(training,1,7,16,1)').replace('BlockModel-fence-1-7-8-1','BlockModel-fence-1-7-16-1')
+            for variable in ('training','train'):
+                training=f'BlockModel::fit({variable},1,7,8,1)'
+                if text.count(training)!=1:raise ValueError('unexpected model training site: '+variable)
+                text=text.replace(training,f'BlockModel::fit({variable},1,7,16,1)',1)
+            if text.count('BlockModel-fence-1-7-8-1')!=1:raise ValueError('unexpected model identity')
+            text=text.replace('BlockModel-fence-1-7-8-1','BlockModel-fence-1-7-16-1',1)
         target=directory/new;target.write_bytes(text.encode())
         records[original]={'revision':BASE,'preimage_sha256':hashlib.sha256(committed).hexdigest(),
                            'generated':str(target),'generated_sha256':sha(target)}
