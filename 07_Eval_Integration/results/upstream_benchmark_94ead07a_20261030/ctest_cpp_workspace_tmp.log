@@ -1,0 +1,26 @@
+Test project C:/Users/Noctis/Documents/Codex/2026-10-31/task/benchmark_upgrade/build_native
+    Start 1: unified_runner_checks
+1/1 Test #1: unified_runner_checks ............***Failed    0.04 sec
+FAIL: valid index passes: throughput lookup duration is below clock resolution
+FAIL: every throughput repeat is retained
+FAIL: every requested latency sample is retained
+FAIL: descriptor, correctness, throughput, and latency use fresh instances
+FAIL: each correctness or measurement instance receives one bulk load
+FAIL: lookup returns are consumed into a checksum
+FAIL: fresh latency build timing is emitted
+FAIL: samples CSV preserves latency-instance build timing
+FAIL: a full finite key domain is explicitly recorded
+FAIL: zero requested latency samples emit no fabricated latency build
+unified runner: cannot exclusively create result output
+FAIL: frozen CLI succeeds for a valid interchange
+FAIL: CLI exercise failed: cannot read CLI output
+12 unified runner checks failed
+
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   0.05 sec
+
+The following tests FAILED:
+	  1 - unified_runner_checks (Failed)
+Errors while running CTest

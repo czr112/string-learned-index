@@ -1,0 +1,17 @@
+-- The CXX compiler identification is GNU 15.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: D:/DevTools/mingw64/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Found Python3: D:/Miniconda3/python.exe (found version "3.13.12") found components: Interpreter
+-- Configuring done (6.7s)
+-- Generating done (0.8s)
+-- Build files have been written to: C:/Users/Noctis/Documents/Codex/2026-10-31/task/benchmark_upgrade/build_native

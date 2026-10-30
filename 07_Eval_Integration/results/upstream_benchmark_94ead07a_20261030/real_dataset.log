@@ -1,0 +1,166 @@
+EEE...
+======================================================================
+ERROR: test_cache_integrity_and_offline (__main__.DatasetTest.test_cache_integrity_and_offline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\real_dataset_test.py", line 54, in test_cache_integrity_and_offline
+    (raw / "words.txt").write_bytes(b"abc\n")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "D:\Miniconda3\Lib\pathlib\_abc.py", line 641, in write_bytes
+    with self.open(mode='wb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmp2zn6j9k2\\words.txt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniconda3\Lib\shutil.py", line 631, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] 鎷掔粷璁块棶銆? 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmp2zn6j9k2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\real_dataset_test.py", line 49, in test_cache_integrity_and_offline
+    with tempfile.TemporaryDirectory() as directory:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 951, in __exit__
+    self.cleanup()
+    ~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 955, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 935, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "D:\Miniconda3\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 907, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 鎷掔粷璁块棶銆? 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmp2zn6j9k2'
+
+======================================================================
+ERROR: test_complete_gzip_and_bounds (__main__.DatasetTest.test_complete_gzip_and_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\real_dataset_test.py", line 63, in test_complete_gzip_and_bounds
+    with gzip.open(path, "wb") as out:
+         ~~~~~~~~~^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\gzip.py", line 66, in open
+    binary_file = GzipFile(filename, gz_mode, compresslevel)
+  File "D:\Miniconda3\Lib\gzip.py", line 203, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmpf5cbjq7d\\fixture.gz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniconda3\Lib\shutil.py", line 631, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] 鎷掔粷璁块棶銆? 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmpf5cbjq7d'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\real_dataset_test.py", line 61, in test_complete_gzip_and_bounds
+    with tempfile.TemporaryDirectory() as directory:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 951, in __exit__
+    self.cleanup()
+    ~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 955, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 935, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "D:\Miniconda3\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 907, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 鎷掔粷璁块棶銆? 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmpf5cbjq7d'
+
+======================================================================
+ERROR: test_download_checks_and_exclusive_partial (__main__.DatasetTest.test_download_checks_and_exclusive_partial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\real_dataset_test.py", line 90, in test_download_checks_and_exclusive_partial
+    fetch(source, raw)
+    ~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\scripts\prepare_real_datasets.py", line 33, in fetch
+    with partial.open("xb") as out:
+         ~~~~~~~~~~~~^^^^^^
+  File "D:\Miniconda3\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmpp959mlk4\\words.txt.part'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Miniconda3\Lib\shutil.py", line 631, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+PermissionError: [WinError 5] 鎷掔粷璁块棶銆? 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmpp959mlk4'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\real_dataset_test.py", line 77, in test_download_checks_and_exclusive_partial
+    with tempfile.TemporaryDirectory() as directory:
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 951, in __exit__
+    self.cleanup()
+    ~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 955, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 935, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "D:\Miniconda3\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 907, in onexc
+    _resetperms(path)
+    ~~~~~~~~~~~^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 287, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\tempfile.py", line 276, in _dont_follow_symlinks
+    func(path, *args, follow_symlinks=False)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 鎷掔粷璁块棶銆? 'C:\\Users\\Noctis\\AppData\\Local\\Packages\\sandbox.{b3662f97-8c12-40aa-b797-9ec093633b85}\\AC\\Temp\\tmpp959mlk4'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.098s
+
+FAILED (errors=3)

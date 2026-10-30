@@ -1,0 +1,93 @@
+{
+  "artifacts": {
+    "build.log": "80e2b58b79c0f37ba58d9b8009d0660c9db763f27e1345f2be64315ebb03e02c",
+    "configure.log": "d83f6db2753e171afa09df34cf0dfe2345a403e7edd54327a61b07b4d1bd4141",
+    "ctest.log": "8c6ac442abe3383596a1c8ae30c1ff17189e0b6a6378a41108e8e967feeb28c4",
+    "ctest_cpp_workspace_tmp.log": "b4a31bbd58dcf2538506cbee228b69053b1bf0e5c9643cae3feaa75eb38eba8c",
+    "ctest_python_utf8.log": "d5eb791ed74cada1623887d3d6b5bb3f2d6121c50e5614e1a30ad5ffe6eb3198",
+    "doctor.log": "31c83d6bb4576d12169cfa46a1097a453f67d6a5f73991badb6409c402870ba3",
+    "lookup_workload.log": "4542d39fd9385af5ad45684953f3167242808de451a9fc7109994d62d57b7492",
+    "lookup_workload_workspace_tmp.log": "2af950e8501a085818fd2466d987b2eb57f325b0685550065fc1aef184089c0f",
+    "negative_source_verification.json": "c3bb6006c8385d3ba6dc4308b2a5853953c21652449f3bfc81a8718f06252f7a",
+    "negative_source_verification.log": "c3bb6006c8385d3ba6dc4308b2a5853953c21652449f3bfc81a8718f06252f7a",
+    "real_dataset.log": "ee8f3e146e1393e4039b8a17791e3f7f0bc4d2e4fb6e8a19d094b150ad2d3079",
+    "real_dataset_workspace_tmp.log": "cc0c2964306a72706f605fed8843f0c6351c7b083f618006591cc842637579ce",
+    "source_verification.json": "d85282b662e59bdfffea61cade70ce17f3122471f7d8ed4735e4ff40f8bd89b2"
+  },
+  "benchmark_commit": "94ead07a45af7cb5dd33a2a708683ec2ba4411b6",
+  "checks": {
+    "benchmark_suite_python": {
+      "python_utf8": true,
+      "status": "passed",
+      "tests": 15
+    },
+    "doctor": {
+      "status": "passed"
+    },
+    "legacy_tli": {
+      "status": "not_run"
+    },
+    "linux_standard_regression": {
+      "error": "Wsl/E_ACCESSDENIED",
+      "status": "not_run"
+    },
+    "lookup_workload_python": {
+      "status": "passed",
+      "tests": 9,
+      "workspace_temp": true
+    },
+    "native_build": {
+      "legacy_tli_enabled": false,
+      "status": "passed"
+    },
+    "real_dataset_python": {
+      "error": "WinError32 .part file in use",
+      "errors": 1,
+      "status": "failed",
+      "tests": 6
+    },
+    "source_corruption_negative": {
+      "mismatched_files": 1,
+      "observed_exit": 1,
+      "status": "passed"
+    },
+    "source_files": {
+      "count": 77,
+      "status": "passed"
+    },
+    "unified_benchmark_python": {
+      "python_utf8": true,
+      "status": "passed",
+      "tests": 65
+    },
+    "unified_runner_cpp": {
+      "error": "clock-resolution fixtures, finite-domain check, and CLI exclusive output",
+      "status": "failed"
+    }
+  },
+  "default_index_changed": false,
+  "model_main": "3894c767338a865d2920ba5e21283827fea1d803",
+  "performance_comparison_performed": false,
+  "platform": "Windows native; MinGW GCC15.2.0, CMake4.2.1, Python3.13.12",
+  "previous_experiment_commit": "003a55bf674b43350fbb70242070fb74f33a56ce",
+  "previous_gitlink": "403de526a9104147d5d2659b6882c126c1323b5f",
+  "status": "partial; standard Linux regression blocked",
+  "unchanged_cpp": {
+    "src/index_contract.h": {
+      "same_as_003a55bf": true,
+      "sha256": "3587addd4e4fda743975534a95173ccb8d09d38029f5239ff3998574b45c3a39"
+    },
+    "src/unified/runner.cpp": {
+      "same_as_003a55bf": true,
+      "sha256": "fbbb922511bc590b1f1c68b77309d25001c3e98047975c5d9358c7b70092aa5b"
+    },
+    "tests/unified_runner_test.cpp": {
+      "same_as_003a55bf": true,
+      "sha256": "52b8a4125cb9b7e93ca4f7bd827513693d8a7a39f3f74bbe93f9c404d04c7869"
+    }
+  },
+  "post_run_checks": {
+    "post_run_source_verification.json": "d85282b662e59bdfffea61cade70ce17f3122471f7d8ed4735e4ff40f8bd89b2",
+    "phase_integrity.json": "7e38fa4cd335b1be2c8d4eed0a301cf22171ba193f7b98dad12158bfa4442d09"
+  }
+}

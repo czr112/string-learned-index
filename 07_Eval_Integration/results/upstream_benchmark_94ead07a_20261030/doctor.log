@@ -1,0 +1,10 @@
+环境与输入检查（不编译、不运行索引、不创建结果目录）
+Python: 3.13.12 (D:\Miniconda3\python.exe)
+CMake: C:\Program Files\mingw64\bin\cmake.EXE — cmake version 4.2.1
+C++: D:\DevTools\mingw64\bin\c++.EXE — c++.EXE (x86_64-win32-seh-rev0, Built by MinGW-Builds project) 15.2.0
+数据: C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\examples\keys.txt；reader=raw-lines；6 条记录，6 个唯一键
+负载: static-uniform-point/v1；10000 次操作/轮，3 轮
+适配包: std-map → C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\adapters\std_map
+适配包: sorted-vector → C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\adapters\sorted_vector
+检查通过。下一步: python3 -B scripts/benchmark.py --demo
+自检只确认工具和输入；编译、能力匹配与正确性由实际运行检查。

@@ -1,0 +1,108 @@
+Test project C:/Users/Noctis/Documents/Codex/2026-10-31/task/benchmark_upgrade/build_native
+    Start 1: unified_runner_checks
+1/3 Test #1: unified_runner_checks ............***Failed    0.33 sec
+FAIL: a full finite key domain is explicitly recorded
+unified runner: cannot exclusively create result output
+FAIL: frozen CLI succeeds for a valid interchange
+FAIL: CLI exercise failed: cannot read CLI output
+3 unified runner checks failed
+
+    Start 2: unified_benchmark_checks
+2/3 Test #2: unified_benchmark_checks .........***Failed    4.43 sec
+..........error: output directory already exists; refusing to overwrite
+...error: jsonl record 1 is malformed
+.error: workload JSON is malformed or unreadable
+............error: --parameter names an unknown requested adapter
+error: --parameter duplicates an adapter parameter name
+error: --parameter must use ADAPTER:NAME=VALUE
+...........E.E...................error: hotspot workload requires at least two unique keys
+error: hotspot workload requires at least two unique keys
+......
+======================================================================
+ERROR: test_global_input_failure_preserves_sorted_thread_matrix (__main__.ParallelBoundaryTests.test_global_input_failure_preserves_sorted_thread_matrix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\unified_benchmark_test.py", line 391, in test_global_input_failure_preserves_sorted_thread_matrix
+    report = json.loads((root / "out/report.json").read_text())
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\pathlib\_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\pathlib\_abc.py", line 633, in read_text
+    return f.read()
+           ~~~~~~^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x82 in position 4686: illegal multibyte sequence
+
+======================================================================
+ERROR: test_reports_keep_worker_evidence_and_label_serial_latency (__main__.ParallelBoundaryTests.test_reports_keep_worker_evidence_and_label_serial_latency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\unified_benchmark_test.py", line 429, in test_reports_keep_worker_evidence_and_label_serial_latency
+    self.assertIn("独立单线程 P99", (root / "report.md").read_text())
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\pathlib\_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\pathlib\_abc.py", line 633, in read_text
+    return f.read()
+           ~~~~~~^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xac in position 6: illegal multibyte sequence
+
+----------------------------------------------------------------------
+Ran 65 tests in 3.920s
+
+FAILED (errors=2)
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpx6zxdj2j\output
+Report / 报告: C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpx6zxdj2j\output\report.md
+  invalid-1 t1: invalid_input — adapter manifest is missing required fields
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpdyt6m0i3\output
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmp1wjh4w2t\output
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpgunpn3fu\output
+Report / 报告: C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpgunpn3fu\output\report.md
+  invalid-1 t1: invalid_input — adapter source_dir is not a CMake project
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpyhc62ij0\output
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmp65nwdf_9\output
+Report / 报告: C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmp65nwdf_9\output\report.md
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmp65nwdf_9\unknown
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmp65nwdf_9\duplicate
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmp65nwdf_9\malformed
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpxzzl68ie\out
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpyg267ebf\out-1
+C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\build_native\unified-test-tmp\tmpyg267ebf\out-4
+
+    Start 3: benchmark_suite_checks
+3/3 Test #3: benchmark_suite_checks ...........***Failed    1.27 sec
+.........E.....
+======================================================================
+ERROR: test_missing_dataset_preserves_all_requested_failures (__main__.SuiteChecks.test_missing_dataset_preserves_all_requested_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\benchmark_suite_test.py", line 106, in test_missing_dataset_preserves_all_requested_failures
+    code, report, build, run = self.run_plan()
+                               ~~~~~~~~~~~~~^^
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\benchmark_suite_test.py", line 71, in run_plan
+    report = json.loads((self.output / "suite.json").read_text()) if self.output.exists() else None
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\pathlib\_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\Lib\pathlib\_abc.py", line 633, in read_text
+    return f.read()
+           ~~~~~~^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x82 in position 5020: illegal multibyte sequence
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.936s
+
+FAILED (errors=1)
+
+
+0% tests passed, 3 tests failed out of 3
+
+Total Test time (real) =   6.05 sec
+
+The following tests FAILED:
+	  1 - unified_runner_checks (Failed)
+	  2 - unified_benchmark_checks (Failed)
+	  3 - benchmark_suite_checks (Failed)
+Errors while running CTest

@@ -1,0 +1,16 @@
+{
+  "commit": "94ead07a45af7cb5dd33a2a708683ec2ba4411b6",
+  "errors": [
+    {
+      "actual_git_blob_sha1": "02241f727837c20ac0a091f4e23e0fa244e440d6",
+      "error": "content_mismatch",
+      "path": "CMakeLists.txt"
+    }
+  ],
+  "manifest_sha256": "f3d62e5e6ed7b0e7cb20f97b87d384a97fba735bd4963f519991d05ef7b5717a",
+  "repository": "zsh20070718/learned-index",
+  "scope": "source identity only; no build, correctness, or performance claim",
+  "source_files": 77,
+  "status": "failed",
+  "verifier_sha256": "826e43c0d6542dcadc787ff0088a97ec312987922e328e0b055817371354105a"
+}

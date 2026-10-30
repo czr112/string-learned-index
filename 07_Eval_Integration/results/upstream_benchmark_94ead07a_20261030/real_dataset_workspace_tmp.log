@@ -1,0 +1,27 @@
+..E...
+======================================================================
+ERROR: test_download_checks_and_exclusive_partial (__main__.DatasetTest.test_download_checks_and_exclusive_partial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\scripts\prepare_real_datasets.py", line 53, in fetch
+    raise ValueError("Dataset download does not match locked size/SHA-256")
+ValueError: Dataset download does not match locked size/SHA-256
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\tests\real_dataset_test.py", line 90, in test_download_checks_and_exclusive_partial
+    fetch(source, raw)
+    ~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Noctis\Documents\Codex\2026-10-31\task\benchmark_upgrade\benchmark_94ead07a\scripts\prepare_real_datasets.py", line 55, in fetch
+    partial.unlink()
+    ~~~~~~~~~~~~~~^^
+  File "D:\Miniconda3\Lib\pathlib\_local.py", line 746, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] 鍙︿竴涓▼搴忔鍦ㄤ娇鐢ㄦ鏂囦欢锛岃繘绋嬫棤娉曡闂€? 'C:\\Users\\Noctis\\Documents\\Codex\\2026-10-31\\task\\benchmark_upgrade\\build_native\\unified-test-tmp\\tmpx9ys5ehz\\words.txt.part'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.091s
+
+FAILED (errors=1)

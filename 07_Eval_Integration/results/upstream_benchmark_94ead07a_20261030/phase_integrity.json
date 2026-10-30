@@ -1,0 +1,10 @@
+{
+  "historical_members_verified": 1520,
+  "paired_members_verified": 68,
+  "paired_samples_verified": 8,
+  "benchmark_log_hashes_verified": 13,
+  "binary_sha256_after_checks": "9284cd397e83511f61e07938538e631333ca04b6fd1cf71ca10adc2d81c980be",
+  "binary_hash_scope": "post-run observation only; not a pre-run binary identity gate",
+  "new_measurements": 0,
+  "status": "passed"
+}
