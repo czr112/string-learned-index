@@ -70,11 +70,16 @@ def main():
         if source.read_bytes()!=frozen:raise ValueError('frozen native preimage drift')
         old='int main(int argc,char** argv)';text=frozen.decode()
         if text.count(old)!=1:raise ValueError('native entry preimage')
+        # Ordinary int functions do not inherit main's implicit successful return.
+        success='std::cout<<"]}\\n";\n    }catch'
+        if text.count(success)!=1:raise ValueError('native success-return preimage')
+        text=text.replace(old,'static int bm_native_normal_entry(int argc,char** argv)',1)
+        text=text.replace(success,'std::cout<<"]}\\n";return 0;\n    }catch',1)
         generated=run.output/'bm_query_native_original.hpp'
-        generated.write_bytes(text.replace(old,'static int bm_native_normal_entry(int argc,char** argv)',1).encode())
+        generated.write_bytes(text.encode())
         run.sources[str(source)]=sha(source)
         save(run.output/'generation.json',{'base':'d337576','source_sha256':sha(source),
-             'generated_sha256':sha(generated),'change':'entry name only'})
+             'generated_sha256':sha(generated),'change':'entry rename plus explicit implicit-main success return'})
         definitions={'BM_TX_CONTROL_BM1':'1','BM_QUERY_BM1_ADAPTER_SHA256':sha(DIAG/'bm_split_adapter.hpp'),
                      'BM_NATIVE_PRIORITY_HEADER':str(generated)}
         model=ROOT/'07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp'
