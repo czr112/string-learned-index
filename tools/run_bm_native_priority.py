@@ -2,6 +2,7 @@
 from pathlib import Path
 import argparse
 import json
+import subprocess
 from run_bm_tx import ROOT,DIAG,save,sha
 import run_bm_query_native as native
 
@@ -60,11 +61,22 @@ def main():
     parser.add_argument('--selection',type=Path)
     parser.add_argument('--compile-only',action='store_true')
     args=parser.parse_args();run=PriorityRun(args.output)
-    for p in (Path(__file__).resolve(),PROTOCOL,Path(native.__file__).resolve(),
-              Path(native.old_statistics.__file__).resolve()):run.sources[str(p)]=sha(p)
+    for p in (Path(__file__).resolve(),PROTOCOL,Path(native.__file__).resolve(),native.PROTOCOL,
+              Path(native.old_statistics.__file__).resolve(),native.old_statistics.PROTOCOL):run.sources[str(p)]=sha(p)
     try:
         cases,hashes=native.frozen_inputs();save(run.output/'cases.json',cases);save(run.output/'input_hashes.json',hashes)
-        definitions={'BM_TX_CONTROL_BM1':'1','BM_QUERY_BM1_ADAPTER_SHA256':sha(DIAG/'bm_split_adapter.hpp')}
+        source=DIAG/'bm_query_native.cpp'
+        frozen=subprocess.check_output(['git','-C',str(ROOT),'show','d337576:'+source.relative_to(ROOT).as_posix()])
+        if source.read_bytes()!=frozen:raise ValueError('frozen native preimage drift')
+        old='int main(int argc,char** argv)';text=frozen.decode()
+        if text.count(old)!=1:raise ValueError('native entry preimage')
+        generated=run.output/'bm_query_native_original.hpp'
+        generated.write_bytes(text.replace(old,'static int bm_native_normal_entry(int argc,char** argv)',1).encode())
+        run.sources[str(source)]=sha(source)
+        save(run.output/'generation.json',{'base':'d337576','source_sha256':sha(source),
+             'generated_sha256':sha(generated),'change':'entry name only'})
+        definitions={'BM_TX_CONTROL_BM1':'1','BM_QUERY_BM1_ADAPTER_SHA256':sha(DIAG/'bm_split_adapter.hpp'),
+                     'BM_NATIVE_PRIORITY_HEADER':str(generated)}
         model=ROOT/'07_Eval_Integration/upstream_snapshots/model_3894c767/src/block_model.cpp'
         binary=run.build('query_priority',[DIAG/'bm_query_native_priority.cpp',model],definitions=definitions)
         contract_source=run.output/'contract.cpp'

@@ -1,7 +1,5 @@
 // Reuse the original native program; only this thread's scheduling priority changes.
-#define main bm_native_normal_entry
-#include "bm_query_native.cpp"
-#undef main
+#include BM_NATIVE_PRIORITY_HEADER
 
 int main(int argc,char** argv) {
     const auto thread=GetCurrentThread();

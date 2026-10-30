@@ -11,6 +11,9 @@ thread setting, verify actual before/after, report it separately from affinity.
 No REALTIME/HIGH process priority, CPU shopping, power tuning or other applications.
 Reuse original native code/factories and checks, toolchain/runtime identity and
 fixed lowest permitted CPU. No algorithm, inputs, groups or estimator change.
+Generate an exact d337576 preimage copy of bm_query_native.cpp with only its main
+entry name changed for composition; require one exact substitution, preserve the
+generated header and SHA, and leave the original tracked source untouched.
 
 One fixed1000ms floor; no250ms trial or longer floor. Same two historical pilot
 cells,4 fresh processes each,8 four-state Williams rounds, original calibration
