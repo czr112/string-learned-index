@@ -1,0 +1,9 @@
+{
+  "scope": "snapshot only",
+  "protocol_sha256": "7e4baf8df73493dbe72bd78b64e480ea075b76017bc9e48f98d745ddde3a3759",
+  "nomination_report_sha256": "b88d8283ae092460872a4591cf58565a7957f3f60456ec8c264f8276d19a0299",
+  "terminal_limit": 1.05,
+  "build_peak_limit": 1.05,
+  "timing_claims": false,
+  "fault_continuation_reads": 1000
+}

@@ -1,0 +1,1632 @@
+{
+  "status": "complete",
+  "binaries": {
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_model16_snapshot_acceptance_20261030/snapshot_opt": "1048a990309d84a8e668b3a6f79a54028168b8df6293f3e86f21981c8731b123",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_model16_snapshot_acceptance_20261030/contract_opt": "996bcc2fc89bf7e476842081f7c65a8e060b773dc1a82ecff650146dfceff99e",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_model16_snapshot_acceptance_20261030/snapshot_sanitizer": "56d92f6441470b885f09e7460df8831df5898f0f52c7180ec11935636c5c568d",
+    "/mnt/d/StringLearnedIndex_Workspace/builds/bm_model16_snapshot_acceptance_20261030/contract_sanitizer": "f1d6356d4e18c9c318f204e0ae101fafee8c094ddb15c74df1bd0c5ac320a042"
+  },
+  "builds": {
+    "opt": {
+      "contract": "adapter under acceptance: make_bm_model16_snapshot_index\n\ndescriptor:\n  implementation = BM page (16-segment read-only snapshot experiment)\n  version        = aaa451a39564de308e59221817102dc3a023f9618fef27beb18dd78619a1003c\n  support        = bulk_load=1 find=1 insert=0 update=0 erase=0 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)\n  notes          = model_commit=3894c767338a865d2920ba5e21283827fea1d803; segment_budget=16; scope=read-only-snapshot; lookup_mode=base; build_mode=bounded-per-page; root_mode=flat; single-threaded; 2048 rows/page, 15/16 slots; insert/update/erase/range_sum unsupported.\n  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)\n  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)\n  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes\n  memory         = index_owned=1229 adapter_owned=16 retained_input=0\n\n127/127 checks passed\n",
+      "cells": {
+        "urls_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3480321,
+              "build_peak": 3710705,
+              "queries": 8524,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3487041,
+              "build_peak": 3717193,
+              "queries": 8524,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.001930856377903,
+          "build_peak_ratio": 1.0017484548084528
+        },
+        "urls_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4639580,
+              "build_peak": 4873858,
+              "queries": 9900,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4648028,
+              "build_peak": 4882122,
+              "queries": 9900,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0018208544738962,
+          "build_peak_ratio": 1.0016955766868876
+        },
+        "urls_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3479768,
+              "build_peak": 3711310,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3486488,
+              "build_peak": 3717798,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0019311632269738,
+          "build_peak_ratio": 1.0017481697837152
+        },
+        "urls_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4637842,
+              "build_peak": 4871191,
+              "queries": 10108,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4646674,
+              "build_peak": 4879839,
+              "queries": 10108,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.001904333955318,
+          "build_peak_ratio": 1.0017753358470238
+        },
+        "urls_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3189880,
+              "build_peak": 3379543,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3196024,
+              "build_peak": 3385119,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0019260912636212,
+          "build_peak_ratio": 1.001649927223888
+        },
+        "urls_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4642456,
+              "build_peak": 4876107,
+              "queries": 10074,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4650904,
+              "build_peak": 4884371,
+              "queries": 10074,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.001819726455135,
+          "build_peak_ratio": 1.0016947946384278
+        },
+        "urls_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3195866,
+              "build_peak": 3385464,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3202202,
+              "build_peak": 3391232,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0019825612212778,
+          "build_peak_ratio": 1.0017037546404275
+        },
+        "urls_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4641893,
+              "build_peak": 4875644,
+              "queries": 10112,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4650341,
+              "build_peak": 4883908,
+              "queries": 10112,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0018199471637972,
+          "build_peak_ratio": 1.0016949555792014
+        },
+        "words_100k_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1607454,
+              "build_peak": 1671772,
+              "queries": 10303,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1617822,
+              "build_peak": 1681572,
+              "queries": 10303,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0064499512894303,
+          "build_peak_ratio": 1.0058620433886918
+        },
+        "words_100k_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2220644,
+              "build_peak": 2273092,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2234852,
+              "build_peak": 2287492,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063981439618417,
+          "build_peak_ratio": 1.00633498336187
+        },
+        "words_100k_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1609606,
+              "build_peak": 1673813,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1619974,
+              "build_peak": 1683613,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006441327877754,
+          "build_peak_ratio": 1.0058548953795914
+        },
+        "words_100k_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2221098,
+              "build_peak": 2273510,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2235306,
+              "build_peak": 2287910,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006396836159413,
+          "build_peak_ratio": 1.0063338186328628
+        },
+        "words_100k_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1519802,
+              "build_peak": 1596288,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1529402,
+              "build_peak": 1606080,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006316612295549,
+          "build_peak_ratio": 1.006134231416887
+        },
+        "words_100k_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2221959,
+              "build_peak": 2274480,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2236167,
+              "build_peak": 2288880,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063943574116354,
+          "build_peak_ratio": 1.0063311174422285
+        },
+        "words_100k_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1521194,
+              "build_peak": 1597679,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1530794,
+              "build_peak": 1607471,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063108321489567,
+          "build_peak_ratio": 1.0061288907221038
+        },
+        "words_100k_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2221970,
+              "build_peak": 2274473,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2236178,
+              "build_peak": 2288873,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063943257559733,
+          "build_peak_ratio": 1.0063311369271035
+        },
+        "words_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1099424,
+              "build_peak": 1183228,
+              "queries": 8530,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1106336,
+              "build_peak": 1189908,
+              "queries": 8530,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062869284279767,
+          "build_peak_ratio": 1.0056455729580436
+        },
+        "words_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1461889,
+              "build_peak": 1548896,
+              "queries": 9974,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1471105,
+              "build_peak": 1557928,
+              "queries": 9974,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006304172204593,
+          "build_peak_ratio": 1.0058312501291242
+        },
+        "words_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1095490,
+              "build_peak": 1179100,
+              "queries": 10481,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1102402,
+              "build_peak": 1185780,
+              "queries": 10481,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006309505335512,
+          "build_peak_ratio": 1.0056653379696379
+        },
+        "words_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1464032,
+              "build_peak": 1550985,
+              "queries": 10135,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1473248,
+              "build_peak": 1560017,
+              "queries": 10135,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062949443728006,
+          "build_peak_ratio": 1.005823396099898
+        },
+        "words_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1006469,
+              "build_peak": 1064725,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1012997,
+              "build_peak": 1070685,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006486041795624,
+          "build_peak_ratio": 1.0055976895442484
+        },
+        "words_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463851,
+              "build_peak": 1550835,
+              "queries": 10045,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1473067,
+              "build_peak": 1559867,
+              "queries": 10045,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062957227204135,
+          "build_peak_ratio": 1.0058239593509304
+        },
+        "words_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1007813,
+              "build_peak": 1066056,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1014341,
+              "build_peak": 1072016,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0064773921352472,
+          "build_peak_ratio": 1.005590700676137
+        },
+        "words_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463808,
+              "build_peak": 1550828,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1473024,
+              "build_peak": 1559860,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006295907660021,
+          "build_peak_ratio": 1.0058239856386395
+        },
+        "words_indep_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1095390,
+              "build_peak": 1179189,
+              "queries": 8561,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1102302,
+              "build_peak": 1185869,
+              "queries": 8561,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063100813408923,
+          "build_peak_ratio": 1.0056649103748423
+        },
+        "words_indep_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1465525,
+              "build_peak": 1552663,
+              "queries": 9915,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1474741,
+              "build_peak": 1561695,
+              "queries": 9915,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062885314136572,
+          "build_peak_ratio": 1.0058171026166012
+        },
+        "words_indep_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1096486,
+              "build_peak": 1180271,
+              "queries": 10477,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1103398,
+              "build_peak": 1186951,
+              "queries": 10477,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063037740563947,
+          "build_peak_ratio": 1.0056597171327601
+        },
+        "words_indep_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1465601,
+              "build_peak": 1552698,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1474817,
+              "build_peak": 1561730,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062882053164537,
+          "build_peak_ratio": 1.0058169714909144
+        },
+        "words_indep_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1008098,
+              "build_peak": 1066123,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1014626,
+              "build_peak": 1072083,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006475560907769,
+          "build_peak_ratio": 1.0055903493311746
+        },
+        "words_indep_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463312,
+              "build_peak": 1550519,
+              "queries": 10072,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1472528,
+              "build_peak": 1559551,
+              "queries": 10072,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062980417026581,
+          "build_peak_ratio": 1.0058251462897263
+        },
+        "words_indep_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1007629,
+              "build_peak": 1065782,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1014157,
+              "build_peak": 1071742,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0064785749516936,
+          "build_peak_ratio": 1.0055921379794366
+        },
+        "words_indep_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463440,
+              "build_peak": 1550647,
+              "queries": 10121,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1472656,
+              "build_peak": 1559679,
+              "queries": 10121,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006297490843492,
+          "build_peak_ratio": 1.005824665446101
+        }
+      },
+      "fault": {
+        "bytes_0": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 0,
+            "checks": 8060,
+            "mismatches": 0
+          },
+          "injected": 6,
+          "positive_controls": 2,
+          "records": 8
+        },
+        "bytes_15": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 15,
+            "checks": 30071,
+            "mismatches": 0
+          },
+          "injected": 27,
+          "positive_controls": 2,
+          "records": 29
+        },
+        "bytes_16": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 16,
+            "checks": 32209,
+            "mismatches": 0
+          },
+          "injected": 29,
+          "positive_controls": 2,
+          "records": 31
+        },
+        "bytes_17": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 17,
+            "checks": 33310,
+            "mismatches": 0
+          },
+          "injected": 30,
+          "positive_controls": 2,
+          "records": 32
+        },
+        "bytes_2048": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2048,
+            "checks": 3204390,
+            "mismatches": 0
+          },
+          "injected": 626,
+          "positive_controls": 2,
+          "records": 628
+        },
+        "bytes_2049": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 3272018,
+            "mismatches": 0
+          },
+          "injected": 639,
+          "positive_controls": 2,
+          "records": 641
+        },
+        "english_words": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 464544,
+            "mismatches": 0
+          },
+          "injected": 89,
+          "positive_controls": 2,
+          "records": 91
+        },
+        "memetracker_urls": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 21239868,
+            "mismatches": 0
+          },
+          "injected": 4159,
+          "positive_controls": 2,
+          "records": 4161
+        },
+        "memetracker_phrases": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 17110326,
+            "mismatches": 0
+          },
+          "injected": 3350,
+          "positive_controls": 2,
+          "records": 3352
+        }
+      }
+    },
+    "sanitizer": {
+      "contract": "adapter under acceptance: make_bm_model16_snapshot_index\n\ndescriptor:\n  implementation = BM page (16-segment read-only snapshot experiment)\n  version        = aaa451a39564de308e59221817102dc3a023f9618fef27beb18dd78619a1003c\n  support        = bulk_load=1 find=1 insert=0 update=0 erase=0 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)\n  notes          = model_commit=3894c767338a865d2920ba5e21283827fea1d803; segment_budget=16; scope=read-only-snapshot; lookup_mode=base; build_mode=bounded-per-page; root_mode=flat; single-threaded; 2048 rows/page, 15/16 slots; insert/update/erase/range_sum unsupported.\n  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)\n  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)\n  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes\n  memory         = index_owned=1229 adapter_owned=16 retained_input=0\n\n127/127 checks passed\n",
+      "cells": {
+        "urls_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3480321,
+              "build_peak": 3710705,
+              "queries": 8524,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3487041,
+              "build_peak": 3717193,
+              "queries": 8524,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.001930856377903,
+          "build_peak_ratio": 1.0017484548084528
+        },
+        "urls_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4639580,
+              "build_peak": 4873858,
+              "queries": 9900,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4648028,
+              "build_peak": 4882122,
+              "queries": 9900,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0018208544738962,
+          "build_peak_ratio": 1.0016955766868876
+        },
+        "urls_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3479768,
+              "build_peak": 3711310,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3486488,
+              "build_peak": 3717798,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0019311632269738,
+          "build_peak_ratio": 1.0017481697837152
+        },
+        "urls_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4637842,
+              "build_peak": 4871191,
+              "queries": 10108,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4646674,
+              "build_peak": 4879839,
+              "queries": 10108,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.001904333955318,
+          "build_peak_ratio": 1.0017753358470238
+        },
+        "urls_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3189880,
+              "build_peak": 3379543,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3196024,
+              "build_peak": 3385119,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0019260912636212,
+          "build_peak_ratio": 1.001649927223888
+        },
+        "urls_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4642456,
+              "build_peak": 4876107,
+              "queries": 10074,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4650904,
+              "build_peak": 4884371,
+              "queries": 10074,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.001819726455135,
+          "build_peak_ratio": 1.0016947946384278
+        },
+        "urls_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 3195866,
+              "build_peak": 3385464,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 3202202,
+              "build_peak": 3391232,
+              "queries": 10489,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0019825612212778,
+          "build_peak_ratio": 1.0017037546404275
+        },
+        "urls_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 4641893,
+              "build_peak": 4875644,
+              "queries": 10112,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 4650341,
+              "build_peak": 4883908,
+              "queries": 10112,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0018199471637972,
+          "build_peak_ratio": 1.0016949555792014
+        },
+        "words_100k_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1607454,
+              "build_peak": 1671772,
+              "queries": 10303,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1617822,
+              "build_peak": 1681572,
+              "queries": 10303,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0064499512894303,
+          "build_peak_ratio": 1.0058620433886918
+        },
+        "words_100k_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2220644,
+              "build_peak": 2273092,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2234852,
+              "build_peak": 2287492,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063981439618417,
+          "build_peak_ratio": 1.00633498336187
+        },
+        "words_100k_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1609606,
+              "build_peak": 1673813,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1619974,
+              "build_peak": 1683613,
+              "queries": 10483,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006441327877754,
+          "build_peak_ratio": 1.0058548953795914
+        },
+        "words_100k_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2221098,
+              "build_peak": 2273510,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2235306,
+              "build_peak": 2287910,
+              "queries": 10474,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006396836159413,
+          "build_peak_ratio": 1.0063338186328628
+        },
+        "words_100k_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1519802,
+              "build_peak": 1596288,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1529402,
+              "build_peak": 1606080,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006316612295549,
+          "build_peak_ratio": 1.006134231416887
+        },
+        "words_100k_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2221959,
+              "build_peak": 2274480,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2236167,
+              "build_peak": 2288880,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063943574116354,
+          "build_peak_ratio": 1.0063311174422285
+        },
+        "words_100k_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1521194,
+              "build_peak": 1597679,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1530794,
+              "build_peak": 1607471,
+              "queries": 10495,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063108321489567,
+          "build_peak_ratio": 1.0061288907221038
+        },
+        "words_100k_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 2221970,
+              "build_peak": 2274473,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 2236178,
+              "build_peak": 2288873,
+              "queries": 10486,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063943257559733,
+          "build_peak_ratio": 1.0063311369271035
+        },
+        "words_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1099424,
+              "build_peak": 1183228,
+              "queries": 8530,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1106336,
+              "build_peak": 1189908,
+              "queries": 8530,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062869284279767,
+          "build_peak_ratio": 1.0056455729580436
+        },
+        "words_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1461889,
+              "build_peak": 1548896,
+              "queries": 9974,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1471105,
+              "build_peak": 1557928,
+              "queries": 9974,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006304172204593,
+          "build_peak_ratio": 1.0058312501291242
+        },
+        "words_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1095490,
+              "build_peak": 1179100,
+              "queries": 10481,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1102402,
+              "build_peak": 1185780,
+              "queries": 10481,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006309505335512,
+          "build_peak_ratio": 1.0056653379696379
+        },
+        "words_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1464032,
+              "build_peak": 1550985,
+              "queries": 10135,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1473248,
+              "build_peak": 1560017,
+              "queries": 10135,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062949443728006,
+          "build_peak_ratio": 1.005823396099898
+        },
+        "words_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1006469,
+              "build_peak": 1064725,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1012997,
+              "build_peak": 1070685,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006486041795624,
+          "build_peak_ratio": 1.0055976895442484
+        },
+        "words_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463851,
+              "build_peak": 1550835,
+              "queries": 10045,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1473067,
+              "build_peak": 1559867,
+              "queries": 10045,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062957227204135,
+          "build_peak_ratio": 1.0058239593509304
+        },
+        "words_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1007813,
+              "build_peak": 1066056,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1014341,
+              "build_peak": 1072016,
+              "queries": 10492,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0064773921352472,
+          "build_peak_ratio": 1.005590700676137
+        },
+        "words_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463808,
+              "build_peak": 1550828,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1473024,
+              "build_peak": 1559860,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006295907660021,
+          "build_peak_ratio": 1.0058239856386395
+        },
+        "words_indep_80_20_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1095390,
+              "build_peak": 1179189,
+              "queries": 8561,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1102302,
+              "build_peak": 1185869,
+              "queries": 8561,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063100813408923,
+          "build_peak_ratio": 1.0056649103748423
+        },
+        "words_indep_80_20_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1465525,
+              "build_peak": 1552663,
+              "queries": 9915,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1474741,
+              "build_peak": 1561695,
+              "queries": 9915,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062885314136572,
+          "build_peak_ratio": 1.0058171026166012
+        },
+        "words_indep_80_20_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1096486,
+              "build_peak": 1180271,
+              "queries": 10477,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1103398,
+              "build_peak": 1186951,
+              "queries": 10477,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0063037740563947,
+          "build_peak_ratio": 1.0056597171327601
+        },
+        "words_indep_80_20_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1465601,
+              "build_peak": 1552698,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1474817,
+              "build_peak": 1561730,
+              "queries": 10090,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062882053164537,
+          "build_peak_ratio": 1.0058169714909144
+        },
+        "words_indep_95_5_hotspot_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1008098,
+              "build_peak": 1066123,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1014626,
+              "build_peak": 1072083,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006475560907769,
+          "build_peak_ratio": 1.0055903493311746
+        },
+        "words_indep_95_5_hotspot_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463312,
+              "build_peak": 1550519,
+              "queries": 10072,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1472528,
+              "build_peak": 1559551,
+              "queries": 10072,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0062980417026581,
+          "build_peak_ratio": 1.0058251462897263
+        },
+        "words_indep_95_5_uniform_growth": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1007629,
+              "build_peak": 1065782,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1014157,
+              "build_peak": 1071742,
+              "queries": 10487,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.0064785749516936,
+          "build_peak_ratio": 1.0055921379794366
+        },
+        "words_indep_95_5_uniform_replacement": {
+          "records": [
+            {
+              "arm": "tx8_snapshot",
+              "terminal": 1463440,
+              "build_peak": 1550647,
+              "queries": 10121,
+              "find_allocations": 0,
+              "mismatches": 0
+            },
+            {
+              "arm": "m16_snapshot",
+              "terminal": 1472656,
+              "build_peak": 1559679,
+              "queries": 10121,
+              "find_allocations": 0,
+              "mismatches": 0
+            }
+          ],
+          "terminal_ratio": 1.006297490843492,
+          "build_peak_ratio": 1.005824665446101
+        }
+      },
+      "fault": {
+        "bytes_0": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 0,
+            "checks": 8060,
+            "mismatches": 0
+          },
+          "injected": 6,
+          "positive_controls": 2,
+          "records": 8
+        },
+        "bytes_15": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 15,
+            "checks": 30071,
+            "mismatches": 0
+          },
+          "injected": 27,
+          "positive_controls": 2,
+          "records": 29
+        },
+        "bytes_16": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 16,
+            "checks": 32209,
+            "mismatches": 0
+          },
+          "injected": 29,
+          "positive_controls": 2,
+          "records": 31
+        },
+        "bytes_17": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 17,
+            "checks": 33310,
+            "mismatches": 0
+          },
+          "injected": 30,
+          "positive_controls": 2,
+          "records": 32
+        },
+        "bytes_2048": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2048,
+            "checks": 3204390,
+            "mismatches": 0
+          },
+          "injected": 626,
+          "positive_controls": 2,
+          "records": 628
+        },
+        "bytes_2049": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 3272018,
+            "mismatches": 0
+          },
+          "injected": 639,
+          "positive_controls": 2,
+          "records": 641
+        },
+        "english_words": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 464544,
+            "mismatches": 0
+          },
+          "injected": 89,
+          "positive_controls": 2,
+          "records": 91
+        },
+        "memetracker_urls": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 21239868,
+            "mismatches": 0
+          },
+          "injected": 4159,
+          "positive_controls": 2,
+          "records": 4161
+        },
+        "memetracker_phrases": {
+          "summary": {
+            "suite": "fault_summary",
+            "rows": 2049,
+            "checks": 17110326,
+            "mismatches": 0
+          },
+          "injected": 3350,
+          "positive_controls": 2,
+          "records": 3352
+        }
+      }
+    }
+  },
+  "functional_space_acceptance": true
+}
