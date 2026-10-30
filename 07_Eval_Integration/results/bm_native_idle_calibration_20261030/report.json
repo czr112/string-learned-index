@@ -1,0 +1,1623 @@
+{
+  "status": "complete",
+  "binaries": {
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\query_native.exe": "fe47fc2c52318eace50307520075090cfc7939c20fcbc4d3f3acad7ff73b9ac6",
+    "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\contract_native.exe": "e5c182ef048f3e54bbc8d205cbb4022b09c857b8dabdff3ed5f99f0fcb765c6c"
+  },
+  "window": {
+    "confirmed_start_utc": "2026-10-30T05:47:13+00:00",
+    "confirmed_end_utc": "2026-10-30T06:17:13+00:00",
+    "human_note": "\u7528\u6237\u786e\u8ba4\uff1a\u73b0\u5728\u5f00\u59cb\uff0c\u81f3\u5c1130\u5206\u949f\uff1b\u6309\u6536\u5230\u786e\u8ba4\u65f6\u523b\u56fa\u5b9a\u7a97\u53e3\uff0c\u4e0d\u5ef6\u957f\u3002",
+    "launcher_utc": "2026-10-30T05:55:08.911715+00:00",
+    "parent_process_class": 32,
+    "parent_thread_priority": 0,
+    "child_creation_class": 32,
+    "system_counters_are_not_latency": true
+  },
+  "children": {
+    "contract.log": {
+      "start_utc": "2026-10-30T05:55:10.117869+00:00",
+      "system_before": {
+        "idle_ns": 4887277734375000,
+        "kernel_including_idle_ns": 5061080031250000,
+        "user_ns": 124180171875000
+      },
+      "launch_utc": "2026-10-30T05:55:10.119955+00:00",
+      "timeout_seconds": 1322.88003,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:10.300827+00:00",
+      "end_utc": "2026-10-30T05:55:10.300862+00:00",
+      "system_after": {
+        "idle_ns": 4887280703125000,
+        "kernel_including_idle_ns": 5061084000000000,
+        "user_ns": 124180484375000
+      }
+    },
+    "urls_80_20_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:10.308718+00:00",
+      "system_before": {
+        "idle_ns": 4887280765625000,
+        "kernel_including_idle_ns": 5061084062500000,
+        "user_ns": 124180484375000
+      },
+      "launch_utc": "2026-10-30T05:55:10.309371+00:00",
+      "timeout_seconds": 1322.690621,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:10.701825+00:00",
+      "end_utc": "2026-10-30T05:55:10.701854+00:00",
+      "system_after": {
+        "idle_ns": 4887289000000000,
+        "kernel_including_idle_ns": 5061092890625000,
+        "user_ns": 124181093750000
+      }
+    },
+    "urls_80_20_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:10.707888+00:00",
+      "system_before": {
+        "idle_ns": 4887289062500000,
+        "kernel_including_idle_ns": 5061092953125000,
+        "user_ns": 124181093750000
+      },
+      "launch_utc": "2026-10-30T05:55:10.708494+00:00",
+      "timeout_seconds": 1322.291499,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:10.944841+00:00",
+      "end_utc": "2026-10-30T05:55:10.944870+00:00",
+      "system_after": {
+        "idle_ns": 4887294218750000,
+        "kernel_including_idle_ns": 5061098390625000,
+        "user_ns": 124181484375000
+      }
+    },
+    "urls_80_20_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:10.950506+00:00",
+      "system_before": {
+        "idle_ns": 4887294296875000,
+        "kernel_including_idle_ns": 5061098500000000,
+        "user_ns": 124181515625000
+      },
+      "launch_utc": "2026-10-30T05:55:10.951324+00:00",
+      "timeout_seconds": 1322.048667,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:11.207536+00:00",
+      "end_utc": "2026-10-30T05:55:11.207567+00:00",
+      "system_after": {
+        "idle_ns": 4887299625000000,
+        "kernel_including_idle_ns": 5061104125000000,
+        "user_ns": 124181921875000
+      }
+    },
+    "urls_80_20_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:11.212983+00:00",
+      "system_before": {
+        "idle_ns": 4887299718750000,
+        "kernel_including_idle_ns": 5061104218750000,
+        "user_ns": 124181921875000
+      },
+      "launch_utc": "2026-10-30T05:55:11.213493+00:00",
+      "timeout_seconds": 1321.786501,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:11.441947+00:00",
+      "end_utc": "2026-10-30T05:55:11.441977+00:00",
+      "system_after": {
+        "idle_ns": 4887304671875000,
+        "kernel_including_idle_ns": 5061109328125000,
+        "user_ns": 124182265625000
+      }
+    },
+    "urls_95_5_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:11.448815+00:00",
+      "system_before": {
+        "idle_ns": 4887304859375000,
+        "kernel_including_idle_ns": 5061109515625000,
+        "user_ns": 124182265625000
+      },
+      "launch_utc": "2026-10-30T05:55:11.449915+00:00",
+      "timeout_seconds": 1321.550072,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:11.628911+00:00",
+      "end_utc": "2026-10-30T05:55:11.628937+00:00",
+      "system_after": {
+        "idle_ns": 4887308765625000,
+        "kernel_including_idle_ns": 5061113578125000,
+        "user_ns": 124182515625000
+      }
+    },
+    "urls_95_5_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:11.634801+00:00",
+      "system_before": {
+        "idle_ns": 4887308937500000,
+        "kernel_including_idle_ns": 5061113750000000,
+        "user_ns": 124182515625000
+      },
+      "launch_utc": "2026-10-30T05:55:11.635715+00:00",
+      "timeout_seconds": 1321.364271,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:11.853804+00:00",
+      "end_utc": "2026-10-30T05:55:11.853842+00:00",
+      "system_after": {
+        "idle_ns": 4887313843750000,
+        "kernel_including_idle_ns": 5061118859375000,
+        "user_ns": 124182781250000
+      }
+    },
+    "urls_95_5_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:11.859002+00:00",
+      "system_before": {
+        "idle_ns": 4887313906250000,
+        "kernel_including_idle_ns": 5061118937500000,
+        "user_ns": 124182812500000
+      },
+      "launch_utc": "2026-10-30T05:55:11.861968+00:00",
+      "timeout_seconds": 1321.138025,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:12.040471+00:00",
+      "end_utc": "2026-10-30T05:55:12.040497+00:00",
+      "system_after": {
+        "idle_ns": 4887317796875000,
+        "kernel_including_idle_ns": 5061122937500000,
+        "user_ns": 124183062500000
+      }
+    },
+    "urls_95_5_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:12.045509+00:00",
+      "system_before": {
+        "idle_ns": 4887317859375000,
+        "kernel_including_idle_ns": 5061123015625000,
+        "user_ns": 124183093750000
+      },
+      "launch_utc": "2026-10-30T05:55:12.046049+00:00",
+      "timeout_seconds": 1320.953946,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:12.264080+00:00",
+      "end_utc": "2026-10-30T05:55:12.264122+00:00",
+      "system_after": {
+        "idle_ns": 4887322453125000,
+        "kernel_including_idle_ns": 5061127750000000,
+        "user_ns": 124183375000000
+      }
+    },
+    "words_100k_80_20_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:12.269399+00:00",
+      "system_before": {
+        "idle_ns": 4887322515625000,
+        "kernel_including_idle_ns": 5061127812500000,
+        "user_ns": 124183375000000
+      },
+      "launch_utc": "2026-10-30T05:55:12.269841+00:00",
+      "timeout_seconds": 1320.730154,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:12.432698+00:00",
+      "end_utc": "2026-10-30T05:55:12.432754+00:00",
+      "system_after": {
+        "idle_ns": 4887326390625000,
+        "kernel_including_idle_ns": 5061131859375000,
+        "user_ns": 124183578125000
+      }
+    },
+    "words_100k_80_20_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:12.438897+00:00",
+      "system_before": {
+        "idle_ns": 4887326546875000,
+        "kernel_including_idle_ns": 5061132046875000,
+        "user_ns": 124183593750000
+      },
+      "launch_utc": "2026-10-30T05:55:12.439472+00:00",
+      "timeout_seconds": 1320.560523,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:12.618827+00:00",
+      "end_utc": "2026-10-30T05:55:12.618873+00:00",
+      "system_after": {
+        "idle_ns": 4887330343750000,
+        "kernel_including_idle_ns": 5061136015625000,
+        "user_ns": 124183937500000
+      }
+    },
+    "words_100k_80_20_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:12.624991+00:00",
+      "system_before": {
+        "idle_ns": 4887330453125000,
+        "kernel_including_idle_ns": 5061136140625000,
+        "user_ns": 124184000000000
+      },
+      "launch_utc": "2026-10-30T05:55:12.626484+00:00",
+      "timeout_seconds": 1320.373509,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:12.787330+00:00",
+      "end_utc": "2026-10-30T05:55:12.787372+00:00",
+      "system_after": {
+        "idle_ns": 4887333640625000,
+        "kernel_including_idle_ns": 5061139390625000,
+        "user_ns": 124184187500000
+      }
+    },
+    "words_100k_80_20_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:12.793649+00:00",
+      "system_before": {
+        "idle_ns": 4887333859375000,
+        "kernel_including_idle_ns": 5061139609375000,
+        "user_ns": 124184234375000
+      },
+      "launch_utc": "2026-10-30T05:55:12.794312+00:00",
+      "timeout_seconds": 1320.205683,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:12.979712+00:00",
+      "end_utc": "2026-10-30T05:55:12.979737+00:00",
+      "system_after": {
+        "idle_ns": 4887338343750000,
+        "kernel_including_idle_ns": 5061144156250000,
+        "user_ns": 124184406250000
+      }
+    },
+    "words_100k_95_5_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:12.984964+00:00",
+      "system_before": {
+        "idle_ns": 4887338578125000,
+        "kernel_including_idle_ns": 5061144421875000,
+        "user_ns": 124184406250000
+      },
+      "launch_utc": "2026-10-30T05:55:12.985413+00:00",
+      "timeout_seconds": 1320.014582,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:13.131268+00:00",
+      "end_utc": "2026-10-30T05:55:13.131297+00:00",
+      "system_after": {
+        "idle_ns": 4887341812500000,
+        "kernel_including_idle_ns": 5061147875000000,
+        "user_ns": 124184703125000
+      }
+    },
+    "words_100k_95_5_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:13.137143+00:00",
+      "system_before": {
+        "idle_ns": 4887341812500000,
+        "kernel_including_idle_ns": 5061147875000000,
+        "user_ns": 124184703125000
+      },
+      "launch_utc": "2026-10-30T05:55:13.138085+00:00",
+      "timeout_seconds": 1319.861908,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:13.340643+00:00",
+      "end_utc": "2026-10-30T05:55:13.340669+00:00",
+      "system_after": {
+        "idle_ns": 4887344984375000,
+        "kernel_including_idle_ns": 5061152125000000,
+        "user_ns": 124185187500000
+      }
+    },
+    "words_100k_95_5_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:13.345957+00:00",
+      "system_before": {
+        "idle_ns": 4887345218750000,
+        "kernel_including_idle_ns": 5061152359375000,
+        "user_ns": 124185187500000
+      },
+      "launch_utc": "2026-10-30T05:55:13.349096+00:00",
+      "timeout_seconds": 1319.650897,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:13.488596+00:00",
+      "end_utc": "2026-10-30T05:55:13.488621+00:00",
+      "system_after": {
+        "idle_ns": 4887348078125000,
+        "kernel_including_idle_ns": 5061155375000000,
+        "user_ns": 124185437500000
+      }
+    },
+    "words_100k_95_5_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:13.494197+00:00",
+      "system_before": {
+        "idle_ns": 4887348093750000,
+        "kernel_including_idle_ns": 5061155390625000,
+        "user_ns": 124185437500000
+      },
+      "launch_utc": "2026-10-30T05:55:13.496952+00:00",
+      "timeout_seconds": 1319.503042,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:13.674788+00:00",
+      "end_utc": "2026-10-30T05:55:13.674828+00:00",
+      "system_after": {
+        "idle_ns": 4887352296875000,
+        "kernel_including_idle_ns": 5061159671875000,
+        "user_ns": 124185703125000
+      }
+    },
+    "words_80_20_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:13.680301+00:00",
+      "system_before": {
+        "idle_ns": 4887352312500000,
+        "kernel_including_idle_ns": 5061159687500000,
+        "user_ns": 124185703125000
+      },
+      "launch_utc": "2026-10-30T05:55:13.680831+00:00",
+      "timeout_seconds": 1319.319164,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:13.809628+00:00",
+      "end_utc": "2026-10-30T05:55:13.809657+00:00",
+      "system_after": {
+        "idle_ns": 4887355140625000,
+        "kernel_including_idle_ns": 5061162640625000,
+        "user_ns": 124185953125000
+      }
+    },
+    "words_80_20_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:13.815272+00:00",
+      "system_before": {
+        "idle_ns": 4887355265625000,
+        "kernel_including_idle_ns": 5061162765625000,
+        "user_ns": 124185953125000
+      },
+      "launch_utc": "2026-10-30T05:55:13.815761+00:00",
+      "timeout_seconds": 1319.184234,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:13.952201+00:00",
+      "end_utc": "2026-10-30T05:55:13.952238+00:00",
+      "system_after": {
+        "idle_ns": 4887358140625000,
+        "kernel_including_idle_ns": 5061165734375000,
+        "user_ns": 124186109375000
+      }
+    },
+    "words_80_20_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:13.956966+00:00",
+      "system_before": {
+        "idle_ns": 4887358296875000,
+        "kernel_including_idle_ns": 5061165890625000,
+        "user_ns": 124186109375000
+      },
+      "launch_utc": "2026-10-30T05:55:13.959774+00:00",
+      "timeout_seconds": 1319.04022,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.087948+00:00",
+      "end_utc": "2026-10-30T05:55:14.088050+00:00",
+      "system_after": {
+        "idle_ns": 4887361187500000,
+        "kernel_including_idle_ns": 5061168890625000,
+        "user_ns": 124186250000000
+      }
+    },
+    "words_80_20_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:14.093544+00:00",
+      "system_before": {
+        "idle_ns": 4887361468750000,
+        "kernel_including_idle_ns": 5061169171875000,
+        "user_ns": 124186281250000
+      },
+      "launch_utc": "2026-10-30T05:55:14.094092+00:00",
+      "timeout_seconds": 1318.905903,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.234864+00:00",
+      "end_utc": "2026-10-30T05:55:14.234891+00:00",
+      "system_after": {
+        "idle_ns": 4887364500000000,
+        "kernel_including_idle_ns": 5061172406250000,
+        "user_ns": 124186531250000
+      }
+    },
+    "words_95_5_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:14.240069+00:00",
+      "system_before": {
+        "idle_ns": 4887364515625000,
+        "kernel_including_idle_ns": 5061172421875000,
+        "user_ns": 124186531250000
+      },
+      "launch_utc": "2026-10-30T05:55:14.240661+00:00",
+      "timeout_seconds": 1318.759335,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.344931+00:00",
+      "end_utc": "2026-10-30T05:55:14.344970+00:00",
+      "system_after": {
+        "idle_ns": 4887366906250000,
+        "kernel_including_idle_ns": 5061174875000000,
+        "user_ns": 124186687500000
+      }
+    },
+    "words_95_5_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:14.350312+00:00",
+      "system_before": {
+        "idle_ns": 4887366921875000,
+        "kernel_including_idle_ns": 5061174890625000,
+        "user_ns": 124186687500000
+      },
+      "launch_utc": "2026-10-30T05:55:14.351111+00:00",
+      "timeout_seconds": 1318.648884,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.475316+00:00",
+      "end_utc": "2026-10-30T05:55:14.475340+00:00",
+      "system_after": {
+        "idle_ns": 4887369515625000,
+        "kernel_including_idle_ns": 5061177625000000,
+        "user_ns": 124186796875000
+      }
+    },
+    "words_95_5_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:14.480658+00:00",
+      "system_before": {
+        "idle_ns": 4887369562500000,
+        "kernel_including_idle_ns": 5061177671875000,
+        "user_ns": 124186796875000
+      },
+      "launch_utc": "2026-10-30T05:55:14.483267+00:00",
+      "timeout_seconds": 1318.516726,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.588021+00:00",
+      "end_utc": "2026-10-30T05:55:14.588090+00:00",
+      "system_after": {
+        "idle_ns": 4887371937500000,
+        "kernel_including_idle_ns": 5061180109375000,
+        "user_ns": 124186937500000
+      }
+    },
+    "words_95_5_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:14.594480+00:00",
+      "system_before": {
+        "idle_ns": 4887372296875000,
+        "kernel_including_idle_ns": 5061180484375000,
+        "user_ns": 124186937500000
+      },
+      "launch_utc": "2026-10-30T05:55:14.595062+00:00",
+      "timeout_seconds": 1318.404933,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.725688+00:00",
+      "end_utc": "2026-10-30T05:55:14.725726+00:00",
+      "system_after": {
+        "idle_ns": 4887375093750000,
+        "kernel_including_idle_ns": 5061183453125000,
+        "user_ns": 124187093750000
+      }
+    },
+    "words_indep_80_20_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:14.732110+00:00",
+      "system_before": {
+        "idle_ns": 4887375187500000,
+        "kernel_including_idle_ns": 5061183578125000,
+        "user_ns": 124187109375000
+      },
+      "launch_utc": "2026-10-30T05:55:14.732766+00:00",
+      "timeout_seconds": 1318.267228,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.861555+00:00",
+      "end_utc": "2026-10-30T05:55:14.861614+00:00",
+      "system_after": {
+        "idle_ns": 4887377968750000,
+        "kernel_including_idle_ns": 5061186484375000,
+        "user_ns": 124187296875000
+      }
+    },
+    "words_indep_80_20_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:14.867991+00:00",
+      "system_before": {
+        "idle_ns": 4887378031250000,
+        "kernel_including_idle_ns": 5061186546875000,
+        "user_ns": 124187296875000
+      },
+      "launch_utc": "2026-10-30T05:55:14.868574+00:00",
+      "timeout_seconds": 1318.131421,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:14.995790+00:00",
+      "end_utc": "2026-10-30T05:55:14.995816+00:00",
+      "system_after": {
+        "idle_ns": 4887380687500000,
+        "kernel_including_idle_ns": 5061189234375000,
+        "user_ns": 124187437500000
+      }
+    },
+    "words_indep_80_20_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:15.001365+00:00",
+      "system_before": {
+        "idle_ns": 4887380984375000,
+        "kernel_including_idle_ns": 5061189546875000,
+        "user_ns": 124187437500000
+      },
+      "launch_utc": "2026-10-30T05:55:15.004324+00:00",
+      "timeout_seconds": 1317.995671,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:15.136259+00:00",
+      "end_utc": "2026-10-30T05:55:15.136286+00:00",
+      "system_after": {
+        "idle_ns": 4887381843750000,
+        "kernel_including_idle_ns": 5061190484375000,
+        "user_ns": 124187562500000
+      }
+    },
+    "words_indep_80_20_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:15.141589+00:00",
+      "system_before": {
+        "idle_ns": 4887382078125000,
+        "kernel_including_idle_ns": 5061190750000000,
+        "user_ns": 124187609375000
+      },
+      "launch_utc": "2026-10-30T05:55:15.143148+00:00",
+      "timeout_seconds": 1317.856845,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:15.278698+00:00",
+      "end_utc": "2026-10-30T05:55:15.278725+00:00",
+      "system_after": {
+        "idle_ns": 4887387078125000,
+        "kernel_including_idle_ns": 5061195875000000,
+        "user_ns": 124187890625000
+      }
+    },
+    "words_indep_95_5_hotspot_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:15.284599+00:00",
+      "system_before": {
+        "idle_ns": 4887387234375000,
+        "kernel_including_idle_ns": 5061196031250000,
+        "user_ns": 124187890625000
+      },
+      "launch_utc": "2026-10-30T05:55:15.285195+00:00",
+      "timeout_seconds": 1317.7148,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:15.391318+00:00",
+      "end_utc": "2026-10-30T05:55:15.391357+00:00",
+      "system_after": {
+        "idle_ns": 4887389578125000,
+        "kernel_including_idle_ns": 5061198421875000,
+        "user_ns": 124187984375000
+      }
+    },
+    "words_indep_95_5_hotspot_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:15.398225+00:00",
+      "system_before": {
+        "idle_ns": 4887389593750000,
+        "kernel_including_idle_ns": 5061198437500000,
+        "user_ns": 124187984375000
+      },
+      "launch_utc": "2026-10-30T05:55:15.398805+00:00",
+      "timeout_seconds": 1317.601191,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:15.523028+00:00",
+      "end_utc": "2026-10-30T05:55:15.523061+00:00",
+      "system_after": {
+        "idle_ns": 4887392453125000,
+        "kernel_including_idle_ns": 5061201343750000,
+        "user_ns": 124188203125000
+      }
+    },
+    "words_indep_95_5_uniform_growth_check.json": {
+      "start_utc": "2026-10-30T05:55:15.529212+00:00",
+      "system_before": {
+        "idle_ns": 4887392734375000,
+        "kernel_including_idle_ns": 5061201640625000,
+        "user_ns": 124188250000000
+      },
+      "launch_utc": "2026-10-30T05:55:15.530983+00:00",
+      "timeout_seconds": 1317.469011,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:15.636609+00:00",
+      "end_utc": "2026-10-30T05:55:15.636637+00:00",
+      "system_after": {
+        "idle_ns": 4887394984375000,
+        "kernel_including_idle_ns": 5061203890625000,
+        "user_ns": 124188375000000
+      }
+    },
+    "words_indep_95_5_uniform_replacement_check.json": {
+      "start_utc": "2026-10-30T05:55:15.641814+00:00",
+      "system_before": {
+        "idle_ns": 4887395203125000,
+        "kernel_including_idle_ns": 5061204125000000,
+        "user_ns": 124188375000000
+      },
+      "launch_utc": "2026-10-30T05:55:15.642505+00:00",
+      "timeout_seconds": 1317.357489,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:55:15.772109+00:00",
+      "end_utc": "2026-10-30T05:55:15.772137+00:00",
+      "system_after": {
+        "idle_ns": 4887397968750000,
+        "kernel_including_idle_ns": 5061206890625000,
+        "user_ns": 124188515625000
+      }
+    },
+    "words_95_5_uniform_growth_p00.json": {
+      "start_utc": "2026-10-30T05:55:15.779642+00:00",
+      "system_before": {
+        "idle_ns": 4887398187500000,
+        "kernel_including_idle_ns": 5061207125000000,
+        "user_ns": 124188515625000
+      },
+      "launch_utc": "2026-10-30T05:55:15.780238+00:00",
+      "timeout_seconds": 1317.219756,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:56:03.974161+00:00",
+      "end_utc": "2026-10-30T05:56:03.974205+00:00",
+      "system_after": {
+        "idle_ns": 4888455046875000,
+        "kernel_including_idle_ns": 5062293328125000,
+        "user_ns": 124257171875000
+      }
+    },
+    "words_95_5_uniform_growth_p01.json": {
+      "start_utc": "2026-10-30T05:56:03.980148+00:00",
+      "system_before": {
+        "idle_ns": 4888455062500000,
+        "kernel_including_idle_ns": 5062293343750000,
+        "user_ns": 124257171875000
+      },
+      "launch_utc": "2026-10-30T05:56:03.983072+00:00",
+      "timeout_seconds": 1269.016923,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:56:51.646913+00:00",
+      "end_utc": "2026-10-30T05:56:51.646962+00:00",
+      "system_after": {
+        "idle_ns": 4889502625000000,
+        "kernel_including_idle_ns": 5063371250000000,
+        "user_ns": 124325296875000
+      }
+    },
+    "words_95_5_uniform_growth_p02.json": {
+      "start_utc": "2026-10-30T05:56:51.653336+00:00",
+      "system_before": {
+        "idle_ns": 4889502781250000,
+        "kernel_including_idle_ns": 5063371421875000,
+        "user_ns": 124325296875000
+      },
+      "launch_utc": "2026-10-30T05:56:51.653913+00:00",
+      "timeout_seconds": 1221.346077,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:57:40.553031+00:00",
+      "end_utc": "2026-10-30T05:57:40.553073+00:00",
+      "system_after": {
+        "idle_ns": 4890575171875000,
+        "kernel_including_idle_ns": 5064473390625000,
+        "user_ns": 124396015625000
+      }
+    },
+    "words_95_5_uniform_growth_p03.json": {
+      "start_utc": "2026-10-30T05:57:40.560282+00:00",
+      "system_before": {
+        "idle_ns": 4890575203125000,
+        "kernel_including_idle_ns": 5064473437500000,
+        "user_ns": 124396015625000
+      },
+      "launch_utc": "2026-10-30T05:57:40.560863+00:00",
+      "timeout_seconds": 1172.439132,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:58:28.845271+00:00",
+      "end_utc": "2026-10-30T05:58:28.845312+00:00",
+      "system_after": {
+        "idle_ns": 4891638609375000,
+        "kernel_including_idle_ns": 5065567062500000,
+        "user_ns": 124462234375000
+      }
+    },
+    "urls_80_20_hotspot_replacement_p00.json": {
+      "start_utc": "2026-10-30T05:58:28.855996+00:00",
+      "system_before": {
+        "idle_ns": 4891638859375000,
+        "kernel_including_idle_ns": 5065567312500000,
+        "user_ns": 124462234375000
+      },
+      "launch_utc": "2026-10-30T05:58:28.856747+00:00",
+      "timeout_seconds": 1124.143247,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T05:59:23.405399+00:00",
+      "end_utc": "2026-10-30T05:59:23.405425+00:00",
+      "system_after": {
+        "idle_ns": 4892840000000000,
+        "kernel_including_idle_ns": 5066799687500000,
+        "user_ns": 124538921875000
+      }
+    },
+    "urls_80_20_hotspot_replacement_p01.json": {
+      "start_utc": "2026-10-30T05:59:23.410918+00:00",
+      "system_before": {
+        "idle_ns": 4892840171875000,
+        "kernel_including_idle_ns": 5066799859375000,
+        "user_ns": 124538921875000
+      },
+      "launch_utc": "2026-10-30T05:59:23.413878+00:00",
+      "timeout_seconds": 1069.586116,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T06:00:17.701607+00:00",
+      "end_utc": "2026-10-30T06:00:17.701635+00:00",
+      "system_after": {
+        "idle_ns": 4894036390625000,
+        "kernel_including_idle_ns": 5068026937500000,
+        "user_ns": 124614968750000
+      }
+    },
+    "urls_80_20_hotspot_replacement_p02.json": {
+      "start_utc": "2026-10-30T06:00:17.707736+00:00",
+      "system_before": {
+        "idle_ns": 4894036390625000,
+        "kernel_including_idle_ns": 5068026937500000,
+        "user_ns": 124614968750000
+      },
+      "launch_utc": "2026-10-30T06:00:17.708557+00:00",
+      "timeout_seconds": 1015.291435,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T06:01:12.030856+00:00",
+      "end_utc": "2026-10-30T06:01:12.030881+00:00",
+      "system_after": {
+        "idle_ns": 4895235109375000,
+        "kernel_including_idle_ns": 5069255203125000,
+        "user_ns": 124690515625000
+      }
+    },
+    "urls_80_20_hotspot_replacement_p03.json": {
+      "start_utc": "2026-10-30T06:01:12.036730+00:00",
+      "system_before": {
+        "idle_ns": 4895235218750000,
+        "kernel_including_idle_ns": 5069255312500000,
+        "user_ns": 124690515625000
+      },
+      "launch_utc": "2026-10-30T06:01:12.037333+00:00",
+      "timeout_seconds": 960.962662,
+      "returncode": 0,
+      "returned_utc": "2026-10-30T06:02:06.539152+00:00",
+      "end_utc": "2026-10-30T06:02:06.539178+00:00",
+      "system_after": {
+        "idle_ns": 4896433328125000,
+        "kernel_including_idle_ns": 5070486015625000,
+        "user_ns": 124767453125000
+      }
+    }
+  },
+  "contract": "adapter under acceptance: make_bm_tx_experiment_index\n\ndescriptor:\n  implementation = BM page (transactional encoded split)\n  version        = 7bca5024a658ef161312a21ab12fc83f9dbac4b070fbccd548bfa08b23ce71a2\n  support        = bulk_load=1 find=1 insert=1 update=1 erase=1 scan=1 range_sum=0   (0=unsupported 1=native 2=adapted)\n  notes          = model_commit=3894c767338a865d2920ba5e21283827fea1d803; build_mode=bounded-per-page; mutate_mode=encoded-page-split; lookup_mode=base; root_mode=flat; single-threaded; 2048 rows/page, 15/16 slots, strong exception guarantee on block split.\n  (no ACCEPTANCE_SAMPLE_PARAMETER: the illegal-value rule is not probed)\n  (large key-length ceiling/refusal not allocation-probed; testing 4096 bytes)\n  key domain     = min_bytes=0 max_bytes=4294967295 nul=yes high_bit=yes prefix_pairs=yes\n  memory         = index_owned=1229 adapter_owned=16 retained_input=0\n\n99/99 checks passed\nNATIVE_RUNTIME {\"libstdc++-6.dll\":\"D:\\\\StringLearnedIndex_Workspace\\\\builds\\\\bm_native_idle_calibration_20261030\\\\libstdc++-6.dll\",\"libgcc_s_seh-1.dll\":\"D:\\\\StringLearnedIndex_Workspace\\\\builds\\\\bm_native_idle_calibration_20261030\\\\libgcc_s_seh-1.dll\"}\n",
+  "phase": "calibrate",
+  "semantic": {
+    "urls_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 463970,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1415,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581172,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 282,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 471806,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1302,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581596,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 201,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445072,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 296,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581850,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 61,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445072,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 297,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "urls_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581890,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 19,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 626416,
+      "initial_rows": 50000,
+      "final_rows": 54000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 1311,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 816100,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 288,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 627136,
+      "initial_rows": 50000,
+      "final_rows": 54000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 1255,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 816100,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 155,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 600184,
+      "initial_rows": 50000,
+      "final_rows": 51000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 321,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 815962,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 68,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 600184,
+      "initial_rows": 50000,
+      "final_rows": 51000,
+      "source_pool_rows": 100000,
+      "initial_pages": 25,
+      "write_touched_initial_pages": 25,
+      "candidate_block_splits": 244,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_100k_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 815914,
+      "initial_rows": 75000,
+      "final_rows": 75000,
+      "source_pool_rows": 100000,
+      "initial_pages": 37,
+      "write_touched_initial_pages": 37,
+      "candidate_block_splits": 8,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 463934,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1355,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581468,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 259,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 471736,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1243,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 582112,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 198,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 444694,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 331,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581752,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 56,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 444694,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 328,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581932,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 20,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 464284,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1424,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581076,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 310,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 471948,
+      "initial_rows": 32768,
+      "final_rows": 36768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 1282,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_80_20_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581932,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 215,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_hotspot_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445064,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 295,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_hotspot_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 581860,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 67,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_uniform_growth": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 445064,
+      "initial_rows": 32768,
+      "final_rows": 33768,
+      "source_pool_rows": 65536,
+      "initial_pages": 16,
+      "write_touched_initial_pages": 16,
+      "candidate_block_splits": 338,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    },
+    "words_indep_95_5_uniform_replacement": {
+      "passed": true,
+      "cpu": 0,
+      "affinity": 1,
+      "checks": 582056,
+      "initial_rows": 49152,
+      "final_rows": 49152,
+      "source_pool_rows": 65536,
+      "initial_pages": 24,
+      "write_touched_initial_pages": 24,
+      "candidate_block_splits": 17,
+      "runtime_modules": {
+        "libstdc++-6.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libstdc++-6.dll",
+        "libgcc_s_seh-1.dll": "D:\\StringLearnedIndex_Workspace\\builds\\bm_native_idle_calibration_20261030\\libgcc_s_seh-1.dll"
+      }
+    }
+  },
+  "results": {
+    "words_95_5_uniform_growth": {
+      "aa": {
+        "bm_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0133770089012866,
+              "ci95": [
+                0.9681007092855967,
+                1.0607707982442618
+              ],
+              "pass": false
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.989947146904099,
+              "ci95": [
+                0.9315036233515755,
+                1.0520574790010109
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "candidate_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.002559940494003,
+              "ci95": [
+                0.9770568838980866,
+                1.0287286757279326
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0086239707741012,
+              "ci95": [
+                0.9823659321151087,
+                1.035583870696475
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "bm_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9838903690106465,
+              "ci95": [
+                0.9224182967140157,
+                1.049459081287104
+              ],
+              "pass": false
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0147607282084758,
+              "ci95": [
+                0.9638509264247638,
+                1.0683595432478692
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "candidate_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.01244835210293,
+              "ci95": [
+                0.977443063083936,
+                1.0487072898566512
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9876447696311825,
+              "ci95": [
+                0.9756598009392118,
+                0.9997769612326236
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      },
+      "diagnostics": {
+        "bm_dynamic": {
+          "cycles_per_lookup_range": [
+            390.3302570800781,
+            443.8601588134766
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_dynamic": {
+          "cycles_per_lookup_range": [
+            393.07751525878905,
+            442.6223615722656
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "bm_snapshot": {
+          "cycles_per_lookup_range": [
+            358.14667492675784,
+            415.14963513183596
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_snapshot": {
+          "cycles_per_lookup_range": [
+            355.40344409179687,
+            397.84762951660156
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        }
+      },
+      "all_aa_pass": false
+    },
+    "urls_80_20_hotspot_replacement": {
+      "aa": {
+        "bm_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.000836410628354,
+              "ci95": [
+                0.9824650412700933,
+                1.0195513110008698
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0033260044470758,
+              "ci95": [
+                0.9836674894905676,
+                1.0233773932297743
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "candidate_dynamic": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 0.9958623676575625,
+              "ci95": [
+                0.9591991387754204,
+                1.0339269659714792
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0098274949262807,
+              "ci95": [
+                0.973566540690298,
+                1.0474390058496077
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "bm_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0009923412871984,
+              "ci95": [
+                0.9957367221165369,
+                1.006275700253183
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0223139151478617,
+              "ci95": [
+                0.9900774435256852,
+                1.0555999916362464
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "candidate_snapshot": {
+          "checks": {
+            "parity": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0084798710438942,
+              "ci95": [
+                0.9846992687692555,
+                1.0328347776391318
+              ],
+              "pass": true
+            },
+            "halves": {
+              "n": 4,
+              "df": 3,
+              "ratio": 1.0048546760458925,
+              "ci95": [
+                0.9716650688812741,
+                1.0391779557680825
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      },
+      "diagnostics": {
+        "bm_dynamic": {
+          "cycles_per_lookup_range": [
+            426.4251379394531,
+            478.3135858154297
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_dynamic": {
+          "cycles_per_lookup_range": [
+            429.36596313476565,
+            500.35754711914063
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "bm_snapshot": {
+          "cycles_per_lookup_range": [
+            413.28235925292967,
+            453.2543238525391
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        },
+        "candidate_snapshot": {
+          "cycles_per_lookup_range": [
+            421.20224914550784,
+            467.2515379638672
+          ],
+          "cpu_time_zero_batches": 0,
+          "processor_migrations": 0,
+          "unavailable": [
+            "context_switch_counts",
+            "page_fault_counts"
+          ],
+          "cycles_are_not_elapsed_time": true
+        }
+      },
+      "all_aa_pass": false
+    }
+  },
+  "selection": {
+    "selected_ms": null,
+    "affinity": [
+      0,
+      1
+    ],
+    "protocol_sha256": "33e04a5c6881931efa3c88385d070ba2155f6bf98935ae8a5ffdc6304913698c",
+    "source_closure_sha256": "04f20070cf361edaff959952fba0ff1b636dfc622dc57baaad146e8faee070d7",
+    "decision": "AA only",
+    "window": {
+      "confirmed_start_utc": "2026-10-30T05:47:13+00:00",
+      "confirmed_end_utc": "2026-10-30T06:17:13+00:00",
+      "human_note": "\u7528\u6237\u786e\u8ba4\uff1a\u73b0\u5728\u5f00\u59cb\uff0c\u81f3\u5c1130\u5206\u949f\uff1b\u6309\u6536\u5230\u786e\u8ba4\u65f6\u523b\u56fa\u5b9a\u7a97\u53e3\uff0c\u4e0d\u5ef6\u957f\u3002",
+      "launcher_utc": "2026-10-30T05:55:08.911715+00:00",
+      "parent_process_class": 32,
+      "parent_thread_priority": 0,
+      "child_creation_class": 32,
+      "system_counters_are_not_latency": true
+    },
+    "sample_hashes": {
+      "words_95_5_uniform_growth_p00.json": "cf2765867dee5af1bbdd0eaf9131121f5c26264c73eb412bfe4dbabbc2d4510d",
+      "words_95_5_uniform_growth_p01.json": "4643023589bb92542b06dc6b8aed92d3eda073b9753a8413c8c9321d48e360f8",
+      "words_95_5_uniform_growth_p02.json": "7e5b4f6aa895ffac1c25ab67137942b3aef91a620a14e9e0d140b1399d847f2d",
+      "words_95_5_uniform_growth_p03.json": "0643c7c1918512e69cd0bee82a1f11e3590204fdf4c67735515bbae69e2a3792",
+      "urls_80_20_hotspot_replacement_p00.json": "03bdec59dd341bdcab94f7f3af51bda989289a8858dcc4dfd21ccfc4858562a4",
+      "urls_80_20_hotspot_replacement_p01.json": "b7144ade3ee3512503b736334d94ba09ba19a746f838684ae1442b9e4e43ae48",
+      "urls_80_20_hotspot_replacement_p02.json": "8bdfe8980df47b2af269fc57e6ec22d010d22e9cecd0aa1c71d32a06daf556a2",
+      "urls_80_20_hotspot_replacement_p03.json": "bb0a4c10dcc06c21a2ddd5590b989f7101c721f0ad3f46c869228a8167d9dd34"
+    }
+  }
+}

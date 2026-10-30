@@ -1,0 +1,26 @@
+{
+  "protocol_sha256": "33e04a5c6881931efa3c88385d070ba2155f6bf98935ae8a5ffdc6304913698c",
+  "source_closure_sha256": "04f20070cf361edaff959952fba0ff1b636dfc622dc57baaad146e8faee070d7",
+  "window": {
+    "confirmed_start_utc": "2026-10-30T05:47:13+00:00",
+    "confirmed_end_utc": "2026-10-30T06:17:13+00:00",
+    "human_note": "\u7528\u6237\u786e\u8ba4\uff1a\u73b0\u5728\u5f00\u59cb\uff0c\u81f3\u5c1130\u5206\u949f\uff1b\u6309\u6536\u5230\u786e\u8ba4\u65f6\u523b\u56fa\u5b9a\u7a97\u53e3\uff0c\u4e0d\u5ef6\u957f\u3002",
+    "launcher_utc": "2026-10-30T05:55:08.911715+00:00",
+    "parent_process_class": 32,
+    "parent_thread_priority": 0,
+    "child_creation_class": 32,
+    "system_counters_are_not_latency": true
+  },
+  "phase": "calibrate",
+  "fixed_floor_ms": 1000,
+  "processes": 4,
+  "rounds": 8,
+  "cells": [
+    "words_95_5_uniform_growth",
+    "urls_80_20_hotspot_replacement"
+  ],
+  "affinity": [
+    0,
+    1
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "measured_process_seconds_range": [
+    47.666814,
+    54.549429
+  ],
+  "system_busy_fraction_includes_test_range": [
+    0.0806049566176118,
+    0.08592152264608843
+  ],
+  "round_common_mode_fraction_range": [
+    0.07691437458556413,
+    0.29591866432401454
+  ],
+  "round_common_mode_fraction_median": 0.19102006070029115,
+  "not_causal_or_acceptance": true
+}
