@@ -177,11 +177,19 @@ def main():
         definitions={'BM_TX_CONTROL_BM1':'1','BM_QUERY_BM1_ADAPTER_SHA256':sha(DIAG/'bm_split_adapter.hpp')}
         binary=run.build('query_native',[DIAG/'bm_query_native.cpp',model],definitions=definitions)
         contract_source=run.output/'contract.cpp'
-        contract_source.write_text('#define ACCEPTANCE_FACTORY_HEADER "bm_tx_adapter.hpp"'+chr(10)+
-                                   '#define ACCEPTANCE_FACTORY_SYMBOL make_bm_tx_experiment_index'+chr(10)+
-                                   '#include "borrowed_contract_acceptance.cpp"'+chr(10))
+        contract_lines=['#include "bm_native_runtime.hpp"',
+            '#define ACCEPTANCE_FACTORY_HEADER "bm_tx_adapter.hpp"',
+            '#define ACCEPTANCE_FACTORY_SYMBOL make_bm_tx_experiment_index',
+            '#define main bm_native_contract_entry','#include "borrowed_contract_acceptance.cpp"','#undef main',
+            'int main(){try{const int status=bm_native_contract_entry();if(status)return status;',
+            'std::cout<<"NATIVE_RUNTIME ";bm_native_runtime::emit_modules();std::cout<<std::endl;return 0;',
+            '}catch(const std::exception& e){std::cerr<<e.what()<<std::endl;return 1;}}']
+        contract_source.write_bytes((chr(10).join(contract_lines)+chr(10)).encode())
         contract=run.build('contract_native',[contract_source,model]);run.report['contract']=run.execute([contract],'contract.log')
         if '99/99 checks passed' not in run.report['contract']:raise ValueError('native public contract')
+        module_lines=[line.removeprefix('NATIVE_RUNTIME ') for line in run.report['contract'].splitlines() if line.startswith('NATIVE_RUNTIME ')]
+        if len(module_lines)!=1:raise ValueError('native contract runtime record')
+        run.verify_modules({'runtime_modules':json.loads(module_lines[0])})
         run.report.update(phase=args.phase,semantic={},results={})
         affinity=set()
         for cell,paths in sorted(cases.items()):

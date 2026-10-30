@@ -1,13 +1,9 @@
 // Native Windows measurement adapter. All index/replay/group validation is reused.
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0601
-#endif
-#define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
-#include <windows.h>
+#include "bm_native_runtime.hpp"
 #define main bm_query_native_legacy_entry
 #include "bm_tx_query.cpp"
 #undef main
+using bm_native_runtime::emit_modules;
 
 static std::uint64_t cpu_time_ns() {
     FILETIME created{},exited{},kernel{},user{};
@@ -32,21 +28,6 @@ static void emit_batch(const NativeBatch& b) {
     std::cout<<"\"ns\":"<<m.ns<<",\"lookups\":"<<m.lookups<<",\"checksum\":"<<m.checksum
              <<",\"cpu_ns\":"<<b.cpu_ns<<",\"cycles\":"<<b.cycles
              <<",\"cpu_before\":"<<b.before<<",\"cpu_after\":"<<b.after;
-}
-static void emit_modules() {
-    std::cout<<'{';bool first=true;
-    for(const auto* name:{"libstdc++-6.dll","libgcc_s_seh-1.dll","libwinpthread-1.dll"}) {
-        const auto module=GetModuleHandleA(name);if(!module)continue;
-        char location[32768];const auto length=GetModuleFileNameA(module,location,sizeof(location));
-        need(length>0&&length<sizeof(location),"runtime module path");
-        if(!first)std::cout<<',';first=false;std::cout<<'"'<<name<<"\":\"";
-        for(DWORD i=0;i<length;++i) {
-            const char c=location[i];need(static_cast<unsigned char>(c)>=32,"runtime path control byte");
-            if(c=='\\'||c=='"')std::cout<<'\\';std::cout<<c;
-        }
-        std::cout<<'"';
-    }
-    std::cout<<'}';
 }
 int main(int argc,char** argv) {
     try {
