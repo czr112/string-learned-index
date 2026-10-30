@@ -1,0 +1,15 @@
+{
+  "adapter_sha256": "7d6d577352caff1a3ac7f42a57e684d9eda36479e12de4d6ec8bc894c84d644d",
+  "files": {
+    "hot_headers_verification.json": "eb21ea8ff52377be5f68213c94ca18563522c03889ef6f2c3bd45bda75c57bee",
+    "hot_native_compile.log": "ed0458fb66fdbbc1adba29a6933ceeb6462edad2392039d805e5eaea49e48675",
+    "native_probe.cpp": "ea37faaaa9cef436a25d9d8322cfcf35bc08d20b7b477b923b23c7ef9cd37d75"
+  },
+  "hot_commit": "96bf6fb7103b27e50e16a6026db8974c090ee84a",
+  "linux_sanitizers_executed": false,
+  "native_compilation": "failed; uint/LP64/POSIX dependencies",
+  "native_probe_executed": false,
+  "official_header_files_verified": 70,
+  "performance_ranking_performed": false,
+  "status": "source diagnosis complete; dynamic validation blocked"
+}

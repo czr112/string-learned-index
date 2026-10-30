@@ -1,5 +1,10 @@
 # 字符串学习型索引课题总资料包
 
+## 结构性能新阶段（2026-10-30）
+
+[长期计划](docs/STRUCTURE_PERFORMANCE_PLAN_20261030.md)与[执行日志](docs/STRUCTURE_PERFORMANCE_JOURNAL_20261030.md)记录上游核查、ART/HOT差距、基线有效性和下一轮停止条件。最新paired资格校准失败并已收口；Model16仅功能/空间通过，Context16继续默认。评测器新工具pin为94ead07a，标准Linux全回归和合法Git传输仍受阻；[发布状态与原工作区同步](docs/PUBLICATION_READINESS_20261030.md)。
+
+
 ## 后续执行（2026-10-24）
 
 [长期执行策略](docs/LONG_TERM_BM_EXECUTION_STRATEGY_20261024.md) 已推进到[正确分组查询复验](07_Eval_Integration/RESULTS_BM_QUERY_RECHECK_20261024.md)：32 格每格 16 进程，终态 mixed90 主指标 10 格通过、5 格确认回退（慢 7.8%–8.7%）、5 格跨门、12 格 A/A 质量未定。核心未改、尝试 A 未追加，Context16 继续默认。
