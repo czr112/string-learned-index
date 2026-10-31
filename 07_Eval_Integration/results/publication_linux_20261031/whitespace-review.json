@@ -1,0 +1,7 @@
+{
+  "full_check_returncode": 2,
+  "exempted_raw_evidence": "07_Eval_Integration/results/baseline_source_diagnosis_20261030/hot_native_compile.log",
+  "raw_sha256": "ed0458fb66fdbbc1adba29a6933ceeb6462edad2392039d805e5eaea49e48675",
+  "reason": "Original native compiler diagnostic contains alignment/trailing spaces; exact bytes retained from reviewed9593ed8 rather than rewriting historical failure evidence",
+  "remaining_paths_check_returncode": 0
+}

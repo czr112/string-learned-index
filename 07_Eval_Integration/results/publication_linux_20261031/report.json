@@ -1,0 +1,76 @@
+{
+  "source_pin": "94ead07a45af7cb5dd33a2a708683ec2ba4411b6",
+  "results": [
+    {
+      "name": "configure",
+      "command": [
+        "/home/noctis/.local/bin/cmake",
+        "-S",
+        "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/publication-main/07_Eval_Integration/learned-index",
+        "-B",
+        "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build",
+        "-DBUILD_LEGACY_BENCHMARK=OFF",
+        "-DCMAKE_BUILD_TYPE=Debug"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 5.056099927999995,
+      "log": "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/configure.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "/home/noctis/.local/bin/cmake",
+        "--build",
+        "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build",
+        "--parallel",
+        "1"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 37.24047077899999,
+      "log": "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build.log"
+    },
+    {
+      "name": "ctest",
+      "command": [
+        "/home/noctis/.local/bin/ctest",
+        "--test-dir",
+        "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build",
+        "--output-on-failure",
+        "--parallel",
+        "1"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 27.327814198,
+      "log": "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/ctest.log"
+    },
+    {
+      "name": "lookup_workload",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/publication-main/07_Eval_Integration/learned-index/tests/lookup_workload_test.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 4.719193695999991,
+      "log": "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/lookup_workload.log"
+    },
+    {
+      "name": "real_dataset",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/publication-main/07_Eval_Integration/learned-index/tests/real_dataset_test.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.6855322029999797,
+      "log": "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/real_dataset.log"
+    }
+  ],
+  "passed": true,
+  "excluded": {
+    "legacy_TLI_targets": "No legacy TLI/Boost dependency setup; legacy implementation unchanged and performance smoke prohibited in this phase",
+    "timed_benchmarks": "Not run"
+  },
+  "windows_failures": "Previous native Windows and one real_dataset failure retained in prior reports; this is a separate Linux run",
+  "script_sha256": "468f857f655fd57dd0a5ae03e3274ecd4e6f5ea657a387ee84d3ab46be77df9c"
+}

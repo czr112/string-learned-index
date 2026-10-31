@@ -1,0 +1,94 @@
+Start testing: Oct 31 10:48 CST
+----------------------------------------------------------
+1/3 Testing: unified_runner_checks
+1/3 Test: unified_runner_checks
+Command: "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified_runner_test"
+Directory: /mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build
+"unified_runner_checks" start time: Oct 31 10:48 CST
+Output:
+----------------------------------------------------------
+unified runner: duplicate parameter name: fixture
+unified runner: invalid --parameter name
+unified runner: exactly one of --queries and --operations is required
+unified runner: exactly one of --queries and --operations is required
+unified runner: --threads must be positive
+unified runner: --result path already exists
+unified runner: result and samples paths collide
+unified runner: result and samples paths collide
+unified runner: --result path already exists
+unified runner: --samples path already exists
+unified runner checks passed
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"unified_runner_checks" end time: Oct 31 10:48 CST
+"unified_runner_checks" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: unified_benchmark_checks
+2/3 Test: unified_benchmark_checks
+Command: "/usr/bin/python3.12" "-B" "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/publication-main/07_Eval_Integration/learned-index/tests/unified_benchmark_test.py"
+Directory: /mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build
+"unified_benchmark_checks" start time: Oct 31 10:48 CST
+Output:
+----------------------------------------------------------
+..........error: output directory already exists; refusing to overwrite
+...error: jsonl record 1 is malformed
+.error: workload JSON is malformed or unreadable
+............error: --parameter names an unknown requested adapter
+error: --parameter duplicates an adapter parameter name
+error: --parameter must use ADAPTER:NAME=VALUE
+.................................error: hotspot workload requires at least two unique keys
+error: hotspot workload requires at least two unique keys
+......
+----------------------------------------------------------------------
+Ran 65 tests in 15.399s
+
+OK
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmpvfrwhh31/output
+Report / 报告: /mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmpvfrwhh31/output/report.md
+  invalid-1 t1: invalid_input — adapter manifest is missing required fields
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmp_kbhd862/output
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmphvmq2a3w/output
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmpc0gk3rs_/output
+Report / 报告: /mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmpc0gk3rs_/output/report.md
+  invalid-1 t1: invalid_input — adapter source_dir is invalid or unreadable
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmp04wa2n33/output
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmphk5gbs2n/output
+Report / 报告: /mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmphk5gbs2n/output/report.md
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmphk5gbs2n/unknown
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmphk5gbs2n/duplicate
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmphk5gbs2n/malformed
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmp3c8vr6mr/out
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmp7a3rclvn/out-1
+/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build/unified-test-tmp/tmp7a3rclvn/out-4
+<end of output>
+Test time =  16.17 sec
+----------------------------------------------------------
+Test Passed.
+"unified_benchmark_checks" end time: Oct 31 10:48 CST
+"unified_benchmark_checks" time elapsed: 00:00:16
+----------------------------------------------------------
+
+3/3 Testing: benchmark_suite_checks
+3/3 Test: benchmark_suite_checks
+Command: "/usr/bin/python3.12" "-B" "/mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/publication-main/07_Eval_Integration/learned-index/tests/benchmark_suite_test.py"
+Directory: /mnt/d/StringLearnedIndex_Workspace/builds/project_recovery_20261031/linux-benchmark-regression/build
+"benchmark_suite_checks" start time: Oct 31 10:48 CST
+Output:
+----------------------------------------------------------
+...............
+----------------------------------------------------------------------
+Ran 15 tests in 9.595s
+
+OK
+<end of output>
+Test time =  10.50 sec
+----------------------------------------------------------
+Test Passed.
+"benchmark_suite_checks" end time: Oct 31 10:49 CST
+"benchmark_suite_checks" time elapsed: 00:00:10
+----------------------------------------------------------
+
+End testing: Oct 31 10:49 CST

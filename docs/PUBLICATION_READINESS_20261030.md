@@ -1,5 +1,10 @@
 # 发布准备与原工作区同步
 
+2026-10-31 更新：项目文件访问、正式审批下的 WSL 编译器及现有 Git HTTPS 传输均已恢复。
+独立发布副本已完成 Linux 功能回归和原 D 文件覆盖核对，见
+[发布验证记录](PUBLICATION_VALIDATION_20261031.md)。下文保留 10 月 30 日的历史诊断；
+原 D 脏工作树仍保持原样，尚未同步。
+
 本轮实际执行位置是 `C:\Users\Noctis\Documents\Codex\2026-10-31\task\project`。它来自原本允许读取的 main Git 对象，以及逐文件允许读取、明确导入的十份修改；没有改写原 D 盘工作区或其 Git 元数据。
 
 ## 已有历史与本轮整理
@@ -15,7 +20,7 @@
 
 仓库 `.gitattributes` 为 `* -text`，原始证据按字节保留。格式检查对这些文件使用 `cr-at-eol`，并允许历史原文的 EOF 空行；不得通过全树换行转换破坏原始 report/sample SHA。
 
-## 当前阻塞不是审批等待
+## 2026-10-30 的阻塞记录
 
 1. 原工作树：`git status` 无法建立 worktree；显式进入 D 路径曾返回 Permission denied。原仓库完整 Git 状态未获确认，不能把隔离副本干净称为原仓库整理完成。
 2. Linux：`wsl.exe ... /usr/bin/g++ --version` 返回 `Wsl/E_ACCESSDENIED`。没有重试、提权或转用另一执行器绕过。HOT 普通/sanitizer 与项目标准 Linux 门未执行。

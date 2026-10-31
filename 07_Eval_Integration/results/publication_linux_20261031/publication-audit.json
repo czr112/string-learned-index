@@ -1,0 +1,44 @@
+{
+  "base_remote": "6229ccc1cab196baa92565575a88320f479ec109",
+  "release_base": "9593ed8f9a0dbc78ef5d1e44fea4b92ab989f296",
+  "original_tracked_count": 10,
+  "original_untracked_count": 1538,
+  "coverage_counts": {
+    "tracked_import_in_0499fe5": 10,
+    "archived_text_evidence": 1520,
+    "compiled_executable": 2,
+    "large_raw_log_kept_locally": 1,
+    "operating_system_metadata": 6,
+    "unreviewed_file_type": 3,
+    "empty_local_probe": 1,
+    "local_ACL_diagnostic_not_project_source_preserved_in_backup": 3,
+    "committed_file_matches": 2
+  },
+  "changed_regular_files": 869,
+  "changed_file_bytes": 19217036,
+  "largest_new_files": [
+    {
+      "path": "04_Consolidation_and_Verification/archives/local_evidence_20261030/historical_text_records.tar.gz",
+      "bytes": 3340887
+    },
+    {
+      "path": "07_Eval_Integration/results/bm_tx_final_20261030/bm_tx_performance_20261030/raw_records.tar.gz",
+      "bytes": 1023490
+    },
+    {
+      "path": "07_Eval_Integration/results/bm_model16_work_20261030/report.json",
+      "bytes": 796887
+    },
+    {
+      "path": "07_Eval_Integration/results/bm_query_recheck_20261024/commands.json",
+      "bytes": 733278
+    },
+    {
+      "path": "07_Eval_Integration/results/bm_query_diagnosis_20261030/bm_read_work_20261030/report.json",
+      "bytes": 653143
+    }
+  ],
+  "archive_members_scanned": 6230,
+  "findings": [],
+  "limitations": "Limited common credential-signature, executable-magic, archive-path/member and new-file-size checks; not a full security proof. Original files remain backed up and untouched."
+}
